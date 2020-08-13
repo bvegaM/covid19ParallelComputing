@@ -1,0 +1,1749 @@
+{
+    "paper_id": "PMC2716332",
+    "metadata": {
+        "title": "Musings on privacy issues in health research involving disaggregate geographic data about individuals",
+        "authors": [
+            {
+                "first": "Maged",
+                "middle": [
+                    "N",
+                    "Kamel"
+                ],
+                "last": "Boulos",
+                "suffix": "",
+                "email": "mnkamelboulos@plymouth.ac.uk",
+                "affiliation": {}
+            },
+            {
+                "first": "Andrew",
+                "middle": [
+                    "J"
+                ],
+                "last": "Curtis",
+                "suffix": "",
+                "email": "ajcurtis@usc.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Philip",
+                "middle": [],
+                "last": "AbdelMalik",
+                "suffix": "",
+                "email": "philip.abdelmalik@plymouth.ac.uk",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In micro-scale geographical analyses involving data about specific individuals, data security, confidentiality and privacy form an intertwined triad. A recent US CDC (Centers for Disease Control and Prevention) foundation course on public health law [1] defines privacy as the \"individual's right to control the acquisition, use and disclosure of their identifiable health information\". The same course goes on to define confidentiality as the \"privacy interests that arise from specific relationships (e.g., doctor/patient, researcher/subject) and corresponding legal and ethical duties\", and then describes security as the \"technological or administrative safeguards or tools to protect identifiable health information from unwarranted access, use, or disclosure\". To explain the relationships between the three terms, the course quotes a key sentence from Ware [2]: \"If the security safeguards in an automated system fail or are compromised, a breach of confidentiality can occur and the privacy of data subjects invaded\".",
+            "cite_spans": [
+                {
+                    "start": 251,
+                    "end": 252,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 865,
+                    "end": 866,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Definitions\u2013the security-confidentiality-privacy triad ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Actual or potential breaches (technological or legal) of data security and confidentiality and the subsequent actual or potential invasions of individuals' privacy are quite commonly reported in mainstream media. For example, in March 2009, the Joseph Rowntree Reform Trust published its 'Database State' report on the legality, safety and effectiveness of the British government's major database systems [3,4]. Of 46 databases assessed in this report, only six were found to have a proper legal basis for any privacy intrusions and were deemed proportionate and necessary in a democratic society. The report authors concluded that two NHS (National Health Service) systems, the Detailed Care Record (DCR) and the Secondary Uses Service (SUS) [5], were almost certainly illegal and that a number of others including the Summary Care Record (SCR) would be legal only with patient consent, but, with the current absence of an effective opt-out, it too was almost certainly illegal.",
+            "cite_spans": [
+                {
+                    "start": 406,
+                    "end": 407,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 408,
+                    "end": 409,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 744,
+                    "end": 745,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Mainstream media and public interest in the subject ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We also read the story of an anonymous Canadian girl whose death was associated with a prescribed acne drug. She was eventually identified by the media who compared the de-identified prescription data set against obituaries. The comparison helped in narrowing down the search to four possible girls, then by contacting all families the right one was found [6].",
+            "cite_spans": [
+                {
+                    "start": 357,
+                    "end": 358,
+                    "mention": "6",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Mainstream media and public interest in the subject ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "High-profile security breaches (e.g., data loss or theft of ill-protected confidential data) are also not uncommon. For example, it was reported in May 2009 that a laptop containing non-encrypted data (names, addresses, dates of birth, employers, national insurance numbers, salary information, and bank details) of 109,000 UK pensioners has been stolen [7]. The data were merely password-protected, and possibly without any appropriate safeguards for data self-destruction in case of brute-force password attacks. It is very easy to find out passwords in a short time using common hardware, e.g., NVIDIA CUDA GPUs (Compute Unified Device Architecture Graphics Processing Units), and readily available software [8], or even to completely bypass the passwords and directly access the underlying non-encrypted data.",
+            "cite_spans": [
+                {
+                    "start": 355,
+                    "end": 356,
+                    "mention": "7",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 712,
+                    "end": 713,
+                    "mention": "8",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Mainstream media and public interest in the subject ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In public health worldwide, any public identification of an individual's health status and address, regardless of contagion level or risk, is usually prohibited. But individual privacy rights must also be balanced with legitimate public concerns and interests. The publicly-accessible, online mapping of SARS (Severe Acute Respiratory Syndrome) in Hong Kong a few years ago using disaggregate case data at individual infected building level in near real time was one of the noticeable exceptions to the well-established public health confidentiality rule [9,10].",
+            "cite_spans": [
+                {
+                    "start": 556,
+                    "end": 557,
+                    "mention": "9",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 558,
+                    "end": 560,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Mainstream media and public interest in the subject ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The biomedical and public health literature on geographic information systems (GIS) and spatio-temporal analyses features a large number of research papers mentioning or addressing location privacy, e.g., [11-28]. A must-read paper (not specifically health-related) dating back to 1994 [29] shows how chronic privacy issues are in GIS research. Some research papers identified privacy as a potential or actual issue of concern (e.g., in reproductive health research [18]; in birth defects surveillance and research [19]; in research relevant to policy on diet, physical activity, and weight [20]; in environmental health research [21]; and in health and social care planning [22]), while others went one step further by suggesting some comprehensive solutions (e.g., [23-26]), workarounds, or frameworks and principles of practice (e.g., [29]) to mitigate or resolve these privacy concerns.",
+            "cite_spans": [
+                {
+                    "start": 206,
+                    "end": 208,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 287,
+                    "end": 289,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 467,
+                    "end": 469,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 516,
+                    "end": 518,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 592,
+                    "end": 594,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 631,
+                    "end": 633,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 676,
+                    "end": 678,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 768,
+                    "end": 770,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 771,
+                    "end": 773,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 839,
+                    "end": 841,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Research literature: location privacy concerns and solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "A number of confidentiality-preserving statistical and epidemiological data processing methods (data aggregation and transformations) have been proposed that can be applied to original location data to preserve individuals' privacy while maintaining some acceptable level of data usefulness for geographical analyses. But the use of precise addresses will continue to be needed in many cases to improve data analysis results or make them possible at all. The famous John Snow's map of the 1854 Cholera outbreak in London only solved the problem because the unique locations of individual cases were known [15,30]. There will always be this implicit trade-off between privacy concerns (e.g., easiness of re-identification) and the types and accuracy of the results of geographical health analyses that are possible with a given data set (original, unaltered vs. transformed or aggregated data) [25,27,28]. And that is where software agents can offer a potential solution that preserves the full fidelity of the original data [25].",
+            "cite_spans": [
+                {
+                    "start": 606,
+                    "end": 608,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 609,
+                    "end": 611,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 894,
+                    "end": 896,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 897,
+                    "end": 899,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 900,
+                    "end": 902,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Research literature: location privacy concerns and solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "Moving beyond conventional GIS research and geographical analyses, mobile phones and other electronic gadgets are rapidly gaining location awareness and wireless Web connectivity, thus promising new spatial technology applications and services (e.g., [31-33]), which will yield vast amounts of spatial information and online maps that can even reveal users' whereabouts in real time. These novel spatial tools and services are certainly opening many new useful possibilities, but are not without their challenging security and privacy concerns [34,35].",
+            "cite_spans": [
+                {
+                    "start": 252,
+                    "end": 254,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 255,
+                    "end": 257,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 545,
+                    "end": 547,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 548,
+                    "end": 550,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Research literature: location privacy concerns and solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "Data security is relatively under-mentioned in discussions about confidentiality-preserving solutions for location data, despite its key importance in the aforementioned security-confidentiality-privacy triad. Consider the following scenario: a health GIS researcher has legitimate and IRB (institutional review board)-approved access to patient data containing precise geographical identifiers for analysis and reporting purposes, with full patient consent. The reporting is done in ways that do not identify individual patients when posting publicly-accessible/online results and maps. If the reporting must be made at some level of detail or granularity that can potentially identify individual patients, the results are only shared within approved, small teams of users with legitimate access rights and 'need to know'. The whole scenario seems fine as far as the protection of individuals' privacy is concerned. IRB approval has been sought, adequate reporting methods and policies are in place to prevent the disclosure of any confidential data to non-authorised parties, and we even have the patients' explicit consent to conduct the study. However, without appropriate additional security safeguards, there will always be many unmitigated risks of data theft or loss and of unwanted data disclosure to non-authorised or non-authenticated parties, all of which can compromise the privacy of the data subjects. (Ideally, IRBs should be scrutinising the security component as well before granting approvals.)",
+            "cite_spans": [],
+            "section": "The 'missing ring': data security",
+            "ref_spans": []
+        },
+        {
+            "text": "A carefully blended, purpose-built combination of overlapping security measures is always the solution, depending on the type, sensitivity, value, and risks/costs assessment of the data to be protected. Various types of advanced cryptography, multimodal biometrics, and other methods can be combined, as necessary. Data access can also be controlled or restricted in such a way that two or more persons must be physically present each time and authenticated (e.g., via biometrics) to unlock the data. Security measures cover and include, among other things, ensuring physical building security, using computer security cable locks, using computers with a built-in TPM (Trusted Platform Module) chip for cryptographic functions, performing full disk encryption with TPM (e.g., using BitLocker [36]), implementing brute-force password attack protection (data are automatically erased after a pre-set number of failed access attempts), using hardware/software firewalls and other forms of network security, implementing adequate access policies and authentication [37] (at computer BIOS\u2013Basic Input/Output System level, Operating System-level, and application level), considering Multilevel Security (MLS), using biometrics (e.g., fingerprint readers and facial recognition), using advanced secure USB flash drives with military grade hardware encryption (e.g., [38,39]) instead of ordinary flash drives, keeping detailed data inventories and electronic audit trails of all accesses and transactions, blanking of computer display and machine locking or auto-log-off if a machine is left unattended, and the secure decommissioning and discarding of old equipment and data storage media, e.g., using software utilities like SDelete [40] to prevent the kind of issues described in [41]. Also equally important are staff training and the development of a 'security culture' in the organisation, e.g., guided by ISO/IEC 27002 2005 (formerly ISO/IEC 17799 2005), an ISO (International Organization for Standardization) standard for information security and a code of practice for information security management.",
+            "cite_spans": [
+                {
+                    "start": 793,
+                    "end": 795,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1062,
+                    "end": 1064,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1360,
+                    "end": 1362,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1363,
+                    "end": 1365,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1728,
+                    "end": 1730,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1776,
+                    "end": 1778,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "The 'missing ring': data security",
+            "ref_spans": []
+        },
+        {
+            "text": "A discussion on location privacy solutions for health research would be incomplete without reflecting on some of the underlying reasons that necessitate their development. The very notion of privacy is itself a complex fabric of interwoven philosophical and psychosocial threads. Perhaps this is why the associated bureaucratic and legal landscape is as complex as it is \u2013 and often blamed for the issue. A large majority of public health professionals consider privacy to be an obstacle to public health; when asked for the underlying reasons, survey respondents in Canada and the UK most commonly identified bureaucracy and legislation [42].",
+            "cite_spans": [
+                {
+                    "start": 639,
+                    "end": 641,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Personal information and privacy legislations",
+            "ref_spans": []
+        },
+        {
+            "text": "There is no universal legislation to guide and govern the activities of public health professionals, particularly where issues of privacy are concerned. Instead, nations have their own constraining or enabling privacy and data protection laws, with some being such a maze of cross-referenced \"legalese\" that familiarising oneself with them \u2013 let alone gaining a thorough understanding of them \u2013 becomes a daunting task. 'Additional file 1' provides a brief compilation and comparison of relevant personal information and privacy legislation in Canada and UK, with particular focus on location and public health as seen and understood by an epidemiologist.",
+            "cite_spans": [],
+            "section": "Personal information and privacy legislations",
+            "ref_spans": []
+        },
+        {
+            "text": "The issues of location privacy were also the subject of GeoPKDD (Geographic Privacy-Aware Knowledge Discovery and Delivery [43]), a three-year EU-funded project that was recently completed in November 2008. GeoPKDD's main research question was 'how to discover useful knowledge about human movement behaviour from mobility data (e.g., location data from mobile phones), while preserving the privacy of the people under observation?' The project attempted to develop new privacy-preserving methods for extracting knowledge from large amounts of raw data about individuals referenced in space and time. GeoPKDD organised the 'First Interdisciplinary Workshop on Mobility, Data Mining and Privacy: Preserving anonymity in geographically referenced data' on 14 February 2008 in Rome, Italy [44].",
+            "cite_spans": [
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 787,
+                    "end": 789,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Some recent research projects and events about the subject",
+            "ref_spans": []
+        },
+        {
+            "text": "Another research activity worth mentioning in our context is the proposal by Helen Chen at Agfa HealthCare in Canada and her colleagues at the World Wide Web Consortium\u2013W3C Semantic Web for Health Care and Life Sciences Interest Group (HCLSIG) to explore Semantic Web solutions for patient data security, confidentiality, consent and privacy (in general, i.e., they are not focusing on location privacy, but their proposal is still broadly relevant to our topic). Previously sufficient de-identification techniques can be rendered inadequate because it is now possible to re-identify an identity via inference on the Web. Semantic Web technology is making headway to even more powerful data links, connections and inferences of this type. However, in the healthcare domain, this very success of the technology is putting individuals' privacy at much greater risks. Chen's idea is to develop novel privacy-preserving solutions by harnessing the very same Semantic Web technology that can exacerbate these privacy risks [45].",
+            "cite_spans": [
+                {
+                    "start": 1019,
+                    "end": 1021,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Some recent research projects and events about the subject",
+            "ref_spans": []
+        },
+        {
+            "text": "From 5\u20138 June 2009, the Urban and Regional Information Systems Association (URISA [46]), a non-profit American association of professionals using GIS and other information technologies to solve challenges in state/provincial and local government agencies and departments, organised its Second GIS in Public Health Conference in Providence, Rhode Island, USA. One of the pre-conference workshops held on the 5th of June 2009 focused on issues related to 'Protecting Privacy and Confidentiality of Geographic Data in Health Research'. Select highlights from this workshop are presented in the remaining part of this article.",
+            "cite_spans": [
+                {
+                    "start": 83,
+                    "end": 85,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Some recent research projects and events about the subject",
+            "ref_spans": []
+        },
+        {
+            "text": "There are three emerging spatial confidentiality topics of concern. The first involves Google Street View [50], an excellent research tool that allows us to \"see\" areas that are described or mapped in publications. The implication this has for reengineering is the ability to see potential candidates within an area. If we again think of the \"bulls eye\" effect within a smoothed surface, if this area has been driven by the Google Street View team (and thankfully at this point areas of sparse geography also tend to be the least covered), we could literally view each option within the central pixel until a house match is found. Even with multiple alternatives, it might be possible to spatially prioritise the potential buildings based on characteristics of the health conditions, or other information gleaned from the paper. For example, is the disease more typically associated with a multi-family unit than a single residence?",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 109,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Emerging issues ::: Select highlights from a recent URISA workshop on location privacy in health research",
+            "ref_spans": []
+        },
+        {
+            "text": "The second area of concern involves the use of biometric sensors synched to a GPS (Global Positioning System) unit. This field of research offers great potential in terms of linking health outcomes to the fine-scale built environment. However, a fear expressed at the URISA workshop was that output from these devices, usually shown as a series of dots on an aerial photograph, will begin to accompany research papers. Sure enough, within one day of the workshop a new issue of a GIS journal published this exact output. The underlying aerial photograph makes reengineering from the image extremely easy, and the point concentrations from the GPS unit correspond to areas of highest activity, including the home. This is not a good situation, especially when the participants are part of a vulnerable population, such as children.",
+            "cite_spans": [],
+            "section": "Emerging issues ::: Select highlights from a recent URISA workshop on location privacy in health research",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, we are worried about the current trend by social scientists of including spatial data in their research, especially those who use mixed methods. A mixed method approach combines both qualitative and quantitative data. For example, spatial video data of the recovering neighbourhoods of New Orleans, LA, USA, are currently being collected. These data are extracted from the video as three-dimensional surfaces that can be mapped or analysed for recovery or abandonment. At the same time, videos of the narrative of the neighbourhood participants add further commentary to the surfaces, such as why a building has not been returned to. Many of these comments contain sensitive information such as the health of an owner. If we map this information, others could easily disseminate it through online consumer geoinformatics services like Google Earth and Google Map, and even link it using suitable geo-mashups [51] to other readily available online information about the individuals concerned (e.g., on social networking sites), thus revealing a more detailed picture about them. Do our subjects really know all what could be exposed through such mapping? (But one should also consider the difference between what is technically possible and what is practically likely to happen, i.e., will there really be someone with the motive, will and ability to do these privacy threatening Web inferencing and mapping exercises in each and every case? A risks-costs-benefits assessment might help in such situations.) Although these situations may not fall foul of any HIPAA standard, nor probably concern an IRB, we are now at a point where changing geospatial technologies must stimulate debate that goes beyond the normal community participatory ethical standards used by researchers [35].",
+            "cite_spans": [
+                {
+                    "start": 918,
+                    "end": 920,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1786,
+                    "end": 1788,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Emerging issues ::: Select highlights from a recent URISA workshop on location privacy in health research",
+            "ref_spans": []
+        },
+        {
+            "text": "Because of the widespread adoption of GIS-light Internet applications, and cheap and easy-to-use mobile mapping devices (for example, ones which can tag pictures with coordinates), health related spatial confidentiality is now no longer the concern of only geographic information scientists, or even GIS users, but also of a far broader range of academics and other people.",
+            "cite_spans": [],
+            "section": "Emerging issues ::: Select highlights from a recent URISA workshop on location privacy in health research",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the general public's concerns about privacy in research have sometimes been exaggerated by the scientific community [52] (and by a few vocal privacy advocates in the media, who do not adequately represent the position of the wider masses), we believe there are still many cases where these concerns are real and legitimate, and where data subjects need to be protected (e.g., from identity theft). A 'one-size-fits-all' privacy-preserving solution is unlikely to be successful or to be able to capture and properly address the complex requirements, which might also vary from country to country, of the very many (i) user roles, with different access privileges and 'needs to know' in relation to various input and output data types; (ii) intra and extra-mural data sharing arrangements, especially when data need to be moved across heterogeneous organisations; (iii) governing legislations and policies; (iv) possible forms of data inputs that can be released for research and the associated conditions; (v) health study types and goals, data analysis methods and the data requirements in each case; (vi) possible study outputs/results reporting and publication forms (closed or public); (vii) situation-specific security risks; and (viii) risks-costs-benefits assessment, among other aspects and requirements that are involved in this area of research and need to be considered on a case-by-case basis.",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Different privacy-preserving solutions can be applied concurrently or singly on various elements of this complex chain, e.g., on input data prior to release to researchers (e.g., aggregation or transformations) and/or on the research outputs (e.g., access restriction or masking), depending on the specific situation at hand; so a comprehensive, context-aware approach is needed to assist researchers in choosing and applying the right solution(s) in each case.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Kamel Boulos (unpublished research notes, 2008\u20132009) proposed the development of a case-based reasoning software framework (cf. case law) that covers, and continuously \"learns from\", the growing body of possible and emerging health research scenarios and applications involving precise geographical identifiers about individuals. The goal of such a 'one stop shop' framework would be to streamline the provision of clear and individualised guidance for the design and approval of new research projects, including crisp recommendations on which specific privacy-preserving solution(s) and approach(es) would be suitable in each case. This would spare researchers and IRBs the need to 'reinvent the wheel' with each new study, saving them precious time and efforts spent investigating the same issues every time, and preventing avoidable errors and omissions along the way. This decision framework should ideally have an easy-to-use, wizard-based visual frontend, guiding users throughout the whole process of describing and diagnosing their needs, and proposing (with appropriate explanations/justifications) suitable solutions to address them.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "MNKB conceived and drafted the manuscript, and conducted a mini-survey of the literature on the subject. AJC provided material on URISA's workshop held on 5 June 2009 about location privacy issues in health research. PA contributed material on 'personal information and privacy legislations', including 'Additional file 1'. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "US CDC Public Health Law 101 Foundational Course for Public Health Practitioners \u2013 Unit 6: Privacy and Confidentiality",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Epidemics, Privacy Rights and Public Concerns: The Hong Kong SARS Experience",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Workshop: Globalisation and New Epidemics: Ethics, Security and Policy Making, Organised by European Commission \u2013 Science and Society: 22\u201323 May 2006; Brussels, Belgium",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Spatial confidentiality and GIS: re-engineering mortality locations from published maps about Hurricane Katrina",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Curtis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Leitner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Int J Health Geogr",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-5-44"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "An unsupervised classification method for inferring original case locations from low-resolution disease maps",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Brownstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Kohane",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Int J Health Geogr",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-5-56"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Re-identification of home addresses from spatial locations anonymized by Gaussian skew",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Wieland",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Int J Health Geogr",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-7-45"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Confidentiality and spatially explicit data: concerns and challenges",
+            "authors": [
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Van Wey",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Rindfuss",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Gutmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Entwisle",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Balk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "15337-15342",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0507804102"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Providing Spatial Data for Secondary Analysis: Issues and Current Practices relating to Confidentiality",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gutmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Witkowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Colyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "O'Rourke",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McNally",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Popul Res Policy Rev",
+            "volume": "27",
+            "issn": "",
+            "pages": "639-665",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s11113-008-9095-4"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Georeferenced data in epidemiologic research",
+            "authors": [
+                {
+                    "first": "GL",
+                    "middle": [],
+                    "last": "Werneck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Cien Saude Colet",
+            "volume": "13",
+            "issn": "",
+            "pages": "1753-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Privacy and identifiability in clinical research, personalized medicine, and public health surveillance",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PhD thesis",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Confidentiality concerns with mapping survey data in reproductive health research",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Fetters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Stud Fam Plann",
+            "volume": "38",
+            "issn": "",
+            "pages": "309-21",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1728-4465.2007.00143.x"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Role of geographic information systems in birth defects surveillance and research",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Siffel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Strickland",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Kirby",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Correa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Birth Defects Res A Clin Mol Teratol",
+            "volume": "76",
+            "issn": "",
+            "pages": "825-33",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/bdra.20325"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Lessons for the future: Privacy dimensions of medical record keeping",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ware",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Proceedings of the Conference on Health Records: Social Needs and Personal Privacy, Sponsored by the Department of Health and Human Services Task Force on Privacy, Office of the Assistant Secretary for Planning and Evaluation and the Agency for HealthCare Privacy and Research: 11\u201312 February 1993 (Document No PB94-168192)",
+            "volume": "",
+            "issn": "",
+            "pages": "43-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Work group II: Using Geographic Information Systems for enhancing research relevant to policy on diet, physical activity, and weight",
+            "authors": [
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Moudon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Daniel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Am J Prev Med",
+            "volume": "36",
+            "issn": "",
+            "pages": "S171-6",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.amepre.2009.01.011"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Human biomonitoring and the INSPIRE directive: spatial data as link for environment and health research",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Smolders",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Casteleyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Joas",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Schoeters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Toxicol Environ Health B Crit Rev",
+            "volume": "11",
+            "issn": "",
+            "pages": "646-59",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Assessing the applicability of GIS in a health and social care setting: planning services for informal carers in East Sussex, England",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Foley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Soc Sci Med",
+            "volume": "55",
+            "issn": "",
+            "pages": "79-96",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0277-9536(01)00208-8"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Geographically masking health data to preserve confidentiality",
+            "authors": [
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Armstrong",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rushton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Zimmerman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Stat Med",
+            "volume": "18",
+            "issn": "",
+            "pages": "497-525",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/(SICI)1097-0258(19990315)18:5<497::AID-SIM45>3.0.CO;2-#"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "A context-sensitive approach to anonymizing spatial surveillance data: impact on outbreak detection",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Grannis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Overhage",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "13",
+            "issn": "",
+            "pages": "160-5",
+            "other_ids": {
+                "DOI": [
+                    "10.1197/jamia.M1920"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Using software agents to preserve individual health data confidentiality in micro-scale geographical analyses",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Padget",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rushton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Biomed Inform",
+            "volume": "39",
+            "issn": "",
+            "pages": "160-70",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbi.2005.06.003"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Revealing the spatial distribution of a disease while preserving privacy",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Wieland",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "105",
+            "issn": "",
+            "pages": "17608-13",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0801021105"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Privacy protection versus cluster detection in spatial epidemiology",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Grannis",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Am J Public Health",
+            "volume": "96",
+            "issn": "",
+            "pages": "2002-8",
+            "other_ids": {
+                "DOI": [
+                    "10.2105/AJPH.2005.069526"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Effect of spatial resolution on cluster detection: a simulation study",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ozonoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Jeffery",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Manjourides",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pagano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Int J Health Geogr",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-6-52"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Snow",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "On the Mode of Communication of Cholera",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "The devil is in the detail-A case in Finland on the privacy of medical records puts two major NHS systems in legal peril (Smart Healthcare \u2013 1 April 2009)",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Protecting Personal Privacy in Using Geographic Information Systems",
+            "authors": [
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Onsrud",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Photogrammetric Engineering and Remote Sensing",
+            "volume": "60",
+            "issn": "",
+            "pages": "1083-1095",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Google Latitude",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Microsoft Vine",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Yahoo! Fire Eagle",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Privacy in Location-Based Services: State-of-the-Art and Research Directions",
+            "authors": [
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Mokbel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proceedings of the 8th International Conference on Mobile Data Management (MDM'07): 7\u201311 May 2007; Mannheim, Germany",
+            "volume": "",
+            "issn": "",
+            "pages": "228-228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Chapter 49: Principles and techniques of interactive Web cartography and Internet GIS",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Manual of Geographic Information Systems",
+            "volume": "",
+            "issn": "",
+            "pages": "935-974",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Microsoft Windows BitLocker Drive Encryption",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Securing Sensitive Information with Identity and Access Assurance (RSA/Courion White Paper)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "IronKey: Secure USB Flash Drive with Internet Protection Services",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Integral Crypto Drive",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dowty",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Inglesant",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Heath",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sasse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Database State",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "SDelete",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "An Evaluation of Personal Health Information Remnants in Second-Hand Personal Computer Disk Drives",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "El Emam",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Neri",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jonker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Med Internet Res",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.2196/jmir.9.3.e24"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "The perceived impact of location privacy: a web-based survey of public health perspectives and requirements in the UK and Canada",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "AbdelMalik",
+                    "suffix": ""
+                },
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Public Health",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2458-8-156"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "GeoPKDD \u2013 Geographic Privacy-Aware Knowledge Discovery and Delivery",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "First Interdisciplinary Workshop on Mobility, Data Mining and Privacy: Preserving anonymity in geographically referenced data: 14 February 2008; Rome, Italy",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "HCLS Patient Data Security and Privacy",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "URISA \u2013 The Association for GIS Professionals",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Evaluating Predictors of Geographic Area Population Size Cut-offs to Manage Re-identification Risk",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "El Emam",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "AbdelMalik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "16",
+            "issn": "",
+            "pages": "256-266",
+            "other_ids": {
+                "DOI": [
+                    "10.1197/jamia.M2902"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Putting People on the Map: Protecting Confidentiality with Linked Social-Spatial Data",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "No place to hide\u2013reverse identification of patients from published maps",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Brownstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "N Engl J Med",
+            "volume": "355",
+            "issn": "",
+            "pages": "1741-2",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMc061891"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Secondary Uses Service (SUS) \u2013 NHS Connecting for Health",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Google Street View",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Web GIS in practice VI: a demo playlist of geo-mashups for public health neogeographers",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Scotch",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Burden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Int J Health Geogr",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-7-38"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Concerns about privacy in research may be exaggerated",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tondel",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Axelson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "BMJ",
+            "volume": "319",
+            "issn": "",
+            "pages": "706-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Medical data secondary use issues (Privacy Value Networks \u2013 10 June 2009)",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Malheiros",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Pension details of 109,000 stolen (BBC News \u2013 28 May 2009)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "ElcomSoft Distributed Password Recovery Software: High-performance distributed password recovery with NVIDIA GPU acceleration",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Descriptive review of geographic mapping of severe acute respiratory syndrome (SARS) on the Internet",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Int J Health Geogr",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-3-2"
+                ]
+            }
+        }
+    }
+}

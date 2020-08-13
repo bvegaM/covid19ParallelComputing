@@ -1,0 +1,1602 @@
+{
+    "paper_id": "PMC2535778",
+    "metadata": {
+        "title": "Phi29 polymerase based random amplification of viral RNA as an alternative to random RT-PCR",
+        "authors": [
+            {
+                "first": "Nicolas",
+                "middle": [],
+                "last": "Berthet",
+                "suffix": "",
+                "email": "nberthet@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Anita",
+                "middle": [
+                    "K"
+                ],
+                "last": "Reinhardt",
+                "suffix": "",
+                "email": "reinhard@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "India",
+                "middle": [],
+                "last": "Leclercq",
+                "suffix": "",
+                "email": "ileclerc@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Sven",
+                "middle": [],
+                "last": "van Ooyen",
+                "suffix": "",
+                "email": "Sven.vanOoyen@qiagen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Christophe",
+                "middle": [],
+                "last": "Bat\u00e9jat",
+                "suffix": "",
+                "email": "cbatejat@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Philip",
+                "middle": [],
+                "last": "Dickinson",
+                "suffix": "",
+                "email": "Philip_Dickinson@affymetrix.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Rayna",
+                "middle": [],
+                "last": "Stamboliyska",
+                "suffix": "",
+                "email": "raynas@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Iain",
+                "middle": [
+                    "G"
+                ],
+                "last": "Old",
+                "suffix": "",
+                "email": "iain.old@epfl.ch",
+                "affiliation": {}
+            },
+            {
+                "first": "Katherine",
+                "middle": [
+                    "A"
+                ],
+                "last": "Kong",
+                "suffix": "",
+                "email": "Katie_Kong@affymetrix.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Laurent",
+                "middle": [],
+                "last": "Dacheux",
+                "suffix": "",
+                "email": "ldacheux@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Herv\u00e9",
+                "middle": [],
+                "last": "Bourhy",
+                "suffix": "",
+                "email": "hbourhy@pasteur.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Giulia",
+                "middle": [
+                    "C"
+                ],
+                "last": "Kennedy",
+                "suffix": "",
+                "email": "Giulia_Kennedy@affymetrix.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Christian",
+                "middle": [],
+                "last": "Korfhage",
+                "suffix": "",
+                "email": "Christian.Korfhage@qiagen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Stewart",
+                "middle": [
+                    "T"
+                ],
+                "last": "Cole",
+                "suffix": "",
+                "email": "stewart.cole@epfl.ch",
+                "affiliation": {}
+            },
+            {
+                "first": "Jean-Claude",
+                "middle": [],
+                "last": "Manuguerra",
+                "suffix": "",
+                "email": "jmanugu@pasteur.fr",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Parallelization of nucleic acid sequence detection requires a sufficient quantity (in the microgram range) of DNA for subsequent hybridization-based methods such as those using DNA microarrays or resequencing arrays. For RNA virus detection, target DNA represents the amplified product of reverse transcription (RT). RT and DNA amplification can be achieved either by using primers specific for relevant viruses or by random priming. Although random priming can amplify an unknown target, it often yields lower amounts of DNA than specific primers, which can reduce the overall sensitivity of the process. Multiple Displacement Amplification (MDA) using bacteriophage phi29 polymerase with random primers allows DNA synthesis in amounts compatible with the downstream use of DNA microarrays [1]. Moreover, MDA has the potential to amplify the whole DNA genome (whole genome amplification, WGA) of target pathogens in the presence of contaminating DNA. WGA technology has become a useful upfront amplification method for many biomedical applications, such as microsatellite analysis, single nucleotide polymorphism (SNP) detection and comparative genomic hybridization (CGH) to microarrays. We recently showed that WGA can now be used for DNA viral pathogen detection from clinical samples using resequencing microarrays [2]. Indeed, resequencing technology using microarrays is very promising for bacterial and viral pathogen detection and identification, as well as for the determination of their pathogenicity profile [2-5]. However, MDA cannot be used to amplify RNA nor small cDNA obtained from RNA genomes after reverse transcription or small native DNA fragments such as those generated by RT from segmented riboviral genomes. Therefore, MDA has not been previously used with riboviruses. A novel modified MDA approach by Qiagen designated QuantiTect Whole Transcriptome has been developed for Transcriptome studies. We changed the process by using a different reverse transcription strategy containing random primers instead of a mixture of random and oligo-dT primers and a different reverse transcriptase. In this WTA process, after reverse transcription of RNA utilizing random primers, all cDNAs are being ligated together into longer linear chains allowing concatenated cDNAs from small RNA fragments to be used as templates for MDA. We applied WTA to viral RNA and demonstrated that WTA is applicable for cDNA amplification of a whole range of RNA virus genomes, prior to DNA hybridization based techniques. About half a dozen approaches have been developed for random whole genome amplification upstream of SNP detection methods (e.g. Omniplex\u00ae technology [6], DOP-PCR [7,8], LA-PCR [9,10], PCR with universal linker [11] and T7 based linear amplification for genomic DNA [12]). Among them, WGA and Random Amplification (RA) based on random RT and random PCR are the most widespread techniques for the detection and identification using DNA microarrays. In this study, we chose to compare WTA and RA. The final DNA yields generated by RA and by WTA, in the absence or presence of prokaryotic DNA, were evaluated by quantitative PCR (qPCR). The accuracy of identification by high-density microarrays was also compared between RA and WTA processes.",
+            "cite_spans": [
+                {
+                    "start": 792,
+                    "end": 793,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1321,
+                    "end": 1322,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1521,
+                    "end": 1522,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1523,
+                    "end": 1524,
+                    "mention": "5",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 2671,
+                    "end": 2672,
+                    "mention": "6",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 2684,
+                    "end": 2685,
+                    "mention": "7",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 2686,
+                    "end": 2687,
+                    "mention": "8",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 2698,
+                    "end": 2699,
+                    "mention": "9",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 2700,
+                    "end": 2702,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 2732,
+                    "end": 2734,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 2787,
+                    "end": 2789,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Total RNA from brain biopsies (5\u201310 mg) were obtained using 1 ml of TRI Reagent (Molecular Research Center) according to the manufacturer's instructions. Other RNA extraction was performed using QIAamp Viral RNA Mini Kit (Qiagen) according to the manufacturer's instructions.",
+            "cite_spans": [],
+            "section": "RNA extraction ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The complementary strand (cDNA) of extracted viral RNA was performed in a 200 \u03bcl tube. The primer used for RA was described by Wang et al [13] whereas cDNA synthesis for WTA was performed with random hexamer primers at the same concentration except for the influenza B virus experiment where the final concentration was diluted 10-fold. A mix with 8 \u03bcl of RNA, 1 \u03bcl of primer (50 \u03bcM) and 1 \u03bcl of dNTPs (10 mM) was incubated at 75\u00b0C for 5 min, cooled on ice for 5 min. Then, 10 \u03bcl of 2 \u00d7 enzyme mix were added. This enzyme mix was composed of 2 \u03bcl of 10 \u00d7 RT Buffer for SSIII (Invitrogen Inc.), 4 \u03bcl of 25 mM MgCl2, 2 \u03bcl of 0.1 M DTT, 1 \u03bcl of 40 U/\u03bcl RNaseOUT (Invitrogen Inc.), 1 \u03bcl of Reverse Transcriptase SuperScript III (Invitrogen Inc.) and 0.5 \u03bcl of DMSO (Sigma-Aldrich). The final mix was submitted to the following steps: 25\u00b0C for 10 min, 45\u00b0C for 90 min and 95\u00b0C for 5 min. All cDNAs were stored at -20\u00b0C or immediately used.",
+            "cite_spans": [
+                {
+                    "start": 139,
+                    "end": 141,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Synthesis of viral RNA complementary strand ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After the synthesis of the complementary strand, a second-strand DNA synthesis was carried out with the addition of 10 \u03bcl of Klenow mix, consisting of 3 \u03bcl of 10 \u00d7 Klenow Buffer, 2 \u03bcl of dNTP (0.5 mM each) and 1 \u03bcl of Klenow DNA polymerase I (Biolabs). The final 30 \u03bcl mix was incubated at 20\u00b0C for 20 min and at 95\u00b0C for 5 min. Subsequently, 15 \u03bcl of the resulting double stranded DNA was used as template for a 40 cycle PCR with Primer E as previously described by Wang et al [13] except the addition of 0.5 \u03bcl of DMSO and the use of TaKaRa DNA polymerase (5 U/\u03bcl) instead of Taq DNA polymerase.",
+            "cite_spans": [
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Viral RNA amplification based on the Random Amplification method (RA) ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Viral RNA amplification was performed as described in the protocol of the QuantiTect Whole Transcriptome Kit (Qiagen) except for the cDNA synthesis step. It was replaced by the reverse transcription protocol as described above. The two following steps were performed according to the manufacturer's instructions (Qiagen).",
+            "cite_spans": [],
+            "section": "Viral RNA amplification based on \"Whole Transcriptome Amplification\" kit (WTA) ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The amplification of viral RNA and bacterial DNA as mentioned above was based on the WTA amplification process as described above except that, after the ligation step, a nucleic acid denaturation was performed by adding 2 \u03bcl of denaturating solution available in Repli-g MIDI kit (Qiagen) and incubated for 3 min at room temperature. After that, the final amplification step was performed according to the manufacturer's instructions (Qiagen).",
+            "cite_spans": [],
+            "section": "Co-amplification of RNA and DNA pathogens ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To identify Rift Valley Fever Virus (RVFV), RT-qPCR was performed with the primers published by Drosten et al. [14] but using LC RNA Amplification kit SYBRGreen I (Roche Diagnostic) and different RT and PCR cycling conditions. The detection and quantification involved the following steps: reverse transcription at 55\u00b0C for 10 min, initial denaturation at 95\u00b0C for 30 s, and 45 cycles with 95\u00b0C for 5 s and 72\u00b0C for 10 s. Fluorescence was read at the combined annealing-extension step at 72\u00b0C.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Identification and quantification by RT-qPCR for Rift Valley Fever Virus ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The LightCycler instrument (Roche Diagnostics) was used to amplify a 197 bp region of the S. aureus nucA gene with LC FastStart DNA MasterPLUS SYBRGreen kit. PCR was performed in a total volume of 20 \u03bcl containing 4 \u03bcl of Master mixture including Taq polymerase, reaction buffer, and a deoxynucleoside triphosphate mixture; 10.6 \u03bcl of pure water and 0.5 \u03bcM each of forward (5' GACTATTATTGGTTGATACACCTG 3') and reverse (5' GCCTTGACGAACTAAAGCTTC 3') primers. After distribution of 15 \u03bcl of the master mixture, 5 \u03bcl of diluted template DNA solution was added to each glass capillary (Roche Diagnostics), centrifuged, and placed in the LightCycler sample carousel. LightCycler amplification involved a first denaturation at 95\u00b0C for 10 min, followed by amplification of the target DNA for 50 cycles (95\u00b0C for 10 s, 53\u00b0C for 20 s, and 72\u00b0C for 10 s) with a temperature transition rate of 20\u00b0C/s. The fragment amplification step is followed by a melting curve analysis to an increase from 50\u00b0C to 95\u00b0C at a rate of 0.1\u00b0C/s.",
+            "cite_spans": [],
+            "section": "Identification and quantification by qPCR for Staphylococcus aureus ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After purification, the DNA obtained was quantified using \"Qubit Quantitation Platform\" either with the Quant-iT dsDNA HS Assay/Quant-iT dsDNA BR Assay kits for DNA or the Quant-iT RNA Assay kit for RNA as recommended by the manufacturer (Invitrogen\u00ae).",
+            "cite_spans": [],
+            "section": "Quantification of amplified DNA ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "DNA amounts obtained after amplification were quantified by Quantit BR and Quantit HS (Invitrogen Inc.), for WTA and RA, respectively. The same quantity of DNA was fragmented (GeneChip\u00ae Resequencing Assay Kit, Affymetrix Inc.) and labelled according to the GeneChip\u00ae Mapping 100 K Assay Manual (Affymetrix Inc.). Microarray hybridization was conducted at 45\u00b0C and array processing was carried out according to the protocol recommended by the manufacturer (Affymetrix Inc.) as previously described [2]. All experiments described in these studies were carried out using independent duplicates.",
+            "cite_spans": [
+                {
+                    "start": 498,
+                    "end": 499,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Hybridization to microarrays ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The raw image file (.DAT) obtained after scanning the microarray was analyzed using the Affymetrix GeneChip Operating Software (GCOS) to produce a simplified file format (.CEL) with intensities assigned to each of the corresponding probe positions. Next, the Affymetrix GeneChip Sequence Analysis Software (GSEQ), which contains a derivative of the ABACUS algorithm [15], uses the probe intensities to call the bases along genetic fragments included on the microarray, outputting the result in a FASTA file. The analysis parameters were optimized in order to obtain the best call rate value while minimising the rate of resequencing error. The call rate for a fragment is simply the ratio of called bases to the total number of bases expressed as a percentage. More details concerning data analysis are described in Berthet et al [2].",
+            "cite_spans": [
+                {
+                    "start": 367,
+                    "end": 369,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 831,
+                    "end": 832,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Data Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Phi29 polymerase requires DNA templates larger than 2 kb, which exceeds the size of the smallest RNA strands of segmented RNA viruses (e.g. influenza viruses). To address this shortcoming, a target cDNA ligation step is performed prior to MDA amplification resulting in the WTA protocol. In this work, WTA was compared to a RA protocol as described in the Material and Methods (M&M). The DNA yields obtained using WTA and RA methods were compared for three different viral RNA genomes. We tested (i) a viral genome fragmented into small segments (influenza B virus: 14 kb and 8 segments), (ii) a fragmented middle size genome (Rift Valley Fever Virus (RVFV): 12 kb and 3 segments) and (iii) a large viral genome (Severe Acute Respiratory Syndrome CoronaVirus (SARS-CoV): 29 kb and 1 segment), which are representative of the extreme diversity in RNA viral genome size. WTA DNA yields were 1.21 \u00b1 0.06 \u03bcg/\u03bcl, 0.98 \u00b1 0.27 \u03bcg/\u03bcl and 1.42 \u00b1 0.08 \u03bcg/\u03bcl, respectively. These yields greatly exceed those observed with RA (0.02 \u00b1 0.01 \u03bcg/\u03bcl, 0.06 \u00b1 0.02 \u03bcg/\u03bcl and 0.012 \u00b1 0.004 \u03bcg/\u03bcl, respectively). It is noteworthy that, in the absence of a DNA template, water controls amplified by WTA yield as much as 0.9 \u03bcg/\u03bcl of non-specific DNA. This spurious amplification is probably due to priming artefacts or E. coli residual DNA from the production process of one of the kit enzymes. However, in the presence of a DNA template, such as S. aureus DNA, the proportion of non-specific DNA dramatically decreases to undetectable levels using previously described DNA microarray techniques [2].",
+            "cite_spans": [
+                {
+                    "start": 1575,
+                    "end": 1576,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "DNA yields and amplification factors for WTA and RA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "High amplification factors were obtained starting WTA with various viral genome equivalents. When starting WTA with 15 to 4 \u00d7 107copies of RVFV RNA genome copies, the WTA amplification factor ranged from 109 to 106 whereas the RA factor varied from 103 to 101 respectively (Figure 1). In comparison with RA, the amplification of viral RNA was extremely high irrespective of the amount of RNA genome input. The sensitivity of the detection and identification protocol, based on resequencing microarray technology, was determined by measuring the lowest number of genome copies in the target applied to the microarray. Figure 2 shows the call rate for the RNA polymerase gene of RVFV expressed as a function of the number of genome copies. The call rate is the percentage of bases called by the resequencing algorithm (see M&M). Microarrays required a minimum of ~108 viral genome copies for gene detection and identification confirmed by BLAST analysis. The high amplification ratio obtained with WTA allowed the detection of RVFV irrespective of the copy number of input viral RNA into the amplification process. These sensitivity levels are compatible with the viral load found in some clinical samples. In sharp contrast, the low amplification ratio observed with RA is irrelevant in clinical situations as it requires a very high viral load for detection by microarrays, i.e. to obtain the required ~108 copies of target sequence for hybridization. To evaluate the potential of WTA in more complex samples where viral RNAs are mixed with cellular RNAs and DNAs, human (n = 2), mouse (n = 10) and dog (n = 2) rabies-infected brain extracts were tested. After hybridization of WTA amplified material on the DNA chip described previously [2], all samples were found positive for the presence of rabies virus with a minimum call rate of 40%.",
+            "cite_spans": [
+                {
+                    "start": 1739,
+                    "end": 1740,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "DNA yields and amplification factors for WTA and RA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 281,
+                    "end": 282,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 624,
+                    "end": 625,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In order to assess the quality of amplified cDNA, hybridization to high density DNA resequencing arrays was performed and the call rate values of the sequences determined through this analysis were compared. To this aim, the viral amplification using WTA was performed with seven viruses representative of the size diversity of viral genomic RNAs, including positive and negative strand genomes as well as non-segmented and segmented genomes (Table 1). These data confirmed that the WTA method amplified viral cDNA from a cell culture supernatant and identified the virus after hybridization. In all cases, virus identification was accomplished using BLAST analysis of DNA sequence determined using the resequencing chip.",
+            "cite_spans": [],
+            "section": "Hybridization of viral genomes of various lengths with resequencing microarray ::: Results",
+            "ref_spans": [
+                {
+                    "start": 449,
+                    "end": 450,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In a previous study, we detected and identified DNA from monkeypox virus and Staphylococcus aureus in a skin lesion collected from a patient [2]. Similarly, we wanted to check whether a co-infection between a RNA virus and S. aureus would lead to such discriminating results, bearing in mind that the ratio between the amount of genetic material of RNA virus and bacteria is even higher. We therefore evaluated the influence of RNA and DNA of diverse origins on amplification results. Simultaneous amplification of viral RNA and bacterial DNA was performed using an optimized WTA protocol as described in the M&M. As shown in Table 2, S. aureus DNA amplification was affected by neither the amount of DNA nor the presence of viral cDNA. Similarly, cDNA from viral RNA was amplified, whatever the quantity of viral genome tested. However, the amplification ratio was decreased in the presence of large quantity of S. aureus DNA. Considering the sensitivity threshold for the identification of RVFV (Figure 2), this virus would be identified after hybridization on the DNA chip with a high call rate, i.e. greater than 80%, in all cases shown in Table 2, except for 1.45 \u00d7 104 copies of viral RNA and 1.29 \u00d7 106 copies of S. aureus DNA. Similar results were obtained after the co-amplification of the RVFV cDNA and the DNA of a cowpox virus (data not shown).",
+            "cite_spans": [
+                {
+                    "start": 142,
+                    "end": 143,
+                    "mention": "2",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Simultaneous amplification of viral RNA and bacterial DNA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1005,
+                    "end": 1006,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 632,
+                    "end": 633,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1150,
+                    "end": 1151,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "WTA allowed amplification of a whole range of RNA viral genomes with high sensitivity thereby providing an accurate and highly effective alternative to other random amplification methods. In this study, we changed the WTA method (QuantiTect Whole-Transcriptome Kit, Qiagen) by using a different reverse transcription step and demonstrated unbiased identification of many different viruses using WTA and oligonucleotide resequencing microarray technology. Two viruses belonging to phylogenetically distinct genera (Vesiculovirus and Lyssavirus) were identified with a call rate of 96.8% and 73.6% respectively. However, amplification output may vary within the same viral genus as illustrated with yellow fever and dengue viruses (Flavivirus). The lower call rate obtained for dengue 2 virus might be due to secondary structures in the target sequence, as suggested by the higher call rate obtained with yellow fever virus whose target sequence lacked such structures. These results demonstrate the effect of selected sequences on the final output. As mentioned for the analysis of human, mouse and dog brain samples for the detection of rabies virus, the presence of eukaryotic nucleic acids did not prevent either the amplification using WTA or the downstream identification of the pathogen on DNA microarrays. WTA not only amplified a huge diversity of viral RNAs but also bacterial RNAs such as those transcribed from ribosomal, house-keeping and antibiotic resistance genes, extracted from either a pure bacterial culture or a clinical sample (data not shown). The simultaneous amplification of cDNA from bacterial and viral RNA would be useful for the characterization of many different types of pathogens that cause similar symptoms, such as respiratory syndromes, providing considerable potential for medical use. Samples containing 15 genome copies of viral RNA per target per reaction could be amplified with WTA, to a yield compatible with most of the detection methods used in diagnosis. WTA could thus be used upstream of many pathogen identification protocols for clinical samples (e.g. DNA micro-arrays, liquid DNA arrays, Southern blots, modified qPCR using exonuclease or hybridization probes). DNA polymerization catalyzed by phi29 DNA polymerase is a highly accurate process. Direct sequencing experiments sampling 500 000 bp determined its error rate to be 9.5 \u00d7 10-6 [16], making it one of the most accurate polymerases available.",
+            "cite_spans": [
+                {
+                    "start": 2388,
+                    "end": 2390,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "WTA thus provides an isothermal alternative to random RT-PCR, and could become an invaluable method in diagnostic applications, particularly when used in conjunction with oligonucleotide microarrays.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "DOP-PCR: Degenerate Oligonucleotide Primer \u2013 PCR; MDA: Multiple Displacement Amplification; LA-PCR: linker-adapter-mediated PCR; RA: Random Amplification; RVFV: Rift Valley Fever Virus; SA: Staphylococcus aureus; SNP: Single Nucleotide Polymorphism; WGA: Whole Genome Amplification; WTA: Whole Transcriptome Amplification.",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "NB, AKR, CB, RS and IL carried out molecular studies. NB, IL and JCM participated in experimental design of the study. NB, IL and JCM participated in drafting the manuscript. NB, AKR, CB, PD, IGO, STC, GK, HB, LD and JCM participated in data analysis. SS and CK participated in the development of WTA kit. All authors added corrections and suggestions to the manuscript. JCM conceived and coordinated the study. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Call rates for seven different viral RNAs using WTA method.\n1. Severe Acute Respiratory Syndrome Coronavirus 2. Vesicular Stomatitis Virus 3. Rabies virus: Challenge Virus Strain S+: Positive RNA genome; S-: Negative RNA genome; S+/-: Negative or ambisense RNA genome * Genome segment partially tiled on this chip",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Co-amplification results of RVFV RNA and S. aureus DNA. \nAll the quantifications, both before and after amplification, were determined by qPCR as described in M&M. SA: S.aureus",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Comparison of amplification factor between Whole Transcriptome Amplification (WTA) and Random Amplification (RA) protocols. The number of RVFV copies after amplification is expressed as a function of the amount of input DNA (in number of genome copies). Amounts of RVFV RNA before and after amplification were estimated by qPCR of RVFV as described in M&M.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Mass titration curves with RVFV. The call rates of the RNA polymerase gene from RVFV are expressed as a function of the amount of input DNA (in number of genome copies).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Nucleic acid amplification strategies for DNA microarray-based pathogen detection",
+            "authors": [
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Vora",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Meador",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Andreadis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Appl Environ Microbiol",
+            "volume": "70",
+            "issn": "",
+            "pages": "3047-3054",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.70.5.3047-3054.2004"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Whole genome amplification from a single cell: implications for genetic analysis",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Schmitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hubert",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Navidi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Arnheim",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "89",
+            "issn": "",
+            "pages": "5847-5851",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.89.13.5847"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Comparative genomic hybridization, loss of heterozygosity, and DNA sequence analysis of single cells",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Schmidt-Kittler",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Schardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pantel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Speicher",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Riethmuller",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "96",
+            "issn": "",
+            "pages": "4494-4499",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.8.4494"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Development and validation of a T7 based linear amplification for genomic DNA",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Bernstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "BMC Genomics",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-4-19"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Microarray-based detection and genotyping of viral pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Coscoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zylberberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Avila",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Boushey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "15687-15692",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.242579699"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Rapid detection and quantification of RNA of Ebola and Marburg viruses, Lassa virus, Crimean-Congo hemorrhagic fever virus, Rift Valley fever virus, dengue virus, and yellow fever virus by real-time reverse transcription-PCR",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gottig",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schilling",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Asper",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Panning",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Schmitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gunther",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "2323-2330",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.40.7.2323-2330.2002"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "High-throughput variation detection and genotyping using microarrays",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Cutler",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Zwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Carrasquillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Yohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Tobin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kashuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Mathews",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Shah",
+                    "suffix": ""
+                },
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Eichler",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Warrington",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Chakravarti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "1913-1925",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Genome coverage and sequence fidelity of phi29 polymerase-based multiple strand displacement whole genome amplification",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Paez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Beroukhim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Richter",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gabriel",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Herman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sasaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Altshuler",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Meyerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Sellers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gnh069"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Massively parallel pathogen identification using high-density microarrays",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Berthet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Dickinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Filliol",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [
+                        ""
+                    ],
+                    "last": "Reinhardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Batejat",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Vallaeys",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [
+                        ""
+                    ],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Davies",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Turpaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Heym",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Coralie",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Dacheux",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Burgui\u00e8re",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bourhy",
+                    "suffix": ""
+                },
+                {
+                    "first": "IG",
+                    "middle": [],
+                    "last": "Old",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Manuguerra",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Kennedy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Microbial Biotechnology",
+            "volume": "1(1)",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Using a resequencing microarray as a multiple respiratory pathogen detection assay",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Blaney",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Malanoski",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Ligler",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Schnur",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Metzgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Clin Microbiol",
+            "volume": "45",
+            "issn": "",
+            "pages": "443-452",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.01870-06"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Use of oligonucleotide microarrays for rapid detection and serotyping of acute respiratory disease-associated adenoviruses",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Vora",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Walter",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Metzgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tibbetts",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Clin Microbiol",
+            "volume": "42",
+            "issn": "",
+            "pages": "3232-3239",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.7.3232-3239.2004"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Broad-spectrum respiratory tract pathogen identification using resequencing DNA microarrays",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Vora",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Thornton",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Schnur",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Blaney",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Ligler",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Malanoski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Santiago",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Walter",
+                    "suffix": ""
+                },
+                {
+                    "first": "BK",
+                    "middle": [],
+                    "last": "Agan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Metzgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Seto",
+                    "suffix": ""
+                },
+                {
+                    "first": "LT",
+                    "middle": [],
+                    "last": "Daum",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kruzelock",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Rowley",
+                    "suffix": ""
+                },
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Hanson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tibbetts",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Res",
+            "volume": "16",
+            "issn": "",
+            "pages": "527-535",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.4337206"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Two methods of whole-genome amplification enable accurate genotyping across a 2320-SNP linkage panel",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Barker",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AF",
+                    "middle": [],
+                    "last": "Faruqi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Giannola",
+                    "suffix": ""
+                },
+                {
+                    "first": "OR",
+                    "middle": [],
+                    "last": "Irsula",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Lasken",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Latterich",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Makarov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Oliphant",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Pinter",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Sleptsova",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ziehler",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genome Res",
+            "volume": "14",
+            "issn": "",
+            "pages": "901-907",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.1949704"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Genome complexity reduction for SNP genotyping analysis",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Jordan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Charest",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Dowd",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Blumenstiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Yeh Rf",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Osman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Housman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Landers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "2942-2947",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.261710699"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Degenerate oligonucleotide-primed PCR: general amplification of target DNA by a single degenerate primer",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Telenius",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Carter",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Bebb",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nordenskjold",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Ponder",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tunnacliffe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Genomics",
+            "volume": "13",
+            "issn": "",
+            "pages": "718-725",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0888-7543(92)90147-K"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Whole genome amplification for CGH analysis: Linker-adapter PCR as the method of choice for difficult and limited samples",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pirker",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Raidl",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Steiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Elbling",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Holzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Spiegl-Kreinecker",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Aubele",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Grasl-Kraupp",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Marosi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Micksche",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Cytometry A",
+            "volume": "61",
+            "issn": "",
+            "pages": "26-34",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/cyto.a.20060"
+                ]
+            }
+        }
+    }
+}

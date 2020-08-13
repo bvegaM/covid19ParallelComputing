@@ -1,0 +1,1039 @@
+{
+    "paper_id": "PMC1764026",
+    "metadata": {
+        "title": "The effect of travel restrictions on the spread of a moderately contagious disease",
+        "authors": [
+            {
+                "first": "Martin",
+                "middle": [],
+                "last": "Camitz",
+                "suffix": "",
+                "email": "martin.camitz@smi.ki.se",
+                "affiliation": {}
+            },
+            {
+                "first": "Fredrik",
+                "middle": [],
+                "last": "Liljeros",
+                "suffix": "",
+                "email": "fredrik.liljeros@sociology.su.se",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Knowledge of the speed at which a contagious disease travels between geographical regions is vital for making decisions about the most effective intervention strategies. The actual routes a disease will take are strongly determined by how individuals travel within and between regions [1-4]. As was shown during the outbreak of severe acute respiratory syndrome (SARS) [5], current travel patterns enable contagious diseases to spread to far corners of the globe at alarming rates. This demonstrates the need for a new type of model that incorporates travel networks.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 287,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 288,
+                    "end": 289,
+                    "mention": "4",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 370,
+                    "end": 371,
+                    "mention": "5",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Several authors have responded to the call, resulting in now-classic papers. Rvachev and Longini [6], with their followers Grais et al [7], were among the first to publish such studies, using deterministic models. Hufnagel et al [8] have demonstrated how a simple stochastic model in conjunction with data on aviation traffic could be used to simulate the global spread of the SARS epidemic. Using a stochastic transmission model on both a city level and globally, with each city interconnected by the international aviation network, they produced results in surprising agreement with World Health Organization (WHO) reports of the actual epidemic. With some exceptions, most prominently Japan, all infected countries in the simulation were also present in the WHO reports. The orders of magnitude were also closely matched.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 99,
+                    "mention": "6",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 136,
+                    "end": 137,
+                    "mention": "7",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 230,
+                    "end": 231,
+                    "mention": "8",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Our study applied a version of the Hufnagel model to Sweden in order to predict the effect that travel restrictions might have on the geographical spread of an outbreak. Instead of using only the aviation network, which connects only some 30 towns in Sweden, we used survey data on all intermunicipal travel, including all forms of travel.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Sweden is, by European standards, a large country, with a small population. Just over 9 million people share 450000 square kilometers. The population is, however, largely urbanized, and in that respect similar to other industrialized nations with large areas.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Eubank et al [9] estimated a travel network at community level using census data. Our data directly cover traveling over the whole nation on all scales, although we have kept only the regional data. It is sufficiently extensive that simulation or smoothing for estimating a travel network could be avoided and thus can, in some respects, be regarded as \"real\". Using such data in a simulation at this geographic level, is unique.",
+            "cite_spans": [
+                {
+                    "start": 14,
+                    "end": 15,
+                    "mention": "9",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The choice of a stochastic modeling approach [10] was based on the fact that it mimics the highly random initial phase of an epidemic better than does the traditional deterministic approach[11,12]. We first present the survey data used to estimate travel intensities between different municipalities in Sweden. We then introduce the simulation model for simulating the spread of the diseases and study the effect of travel restrictions. This introduction is to some extents a recapitulation of Hufnagel's model. Following this, we present the results of the simulations. We conclude our study with a discussion of the validity of the model and possible conclusions for future policy interventions.",
+            "cite_spans": [
+                {
+                    "start": 46,
+                    "end": 48,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 193,
+                    "end": 195,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "For this study, we used data from a random survey carried out by Statistics Sweden from 1999 to 2001, inclusive [13]. A total of 17000 individuals took part in the survey, constituting 71.9% of the selection. In all, 34816 distinct intermunicipal trips were reported. An intermunicipal journey was defined as a trip between two points where the individual lives, works, or conducts an errand. In other words, we treated a journey between home and work as several trips if the traveler made stops on the way for errands, provided that a municipal border was crossed between each stop. The data were weighted to correspond to 1 day and to the entire population for ages 6 to 84 years. For a more detailed description of the travel data, see Appendix A in the supplementary material.",
+            "cite_spans": [
+                {
+                    "start": 113,
+                    "end": 115,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As it turned out, roughly 1% of the data was significantly erroneous and was consequently removed*. From the remaining set, we estimated a travel intensity matrix with each element corresponding to the one-way travel intensity between two municipalities. The number of non-zero elements was 11611 (to be compared with the size of the matrix: 83521). The matrix elements stood in direct correspondence with the underlying data, weighted for time and population. Even though the matrix gives a good picture of the traveling pattern in Sweden, we must treat any travel intensity between two specific communities with care. This is especially true for small communities with only a single or very few journeys made between them.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A total of nine scenarios, with 1000 realizations each, was simulated to study the effects of three levels of travel restrictions as a control measure, for three different levels of the global intercommunity infectiousness parameter, \u03b3, which was used to calibrate the model in the study of Hufnagel et al. Sixty days was chosen as the simulation period, as this gives sufficient time for a possible extinction to occur and for all stochasticity to play out its part in all but the smallest and most distant municipalities. Each scenario started with a single infectious individual in Stockholm, and treated the country as isolated from influx of disease. The traveling restrictions were divided into three levels. In the first level, we used the complete intensity matrix. In the following two, we removed data corresponding to journeys >50 km and journeys >20 km, respectively. The simulations were designated SIM, SIM50, and SIM20, respectively. In Figure 1, the datasets are displayed as geographical plots.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 959,
+                    "end": 960,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We also considered the case if the travel restrictions were not obeyed wholly by the public. Perhaps 5% might not heed the restrictions, resulting in a small but non-zero intensity for trips longer than the set restrictions. Full 1000-run simulations were made at varying levels of distance restrictions and compliance, resulting in a mesh surface of the incidence.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We used a simplified version of the model suggested by Hufnagel et al [8], and thus the following is as much a description of Hufnagel's model as our own. The individuals in both models can be in four different states:",
+            "cite_spans": [
+                {
+                    "start": 71,
+                    "end": 72,
+                    "mention": "8",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u25aa S: susceptible",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u25aa L: latent, meaning infected but not infectious",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u25aa I: infectious",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u25aa R: recovered and/or immune.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The rate at which individuals move from one category to the next is governed by the intensity parameters: \u03b1 = 0.55\u2020; \u03b2 = 0.21, which is the inverse infectious time and \u03bd = 0.19, the inverse latency time[14,15]. Individuals become infected at a rate proportional to \u03b1 and the number of infected (force of infection). They subsequently become infectious at rate \u03b2, contributing to the force of infection, and recover at rate \u03bd. Thus far, this is a description of a regular random-mixing epidemic model. We now assume a traveling component contributing to the force of infection, a term for each of the connected municipalities proportional to the number of infectious there.",
+            "cite_spans": [
+                {
+                    "start": 203,
+                    "end": 205,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 206,
+                    "end": 208,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As the process is assumed to be Markovian, as in Hufnagel's model, the time between two events, \u0394t, is random, taken from an exponential distribution,",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u0394t \u2208 Exp(1/Q)     (1)",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where Q is the total intensity, the sum of all independent transmission rates:",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "QiL=\u03b1IiSiNi+\u2211j\u2260i\u03b3j,iIjSiNi,QiI=\u03bdLi,QiR=\u03b2Ii.Q=\u2211iQiL+\u2211iQiI+\u2211iQiR.     (2)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeabbaaaaeaacqWGrbqudaqhaaWcbaGaemyAaKgabaGaemitaWeaaOGaeyypa0dcciGae8xSdeMaemysaK0aaSbaaSqaaiabdMgaPbqabaGcdaWcaaqaaiabdofatnaaBaaaleaacqWGPbqAaeqaaaGcbaGaemOta40aaSbaaSqaaiabdMgaPbqabaaaaOGaey4kaSYaaabuaeaacqWFZoWzdaWgaaWcbaGaemOAaOMaeiilaWIaemyAaKgabeaaaeaacqWGQbGAcqGHGjsUcqWGPbqAaeqaniabggHiLdGccqWGjbqsdaWgaaWcbaGaemOAaOgabeaakmaalaaabaGaem4uam1aaSbaaSqaaiabdMgaPbqabaaakeaacqWGobGtdaWgaaWcbaGaemyAaKgabeaaaaGccqGGSaalaeaacqWGrbqudaqhaaWcbaGaemyAaKgabaGaemysaKeaaOGaeyypa0Jae8xVd4MaemitaW0aaSbaaSqaaiabdMgaPbqabaGccqGGSaalaeaacqWGrbqudaqhaaWcbaGaemyAaKgabaGaemOuaifaaOGaeyypa0Jae8NSdiMaemysaK0aaSbaaSqaaiabdMgaPbqabaGccqGGUaGlaeaacqWGrbqucqGH9aqpdaaeqbqaaiabdgfarnaaDaaaleaacqWGPbqAaeaacqWGmbataaaabaGaemyAaKgabeqdcqGHris5aOGaey4kaSYaaabuaeaacqWGrbqudaqhaaWcbaGaemyAaKgabaGaemysaKeaaaqaaiabdMgaPbqab0GaeyyeIuoakiabgUcaRmaaqafabaGaemyuae1aa0baaSqaaiabdMgaPbqaaiabdkfasbaaaeaacqWGPbqAaeqaniabggHiLdGccqGGUaGlaaGaaCzcaiaaxMaadaqadaqaaiabikdaYaGaayjkaiaawMcaaaaa@8446@",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "These are the equations that govern the simulations and give us the continuous time setting. The component \u03b3j,i in (2) (note the reversed indexes) is the intermunicipal infectiousness corresponding to the one-way route j to i. If, \u03c9j,i=Mj,i/\u2211iMj,i\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFjpWDdaWgaaWcbaGaemOAaOMaeiilaWIaemyAaKgabeaakiabg2da9maalyaabaGaemyta00aaSbaaSqaaiabdQgaQjabcYcaSiabdMgaPbqabaaakeaadaaeqbqaaiabd2eannaaBaaaleaacqWGQbGAcqGGSaalcqWGPbqAaeqaaaqaaiabdMgaPbqab0GaeyyeIuoaaaaaaa@40B5@ where Mj,i is the travel intensity (i.e. \u03c9j, i is the probability that a traveler in j will choose the route j to i, then \u03b3j,i = \u03b3\u03c9j,i. In cases where restrictions are active, this expression is further scaled row-wise to match the smaller mass of the matrix. \u03b3 is the global intermunicipal infectiousness parameter mentioned above. We use the approximation given by Hufnagel et al based on data from the actual outbreak, \u03b3 = 0.27. The parameter \u03b3 is influenced by the total travel intensity, the medium of travel and as we have seen, the propensity for travel in different communities.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We would have liked to calibrate our model in a similar way, but as we have no outbreak data for Sweden, we needed to see whether changes in \u03b3 would drastically alter our conclusions. To get an idea of its effect, we compared Hufnagel's estimate of \u03b3 with other possible values. As \u03b3 is an infectiousness parameter playing a similar role in the governing equations above as \u03b1, we argue that \u03b1 = 0.55 is an upper bound for \u03b3. The force of infection between two municipalities with equal population and number of infectious is unlikely to be higher than from within those municipalities. To find an appropriate lower bound we extrapolated proportionately from these, producing 0.13.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Although this is not mentioned in the original work by Hufnagel et al, the expression above means that everybody, regardless of where they live, is equally prone to travel outside their home, the uptake area of the airport or, in our case, the municipality. This is a heavy assumption indeed, as it depends on the function of the municipality varying. The municipality may be a suburb or self-sufficient community, just as airports may be transit hubs or terminals. One of the strengths of Hufnagel's model is that it seems to be forgiving towards many simplifications, this one included, with the correct choice of \u03b3. We investigated corrections for this assumption, such as row-wise scaling according to the known probability for travel, but found little effect on absolute incidence and none on the qualitative conclusions of the current study. As such, we were reluctant to stray from Hufnagel's model.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After the initial conditions were set up, including a single infected person in Stockholm, the simulation ran as follows. First, we moved forward in time with a random step \u0394t given by (1). We then selected the event that would occur with a probability proportional to the corresponding intensity. All intensities were updated according to the new state, and the process was repeated until the disease died out or the simulation period, 60 days, was passed.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The results for all nine scenarios were plotted geographically and color-coded according to the mean incidence (Figure 2).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 119,
+                    "end": 120,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "A scenario with no restrictions resulted in an outbreak in which a majority of the municipalities became affected regardless of \u03b3. Only the incidence differed. A ban on journeys >50 km stifled the dynamics of the outbreak. For the two lower values of \u03b3, we see that the disease remained in the Stockholm area after 60 days, and for the higher value of \u03b3, the disease did not manage to spread far from the densely populated areas around the largest Swedish cities. Prohibiting journeys >20 km would result in an even slower spread with a small number of afflicted municipalities, mainly localized around Stockholm. What is more, the total incidence after 60 days as well as the incidence in each municipality dropped as we imposed the restrictions.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 1 compares the country's total incidence in the three simulations for which Hufnagel's estimate of \u03b3 was used. Table 2 presents the incidence broken down into a few selected municipalities.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 6,
+                    "end": 7,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 123,
+                    "end": 124,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The reason for the decrease in incidence is of course the limited transmission paths available to the disease. The disease, after having spread from one municipality to another will constantly be transmitted back into the originating municipality, provided that there is a flow of travelers in the opposite direction in the travel intensity matrix. Travel restrictions limit both spread to other municipalities and reintroduction. For comparison, if traffic is removed altogether, the mean incidence in Stockholm will be 917.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The process outlined above is also responsible for the decreased number of extinction runs. For a regular continuous time branching process where the number new cases is completely independent between individuals, one would expect the probability of extinction to be I/R0 = 37%. and this was confirmed in the course of testing our model.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "It is also clear how travel restrictions confer increasing protection on cities that are further from the capital, the focal point of the infection. The major cities of G\u00f6teborg (Gothenburg) and Malm\u00f6 would be protected even though traffic into these cities is heavy. In fact, the farthest the disease woudl ever make it in SIM50 is Ljungby, 1471 km from Stockholm and still some 200 km from Malm\u00f6. For SIM20, the farthest city is Uddevalla, 441 km away and a suburb of G\u00f6teborg. The mean reach of the epidemic in those cases is only 276 and 34 km, respectively.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An objection to the applicability of this model is that in all probability, complete enforcement of the restrictions may not be achievable or even desirable, as in the case of high-priority professionals with crucial functions in society during a crisis situation. Incidence does indeed climb the more restrictions are ignored, but not to such an extent as to render the travel restrictions dubious as a means of disease control (Figure 3). A plot with unrestricted travel, duplicated from Figure 2, is given for comparison. Figure 4 shows a finer spaced mesh of incidence versus restriction distance and compliance. Bear in mind that there was no attempt to correlate the randomness between the simulation sets. Therefore, the random numbers used in each were completely independent, giving rise to considerable simulation noise. Even though the landscape is rough, the trend in both dimensions was clearly visible. Looser travel restrictions and lower compliance means higher incidence.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 437,
+                    "end": 438,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 497,
+                    "end": 498,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 532,
+                    "end": 533,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Our results show clearly that traveling restrictions would have a significant beneficial effect, reducing both the geographical spread and the total and local incidence. This holds true for all three levels of intercommunity infectiousness, \u03b3, simulated, \u03b3 is influenced by many factors, most notably by total travel intensity, but also by the medium of travel, the behavior of the traveler, the model of dispersal by travel and the infectiousness of the disease. Hufnagel et al calibrated \u03b3 using data from the actual outbreak. As mentioned, no attempt was made on our part to find the \"true\" value of \u03b3 in the new settings, as no such outbreak data are available for Sweden. This would be considered a flaw for a quantitative study on a SARS outbreak in Sweden. By simulating for different values of the parameter, however, we can be confident in the qualitative conclusion, namely, that the same general behavior can be expected in the unrestricted scenario and in response to the control measures, regardless of \u03b3.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The same reasoning supports generalization of the results to other countries or regions. The survey travel data give a fairly accurate picture of travel patterns in Sweden and mirror many western countries. Some countries, e.g. the USA, are more dependent on motor vehicles for commuter traffic, and infectiousness would therefore be anticipated to be lower. Such effects are, again, included in calibration of \u03b3. Keep in mind that the used value of \u03b3 was taken from a model including only global air traffic. Figure 2 shows that travel restrictions have a positive effect for \u03b3 in the proposed range.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 517,
+                    "end": 518,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In light of the fact that intermunicipal travel heavily influences incidence even at a local level, we may justifiably be concerned about boundary conditions. We treated Sweden as an isolated country, but quite obviously, the incidence will be underestimated for areas with frequent traffic across the borders. This includes in particular the \u00d6resund region around Malm\u00f6, and to a lesser extent, international airports and the small towns bordering Norway and Finland.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We would like to point out that, as in most epidemiologic simulations, individuals are not explicitly represented in the model. This is also true for individuals who are traveling. In reality, people who travel run an increased risk of contracting the disease. This is correctly modeled, as individuals who are traveling are included in the travel influx into the municipalities. The influx in turn affects the probability of additional infections at any given time. Of course, it is highly probable that this would be the travelers themselves, as, almost without exception, they return to the origin of their journey.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Even though there is presently no treatment or vaccine for SARS, results show that limited quarantine as suggested here drastically decreases the risk of transmission, and this may well turn out to be the most expedient form of intervention. In many countries, Sweden included, limiting freedom of travel is unconstitutional and must take the form of general recommendations. Additionally, certain professions of crucial importance to society during a crisis situation must be exempt from travel restrictions. The study shows that even if a substantial fraction of the population breaks the restrictions, this strategy is still viable. For other types of disease for which preventive treatment (pandemic flu) or vaccine (smallpox) are available, our results show that long-distance travelers are an important group for targeted control measures.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It is worth noting on the travel intensity matrix, where the elements directly reflect the underlying survey data, that there are several proposed alternatives, using smoothing techniques or data-generating simulation. Completing the matrix in such a way would correctly introduce many connections that are missing from our data, but a substantial number would be falsely represented, and could endanger the validity of the model due to unforeseen stochastic mechanisms. The methods all have inherent imprecisions and flaws, which unfortunately in this context would be difficult to estimate. The choice of one in preference over another would certainly be contended. Our scheme of direct extrapolation from the raw data is certainly no better but does have the benefit of transparency and reasonable control over errors. As is explained in further detail in the appendix, this means that certain connections between municipalities that are used in reality, however infrequently, are missing, while on the other hand some will be heavily overestimated. This is especially true for certain unusual municipalities. The routes between the more populated communities and other heavy connections are much better estimated, as crude statistical analysis will indicate. Also close to the true value is the travel intensity as a whole, as well as the summed influx and outflux of any municipality.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our methods show that restricting travel between municipalities in such a way that travel above a certain distance is banned, would indeed have a beneficial effect on the speed of transmission of a highly contagious disease, geographically and in absolute numbers. This conclusion is true for a range of plausible values of the intermunicipal infectiousness. Even in scenarios of compliance as low as 70%, travel restrictions are effective. Thus, the effectiveness of travel restrictions as a means of mitigating a future epidemic is supported. The model and results are robust and there is no reason to believe that the results are not generally applicable to any country or region.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) have received financial support from the organizations mentioned in acknowledgements.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "MC performed all coding and simulations, carried out analyses and is the main author of the manuscript. FL conceived the project and design and initiated the work. He participated in analyses and drafting of the paper. FL approved the final version of the paper.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "* The erroneous records were long-distance journeys, mostly between individual communities in an unreasonably short time. Had they not been removed, their influence would have been significant, accelerating the spread across the country. The correct data were irretrievable but the effect of their absence was deemed within the margin of error for long-distance journeys.",
+            "cite_spans": [],
+            "section": "Notes",
+            "ref_spans": []
+        },
+        {
+            "text": "\u2020 Some authors refer to this as the \"attack rate\" although this is not the commonest definition.",
+            "cite_spans": [],
+            "section": "Notes",
+            "ref_spans": []
+        },
+        {
+            "text": "Appendix A",
+            "cite_spans": [],
+            "section": "Supplementary material",
+            "ref_spans": []
+        },
+        {
+            "text": "This appendix describes the travel survey data from Statistics Sweden in greater detail.",
+            "cite_spans": [],
+            "section": "Supplementary material",
+            "ref_spans": []
+        },
+        {
+            "text": "The pre-publication history for this paper can be accessed here:",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Main results\nThe table shows the main results along with miscellaneous information about the simulation. Figures refer to simulated values at the end of the run, 60 days. The mean, where applicable, was taken over the set of runs that ran their course through the full 60 days. The extinction runs hence did not affect the means but their numbers are of course interesting in their own right. The 95% simulation intervals (SI) were calculated by bootstrapping 10 000 samples. By incidence, we mean the number of infectious people. Intermunicipal infections is the percentage of the total number of infected that caught the disease via intermunicipal infection. There are 289 municipalities in Sweden and the population is approximately 8.9 million.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Municipalities of key interest\nA selection of municipalities with the mean incidence and bootstrapped 95 % simulation intervals with extinction runs filtered out. This set and its ordering is the same for the individual rows in the table, which explains the zero-valued lower interval bounds and other discrepancies. After Stockholm, G\u00f6teborg and Malm\u00f6 are the largest cities in Sweden. The single most traveled route is that between Stockholm and neighboring Huddinge, traveled by approximately 37 000 people daily, each way. The decline in incidence closely follows that in Stockholm. Upplands-Bro is representative of an outer suburb to Stockholm. S\u00f6dert\u00e4lje and Norrt\u00e4lje are nearby towns but are not considered suburbs. V\u00e4ster\u00e5s and Eskilstuna are more distant, but have a fair number of commuters. \u00d6rebro through Lule\u00e5 are larger towns at some distance from Stockholm with no notable commuter traffic. Finally, the last four are small towns in southern Sweden. SI, simulation intervals",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The intermunicipal travel network. The intermunicipal travel network with travel intensities indicated by color lines. The scale is logarithmic in trips per day. SIM shows the complete dataset. In SIM50 and SIM20, all journeys > 50 km and 20 km, respectively, have been removed. The lines are drawn between the population centers of each municipality, so in many cases the trips are shorter than the lines representing them.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Epidemic spread for different restrictions and values of \u03b3. Geographical plot of the municipalities, logarithmically color-coded according to the mean incidence after 60 days. SIM depicts the complete data set. In SIM50 and SIM20, all journeys > 50 km and 20 km, respectively, have been removed. The red circle signifies the mean extent of the epidemic from Stockholm.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Epidemic spread for different restrictions and compliance. Geographical distribution of the incidence after 60 days shown for SIM50 and SIM20 for different levels of compliance. The left plot shows the unrestricted case with Hufnagels original \u03b3 galue for comparison. This plot reflects the same data as that on the middle row, right column of Figure 2 but with scale to match the current figure.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Total incidence for varying compliance and restrictions. A surface plot showing incidence after 60 days with the parameters of compliance and distance restrictions on the data axes. 1000 realizations were made for each point. The surface has its highest values at high set distance limit and low compliance. Its low values are found at opposite corner.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Dynamics of the 2001 UK foot and mouth epidemic: Stochastic dispersal in a heterogeneous landscape",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chase-Topping",
+                    "suffix": ""
+                },
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Haydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Cornell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kappey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wilesmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "813-817",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1065973"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Andersson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Britton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Stochastic Epidemic Models and Their Statistical Analysis",
+            "volume": "151",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Infectious Diseases of Humans: Dynamics and Control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JAP",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mathematical Epidemiology of Infectious Diseases: Model Building, Analysis and Interpretation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "RES 2001. Den nationella reseunders\u00f6kningen",
+            "authors": [],
+            "year": 2002,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gopalakrishna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Samore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086616"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DAT",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meeyai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Iamsirithaworn",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Patterns of chlamydia and gonorrhea infection in sexual networks in Manitoba, Canada",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Wylie",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jolly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Sexually Transmitted Diseases",
+            "volume": "28",
+            "issn": "",
+            "pages": "14-24",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/00007435-200101000-00005"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Travelling waves and spatial hierarchies in measles epidemics",
+            "authors": [
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                },
+                {
+                    "first": "ON",
+                    "middle": [],
+                    "last": "Bjornstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kappey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "414",
+            "issn": "",
+            "pages": "716-723",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/414716a"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "A Structured Epidemic Model Incorporating Geographic-Mobility among Regions",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Sattenspiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Mathematical Biosciences",
+            "volume": "128",
+            "issn": "",
+            "pages": "71-91",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0025-5564(94)00068-B"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "SARS \u2013 What have we learned?",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Pearson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "424",
+            "issn": "",
+            "pages": "121-126",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/424121a"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "A mathematical-model for the global spread of influenza",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Rvachev",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Mathematical Biosciences",
+            "volume": "75",
+            "issn": "",
+            "pages": "1-1",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0025-5564(85)90064-1"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Assessing the impact of airline travel on the geographic spread of pandemic influenza",
+            "authors": [
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Grais",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Eur J Epidemiol",
+            "volume": "18",
+            "issn": "",
+            "pages": "1065-1072",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1026140019146"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Forecast and control of epidemics in a globalized world",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Hufnagel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Brockmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Geisel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "101",
+            "issn": "",
+            "pages": "15124-15129",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0308344101"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Modelling disease outbreaks in realistic urban social networks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Eubank",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Guclu",
+                    "suffix": ""
+                },
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Marathe",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Srinivasan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Toroczkai",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "429",
+            "issn": "",
+            "pages": "180-184",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02541"
+                ]
+            }
+        }
+    }
+}

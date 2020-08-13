@@ -1,0 +1,3247 @@
+{
+    "paper_id": "PMC1557587",
+    "metadata": {
+        "title": "Model-Based Design of Growth-Attenuated Viruses",
+        "authors": [
+            {
+                "first": "Kwang-il",
+                "middle": [],
+                "last": "Lim",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tobias",
+                "middle": [],
+                "last": "Lang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Vy",
+                "middle": [],
+                "last": "Lam",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "John",
+                "middle": [],
+                "last": "Yin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Udo",
+                "middle": [],
+                "last": "Reichl",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Infections caused by viruses persistently threaten human health. For example, 40 million, 350 million, and 170 million people in the world are carrying human immunodeficiency virus type 1 (HIV-1), hepatitis B virus (HBV), and hepatitis C virus (HCV), respectively [1\u20133]. Annually 5% to 15% of the global population is infected with influenza, resulting in 250,000 to 500,000 deaths [4]. Protection against viral infections may be provided by inoculations with live-virus, killed-virus, or subunit vaccines. Live-virus vaccines offer advantages because they activate both humoral and cell-mediated immunity, require only a single boosting, and generally provide longer immune protection than other forms of vaccines. However, they must be adequately attenuated in their growth to minimize the possibility of vaccine-induced pathogenic effects while retaining their immunogenicity. Attenuation of live viruses has traditionally been achieved by serially passaging viruses in tissue or cell culture and adapting them to grow well on new cell types or at elevated or reduced temperatures [5], a process that tends to reduce their replicative ability and virulence in humans or animals [6]. Such attenuation has historically been a highly empirical process, where its mechanisms are often neither known nor elucidated.",
+            "cite_spans": [
+                {
+                    "start": 265,
+                    "end": 266,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 267,
+                    "end": 268,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 383,
+                    "end": 384,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1085,
+                    "end": 1086,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1182,
+                    "end": 1183,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "During the last decade the emergence of reverse genetics techniques has created unprecedented opportunities to better control viral attenuation [7\u20139]. Reverse genetics enables the production of RNA viruses from cloned cDNA, so specific mutations can be relatively easily introduced into viruses. The challenge to engineering viruses for attenuation then shifts from creating the variants to predicting how specific genetic changes define or correlate with measurable effects on virus growth. Such a challenge can be addressed through the development of quantitative and mechanistic models that map genome-level changes to the dynamics of virus growth under different environmental conditions. Models of intracellular virus growth aim to predict how rapidly a virus-infected cell will produce virus progeny. Inputs to such models include rates of constituent processes such as entry of the virus into the cell, transcription of viral mRNAs, translation of viral proteins, replication of viral genomes, assembly of intermediates, and finally, production and release of viral progeny. Decades of detailed biochemical, biophysical, and genetic studies have, for diverse viruses, contributed toward a level of mechanistic understanding of viral functions and interactions. Various intracellular models of virus growth have been developed for phage Q\u03b2 [10], phage T7 [11,12], HIV-1 [13], and influenza A virus [14].",
+            "cite_spans": [
+                {
+                    "start": 145,
+                    "end": 146,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 147,
+                    "end": 148,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1347,
+                    "end": 1349,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1362,
+                    "end": 1364,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1365,
+                    "end": 1367,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1377,
+                    "end": 1379,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1405,
+                    "end": 1407,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "How can a detailed model for the intracellular growth of a virus be used to explore the behavior of mutant viruses that encode alternative designs? As a starting point, one can create alternative designs that reorder or rearrange the wild-type genes or regulatory elements. Such genomic changes can alter the timing and level of expression of different viral genes, and thereby impact growth because the production of viral progeny depends on the dynamic expression of viral genes. Preliminary models of such alternative genome designs can use the \u201clanguage\u201d of the wild-type virus. They retain the parameters that characterize wild-type molecular interactions, wild-type average rates of viral polymerase elongation, and wild-type composition of progeny viruses, but they apply them in a manner that reflects the reordering of wild-type components in the engineered genome. For example, the timing of expression for the genes of phage T7 during infection maps closely to their sequential order on the T7 genome [15,16]. By relocating an essential early gene, encoding the T7 RNA polymerase to downstream positions, one delays initiation of transcription by the highly efficient T7 RNA polymerase and thereby attenuates phage growth [17]. Preliminary models for the growth of phage carrying the altered genomes, based on wild-type parameters, capture the overall observed trends in attenuation. Here we expand this approach to a mammalian virus of biomedical and agricultural relevance: vesicular stomatitis virus (VSV).",
+            "cite_spans": [
+                {
+                    "start": 1013,
+                    "end": 1015,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1016,
+                    "end": 1018,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1234,
+                    "end": 1236,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "VSV is a prototype negative-sense single-stranded RNA (Mononegavirales, (-)ssRNA) virus and a member of the family Rhabdoviridae [18,19], which includes rabies virus. Each VSV particle has a single copy of an 11-kb genome carrying five genes that encode nucleocapsid (N), phospho (P), matrix (M), envelope (G), and polymerase (L) proteins. VSV is economically important because it can cause symptoms like those of foot-and-mouth disease in livestock [19]. It offers several advantages as a vaccine vector including low seropositivity in humans, a capacity to accommodate foreign genes up to 40% of its own genome size, and an established reverse genetics [18,20]. Recombinant forms of VSV carrying foreign virus genes that encode immunogenic proteins have been proposed as potential vaccines against HIV, influenza, and respiratory syncytial virus [21\u201325]. Less pathogenic but more immunogenic VSV-based vaccines against infection by VSV or other viruses are being sought.",
+            "cite_spans": [
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 451,
+                    "end": 453,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 656,
+                    "end": 658,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 659,
+                    "end": 661,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 849,
+                    "end": 851,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 852,
+                    "end": 854,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Here we develop an in silico model of a VSV infection cycle, incorporating known regulatory interactions and mechanisms and relevant quantitative data from the literature of the past 40 years. These interactions and the corresponding equation formulations are described in detail in the model development section of Materials and Methods. Using the model, we first quantitatively analyze how the intracellular growth of wild-type VSV directs host biosynthetic resources toward VSV gene expression, synthesis of progeny genomes, and pathway switching from the synthesis of VSV intermediates to the production of VSV progeny. We then reveal that the model captures experimental results showing progressive attenuation of virus growth associated with moving the N gene downstream from its wild-type position. Finally, we use the model to predict how altering the positions of other VSV genes and promoters may attenuate the growth of VSV while increasing its potential capacity to activate an adaptive immune response.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The partial transcription termination mechanism (or attenuation) is common in (-)ssRNA viruses. This mechanism is important to satisfy the different needs of each viral protein during its infection cycle. Five attenuation factors for each intergenic region of the VSV genome (Table 1 and Equation 8) were obtained from the literature [18,19,26,27] and incorporated into our model.",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 337,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 344,
+                    "end": 346,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Attenuation mechanism leads to unequally distributed synthesis of viral mRNAs and proteins. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 276,
+                    "end": 283,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Owing to the step-wise release of polymerases from each gene junction, our simulations estimated the gradual decrease of VSV mRNA synthesis in the order of N > P > M > G > L (Figure 1A). Compared with the most abundant N mRNA, L mRNA is very scanty in infected baby hamster kidney (BHK) cells (40 ~ 140-fold less). The relative production level of each protein matched the relative availability of the corresponding mRNAs (Figure 1B) even though different proteins degrade at different rates (Table 1). Because of the different level of incorporation of each protein into a single virion particle, as defined by the protein stoichiometry (Table 2, [28,29]), the relative levels of free viral proteins in the cytoplasm develop differently from their mRNA levels (Figure 1C). P protein is most abundant owing to its low content in the virion, and L and N proteins are least abundant. The persistently low level of N protein is related to its immediate complexation with nascent genomes and anti-genomes to make nucleocapsid particles during the replication step. Owing to the cyclic switching between transcription and replication by the encapsidation process, the N protein level is predicted to oscillate as shown in Figure 1C. After 9 h post-infection, our simulation predicts a significant decrease of free M proteins. This arises from the dominance of the virion assembly process, which depletes M proteins, compared with transcription and replication. In infected murine delayed brain tumor (DBT) cells, similar distributions of viral mRNAs and proteins were obtained (unpublished data).",
+            "cite_spans": [
+                {
+                    "start": 649,
+                    "end": 651,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 652,
+                    "end": 654,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Attenuation mechanism leads to unequally distributed synthesis of viral mRNAs and proteins. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 175,
+                    "end": 183,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 423,
+                    "end": 431,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 762,
+                    "end": 770,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1217,
+                    "end": 1225,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 493,
+                    "end": 500,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 639,
+                    "end": 646,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Anti-genome templates are only utilized to amplify genomes, while genome templates are used to amplify both anti-genomes and mRNAs, and they are also incorporated into virion progeny particles. The higher demands for genome by these multiple tasks are satisfied by the stronger promoter of the anti-genome template compared with that of the genome template [30\u201332]. More polymerases bind to the stronger promoter of the anti-genome, ultimately enhancing the production of genomes over anti-genomes (Figure 2). In our model the parameter Sprom measures the strength of the anti-genomic promoter relative to that of the genomic promoter (Table 1). The production ratio of genomes to anti-genomes was estimated to be dynamically changed [33], varying from one to 30 (wild-type VSV case (Sprom = 5.4), Figure S1). Such oscillatory changes in the production ratio shown in Figure S1 follow from the on\u2013off use of the genomes for transcription or replication. They also arise owing to the staggered shifting of dominant templates between genomes and anti-genomes during replication. A large value of Sprom favors use of anti-genome templates to replicate genomes. However, as genome templates accumulate in large excess relative to anti-genome templates, they successfully compete for replication resources. Synthesis of anti-genomes then dominates until they accumulate and serve again as the dominant templates.",
+            "cite_spans": [
+                {
+                    "start": 358,
+                    "end": 360,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 361,
+                    "end": 363,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 735,
+                    "end": 737,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Higher demands for genomes are satisfied by the stronger promoter of the anti-genome template relative to that of the genome template. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 499,
+                    "end": 507,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 636,
+                    "end": 643,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The virion production rate in BHK cells is at maximum 5\u201310 h post-infection. In infected DBT cells, similar simulation results were obtained except that the synthesis of genome-sized viral RNAs continued for longer time (active until 15 h post-infection, Figure 2).",
+            "cite_spans": [],
+            "section": "Higher demands for genomes are satisfied by the stronger promoter of the anti-genome template relative to that of the genome template. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 255,
+                    "end": 263,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Genomic nucleocapsids can either be used as templates for RNA synthesis or they may be incorporated into progeny virions. Their fate depends on levels of polymerase and M protein, which respectively favor RNA synthesis or virion production pathways, as well as on the extent to which association of the nucleocapsid with M protein will dominate over association with polymerase, described with the parameter Scond in our model (Table 1). Because both RNA synthesis and virion production are essential processes of the infection, extreme values of Scond that favor one process over the other will be detrimental for growth. For excessively large Scond, newly synthesized genomic nucleocapsids would tend to be prematurely incorporated into virion particles before they could serve as templates for transcription and replication. On the other hand, for extremely small Scond, genomic nucleocapsids would be utilized primarily to produce viral RNA without being packaged into viral progeny. Hence, an intermediate parameter value is expected to be optimal for viral growth. We estimated a possible range for the wild-type value of Scond by fitting our simulation results to previous experimental observations by others (2.5 \u00d7 10\u22125 to 1.0 \u00d7 10\u22124, Figure S4). Our simulations further indicate that this range of Scond is near-optimal and optimal for VSV growth on BHK and DBT cells, respectively (unpublished data).",
+            "cite_spans": [],
+            "section": "Optimal utilization of genomic nucleocapsids. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 428,
+                    "end": 435,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "During the infection cycle, virus actively and passively competes with the host for limited translation resources by inhibiting host transcription and by amplifying viral mRNAs, respectively. Viral leader\u2013mRNA and M protein play key roles in this inhibition [19,28,34\u201336]. As viral components accumulate in the cytoplasm from the initiation of infection, an ever-increasing fraction of host ribosomes are available for viral mRNAs (Figure 3A, the fraction of ribosomes associated with viral mRNAs is defined by 1- rib_host in Equation 26). However, the inhibition of host macromolecular synthesis causes a failure to supply accessory factors needed for initiation and elongation steps of translation, resulting in a reduction in the fraction of active ribosomes over time (Figure 3A, as described by fdec in Equation 25). These two mechanisms create a time window when active ribosomes are maximally available for viral translation in infected cells (Figure 3A, refer to the term (1- rib_host)*fdec in Equation 27). The abundance of viral mRNAs and the limitation imposed by ribosomal spacing determine the fraction of the active ribosomes involved in translating viral mRNAs (occupied ribosomes in Figure 3B, refer to Equations 11 and 27). In our model, if the occupied active ribosomes are less than the available ones (in this case the number of free active ribosomes > 0), viral translation is fully supported without any limitation of host machinery. In the early infection stages up to 7 h and 13 h post-infection for BHK and DBT cells, respectively, the host machinery is in excess (Figure 3B). However, at later times viral translation becomes limited by the host resources (in this case the number of free active ribosomes = 0). This limitation may cause a transition from replication-dominant to assembly-dominant infection stages because the replication requires the continuous protein synthesis. As shown in Figure 3B, a small fraction of ribosomes as active forms (less than 5% out of 5 \u00d7 106 ribosomes, Table 1) are utilized for viral translation.",
+            "cite_spans": [
+                {
+                    "start": 259,
+                    "end": 261,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 262,
+                    "end": 264,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 265,
+                    "end": 267,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 268,
+                    "end": 270,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Diversion and inhibition of host translation machinery create a time window of opportunity for translation of viral proteins. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 432,
+                    "end": 440,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 773,
+                    "end": 781,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 951,
+                    "end": 959,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1199,
+                    "end": 1207,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1590,
+                    "end": 1598,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1920,
+                    "end": 1928,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 2017,
+                    "end": 2024,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "For vaccine applications, one seeks to minimize viral pathogenicity and maximize its immunogenicity. Based on observed correlations between in vitro and in vivo results, we assume here that the pathogenicity and the immunogenicity of a virus are directly linked to the levels of progeny production [20,37,38] and G protein expression in infected cells [39,40], respectively. In the previous section we have showed that various VSV regulatory mechanisms are involved in maintaining balances, during infection, among viral synthesis processes, which indirectly indicates the importance of such balances for viral growth. Perturbations of such balances by genetic or genomic manipulations could provide ways to obtain viral phenotypes favorable to vaccine applications. We first test the predictive ability of our model by comparing simulated protein expression and growth of several gene-rearranged VSV strains with experimental results. Later we employ the model to predict how various genomic manipulations could attenuate virus growth and increase G protein expression.",
+            "cite_spans": [
+                {
+                    "start": 299,
+                    "end": 301,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 302,
+                    "end": 304,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 305,
+                    "end": 307,
+                    "mention": "38",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 353,
+                    "end": 355,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Experiments and simulations of VSV gene-order mutants. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The stepwise decline in the transcription of genes more distant from the 3\u2032-end region promoter highlights how gene order affects gene expression in VSV. Advances in reverse genetics have made it possible to create gene-rearranged virus strains where the transcriptional attenuation mechanism then creates altered levels of gene expression [7,9,18,20]. In one study [18] the three internal genes, P, M, and G, were permuted, and the resulting six possible VSV strains were characterized. Relative rates of viral protein expression in BHK cells were experimentally measured based on their incorporation of [35S]-labeled methionine for a one-hour window at 4 h post-infection [18]. We extended our model to simulate this experiment for mutants representing each gene-order permutation and compared the model prediction with the published results [18], as shown in Figure 4. All rates are expressed relative to the synthesis rate of N protein, whose corresponding gene was in position 1, closest to the 3\u2032 end of the genome in all strain cases. Expression of gene L, in position 5, was minimal in both simulations and experiments, and the expression of all other genes was above 40%, a feature of the experimental data that the simulation also captured. Most of the points fall close to the parity line, indicating agreement between the simulation and experiment. Noteworthy are two subsets of points. First, the four circled points are exceptions to the general rule that gene order determines the level of gene expression. These were genes in the second position of the genomes that were expressed essentially at the same rate as gene N, in the first position [18]. This result highlights that the expression rate of protein is affected not only by its gene order, or corresponding rate of mRNA production, but also by its length and degradation rate. For a fixed average rate of translational elongation, longer gene products will tend to be produced more slowly. Further, the net rate of protein production will reflect the rates of both protein synthesis and protein degradation. The model accounts for these contributions, and for the circled genes such accounting appears to capture unexpected high translation levels of genes in the second position, which were measured by Ball et al. [18]. The second sets of points, shown in two boxes, indicate mismatches (Figure 4) that, in the most challenging scenario, could reflect unknown strain-specific mechanisms that are not present in our general gene-permutation model. However, one should also note that the experiment is based on labeling and quantifying proteins about 4 h post-infection. This relatively early time point allows one to minimize potentially confounding influences of virion particle assembly and production on cytoplasmic levels of viral proteins, but it also represents a point before the majority of viral proteins have been made (Figure 1B).",
+            "cite_spans": [
+                {
+                    "start": 341,
+                    "end": 342,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 343,
+                    "end": 344,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 348,
+                    "end": 350,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 367,
+                    "end": 369,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 675,
+                    "end": 677,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 845,
+                    "end": 847,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1660,
+                    "end": 1662,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 2291,
+                    "end": 2293,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Protein expression rates of gene-rearranged viruses. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 862,
+                    "end": 870,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2364,
+                    "end": 2372,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2905,
+                    "end": 2913,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We also employed our model to predict the growth of VSV strains having the N gene at four different locations (N1 [wild-type], N2, N3, and N4) and then compared the simulation results with the experimental data. N1, N2, N3, and N4 VSV strains have the gene orders, 3\u2032-N-P-M-G-L-5\u2032 (N1), 3\u2032-P-N-M-G-L-5\u2032 (N2), 3\u2032-P-M-N-G-L-5\u2032 (N3), 3\u2032-P-M-G-N-L-5\u2032 (N4), respectively. As shown in Figure 5, our simulations qualitatively matched the experimentally observed relative growth of the four strains in BHK cells. The wild-type virus having the N gene at the first position on the genome grows best, followed by N2, N3, and N4. This result is consistent with the previously suggested hypothesis that relocation of the N gene to 3\u2032-distal positions on the genome would be an efficient way to attenuate VSV for vaccine use [20]. The reduction in growth that follows from moving the N gene likely reflects, at least in part, an imbalance between replication and transcription. Insufficient production of N protein would reduce the extent of encapsidation of nascent anti-genome and thereby allow transcription to dominate over genome replication [41]. While the simulation matches the growth ranking, it did not quantitatively match the experimental data. The predicted variation in virion production (N1 \u2192 N4: 4.7-fold decrease) is smaller than the experimentally observed variation (N1 \u2192 N4: 16.7-fold decrease). A potential source of this quantitative difference was our neglect of mass action effects of N proteins on the encapsidation process in our model; encapsidation was simulated as an instantaneous process when free N proteins were available. As shown above, our model could capture the major effects of gene rearrangement on viral growth and protein expression.",
+            "cite_spans": [
+                {
+                    "start": 813,
+                    "end": 815,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1135,
+                    "end": 1137,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Growth of gene-rearranged viruses. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 379,
+                    "end": 387,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The genome and anti-genome of VSV are synthesized in unequal amounts, determined by the differing strengths of their promoters [19,31,33,39]. The stronger promoter of the anti-genome allows viral polymerases to produce more genomes to meet their demands as components of virion particles and as templates for transcription and replication. To explore how VSV growth is influenced by differences in the relative strength of the genomic and anti-genomic promoters, we predicted the yield of virus on BHK and DBT cells over a broad range of Sprom, as shown in Figure 6A. Small Sprom virus cannot grow well because most polymerases would be associated with genomes and tend to synthesize primarily anti-genomes. For example, for Sprom equal to 0.1, infected BHK and DBT cells make 5-fold and 26-fold fewer progeny than wild-type VSV infected cells, respectively. However, large Sprom virus also cannot grow well because most polymerases would preferentially bind to newly synthesized anti-genomes, producing few of the anti-genomes that are needed as templates to amplify genomes. Our simulations predicted that values of 30 and 50 for Sprom would be optimal for VSV growth in BHK and DBT cells, respectively (Figure 6A). The estimated wild-type value of Sprom of 5.4 gives VSV yields higher than 80% of their maximum yields for both cell types (Figure 6A).",
+            "cite_spans": [
+                {
+                    "start": 128,
+                    "end": 130,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 134,
+                    "end": 136,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Effects of relative promoter strength on viral growth. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 557,
+                    "end": 565,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1206,
+                    "end": 1214,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1342,
+                    "end": 1350,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "We speculate that a rational way to attenuate the pathogenicity of the live wild-type virus would be to swap its two promoters, giving an Sprom of (5.4)\u22121. For this promoter swap we predict virion production would be decreased by 3.3-fold and 14.5-fold for infected BHK and DBT cells, respectively, relative to wild-type. However, the extent of growth attenuation by the promoter swapping can be higher than the model prediction because the swapping may also perturb viral transcription and virion assembly and budding processes modulated by the signals encoded in the 3\u2032and 5\u2032 termini of the genome [42,43] that are not yet sufficiently defined to be included in the simulation.",
+            "cite_spans": [
+                {
+                    "start": 601,
+                    "end": 603,
+                    "mention": "42",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 604,
+                    "end": 606,
+                    "mention": "43",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Effects of relative promoter strength on viral growth. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Several variant VSV strains, including N1 through N4, have been made by Ball and Wertz [18,20]. With an aim to generate a potentially broader diversity of growth phenotypes, we created and tested in silico VSV mutants by combining N gene relocations with a range of Sprom. This is a computationally simple task, but experimentally nontrivial. For example, the VSV N4 with Sprom = 0.1 produced a simulated 38-fold fewer virus progeny than wild-type in BHK cells (Figure 6B). It is interesting to note that this 38-fold degree of growth attenuation is greater than the product of the constituent attenuations (4.7 \u00d7 5.4 = 25) that one calculates by assuming that the effects were uncoupled. Such nonmultiplicative effects of double genomic manipulations on growth would be challenging to predict in the absence of a quantitative model.",
+            "cite_spans": [
+                {
+                    "start": 88,
+                    "end": 90,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Rational vaccine attenuation by double genomic manipulations. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 462,
+                    "end": 470,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "To elicit a systematic immune response, live viral vaccines must present or display neutralizing epitopes, typically through the expression of viral surface proteins. Higher levels of antigen expression have been found to correlate with more rapid and potent induction of anti-viral antibodies [39,40]. As Flanagan et al. suggested, the gene encoding G may be moved to other positions in the VSV genome to modulate the expression of the VSV surface glycoprotein G [39]. We generated in silico five gene-shuffled VSV strains, having gene orders for the three internal genes, MPG, MGP, PGM, GMP, and GPM, and simulated levels of G protein in BHK cells infected with those strains. Our simulation results were consistent with the idea that the location of G gene affects the production of G protein. The GPM strain gave the highest concentration of G protein in the cytoplasm (almost 2-fold higher than that of wild-type, Figure 7). However, in many cases effects of such gene rearrangements can be difficult to anticipate because of the complexity of the involved interactions among viral components. For example, the PGM strain showed only a level of G protein expression similar to those of PMG (wt) and MPG strains even though it has the G gene at an earlier position than the other two strains (Figure 7).",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 297,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 298,
+                    "end": 300,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 465,
+                    "end": 467,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Modulation of VSV immunogenicity by gene shuffling. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 919,
+                    "end": 927,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1297,
+                    "end": 1305,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "For vaccine use we might aim to maximize the immunogenicity of VSV or a VSV-based vector through the expression increase of VSV G gene or inserted foreign gene while minimizing their potential pathogenicity by growth attenuation. Given such design goals, specifically for a VSV vaccine, we might prefer strain GPM, which showed the highest expression of G protein (Figure 7) and the lowest production of virions [18]. Toward such favorable features, Flanagan et al. previously constructed three VSV strains having the following gene orders: 3\u2032-G-N-P-M-L-5\u2032 (G1N2), 3\u2032P-M-G-N-L-5\u2032 (G3N4), and 3\u2032-G-P-M-N-L-5\u2032 (G1N4) [39]. These genome constructions were based on their intuitive idea that translocations of G gene and N gene to earlier and later positions, respectively, compared with wild-type, could not only increase the expression of G protein, but also attenuate virus growth [39]. This idea was supported by their experimental results [39].",
+            "cite_spans": [
+                {
+                    "start": 413,
+                    "end": 415,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 881,
+                    "end": 883,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 941,
+                    "end": 943,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Modulation of VSV immunogenicity by gene shuffling. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 365,
+                    "end": 373,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Seeking a more detailed correlation between locations of the two genes and the viral phenotypes relevant to vaccine application, we simulated in silico the growth of all mutants that retain the gene order P \u2013 M \u2013 L of the wild-type, but allow G and N to move, criteria that define 20 possible gene-order permutations. The viral growth and the level of G protein in infected BHK cells mainly depend on the locations of N gene and G gene, respectively (Figure 8A and 8B), which is consistent with the experimental results of Flanagan et al. [39]. Further, if gene G is fixed, then moving gene N closer to the 3\u2032 promoter is predicted to increase protein G expression (Figure 8B). Consistent with this prediction, Flanagan et al. also observed a higher G protein expression for the G1N2 strain than for the G1N4 strain [39]. Enhanced replicative ability of VSV strain by locating its N gene at an earlier position in its genome can contribute to increasing the level of G protein. If either gene N or gene G is located at the fifth position, then both levels of virus growth and G protein expression are very low (Figure 8), because with such genome organizations the stoichiometric amounts of N and G proteins required for replication and assembly (Table 2, [28,29]) cannot be reached. Our simulations with the BHK cell parameters (Table 1) overall captured the experimentally established relative growth of the VSV strains in BHK-21 cells, but the growth of the G3N4 strain was significantly overestimated compared with the experimental results [39] (Table 3). The relevant mechanism for such a large discrepancy between the simulation and the experimental results remains to be elucidated.",
+            "cite_spans": [
+                {
+                    "start": 540,
+                    "end": 542,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 817,
+                    "end": 819,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1257,
+                    "end": 1259,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1260,
+                    "end": 1262,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1545,
+                    "end": 1547,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Modulation of VSV immunogenicity by gene shuffling. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": [
+                {
+                    "start": 451,
+                    "end": 459,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 465,
+                    "end": 466,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 666,
+                    "end": 674,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1111,
+                    "end": 1119,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1247,
+                    "end": 1254,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1330,
+                    "end": 1337,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1550,
+                    "end": 1557,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The changes of protein expression levels by gene shuffling can be a rational means to modify the viral features for vaccine use. Robust synthesis of antigen by a highly attenuated strain appears to be an effective vaccine strategy as Flanagan et al. previously suggested. In addition to controlled attenuation of virus growth, a potent vaccine should ideally elicit a strong humoral or cell-mediated immune response.",
+            "cite_spans": [],
+            "section": "Modulation of VSV immunogenicity by gene shuffling. ::: Quantitative Features of VSV Regulatory Mechanisms ::: Results/Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In the era of highly advanced genetic technologies, we have witnessed a turning point for the development of live viral vaccines. Conventional empirical vaccine development processes are now being replaced by more rational reverse-genetics\u2013based ones. With this trend, much attention will be focused on mechanism-based design of less pathogenic and more immunogenic virus stains. Mathematical models for intracellular virus growth can support this design process by providing a tool to systematically analyze the viral infection regulatory network, identify critical regulatory mechanisms or components for redirecting viral phenotypes, and reverse engineer desirable phenotypes.",
+            "cite_spans": [],
+            "section": "Perspectives ::: Results/Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "BHK cells were obtained from I. Novella (Medical College of Ohio, Toledo, Ohio, United States) and grown as monolayers at 37 \u00b0C in a humidified atmosphere containing 5% CO2. BHK growth medium was Minimal Essential Medium with Earle's salts (MEM) (Cellgro, Fisher Scientific, http://www.fischersci.com) containing 10% fetal bovine serum (FBS, HyClone, http://www.hyclone.com), and 2 mM Glutamax I (Glu, Gibco, http://www.invitrogen.com). DBT cells were obtained from J. Fleming (University of Wisconsin-Madison, Madison, Wisconsin, United States) and grown under the same environment as the BHK cells. DBT growth medium was Dulbecco's Modified Eagle Medium (Cellgro, Fisher Scientific) containing 10% newborn calf serum (NCS, Hyclone), 4 mM Glutamax I (Glu, Gibco), and 15 \u03bcM HEPES (Sigma, http://www.sigmaaldrich.com). Both BHK and DBT cells were subcultured approximately every third day. For subculture, cell monolayers were rinsed with Hanks Balanced Salt Solution (HBSS, Fisher Scientific), incubated in 0.025% trypsin/26 mM EDTA (Fisher Scientific) for 5 min, dispersed through mixing, and then replated in fresh growth medium at 1:30 (BHK) or 1:15 dilution (DBT). No antibiotics were used, and cells were subcultured for no more than 4 mo to minimize the effects of cell senescence. Viability of cell populations always approached 100%, as determined by trypan blue exclusion at the time of experiments. Four gene-rearranged strains (N1\u2013N4) of VSV were obtained from G. Wertz (University of Alabama School of Medicine, Birmingham, Alabama). Their genomic structures are as follows: 3\u2032-N-P-M-G-L-5\u2032 (N1), 3\u2032-P-N-M-G-L-5\u2032 (N2), 3\u2032-P-M-N-G-L-5\u2032 (N3), 3\u2032-P-M-G-N-L-5\u2032 (N4). Each strain of virus was bulked once on BHK cells at multiplicity of infection (MOI) of 0.01 or 0.1 plaque-forming units per cell. Infected cells were incubated in infection medium (MEM/Glu/2% FBS) for 20\u201324 h. At the end of the incubation period, the medium was harvested and passed through a 0.2-\u03bcm filter. The filtered virus solution was aliquoted and stored at \u221290 \u00b0C until use.",
+            "cite_spans": [],
+            "section": "Experiments: Cell and virus culture. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Cells were harvested, resuspended in growth medium, and plated into six-well plates at a concentration of 5 \u00d7 105 cells per 2 ml per well. Plated cells were returned to the incubator and allowed to grow overnight. The next day, two representative cell monolayers were harvested and counted to give an approximate number of cells per well. Each monolayer was then incubated with 200 \u03bcl of virus inoculum (MOI 3) for 1 h to allow virus adsorption. The plates were rocked gently every 20 min to evenly distribute virions on the monolayers during the adsorption step. After the adsorption period, the monolayers were rinsed twice with 1 ml of HBSS and then placed under 2 ml of infection medium for incubation. Medium samples of 200 \u03bcl including virion particles were taken from each well at 2, 3, 4, 6, 8, 10, and 20 h post-inoculation. Samples were kept frozen at \u221290 \u00b0C until their analysis by the plaque assay.",
+            "cite_spans": [],
+            "section": "One-step infection of cell monolayers. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "BHK cells were plated into six-well plates and cultured to 90% confluence. Culture medium was removed from each well and replaced with 200 \u03bcl of serially diluted viral samples. The inoculated monolayers were returned to the incubator for 1 h to allow virus adsorption. The plates were rocked gently every 20 min. At the end of the adsorption period, the inoculum was removed from each monolayer sample and then replaced with 2 ml of agar overlay. The agar overlay consisted of 0.6% weight/volume (w/v) agar (Agar Nobel, Difco, BD Diagnostic Systems, http://www.bd.com). 5-Bromo-2\u2032-deoxyuridine (B5002, Sigma) was added, at 100 \u03bcg/ml, to the agar overlay of N3- and N4-infected samples to enhance plaque formation. Following agar addition, the plates were allowed to cool at room temperature for 30 min, returned to the incubator and incubated for 24 h, and then each sample was fixed with 2 ml of fixative for 3 h at room temperature. The fixative consisted of 4% (w/v) paraformaldehyde (VWR) and 5% (w/v) sucrose (Sigma) in 10 mM phosphate buffered saline (PBS, Sigma) of pH 7.4. The agar overlay was then removed, and each sample was rinsed twice with 2 ml of PBS. Gentian violet diluted in methanol (0.01% (w/v), Sigma) was used, at 1 ml each, to stain the samples.",
+            "cite_spans": [],
+            "section": "Plaque assay. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Using algebraic and differential forms of equations, our mathematical model aims to account for established molecular processing steps in the development of VSV. Most model parameters were extracted from the literature. However, five parameters were obtained by fitting our simulation results to experimental data that were from the literature and our own experiments. Key model parameters are given in Table 1, and detailed descriptions of the model and parameter estimation process are provided below, and in Protocol S1 and Figures S2 and S3, respectively.",
+            "cite_spans": [],
+            "section": "Model development. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 403,
+                    "end": 410,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Figure 9A, VSV initiates an infection by binding to a receptor such as phosphatidyl serine, a lipid component in the plasma membrane [19,44]. After the binding step, the VSV particle is endocytosed via a clathrin-coated pit, and then penetrates intracellular vesicles such as endosomes by membrane fusion [19,45\u201347]. The penetration leads to the release of the encapsidated negative-sense viral genome and virus proteins into the cytoplasm of the host cell. By assuming the binding step is rate-determining [48], we lump these early steps from the binding to the penetration into a first-order expression:\nwhere Vb and Vex are the concentrations of bound and extracellular virus particles, respectively, t is time, and kb is the apparent rate constant for virus binding. After binding, we assume the bound virus is immediately endocytosed and fused, and its genome and protein components are instantaneously released into the cytoplasm at the expense of the fused virus particle. The protein stoichiometry of a single VSV particle and the lengths of each viral gene and protein are summarized in Table 2, [28,29].\n",
+            "cite_spans": [
+                {
+                    "start": 146,
+                    "end": 148,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 149,
+                    "end": 151,
+                    "mention": "44",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 318,
+                    "end": 320,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 321,
+                    "end": 323,
+                    "mention": "45",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "47",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "48",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1118,
+                    "end": 1120,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1121,
+                    "end": 1123,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Virus binding and penetration. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 20,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1108,
+                    "end": 1115,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The viral polymerase on the leader region of the genome starts either transcription or replication. If there are sufficient N proteins, transcription is inhibited by the encapsidation of nascent positive-sense RNAs by N proteins; then replication dominates transcription [41,52,53]. In contrast, if there are insufficient free N proteins, then transcription dominates replication. In the model we correlate the extent of transcription dominance with the availability of N proteins by introducing a factor, encap. This factor is defined as the ratio of the number of free N proteins to the number required to encapsidate all available nascent genome-sized viral RNAs. Only nocap (= 1 \u2212 encap) of the polymerases bound to the genomic promoters can start the transcription:\nwhere polN,\n1 is the concentration of the polymerases located at the first segment of the N gene (Figure 9C), ke,pol is the elongation rate of polymerase, \u03c6N is the attenuation factor for N gene, nsec,N is the total number of the segments of N gene, and lmRNA,N is the length of N mRNA (Table 2, [28,29]). The genome segments are continuously charged with incoming polymerases and discharged with outgoing polymerases with a rate of ke,pol (Equations 7\u20139). If the polymerase input to the leader region of the genome is decreased owing to a lack of free polymerases, then the polymerase concentrations downstream of the leader region will be subsequently reduced (Figure 9C). There are conserved intergenic sequences involved in letting a fraction of viral polymerases release from the genome template at intergenic sections during transcription, which is so-called partial transcription termination or attenuation (Figure 9C) [18,19]. Because the transcription is initiated from the 3\u2032 end promoter, the attenuation mechanism causes genes more proximal to the 3\u2032 end to be more highly expressed, which ultimately leads to an unequal concentration distribution of viral mRNAs. The extents of partial transcription termination are quantified by the attenuation factors, \u03c6i, in our model (Figure 9C). These are 0/0.25/0.25/0.25/0.05 for leader\u2013N/N\u2013P/P\u2013M/M\u2013G/G\u2013L intergenic regions, respectively [18,19,26,27]. \u03c6i fraction of polymerases are released at intergenic region i. With Equations 7\u20139, we simulate the polymerase flux into each gene segment, which is proportional to the elongation rate of polymerase, but inversely proportional to the extent of attenuation:\n\nwhere poli,j is the concentration of the polymerases located at the jth segment of gene i, and i\u22121 indicates the prior gene of gene i. The amount of newly synthesized mRNAs for each gene is determined by the concentration of polymerases occupying each gene section on the genome template and the decay rates of the mRNAs:\nwhere mRNAi is concentration of mRNAs for gene i, kd,mRNA is the decay rate constant of mRNA that is the same for all five viral mRNAs [54], and polt,i is the total concentration of the polymerases occupying on the ith gene.\n",
+            "cite_spans": [
+                {
+                    "start": 272,
+                    "end": 274,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 275,
+                    "end": 277,
+                    "mention": "52",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 278,
+                    "end": 280,
+                    "mention": "53",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 1068,
+                    "end": 1070,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1071,
+                    "end": 1073,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1698,
+                    "end": 1700,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1701,
+                    "end": 1703,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 2164,
+                    "end": 2166,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 2167,
+                    "end": 2169,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 2170,
+                    "end": 2172,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 2173,
+                    "end": 2175,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 2894,
+                    "end": 2896,
+                    "mention": "54",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Transcription. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 869,
+                    "end": 877,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1434,
+                    "end": 1442,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1686,
+                    "end": 1694,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 2057,
+                    "end": 2065,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1058,
+                    "end": 1065,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Our formulation for transcription assumes that the synthesis of viral mRNAs is rate-controlled by the transcription initiation as well as the elongation of polymerase. Transcription initiation rate is parameterized by the spacing between neighboring polymerases in our model. At a given polymerase elongation rate, the larger polymerase spacing indicates the lower rate of transcription initiation. Transcription initiation modulates the input of polymerases to the leader region of the genome.",
+            "cite_spans": [],
+            "section": "Transcription. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We consider that both translation initiation and polypeptide chain elongation contribute to the rate of viral protein synthesis. The translation initiation rate is parameterized by the ribosomal spacing. In our model we first calculated the number of ribosomes involved in viral translation by considering the maximum concentration of the ribosomes bound to viral mRNAs at a fixed ribosomal spacing:\nwhere rib and nrib,avail are the concentrations of the ribosomes actually involved in viral translation and the ribosomes available for viral translation, respectively, and Srib is the spacing between neighboring ribosomes.\n",
+            "cite_spans": [],
+            "section": "Translation. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The ribosomes involved in viral translation (rib) are allocated to the five types of viral mRNAs according to their length and abundance, assuming that each viral mRNA has the same efficiency of translation initiation [55]:\nwhere ribi is the concentration of the ribosomes assigned to mRNA i.\n",
+            "cite_spans": [
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "55",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Translation. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The synthesis rate of each viral protein depends on the elongation rate of the ribosome, linear density of ribosomes on its corresponding mRNA, and its first-order decay rate:\nwhere pi is the concentration of protein i, ke,rib is the elongation rate of ribosome, lp,i is the length of protein i, and kdp,i is the decay rate constant of protein i.\n",
+            "cite_spans": [],
+            "section": "Translation. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We also accounted for the consumption of free N proteins during the encapsidation of genome-length nascent RNAs and assumed that the degradation of nucleocapsids yielded intact N proteins:\nwhere nN is the stoichiometry of N protein in a single nucleocapsid or virion progeny (Table 2, [28,29]), poltr and pollec are the concentrations of the polymerases located on the trailer and complementary leader regions of the genomes and the anti-genomes, respectively, llec (= ll) is the length of the complementary leader region, and kd,nc is the decay rate constant of nucleocapsid. As progeny virions are assembled, the concentration of each protein is reduced by the amount corresponding to its stoichiometry in a single virion particle.\n",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Translation. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 276,
+                    "end": 283,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "We assumed that N protein regulates the switch of the role of polymerase between transcription and replication by encapsidating the newly synthesized RNAs [41,52]. The polymerase that starts the replication at the leader region of the genome requires further supply of N proteins to skip the attenuation signals at each gene junction and thereby to complete each round of replication. Depending on the availability of N proteins, nocap(=1-encap) fraction of polymerases terminate the replication at each gene junction in our model:\nwhere polr,n,N,\n1 is the concentration of the replicating polymerases on the first segment of the N gene section in the negative-sense genomic nucleocapsid.\nwhere polr,n,i,\n1 and polr,n,i-\n1,nsec,i-1 are the concentrations of the replicating polymerases on the first segment of gene i, and on the last segment of gene i\u22121, respectively.\n",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "52",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Replication. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The level of polymerases that scan through the whole genome (poltr) determines the amount of newly synthesized anti-genomic nucleocapsids, (+)nc:\n\nwhere ltr (= ltrc) is the length of the trailer region of the genome. We also considered the first-order kinetics for the decay of anti-genomic nucleocapsid.\n",
+            "cite_spans": [],
+            "section": "Replication. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The synthesis and decay of genomic nucleocapsids are described in the same way as for those of the anti-genomic nucleocapsids except that the polymerases on the anti-genomic templates are not released at intergenic regions:\nwhere polr,p,j is the concentration of the replicating polymerases on the jth segment of the positive-sense anti-genomic nucleocapsids, l is the total length of the genome, and nsec is the total number of segments of the genome (Figure 9B).\n\n\n\n",
+            "cite_spans": [],
+            "section": "Replication. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 453,
+                    "end": 461,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "In our model, non-encapsidated nascent genome and anti-genome fragments are released from polymerases and immediately degraded.",
+            "cite_spans": [],
+            "section": "Replication. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As polymerases leave the promoter regions by moving toward the downstream sequences, the concentration of polymerases on the promoters will decrease. The dynamic changes of the polymerase concentrations on the promoters of the genomic and the anti-genomic templates are finally described, respectively:\nwhere poll-leave is the concentration of the polymerases leaving the genomic promoters, \u039f,n and \u039f,n+1 are the concentrations of a component (\u039f) at time n and time n+1 (in our numerical integration, time n+1 \u2212 time n = \u0394t), respectively.\nwhere poltrc-leave is the concentration of the polymerases leaving the anti-genomic promoters.\n",
+            "cite_spans": [],
+            "section": "Replication. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We assume that the condensation of negative-sense nucleocapsid by M protein initiates the virion assembly and the condensed nucleocapsids are not degraded in the same manner as virion progeny. Whenever the requirement for the stoichiometric amounts of proteins is satisfied, progeny virions are instantaneously assembled and released to the extracellular space. The time required for the condensation of the negative-sense nucleocapsid, the assembly, and the budding of progeny virion was assumed to be negligible relative to the preceding steps.",
+            "cite_spans": [],
+            "section": "Assembly and budding. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In our model, the host cell provides unlimited building blocks such as nucleoside triphosphates and amino acids for the growth of virus. However, as viral components accumulate during the course of infection, some key host components for translation such as initiation and elongation factors may be depleted [28,63,56]. Two main viral products, leader-mRNA and M protein, contribute to the deficiency by inhibiting the synthesis of host macromolecules at the transcription level [19,28,35,36]. Because leader-mRNA starts to accumulate soon after the initiation of infection, and a small amount of the component is enough to trigger the inhibition [28,35], the pool of host factors is continuously reduced from the onset of infection. We quantify this reduction with a single decay rate constant specific to the type of host cell:\nwhere fdec is the level of host translation factors at time t, relative to that of the initial state of the cell before infection (at t = 0), and kd,host is the decay rate constant.\n",
+            "cite_spans": [
+                {
+                    "start": 309,
+                    "end": 311,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 312,
+                    "end": 314,
+                    "mention": "63",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "56",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 480,
+                    "end": 482,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 483,
+                    "end": 485,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 486,
+                    "end": 488,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 489,
+                    "end": 491,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 648,
+                    "end": 650,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 651,
+                    "end": 653,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Host cell. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The inhibition by the leader mRNA causes a first-order decay of the host factors, resulting in a shortage of the ribosomes equipped with the accessory factors for viral translation in the late infection stage in our model. Unlike viral transcription and replication, viral translation is directly affected by the decay of host factors since it depends entirely on host machinery. In the early infection, host mRNAs outnumber viral mRNAs and thereby successfully compete for the host translation machinery. However, the newly synthesized M proteins inhibit the host transcription initiation and the export of host mRNAs from the nucleus to the cytoplasm [57], thereby causing a gradual shift in translation from host mRNAs to viral mRNAs. For our model we assumed that the potency of the inhibition by the M protein was independent of the type of cell and its differentiation state [36], and we developed an empirical formula using available experimental data from the literature [36] to account for the competition between host and viral mRNAs for ribosomes. Lyles at al. cotransfected the host cells with VSV M mRNA and chloramphenicol acetyl transferase (CAT) plasmid DNA, and then they quantified the expression of CAT based on its activity, as a function of the expression of VSV M protein [36]. In their experiment the gene expression of CAT was more reduced at higher M protein expression levels. We assume that the decrease of the expression of CAT (or its activity decrease) is proportional to the decrease of the occupancy of host mRNAs by the translation machinery. Using their experimental data, the occupancy of host mRNAs by the translation machinery is correlated with the number of newly synthesized M proteins in the cytoplasm:\nwhere rib_host is the fraction of the translation machinery associated with host mRNAs, and Mcell is the total number of newly synthesized M proteins per cell.\n",
+            "cite_spans": [
+                {
+                    "start": 654,
+                    "end": 656,
+                    "mention": "57",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 882,
+                    "end": 884,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 980,
+                    "end": 982,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1295,
+                    "end": 1297,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Host cell. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Considering the decay of host factors and the competition between host and viral mRNAs, we could derive a formula to quantify the number of the fully functional ribosomes that are available for the viral protein synthesis over time post-infection (nribavail):\nwhere nrib denotes the total concentration of ribosomes whether or not they incorporate all the required accessory factors for their translation function.\n",
+            "cite_spans": [],
+            "section": "Host cell. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the ribosomes distribute into membrane-bound and cytoplasmic forms, each class supporting the syntheses of the viral G protein and the other four viral proteins (N, P, M, and L), respectively, we treated the ribosomes in our model as one population.",
+            "cite_spans": [],
+            "section": "Host cell. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The initial condition for our simulation is set by a fixed number of infectious extracellular virus particles per cell (Vex(0)). At time zero (t = 0), the number of bound virus particles and the level of all viral components within cells are zero. In our model, binding of extracellular virus particles to cells reduces their level (Equation 1), and an encapsidated genome and stoichiometric amounts of viral proteins (Table 2, [28,29]) are then immediately released from each bound virus particle to the cytoplasm. Specifically, we assume that all N proteins from a bound virus particle are released as a form of encapsidated genome complex. Downstream processes, beginning with transcription, are then initiated. In our simulation, viral infection starts with rib_host = 0.99 (with rib_host = 0.9, ~ 0.9995 simulations showed the same results). Other key model parameters for simulation are summarized in Table 1. In addition, a nomenclature list is shown in Table 4.",
+            "cite_spans": [
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Initial condition for simulation. ::: Population distribution of polymerases and nucleocapsids. ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 419,
+                    "end": 426,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 907,
+                    "end": 914,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 961,
+                    "end": 968,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Model Parameters\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Protein Composition of VSV Particle and Lengths of Its Encoded Products\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Burst Size of VSV Strains\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Nomenclature\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: All the viral proteins that are in the cytoplasm, plasma membrane, or assembled virion particles are counted. (A) Viral mRNAs. (B) Viral proteins. (C) Estimated levels of free viral proteins in infected BHK cells. Free viral proteins include all the proteins in the cytoplasm or plasma membrane, but exclude the proteins that are incorporated into nucleocapsids and virion particles. Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Virion and (-)NC indicate viral genomes that are incorporated into virion particles and intracellular nucleocapsids, respectively. (+)NC indicates anti-genomes that are incorporated into intracellular nucleocapsids. Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: (A) The estimated distributions between active (equipped with the required accessory factors) and inactive (not equipped) ribosomes, and between ribosomes available for viral and host mRNAs are shown. \u201c- Time window -\u201d indicates the time period during which viral translation is actively supported by host ribosomes. (B) The estimated numbers of ribosomes available for viral translation and actually occupied by viral mRNAs are shown for the cases of infected BHK and DBT cells. Non-occupied ribosomes are considered as free ribosomes. When two lines coincide, no free ribosomes exist (all the available ribosomes are occupied by viral mRNAs). Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: The expression rate of each protein was normalized by that of N protein. Therefore, the relative expression rate of N protein is defined as one. X and Y coordinates of datapoints indicate the results of experiments and simulations, respectively. All the experimental datapoints were obtained from the literature [18]. The four datapoints in the circle denote the relative protein expression rates for the genes located at the second genome position in the cases of MGP, MPG, GPM, and GMP strains having gene orders 3\u2032-N-M-G-P-L-5\u2032, 3\u2032-N-M-P-G-L-5\u2032, 3\u2032-N-G-P-M-L-5\u2032, and 3\u2032-N-G-M-P-L-5\u2032, respectively. PMG and PGM strains have the gene orders 3\u2032-N-P-M-G-L-5\u2032 and 3\u2032-N-P-G-M-L-5\u2032, respectively. The two rectangular boxes include four datapoints where there are the largest discrepancies between simulation and experimental results. Vex(0) = 5.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: (A) Experimental data. (B) Simulation results. The growth of the N1 VSV strain is the fitting result, but the growth of the other three strains is the model prediction result. Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: (A) The balance of the production between genome and anti-genome is determined by the promoter strength of the anti-genome relative to that of the genome (Sprom). The changes of virion production in BHK and DBT cells by the variation of the parameter are observed. The black circles indicate the virion productions of wild-type (Sprom = 5.4) in BHK and DBT cells. (B) The extension of phenotypic variations by double genomic manipulations was predicted. As an important phenotype of virus for vaccine use, the changes of virion production by the relocation of N gene along with the variation in the promoter strength of the anti-genome relative to that of the genome (Sprom) are shown. The black circle indicates the virion production of wild-type in BHK cells. Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: The intracellular level of G protein is highly dependent upon the location of G gene on the viral genome. In the late infection stage, a large fraction of G proteins are incorporated into progeny particles, which significantly decreases the intracellular protein level. Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: (A) Virion production. (B) G protein expression. The size of each circle shows the relative level for each VSV strain, and the coordinate of each circle indicates the gene order in each strain's genome. The gray and white circles denote the cases of wild-type (N1G4) and non\u2013wild-type strains, respectively. Under the line there is no VSV strain case (e.g., N1G1, N2G2, etc.). Vex(0) = 3.",
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Figure 9: (A) Infection cycle of VSV. (B) Segmentation of genome-size viral templates to simulate the spatial\u2013temporal changes of polymerase concentration on the templates. (C) VSV partial transcription termination (or attenuation) mechanism.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "HIV/AIDS in women: An expanding epidemic",
+            "authors": [
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Quinn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Overbaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "308",
+            "issn": "",
+            "pages": "1582-1583",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "WHO Fact Sheet Number 204. Hepatitis B",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "WHO Fact Sheet Number 164. Hepatitis C",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": 2003,
+            "venue": "WHO Fact Sheet Number 211. Influenza",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The major attenuating mutations of the respiratory syncytial virus vaccine candidate cpts530/1009 specify temperature-sensitive defects in transcription and replication and a nontemperature-sensitive alteration in mRNA termination",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Juhasz",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "5176-5180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Vaccine developments",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nat Med",
+            "volume": "4",
+            "issn": "",
+            "pages": "515-519",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "A decade after the generation of a negative-sense RNA virus from cloned cDNA\u2014What have we learned?",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Whitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Gen Virol",
+            "volume": "83",
+            "issn": "",
+            "pages": "2635-2662",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Rational design of live-attenuated recombinant vaccine virus for human respiratory syncytial virus by reverse genetics",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Whitehead",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bukreyev",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Fearns",
+                    "suffix": ""
+                },
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Teng",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Adv Virus Res",
+            "volume": "54",
+            "issn": "",
+            "pages": "423-451",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Reverse genetics with a full-length infectious cDNA of severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Yount",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Curtis",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Fritz",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Hensley",
+                    "suffix": ""
+                },
+                {
+                    "first": "PB",
+                    "middle": [],
+                    "last": "Jahrling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "",
+            "pages": "12995-13000",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "The hypercycle. Coupling of RNA and protein biosynthesis in the infection cycle of an RNA bacteriophage",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eigen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Biebricher",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gebinoga",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Gardiner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Biochemistry",
+            "volume": "30",
+            "issn": "",
+            "pages": "11005-11018",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Intracellular kinetics of a growing virus: A genetically structured simulation for bacteriophage T7",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Endy",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Biotechnol Bioeng",
+            "volume": "55",
+            "issn": "",
+            "pages": "375-389",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Effects of Escherichia coli physiology on growth of phage T7 in vivo and in silico",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "You",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Suthers",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Bacteriol",
+            "volume": "184",
+            "issn": "",
+            "pages": "1888-1894",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Quantitative intracellular kinetics of HIV type 1",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Reddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "AIDS Res Hum Retroviruses",
+            "volume": "15",
+            "issn": "",
+            "pages": "273-283",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Structured model of influenza virus replication in MDCK cells",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sidorenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Reichl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biotechnol Bioeng",
+            "volume": "88",
+            "issn": "",
+            "pages": "1-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Organization and expression of bacteriophage T7 DNA",
+            "authors": [
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Studier",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "Cold Spring Harb Symp Quant Biol",
+            "volume": "47",
+            "issn": "Part 2",
+            "pages": "999-1007",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Rate of translocation of bacteriophage T7 DNA across the membranes of Escherichia coli\n",
+            "authors": [
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Garcia",
+                    "suffix": ""
+                },
+                {
+                    "first": "IJ",
+                    "middle": [],
+                    "last": "Molineux",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Bacteriol",
+            "volume": "177",
+            "issn": "",
+            "pages": "4066-4076",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Computation, prediction, and experimental tests of fitness for bacteriophage T7 mutants with permuted genomes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Endy",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "You",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "IJ",
+                    "middle": [],
+                    "last": "Molineux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "97",
+            "issn": "",
+            "pages": "5375-5380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Phenotypic consequences of rearranging the P, M, and G genes of vesicular stomatitis virus",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Pringle",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Flanagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "VP",
+                    "middle": [],
+                    "last": "Perepelitsa",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "4705-4712",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Rhabdoviridae: The viruses and their replication",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Whitt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Field's Virology, Volume 1",
+            "volume": "",
+            "issn": "",
+            "pages": "1221-1244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Gene rearrangement attenuates expression and lethality of a nonsegmented negative strand RNA virus",
+            "authors": [
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                },
+                {
+                    "first": "VP",
+                    "middle": [],
+                    "last": "Perepelitsa",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "95",
+            "issn": "",
+            "pages": "3501-3506",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Replication-competent or attenuated, nonpropagating vesicular stomatitis viruses expressing respiratory syncytial virus (RSV) antigens protect mice against RSV challenge",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Kahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weibel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Buonocore",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "11079-11087",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Vaccination with a recombinant vesicular stomatitis virus expressing an influenza virus hemagglutinin provides complete protection from influenza virus challenge",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kretzschmar",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Perkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Forman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Price",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Virol",
+            "volume": "72",
+            "issn": "",
+            "pages": "4704-4711",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Attenuated vesicular stomatitis viruses as vaccine vectors",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Buonocore",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Price",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Forman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "3723-3732",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "An effective AIDS vaccine based on live attenuated vesicular stomatitis virus recombinants",
+            "authors": [
+                {
+                    "first": "NF",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Marx",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Luckay",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Nixon",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Moretto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Cell",
+            "volume": "106",
+            "issn": "",
+            "pages": "539-549",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Glycoprotein exchange vectors based on vesicular stomatitis virus allow effective boosting and generation of neutralizing antibodies to a primary isolate of human immunodeficiency virus type 1",
+            "authors": [
+                {
+                    "first": "NF",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Buonocore",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Virol",
+            "volume": "74",
+            "issn": "",
+            "pages": "10903-10910",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Localized attenuation and discontinuous synthesis during vesicular stomatitis virus transcription",
+            "authors": [
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Iverson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Cell",
+            "volume": "23",
+            "issn": "",
+            "pages": "477-484",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Transcriptional control of the RNA-dependent RNA polymerase of vesicular stomatitis virus",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Barr",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Whelan",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1577",
+            "issn": "",
+            "pages": "337-353",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "The rhabdoviruses",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Mass and molecular composition of vesicular stomatitis virus: A scanning transmission electron microscopy analysis",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Newcomb",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Wall",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Hainfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "J Virol",
+            "volume": "54",
+            "issn": "",
+            "pages": "598-607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Ambisense gene expression from recombinant rabies virus: Random packaging of positive- and negative-strand ribonucleoprotein complexes into rabies virions",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Finke",
+                    "suffix": ""
+                },
+                {
+                    "first": "KK",
+                    "middle": [],
+                    "last": "Conzelmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol",
+            "volume": "71",
+            "issn": "",
+            "pages": "7281-7288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Ambisense sendai viruses are inherently unstable but are useful to study viral RNA synthesis",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Le Mercier",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Garcin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hausmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kolakofsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "5492-5502",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Competition between the Sendai virus N mRNA start site and the genome 3\u2032-end promoter for viral RNA polymerase",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Le Mercier",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Garcin",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Garcia",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kolakofsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "9147-9155",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "RNA synthesis of vesicular stomatitis virus-infected cells: In vivo regulation of replication",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Batt-Humphries",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Summers",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "J Virol",
+            "volume": "31",
+            "issn": "",
+            "pages": "124-132",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Inhibition of Ran guanosine triphosphatase-dependent nuclear transport by the matrix protein of vesicular stomatitis virus",
+            "authors": [
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Her",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Dahlberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "276",
+            "issn": "",
+            "pages": "1845-1848",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "The plus-strand leader RNA of VSV inhibits DNA-dependent transcription of adenovirus and SV40 genes in a soluble whole-cell extract",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "McGowan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "Cell",
+            "volume": "28",
+            "issn": "",
+            "pages": "325-333",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Potency of wild-type and temperature-sensitive vesicular stomatitis virus matrix protein in the inhibition of host-directed gene expression",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Lyles",
+                    "suffix": ""
+                },
+                {
+                    "first": "MO",
+                    "middle": [],
+                    "last": "McKenzie",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Woolwine",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Virology",
+            "volume": "225",
+            "issn": "",
+            "pages": "172-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "RNA virus mutations and fitness for survival",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Domingo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Holland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Annu Rev Microbiol",
+            "volume": "51",
+            "issn": "",
+            "pages": "151-178",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Exponential fitness gains of RNA virus populations are limited by bottleneck effects",
+            "authors": [
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Novella",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Quer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Domingo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Holland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "1668-1671",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Moving the glycoprotein gene of vesicular stomatitis virus to promoter-proximal positions accelerates and enhances the protective immune response",
+            "authors": [
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Flanagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Virol",
+            "volume": "74",
+            "issn": "",
+            "pages": "7895-7902",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Recombinant respiratory syncytial virus with the G and F genes shifted to the promoter-proximal positions",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Krempl",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "11931-11942",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Dynamics of viral RNA synthesis during measles virus infection",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Plumet",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Duprex",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gerlier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "6900-6908",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Regulation of RNA synthesis by the genomic termini of vesicular stomatitis virus: Identification of distinct sequences essential for transcription but not replication",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Whelan",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "297-306",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "The 5\u2032 terminal trailer region of vesicular stomatitis virus contains a position-dependent cis-acting signal for assembly of RNA into infectious particles",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Whelan",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Virol",
+            "volume": "73",
+            "issn": "",
+            "pages": "307-315",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Inhibition of VSV binding and infectivity by phosphatidylserine: Is phosphatidylserine a VSV-binding site?",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schlegel",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Tralka",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Willingham",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Pastan",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "Cell",
+            "volume": "32",
+            "issn": "",
+            "pages": "639-646",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "A cell line expressing vesicular stomatitis virus glycoprotein fuses at low pH",
+            "authors": [
+                {
+                    "first": "RZ",
+                    "middle": [],
+                    "last": "Florkiewicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Science",
+            "volume": "225",
+            "issn": "",
+            "pages": "721-723",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Pathway of vesicular stomatitis virus entry leading to infection",
+            "authors": [
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Matlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Reggio",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Helenius",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Simons",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "J Mol Biol",
+            "volume": "156",
+            "issn": "",
+            "pages": "609-631",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Entry pathway of vesicular stomatitis virus into different host cells",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Superti",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Seganti",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Ruggeri",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tinari",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Donelli",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Gen Virol",
+            "volume": "68",
+            "issn": "Part 2",
+            "pages": "387-399",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Inhibition of vesicular stomatitis virus infection by spike glycoprotein. Evidence for an intracellular, G protein-requiring step",
+            "authors": [
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lenard",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "J Cell Biol",
+            "volume": "84",
+            "issn": "",
+            "pages": "430-437",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Cooperative binding of multimeric phosphoprotein (P) of vesicular stomatitis virus to polymerase (L) and template: Pathways of assembly",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lenard",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Virol",
+            "volume": "69",
+            "issn": "",
+            "pages": "7718-7723",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Rebinding of transcriptase components (L and NS proteins) to the nucleocapsid template of vesicular stomatitis virus",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Mellon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "J Virol",
+            "volume": "27",
+            "issn": "",
+            "pages": "560-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Membrane association of functional vesicular stomatitis virus matrix protein in vivo",
+            "authors": [
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Chong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "J Virol",
+            "volume": "67",
+            "issn": "",
+            "pages": "407-414",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Gene expression of vesicular stomatitis virus genome RNA",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Banerjee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Barik",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Virology",
+            "volume": "188",
+            "issn": "",
+            "pages": "417-428",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Interaction of VSV leader RNA and nucleocapsid protein may control VSV genome replication",
+            "authors": [
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Blumberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Leppert",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kolakofsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Cell",
+            "volume": "23",
+            "issn": "",
+            "pages": "837-845",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Decay of vesicular stomatitis virus mRNAs in vivo",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pennica",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Lynch",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ennis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "Virology",
+            "volume": "94",
+            "issn": "",
+            "pages": "484-487",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Rates of initiation of protein synthesis by two purified species of vesicular stomatitis virus messenger RNA",
+            "authors": [
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Lodish",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Froshauer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "J Biol Chem",
+            "volume": "252",
+            "issn": "",
+            "pages": "8804-8811",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Regulation of protein synthesis in vesicular stomatitis virus-infected mouse L-929 cells by decreased protein synthesis initiation factor 2 activity",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Centrella",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lucas-Lenard",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "J Virol",
+            "volume": "41",
+            "issn": "",
+            "pages": "781-791",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Cytopathogenesis and inhibition of host gene expression by RNA viruses",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Lyles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Microbiol Mol Biol Rev",
+            "volume": "64",
+            "issn": "",
+            "pages": "709-724",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Analysis of the defects of temperature-sensitive mutants of vesicular stomatitis virus: Intracellular degradation of specific viral proteins",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Knipe",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Lodish",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Baltimore",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "J Virol",
+            "volume": "21",
+            "issn": "",
+            "pages": "1140-1148",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Stabilization of vesicular stomatitis virus L polymerase protein by P protein binding: A small deletion in the C-terminal domain of L abrogates binding",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Canter",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Perrault",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Virology",
+            "volume": "219",
+            "issn": "",
+            "pages": "376-386",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Mechanism of vesicular stomatitis virus mRNA decay",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pennica",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ennis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Arch Biochem Biophys",
+            "volume": "208",
+            "issn": "",
+            "pages": "403-408",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bielka",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "The Eukaryotic ribosome",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Spirin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Ribosome structure and protein biosynthesis",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "KI",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Dynamic mapping from virus genotype to growth phenotype (Ph.D. thesis)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

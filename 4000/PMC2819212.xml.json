@@ -1,0 +1,4614 @@
+{
+    "paper_id": "PMC2819212",
+    "metadata": {
+        "title": "Synthetic viruses: a new opportunity to understand and prevent viral disease",
+        "authors": [
+            {
+                "first": "Eckard",
+                "middle": [],
+                "last": "Wimmer",
+                "suffix": "",
+                "email": "ewimmer@ms.cc.sunysb.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Steffen",
+                "middle": [],
+                "last": "Mueller",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Terrence",
+                "middle": [
+                    "M"
+                ],
+                "last": "Tumpey",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jeffery",
+                "middle": [
+                    "K"
+                ],
+                "last": "Taubenberger",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Unprecedented progress in synthesis and sequence analysis of DNA lies at the heart of the recent transformation of molecular biology and the emergence of the field termed synthetic biology. Sequencing a DNA in the megabase (Mb) range is no longer a daunting undertaking and, applying the most advanced technology, can be accomplished within less than a week. DNA synthesis has not yet advanced to the efficiency of DNA sequencing, but synthesizing DNA of 8\u221230 kilobase pairs (kbp)\u2014the genome size of most RNA viruses and many DNA viruses\u2014can be accomplished easily and is largely a matter of available resources.",
+            "cite_spans": [],
+            "section": "Main",
+            "ref_spans": []
+        },
+        {
+            "text": "It is not surprising, therefore, that the de novo synthesis of viral genomes in the absence of a natural template has found its way into studies of viruses, although this branch of virology is still in its infancy. Chemical synthesis of viral genomes provides a new and powerful tool for studying the function and expression of viral genes, as well as their pathogenic potential. This method is particularly useful if the natural viral template is not available. It also allows the genetic modification of viral genomes on a scale that would be impossible to achieve by conventional molecular biology methods.",
+            "cite_spans": [],
+            "section": "Main",
+            "ref_spans": []
+        },
+        {
+            "text": "In this Review, we summarize briefly the recent advances in DNA synthesis and sequencing and their impact on virology. Specifically, we describe the de novo synthesis of viruses in the absence of a natural template with the aim of resurrecting viruses using archaevirology, identifying viruses that cause human diseases after zoonotic infections, reconstructing viral genomes to unravel complex biological systems ('refactoring' genomes) or recoding viral genetic information for the production of vaccine candidates.",
+            "cite_spans": [],
+            "section": "Main",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthetic biology is the design and construction of new biological entities, such as enzymes, genetic circuits and cells, or the redesign of existing biological systems1. Such changes exceed those introduced previously into biological systems by methods of classic molecular engineering. Synthetic biology depends on the collaboration of specialists from different disciplines, as it requires knowledge in molecular biology, computer science, engineering, mathematics, physics and chemistry. Of the papers discussed in this short Review, it is only the research efforts to refactor the genome of a bacteriophage2 or to recode RNA viruses3,4,5 that belong to the category of synthetic biology. It can be predicted with certainty, however, that this will rapidly change in the coming years. In the future, large-scale changes will be introduced into numerous viruses, allowing the creation of redesigned particles that can provide new insights into biology or the design of new vectors that can prevent or cure infectious diseases, cure genetic deficiencies by delivering genes or treat cancer through oncolytic mechanisms, to name but a few applications.",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 169,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 611,
+                    "end": 612,
+                    "mention": "2",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 637,
+                    "end": 638,
+                    "mention": "3",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 639,
+                    "end": 640,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 641,
+                    "end": 642,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Main",
+            "ref_spans": []
+        },
+        {
+            "text": "In 1828, Friedrich W\u00f6hler synthesized urea from inorganic sources6, striking a heavy blow to the doctrine of vitalism7. The chemical DNA was discovered in 1869 (ref. 8), but it took decades to solve the structural configuration of polynucleotides9,10. In keeping with their tradition, chemists began to synthesize DNA as soon as DNA structures had been published. The most ambitious of such early ventures was Khorana's synthesis of a 75-base-pair (bp) double-stranded DNA that encoded the nucleotide sequence of yeast tRNAAla, published in 1970 (ref. 11). This was followed by the chemical and enzymatic synthesis of the first man-made functional gene, the 207-bp DNA of Escherichia coli tyrosine suppressor tRNA12.",
+            "cite_spans": [
+                {
+                    "start": 65,
+                    "end": 66,
+                    "mention": "6",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 117,
+                    "end": 118,
+                    "mention": "7",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 166,
+                    "end": 167,
+                    "mention": "8",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 246,
+                    "end": 247,
+                    "mention": "9",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 248,
+                    "end": 250,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 552,
+                    "end": 554,
+                    "mention": "11",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 713,
+                    "end": 715,
+                    "mention": "12",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "These early landmarks consumed enormous resources, in the case of tRNAAla some \u201c20 man-years of effort\u201d13. In the 1980s, however, DNA synthesis went through a rapid transformation, with the introduction of novel activated nucleosides that allowed fully automated 3\u2032-to-5\u2032 synthesis of oligodeoxynucleotides (oligos) on solid supports13,14. In particular, phosphoramidites (that is, nucleotides that carry protective groups on the reactive hydroxyl and phosphate groups of the ribose and the amine of the base) have been the building blocks of choice. During the past 20 years, numerous DNA synthesis companies have been established in response to an exploding demand for oligos (\u223c15\u201380 nucleotides (nt)) that are used for genetic analyses, PCR, diagnostic assays, sequence determination or other procedures. The turnaround time for an order of a 75-bp DNA, corresponding to yeast tRNAAla, with extra base pairs at each end encoding restriction sites for subcloning, is currently less than 1 week\u2014a fraction of the time and effort expended originally in Khorana's laboratory.",
+            "cite_spans": [
+                {
+                    "start": 103,
+                    "end": 105,
+                    "mention": "13",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 333,
+                    "end": 335,
+                    "mention": "13",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 336,
+                    "end": 338,
+                    "mention": "14",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "The assembly of larger DNA segments representing genes or entire genomes, however, is still tedious and costly, even today. It requires many oligos that must be purified, because their chemical synthesis is error prone (none of the successive chemical reactions during 3\u2032-to-5\u2032 chain elongation proceeds at 100%). For this reason, the building blocks for the assembly of large polynucleotides are generally no longer than 40\u201380 nt. Different approaches have been used to assemble oligos into large polynucleotides, although all have in common the processes of enzymatic chain elongation and/or ligation of hybridized overlapping oligos14,15. Examples are the 2.7-kbp plasmid containing the \u03b2-lactamase gene16 and the 4,917-kbp gene encoding the merozoite surface protein (MSP-1) of Plasmodium falciparum17. Currently, synthesizing genes or genomes is most cost efficient when done in part by commercial facilities, where the cost per base pair of finished and sequence-confirmed DNA is now as low $0.39 (E.W. and S.M., based on information obtained from an informal web survey).",
+            "cite_spans": [
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "14",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 638,
+                    "end": 640,
+                    "mention": "15",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 706,
+                    "end": 708,
+                    "mention": "16",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 803,
+                    "end": 805,
+                    "mention": "17",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "Work in one of our groups (E.W. and colleagues)18 led to the first chemical synthesis of a DNA (7,500 bp) corresponding to the entire genome of an infectious organism, poliovirus, published in 2002. At the time of its publication, the poliovirus-specific DNA was the largest DNA ever synthesized. This milestone was subsequently dwarfed in scale by the synthesis of the 582,970-bp genome of Mycoplasma genitalium in 2008 (ref. 19). Although this synthetic bacterial genome has not yet been 'booted' to life, the assembly of such a large DNA molecule bears witness to the vast possibilities that DNA synthesis will ultimately offer in engineering bacteria or viruses.",
+            "cite_spans": [
+                {
+                    "start": 47,
+                    "end": 49,
+                    "mention": "18",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 427,
+                    "end": 429,
+                    "mention": "19",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the mechanics of constructing genes or genomes from oligos is being refined, DNA synthesis is making rapid progress, so that it is likely to fundamentally change research in molecular biology14. In 2004, Tian et al.20 published a massively parallel microchip-based DNA synthesis approach that they predicted \u201cmight increase yields in oligo synthesis from 9 bp per dollar to 20 kbp per dollar.\u201d Once this or related strategies have matured and reach commercialization, the synthesis of small viral DNA genomes (for example, the 3,215-bp genome of hepatitis B virus (HBV)) could be accomplished for less than $100. At so low a cost, who would then construct an HBV mutant by such classic methods as site-directed mutagenesis? All current gene synthesis methods, either practiced or just conceived, still depend on relatively short oligos as their basic building blocks. But further progress in synthetic biology will require accurate synthesis of long, continuous DNA sequences.",
+            "cite_spans": [
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "14",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 224,
+                    "end": 226,
+                    "mention": "20",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthesizing large DNA molecules would be of only limited value if new methods of DNA sequencing had not kept pace with the advances in synthesis. In fact, the advances in DNA sequencing have dwarfed current DNA synthesis technology.",
+            "cite_spans": [],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "The first sequence of a naturally occurring polynucleotide, yeast tRNAAla, was deciphered by R. Holley and colleagues21 in 1965. Initiated in 1958, the most difficult task of this project was to isolate from 140 kg of bakers' yeast 1 g of highly purified tRNAAla, whose 76 ribonucleotides were then sequenced in 2.5 years (the sequence was later revised slightly)22. Since then, however, two phases of technological innovation in sequencing have led to rapid progress23.",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 119,
+                    "mention": "21",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 363,
+                    "end": 365,
+                    "mention": "22",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 467,
+                    "end": 469,
+                    "mention": "23",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "The first phase was based on generating radioactive, sequence-specific fragments of DNA and separating them by PAGE24,25. Sanger's method of producing fragments enzymatically by chain termination with dideoxynucleoside triphosphates proved to be more practical than the chemical method of Maxam and Gilbert. Subsequently, gels were replaced by capillaries, and radioactive labels by four-color fluorescence; the process was automated and streamlined, but the underlying principle of the dideoxy method remains, to this day, the most widely used platform of DNA sequencing.",
+            "cite_spans": [
+                {
+                    "start": 115,
+                    "end": 117,
+                    "mention": "24",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 118,
+                    "end": 120,
+                    "mention": "25",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "The second phase, still in its infancy, falls under the rubric of a single paradigm, termed 'cyclic array sequencing'. \u201cCyclic array platforms achieve low cost by simultaneously decoding a two-dimensional array bearing millions (potentially billions) of distinct sequence features\u201d23. Such instruments, with slightly different technologies, are already commercially available from companies. Other methods, such as single-molecule sequencing, sequencing by microelectrophoresis, sequencing by mass spectrometry or sequencing by squeezing DNA through tiny nanopores (reviewed in ref. 23) are being tested, but have yet to mature into commercially useful techniques.",
+            "cite_spans": [
+                {
+                    "start": 281,
+                    "end": 283,
+                    "mention": "23",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 583,
+                    "end": 585,
+                    "mention": "23",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "The strong progress in sequencing technologies is evident in the reduction in time and costs of human genome projects. The sequence of the 'inaugural human genomes' (3 \u00d7 109 bp), published in 2001 (refs. 26,27,28), was determined over a period of roughly 10 years at a cost of $3 billion\u2014and it was incomplete27. In contrast, the complete sequence of Jim Watson's genome was determined in 4 months at a cost of less than $1 million29. Currently, the price has dropped further to below $50,000 (ref. 30), and there is reason to believe that the number of solved human sequences will exceed 1,000 in the near future.",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "26",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "27",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 210,
+                    "end": 212,
+                    "mention": "28",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 309,
+                    "end": 311,
+                    "mention": "27",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 431,
+                    "end": 433,
+                    "mention": "29",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 499,
+                    "end": 501,
+                    "mention": "30",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Nucleic acid synthesis and sequencing",
+            "ref_spans": []
+        },
+        {
+            "text": "Viruses store their genetic information in DNA or RNA. Total-genome synthesis of a viral genome seemed likely to occur first with one of the small DNA viruses; the protocol seemed straightforward: simply transfect the synthetic DNA into suitable host cells and assay the emerging virus. In fact, the first chemical whole-genome synthesis was performed with poliovirus, an RNA virus.",
+            "cite_spans": [],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "How do RNA viruses fit into the world of DNA synthesis and DNA sequencing? The answer is 'reverse genetics'. In their landmark paper of 1978, Weissmann and colleagues31 converted the RNA genome (4,127 nt) of the RNA phage Q\u03b2 into double-stranded DNA with the aid of reverse transcriptase, an enzyme (of retroviruses) that transcribes RNA into DNA. The virus-specific double-stranded DNA (cDNA), which was embedded into a plasmid, yielded authentic Q\u03b2 phage following transfection into bacteria. At the time, the authors concluded that the viral cDNA \u201cwould allow genetic manipulations that cannot be carried out at the RNA level\u201d31,32, an understatement that revolutionized molecular biology of RNA viruses. Three years later, Racaniello and Baltimore33 repeated this experiment with poliovirus. Again, the virion RNA, embedded as cDNA into a plasmid, yielded authentic poliovirus in very poor yield when transfected into HeLa cells, a human cancer cell line that is optimal for poliovirus proliferation.",
+            "cite_spans": [
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "31",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 629,
+                    "end": 631,
+                    "mention": "31",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 632,
+                    "end": 634,
+                    "mention": "32",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 751,
+                    "end": 753,
+                    "mention": "33",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "Depending on the nature of the RNA virus (either positive-strand viruses, whose genome is of the same polarity as mRNA, or negative-strand viruses, whose genome is of the opposite polarity to that of mRNA), virus-specific cDNAs can now be readily prepared and used by different strategies to regenerate the parental RNA virus in high yield. The utility of reverse genetics was quickly recognized and, not surprisingly, it has now been developed for member viruses of nearly every known RNA virus family (for example, rabies virus34, respiratory syncytial virus35, influenza A virus36,37, measles virus38, Ebola virus39 and bunyavirus40. Reverse genetics systems have also been recently achieved for members of the Reoviridae (viruses with a segmented double-stranded genome\u2014for example, rotavirus41\u2014using a helper virus\u2212driven reverse genetics procedure).",
+            "cite_spans": [
+                {
+                    "start": 529,
+                    "end": 531,
+                    "mention": "34",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 560,
+                    "end": 562,
+                    "mention": "35",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 581,
+                    "end": 583,
+                    "mention": "36",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 584,
+                    "end": 586,
+                    "mention": "37",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 601,
+                    "end": 603,
+                    "mention": "38",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": "39",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 633,
+                    "end": 635,
+                    "mention": "40",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 796,
+                    "end": 798,
+                    "mention": "41",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthesis of viral cDNA with reverse transcriptase requires, of course, naturally occurring virion RNA as template. An alternative is the chemical synthesis of cDNA, which, of course, requires knowledge of the viral genome sequence. The first replicating structure that was synthesized from sequence information was a replicon of the hepatitis C virus that lacked the genes for the structural proteins42, and the first synthesis of a complete viral genome was that of poliovirus18. Currently, 2,361 complete viral genome sequences have been deposited in the Viral Genome Resource (http://www.ncbi.nlm.nih.gov/genomes/GenomesHome.cgi?taxid=10239), ready to be downloaded and investigated further. Thus, there are huge resources of information available in the virus field, waiting to enter studies that we may broadly term synthetic virology.",
+            "cite_spans": [
+                {
+                    "start": 401,
+                    "end": 403,
+                    "mention": "42",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 478,
+                    "end": 480,
+                    "mention": "18",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "There are, of course, cases in which no complete viral genome sequences are available for chemical synthesis. A notable recent example is the synthesis of the 1918 'Spanish' influenza pandemic virus, which caused the most severe influenza pandemic in history. Although the pandemic virus was not isolated at the time, work in one of our laboratories (J.K.T. and colleagues)43,44,45,46,47,48,49 deciphered the genome sequence using influenza viral RNA fragments, <100 nucleotides in length, that were preserved in the tissues of victims of the 1918 pandemic. In addition, Hahn and colleagues successfully synthesized chimpanzee retrovirus simian immunodeficiency virus cpz (SIVcpz)50, the natural reservoir of HIV-1 and another case in which chemical synthesis was the only means of obtaining cDNA to generate infectious virus. The resurrection of an infectious retrovirus by whole-genome synthesis51 of a consensus sequence of ancient remnants endogenous to the human genome also illustrates the potential of this approach in archaevirology. As with the synthesis of SIVcpz, the total synthesis of an infectious recombinant bat severe acute respiratory syndrome (SARS)-like coronavirus cDNA (29.7 kbp) was also aimed at studying mechanisms of trans-species infection and zoonosis52.",
+            "cite_spans": [
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "43",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 376,
+                    "end": 378,
+                    "mention": "44",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 379,
+                    "end": 381,
+                    "mention": "45",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "46",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 385,
+                    "end": 387,
+                    "mention": "47",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 388,
+                    "end": 390,
+                    "mention": "48",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 391,
+                    "end": 393,
+                    "mention": "49",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 680,
+                    "end": 682,
+                    "mention": "50",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 897,
+                    "end": 899,
+                    "mention": "51",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 1279,
+                    "end": 1281,
+                    "mention": "52",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "In the following sections, we discuss in more detail the complete synthesis of several different viruses, either in the absence of natural template or using reverse genetics. We then go on to describe several applications of synthetic virology, such as the large-scale recoding of the viral genomes for the production of attenuated vaccine candidates or the use of refactoring (that is, the synthesis of portions of a genome) to facilitate the elucidation of individual gene functions.",
+            "cite_spans": [],
+            "section": "Virology in the era of gene synthesis",
+            "ref_spans": []
+        },
+        {
+            "text": "In 2002, one of our groups (E.W. and colleagues)18 published the cell-free chemical biochemical synthesis of poliovirus type 1, Mahoney (PV1(M) in the absence of a natural template. This work caught global attention, high praise, ridicule and fierce condemnation53. Apart from providing a 'proof of principle', the experiment signaled a new era in biology\u2014that is, the chemical synthesis of organisms as an approach to investigating gene function and pathogenicity by allowing large-scale changes in a genome of interest. The extent of such alterations (for example, large changes in genome architecture and gene structure) cannot be achieved with the 'traditional' methods in molecular biology54.",
+            "cite_spans": [
+                {
+                    "start": 48,
+                    "end": 50,
+                    "mention": "18",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 262,
+                    "end": 264,
+                    "mention": "53",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 694,
+                    "end": 696,
+                    "mention": "54",
+                    "ref_id": "BIBREF59"
+                }
+            ],
+            "section": "Whole-genome synthesis of poliovirus",
+            "ref_spans": []
+        },
+        {
+            "text": "The synthetic polio cDNA contained 27 intentional nucleotide changes that were placed across the genome to serve as genetic markers (watermarks). When grown in HeLa cells, an efficient tissue culture system for poliovirus proliferation, the synthetic virus (denoted sPV1(M)) showed no phenotypic changes compared with the wild-type PV1(M). However, when injected intracerebrally into CD155 tg mice, which are transgenic for the poliovirus receptor, CD155, the median lethal dose (LD50) was five orders of magnitude higher than that of the wild-type virus (LD50 values of 102 and 107 for the wild-type virus and sPV, respectively; E.W. and colleagues)18. Unexpectedly, the genetic locus for the enormous attenuation of sPV(M) was a single A residue at position 102 of the genome, located in the 5\u2032 nontranslated region (5\u2032 NTR) of the genome at a site long thought to serve as simply a spacer between two highly structured regions54. This unexpected result led us55 to develop a highly attenuated oncolytic poliovirus.",
+            "cite_spans": [
+                {
+                    "start": 650,
+                    "end": 652,
+                    "mention": "18",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 929,
+                    "end": 931,
+                    "mention": "54",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 962,
+                    "end": 964,
+                    "mention": "55",
+                    "ref_id": "BIBREF60"
+                }
+            ],
+            "section": "Whole-genome synthesis of poliovirus",
+            "ref_spans": []
+        },
+        {
+            "text": "The synthesis of poliovirus did not require living cells. Subsequent to its chemical synthesis, the cDNA was transcribed in vitro into infectious viral RNA (E.W. and colleagues)56 that, in turn, yielded infectious sPV1(M) upon incubation in an extract of non-infected HeLa cells (E.W. and colleagues)57. For the chemist, therefore, poliovirus is nothing more than a chemical. When the virus enters a cell, however, it has a program for survival. It will subvert cellular compartments and turn them into viral factories, in which it will proliferate subject to the evolutionary laws\u2014heredity, genetic variation, selection toward fitness, evolution into different species and so on. That is, poliovirus obeys the same rules that apply to living entities53. One could even argue that poliovirus has sex in the infected cell, as it readily recombines with sibling progeny or with related viruses should they co-infect the same cell (E.W. and colleagues)58. This fascinating dual nature of viruses as nonliving and living entities53,59,60,61,62,63\u2014that is, an existence as chemicals with a life cycle\u2014has been largely ignored in response to the chemical and biochemical synthesis of poliovirus, which was published in 2002.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "56",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 300,
+                    "end": 302,
+                    "mention": "57",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 751,
+                    "end": 753,
+                    "mention": "53",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 949,
+                    "end": 951,
+                    "mention": "58",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "mention": "53",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 1028,
+                    "end": 1030,
+                    "mention": "59",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1031,
+                    "end": 1033,
+                    "mention": "60",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 1034,
+                    "end": 1036,
+                    "mention": "61",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 1037,
+                    "end": 1039,
+                    "mention": "62",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 1040,
+                    "end": 1042,
+                    "mention": "63",
+                    "ref_id": "BIBREF69"
+                }
+            ],
+            "section": "Whole-genome synthesis of poliovirus",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, it should be noted that the synthesis of poliovirus also confirmed the accuracy of the genome sequence. This may be considered utterly superfluous, as the sequencing of PV1(M), the first of any lytic animal RNA virus, was originally carried out by two different methods64,65 and confirmed subsequently in numerous genetic analyses. But chemical synthesis is clearly useful in providing confirmation of sequence and will prove useful going forward in the proofreading of larger genomic sequences14,18,66.",
+            "cite_spans": [
+                {
+                    "start": 278,
+                    "end": 280,
+                    "mention": "64",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 281,
+                    "end": 283,
+                    "mention": "65",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 503,
+                    "end": 505,
+                    "mention": "14",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 506,
+                    "end": 508,
+                    "mention": "18",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 509,
+                    "end": 511,
+                    "mention": "66",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "Whole-genome synthesis of poliovirus",
+            "ref_spans": []
+        },
+        {
+            "text": "Unlike the strain of poliovirus type 1 whose synthesis was described above, the virus causing the 'Spanish' influenza pandemic in 1918\u20131919 was not isolated at the time of the outbreak, and thus its reconstruction using gene synthesis and reverse genetics technology first required characterization of the viral genome using archaevirology. The influenza pandemic of 1918\u20131919 caused up to 50 million deaths worldwide and remains an ominous warning to public health as to the possible impact that a future influenza pandemic could have (J.K.T. and colleagues)67,68. Many questions about its origins, its unusual epidemiological features and the basis of its pathogenicity remain unanswered, but interest in the 1918 virus has been prompted by the possible emergence of a future pandemic caused by the H5N1 virus. Understanding how the 1918 pandemic virus emerged and mapping the virulence factors may also help us in preparations for the current H1N1 influenza pandemic.",
+            "cite_spans": [
+                {
+                    "start": 559,
+                    "end": 561,
+                    "mention": "67",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 562,
+                    "end": 564,
+                    "mention": "68",
+                    "ref_id": "BIBREF74"
+                }
+            ],
+            "section": "Whole-genome synthesis of 1918 'Spanish' influenza virus",
+            "ref_spans": []
+        },
+        {
+            "text": "The effort to determine the complete genomic sequence of the 1918 influenza virus began in 1995, when one of us (J.K.T. and colleagues) initiated a project to recover viral RNA fragments of the 1918 virus from preserved tissues of victims of the pandemic using reverse transcription PCR (RT-PCR)43. The genome was completed in 2005 (refs. 44,45,46,47,48,49; reviewed in ref. 69). The development of reverse genetics technology for influenza viruses in 1999, which allowed the production of infectious virus entirely from plasmid-cloned influenza gene segments without helper virus36,37,70, makes it possible to produce influenza viruses with specific sequences for research into pathogenesis and molecular virology, as well as for vaccine production. This technology also made possible experiments using infectious viruses that contain 1918 influenza genes. Once the sequence was determined, the 1918 influenza virus gene segments were synthesized using commercially obtained overlapping oligos and subcloned into plasmids for 'rescue' using reverse genetics36,37,71. This was crucial, because sequence analysis alone offered no direct clues to the pathogenicity of the 1918 virus.",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 297,
+                    "mention": "43",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 339,
+                    "end": 341,
+                    "mention": "44",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 342,
+                    "end": 344,
+                    "mention": "45",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "46",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 348,
+                    "end": 350,
+                    "mention": "47",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 351,
+                    "end": 353,
+                    "mention": "48",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 354,
+                    "end": 356,
+                    "mention": "49",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 375,
+                    "end": 377,
+                    "mention": "69",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 580,
+                    "end": 582,
+                    "mention": "36",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 583,
+                    "end": 585,
+                    "mention": "37",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 586,
+                    "end": 588,
+                    "mention": "70",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 1058,
+                    "end": 1060,
+                    "mention": "36",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1061,
+                    "end": 1063,
+                    "mention": "37",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1064,
+                    "end": 1066,
+                    "mention": "71",
+                    "ref_id": "BIBREF78"
+                }
+            ],
+            "section": "Whole-genome synthesis of 1918 'Spanish' influenza virus",
+            "ref_spans": []
+        },
+        {
+            "text": "Work in our laboratories (J.K.T., T.J.T. and collaborators)72,73,74,75,76,77,78 has shown that, in mice, viral constructs bearing at least the 1918 hemagglutinin (HA) gene in a background of modern, non\u2212mouse-adapted human influenza A virus are all highly pathogenic. Furthermore, expression microarray analysis performed on whole-lung tissue of mice infected with the reconstructed 1918 virus or viral constructs containing at least the 1918 HA and neuraminidase (NA) genes showed marked upregulation of mouse genes involved in apoptosis, tissue injury and oxidative damage73,75. Pathology in mice, although reminiscent of some of the acute viral pneumonia pathology seen in 1918 autopsy studies (J.K.T. and Morens, D.M.)79, is nevertheless distinctive. These findings were unexpected, because the viruses with the 1918 HA gene had not been adapted to mice. Control experiments in which mice were infected with modern human viruses produced limited viral replication and little disease.",
+            "cite_spans": [
+                {
+                    "start": 59,
+                    "end": 61,
+                    "mention": "72",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 62,
+                    "end": 64,
+                    "mention": "73",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 65,
+                    "end": 67,
+                    "mention": "74",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 68,
+                    "end": 70,
+                    "mention": "75",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 71,
+                    "end": 73,
+                    "mention": "76",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 74,
+                    "end": 76,
+                    "mention": "77",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 77,
+                    "end": 79,
+                    "mention": "78",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 574,
+                    "end": 576,
+                    "mention": "73",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 577,
+                    "end": 579,
+                    "mention": "75",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "79",
+                    "ref_id": "BIBREF86"
+                }
+            ],
+            "section": "Whole-genome synthesis of 1918 'Spanish' influenza virus",
+            "ref_spans": []
+        },
+        {
+            "text": "A recent study in which single gene segments of the 1918 virus were replaced with those from a recent human H1N1 influenza virus, work in one of our laboratories (T.M.T. and colleagues)76 has revealed that the HA, NA and polymerase PB1 genes are important for virulence and replication in the mouse system; however, the fully virulent phenotype is observed only with the completely reconstructed virus (Fig. 1; T.M.T., J.K.T. and colleagues)80,76. The demonstrated role of the HA and PB1 genes in replication efficiency and virulence is particularly interesting because both genes were transferred by reassortment from an avian virus to the then-circulating human influenza virus, to generate the 1957 and 1968 pandemic strains. The acquisition of an avian influenza PB1 gene by reassortment might result in increased transcriptional activity of the RNA-dependent RNA polymerase and increased virus replication efficiency of a new pandemic strain49,81. The HA and its binding preference for particular sialic acid (SA)-terminated glycans has also been implicated in efficient transmission of the 1918 virus in ferrets (T.M.T. et al.)82. It has been generally suspected that a switch in receptor-binding preference that confers efficient transmission among humans would be a necessary step for avian influenza viruses in the generation of a pandemic virus. Notably, we (T.M.T. and colleagues) have found that mutation of two amino acid residues (D190E, D225G) in the HA, which was previously identified as sufficient to switch the receptor-binding preference of parental 1918 HA (\u03b12,6 SA receptor preference) to the avian \u03b12,3 SA receptor preference44,83, prevented transmission among ferrets without affecting the replication efficiency of the rescued 1918 virus82. These findings suggest that changes in receptor binding of avian influenza viruses could potentially move them one step closer to a pandemic phenotype.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "76",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 441,
+                    "end": 443,
+                    "mention": "80",
+                    "ref_id": "BIBREF88"
+                },
+                {
+                    "start": 444,
+                    "end": 446,
+                    "mention": "76",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 946,
+                    "end": 948,
+                    "mention": "49",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 949,
+                    "end": 951,
+                    "mention": "81",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 1133,
+                    "end": 1135,
+                    "mention": "82",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 1648,
+                    "end": 1650,
+                    "mention": "44",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1651,
+                    "end": 1653,
+                    "mention": "83",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 1762,
+                    "end": 1764,
+                    "mention": "82",
+                    "ref_id": "BIBREF90"
+                }
+            ],
+            "section": "Whole-genome synthesis of 1918 'Spanish' influenza virus",
+            "ref_spans": [
+                {
+                    "start": 403,
+                    "end": 409,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The viral genotypic basis of the 1918 pandemic virus's virulence and transmissibility has not yet been fully mapped; however, by making chimeric viruses containing at least one 1918 influenza virus gene segment, and by targeted mutagenesis or gene synthesis, future experiments should help us to determine how this pandemic virus killed and spread so efficiently. Such knowledge may help us to elucidate virulence factors for other influenza viruses such as the 2009 influenza pandemic and, thereby, help us to identify targets for future drug intervention.",
+            "cite_spans": [],
+            "section": "Whole-genome synthesis of 1918 'Spanish' influenza virus",
+            "ref_spans": []
+        },
+        {
+            "text": "Apart from poliovirus and influenza virus, the complete genomes of several other RNA viruses have recently been chemically synthesized. These include human endogenous retrovirus, HIVcpz and SARS-like coronavirus.",
+            "cite_spans": [],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Reconstitution of an infectious, human endogenous retrovirus. Of the 3 \u00d7 109 bp hat constitute the human genome, nearly 8% (that is, 2.8 \u00d7 108 bp), comprise sequences of retroviral origin84,85. After having invaded the chromosome of human germ cells, they were inherited for millennia in a mendelian manner; thus, they are viral fossils, but the function of these remnants in human evolution, physiology and disease remains unclear. Most of the genes or gene fragments are, however, inactive owing to various replication errors during proliferation of the host cells. An exception is the env gene, which seems to be conserved because it may have a crucial role in hominoid placental physiology84,85. Nevertheless, all of the ancient human retroviruses are degenerate, including the human mouse mammary tumor virus\u2212like 2 provirus (HML-2) of the human endogenous retrovirus (HERV) K proviruses (HERV-K(HML-2)). The latter may have been added to the Old World primate genomes relatively recently in human evolution, but no functional proviruses able to produce infectious particles have been isolated.",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "84",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "85",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 693,
+                    "end": 695,
+                    "mention": "84",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 696,
+                    "end": 698,
+                    "mention": "85",
+                    "ref_id": "BIBREF93"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "To reconstruct a replicating retrovirus that may resemble the ancestor of HERV-K sequences, Lee and Bieniasz designed a consensus genome (9,472 nt) and, using whole-genome synthesis, generated the proviral clone HERV-KCON, which \u201clikely resembles the progenitor of HERV-K(HML-2) variants that entered the human genome within the last few million years\u201d51. In a parallel study, Dewannieux et al.86 also reconstructed infectious HERV-K(HML-2) from a consensus sequence, but they applied site-directed mutagenesis to arrive at an infectious provirus, which they named Phoenix.",
+            "cite_spans": [
+                {
+                    "start": 352,
+                    "end": 354,
+                    "mention": "51",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 394,
+                    "end": 396,
+                    "mention": "86",
+                    "ref_id": "BIBREF94"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "In both studies, the first human retrovirus of endogenous origin had all the properties of a C-type retrovirus. The infectivity of ancestral retrovirus in various cell types, however, was extremely low, which to some extent dispelled concerns that resuscitating an ancient human infectious virus is inherently risky87. Still, studying the pathogenic potential of a virus that probably circulated in the then-human population for millions of years may yield valuable clues as to its impact on human evolution.",
+            "cite_spans": [
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "87",
+                    "ref_id": "BIBREF95"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthesis of HIVcpz\u2014the origin of the HIV-1 pandemic. It was long suspected that chimpanzees provided the natural reservoir for the human immunodeficiency viruses that caused the zoonotic infections responsible for the AIDS pandemic. But because the simian immunodeficiency virus most closely related to HIV-1 (SIVcpz) was found only in animals (Pan troglodytes troglodytes) in captivity, direct proof was lacking.",
+            "cite_spans": [],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "In 2006, Hahn and colleagues88 provided the first convincing evidence of SIVcpz antibodies and nucleic acid in fecal samples from wild P. T. troglodytes in a narrow area in south-eastern Cameroon. However, recovery of replication-competent virus from fecal samples had failed. These authors therefore analyzed virus-specific nucleic acids isolated from the fecal samples and obtained a consensus sequence that, when chemically synthesized, yielded infectious molecular clones of SIVcpz50. Analyses of these isolates yielded the important result that \u201cnaturally occurring SIVcpz strains already have many of the biological properties required for persistent infections of humans.\u201d The authors conclude that \u201cmedically important 'SIV isolates' that have thus far eluded investigation... are needed to identify viral determinants that contribute to cross-species transmission and host adaptation\u201d50.",
+            "cite_spans": [
+                {
+                    "start": 28,
+                    "end": 30,
+                    "mention": "88",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 485,
+                    "end": 487,
+                    "mention": "50",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 893,
+                    "end": 895,
+                    "mention": "50",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthesis of infectious bat SARS-like coronavirus. In 2002, a new acute respiratory syndrome emerged in China, caused by an unknown infectious agent. By the summer of 2003, the agent had caused disease in 8,427 people, of whom 813 died, and fears of a deadly pandemic spread around the globe. As a result of unprecedented collaborative efforts, led by the World Health Organization (Geneva), the pathogenic agent was rapidly identified as a new coronavirus, named severe acute respiratory syndrome virus coronavirus, or SARS-CoV.",
+            "cite_spans": [],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Coronaviruses are plus-strand RNA viruses with the largest-known RNA genome (\u223c30 kb). The properties (genome sequence, cultivation and serology) and pathogenic potential of SARS-CoV were rapidly established, but, intriguingly, in July 2003 SARS-CoV disappeared (http://www.cdc.gov/mmwr/preview/mmwrhtml/mm5228a4.htm) as quickly as it had emerged. This lucky break happened despite the fact that there were no drugs, let alone vaccines, available to treat or prevent SARS infection. Isolation of patients, an old medical practice, has been credited with the fading of the SARS-CoV epidemics.",
+            "cite_spans": [],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Fear remained that SARS-CoV might reappear, perhaps more contagious than before. Thus, the source of SARS-CoV became an important issue, as it was suspected that the human agent may have evolved from a zoonotic infection, as true of influenza and HIV. Early evidence implicated the Chinese cat-like mammals known as civets, but overwhelming evidence now suggests that \u201cbats are natural reservoirs of SARS-like coronaviruses\u201d89.",
+            "cite_spans": [
+                {
+                    "start": 424,
+                    "end": 426,
+                    "mention": "89",
+                    "ref_id": "BIBREF97"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "As yet, there is no known tissue culture system that supports the replication of bat SARS virus, suggesting that it is not infectious in humans52. However, this inability to culture the virus also prevents investigation of the mechanism of cross-species transmission from bats to civets to humans (or transmission directly from bats to humans). The nucleotide sequence of the bat SARS virus is known. To determine the possible steps by which the bat SARS-CoV may have adapted to human populations, Denison and colleagues52 synthesized the 29.7-bp bat SARS virus cDNA. They subsequently succeeded in converting the bat SARS-CoV to an infectious clone by exchanging the region encoding its receptor-binding domain (RBD) with that of the human SARS-CoV. The result is the largest replicating genome to be synthesized so far52. The authors conclude that \u201crational design, synthesis, recovery of hypothetical recombinant virus can be used to investigate mechanisms of trans species movement of zoonoses and has great potential to aid in rapid public health responses...\u201d52.",
+            "cite_spans": [
+                {
+                    "start": 143,
+                    "end": 145,
+                    "mention": "52",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "52",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 820,
+                    "end": 822,
+                    "mention": "52",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 1065,
+                    "end": 1067,
+                    "mention": "52",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Whole-genome syntheses of other RNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "To date, the complete genome of only one DNA virus\u2014\u03a6X174\u2014has been assembled by synthesis. Other work has applied DNA synthesis to understanding the structure and function of bacteriophage T7 DNA, but this involved the creation of portions, rather than the entire reconstitution, of the viral genome (see \u201cRefactoring the bacteriophage T7 genome\u201d below).",
+            "cite_spans": [],
+            "section": "Whole-genome synthesis of DNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Eighteen months after the poliovirus synthesis, Smith et al.66 described the de novo synthesis of the first DNA virus genome\u2014the 5,386-bp genome of bacteriophage \u03a6X17466. Remarkably, existing methods of DNA synthesis were fine-tuned to complete the genome in 2 weeks. The unedited DNA was then transfected into bacteria, which sorted the good from the bad and produced viable bacteriophages66. This elegant work confirmed the general utility of DNA synthesis in assembling the genomes of viruses that was first shown with poliovirus, and it has subsequently spurred further work to make larger DNA assemblies, allowing the synthesis of whole bacterial chromosomes.",
+            "cite_spans": [
+                {
+                    "start": 60,
+                    "end": 62,
+                    "mention": "66",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 167,
+                    "end": 169,
+                    "mention": "66",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "66",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "Whole-genome synthesis of DNA viruses",
+            "ref_spans": []
+        },
+        {
+            "text": "Synthetic biology strives to generate new biological systems that do not exist in nature, primarily for medical or commercial applications. The poliovirus synthesis described above was not intended to be an example and, indeed, hardly falls into the category of synthetic biology, because it resulted in a poliovirus with a nearly identical phenotype as the model wild-type virus. In the following section, we describe experiments that have led to the rational design of vaccine candidates from the poliovirus and influenza viruses.",
+            "cite_spans": [],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "Upon entry into a host cell, the poliovirus uses its genome as mRNA, the hallmark of all plus-strand RNA viruses90. Poliovirus belongs to a large family of human and animal pathogenic viruses, the Picornaviridae. These viruses express all of their proteins in the form of a single polypeptide of just over 2,000 amino acids\u2014the polyprotein (Fig. 2a). This large precursor polyprotein is co- and post-translationally cleaved by the proteolytic action of two virus proteinases that are, remarkably, embedded in the polyprotein itself (E.W. et al.)91. A poliovirus polypeptide of 2,209 amino acids can be encoded in about 101,100 ways, a number much larger than the number of atoms in the universe. This poses the question of how and why selection has led to one of these possible 101,100 sequences that we consider 'wild-type' PV1(M).",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "90",
+                    "ref_id": "BIBREF99"
+                },
+                {
+                    "start": 545,
+                    "end": 547,
+                    "mention": "91",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 621,
+                    "end": 622,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 623,
+                    "end": 626,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 780,
+                    "end": 781,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 782,
+                    "end": 785,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 341,
+                    "end": 348,
+                    "mention": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "It should be noted that poliovirus, like all RNA viruses, is a quasi-species that, in reality, exists in nature as a large swarm of different genotypes92,93. This is the consequence of the high error rate of viral RNA synthesis in the absence of proof reading and editing functions. The 'wild-type' sequence in this vast swarm is the genotype that can proliferate most efficiently under the prevailing conditions, where it out-competes all of its related genotypes92,93.",
+            "cite_spans": [
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "92",
+                    "ref_id": "BIBREF101"
+                },
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "93",
+                    "ref_id": "BIBREF102"
+                },
+                {
+                    "start": 464,
+                    "end": 466,
+                    "mention": "92",
+                    "ref_id": "BIBREF101"
+                },
+                {
+                    "start": 467,
+                    "end": 469,
+                    "mention": "93",
+                    "ref_id": "BIBREF102"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "One of our groups (E.W., S.M. and colleagues)4,5 has been investigating the effect of genome-scale changes in poliovirus on codon usage. To reduce the complexity of our experiments, we have restricted our investigations to only one-third of the poliovirus genome. This is the region encoding the P1 capsid precursor. The P1 polyprotein, which consists of 881 amino acids (2,643 nt; Fig. 2), can be encoded in 10442 ways\u2014still a mind-boggling number.",
+            "cite_spans": [
+                {
+                    "start": 45,
+                    "end": 46,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 47,
+                    "end": 48,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 382,
+                    "end": 388,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Codon bias. A major reason for the nearly unlimited possibilities of encoding a protein is the degeneracy in the genetic code (for example, several synonymous codons can specify the same amino acid). However, the preference for a synonymous codon is not the same in E. coli, in jellyfish or in human cells; this phenomenon is termed 'codon bias'. For example, in humans, the alanine codon GCC is used four times more frequently than the synonymous codon GCG. The cell's preference of one synonymous codon over another to specify the same amino acid is thought to relate to the abundance of the corresponding cognate tRNAs in the cell. Consequently, rare codons are associated with a suboptimal translation of an mRNA. Codon bias, then, may contribute to the restriction of the abundance of sequences encoding the same protein. Codons used frequently in the jellyfish may be used rarely in human cells, and thus expression of the jellyfish green fluorescent protein (GFP) in human cells is poor unless the codons of the jellyfish gene have been changed to those frequently used in human cells; accordingly, the GFP gene has been 'humanized' to achieve good expression in human cells94.",
+            "cite_spans": [
+                {
+                    "start": 1181,
+                    "end": 1183,
+                    "mention": "94",
+                    "ref_id": "BIBREF103"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "To exploit this phenomenon, we (S.M., E.W. and collaborators)5 have 'dehumanized' the sequence encoding P1 of the poliovirus polyprotein.We chose this segment of the poliovirus genome because we have gathered abundant evidence that the P1 coding sequence does not harbor RNA signals essential for viral proliferation (E.W. and colleagues)91,95. For example, (i) the nucleotide sequence of the P1 region can be changed drastically, as long as the amino acid sequence that it encodes is preserved3,4,5; (ii) the P1 coding region can be exchanged with foreign genes (for example, firefly luciferase96); or (iii) the P1 coding region can be deleted altogether (in defective interfering particles97) without loss of efficient RNA replication. However, changing synonymous codons in the P1 region from frequently used to rarely used codons (that is, 'codon deoptimizing' this segment of viral mRNA) will unbalance the synthesis of the polyprotein without changing its amino acid sequence, resulting in attenuated viruses3,5.",
+            "cite_spans": [
+                {
+                    "start": 61,
+                    "end": 62,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "91",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "95",
+                    "ref_id": "BIBREF104"
+                },
+                {
+                    "start": 494,
+                    "end": 495,
+                    "mention": "3",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 496,
+                    "end": 497,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 498,
+                    "end": 499,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 595,
+                    "end": 597,
+                    "mention": "96",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 691,
+                    "end": 693,
+                    "mention": "97",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 1014,
+                    "end": 1015,
+                    "mention": "3",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1016,
+                    "end": 1017,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "Because of the existence of a polyprotein in picornaviruses, codon deoptimizing the P1 region (the N-terminal third of the polyprotein) compromises viral replication: fewer ribosomes arrive at the coding region for the essential replication proteins (genomic regions P2 and P3; Fig. 2a), and genome replication is thus reduced or shut off altogether. It was not surprising, therefore, that extensive codon deoptimization in virus PV-AB (Fig. 2b), harboring 680 changes (out of 2,643 nt) without altering a single encoded amino acid, led to a 'dead' phenotype. However, subcloning individual segments of the recoded P1 segment revived the virus, albeit in attenuated form. Indeed, the subclones are not only inhibited in protein synthesis5, but their neurovirulence is attenuated in CD155 tg mice as well5.",
+            "cite_spans": [
+                {
+                    "start": 737,
+                    "end": 738,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 803,
+                    "end": 804,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 278,
+                    "end": 285,
+                    "mention": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 437,
+                    "end": 444,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "A notable property of the subclones of PV-AB is a marked reduction of their specific infectivity, also observed by Burns and colleagues3. Wild-type poliovirus (PV1(M)) has a specific infectivity of one plaque-forming unit (PFU) per 115\u2212130 particles4,5; in one of the subclones (PV-AB2470\u20132954), this ratio was reduced to about 1 PFU per 100,0005 particles. That is, only one plaque can be expected to emerge if 105 particles are plated onto a dish of 106\u2013107 HeLa cells. Once this one virus has succeeded in overcoming the host cell, however, its burst size will be only one order of magnitude lower than that of the wild-type poliovirus. That is, although the dehumanized virus can replicate in HeLa cells, once released it has enormous problems in spreading to other cells. It should be noted that we have analyzed the sequences of the codon-deoptimized viruses for the emergence of higher-order structures that could have impeded replication. No such structures have been found. The properties of the virus with a 'scrambled' P1 region (PV-SD; Fig. 2b) are discussed below.",
+            "cite_spans": [
+                {
+                    "start": 135,
+                    "end": 136,
+                    "mention": "3",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 249,
+                    "end": 250,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 251,
+                    "end": 252,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 1048,
+                    "end": 1055,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Codon pair bias. It has been known since 1989 that in addition to, and independently of, codon usage, pairs of synonymous codons do not exist in the genome at the frequency that one might expect on the basis of the frequency of the two individual codons that make up the pair. This phenomenon, called 'codon pair bias', was discovered in prokaryotic cells98 but has since been seen in all other examined species, including humans99. For example, given the known codon frequencies in humans, the amino acid pair Ala-Glu is expected to be encoded by GCC GAA and GCA GAG about equally often. In fact, the codon pair GCC GAA is strongly underrepresented, despite containing the most frequent alanine codon, such that it is used only one-seventh as often as GCA GAG4. The functional significance of codon pair bias is a mystery, but it can be studied in systems, such as poliovirus, in which large-scale changes of codon pairing are likely to present with phenotypes in viral proliferation.",
+            "cite_spans": [
+                {
+                    "start": 355,
+                    "end": 357,
+                    "mention": "98",
+                    "ref_id": "BIBREF107"
+                },
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "99",
+                    "ref_id": "BIBREF108"
+                },
+                {
+                    "start": 760,
+                    "end": 761,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "On the basis of 14,795 annotated (known) human genes, the Wimmer group has calculated a codon pair score, specific for each of the possible 3,721 codon pair combinations, as well the codon pair bias (CPB) for each gene, taking into consideration the codon frequency for each of the paired codons and the frequency of the encoded amino acid pair. In Figure 3, the calculated CPB of a human gene is plotted against its amino acid length. Underrepresented codon pairs yield negative scores. Wild-type PV1(M) shows a slightly negative score (CPB = \u22120.02), but, not surprisingly, it uses codon-pairing corresponding to human genes (Fig. 3). Using a custom-made computer optimization algorithm, we have constructed polioviruses whose P1 coding region had either a substantially negative codon pair bias, containing many underrepresented codon pairs (PV-Min, CPB = \u22120.474), or a substantially positive codon pair bias, containing many overrepresented codon pairs (PV-Max, CPB = +0.246; Fig. 2), while retaining the exact set of codons present in the wild-type virus4 and the same amino acid sequence of P1.",
+            "cite_spans": [
+                {
+                    "start": 1058,
+                    "end": 1059,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 349,
+                    "end": 357,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 627,
+                    "end": 633,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 979,
+                    "end": 985,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Unexpectedly, transcripts of PV-Min, using underrepresented codon pairs, did not yield virus upon transfection and blind passages. Apparently, the accumulation of hundreds of unfavorable codon pairs led to a dead phenotype ('death by a thousand cuts'). Conversely, various subclones carrying segments of the P1 region of PV-Min cloned into wild-type poliovirus (for example, PV-MinXY or PV-MinZ, with CPB scores of \u22120.32 and \u22120.19, respectively; Fig. 3) were viable, albeit severely debilitated, as revealed by plaque assays and single-step growth kinetics experiments, and their neurovirulence in CD155 tg mice was reduced 1,000-fold4. Similar to the reduced specific infectivity of subclones of PV-AB, that of the PV-Min subclones, PV-Min XY and PV-MinZ, was also reduced to roughly 1 PFU per 10,000 particles4. Moreover, the translational activities of the subclone RNAs were impaired, an observation suggesting a relationship between viability and viral protein synthesis4,5.",
+            "cite_spans": [
+                {
+                    "start": 634,
+                    "end": 635,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 811,
+                    "end": 812,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 975,
+                    "end": 976,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 977,
+                    "end": 978,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": [
+                {
+                    "start": 446,
+                    "end": 452,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "This prompted us to investigate whether PV-Max, the variant in which the P1 coding region carried many overrepresented codon pairs, would grow to titers substantially higher than those of wild-type poliovirus or be more neurovirulent than wild-type virus in CD155 tg mice. It had neither of these phenotypes. PV-Max, therefore, was not a highly virulent variant virus, an observation that suggests that the end product of evolution of poliovirus had already optimized the encoding of polypeptide P1 (ref. 4) and cannot be 'improved'. For an RNA virus, which exists as a quasi-species, this is not unexpected. The signature of poliovirus is the efficient replication of its small genome, which, under optimal conditions, is driven by an irresistible desire to maintain optimal genome structure; that is, during replication, important replication signals are constantly rebuilt, and unnecessary nucleotide sequences (for example, foreign genes and duplications) are deleted. Indeed, the virus has an inexhaustible arsenal to achieve these goals\u2014by exploiting point mutations, by homologous or illegitimate recombination and even by the acquisition of foreign RNA sequences. These considerations do not mean that the sequence of PV-Max is the only other possible sequence that can express wild-type phenotypes in tissue culture and in CD155 tg mice. On the contrary, there are probably a huge number of sequences with wild-type phenotypes.",
+            "cite_spans": [
+                {
+                    "start": 505,
+                    "end": 506,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "Regardless of the changes in usage of rare codons or underrepresented codon pairs, the product of the translational machinery remains the same; however, the efficiency of protein synthesis may be vastly altered. Thus, no matter how many synonymous changes have been introduced into the genome, a virus synthesized in the infected cell will have the same structure and will encode the same replication proteins as the wild-type virus, but it may be substantially disadvantaged in terms of proliferation. Such a variant of a human pathogenic virus may enter the host by its normal route and replicate poorly, but still allow the host to mount an immune response strong enough to induce lasting protective immunity. In other words, a human virus with altered codon usage or altered codon pair usage could possibly serve as a vaccine. Recoding viral genomes, a process that we call 'synthetic attenuated virus engineering' (SAVE), may be a new and rapid route to discover vaccine candidates and prevent viral disease. Indeed, polioviruses harboring underrepresented codons or underrepresented codon pairs are attenuated in CD155 tg mice. Infection of these mice with a sublethal dose of codon- or codon pair\u2013deoptimized viruses induced an immune response that protected the animals against a lethal dose of the wild-type virus4,5.",
+            "cite_spans": [
+                {
+                    "start": 1322,
+                    "end": 1323,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1324,
+                    "end": 1325,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "The Wimmer group is now extending the SAVE strategy from poliovirus to the influenza virus because of its enormous importance as a major human pathogen, both in its pandemic and epidemic forms. We also want to know to what extent computer-aided rational design can lead rapidly to vaccine candidates of a virus whose genetic and pathogenic properties are completely different from that of poliovirus. First, influenza virus is a negative-stranded RNA virus with a segmented genome; on entry into the host cell the virion must activate its virus-associated RNA polymerase, which will synthesize genome-complementary RNA for translation and replication. Second, many of the important steps in influenza virus replication occur in the cell nucleus, an environment that is avoided by nearly all other RNA viruses (for example, poliovirus can replicate even in enucleated cells). Third, influenza virus is an enveloped virus that replicates in the respiratory tract. Although this work is still in progress, our results show that, by codon pair deoptimization, it is possible to rapidly construct highly attenuated influenza viruses that, after a single cycle of immunization, protect mice against a lethal dose of wild-type influenza virus (S.M., D. Papamichail, J.R. Coleman, S. Skiena and E.W., unpublished data). Most importantly, the best of the constructed vaccine candidate strains offer a wide margin of safety at a relatively low concentration of inoculating virus (S.M., D. Papamichail, J.R. Coleman, S. Skiena and E.W., unpublished data).",
+            "cite_spans": [],
+            "section": "Virus attenuation by large-scale recoding",
+            "ref_spans": []
+        },
+        {
+            "text": "So far, we have discussed changing the codon bias (Fig. 2b) or codon pair bias (Fig. 3) in the P1 region while retaining its amino acid sequence. In a separate approach, the Wimmer group (S.M., E.W. and colleagues)5 has shuffled synonymous codons of the P1 region according to a specifically designed computer algorithm to maximize the number of nucleotide changes while retaining the existing codons (for example, without changing the codon bias). The resulting P1 sequence was synthesized and cloned into the backbone of poliovirus, yielding PV-SD5 (Fig. 2b). The P1 coding region of PV-SD contained 934 changes out of 2,643 nucleotides; that is, on average, every third nucleotide was different from that of the wild-type sequence. Notably, PV-SD replicated in HeLa cells with wild-type kinetics5. Apparently, the positioning of the synonymous codons in PV-SD, after the extensive codon shuffle, did not influence viral protein synthesis, confirming that synonymous mutations have an effect on the virus only when they are specifically directed to lower the codon bias5 or codon pair bias4. An intriguing conclusion from PV-SD is that, at the genome level, RNA viruses are promiscuous with respect to nucleotide changes, as long as these changes do not affect protein function or the rate of protein synthesis. In other words, RNA structures throughout much of the viral coding regions, with notable exceptions, such as cis-acting replication elements or encapsidation signals, are probably rather inconsequential.",
+            "cite_spans": [
+                {
+                    "start": 214,
+                    "end": 215,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 549,
+                    "end": 550,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 798,
+                    "end": 799,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1071,
+                    "end": 1072,
+                    "mention": "5",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1091,
+                    "end": 1092,
+                    "mention": "4",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "RNA sequences with shuffled codons",
+            "ref_spans": [
+                {
+                    "start": 51,
+                    "end": 58,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 80,
+                    "end": 86,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 552,
+                    "end": 559,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "As pointed out above, a protein of 881 amino acids (the P1 capsid precursor of poliovirus) can be encoded in about 10442 different ways. How many of these sequences, if 'cloned' into the present-day poliovirus, would express a wild-type phenotype that would be stable if passaged in HeLa cells, the preferred substrate for poliovirus in the laboratory? We have not passaged PV-SD in HeLa cells for numerous generations in an attempt to observe genetic variation toward the sequence of wild-type PV1(M). Such an experiment may not yield relevant results, because PV1(M) may also express a genetic drift. After all, the natural human cells for poliovirus proliferation are not known, but they reside in the gastrointestinal tract and are obviously very different from HeLa cells, which have been derived from a cervical cancer.",
+            "cite_spans": [],
+            "section": "RNA sequences with shuffled codons",
+            "ref_spans": []
+        },
+        {
+            "text": "We have used shuffled sequences to test for unknown cis-acting RNA elements in the poliovirus genome. The fact that PV-SD replicates with wild-type kinetics provided proof that the P1 region is void of essential cis-acting replication elements, which would probably have been destroyed by the large-scale shuffling. Note that other human picornaviruses, such as rhinovirus type 14 (HRV14), do contain such an essential element (cre in HRV14\u2014a stem-loop structure of \u223c50 nt) in P1. Hence, HRV14-SD would have probably been nonviable100. The poliovirus equivalent to the HRV14 cre maps to the P2 coding region101. We expected that scrambling the P2 coding sequence of the poliovirus genome would destroy the cre element and kill the virus, which is indeed what we have found (Y. Song, C. Ward, D. Futcher, S. Skiena, E.W. and S.M., unpublished data). Re-establishing the cre sequence in P2 by molecular engineering rescues the virus, which indicates that the P2 region does not contain any other important RNA sequences in addition to cre. Synonymous scrambling of RNA virus sequences may be an excellent tool in searching for RNA structures that are essential for viral replication.",
+            "cite_spans": [
+                {
+                    "start": 531,
+                    "end": 534,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 607,
+                    "end": 610,
+                    "mention": "101",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "RNA sequences with shuffled codons",
+            "ref_spans": []
+        },
+        {
+            "text": "\u201cRefactoring [is] a process that is typically used to improve the design of legacy computer software\u201d102. Endy and colleagues2 have used this definition to describe their efforts to redesign the DNA bacteriophage T7 genome (39,937 bp103) with an aim to test the functions of a set of T7 genes once they are untangled from each other (by removing overlapping gene segments). To this end, they replaced the left 11,515 bp of the wild-type genome with 12,179 bp of synthetic redesigned DNA (available in cassettes \u03b1 and \u03b2) and tested the biological properties of the synthetic DNA when combined with the remainder of the wild-type (WT) genome. Notably, three chimera, \u03b1-WT, WT-\u03b2-WT and \u03b1-\u03b2-WT, were viable, but, perhaps not surprisingly to the investigators, none grew as well as wild-type T7 phage (although no burst size was included in the report)2.",
+            "cite_spans": [
+                {
+                    "start": 101,
+                    "end": 104,
+                    "mention": "102",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 125,
+                    "end": 126,
+                    "mention": "2",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 233,
+                    "end": 236,
+                    "mention": "103",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 847,
+                    "end": 848,
+                    "mention": "2",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Refactoring the bacteriophage T7 genome",
+            "ref_spans": []
+        },
+        {
+            "text": "Phage \u03b1-\u03b2-WT, called T7.1, represents a redesign of >30% of the T7 genome and, by removing overlaps, the genes in the \u03b1-\u03b2 region could be studied independently, an enormous advantage for genetic analyses. T. F. Knight described the work as \u201cthe most compelling example of work in synthetic biology to date\u201d104. From a scientific perspective, Endy's work demonstrated that overlapping genetic elements in the T7 genome were, in aggregate, non-essential for phage replication. Until these experiments, the community had been stressing the importance of these features, given that they are conserved across evolutionary distance, but the synthetic approach provided a way of clarifying this issue. From an engineering perspective, this work provided confidence that up to 5% of the DNA sequence of an organism can be changed while still maintaining its viability.",
+            "cite_spans": [
+                {
+                    "start": 306,
+                    "end": 309,
+                    "mention": "104",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Refactoring the bacteriophage T7 genome",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: BALB/c mice were inoculated intranasally with 105 PFU of virus to determine which virus genes of the 1918 virus contributed to virulence. Among all eight gene segments tested individually, the HA gene was the only 1918 virus gene able to confer a virulent phenotype when rescued on the genetic background of Tx/91 H1N1 virus. In the reciprocal experiments, the exchange of most of the individual 1918 influenza virus genes with seasonal influenza Tx/91 virus genes did not alter the virulence of the lethal 1918 virus; however, substitution of the HA, NA or PB1 genes substantially affected the ability of this virus to cause severe disease in mice. Illustration by J. Archer (Centers for Disease Control).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (a) Poliovirus genomic RNA56,91 is of plus-strand polarity (that is, it functions as mRNA in viral replication). It is covalently linked at the 5\u2032 end to the small viral protein VPg (3B of the polyprotein), followed by a long 5\u2032 nontranslated region (5\u2032 NTR), a continuous open reading frame (ORF), a 3\u2032 NTR and poly(A). The 5\u2032 NTR consists of structural elements that control RNA replication (cloverleaf) and translation (the internal ribosomal entry site (IRES)). The ORF encodes the polyprotein, the single translation product of the viral mRNA. The polyprotein is proteolytically processed by viral proteinases 2Apro and 3C/3CDpro into functional proteins, which have been divided into the structural region (P1 and the capsid precursors) and the nonstructural regions P2 and P3 (replication proteins). The ORF is followed by a 3\u2032 NTR, which contributes to the control of RNA synthesis, and poly(A). The P1 coding region has been a target for codon and codon pair deoptimization. (b) Codon use statistics in synthetic P1 capsid designs. PV-SD maintains nearly identical codon frequencies compared to wild-type PV1(M), while maximizing codon positional changes within the sequence5. In PV-AB capsids, the use of nonpreferred codons was maximized. The length of the bars and the numbers behind each bar indicate the occurrence of each codon in the sequence. As a reference, the normal human synonymous codon frequencies for each amino acid are given. Adapted from S.M. et al.5.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Each dot represents the calculated CPB score of one gene plotted against its amino acid (aa) length. Predominant use of underrepresented codon pairs yields negative CPB scores. Various poliovirus constructs are plotted according to the CPB score of their P1 capsid precursor protein. As the CPB decreases, translatability decreases and the attenuation effect on the virus increases. PV-Min is nonviable; PV-Max expresses replication and virulence phenotypes similar to those of wild-type PV. Adapted from ref. 4.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "The promise of synthetic biology",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Keasling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "The Bridge",
+            "volume": "35",
+            "issn": "",
+            "pages": "18-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Todd",
+                    "suffix": ""
+                }
+            ],
+            "year": 1955,
+            "venue": "The Nucleic Acids",
+            "volume": "",
+            "issn": "",
+            "pages": "409-430",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Capsid coding sequence is required for efficient replication of human rhinovirus 14 RNA",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "McKnight",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lemon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Virol.",
+            "volume": "70",
+            "issn": "",
+            "pages": "1941-1952",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Identification of a cis-acting replication element within the poliovirus coding region",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Goodfellow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Virol.",
+            "volume": "74",
+            "issn": "",
+            "pages": "4590-4600",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.74.10.4590-4600.2000"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fowler",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Beck",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Brant",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Opdyke",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Refactoring: Improving the Design of Existing Code",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Complete nucleotide sequence of bacteriophage T7 DNA and the locations of T7 genetic elements",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Studier",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "J. Mol. Biol.",
+            "volume": "166",
+            "issn": "",
+            "pages": "477-535",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0022-2836(83)80282-4"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Engineering novel life",
+            "authors": [
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Knight",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol. Syst. Biol.",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/msb4100028"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Statement on the consideration of biodefence and biosecurity",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Atlas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "421",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature01479"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Statement on scientific publication and security",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Atlas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "299",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.299.5610.1149"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "DNA synthesis and biological security",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "B\u00fcgl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Biotechnol.",
+            "volume": "25",
+            "issn": "",
+            "pages": "627-629",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt0607-627"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Synthetic genomics: options for governance",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Garfinkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Endy",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Epstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biosecur. Bioterror.",
+            "volume": "5",
+            "issn": "",
+            "pages": "359-362",
+            "other_ids": {
+                "DOI": [
+                    "10.1089/bsp.2007.0923"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Total synthesis of the gene for an alanine transfer ribonucleic acid from yeast",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Agarwal",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "Nature",
+            "volume": "227",
+            "issn": "",
+            "pages": "27-34",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/227027a0"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Total synthesis of a gene",
+            "authors": [
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Khorana",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "Science",
+            "volume": "203",
+            "issn": "",
+            "pages": "614-625",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.366749"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Gene synthesis machines: DNA chemistry and its uses",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Caruthers",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Science",
+            "volume": "230",
+            "issn": "",
+            "pages": "281-285",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.3863253"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Whole gene synthesis: a gene-o-matic future",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Stewart",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Burgin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Front. Drug Des. Disc.",
+            "volume": "1",
+            "issn": "",
+            "pages": "297-341",
+            "other_ids": {
+                "DOI": [
+                    "10.2174/1574088054583318"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "A roadmap to the assembly of synthetic DNA from raw materials",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sanghvi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Working Papers for Synthetic Genomics: Risks and Benefits for Science and Society",
+            "volume": "",
+            "issn": "",
+            "pages": "17-33",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Single-step assembly of a gene and entire plasmid from large numbers of oligodeoxyribonucleotides",
+            "authors": [
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Stemmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Crameri",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Ha",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Brennan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Heyneker",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Gene",
+            "volume": "164",
+            "issn": "",
+            "pages": "49-53",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0378-1119(95)00511-4"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Vaccine candidate MSP-1 from Plasmodium falciparum: a redesigned 4917 bp polynucleotide enables synthesis and isolation of full-length protein from Escherichia coli and mammalian cells",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucleic Acids Res.",
+            "volume": "27",
+            "issn": "",
+            "pages": "1094-1103",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/27.4.1094"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Chemical synthesis of poliovirus cDNA: generation of infectious virus in the absence of natural template",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cello",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "297",
+            "issn": "",
+            "pages": "1016-1018",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1072266"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Complete chemical synthesis, assembly, and cloning of a Mycoplasma genitalium genome",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "319",
+            "issn": "",
+            "pages": "1215-1220",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1151721"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Accurate multiplex gene synthesis from programmable DNA microchips",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "432",
+            "issn": "",
+            "pages": "1050-1054",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature03151"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Structure of a ribonucleic acid",
+            "authors": [
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Holley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "Science",
+            "volume": "147",
+            "issn": "",
+            "pages": "1462-1465",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.147.3664.1462"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Evidence supporting a revised sequence for yeast alanine tRNA",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Penswick",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Dirheimer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1975,
+            "venue": "FEBS Lett.",
+            "volume": "50",
+            "issn": "",
+            "pages": "28-31",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0014-5793(75)81033-7"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Overview of DNA sequencing strategies",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Shendure",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Porreca",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Church",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Current Protocols in Molecular Biology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A new method for sequencing DNA",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Maxam",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "74",
+            "issn": "",
+            "pages": "560-564",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.74.2.560"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "DNA sequencing with chain-terminating inhibitors",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sanger",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nicklen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Coulson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "74",
+            "issn": "",
+            "pages": "5463-5467",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.74.12.5463"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Initial sequencing and analysis of the human genome",
+            "authors": [
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "409",
+            "issn": "",
+            "pages": "860-921",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35057062"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "The sequence of the human genome",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "291",
+            "issn": "",
+            "pages": "1304-1351",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1058040"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "The complete genome of an individual by massively parallel DNA sequencing",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "452",
+            "issn": "",
+            "pages": "872-876",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature06884"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Modulation of poliovirus replicative fitness in HeLa cells by deoptimization of synonymous codon usage in the capsid region",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Burns",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "3259-3272",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.80.7.3259-3272.2006"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Personal genomics. Number of sequenced human genomes doubles",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Pennisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "322",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.322.5903.838"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Q\u03b2 DNA-containing hybrid plasmids giving rise to Q\u03b2 phage formation in the bacterial host",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Taniguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Palmieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weissmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "Nature",
+            "volume": "274",
+            "issn": "",
+            "pages": "223-228",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/274223a0"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Reversed genetics: a new approach to the elucidation of structure\u2013function relationship",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weissmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Taniguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "Ciba Found. Symp.",
+            "volume": "66",
+            "issn": "",
+            "pages": "47-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Cloned poliovirus complementary DNA is infectious in mammalian cells",
+            "authors": [
+                {
+                    "first": "VR",
+                    "middle": [],
+                    "last": "Racaniello",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Baltimore",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Science",
+            "volume": "214",
+            "issn": "",
+            "pages": "916-919",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.6272391"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Infectious rabies viruses from cloned cDNA",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Schnell",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mebatsion",
+                    "suffix": ""
+                },
+                {
+                    "first": "KK",
+                    "middle": [],
+                    "last": "Conzelmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "EMBO J.",
+            "volume": "13",
+            "issn": "",
+            "pages": "4195-4203",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/j.1460-2075.1994.tb06739.x"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Production of infectious human respiratory syncytial virus from cloned cDNA confirms an essential role for the transcription elongation factor from the 5\u2032 proximal open reading frame of the M2 mRNA in gene expression and provides a capability for vaccine development",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "92",
+            "issn": "",
+            "pages": "11563-11567",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.92.25.11563"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Generation of influenza A viruses entirely from cloned cDNAs",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "96",
+            "issn": "",
+            "pages": "9345-9350",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.16.9345"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Rescue of influenza A virus from recombinant DNA",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Fodor",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J. Virol.",
+            "volume": "73",
+            "issn": "",
+            "pages": "9679-9682",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Toward understanding the pathogenicity of wild-type measles virus by reverse genetics",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takeuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Takeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Miyajima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Jpn. J. Infect. Dis.",
+            "volume": "55",
+            "issn": "",
+            "pages": "143-149",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Reverse genetics demonstrates that proteolytic processing of the Ebola virus glycoprotein is not essential for replication in cell culture",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Feldmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Lukashevich",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "406-410",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.1.406-410.2002"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Virus attenuation by genome-scale changes in codon pair bias",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Coleman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "320",
+            "issn": "",
+            "pages": "1784-1787",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1155761"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Generation and analysis of infectious virus-like particles of uukuniemi virus (bunyaviridae): a useful system for studying bunyaviral packaging and budding",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "\u00d6verby",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Popov",
+                    "suffix": ""
+                },
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Neve",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Pettersson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "10428-10435",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.01362-06"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "Reverse genetics system for introduction of site-specific mutations into the double-stranded RNA genome of infectious rotavirus",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Komoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sasaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Taniguchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "4646-4651",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0509385103"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "Efficient initiation of HCV RNA replication in cell culture",
+            "authors": [
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Blight",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Kolykhalov",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "290",
+            "issn": "",
+            "pages": "1972-1974",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.290.5498.1972"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Initial genetic characterization of the 1918 \u201cSpanish\u201d influenza virus",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Krafft",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Bijwaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Fanning",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "275",
+            "issn": "",
+            "pages": "1793-1796",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.275.5307.1793"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "Origin and evolution of the 1918 \u201cSpanish\u201d influenza virus hemagglutinin gene",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Fanning",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Hultin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "96",
+            "issn": "",
+            "pages": "1651-1656",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.4.1651"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Characterization of the 1918 \u201cSpanish\u201d influenza virus neuraminidase gene",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Fanning",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Janczewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "97",
+            "issn": "",
+            "pages": "6785-6790",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.100140097"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Sequence of the 1918 pandemic influenza virus nonstructural gene (NS) segment and characterization of recombinant viruses bearing the 1918 NS genes",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Basler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "98",
+            "issn": "",
+            "pages": "2746-2751",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.031575198"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "Characterization of the 1918 \u201cSpanish\u201d influenza virus matrix gene segment",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Fanning",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Janczewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "McCall",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "10717-10723",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.21.10717-10723.2002"
+                ]
+            }
+        },
+        "BIBREF52": {
+            "title": "Novel origin of the 1918 pandemic influenza virus nucleoprotein gene",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Fanning",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Janczewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Lourens",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "12462-12470",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.22.12462-12470.2004"
+                ]
+            }
+        },
+        "BIBREF53": {
+            "title": "Characterization of the 1918 influenza virus polymerase genes",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "889-893",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04230"
+                ]
+            }
+        },
+        "BIBREF54": {
+            "title": "Reduction of the rate of poliovirus protein synthesis through large-scale codon deoptimization causes attenuation of viral virulence by lowering specific infectivity",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mueller",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Papamichail",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Coleman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Skiena",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "9687-9696",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.00738-06"
+                ]
+            }
+        },
+        "BIBREF55": {
+            "title": "Generation of infectious molecular clones of simian immunodeficiency virus from fecal consensus sequences of wild chimpanzees",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Takehisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "7463-7475",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.00551-07"
+                ]
+            }
+        },
+        "BIBREF56": {
+            "title": "Reconstitution of an infectious human endogenous retrovirus",
+            "authors": [
+                {
+                    "first": "YN",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Bieniasz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Pathog.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.0030010"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "Synthetic recombinant bat SARS-like coronavirus is infectious in cultured cells and in mice",
+            "authors": [
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "105",
+            "issn": "",
+            "pages": "19944-19949",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0808116105"
+                ]
+            }
+        },
+        "BIBREF58": {
+            "title": "The test-tube synthesis of a chemical called poliovirus. The simple synthesis of a virus has far-reaching societal implications",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "EMBO Rep.",
+            "volume": "7",
+            "issn": "",
+            "pages": "S3-S9",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.embor.7400728"
+                ]
+            }
+        },
+        "BIBREF59": {
+            "title": "Mutation of a single conserved nucleotide between the cloverleaf and internal ribosome entry site attenuates poliovirus neurovirulence",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "De Jesus",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Franco",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cello",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "14235-14243",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.22.14235-14243.2005"
+                ]
+            }
+        },
+        "BIBREF60": {
+            "title": "Oncolytic treatment and cure of neuroblastoma by a novel attenuated poliovirus in a novel poliovirus-susceptible animal model",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Toyoda",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mueller",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cello",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Cancer Res.",
+            "volume": "67",
+            "issn": "",
+            "pages": "2857-2864",
+            "other_ids": {
+                "DOI": [
+                    "10.1158/0008-5472.CAN-06-3713"
+                ]
+            }
+        },
+        "BIBREF61": {
+            "title": "Synthesis of infectious poliovirus RNA by purified T7 RNA polymerase",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van der Werf",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bradley",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Studier",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "83",
+            "issn": "",
+            "pages": "2330-2334",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.83.8.2330"
+                ]
+            }
+        },
+        "BIBREF62": {
+            "title": "Cell-free, de novo synthesis of poliovirus",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Science",
+            "volume": "254",
+            "issn": "",
+            "pages": "1647-1651",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1661029"
+                ]
+            }
+        },
+        "BIBREF63": {
+            "title": "Evidence for emergence of diverse polioviruses from C-cluster coxsackie A viruses and implications for global poliovirus eradication",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "104",
+            "issn": "",
+            "pages": "9457-9462",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0700451104"
+                ]
+            }
+        },
+        "BIBREF64": {
+            "title": "Viruses take center stage in cellular evolution",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Claverie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/gb-2006-7-6-110"
+                ]
+            }
+        },
+        "BIBREF65": {
+            "title": "Ueber die k\u00fcnstliche Bildung des Harnstoffs",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "W\u00f6hler",
+                    "suffix": ""
+                }
+            ],
+            "year": 1828,
+            "venue": "Ann. Phys.",
+            "volume": "12",
+            "issn": "",
+            "pages": "253-256",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/andp.18280870206"
+                ]
+            }
+        },
+        "BIBREF66": {
+            "title": "Are viruses alive?",
+            "authors": [
+                {
+                    "first": "LP",
+                    "middle": [],
+                    "last": "Villarreal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Sci. Am.",
+            "volume": "291",
+            "issn": "",
+            "pages": "100-105",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/scientificamerican1204-100"
+                ]
+            }
+        },
+        "BIBREF67": {
+            "title": "Viruses as symbionts",
+            "authors": [
+                {
+                    "first": "FP",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Symbiosis",
+            "volume": "44",
+            "issn": "",
+            "pages": "11-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Compelling reasons why viruses are relevant for the origin of cells",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Senkevich",
+                    "suffix": ""
+                },
+                {
+                    "first": "VV",
+                    "middle": [],
+                    "last": "Dolja",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrmicro2108-c5"
+                ]
+            }
+        },
+        "BIBREF69": {
+            "title": "Ten good reasons not to exclude viruses from the evolutionary picture",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Claverie",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ogata",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrmicro2108-c3"
+                ]
+            }
+        },
+        "BIBREF70": {
+            "title": "Primary structure, gene organization and polypeptide expression of poliovirus RNA",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kitamura",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Nature",
+            "volume": "291",
+            "issn": "",
+            "pages": "547-553",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/291547a0"
+                ]
+            }
+        },
+        "BIBREF71": {
+            "title": "Molecular cloning of poliovirus cDNA and determination of the complete nucleotide sequence of the viral genome",
+            "authors": [
+                {
+                    "first": "VR",
+                    "middle": [],
+                    "last": "Racaniello",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Baltimore",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "78",
+            "issn": "",
+            "pages": "4887-4891",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.78.8.4887"
+                ]
+            }
+        },
+        "BIBREF72": {
+            "title": "Generating a synthetic genome by whole genome assembly: \u03a6X174 bacteriophage from synthetic oligonucleotides",
+            "authors": [
+                {
+                    "first": "HO",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Hutchison",
+                    "suffix": "III"
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pfannkoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "100",
+            "issn": "",
+            "pages": "15440-15445",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.2237126100"
+                ]
+            }
+        },
+        "BIBREF73": {
+            "title": "1918 Influenza: the mother of all pandemics",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Morens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "12",
+            "issn": "",
+            "pages": "15-22",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid1209.05-0979"
+                ]
+            }
+        },
+        "BIBREF74": {
+            "title": "The next influenza pandemic: can it be predicted?",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Morens",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Fauci",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Am. Med. Assoc.",
+            "volume": "297",
+            "issn": "",
+            "pages": "2025-2027",
+            "other_ids": {
+                "DOI": [
+                    "10.1001/jama.297.18.2025"
+                ]
+            }
+        },
+        "BIBREF75": {
+            "title": "Discovery and characterization of the 1918 pandemic influenza virus in historical context",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Hultin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Morens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Antivir. Ther.",
+            "volume": "12",
+            "issn": "",
+            "pages": "581-591",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Vitalism and synthesis of urea. From Friedrich Wohler to Hans A. Krebs",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kinne-Saffran",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Kinne",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Am. J. Nephrol.",
+            "volume": "19",
+            "issn": "",
+            "pages": "290-294",
+            "other_ids": {
+                "DOI": [
+                    "10.1159/000013463"
+                ]
+            }
+        },
+        "BIBREF77": {
+            "title": "Reverse genetics of negative-strand RNA viruses: closing the circle",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pekosz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lamb",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "96",
+            "issn": "",
+            "pages": "8804-8806",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.16.8804"
+                ]
+            }
+        },
+        "BIBREF78": {
+            "title": "\u201cAmbisense\u201d approach for the generation of influenza A virus: vRNA and mRNA synthesis from one template",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hoffmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hobom",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Webster",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virology",
+            "volume": "267",
+            "issn": "",
+            "pages": "310-317",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/viro.1999.0140"
+                ]
+            }
+        },
+        "BIBREF79": {
+            "title": "Existing antivirals are effective against influenza viruses with genes from the 1918 pandemic virus",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "13849-13854",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.212519699"
+                ]
+            }
+        },
+        "BIBREF80": {
+            "title": "Global host immune response: pathogenesis and transcriptional profiling of type A influenza viruses expressing the hemagglutinin and neuraminidase genes from the 1918 pandemic virus",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Kash",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "9499-9511",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.17.9499-9511.2004"
+                ]
+            }
+        },
+        "BIBREF81": {
+            "title": "Enhanced virulence of influenza A viruses with the haemagglutinin of the 1918 pandemic virus",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kobasa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "431",
+            "issn": "",
+            "pages": "703-707",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02951"
+                ]
+            }
+        },
+        "BIBREF82": {
+            "title": "Genomic analysis of increased host immune and cell death responses induced by 1918 influenza virus",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Kash",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "443",
+            "issn": "",
+            "pages": "578-581",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature05181"
+                ]
+            }
+        },
+        "BIBREF83": {
+            "title": "Single gene reassortants identify a critical role for PB1, HA, and NA in the high virulence of the 1918 pandemic influenza virus",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pappas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "105",
+            "issn": "",
+            "pages": "3064-3069",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0711815105"
+                ]
+            }
+        },
+        "BIBREF84": {
+            "title": "Pathogenicity and immunogenicity of influenza viruses with genes from the 1918 pandemic virus",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "3166-3171",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0308391100"
+                ]
+            }
+        },
+        "BIBREF85": {
+            "title": "Pathogenicity of influenza viruses with genes from the 1918 pandemic virus: functional roles of alveolar macrophages and neutrophils in limiting virus replication and mortality in mice",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "14933-14944",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.23.14933-14944.2005"
+                ]
+            }
+        },
+        "BIBREF86": {
+            "title": "The pathology of influenza virus infections",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Morens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Annu. Rev. Pathol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "499-522",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.pathmechdis.3.121806.154316"
+                ]
+            }
+        },
+        "BIBREF87": {
+            "title": "Ueber der chemische Zusammensetzung der Eiterzellen",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Miescher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1871,
+            "venue": "Med.-Chem. Unters.",
+            "volume": "4",
+            "issn": "",
+            "pages": "441-460",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "Characterization of the reconstructed 1918 Spanish influenza pandemic virus",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "310",
+            "issn": "",
+            "pages": "77-80",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1119392"
+                ]
+            }
+        },
+        "BIBREF89": {
+            "title": "Genetic analysis of the compatibility between polymerase proteins from human and avian strains of influenza A viruses",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Naffakh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Massin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Escriou",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Crescenzo-Chaigne",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van der Werf",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Gen. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "1283-1291",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/0022-1317-81-5-1283"
+                ]
+            }
+        },
+        "BIBREF90": {
+            "title": "A two-amino acid change in the hemagglutinin of the 1918 influenza virus abolishes transmission",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Science",
+            "volume": "315",
+            "issn": "",
+            "pages": "655-659",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1136212"
+                ]
+            }
+        },
+        "BIBREF91": {
+            "title": "Glycan microarray analysis of the hemagglutinins from modern and pandemic influenza viruses reveals different receptor specificities",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Stevens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Mol. Biol.",
+            "volume": "355",
+            "issn": "",
+            "pages": "1143-1155",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jmb.2005.11.002"
+                ]
+            }
+        },
+        "BIBREF92": {
+            "title": "Human endogenous retroviruses in health and disease: a symbiotic perspective",
+            "authors": [
+                {
+                    "first": "FP",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. R. Soc. Med.",
+            "volume": "97",
+            "issn": "",
+            "pages": "560-565",
+            "other_ids": {
+                "DOI": [
+                    "10.1177/014107680409701202"
+                ]
+            }
+        },
+        "BIBREF93": {
+            "title": "Retroelements and the human genome: new perspectives on an old relation",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bannert",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kurth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "S14572-S14579",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0404838101"
+                ]
+            }
+        },
+        "BIBREF94": {
+            "title": "Identification of an infectious progenitor for the multiple-copy HERV-K human endogenous retroelements",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dewannieux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Res.",
+            "volume": "16",
+            "issn": "",
+            "pages": "1548-1556",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.5565706"
+                ]
+            }
+        },
+        "BIBREF95": {
+            "title": "Viral Fossil brought back to life",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Enserink",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science NOW",
+            "volume": "1101",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "Chimpanzee reservoirs of pandemic and nonpandemic HIV-1",
+            "authors": [
+                {
+                    "first": "BF",
+                    "middle": [],
+                    "last": "Keele",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": "523-526",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1126531"
+                ]
+            }
+        },
+        "BIBREF97": {
+            "title": "Bats are natural reservoirs of SARS-like coronaviruses",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "310",
+            "issn": "",
+            "pages": "676-679",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1118391"
+                ]
+            }
+        },
+        "BIBREF98": {
+            "title": "Molecular structure of nucleic acids; a structure for deoxyribose nucleic acid",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "FH",
+                    "middle": [],
+                    "last": "Crick",
+                    "suffix": ""
+                }
+            ],
+            "year": 1953,
+            "venue": "Nature",
+            "volume": "171",
+            "issn": "",
+            "pages": "737-738",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/171737a0"
+                ]
+            }
+        },
+        "BIBREF99": {
+            "title": "Expression of animal virus genomes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Baltimore",
+                    "suffix": ""
+                }
+            ],
+            "year": 1971,
+            "venue": "Bacteriol. Rev.",
+            "volume": "35",
+            "issn": "",
+            "pages": "235-241",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "Genetics of poliovirus",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CU",
+                    "middle": [],
+                    "last": "Hellen",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Annu. Rev. Genet.",
+            "volume": "27",
+            "issn": "",
+            "pages": "353-436",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.ge.27.120193.002033"
+                ]
+            }
+        },
+        "BIBREF101": {
+            "title": "Rapid evolution of RNA genomes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Holland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "Science",
+            "volume": "215",
+            "issn": "",
+            "pages": "1577-1585",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.7041255"
+                ]
+            }
+        },
+        "BIBREF102": {
+            "title": "Viral quasispecies",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eigen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Sci. Am.",
+            "volume": "269",
+            "issn": "",
+            "pages": "42-49",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/scientificamerican0793-42"
+                ]
+            }
+        },
+        "BIBREF103": {
+            "title": "A \u201chumanized\u201d green fluorescent protein cDNA adapted for high-level expression in mammalian cells",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zolotukhin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Potter",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Hauswirth",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Guy",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Muzyczka",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Virol.",
+            "volume": "70",
+            "issn": "",
+            "pages": "4646-4654",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "Genetics, pathogenesis and evolution of picornaviruses",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gromeier",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Gorbalenya",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Origin and Evolution of Viruses",
+            "volume": "",
+            "issn": "",
+            "pages": "287-343",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "Demonstration of the specificity of poliovirus encapsidation using a novel replicon which encodes enzymatically active firefly luciferase",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Porter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Virology",
+            "volume": "243",
+            "issn": "",
+            "pages": "1-11",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/viro.1998.9046"
+                ]
+            }
+        },
+        "BIBREF106": {
+            "title": "Primary structure of poliovirus defective-interfering particle genomes and possible generation mechanisms of the particles",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kuge",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Saito",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nomoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "J. Mol. Biol.",
+            "volume": "192",
+            "issn": "",
+            "pages": "473-487",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0022-2836(86)90270-6"
+                ]
+            }
+        },
+        "BIBREF107": {
+            "title": "Nonrandom utilization of codon pairs in Escherichia coli",
+            "authors": [
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Gutman",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Hatfield",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "86",
+            "issn": "",
+            "pages": "3699-3703",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.86.10.3699"
+                ]
+            }
+        },
+        "BIBREF108": {
+            "title": "Large scale comparative codon-pair context analysis unveils general rules that fine-tune evolution of mRNA primary structure",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Moura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS ONE",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0000847"
+                ]
+            }
+        }
+    }
+}

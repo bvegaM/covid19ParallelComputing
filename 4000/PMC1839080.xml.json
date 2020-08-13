@@ -1,0 +1,3260 @@
+{
+    "paper_id": "PMC1839080",
+    "metadata": {
+        "title": "Whole genome molecular phylogeny of large dsDNA viruses using composition vector method",
+        "authors": [
+            {
+                "first": "Lei",
+                "middle": [],
+                "last": "Gao",
+                "suffix": "",
+                "email": "highlei@gmail.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Ji",
+                "middle": [],
+                "last": "Qi",
+                "suffix": "",
+                "email": "jxq11@psu.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Viruses are small, infectious, obligate intracellular parasites that are capable of replicating themselves within their host cells. They are even smaller than the smallest elementary biosystem, yet still possess some properties of living systems such as having a genome and the ability to adapt to changing environments. However, viruses cannot capture and store free energy and they are not functionally active outside their host cell [1].",
+            "cite_spans": [
+                {
+                    "start": 437,
+                    "end": 438,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Traditionally, viruses were characterized by morphological features including capsid size, shape, structure, etc., as well as physicochemical and antigenic properties. As more and more viral genomes are being sequenced, the evolutionary relationship of a great many families and genera is being explored [2,3] by sequence analysis on single gene or gene families, such as polymerase, capsid and movement genes [4-10]. The virus taxonomy system is approved and updated by the International Committee on the Taxonomy of Viruses (ICTV).",
+            "cite_spans": [
+                {
+                    "start": 305,
+                    "end": 306,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 307,
+                    "end": 308,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 411,
+                    "end": 412,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 413,
+                    "end": 415,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "However, it is full of ambiguity for phylogenetic analysis based on single gene when using conserved or similar genes since horizontal gene transfer (HGT) between viruses, along with gene duplication, gene capture from host appears to have been frequent in large DNA viruses [11-14]. Genetic mosaicism of phages has been known for a long time. Homologous morons (coding region and transcription control sequences) are found in many lineages of phages [15], and these kinds of genetic acquirements have also been considered the main sources of increasing genome size in large DNA viruses [9,16]. The high substitution rate of viruses also limits the sequence-based methods from revealing the distant evolutionary relationships [11,17]. For example, the herpes simplex virus type 1 mutates 10 times greater than mammalian genes (nearly 3.5 \u00d7 108 substitutions per site per year) [18,19]. Some attempts have been made to combine viral structure and function characteristics and genomic information of their hosts into sequence information [11,17] although quantifying such structural similarity has proved to be extremely challenging.",
+            "cite_spans": [
+                {
+                    "start": 276,
+                    "end": 278,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 279,
+                    "end": 281,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 452,
+                    "end": 454,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 588,
+                    "end": 589,
+                    "mention": "9",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 590,
+                    "end": 592,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 727,
+                    "end": 729,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 878,
+                    "end": 880,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 881,
+                    "end": 883,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1037,
+                    "end": 1039,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1040,
+                    "end": 1042,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In the meantime there are several other attempts to infer viral phylogeny from their whole genomes [12,20-25] to avoid the problem of gene rearrangement, gene loss, gene duplication and lateral gene transfer. However, some of them infer the majority consensus tree of the many trees of individual genes or use the combined sequences of many shared genes [12,21,22]. Some of them employ gene content [12,22,23] and gene order [12,22] method, but the former has to correct for the genome size effect [26] and the latter can be hindered by a lack of synteny conservation or the variation of the evolving rate of synteny between taxa [12,26]. Above methods are partly or completely based on alignment of conserved or similar sequences which is hard to infer more distant evolutionary relationships. Gao and Stuart [20,25] apply new alignment-free methods to resolve virus relationships respectively, which appear to be sufficiently powerful to explore the phylogeny of viruses at large evolutionary distance.",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 102,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 103,
+                    "end": 105,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 106,
+                    "end": 108,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 355,
+                    "end": 357,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 358,
+                    "end": 360,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 361,
+                    "end": 363,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 400,
+                    "end": 402,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 403,
+                    "end": 405,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 426,
+                    "end": 428,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 499,
+                    "end": 501,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 631,
+                    "end": 633,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 634,
+                    "end": 636,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 811,
+                    "end": 813,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 814,
+                    "end": 816,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Since viruses have no universal common genes just like SSU rRNA in cellular life, it is difficult to reconstruct the phylogenetic tree for distinct type of virus with most of former methods. We present here a phylogenetic analysis of large DNA viruses with the Composition Vector (CV) method [20,27,28] and discuss their relationships at a deep level. The CV method does not require extended alignments, predefined operational orthologs, or even predefined homologs (for details see material and methods). We show that the results are mostly consistent with the biologist's systematics with only a few outliers and also provide some information for those unclassified viruses and cladistic relationships of several families.",
+            "cite_spans": [
+                {
+                    "start": 293,
+                    "end": 295,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 296,
+                    "end": 298,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 299,
+                    "end": 301,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Fig. 1 and Fig. 2a supports the division of this family into four genera. It is notable that the two genera, Atadenovirus and Siadenovirus, which both comprise viruses from a variety of hosts locate between another two genera, Mastadenovirus whose hosts are mammals and Aviadenovirus whose hosts are birds. This variety of host origin supports the hypothesis that interspecies transmission, i.e. host switches of adenoviruses, may have occurred [29].",
+            "cite_spans": [
+                {
+                    "start": 446,
+                    "end": 448,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Adenoviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 5,
+                    "end": 6,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 16,
+                    "end": 18,
+                    "mention": "2a",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "According to the classification in ICTV database, one of the largest families in dsDNA viruses, Baculoviridae, is composed of two genera, Granulovirus and Nucleopolyhedrovirus. However, the 4-subbranch of this family shown in Fig. 1 and Fig. 2b complies with the classification of their hosts. Dipteran-infecting baculovirus, CuniNPV, locates the most deep [30] and stay outside the whole large clade, followed by the Hymenoptera baculovirus (NeleNPV and NeseNPV) and Lepidoptera baculovirus (the rest of them) [12,31]. There are three hypotheses on the origin of Baculoviruses: originated within Lepidoptera with subsequent horizontal transmissions to other insect orders [32]; originated with the cocladogenesis of the viruses and their hosts [33]; originated from the ancestral baculoviruses that were probably able to infect the hosts of different orders, with ancient coevolution between the hosts and pathogens then leading to the different order host specialization [12]. Our analysis apparently provides equal support to the last two hypotheses as postulated by Herniou [30], without comparing the division time of viruses and their hosts.",
+            "cite_spans": [
+                {
+                    "start": 358,
+                    "end": 360,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 512,
+                    "end": 514,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 746,
+                    "end": 748,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 974,
+                    "end": 976,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1079,
+                    "end": 1081,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Baculoviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 231,
+                    "end": 232,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 242,
+                    "end": 244,
+                    "mention": "2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The division of Poxviridae into two subfamilies Chordopoxvirinae (ChPV) and Entomopoxvirinae (EnPV) shown in Fig. 1 and Fig. 2d, is the same as in the systematics of ICTV. Within the cluster Orthopoxviruses in ChPV, ECTV and CPXV are the most divergent, which is similar to McLysaght's study [34] and is also supported by another analysis based on multiple genes alignment [3]. Capripoxvirus, Leporipoxvirus, Suipoxvirus and Yatapoxvirus form another cluster, in which Capripoxvirus and Suipoxvirus are much closer to each other, and this supports the hypothesis that they might have evolved from a common ancestor [3]. In Figure 1, DPV, an unclassified Poxvirus, is assigned to ChPV subfamily, which agrees with Afonso's result [35].",
+            "cite_spans": [
+                {
+                    "start": 293,
+                    "end": 295,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 374,
+                    "end": 375,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 616,
+                    "end": 617,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Poxviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 114,
+                    "end": 115,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "2d",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 630,
+                    "end": 631,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Within the Herpesviridae family, Fig. 1 and Fig. 2c also supports the observations of an early split of the Beta- and Gammaherpesviruses from the Alphaherpesviruses [36]. It is worth mentioning that TuHV-1, previously known only to belong to the Beta-subfamily, now is found to cluster with Cytomegaloviruses in Fig. 1, which follows Bahr's analysis [37]. According to the taxonomy system of ICTV, the Gamma-subfamily consists of two genera, Lymphocryptovirus and Rhadinovirus. MuHV-4, whose position was previously unresolved and various [36,38] is now assigned to Rhadinoviruses according to ICTV, and is the most divergent in fig. 1. The rest two ungulate herpesviruses within Rhadinoviruses, AIHV-1 and EHV-2, are divergent from others which is in accordance with other analyses [36,38]. However, another ungulate herpesvirus, BoHV-4, clusters closely to HHV-8 and CeHV-17, which is incompatible with the hypothesis that herpesviruses have coevolved with their hosts [39].",
+            "cite_spans": [
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 351,
+                    "end": 353,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 540,
+                    "end": 542,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 543,
+                    "end": 545,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 784,
+                    "end": 786,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 787,
+                    "end": 789,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 972,
+                    "end": 974,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Herpesviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 38,
+                    "end": 39,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 49,
+                    "end": 51,
+                    "mention": "2c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 317,
+                    "end": 318,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 634,
+                    "end": 635,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "All Iridoviruses except IIV-6 fall into one cluster in fig. 1. IIV-6 and ASFV from Asfarviridae group together, which partly supports the theory that Iridoviridae and Asfarviridae are monophyletic [40]. It is interesting to note that ISaKNV, which was still an unclassified Iridovirus at the time we fixed our data sets, has been placed in a new genus Megalocytivirus, which supports both our analysis and Do's [41]. The same is true of PsHV-1, which is assigned to Alphaherpesvirinae in fig. 1 just as ICTV has done not long ago, and it should belong to Iltovirus for it clusters to GaHV-1. Similarly, WSSV, an unclassified marine invertebrate virus [42], has also been classified into a new virus family, Nimaviridae, which is again supported by our results.",
+            "cite_spans": [
+                {
+                    "start": 198,
+                    "end": 200,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 412,
+                    "end": 414,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 652,
+                    "end": 654,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Herpesviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 60,
+                    "end": 61,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 493,
+                    "end": 494,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Our results could also provide some clues to these hypotheses about origins and evolution of viruses of several families.",
+            "cite_spans": [],
+            "section": "Herpesviridae ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Several unclassified viruses are analyzed for obtaining some hints for their possible taxonomic statuses. As shown in fig. 1, PsHV-1 may belong to Iltovirus, which was supported by Thureen's result [43]; AtHV-3 to Rhadinovirus the same as McGeoch's analysis [44]; TuHV-1 to Cytomegalovirus just as Bahr's result [37]. SAdV-3 and SAdV-1 are close to HAdV-(A, B, C, D, E, F), and they may be two new species of Mastadenovirus [45,46]. NeleNPV and NeseNPV group together, and they may belong to a new genus according to Herniou's results [30]. In fig. 1 DPV locates between Suipoxvirus and Yatapoxvirus but not very closes to each of them, further supporting the idea that it appears to be assigned to a new genus Cervidpoxvirus [35,47]. HZV-1, originally defined as Baculovirus but currently as an unclassified dsDNA virus [48], clusters with WSSV whin Nimaviridae in our results. ",
+            "cite_spans": [
+                {
+                    "start": 199,
+                    "end": 201,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 259,
+                    "end": 261,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 425,
+                    "end": 427,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 428,
+                    "end": 430,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 536,
+                    "end": 538,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 727,
+                    "end": 729,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 822,
+                    "end": 824,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Herpesviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 123,
+                    "end": 124,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 549,
+                    "end": 550,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "However, there are some outliers in fig. 1. IcHV-1 and OsHV-1 group closely but jump out of the branch of Herpesviridae, which is consistent with dissimilarities in sequence comparisons between OsHV-1 and the three vertebrate herpesvirus subfamilies [49] and up-to-date classification to two new families [50]. CuniNPV stay outside the whole large clade of Baculoviridae [51], and it also should belong to a new genus according to Herniou's proposal [30]. IIV-6 closes with ASFV [40] but stays outside all other Iridoviruses, which may support partly the theory that Iridoviridae and Asfarviridae are monophyletic [40].",
+            "cite_spans": [
+                {
+                    "start": 251,
+                    "end": 253,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 306,
+                    "end": 308,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 451,
+                    "end": 453,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 480,
+                    "end": 482,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 615,
+                    "end": 617,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Herpesviridae ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 41,
+                    "end": 42,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We present here a phylogenetic analysis of large DNA viruses with the CV method and discuss their relationships at a deep level. The results support the biologist's systematics in overall structure and in many details and provide some clues to these hypotheses about origins and evolution of viruses of several families.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "It should be pointed out that although baculoviruses and their hosts are obviously subject to coevolution [30], the phylogenetic relationships of many families and the lower taxonomic levels cannot be fully explained by only the hypothesis of coevolution, e.g. the variety of host origin of Atadenovirus and Siadenovirus and the location of BoHV-4.",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 109,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Some traditional methods, e.g. the measures by concatenating aligned sequences, are efficient and powerful to recover the phylogeny of virus with closely evolutionary relationship. However, definition and selection of orthologs may limit their application to distance evolutionary viruses. Furthermore, these methods, in some cases, need adjustment or fine turning.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The CV method could circumvents the ambiguity of choosing orthologs especially for viruses since substitution rate of viruses is high and only a few number of universal common genes could be found (another paper about the stable analysis of the CV method will be submitted subsequently), it may suggest a new angle to Large DNA viruses evolution. Furthermore, the CV method is robust to HGT events. It has been observed that combining many genes could reduce sampling error and converge phylogenies on correct solution with good support [12,52]. Herniou obtained 32 different tree topologies by using 63 individual genes and one tree based on the combined alignment of the 63 genes, while the latter was consistent with most individual gene trees [12]. The CV method could use the information from all coding proteins so that it may still construct stable trees even dashing with a few horizontal transferred genes. We used two sets of data in our previous analysis on bacteria: one is based on whole genomes, and the other is a set of ribosome proteins. Both the results lead to reasonable phylogenetic trees but the first one is better, this shows that these orthologs only appeared in a subset species would also help to stabilize the tree topology. In this way, the method could be a well supplement to the traditional methods. The CV method may provide a quick reference in viruses phylogeneny and a fast analysis of co-evolution of viruses and their hosts whenever their proteomes are available [26].",
+            "cite_spans": [
+                {
+                    "start": 538,
+                    "end": 540,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 541,
+                    "end": 543,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 748,
+                    "end": 750,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1502,
+                    "end": 1504,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "All viral genomes were downloaded from NCBI before May. 24th, 2005. There are two available data sets of virus complete genomes. Those in GenBank [53] are the original data submitted by their authors. Those at the National Center for Biotechnological Information (NCBI) [54] are reference genomes curated by NCBI staff. Since the latter represents the approach of one and the same group using the same set of tools, it may provide a more consistent background for comparison. Therefore, we used all the translated amino acid sequences (the .faa files with NC_accession numbers) from NCBI. There are 1489 viral genomes, including 248 phages. Under the assumption that small DNA viruses (genome size < 10 k) probably have a different evolutionary history than large DNA viruses [9,11], and their mutation rate approaches that of RNA viruses (the order of substitutions per site per year, [55]), only large DNA viruses (total length of all coding proteins > 4 k) were used in the phylogenetic analysis, which included 124 viruses (phages have been excluded). Among the 124 dsDNA viruses there are seven viruses that are classified to certain families but their lower taxonomy states remain unknown, and two viruses are tentative species, and one virus that is only recognized as a dsDNA virus. The Additional file 1 lists the dsDNA viruses used, their abbreviations, and the NCBI accession numbers [see Additional file 1: 124 large dsDNA virus names, abbreviations, and NCBI accession numbers].",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 271,
+                    "end": 273,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 777,
+                    "end": 778,
+                    "mention": "9",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 779,
+                    "end": 781,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 887,
+                    "end": 889,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The main steps of the method are (see [28] for details): First, collect all amino acid sequences of a species. Second, calculate the frequency of appearance of overlapping oligopeptides of length K. A random background needs to be subtracted from these frequencies by using a Markov model of order (K - 2) in order to diminish the influence of random neutral mutations at the molecular level and to highlight the shaping role of selective evolution. Some strings that contribute mostly to apomorphic characters become more significant after the subtraction. The subtraction procedure is an essential step in our method. Third, putting these \"normalized\" frequencies in a fixed order, a composition vector of dimension 20K is obtained for each species. Fourth, the correlation C(A, B) between two species A and B is determined by taking projection of one normalized vector on another, i.e., taking the cosine of the angle between them. Lastly, the normalized distance between the two species is defined to be D = (1 - C)/2. Once a distance matrix has been calculated it is straightforward to construct phylogenetic trees by following the standard neighbor-joining method in the Phylip package [56].",
+            "cite_spans": [
+                {
+                    "start": 39,
+                    "end": 41,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1193,
+                    "end": 1195,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The best choice of K is related to the uniqueness of sequence reconstruction from its K-word components and is determined basically by the length of the sequence at hand. According to so-called \"sequencing by hybridization\" [57], for dsDNA viral genomes with length around 4,000 a.a., the minimal K is estimated to be 5.",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Only large genome viruses are used in our analysis to avoid the problem of small sample size when using CV method whose subtraction procedure is based on statistics. The CV method avoids the problems caused by HGT on the application of prokaryotic phylogeny by using whole genome sequences, because the extent of lateral transfer has been increasingly restricted to smaller and smaller gene pools of closer and closer related species as time goes by [58]. However, its application on classification of small DNA viruses may be affected by HGT because of relative shorter genome length, that's one of the reasons only large DNA viruses are used.",
+            "cite_spans": [
+                {
+                    "start": 451,
+                    "end": 453,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "LG carried out the molecular phylogenetic studies, participated in the design of program, and drafted the manuscript. JQ carried out the design of program and algorithm, participated in molecular phylogenetic studies, and helped to draft the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Tree of 124 large DNA viruses. Phylogenetic analysis of large DNA viruses based on CV method with K-string length K = 5. Altogether 33 genera from 10 families are presented. The nine unclassified dsDNA viruses are indicated by grey. Family names are placed close to the corresponding branches. Note that this is an unrooted tree and the branches are not to scale.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Trees of 4 virus families. Phylogenetic analysis of 4 virus families based on CV method with K-string length K = 5. a: Adenoviridae; b: Baculoviridae; c: Herpesviridae; d: Poxviridae. The unclassified dsDNA viruses are indicated by grey. Genus or subfamily names are placed close to the corresponding branches.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "MHV",
+                    "middle": [],
+                    "last": "van Regenmortel",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fauquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "DHL",
+                    "middle": [],
+                    "last": "Bishop",
+                    "suffix": ""
+                },
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Carstens",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Estes",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lemon",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maniloff",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Pringle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virus Taxonomy: Seventh Report of the International Committee on Taxonomy of Viruses",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Is the major capsid protein of Iridoviruses a suitable target for the study of viral evolution?",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Tidona",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schnitzler",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kehm",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Darai",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Virus genes",
+            "volume": "16",
+            "issn": "",
+            "pages": "59-66",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1007949710031"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "The evolution of large DNA viruses: combining genomic information of viruses and their hosts",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Shackelton",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Trends in Microbiology",
+            "volume": "12",
+            "issn": "",
+            "pages": "458-465",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tim.2004.08.005"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Use of whole genome sequence data to infer baculovirus phylogeny",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Herniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Luque",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Vlak",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Winstanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Cory",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "O'Reilly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of Virology",
+            "volume": "75",
+            "issn": "",
+            "pages": "8117-8126",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.17.8117-8126.2001"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "The role played by viruses in the evolution of their hosts: a view based on informational protein phylogenies",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Filee",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Forterre",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Laurent",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Res Microbiol",
+            "volume": "154",
+            "issn": "",
+            "pages": "237-243",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0923-2508(03)00066-4"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Origin and evolution of viral interleukin-10 and other DNA virus genes with vertebrate homologues",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Mol Evol",
+            "volume": "54",
+            "issn": "",
+            "pages": "90-101",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00239-001-0021-1"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "The origins and ongoing evolution of viruses",
+            "authors": [
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Hendrix",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Lawrence",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Hatfull",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Casjens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Trends in Microbiology",
+            "volume": "8",
+            "issn": "",
+            "pages": "504-508",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0966-842X(00)01863-1"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Poxvirus homologues of cellular genes",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Bugert",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Darai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virus Genes",
+            "volume": "21",
+            "issn": "",
+            "pages": "111-133",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1008140615106"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Evolution of viral structure",
+            "authors": [
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Bamford",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Burnett",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Stuart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Theoretical Population Biology",
+            "volume": "61",
+            "issn": "",
+            "pages": "461-470",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/tpbi.2002.1591"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Molecular Evolution",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Quantitative analysis of genomic polymorphism of herpes simplex virus type 1 strains from six countries: studies of molecular evolution and molecular epidemiology of the virus",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sakaoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kurita",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Iida",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Takada",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Umene",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Nahmias",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Gen Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "513-527",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Genetic content and evolution of adenoviruses",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Benko",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Harrach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Gen Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "2895-2908",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.19497-0"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Molecular phylogeny of coronaviruses including human SARS-CoV",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Chinese Science Bulletin",
+            "volume": "48",
+            "issn": "",
+            "pages": "1170-1174",
+            "other_ids": {
+                "DOI": [
+                    "10.1360/03wc0254"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Comparative analysis of the genomes of Rachiplusiaou and Autographa californica multiple nucleopolyhedroviruses",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Bonning",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Gen Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "1827-1842",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.19146-0"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Whole genome analysis of the Epiphyas postvittana nucleopolyhedrovirus",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Hyink",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Dellow",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Olsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KMB",
+                    "middle": [],
+                    "last": "Caradoc-Davies",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Drake",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Herniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Cory",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "O'Reilly",
+                    "suffix": ""
+                },
+                {
+                    "first": "VK",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Gen Virol",
+            "volume": "83",
+            "issn": "",
+            "pages": "957-971",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Gene content phylogeny of herpesviruses",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Montague",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Hutchison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "97",
+            "issn": "",
+            "pages": "5334-5339",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.97.10.5334"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "The phage proteomic tree: a genome-based taxonomy for phage",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Journal of Bacteriology",
+            "volume": "184",
+            "issn": "",
+            "pages": "4529-4535",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.184.16.4529-4535.2002"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "A whole genome perspective on the phylogeny of the plant virus family Tombusviridae",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stuart",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Moffett",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Bozarth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Archives of Virology",
+            "volume": "149",
+            "issn": "",
+            "pages": "1595-1610",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-004-0298-7"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Genome trees and the nature of genome evolution",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Snel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Huynen",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Dutilh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Annu Rev Microbiol",
+            "volume": "59",
+            "issn": "",
+            "pages": "191-209",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.micro.59.030804.121233"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Origin and Phylogeny of Chloroplasts Revealed by a Simple Correlation Analysis of Complete Genomes",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Anh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Biol Evol",
+            "volume": "21",
+            "issn": "",
+            "pages": "200-206",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/molbev/msh002"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Whole Proteome Prokaryote Phylogeny without Sequence Alignment: A K-String Composition Approach",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Molecular Evolution",
+            "volume": "58",
+            "issn": "",
+            "pages": "1-11",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00239-003-2493-7"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Genomic and phylogenetic analyses of an adenovirus isolated from a corn snake (Elaphe guttata) imply common origin with the members of the proposed new genus Atadenovirus",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Farkas",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Benk\u00f6",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "\u00c9l\u00f6",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ursu",
+                    "suffix": ""
+                },
+                {
+                    "first": "\u00c1",
+                    "middle": [],
+                    "last": "D\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ahne",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Harrach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Gen Virol",
+            "volume": "83",
+            "issn": "",
+            "pages": "2403-2410",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Poxvirus genomes: a phylogenetic analysis",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gubser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hue",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                },
+                {
+                    "first": "GL",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Gen Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": "105-117",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.19565-0"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Ancient coevolution of baculoviruses and their insect hosts",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Herniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Olszewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "O'Reilly",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Cory",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Virology",
+            "volume": "78",
+            "issn": "",
+            "pages": "3244-3251",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.7.3244-3251.2004"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Phylogenetic interrelationships among baculoviruses: evolutionary rates and host associations",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Zanotto",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Kessing",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Maruniak",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Journal of Invertebrate Phathology",
+            "volume": "62",
+            "issn": "",
+            "pages": "147-164",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jipa.1993.1090"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Evolution of occluded baculoviruses",
+            "authors": [
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Rohrmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "The biology of baculoviruses",
+            "volume": "",
+            "issn": "",
+            "pages": "203-215",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Baculovirus pathogenesis",
+            "authors": [
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Federici",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "The baculoviruses",
+            "volume": "",
+            "issn": "",
+            "pages": "33-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Extensive gene gain associated with adaptive evolution of poxviruses",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McLysaght",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Baldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Gaut",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "100",
+            "issn": "",
+            "pages": "15655-15660",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.2136653100"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Genome of Deerpox Virus",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Afonso",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Delhon",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Tulman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zsak",
+                    "suffix": ""
+                },
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": "Becerra",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zsak",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Kutish",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Roch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "966-977",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.2.966-977.2005"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Genomewide function conservation and phylogeny in the Herpesviridae",
+            "authors": [
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Alb\u00e0",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Orengo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "43-54",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.149801"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Analysis and characterization of the complete genome of tupaia (tree shrew) herpesvirus",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Bahr",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Darai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "4854-4870",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.10.4854-4870.2001"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "The descent of human herpesvirus 8",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Seminars in Cancer Biology",
+            "volume": "9",
+            "issn": "",
+            "pages": "201-209",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/scbi.1999.0093"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Molecular phylogeny of the Alphaherpesvirinae subfamily and a proposed evolutionary timescale",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cook",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Mol Biol",
+            "volume": "238",
+            "issn": "",
+            "pages": "9-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jmbi.1994.1264"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Group II nucleopolyhedrovirus subgroups revealed by phylogenetic analysis of polyhedrin and DNA polymerase gene sequences",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Bulach",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zaia",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Tribe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Invertebr Pathol",
+            "volume": "73",
+            "issn": "",
+            "pages": "59-73",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jipa.1998.4797"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Common origin of four diverse families of large eukaryotic DNA viruses",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Iyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "11720-11734",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.23.11720-11734.2001"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Complete genomic DNA sequence of rock bream iridovirus",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Do",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Son",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "An",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Cha",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "YC",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Virology",
+            "volume": "325",
+            "issn": "",
+            "pages": "351-363",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.virol.2004.05.008"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Complete genome sequence of the shrimp white spot bacilliform virus",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "11811-11820",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.23.11811-11820.2001"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Psittacid Herpesvirus 1 and Infectious Laryngotracheitis Virus: Comparative Genome Sequence Analysis of Two Avian Alphaherpesviruses",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Thureen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Keeler",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "7863-7872",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.00134-06"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "On phylogenetic relationships among major lineages of the Gammaherpesvirinae",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gatherer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dolan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Gen Virol",
+            "volume": "86",
+            "issn": "",
+            "pages": "307-316",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.80588-0"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Analysis of the first complete genome sequence of an Old World monkey adenovirus reveals a lineage distinct from the six human adenovirus species",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Kov\u00e1cs",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Zakhartchouk",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Harrach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Gen Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": "2799-2807",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.80225-0"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Complete genome sequence of simian adenovirus 1: an Old World monkey adenovirus with two fiber genes",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Kov\u00e1cs",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Harrach",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Zakhartchouk",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Gen Virol",
+            "volume": "86",
+            "issn": "",
+            "pages": "1681-1686",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.80757-0"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Poxviruses: past, present and future",
+            "authors": [
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Lefkowitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Upton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Research",
+            "volume": "117",
+            "issn": "",
+            "pages": "105-118",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.virusres.2006.01.016"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Analysis of the complete genome sequence of the Hz-1 virus suggests that it is related to members of the Baculoviridae",
+            "authors": [
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TY",
+                    "middle": [],
+                    "last": "Chow",
+                    "suffix": ""
+                },
+                {
+                    "first": "YY",
+                    "middle": [],
+                    "last": "Hsiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "9024-9034",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.18.9024-9034.2002"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "A novel class of herpesvirus with bivalve hosts",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Trus",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Steven",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Le Deuff",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Renault",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Gen Virol",
+            "volume": "86",
+            "issn": "",
+            "pages": "41-53",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.80382-0"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Identification, sequence analysis and phylogeny of the lef-2 gene of Helicoverpa armigera single-nucleocapsid baculovirus",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WFJ",
+                    "middle": [],
+                    "last": "Ijkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dominy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Zanotto",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hashimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Faktor",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hayakawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Prekumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mathavan",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Krell",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Vlak",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Virus Res",
+            "volume": "65",
+            "issn": "",
+            "pages": "21-32",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0168-1702(99)00097-0"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "Topics in herpesvirus genomics and evolution",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Rixon",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Research",
+            "volume": "117",
+            "issn": "",
+            "pages": "90-104",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.virusres.2006.01.002"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "Morphological and molecular evidence that Culex nigripalpus baculovirus is an unusual member of the family Baculoviridae",
+            "authors": [
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Moser",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Becnel",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Afonso",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kutish",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shanker",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Almira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Gen Virol",
+            "volume": "82",
+            "issn": "",
+            "pages": "283-297",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "More taxa or more characters revisited: combining data from nuclear protein-encoding genes for phylogenetic analyses of Noctuoidea (Insecta: Lepidoptera)",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Mitter",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Regier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Syst Biol",
+            "volume": "49",
+            "issn": "",
+            "pages": "202-224",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/10635159950173816"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "GenBank",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Karsch-Mizrachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "",
+            "pages": "D16-D20",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkj157"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Database resources of the National Center for Biotechnology Information",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Bryant",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Canese",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chetvernin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Church",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "DiCuccio",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Edgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Federhen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Geer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Helmberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kapustin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Kenton",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Khovayko",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maglott",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Schuler",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Schriml",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sequeira",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Sherry",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sirotkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Souvorov",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Starchenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "TO",
+                    "middle": [],
+                    "last": "Suzek",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Yaschenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "",
+            "pages": "D173-D180",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkj158"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Evolution of the feline-subgroup parvoviruses and the control of canine host-range in vivo",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Truyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Obermaier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Veijalainen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Parrish",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Virol",
+            "volume": "69",
+            "issn": "",
+            "pages": "4702-4710",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "PHYLIP (phylogeny inference package) version 3.5c",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Pevzner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Computational Molecular Biology: An Algorithmic Approach",
+            "volume": "75",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "The universal ancester",
+            "authors": [
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Woese",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "95",
+            "issn": "",
+            "pages": "6854-6859",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.95.12.6854"
+                ]
+            }
+        },
+        "BIBREF54": {
+            "title": "The phylogeny of RNA-dependent RNA polymerases of positive-strand RNA viruses",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Journal of General Virology",
+            "volume": "72",
+            "issn": "",
+            "pages": "2197-2206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "The '30K' superfamily of viral movement proteins",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Melcher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of General Virology",
+            "volume": "81",
+            "issn": "",
+            "pages": "257-266",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Phylogeny of the major head and tail genes of the wide-ranging T4-Type bacteriophage",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Tetart",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Desplats",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kutateladze",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Monod",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Ackermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Krisch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Bacteriol",
+            "volume": "183",
+            "issn": "",
+            "pages": "358-366",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.183.1.358-366.2001"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "Iridovirus homologues of cellular genes: implications for the molecular evolution of large DNA viruses",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Tidona",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Darai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virus Genes",
+            "volume": "21",
+            "issn": "",
+            "pages": "77-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1008192616923"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,865 @@
+{
+    "paper_id": "PMC2475551",
+    "metadata": {
+        "title": "Temporal trends in the discovery of human viruses",
+        "authors": [
+            {
+                "first": "Mark",
+                "middle": [
+                    "E.J"
+                ],
+                "last": "Woolhouse",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Richard",
+                "middle": [],
+                "last": "Howey",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Eleanor",
+                "middle": [],
+                "last": "Gaunt",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Liam",
+                "middle": [],
+                "last": "Reilly",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Margo",
+                "middle": [],
+                "last": "Chase-Topping",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nick",
+                "middle": [],
+                "last": "Savill",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Despite long-standing interest in global biodiversity (May 1988), only recently has the diversity of human pathogens been catalogued (Taylor et al. 2001). Approximately 1400 pathogen species are currently recognized (Woolhouse & Gaunt 2007). Fewer than 200 of these are viruses, but novel virus species are being reported in humans at a rate of over two per year, much faster than for other kinds of pathogen (Woolhouse & Gaunt 2007). Novel viruses are a major public health concern, whether causing disease on the massive scale of HIV/AIDS, more transient events such as the SARS epidemic or potential future threats such as pandemic influenza. An analysis of temporal patterns of virus discovery is therefore of considerable interest.",
+            "cite_spans": [
+                {
+                    "start": 55,
+                    "end": 63,
+                    "mention": "May 1988",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 134,
+                    "end": 152,
+                    "mention": "Taylor et al. 2001",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 217,
+                    "end": 239,
+                    "mention": "Woolhouse & Gaunt 2007",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 410,
+                    "end": 432,
+                    "mention": "Woolhouse & Gaunt 2007",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Our analysis is based on the rate of accumulation of new human virus species: the \u2018discovery curve\u2019. Discovery curves have previously been used to estimate the total diversity of various plant and animal taxa (Dove & Cribb 2006; Bebber et al. 2007). However, to our knowledge, the discovery curves have not previously been compiled for any category of human pathogen. Having compiled the discovery curve, we proceed to develop a simple statistical model which we use to estimate the size of the pool of human virus species, N, and the expected rate of discovery of new species to 2020.",
+            "cite_spans": [
+                {
+                    "start": 210,
+                    "end": 227,
+                    "mention": "Dove & Cribb 2006",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 229,
+                    "end": 247,
+                    "mention": "Bebber et al. 2007",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A standard method for estimating numbers of species is to extrapolate the cumulative species discovery curve (Bebber et al. 2007). We gathered data for this curve by systematically searching the primary literature for first reports of human infection with each of the currently recognized virus species, using species as defined by the International Committee on Taxonomy of Viruses (ICTV; http://www.ictvonline.org/). We note that the set of viruses we are interested in\u2014those that can infect humans\u2014is a small subset of the total (over 1500 species according to ICTV) and, as is discussed below, not a closed set because many of these viruses can also infect other hosts (Taylor et al. 2001). We regard this as analogous to constructing species discovery curves for any subdivision of geographical range or habitat. As we demonstrate below, this approach yields an excellent description of the discovery curve.",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 128,
+                    "mention": "Bebber et al. 2007",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 674,
+                    "end": 692,
+                    "mention": "Taylor et al. 2001",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We used piecewise linear regression to test for changes in the slope of the discovery curve. The results suggested upswings in 1930 (95% CI, 1929\u20131933) and 1954 (1953\u20131956). We therefore restricted detailed analysis to the period 1954\u20132006.",
+            "cite_spans": [],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We modelled discovery since 1954 assuming a total number of species available to be discovered (the species pool) of N virus species, each discovered in any given year with probability p. The model was fitted to the data and assessed using Markov chain Monte Carlo (MCMC)-based Bayesian inference, generating distributions and credible intervals for the parameters. The model defines the expected number of discovered viruses in year t as(2.1)\u03bbt(N,p)=Np(1\u2212p)t\u22121,where year t=1 corresponds to 1954.",
+            "cite_spans": [],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The binomial distribution B(N, p) can be accurately approximated by a Poisson distribution with parameter Np for the range of values of N and p of interest. We considered fitting a distribution for values of p; however, provided individual p-values are low there is minimal improvement in model fit. Thus, for a set of model parameters, the likelihood of observing data, X={xi}, the number of viruses discovered for years 1 to k, is given by(2.2)L(X|N,p)=\u220fi=1kexp(\u2212\u03bbi(N,p))\u03bbixi(N,p)xi!.Parameter distributions for N and p were calculated using MCMC simulation using a standard Metropolis algorithm with flat prior information. It was necessary to compute a correlation matrix to define a joint proposal since N and p are closely correlated. We monitored convergence using two chains. Once they had converged, we had a burn in period of 105 samples.",
+            "cite_spans": [],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We compared the model with the observed data by calculating the mean, trend in the mean and variance for the number of virus species discovered per year (based on five million simulations using best-fit parameter values). The model was extrapolated to year 2020 by calculating the expected number of viruses discovered using the best-fit model. The 95% posterior prediction intervals were calculated using two million model simulations taking into account parameter uncertainty (as given by data from 1954 to 2006) and natural model simulation stochasticity.",
+            "cite_spans": [],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As a validation exercise, the model was also fitted to the curve for accumulated virus families from 1954 using the same methods, except that the Poisson approximation no longer holds, so a binomial distribution was used. A family (based on current ICTV classifications) was added to the total when the first post-1954 species was allocated to that family. We tested the assumption that species can be randomly assigned to families (weighted by the size of the families) by noting the number of years in which 0, 1, 2, etc. virus families were discovered. This was done one million times to obtain a distribution for comparison with the observed values.",
+            "cite_spans": [],
+            "section": "2. Material and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "From a comprehensive search of the primary literature, we found 188 virus species that have been reported to infect humans, going back to yellow fever virus in 1901 (table 1). Since then, the number of human virus species discovered in any given year has ranged from zero to six. As is typical (Bebber et al. 2007), the cumulative species discovery curve increases slowly initially and then more rapidly (figure 1). Piecewise linear regression suggests no further upswings since 1954, roughly corresponding to the advent of tissue culture techniques for virus detection (figure 1).",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 313,
+                    "mention": "Bebber et al. 2007",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "3. Results",
+            "ref_spans": [
+                {
+                    "start": 405,
+                    "end": 413,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 571,
+                    "end": 579,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 166,
+                    "end": 173,
+                    "mention": "table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We confirmed that our model reproduced the observed slight downward trend in the rate of discovery since 1954 (figure 1) and the observed variance in the data from 1954 to 2006 (figure 2). The distribution of the number of virus species discovered per year shows slight overdispersion (mean=2.69; variance=3.07; variance-to-mean ratio greater than 1) which falls within the predicted range (mean=2.70 with 95% credible interval 2.41\u20133.00; variance=3.03 with interval 1.99\u20134.49). Together, these results support our choice of model, even though we do not explicitly consider heterogeneity in the probability of discovering a given species in any one year (p) or temporal variation in sampling effort, detection techniques and reporting.",
+            "cite_spans": [],
+            "section": "3. Results",
+            "ref_spans": [
+                {
+                    "start": 111,
+                    "end": 119,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 178,
+                    "end": 186,
+                    "mention": "figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Noting that p and N are highly correlated (figure 3), our best estimate for p is 0.015 (95% credible interval, 0.004\u20130.026) with 117 (38\u2013562) so far undiscovered virus species. Extrapolating the discovery curve, allowing for parameter uncertainty and stochastic discovery, we obtain a best estimate of 22 new species (10\u201340) by 2020 (figure 1).",
+            "cite_spans": [],
+            "section": "3. Results",
+            "ref_spans": [
+                {
+                    "start": 43,
+                    "end": 51,
+                    "mention": "figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 334,
+                    "end": 342,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Data on the cumulative discovery of new virus families are also reproducible (figure 4). The predicted distribution of the number of virus families discovered per year (assuming random allocation of species to families) compares favourably with the observed distribution (figure 5). This provides further support for the appropriateness of our model.",
+            "cite_spans": [],
+            "section": "3. Results",
+            "ref_spans": [
+                {
+                    "start": 78,
+                    "end": 86,
+                    "mention": "figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 272,
+                    "end": 280,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "We conclude that it is extremely probable that new human viruses will continue to be discovered in the immediate future; we are not yet close to the end of the virus discovery curve. As a direct result of this, it is not possible to estimate the size of the species pool for human viruses with precision. However, in contrast to the negative assessment by Bebber et al. (2007) of the use of incomplete species accumulation curves, we consider that the upper and lower limits to our estimate of the size of the species pool are of interest and also have practical implications.",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 376,
+                    "mention": "Bebber et al. (2007)",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Current trends are consistent with a pool of at least 38 undiscovered species that will be reported at an average rate of at least approximately one per year to 2020. In this context, it is worth noting that three new species were reported in 2007: two polyoma viruses, Ki and Wu, and a reovirus, Melaka (Allander et al. 2007; Chua et al. 2007; Gaynor et al. 2007). Other viruses may have been reported but not yet classified. In practice, future rates of discovery will, of course, be affected by any major advances in virus detection technology or by any major shifts (upwards or downwards) in the effort expended on virus discovery programmes. Tissue culture was regarded as the \u2018gold standard\u2019 for virus detection up until a few years ago when molecular methods came to the fore (Storch 2007), although there has not been a detectable increase in discovery rates as a result. Indeed, it is striking that there have been no dramatic changes in the pattern of virus discovery for over 50 years; extrapolations from our data should therefore provide a useful benchmark for probable future discovery rates.",
+            "cite_spans": [
+                {
+                    "start": 305,
+                    "end": 325,
+                    "mention": "Allander et al. 2007",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 327,
+                    "end": 343,
+                    "mention": "Chua et al. 2007",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 345,
+                    "end": 363,
+                    "mention": "Gaynor et al. 2007",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 784,
+                    "end": 795,
+                    "mention": "Storch 2007",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The upper limit for N is finite but large; we cannot rule out hundreds of novel human viruses to be reported in the future. There are two (not mutually exclusive) possible explanations for such a high level of diversity. First, it could reflect the largely unknown extant diversity of viruses in the non-human animal reservoirs that constitute the major source of emerging human pathogens (Taylor et al. 2001; Woolhouse & Gaunt 2007). The majority of human viruses are known to be capable of infecting non-human hosts (almost exclusively mammals and birds), and the animal origin of many apparently novel human viruses (e.g. HIV1 and HIV2, SARS CoV, Nipah virus) has been frequently remarked upon (Morse 1995; Woolhouse & Gowtage-Sequeria 2005; Wolfe et al. 2007); indeed, recently discovered viruses are even more likely to be associated with a non-human reservoir (Woolhouse & Gaunt 2007). All these observations are consistent with the idea that a significant fraction of viruses discovered in the last few decades is ecological \u2018spillover\u2019 from animal populations rather than newly evolved specialist human viruses. We have very limited knowledge of the diversity of viruses present in most mammal and bird species (with most attention having been paid to viruses of domestic animals; Cleaveland et al. 2001), so it is unclear for how long this process might continue.",
+            "cite_spans": [
+                {
+                    "start": 390,
+                    "end": 408,
+                    "mention": "Taylor et al. 2001",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 410,
+                    "end": 432,
+                    "mention": "Woolhouse & Gaunt 2007",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 698,
+                    "end": 708,
+                    "mention": "Morse 1995",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 710,
+                    "end": 743,
+                    "mention": "Woolhouse & Gowtage-Sequeria 2005",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 745,
+                    "end": 762,
+                    "mention": "Wolfe et al. 2007",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 867,
+                    "end": 889,
+                    "mention": "Woolhouse & Gaunt 2007",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1289,
+                    "end": 1311,
+                    "mention": "Cleaveland et al. 2001",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "An alternative explanation for a large pool of human viruses is that this reflects a high rate of evolution (within a reservoir population) of truly novel species capable of infecting humans. This hypothesis is difficult to test directly without much more comprehensive sequence data from both human and non-human virus populations. We note that the finite upper limit for the current estimate of N does not necessarily imply that the process of virus discovery is not open-ended (as a result of the evolution of new species) since there could be a low background rate of virus evolution, which will remain once extant diversity has been fully revealed. The balance between revealing extant diversity and the continual evolution of new species could be explored using a more complex model than equation (2.1); however, the available data are insufficient to yield useful estimates of the additional parameters required.",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although we cannot know in advance how big a threat they will pose, novel human viruses must be anticipated in public health planning and surveillance programmes for emerging infectious diseases (King et al. 2006; Jones et al. 2008). However, current approaches to virus discovery are largely passive, usually relying on investigation of reports of human disease with unfamiliar clinical symptoms and uncertain aetiology. Recently, there have been calls for more active discovery programmes for viruses and other pathogens involving \u2018systematic sampling and phylogeographic analysis of related pathogens in diverse animal species\u2019 (Wolfe et al. 2007). We consider that such calls are supported by the results reported here.",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 212,
+                    "mention": "King et al. 2006",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 214,
+                    "end": 231,
+                    "mention": "Jones et al. 2008",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 632,
+                    "end": 649,
+                    "mention": "Wolfe et al. 2007",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: List of viruses ordered by year of first reporta of human infection.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The discovery curve for human virus species. Cumulative number of species reported to infect humans (black circles and line). Statistically significant upward breakpoints are shown (vertical lines). Best-fit curve (solid line) and lower and upper 95% posterior prediction intervals (dashed lines) for extrapolation to 2020.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Approximate probability density of variance in simulated data from 1954 to 2006 for the best-fit model. Arrow shows observed value.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Approximate probability density function of parameter p and N generated by MCMC methods (see main text for details).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Accumulation of virus families associated with species discovered after 1954 (black circles and line). Best-fit curve (solid line) and lower and upper 95% posterior prediction intervals (dashed lines) extrapolated to 2020. Fitted parameter values are N=25 (95% credible intervals 24\u201337) and p=0.056 (0.027\u20130.089).",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Frequency distribution for the number per year of virus families associated with species discovered from 1954 to 2006, generated by reassigning the discovered viruses to families, repeated 106 times. Expected number with 95% credible intervals (bars) and data (black circles).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Identification of a third human polyoma virus",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Andreasson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bjerkner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bogdanovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A.A",
+                    "middle": [],
+                    "last": "Petersson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dalianis",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ramquist",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Andersson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol",
+            "volume": "81",
+            "issn": "",
+            "pages": "4130-4136",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Factors in the emergence of infectious diseases",
+            "authors": [
+                {
+                    "first": "S.S",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Emerg. Infect. Dis",
+            "volume": "1",
+            "issn": "",
+            "pages": "7-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Risk factors for human disease emergence",
+            "authors": [
+                {
+                    "first": "L.H",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.M",
+                    "middle": [],
+                    "last": "Latham",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phil. Trans. R. Soc. B",
+            "volume": "356",
+            "issn": "",
+            "pages": "983-989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Origins of major human infectious diseases",
+            "authors": [
+                {
+                    "first": "N.D",
+                    "middle": [],
+                    "last": "Wolfe",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.P",
+                    "middle": [],
+                    "last": "Dunavan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diamond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nature",
+            "volume": "447",
+            "issn": "",
+            "pages": "279-283",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Ecological origins of novel human pathogens",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gaunt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Crit. Rev. Microbiol",
+            "volume": "33",
+            "issn": "",
+            "pages": "1-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Host range and emerging and re-emerging pathogens",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gowtage-Sequeria",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Emerg. Infect. Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "1842-1847",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Predicting unknown species numbers using discovery curves",
+            "authors": [
+                {
+                    "first": "D.P",
+                    "middle": [],
+                    "last": "Bebber",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.H.C",
+                    "middle": [],
+                    "last": "Marriot",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.J",
+                    "middle": [],
+                    "last": "Gaston",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.A",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.W",
+                    "middle": [],
+                    "last": "Scotland",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. R. Soc. B",
+            "volume": "274",
+            "issn": "",
+            "pages": "1651-1658",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A previously unknown reovirus of bat origin is associated with an acute respiratory disease in humans",
+            "authors": [
+                {
+                    "first": "K.B",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "104",
+            "issn": "",
+            "pages": "11\u200a424-11\u200a429",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Diseases of humans and their domestic mammals: pathogen characteristics, host range and the risk of emergence",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cleaveland",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.K",
+                    "middle": [],
+                    "last": "Laurenson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.H",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phil. Trans. R. Soc. B",
+            "volume": "356",
+            "issn": "",
+            "pages": "991-999",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Species accumulation curves and their applications in parasite ecology",
+            "authors": [
+                {
+                    "first": "A.D.M",
+                    "middle": [],
+                    "last": "Dove",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.H",
+                    "middle": [],
+                    "last": "Cribb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends Parasitol",
+            "volume": "22",
+            "issn": "",
+            "pages": "568-574",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Identification of a novel polyomavirus from patients with acute respiratory tract infections",
+            "authors": [
+                {
+                    "first": "A.M",
+                    "middle": [],
+                    "last": "Gaynor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Pathog",
+            "volume": "3",
+            "issn": "",
+            "pages": "595-604",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Global trends in emerging infectious diseases",
+            "authors": [
+                {
+                    "first": "K.E",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.G",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Storeygard",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Balk",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.L",
+                    "middle": [],
+                    "last": "Gittleman",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "451",
+            "issn": "",
+            "pages": "990-993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Infectious diseases: preparing for the future",
+            "authors": [
+                {
+                    "first": "D.A",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Peckham",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.K",
+                    "middle": [],
+                    "last": "Waage",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Brownlie",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": "1392-1393",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "How many species are there on earth?",
+            "authors": [
+                {
+                    "first": "R.M",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Science",
+            "volume": "241",
+            "issn": "",
+            "pages": "1441-1449",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

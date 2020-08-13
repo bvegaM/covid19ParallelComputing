@@ -1,0 +1,2777 @@
+{
+    "paper_id": "PMC1110908",
+    "metadata": {
+        "title": "A Three-Stemmed mRNA Pseudoknot in the SARS Coronavirus Frameshift Signal",
+        "authors": [
+            {
+                "first": "Ewan",
+                "middle": [
+                    "P"
+                ],
+                "last": "Plant",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gabriela",
+                "middle": [
+                    "C"
+                ],
+                "last": "P\u00e9rez-Alvarado",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [
+                    "L"
+                ],
+                "last": "Jacobs",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bani",
+                "middle": [],
+                "last": "Mukhopadhyay",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Mirko",
+                "middle": [],
+                "last": "Hennig",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [
+                    "D"
+                ],
+                "last": "Dinman",
+                "suffix": "",
+                "email": "dinman@umd.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Marv",
+                "middle": [],
+                "last": "Wickens",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Severe acute respiratory syndrome (SARS) first appeared in Guangdong Province, China, late in 2002. Its rapid transmission and high rates of mortality and morbidity resulted in a significant threat to global health by the spring of 2003, and the epidemic had a significant effect on the public health and economies of locales affected by SARS outbreaks. The rapid response of the World Health Organization is credited with containing this contagion by late June 2003, and only a few cases were reported during the winter cold season of 2003\u20132004. The severity of this crisis mobilized the scientific community as well: by March 24, 2003, scientists at the Centers for Disease Control and Prevention and in Hong Kong had announced that a new coronavirus had been isolated from patients with SARS (reviewed in [1]). The sequences from two isolates of SARS-CoV were published simultaneously on May 1, 2003 [2,3].",
+            "cite_spans": [
+                {
+                    "start": 809,
+                    "end": 810,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 904,
+                    "end": 905,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 906,
+                    "end": 907,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Coronaviruses are enveloped animal viruses that cause respiratory and enteric diseases. Analysis of the SARS-CoV genome revealed that, similar to all coronaviruses, the 70% (approximately) at the 5\u2032 end of its large single (+) stranded RNA genome consists of two sizable genes called ORF1a and ORF1b. The 3\u2032 ORF1b overlaps, and is out of frame with, its 5\u2032 neighbor, ORF1a, and similar to other coronaviruses, a programmed \u22121 ribosomal frameshift (\u22121 PRF) was posited to be used by the virus to produce an ORF1a/1b fusion protein [2]. A wide range of RNA viruses use \u22121 PRF for the production of viral fusion protein (reviewed in [4\u20136]). In many such cases, e.g., the Retroviridae and Totiviridae, the efficiency of ribosomal frameshifting determines the stoichiometric ratio between structural and enzymatic proteins available for viral particle assembly, and even small changes in frameshift frequencies can have profound negative effects on virus propagation, thus targeting \u22121 PRF for antiviral therapies (reviewed in [7]). It has been shown that the SARS-Cov \u22121 PRF signal is able to promote efficient frameshifting in a rabbit reticulcyte system, and the \u22121 PRF signal reported in that publication consisted of a typical heptameric \u201cslippery site\u201d (UUU\nAAAC), a 5-nt spacer, and a typical H-form mRNA pseudoknot containing two double-stranded RNA stems and two single-stranded loops [8]. Two very recently published papers have suggested that the SARS-CoV mRNA pseudoknot may contain a third stem-loop structure [9, 10]. In this work, we present computational, comparative genomic, molecular, biophysical, and genetic evidence demonstrating that the SARS-CoV frameshift signal includes a new type of highly ordered three-stemmed mRNA pseudoknot that likely contains a large number of noncanonical base interactions. Although total deletion of the third stem does not significantly alter frameshifting efficiency, its disruption significantly inhibits this process. The fact that this general structure appears to be conserved among the coronaviruses raises questions regarding its biological function.\n",
+            "cite_spans": [
+                {
+                    "start": 531,
+                    "end": 532,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 631,
+                    "end": 632,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 633,
+                    "end": 634,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1023,
+                    "end": 1024,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1390,
+                    "end": 1391,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1519,
+                    "end": 1520,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1522,
+                    "end": 1524,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\u22121 PRF signals typically have a tripartite organization. From 5\u2032 to 3\u2032, these are composed of a heptameric \u201cslippery site,\u201d a \u201cspacer\u201d region, and a stable mRNA secondary structure, typically an mRNA pseudoknot (reviewed in [11]). A previous analysis of the SARS-CoV \u22121 PRF signal demonstrated that a sequence spanning nucleotide positions 13392\u201313472 satisfied these three requirements and was able to promote efficient \u22121 PRF in rabbit reticulocyte lysates [8]. The \u22121 PRF signal presented in that study contained a typical mRNA pseudoknot composed of two double-helical, Watson\u2013Crick basepaired stems connected by two single-stranded loops (Figure 1A).",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 460,
+                    "end": 461,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Computational Analysis of the SARS-CoV Frameshift Signal Suggests the Presence of a Three-Helix-Containing RNA Pseudoknot ::: Results",
+            "ref_spans": [
+                {
+                    "start": 644,
+                    "end": 652,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The presence of a long, 29-nt loop 2 seemed to be unusual, prompting us to subject the sequence from positions 13392\u201313472 to additional computational analyses in an effort to further define the structure of this mRNA pseudoknot. The nucleotide sequence suspected of featuring a \u22121 PRF signal between ORF1a and ORF1b was scanned by RNAMotif [12], using a pattern-based description capable of finding common \u22121 PRF signals in other RNA viruses. As expected, a so-called slippery site (UUU\nAAAC) and a large H-type pseudoknot were identified\u2014the two primary stimulating elements required for efficient ribosomal slippage. This analysis was coupled with Pknots [13], a software package that predicts the most thermodynamically stable structure for a given RNA sequence. The predicted structure for the SARS-CoV frameshift signal was extremely stable, with a calculated minimum free energy (MFE) of \u221226.68 kcal/mol. The surprising result was that the 29-nt sequence designated loop 2 by Thiel et al. [8] was predicted to form a third helix, nested within the sequences defined by stems 1 and 2 (Figure 1B). Though a small, internally nested third helix (helix-3) has been shown to be present in the HIV-1 group O frameshift signal [14], such an extensive basepairing pattern has not to our knowledge been heretofore demonstrated for any other viral frameshift signal. To determine the statistical significance of this finding, a distribution of MFE values taken from 500 randomly shuffled SARS-CoV frameshift signals was created. Each of the randomly shuffled sequences was folded using Pknots with the same parameters. The resulting normal distribution had mean MFE of \u221221.12 kcal/mol (standard deviation = 2.67, 500\u00d7), revealing that the predicted three-stemmed pseudoknot structure of the native sequence is highly significant with a z-score of \u22122.05 and a p value of 0.02 (one-tailed Student's t-test).\n",
+            "cite_spans": [
+                {
+                    "start": 342,
+                    "end": 344,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 659,
+                    "end": 661,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 997,
+                    "end": 998,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1228,
+                    "end": 1230,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Computational Analysis of the SARS-CoV Frameshift Signal Suggests the Presence of a Three-Helix-Containing RNA Pseudoknot ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1091,
+                    "end": 1099,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To address the question of whether the potential to form a three-stemmed mRNA pseudoknot is unique to the SARS-CoV, we searched for such structures in all of the known viral \u22121 PRF signals listed in the RECODE 2003 database [15], as well as the putative frameshift signals in all of the sequenced members of the Order Nidovirales (including coronaviruses and arteriviruses). The SARS-CoV frameshift signal itself is homologous to all of the nine other frameshift signals for coronaviruses whose genomes have been fully sequenced. A multiple sequence alignment of the ten coronavirus frameshift signals is presented in Figure 2. This shows that both stems 1 and 2 are highly conserved, with a strong conservation of base complementation in the cores of both stems 1 and 2 (blue and red sequences, respectively). This analysis also shows all of the coronavirus frameshift signals have the potential to form a third helix, although the structures and sequences are less well conserved (Figure 2, in green). In addition, the potential of sequences located approximately 200 nt downstream of the slippery site to form long-range \u201ckissing loop\u201d interactions with the 5\u2032 half of stem 2 was previously noted for HCoV-229E [16] and TEGV [17]. This property was only conserved among all of the group 2 coronaviruses, not in any of the others (see Figure 2). The potential significance of this observation is discussed below. A phylogenetic tree of the \u22121 PRF signals constructed from the multiple sequence alignment is presented in Figure 3. As expected, the group 1 and group 2 coronaviruses cluster together, and neither the SARS-CoV nor the avian infectious bronchitis virus (AIBV) frameshift signals cluster with either group. Of particular interest, however, is that very similar mRNA pseudoknot structures are predicted to occur within groups\u2014but not between them.",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1215,
+                    "end": 1217,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1229,
+                    "end": 1231,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Phylogenetic Conservation of Predicted Three-Stemmed mRNA Pseudoknots in Coronaviruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 618,
+                    "end": 626,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 983,
+                    "end": 991,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1337,
+                    "end": 1345,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1522,
+                    "end": 1530,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In light of the computational findings, we conducted biochemical analyses of the SARS-CoV frameshift signal using a [32P] 5\u2032 end labeled SP6 RNA polymerase product spanning nucleotides 13399\u201313475. RNase A cleaves preferentially at single-stranded pyrimidine bases, RNase T1 cuts at single-stranded guanosine residues, and RNase V1 cleaves double-stranded RNA. We also examined alkaline hydrolysis cleavage patterns at low concentrations of sodium hydroxide to identify exposed phosphodiester bonds. Representative autoradiograms of the reactions are shown in Figure 4A and 4B, and the predicted cleavage patterns mapped onto the pseudoknot structure are shown in Figure 4C.",
+            "cite_spans": [],
+            "section": "Nuclease Mapping of the SARS-CoV Frameshift Signal Is Consistent with the Presence of a Complex, Three-Helix-Containing RNA Pseudoknot Structure ::: Results",
+            "ref_spans": [
+                {
+                    "start": 560,
+                    "end": 568,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 574,
+                    "end": 575,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 664,
+                    "end": 672,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The nuclease mapping data are generally consistent with the computational predictions, showing double-stranded regions corresponding to all three stems. Some notable deviations from the predicted structure were observed, however. These fell into three general classes. One class consisted of distortions in predicted helical A-RNA structures, typified by bases that were equally digested by both single- and double-strand-specific nucleases and by nearby bases that were refractory to nuclease attack. These clustered in the middle of stem 1 (13406\u201313410 and 13427), near the middle of stem 2 (13419\u201313420), and in the middle of stem 3 (13436\u201313439 and 13458\u201313461). Another major group consisted of bases located in regions predicted to link the three stems that were completely protected from nuclease attack. Specifically, these were G13405 and G13435 at the stem 1/stem 3 junction, G13414 and G13423\u2013C13425 at the stem 1/stem 2 junction, and C13463 and U13464, which link stem 2 with stem 3. We also observed enhanced susceptibility of the three pyrimidines in the predicted loop 2 region (C13447, U13448, and U13451) to attack by both single- and double-strand-specific endonucleases, suggesting that this region is structurally dynamic under the conditions assayed. The ability of the bulged adenosine residue at position 13467 to be recognized by RNaseV1 demonstrates that it is involved in a basepairing interaction, whereas the opposite pertains with regard to A13446, A13452, and A13456. The three bases at the 5\u2032 and 3\u2032 terminal ends of the molecule could not be meaningfully resolved.",
+            "cite_spans": [],
+            "section": "Nuclease Mapping of the SARS-CoV Frameshift Signal Is Consistent with the Presence of a Complex, Three-Helix-Containing RNA Pseudoknot Structure ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Given the ambiguity of the nuclease mapping, homo- and heteronuclear two-dimensional (2D) nuclear magnetic resonance (NMR) experiments were used to confirm the predicted basepairing interactions of the three stems. The presence of 21 hydrogen-bonded guanine and uracil residues for the sequence including residues 13405\u201313472 of the SARS-CoV genome (Figure 5A) was evident from the imino region observed in the 2D 1H,1H-NOESY, 15N-HMQC, and quantitative J(N,N) HNN-COSY data. In this study, we have obtained sequential imino 1H and 15N assignments for the A-form helices of the frameshifting SARS pseudoknot, using a combination of information from 1H,1H-NOE and 1H,15N-HMQC spectra. The latter experiment distinguishes between uridine and guanosine iminos by the characteristic 15N chemical shift, whereas the NOESY yields sequential 1H,1H-NOEs connecting imino protons in helical stem regions.",
+            "cite_spans": [],
+            "section": "Two-Dimensional Nuclear Magnetic Resonance Analysis Confirms the Presence of Three Stems ::: Results",
+            "ref_spans": [
+                {
+                    "start": 350,
+                    "end": 358,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Assignments were made for 8 bp in stem 1, 4 bp in stem 2, and 5 bp in stem 3 (Figure 5). As a result of fraying, the terminal basepairs of helical stem regions are not observed. Of those basepairs assigned, 16 are Watson\u2013Crick-type basepairs and only one is a canonical wobble G:U basepair. This G:U basepair present in stem 3 can be inferred directly from the strong NOE correlation between the G38 and U59 imino protons (Figure 5C). The corresponding donor G38:N1 and U59:N3 imino nitrogens are evidently not engaged in G:C or U:A hydrogen bonds (Figure 5D).",
+            "cite_spans": [],
+            "section": "Two-Dimensional Nuclear Magnetic Resonance Analysis Confirms the Presence of Three Stems ::: Results",
+            "ref_spans": [
+                {
+                    "start": 78,
+                    "end": 86,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 423,
+                    "end": 431,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 549,
+                    "end": 557,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The quantitative J(N,N) HNN-COSY contains a total of five correlations between the imino N3 nitrogens of uridines and the N1 nitrogens in adenines, indicative of canonical Watson\u2013Crick-type basepairing interaction. A total of 11 correlations stemming from Watson\u2013Crick G:C basepairs are observed between the imino N1 nitrogens of guanosines and the N3 nitrogens of cytidines. In summary, the complete sequential NOE walk connecting most of the basepaired imino protons unambiguously confirmed the presence of three stems corresponding to the secondary structure prediction shown (Figure 5A).",
+            "cite_spans": [],
+            "section": "Two-Dimensional Nuclear Magnetic Resonance Analysis Confirms the Presence of Three Stems ::: Results",
+            "ref_spans": [
+                {
+                    "start": 580,
+                    "end": 588,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "To address the question of whether the predicted SARS-CoV \u22121 PRF signal functions similarly to \u22121 PRF promoting elements from other viruses, this sequence was cloned into bicistronic dual luciferase reporter constructs designed to assay programmed ribosomal frameshifting using in vitro and in vivo systems [18,19]. As a minor modification, instead of using a simple readthrough construct as the zero-frame control, the corresponding control contained the SARS-CoV \u22121 PRF signal with one additional base inserted 3\u2032 of the Renilla luciferase sequence and 5\u2032 of the \u22121 PRF signal. The resulting zero-frame reporter places the firefly luciferase ORF in frame with Renilla and inactivates the \u22121 PRF signal by moving it out of frame with regard to elongating ribosomes, while controlling for ribosomes dislodged from the reporter mRNAs by the mRNA pseudoknot. This seemed to alleviate the large errors observed by other groups using similar methodology (e.g., [9]).",
+            "cite_spans": [
+                {
+                    "start": 308,
+                    "end": 310,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 311,
+                    "end": 313,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 958,
+                    "end": 959,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "The Predicted SARS-CoV Frameshift Signal Functions Like Other \u22121 PRF Signals ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The ability of the SARS-CoV sequence to promote \u22121 PRF was assessed using two different in vitro and in vivo assay systems each. The results of these experiments are shown in Figure 6A. In vitro, the SARS-CoV sequence was able to promote efficient \u22121 PRF in both wheat germ protoplasts (23.7% \u00b1 1.9%) and rabbit reticulocytes (14.3% \u00b1 3.7%). In vivo, the sequence was able to promote efficient \u22121 PRF in the Vero epithelial cell line (14.4% \u00b1 0.6%), a finding that is important in light of the fact that the SARS-CoV infects lung epithelial cells. The sequence also promoted efficient \u22121 PRF in yeast cells, suggesting that this frameshift signal might be amenable to the molecular genetic toolbox available in the yeast system. To test this hypothesis, we examined the effects of a drug (anisomycin) and of a host cell mutant (mak8\u20131) that were previously shown to specifically affect L-A virus\u2013directed \u22121 PRF in yeast cells [20\u201322]. The results of these experiments show that, similar to their effects on L-A-promoted \u22121 PRF, anisomycin was able to inhibit SARS-CoV-directed \u22121 PRF (21% inhibition, p = 5.04 \u00d7 10\u22128), whereas \u22121 PRF was stimulated in cells harboring the mak8\u20131 allele of RPL3 (25% stimulation, p = 5.0 \u00d7 10\u22125) (Figure 6B). These findings show that the SARS-CoV frameshift signal is amenable to analysis by the full array of yeast-based genetic, pharmacological, and molecular tools that we and others have developed. Interestingly, the absolute values for frameshifting in yeast (2.99% \u00b1 0.06%) were significantly less than those observed in the other systems (ranging from approximately 15% to 25%), suggestive of differences between fungal and metazoan ribosomes that might be pharmacologically exploited. This is discussed in greater detail below.",
+            "cite_spans": [
+                {
+                    "start": 928,
+                    "end": 930,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 931,
+                    "end": 933,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "The Predicted SARS-CoV Frameshift Signal Functions Like Other \u22121 PRF Signals ::: Results",
+            "ref_spans": [
+                {
+                    "start": 175,
+                    "end": 183,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1230,
+                    "end": 1238,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Given that Vero cells more resemble the natural host of SARS-CoV than do yeast, a series of mutants of the SARS-CoV frameshift signal were developed to functionally dissect the mRNA pseudoknot in this cell type. Typically, mutagenesis experiments are constructed so as to change one or another side of a stem to disrupt basepairing, and then to combine the two mutants to re-form the stem (e.g., see [23,24]). The series of mutants that were created by oligonucleotide site-directed mutagenesis to address this question is shown in Figure 7. The S2 series of mutants were designed to examine the general requirement for stem 2, and the specific contribution of the bulged adenosine residue at position 13467 was designed to stimulate efficient \u22121 PRF. Similarly, the S3 mutant series were designed to examine the general requirement for stem 3, as well as the specific contribution of the bulged adenosine at position 13456. The complete data for these experiments, as formatted according to [25], are presented in Dataset S1.",
+            "cite_spans": [
+                {
+                    "start": 401,
+                    "end": 403,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 404,
+                    "end": 406,
+                    "mention": "24",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 993,
+                    "end": 995,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": [
+                {
+                    "start": 532,
+                    "end": 540,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Six different stem 2 mutants were assayed for their ability to promote efficient \u22121 PRF (Figure 7). Not surprisingly, disruption of stem 2 (S2A and S2A\u2032) precluded efficient \u22121 PRF. Unexpectedly, however, compensatory mutations that should promote re-formation of the basic stem 2 structure (S2B\u2032) did not restore wild-type levels of frameshifting, suggesting the involvement of a primary mRNA sequence in this region in stimulating \u22121 PRF. However, the adenosine base at position 13465 in this construct had to be replaced with a guanosine to avoid creating a \u22121 frame termination codon. Though this substitution retains the potential to basepair with U13424, it is possible that the identity of the base at this position is critical. To examine this parameter, the base at this position was changed to guanosine in the context of an otherwise wild-type \u22121 PRF signal (A13465G). Though this mutation did not abrogate efficient \u22121 PRF, frameshifting efficiency was decreased by approximately 38% (p = 1.7 \u00d7 10\u22126). This result suggests that though this mutation was not the main cause of the dramatic reduction in \u22121 PRF observed with S2B\u2032, the identity of the base at this position is important for maximizing \u22121 PRF efficiency. These observations are consistent with the hypothesis that both the general structure and base-specific sequence of stem 2 are required for efficient \u22121 PRF.",
+            "cite_spans": [],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": [
+                {
+                    "start": 89,
+                    "end": 97,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Bulged adenosine residues are known to stimulate assembly of higher-order RNA structures by helping to link helices together [26]. Two constructs were assayed to examine the requirement of the bulged residue at position 13467 for efficient \u22121 PRF. In mutant S2C\u2032, A13467 was substituted with cytosine, whereas in construct S2C, the adenosine at position 13467 was removed from the middle of stem 2 and repositioned six bases downstream to maintain translational reading frame. Either replacing the A-bulge with cytosine (S2C\u2032) or deleting it entirely (S2C) dramatically reduced frameshifting in Vero cells (>94%, p < 3.3 \u00d7 10\u221216), repressing \u22121 PRF to a similar extent as the mutants S2A, S2A\u2032, and S2B\u2032.",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Similar to the approach described above, five mutants were constructed to investigate stem 3 (Figure 7). Constructs S3A, S3A\u2032, S3B, and S3C\u2032 were directed toward addressing the function of stem 3: in S3A, the guanine and cytosine residues in the 5\u2032 half of stem 3 were mutated to cytosine and guanine, respectively, disrupting stem 3; the opposing mutations were made in the 5\u2032 half of stem 3 in S3A\u2032; and S3B harbored the compensatory mutations to allow re-formation of stem 3. Frameshifting with S3A was reduced by 68% (p = 2.61 \u00d7 10\u221224), and \u22121 PRF was significantly, although less dramatically, reduced in S3A\u2032 (36% of wild-type, p < 1.07 \u00d7 10\u221219). Similar to the effects observed in stem 2, the presence of compensatory mutations in construct S3B did not rescue \u22121 PRF efficiency to near wild-type levels, again suggesting that both the general structure of stem 3 and specific sequences within it are required for maximal stimulation of \u22121 PRF.",
+            "cite_spans": [],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": [
+                {
+                    "start": 94,
+                    "end": 102,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Similar to stem 2, a bulged adenosine is predicted in stem 3 at position 13456, and the phylogenetic analysis showed that this base was conserved among all of the coronaviruses. Substitution of this base to cytosine (S3C\u2032) promoted a moderate but significant reduction in \u22121 PRF (26% inhibition, p = 2.56 \u00d7 10\u221211). In addition, as no significant internal nested stems have been observed in other viral frameshift pseudoknots, and because deletion of sequence corresponding to this region did not dramatically affect \u22121 PRF in AIBV [27], the entire stem 3\u2013forming region was deleted in construct \u0394S3 to create a more typical two-stemmed H-type RNA pseudoknot. In Vero cells, this smaller pseudoknot, lacking the third nested helix, actually promoted a modest increase in frameshifting (9.2%, p = 2.15 \u00d7 10\u22123), demonstrating that stem 3 is not critical for promoting efficient \u22121 PRF per se.",
+            "cite_spans": [
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An analogous series of constructs were also assayed in yeast (data not shown). In general, the trends were similar, though the actual baseline frameshifting efficiencies were lower. For example, in mutants S2A, S2A\u2032, and S2B\u2032, frameshifting was equally reduced by 85%\u201390%; the S3A and S3A\u2032 mutations also resulted in moderate (35%\u201389%) decreases in yeast, and deletion of stem 3 (\u0394S3) also presented a slight increase in \u22121 PRF (35%) in yeast cells. There were some notable contrasts, however: though the S2C\u2032 and S2C constructs dramatically reduced frameshifting in Vero cells (95%), they only reduced \u22121 PRF by approximately 25%\u201333% in yeast. More strikingly, some of the mutations that resulted in a 25%\u201330% decrease in \u22121 PRF in Vero cells (A13465G, S3B, and S3C\u2032) did not affect the overall rate of \u22121 PRF in yeast at all. The potential significance of these findings is discussed below.",
+            "cite_spans": [],
+            "section": "Structural Requirements for Efficient SARS-CoV Frameshifting Activity ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Though the first descriptions of the mRNA secondary structure stimulating \u22121 PRF [28] and of an RNA pseudoknot [29] were serendipitously published back to back in 1985, the two concepts were only functionally linked together 1 y later in studies of a coronavirus, AIBV [30]. Here, the coronaviruses have again revealed a new twist on mRNA pseudoknots and \u22121 PRF. The phylogenetic comparisons presented in this study reveal that stem 1 lengths and G:C compositions are highly conserved in all ten coronavirus sequences analyzed. Their relatively long G:C-rich composition presumably contributes significantly to the stability of these structures. In contrast, stem 2 structures are predicted to vary significantly between the different coronavirus groups. Specifically, the group 2 coronaviruses (HCoV-043C, HCoV-HKU1, BCoV, and MHV) have the longest and most stable predicted stem 2 structures, whereas the stem 2 regions of the group 1 coronaviruses (TGV, PDEV, HCoV-NL, and HCoV-229E) are anticipated to be the least stable. The stem 2 regions of SARS-CoV and AIBV appear to be intermediate between these two. Although the sequences in the stem 3/loop 3 region are not well conserved, a third stem independently predicted in the SARS-CoV \u22121 PRF signal [10] has been demonstrated in this work, and we predict third stems in other coronavirus frameshift signals. Similar structures are generally predicted to be able to form within groups.",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 84,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 270,
+                    "end": 272,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1255,
+                    "end": 1257,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Specifically, loop 3 is predicted to be long and positioned between stems 3 and 2 in the group 2 coronaviruses. In contrast, the group 1 viruses contain little or no loop 3 but, rather, have an extended loop 2 positioned between stems 1 and 3. The notable exception is TGV, in which the relative structure and orientation of stem 3 and loop 3 more resembles those observed in SARS-CoV and AIBV.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Structurally, the nuclease analyses, showing distortions of the regular helical structures in the stems, protection of specific bases from nuclease attack, and the apparent involvement of bases in loop 3 and of A13467 in basepairing interactions, suggest that the three stems fold back on one another to form a complex, globular RNA structure. Long-range interaction anchors mediated by adenosine residues such as those at positions 13456 (stem 3) and 13467 (stem 2), making contact with the shallow minor grooves of two stacked basepairs of A-form helical stems, are a recurring theme in RNA structural biology. For example, the crystal structure of the ribosome reveals that RNA has a remarkable propensity for contributing adenine bases to such A-minor interactions [31], thereby stimulating the assembly of higher-order RNA structures [26]. Mounting evidence suggests that stimulation of \u22121 PRF by mRNA pseudoknots requires specific noncanonical basepairing between helical stems and pseudoknot loop regions to set specifically required frameshift efficiencies. The structures of the few frameshift-promoting pseudoknots that have been determined at the atomic level are revealing that a large range of higher-order noncovalent interactions serve to promote stable, novel structures [32\u201336]. It is clear that the three-helix-containing mRNA pseudoknot described here represents a novel global architecture stimulating ribosomal frameshifting, and possibly a source of new structural motifs in the coming future. Experiments are currently underway to define this structure at the atomic level, using high-resolution NMR techniques. Elucidation of this novel mRNA structure will be of great utility in the rational development of therapeutic agents designed to interfere with SARS-CoV programmed \u22121 ribosomal frameshifting, and in furthering our understanding of how different pseudoknots stimulate translational recoding.",
+            "cite_spans": [
+                {
+                    "start": 770,
+                    "end": 772,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 840,
+                    "end": 842,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1288,
+                    "end": 1290,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1291,
+                    "end": 1293,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Molecular genetic analysis of stem 2 of the SARS-CoV pseudoknot, demonstrating that frameshifting was reduced in all cases, including our attempts to make complementary mutations, indicates that primary sequences as well as structures are important for maximal frameshifting. Possible reasons for the observed sequence specificity could include aberrant folding or disruption of an essential interaction required for formation of the complex tertiary mRNA structure. For example, the findings that changing the identities of the bulged adenosine residues in stems 2 and 3 from adenosine to cytosine (S2C\u2032 and S3C\u2032), or deleting the bulge in stem 2 altogether (S2C), abrogated the stimulatory effects of the pseudoknot support the notion that this structural property of bulged adenosine residues is functionally important in this context. In addition, water-nucleobase \u201cstacking\u201d in the form of H-\u03c0 and lone pair-\u03c0 interactions have been demonstrated at the junctions between the stems in the BWYV pseudoknot [34]. The corresponding regions of the wild-type SARS-CoV pseudoknot were refractory to nuclease attack and were disrupted in S2A, S2A\u2032, S2B\u2032, S3, S3A\u2032, and S3B, possibly explaining the effects of all of these mutants on frameshifting. The changes made in S2C and S2C\u2032 are also adjacent to this region, and inhibition of frameshifting is nearly as dramatic as with the S2A, S2A\u2032, and S2B\u2032 mutants.",
+            "cite_spans": [
+                {
+                    "start": 1010,
+                    "end": 1012,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Though alterations to stem 3 significantly reduced frameshifting levels, these effects were one to two orders of magnitude less than analogous mutations of stem 2. This is supported by the observation in another study that alteration of the sequence in stem 3 also promoted decreases in \u22121 PRF [9]. Further, complete deletion of stem 3 had only a minimal effect on frameshifting efficiency\u2014an observation consistent with studies in AIBV, in which deletion of all but 5 nt between stems 1 and 2 did not significantly alter \u22121 PRF [27,37]. These findings demonstrate that the presence of stem 3 is not required for efficient frameshifting per se. However, its high degree of conservation among the coronaviruses and its location in the frameshift signal suggest that it plays a more complex role in programmed \u22121 ribosomal frameshifting as it relates to the viral life-cycle. A similar conclusion was drawn by the authors of another independent study that was performed concurrently with ours and that was published while this manuscript was under review [9].",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 296,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 530,
+                    "end": 532,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 533,
+                    "end": 535,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1054,
+                    "end": 1055,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "If stem 3 is not required to promote efficient frameshifting, why then has it been so highly conserved among the coronaviruses? It may be that frameshifting levels in coronaviruses need to be regulated in a manner not supported by a two-stem pseudoknot. For example, the frameshift signal marks the boundary between proteins required during the immediate early phase of infection (e.g., ORF1a-encoded proteases used to prepare the cell for virus production) and those required for intermediate functions in the viral life cycle (i.e., ORF1b-encoded RNA-dependent RNA polymerase and helicase used in transcription of subgenomic mRNAs, [\u2212] strand synthesis, and genome replication). One of the fundamental problems of in the biology of (+) RNA viruses regards the switch between translation and replication. An elegant model proposes that the \u22121 ribosomal frameshift in barley yellow dwarf virus plays a central role in remodeling the (+) strand from translation competent to replication competent: frameshifting enables synthesis of the replicase, which in turn is able to denature the frameshift-promoting cis-acting element, eventually clearing the (+) strand of ribosomes that could potentially block the replicase [23]. In coronaviruses, the idea of functional switching by RNA remodeling has been demonstrated for MHV [38], and similar functional elements are present in both SARS-CoV and BCoV [39].",
+            "cite_spans": [
+                {
+                    "start": 1218,
+                    "end": 1220,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1323,
+                    "end": 1325,
+                    "mention": "38",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1399,
+                    "end": 1401,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In a previous study, frameshifting in HCoV-229E was shown to be stimulated by a short sequence approximately 200 nt downstream from the slippery site, and it was shown that efficient frameshifting is promoted by kissing-loop interactions [16]. A subsequent report also found this potential motif in the TGV genome [17]. The phylogenetic analysis presented here reveals the potential to form similar short imperfect stem 2 structures for the other two group 1 coronaviruses for which the sequence is known (HCoV-NL and PEDV). In contrast, similar interactions cannot be readily discerned in SARS-CoV, nor among the group 2 and group 3 coronaviruses. Nevertheless, the idea that viral sequences in the pseudoknot may interact either in cis with sequences on the (+) strand or in trans with either sequences in subgenomic mRNAs or on the (\u2212) strand to modulate frameshifting remains an intriguing possibility.",
+            "cite_spans": [
+                {
+                    "start": 239,
+                    "end": 241,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A final finding of interest derives from the observed differences between yeast- and metazoan-derived frameshift assay systems. This represents a potentially exciting avenue of exploration, as it may be indicative of mRNA folding differences between the two systems or of differences in how yeast versus metazoan ribosomes interact with downstream mRNA structures. This could be a result of relative size differences in the ribosomes. Alternatively, the lower levels of frameshifting in yeast relative to wild-type in the Vero cells could reflect a higher sensitivity of these ribosomes to subtle changes in the frameshift signal. The normal levels of frameshifting in yeast promoted by the S3B and S3C\u2032 mutants further support the notion that the reason for stem 3 may lie with some function other than programmed ribosomal frameshifting.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SARS-CoV \u22121 PRF signal was identified from the complete genome sequence, using a combined approach. First, a pattern matching descriptor of known \u22121 PRF signals was used in conjunction with RNAMotif [12] to identify the nucleotide sequence corresponding to the frameshift signal's slippery site. Second, Pknots [13] was employed to \u201cfold\u201d the sequence immediately downstream (3\u2032) to the slippery site and to produce a predicted MFE value in kilocalories per mole for the sequence. The statistical significance of the predicted MFE value of the three-stemmed RNA pseudoknot was tested by generating 500 randomly shuffled sequences derived from the native sequence, refolding each of these, and calculating their MFE values using Pknots. This resulted in a normal distribution of MFE values, against which the native sequence could be compared and z-scores calculated. FASTA3 v3.4 [40] was used to initially identify sequences homologous to the SARS \u22121 PRF signal based on primary sequence similarity. The search space included 1,724 viral genome sequences downloaded using the National Center for Biotechnology Information's Entrez Taxonomy Browser [41]. The resulting pairwise alignments produced by FASTA3 were used to produce a multiple-sequence alignment using ClustalW v1.82 [42]. An unrooted phylogenetic tree was created from this alignment and visualized using Tree View v1.6.6 [43].",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 316,
+                    "end": 318,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 884,
+                    "end": 886,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1153,
+                    "end": 1155,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1284,
+                    "end": 1286,
+                    "mention": "42",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1390,
+                    "end": 1392,
+                    "mention": "43",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Computational analyses :::  ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nEscherichia coli strain DH5\u03b1 was used to amplify plasmids, and E. coli transformations were performed using the high-efficiency transformation method of Inoue et al. [44]. YPAD and a synthetic complete medium (H\u2212) were used as described previously [45]. Yeast strain JD932 (MATa ade2\u20131 trp1\u20131 ura3\u20131 leu2\u20133,112 his3\u201311,15 can1\u2013100) and the JD1228/JD1229 isogenic pairs in which the disrupted RPL3/TCM1 allele is complemented with pRPL3 or pmak8\u20131 (MAT\u03b1 ura3\u201352 lys2\u2013801 trp1\u03b4 leu2= his3 RPL3::HIS3) [21] were used for in vivo measurements of \u22121 PRF. Yeast cells were transformed using the alkali cation method [46]. Dual luciferase assays for programmed ribosomal frameshifting in yeast were performed as previously described [19]. African green monkey Vero cells were cultured in DMEM with L-glutamine (BioWhittaker, Walkersville, Maine, United States) and 10% FBS at 37 \u00b0C in 5% CO2. Cells cultured without antibiotics were transformed with plasmid DNA, using Amaxa (Cologne, Germany) Nucleofector solution according to the manufacturer's instructions. Dual luciferase assays were performed the following day, using extracts from cells lysed with the Passive Lysis Buffer (Dual-Luciferase Reporter System, Promega, Fitchburg, Wisconsin, United States). Wheat germ and rabbit reticulocyte lysates from Ambion (Austin, Texas, United States) were used to monitor frameshifting in vitro, using synthetic mRNA transcripts (Ambion mMESSAGE mMACHINE transcription kit), generated with T7 polymerase either from plasmids that had been digested with SspI, Proteinase K treated, phenol/chloroform and chloroform extracted, and ammonium acetate precipitated, or from PCR amplicons encompassing the dual luciferase reporter cassettes. All assays were repeated until the data were normally distributed, enabling statistical analyses both within and between experiments [25]. At least three readings derived from lysates derived from a minimum of three different transfection plates were used.",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "44",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 250,
+                    "end": 252,
+                    "mention": "45",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 501,
+                    "end": 503,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 612,
+                    "end": 614,
+                    "mention": "46",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 728,
+                    "end": 730,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1860,
+                    "end": 1862,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Strains, genetic methods, and programmed ribosomal frameshifting assays :::  ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Oligonucleotides were synthesized and purified by IDT (Coralville, Iowa, United States). These are listed in Table 1. The SARS-sense and SARS-antisense oligonucleotides were annealed, gel purified, and ligated into BamHI- and SacI-digested p2luc [18], generating plasmid pJD435. The Renilla and firefly bicistronic elements were amplified by PCR using previously described primers [19], SpeI- and XhoI-digested, and cloned into p416ADH [47]. One additional base was introduced after the BamHI restriction site, using the Stratagene (La Jolla, California, United States) QuikChange XL kit to correct the reading frame. Sequence analysis revealed an additional point mutation in the firefly luciferase gene that was reverted by oligonucleotide site-directed mutagenesis. The resulting plasmid, pJD465, constituted the wild-type SARS-CoV \u22121 PRF yeast assay plasmid. A zero-frame control plasmid, pJD474, was constructed by adding one cytosine residue upstream of the BamHI restriction site of pJD465. Additional constructs with various mutations in the pseudoknot were made; the 5\u2032 portion of stem 3 was changed from\nGCGGCACAG to\nCGCCGAGAC (pJD467, also known as S3A), and this was the template for mutagenesis to make the complementary mutation in the 3\u2032 half of stem 3, CUGAUGUCGU to GUCU\nACGGCG (pJD479, S3B). The control construct with just the changes in the 3\u2032 portion of stem 3 was made from pJD465 (pJD567, S3A\u2032). pJD465 was also used as the template for mutagenesis to move the A13456 residue out of stem 3 and into loop 2 (pJD492, S3C) and to make the change A13456C (pJD544, S3C\u2032), while pJD467 was used to eliminate stem 3 entirely (pJD469, \u0394S3). Stem 2 was also subjected to mutagenesis: the 5\u2032 portion of stem 2 was changed from\nGCCCG to\nCGGGC (pJD466, S2A), and this in turn was the template for mutagenesis to make the complementary sequence in the 3\u2032 half of stem 2,\nCAGGGC to\nGACCCG (pJD480, S2B). pJD465 was used as the template to create a construct in which the bulged A13467 residue in stem 2 was eliminated by moving it 6 nt downstream (pJD491, S2C) or replaced by cytosine (pJD542, S2C\u2032).\n",
+            "cite_spans": [
+                {
+                    "start": 247,
+                    "end": 249,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 437,
+                    "end": 439,
+                    "mention": "47",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Oligonucleotides, plasmid construction, and mutagenesis. :::  ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 109,
+                    "end": 116,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "An additional set of plasmids was constructed from the parental plasmids described above that lacked the yeast-specific markers but contained the SV40 early promoter, T7 promoter, and SV40 late poly (A) signal. These were used for programmed ribosomal frameshifting analyses in epithelial cells, wheat germ, and rabbit reticulocyte lysates. The BamHI and EcoRI fragment from pJD465 was purified and ligated into BamHI- and EcoRI-digested p2luc [18] to generate the test plasmid pJD502. A zero-frame control plasmid (pJD464) was constructed by cloning the BamHI/EcoRI fragment from pJD465 into p2luci. Similarly, BamHI and EcoRI fragments from the yeast plasmids described above were cloned into p2luc to generate a complete plasmid set for analyses of \u20131 PRF in epithelial cells (pJD503/S2A, pJD538/S2A\u2032, pJD541/S2B\u2032, pJD504/S2C, pJD537/S2C\u2032, pJD487/S3A, pJD536/S3A\u2032, pJD488/S3B, pJD506/S3C, pJD539/S3C\u2032, and pJD490/\u0394S3). An additional construct (A13465G) was made to control for the change at this position from adenine to guanine that prevents the creation of a termination codon in S2B\u2032 constructs, but is not involved in stem 2 basepairing (pJD540 for Vero cells and pJD545 as the yeast plasmid).",
+            "cite_spans": [
+                {
+                    "start": 445,
+                    "end": 447,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Oligonucleotides, plasmid construction, and mutagenesis. :::  ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The SP6SARS and revSARS oligonucleotides were used to generate a PCR amplicon from which an RNA transcript was made using the Ambion MEGAscript SP6 kit. The RNA was treated with calf intestinal phosphatase and 5\u2032 end labeled with [\u03b3-32P]ATP, using T4 polynucleotide kinase. The labeled RNA was gel purified and then eluted with 0.5 M NH4Ac, 1 mM EDTA, 0.1% SDS. Nuclease treatment with RNase A (1.0\u20130.01 ng), RNase T1 (1.0\u20130.01 U), and RNase V1 (0.1\u20130.001 U) from Ambion was performed according to the manufacturer's instructions for 15 min at room temperature. Digested RNA was electrophoresed through a 10% polyacrylamide gel and analyzed using a Storm PhosphoImager (Sunnyvale, California, United States).",
+            "cite_spans": [],
+            "section": "Nuclease analysis. :::  ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A DNA construct (residues 13405\u201313472 of the SARS-CoV genome) was generated by PCR from pJD465 containing the wild-type SARS-CoV frameshift pseudoknot sequence. Two oligodeoxynucleotides (Invitrogen, Carlsbad, California, United States) were designed with a 5\u2032 primer, including a T7 promoter sequence. The resulting PCR product was cloned into a pUC18 plasmid. To prepare milligram quantities of the SARS-CoV frameshift pseudoknot (residues 13405\u201313472), 7.5- to 20-ml in vitro transcription reactions with phage T7 polymerase from a linearized plasmid template were performed [48]. Unlabeled NTPs were purchased from Sigma Pharmaceuticals (South Croydon, United Kingdom), and labeled NTPs were purified from Methylophilus methylotropus (\nATCC 53528, American Type Culture Collection, Manassas, Virginia, United States) bacteria grown on labeled medium with 15N-ammonium sulfate and 13C-methanol [49]. After 4\u20135 h incubation at 37 \u00b0C, the reaction was spun down to remove traces of precipitated pyrophosphate. RNA transcripts were purified by anion-exchange FPLC with two HiTrap Q columns (Amersham Pharmacia, Piscataway, New Jersey, United States) equilibrated in 50 mM Tris (pH 8) at room temperature. The target RNA sample was eluted with an increasing sodium chloride gradient. Pure fractions were concentrated using a CentriPrep YM10 (Millipore, Billerica, Massachusetts, United States) concentrator, passed through a NAP25 column (Amersham Pharmacia) equilibrated with NMR buffer (20 mM potassium phosphate [pH 6.5], 200 mM potassium chloride, 0.5 mM EDTA [ethylene diamine tetraacetic acid disodium salt], 0.02% sodium azide, 5% deuterium oxide), and concentrated to 0.2\u20132 mM, using a CentriPrep YM10 concentrator (Millipore). The identity of the RNA product was verified by mass spectroscopy, as well as agarose and TBE-Urea-PAGE (Bio-Rad, Hercules, California, United States) gels.\n",
+            "cite_spans": [
+                {
+                    "start": 579,
+                    "end": 581,
+                    "mention": "48",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 898,
+                    "end": 900,
+                    "mention": "49",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Preparation of RNA samples for NMR\n :::  ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All NMR spectra were recorded at 5 \u00b0C, 15 \u00b0C, and 25 \u00b0C on a Bruker Avance 900 MHz spectrometer (Rheinstetten, Germany) equipped with a standard 5-mm triple axis pulsed field gradient 1H/13C/15N probehead optimized for proton detection. NMR experiments were performed on samples of 500-\u03bcl volume containing 0.2\u20132 mM SARS-CoV frameshift pseudoknot RNA. Data were processed using NMRPipe [50] and analyzed using NMRVIEW [51]. One-dimensional imino proton spectra were acquired using a jump-return echo sequence. The observable iminos in aqueous solution are diagnostic for hydrogen-bonded guanine and uracil bases, which are protected from exchange with the solvent. Imino resonances were assigned sequence-specificity from water flip-back, WATERGATE 2D nuclear Overhauser effect spectroscopy (NOESY) [52] spectra (\u03c4mix = 200 ms), and a jump-return [53] 1H,15N-heteronuclear multiple quantum correlation (HMQC) [54]. Elucidation of basepairing and secondary structure was verified from scalar 2h\nJ(N,N) couplings through hydrogen bonds in the quantitative J(N,N) HNN correlation spectroscopy (COSY) data [55,56].",
+            "cite_spans": [
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "50",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 419,
+                    "end": 421,
+                    "mention": "51",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 800,
+                    "end": 802,
+                    "mention": "52",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 848,
+                    "end": 850,
+                    "mention": "53",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 910,
+                    "end": 912,
+                    "mention": "54",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 1103,
+                    "end": 1105,
+                    "mention": "55",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1106,
+                    "end": 1108,
+                    "mention": "56",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "NMR spectroscopy\n :::  ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: (A) Two-stemmed H-type mRNA pseudoknot proposed by Thiel et al. [8]. (B) Three-stemmed mRNA pseudoknot structure investigated in this study.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: AIBV, avian infectious bronchitis virus; BCoV, bovine coronavirus; HCoV-229E, human coronavirus 229E; HCoV-HKU1; HCoV-NL63, human coronavirus NL63; HCoV-OC43, human coronavirus OC43; MHV, murine hepatitis virus; PEDV, porcine epidemic diarrhea virus; SARS, SARS coronavirus; TGV, transmissible gastroenteritis virus. Heptameric slippery sites are indicated in brown; dashes indicate gaps in the sequence alignments; basepairing positions involved in the consensus first, second, and third helices are denoted by blue, red, and green nucleotides, respectively. Downstream regions homologous to the kissing loop known to promote frameshifting in HCoV-229E [16,17]. HCoV-229R, HCoV-NL, PEDV, and TGV are also highlighted in red with the flanking stem-forming sequences underlined. Asterisks indicate perfectly conserved positions in primary sequence.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Unrooted tree constructed based on the multiple sequence alignment from Figure 2.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: (A and B) The results of nuclease cleavage of RNA from nucleotides 13400\u201313470 of SARS-CoV. RNAs were 5\u2032 end labeled with 32P and subjected to enzymatic digestion, as described in Materials and Methods. The three different concentrations of each nuclease are indicated by the triangles are described in Materials and Methods. C denotes undigested control, and OH\u2212 denotes hydrolysis ladders. (C) Interpretation of nuclease digestion analyses mapped onto the proposed secondary structure of the SARS-CoV frameshift signal. Nuclease cleavage sites, proposed basepairs, and specific bases protected from nuclease attack are indicated.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: (A) Secondary structure of the SARS-CoV frameshift pseudoknot (residues 13405\u201313472). Different color coding was used to denote basepaired regions in stems 1 (cyan), 2 (green), and 3 (grey and blue). Only the last two digits of the wild-type sequence numbering are used for clarity. (B) Imino region of a one-dimensional jump-return echo spectrum of SARS-CoV pseudoknot. (C) Portion of a 2D 1H,1H-NOESY. Sequential imino-imino proton NOE assignment paths are shown by different colors for stem 1 (cyan), stem 2 (green), and stem 3 (black and blue). (D) 2D Quantitative J(N,N) HNN-COSY spectrum showing interstrand 1H3\u201315N3(U) to 15N1(A) and 1H1\u201315N1(G) to 15N3(C) correlations. Data were collected on a uniformly 13C/15N-labeled sample. Red peaks correspond to diagonal resonances and are labeled with assignment information for the basepaired stem regions matching the color coding in (C). Green cross peaks are caused by scalar cross hydrogen bond 2h\nJ(N,N) couplings detected using a defocusing delay of 36 ms. Carrier positions were on water for 1H and 185 ppm.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: (A) The wild-type SARS-CoV frameshift signal promotes efficient frameshifting in vitro and in vivo. Programmed \u22121 ribosomal frameshifting was monitored in wheat germ and rabbit reticulocyte lysates in vitro, and in Vero epithelial cells and yeast in vivo, as described in Materials and Methods. Error bars denote the standard error. (B) SARS-CoV-directed \u22121 PRF was monitored in wild-type yeast cells with or without anisomycin (20 \u03bcg/ml), or in isogenic RPL3 gene deletion cells expressing either the wild-type or mak8\u20131 alleles of RPL3 on an episomal plasmid [21]. Changes in \u22121 PRF efficiencies are shown as fold wild-type, and p-values are shown as described previously [25].",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Constructs used to examine the contributions of stem structures and bulged adenosine residues to programmed \u22121 ribosomal frameshifting are depicted. Shading is used to indicate mutagenized bases. Programmed \u22121 ribosomal frameshifting promoted by the wild-type SARS-CoV \u22121 PRF signal was monitored in Vero, as described in the Materials and Methods. Standard deviations (S.D.) are indicated for each sample, as previously described [25]. The S2 series (above) examines the roles of structures and bases in stem 2. The S3 series (below) examines the roles of structures and bases in stem 3.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "SARS virus: The beginning of the unraveling of a new coronavirus",
+            "authors": [
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biomed Sci",
+            "volume": "10",
+            "issn": "",
+            "pages": "664-675",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The genome sequence of the SARS-associated coronavirus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Astell",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Holt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Brooks-Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Characterization of a novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Oberste",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Monroe",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Nix",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Campagnoli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1394-1399",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Ribosomal frameshifting on viral RNAs",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Gen Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "1885-1892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Programmed translational frameshifting",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Microbiol Rev",
+            "volume": "60",
+            "issn": "",
+            "pages": "103-134",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Recoding: Dynamic reprogramming of translation",
+            "authors": [
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Annu Rev Biochem",
+            "volume": "65",
+            "issn": "",
+            "pages": "741-768",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Translating old drugs into new treatments: Identifying compounds that modulate programmed -1 ribosomal frameshifting and function as potential antiviral agents",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ruiz-Echevarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Trends Biotechnol",
+            "volume": "16",
+            "issn": "",
+            "pages": "190-196",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Mechanisms and enzymes involved in SARS coronavirus genome expression",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Thiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Ivanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Putics",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hertzig",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Schelle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Gen Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "2305-2315",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Programmed ribosomal frameshifting in decoding the SARS-CoV genome",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virology",
+            "volume": "332",
+            "issn": "",
+            "pages": "498-510",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Programmed -1 ribosomal frameshifting in the SARS coronavirus",
+            "authors": [
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Ramos",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Carrasco",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem Soc Trans",
+            "volume": "32",
+            "issn": "",
+            "pages": "1081-1083",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "The 9-angstrom solution: How mRNA pseudoknots promote efficient programmed -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "KLM",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "168-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "RNAMotif, an RNA secondary structure definition and search algorithm",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Macke",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Ecker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Gutell",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gautheret",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Case",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res",
+            "volume": "29",
+            "issn": "",
+            "pages": "4724-4735",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A dynamic programming algorithm for RNA structure prediction including pseudoknots",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rivas",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Biol",
+            "volume": "285",
+            "issn": "",
+            "pages": "2053-2068",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The frameshift stimulatory signal of human immunodeficiency virus type 1 group O is a pseudoknot",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Baril",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dulude",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Steinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brakier-Gingras",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Mol Biol",
+            "volume": "331",
+            "issn": "",
+            "pages": "571-583",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Recode 2003",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Gurvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "87-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "An \u2018elaborated' pseudoknot is required for high frequency frameshifting during translation of HCV 229E polymerase mRNA",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Herold",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Siddell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Nucleic Acids Res",
+            "volume": "21",
+            "issn": "",
+            "pages": "5838-5842",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Complete sequence (20 kilobases) of the polyprotein-encoding gene 1 of transmissible gastroenteritis virus",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Eleouet",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rasschaert",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lambert",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vende",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Virology",
+            "volume": "206",
+            "issn": "",
+            "pages": "817-822",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A dual-luciferase reporter system for studying recoding signals",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Grentzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Ingram",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "RNA",
+            "volume": "4",
+            "issn": "",
+            "pages": "479-486",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "An in vivo dual-luciferase assay system for studying translational recoding in the yeast Saccharomyces cerevisiae\n",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "1019-1024",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Peptidyl transferase inhibitors have antiviral properties by altering programmed -1 ribosomal frameshifting efficiencies: Development of model systems",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ruiz-Echevarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Czaplinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "94",
+            "issn": "",
+            "pages": "6606-6611",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Decreased peptidyltransferase activity correlates with increased programmed -1 ribosomal frameshifting and viral maintenance defects in the yeast Saccharomyces cerevisiae\n",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "KLM",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "982-992",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Ribosomal protein L3 mutants alter translational fidelity and promote rapid loss of the yeast killer virus",
+            "authors": [
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Hammell",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yasenchak",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Puljanowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol Cell Biol",
+            "volume": "19",
+            "issn": "",
+            "pages": "384-391",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A -1 ribosomal frameshift element that requires base pairing across four kilobases suggests a mechanism of regulating ribosome and replicase traffic on a viral RNA",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Barry",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "11133-11138",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "A -1 ribosomal frameshift in a double-stranded RNA virus forms a Gag-pol fusion protein",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Icho",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "88",
+            "issn": "",
+            "pages": "174-178",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Systematic analysis of bicistronic reporter assay data",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "e160-e170",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Crystal structure of a hepatitis delta virus ribozyme",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Ferre-D'Amare",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Doudna",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nature",
+            "volume": "395",
+            "issn": "",
+            "pages": "567-574",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Mutational analysis of the RNA pseudoknot component of a coronavirus ribosomal frameshifting signal",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Rolley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Jenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Inglis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J Mol Biol",
+            "volume": "220",
+            "issn": "",
+            "pages": "889-902",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Characterization of ribosomal frameshifting in HIV-1 gag-pol expression",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Jacks",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Power",
+                    "suffix": ""
+                },
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Masiarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Luciw",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Barr",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Nature",
+            "volume": "331",
+            "issn": "",
+            "pages": "280-283",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A pseudoknotted RNA oligonucleotide",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Puglisi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Wyatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tinoco",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Nature",
+            "volume": "331",
+            "issn": "",
+            "pages": "283-286",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Characterization of an efficient coronavirus ribosomal frameshifting signal: Requirement for an RNA pseudoknot",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Dingard",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Inglis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Cell",
+            "volume": "57",
+            "issn": "",
+            "pages": "537-547",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "RNA tertiary interactions in the large ribosomal subunit: The A-minor motif",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Nissen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Ippolito",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ban",
+                    "suffix": ""
+                },
+                {
+                    "first": "PB",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Steitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "4899-4903",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Specific mutations in a viral RNA pseudoknot drastically change ribosomal frameshifting efficiency",
+            "authors": [
+                {
+                    "first": "YG",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Maas",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "O'Neill",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "96",
+            "issn": "",
+            "pages": "14234-14239",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Thermodynamic analysis of conserved loop-stem interactions in P1-P2 frameshifting RNA pseudoknots from plant Luteoviridae",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Nixon",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Suram",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biochemistry",
+            "volume": "41",
+            "issn": "",
+            "pages": "10665-10674",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Water-nucleobase \u201cstacking\u201d: H-pi and lone pair-pi interactions in the atomic resolution crystal structure of an RNA pseudoknot",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sarkhel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rich",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Egli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Am Chem Soc",
+            "volume": "125",
+            "issn": "",
+            "pages": "8998-8999",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Detection of scalar couplings involving 2\u2032-hydroxyl protons across hydrogen bonds in a frameshifting mRNA pseudoknot",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hennig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Am Chem Soc",
+            "volume": "125",
+            "issn": "",
+            "pages": "4676-4677",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Solution structure of a luteoviral P1-P2 frameshifting mRNA pseudoknot",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Nixon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rangan",
+                    "suffix": ""
+                },
+                {
+                    "first": "YG",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rich",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Mol Biol",
+            "volume": "322",
+            "issn": "",
+            "pages": "621-633",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The role of RNA pseudoknot stem 1 length in the promotion of efficient -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liphardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bloys",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Routledge",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Biol",
+            "volume": "288",
+            "issn": "",
+            "pages": "305-320",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Characterization of the RNA components of a putative molecular switch in the 3\u2032 untranslated region of the murine coronavirus genome",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Goebel",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hsue",
+                    "suffix": ""
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Dombrowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Masters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "669-682",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "The 3\u2032 cis-acting genomic replication element of the severe acute respiratory syndrome coronavirus can function in the murine coronavirus genome",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Goebel",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Masters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "7846-7851",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Flexible sequence similarity searching with the FASTA3 program package",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Pearson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Meth Mol Biol",
+            "volume": "132",
+            "issn": "",
+            "pages": "185-219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Database resources of the National Center for Biotechnology Information",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chappey",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Lash",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Leipe",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res",
+            "volume": "28",
+            "issn": "",
+            "pages": "10-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "CLUSTAL W: Improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Higgins",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Nucleic Acids Res",
+            "volume": "22",
+            "issn": "",
+            "pages": "4673-4680",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "TreeView: An application to display phylogenetic trees on personal computers",
+            "authors": [
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Page",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Comput Appl Biosci",
+            "volume": "12",
+            "issn": "",
+            "pages": "357-358",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "High efficiency transformation of Escherichia coli with plasmids",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Inoue",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nojima",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Okayama",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Gene",
+            "volume": "96",
+            "issn": "",
+            "pages": "23-28",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Translational maintenance of frame: Mutants of Saccharomyces cerevisiae with altered -1 ribosomal frameshifting efficiencies",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genetics",
+            "volume": "136",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Transformation of intact yeast cells treated with alkali cations",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fukuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Murata",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "J Bact",
+            "volume": "153",
+            "issn": "",
+            "pages": "163-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Yeast vectors for the controlled expression of heterologous proteins in different genetic backgrounds",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mumberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Funk",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Gene",
+            "volume": "156",
+            "issn": "",
+            "pages": "119-122",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Oligoribonucleotide synthesis using T7 RNA polymerase and synthetic DNA templates",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Milligan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Groebe",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Witherell",
+                    "suffix": ""
+                },
+                {
+                    "first": "OC",
+                    "middle": [],
+                    "last": "Uhlenbeck",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Nucleic Acids Res",
+            "volume": "15",
+            "issn": "",
+            "pages": "8783-8798",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Preparation of isotopically enriched RNAs for heteronuclear NMR",
+            "authors": [
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Batey",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Battiste",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Meth Enzymol",
+            "volume": "261",
+            "issn": "",
+            "pages": "300-322",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "NMRPipe: A multidimensional spectral processing system based on UNIX pipes",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Delaglio",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Grzesiek",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Vuister",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pfeifer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Biomol NMR",
+            "volume": "6",
+            "issn": "",
+            "pages": "277-293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "NMRView: A computer program for the visualization and analysis of NMR data",
+            "authors": [
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Blevins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Biomol NMR",
+            "volume": "4",
+            "issn": "",
+            "pages": "603-614",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Use of a water flip-back pulse in the homonuclear NOESY experiment",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Lippens",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dhalluin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Wieruszeski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J. Biomol. NMR",
+            "volume": "5",
+            "issn": "",
+            "pages": "327-331",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Spin-echo water suppression for the generation of pure-phase two-dimensional NMR-spectra",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sklenar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Magn Reson",
+            "volume": "74",
+            "issn": "",
+            "pages": "469-479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Correlation of proton and N-15 chemical-shifts by multiple quantum NMR",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Griffey",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Hawkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "J Magn Reson",
+            "volume": "55",
+            "issn": "",
+            "pages": "301-315",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "NMR scaler couplings across Watson-Crick base pair hydrogen bonds in DNA observed by transverse relaxation optimized spectroscopy",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pervushin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ono",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Szyperski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kainosho",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "95",
+            "issn": "",
+            "pages": "14147-14151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Direct observation of hydrogen bonds in nucleic acid base pairs by internucleotide (2)J(NN) couplings",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Dingley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Grzesiek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Am Chem Soc",
+            "volume": "120",
+            "issn": "",
+            "pages": "8293-8297",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

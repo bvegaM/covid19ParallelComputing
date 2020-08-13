@@ -1,0 +1,1773 @@
+{
+    "paper_id": "PMC2717369",
+    "metadata": {
+        "title": "Temporal Variability and Social Heterogeneity in Disease Transmission: The Case of SARS in Hong Kong",
+        "authors": [
+            {
+                "first": "Anne",
+                "middle": [],
+                "last": "Cori",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pierre-Yves",
+                "middle": [],
+                "last": "Bo\u00eblle",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Guy",
+                "middle": [],
+                "last": "Thomas",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gabriel",
+                "middle": [
+                    "M."
+                ],
+                "last": "Leung",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Alain-Jacques",
+                "middle": [],
+                "last": "Valleron",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Neil",
+                "middle": [
+                    "M."
+                ],
+                "last": "Ferguson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Emerging infectious diseases have been defined as, \u201cinfections that have newly appeared in a population or have existed previously but are rapidly increasing in incidence or geographic range. [1]\u201d Several features may make them particularly threatening. First, recognizing the disease can be difficult when the first cases appear, especially when the symptoms are non-specific. Second, no vaccine or specific treatment may be known initially. Moreover, heterogeneities in disease transmission may create high-risk groups, such as healthcare workers [2]\u2013[5] and high-risk geographical areas, thereby dramatically enhancing the impact of the outbreak [6].",
+            "cite_spans": [
+                {
+                    "start": 192,
+                    "end": 195,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 549,
+                    "end": 552,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 553,
+                    "end": 556,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 649,
+                    "end": 652,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The 2003 severe acute respiratory syndrome (SARS) outbreak in Hong Kong is remarkably illustrative of the above issues: symptoms were similar to pneumonia [7]; the incubation period was long enough for local and international transmission to occur [8]; no vaccine or treatment was available; as much as 21% of cases worldwide were healthcare workers [9]. The outbreak also demonstrated the possible existence of super-spreading events (SSEs) [10], during which a few infectious individuals contaminated a high number of secondary cases. Hong Kong had two SSEs: the first occurred in Hospital X around March 3 and led to about 125 cases [11]; the second occurred in Housing Estate Y on March 19, and led to over 300 cases [12],[13]. Despite its particularly threatening features, the outbreak was brought under control.",
+            "cite_spans": [
+                {
+                    "start": 155,
+                    "end": 158,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 248,
+                    "end": 251,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 350,
+                    "end": 353,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 442,
+                    "end": 446,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 636,
+                    "end": 640,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 721,
+                    "end": 725,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 726,
+                    "end": 730,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this context, once the epidemic is detected, spontaneous changes in behavior will occur, and non-pharmacological measures are usually initiated to control the outbreak. The resulting effects of these two phenomena on disease transmission is not easily quantified.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The effective contact rate, which reflects the combined influences of social proximity (the number of contacts per time unit) and the probability of infection through each contact, is an essential determinant of disease spread. Our aim was to estimate the temporal variation of this parameter in the community and hospitals, over the course of the outbreak.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Previously published mathematical models of parameter estimation addressed the issues of temporal variability [12],[14] or social heterogeneity [2],[15]. Here we present an approach that deals with both issues, together with the occurrence of SSEs. Then the method is applied to the 2003 SARS epidemic in Hong Kong (SARSID database [13]).",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 114,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 115,
+                    "end": 119,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 144,
+                    "end": 147,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 148,
+                    "end": 152,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 332,
+                    "end": 336,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Among the 1755 patients admitted to Hong Kong hospitals in 2003 for suspected SARS, 1467 serologically confirmed SARS cases were retained for analysis. For each case, occupation, date of symptom onset, date of hospital admission, duration of hospital stay and discharge status (dead or alive) were recorded. Durations of hospital stay were missing for 12 cases and imputed to 100 days.",
+            "cite_spans": [],
+            "section": "Data ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The epidemic process was cast into a discrete time stochastic susceptible-exposed-infectious-removed (SEIR) compartmental model, designed to reflect a two-way classification of individuals according to disease status and \u2018social\u2019 category (Figure 1).",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 240,
+                    "end": 248,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The latter was defined in three categories: hospitalized patients (hp), healthcare workers (hw), and the general population (gp).",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "According to these three social categories, SARS cases were qualified: nosocomial when the patient had been hospitalized for \u22655 days before symptom onset ; healthcare workers when the subjects were indeed healthcare workers and not nosocomial ; or general population, all others . Their corresponding epidemic curves are shown in Figure 2.",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 330,
+                    "end": 338,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Disease status was described in five compartments: susceptible (S), exposed (E), infectious non-hospitalized (I), infectious hospitalized (H), and removed (R). Individuals are initially susceptible to the disease and infected through contact with infectious subjects. Once infected, individuals are first exposed (infected, non-infectious) and then become infectious. The infectious stage is defined as the period of time during which infectious individuals can transmit the disease through contact with susceptibles. Finally, the infectious individuals are removed, either through recovery or death. Quarantine or isolation was not documented in the database, and was not specifically described: possibly isolated infectious individuals remain in stage  or , and quarantined contacts remain in stage .",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Thus, depending on social category, susceptible individuals may be in compartments  (general population),  (healthcare workers), or  (hospitalized patients); similarly, exposed and recovered individuals may be in compartments ,  or , and ,  or , respectively; while infectious subjects are in compartments  or  before hospitalization, and in compartments ,  or  once hospitalized.",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The size of the Hong Kong population () was obtained from local census data (http://www.info.gov.hk/info/hkbrief/eng/living2.htm). The number of hospitalized patients () equaled the number of hospital beds in Hong Kong (http://www.info.gov.hk/info/hkbrief/eng/living2.htm). The number of healthcare workers () was derived from the healthcare worker-to-bed ratio in the Hospital X [13]. ,  and  were assumed to be constant throughout the epidemic. Under this steady-state assumption, transitions between compartments , , and  did not have to be included explicitly in the model.",
+            "cite_spans": [
+                {
+                    "start": 380,
+                    "end": 384,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The model assumes that there is no direct contact between hospitalized individuals and non hospitalized individuals from the general population. In particular, susceptible individuals in the general population ( compartment) cannot be infected by infectious hospitalized SARS cases (, , and  compartments), and susceptible hospitalized patients ( compartment) cannot be infected by infectious not-yet-hospitalized cases from the general population ( compartment).",
+            "cite_spans": [],
+            "section": "Transmission Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In the following, 1\n{.} denotes the indicator function, defined by  if  is true, and 0 otherwise.",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each Hong Kong inhabitant \n, let  be the time of symptom onset,  the day of hospital admission,  the day of hospital discharge,  the day of death ( if the case did not die from SARS), and  the social category ( if ,  if  and inhabitant  is a healthcare worker, and  otherwise). For all inhabitants who were not infected by SARS, we let .",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each individual \n, let . The observed data  were augmented with , where , ,  and  correspond to the dates of transition into the , ,  and  states respectively ;  is the date of death, and  is the social category for case  (,  or ).",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Letting  and , the joint density  of , , and of the vector  of unknown parameters is written as the following product:where , and  is a prior distribution for .",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As defined by Auranen et al. [17], ,  and  refer to the observation level, the transmission level and the prior level respectively.",
+            "cite_spans": [
+                {
+                    "start": 29,
+                    "end": 33,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The observation level ensures that the observed data are consistent with the augmented data.",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "During the SARS outbreak, few cases were reportedly infected by asymptomatic persons, but cases rapidly became infectious after symptom onset [12],[18],[19]. Therefore, for each case , the onset of symptom was considered acceptable if .",
+            "cite_spans": [
+                {
+                    "start": 142,
+                    "end": 146,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 147,
+                    "end": 151,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 152,
+                    "end": 156,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The day  of hospital admission was consistent with the augmented data if  when the case was infectious prior to hospitalization ()  when the case was infectious only after hospitalization ()  when the case was not infectious anymore at the time of hospitalization ().",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "It was also assumed that the infectious period did not outlast hospital discharge, that is \n",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The date of death was .",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, the professional category  was acceptable if .",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Hence:\n",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The transmission level describes SARS transmission, assuming  and  are known, conditional on the day  of infection of the first case.",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A deterministic latent period of 5 days was assumed for all cases ( for  such that ) [13].",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 89,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The duration of the infectious period () for SARS cases was gamma-distributed, with mean  and variance . We let  and  denote its density and cumulative distribution function respectively. For SARS patients dead on discharge, the infectious period was considered censored by death. Since the infectious period was defined as the period during which infectious cases can transmit the disease through contact with susceptibles, its distribution was assumed to remain the same over the course of the epidemic.",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The specific stochastic infection rates on day  for susceptible individuals in compartments , , and  are: ,  and , where  and  denote the numbers of individuals in compartments  and , respectively;  and  are the daily effective contact rates in the community and hospitals, respectively;  and  are temporary level shift interventions [4] reflecting the increment of infectiousness during the Hospital X and Housing Estate Y SSEs, i.e. from days  and  to days  and .",
+            "cite_spans": [
+                {
+                    "start": 334,
+                    "end": 337,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "This leads to:where ;  (), and  () is the incidence in  on day .",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The vector  comprised about 228 unknown parameters, the epidemic lasting about  days.",
+            "cite_spans": [],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For all model parameters except the effective contact rates, independent prior distributions were chosen. For the time of start of SSEs, the prior distributions were informative (see Table 1). The effective contact rates  and  were modeled as second-order Gaussian random walks, on the log scale, with flat exponential priors on the first two states of the random walk. In this approach, the respective variances  and  of innovations correspond to the smoothing parameters of cubic smoothing splines [21]; smaller values of  and  are associated with smoother trajectories. For the two precision parameters  and , exponential hyperpriors with mean  were selected. A sensitivity analysis of the hyperparameter value was performed (see Text S1).",
+            "cite_spans": [
+                {
+                    "start": 500,
+                    "end": 504,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Statistical Model ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 183,
+                    "end": 190,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "A Markov chain Monte Carlo (MCMC) method was used to sample the joint posterior distribution \n[22],[23]. More details on the sampler are provided in Text S2.",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 98,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 99,
+                    "end": 103,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Parameter Estimation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "From the joint posterior distribution of the parameters, a number of meaningful epidemiological quantities, such as daily case-reproduction numbers [24] in each category (see Text S3), could be derived. In particular, the number of cases generated by each SSE could be estimated.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 152,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Parameter Estimation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Estimates of the days of SSE starts and ends, increments (, ), and the number of SSE cases in Hospital X and Housing Estate Y are shown in Table 2. Despite the somewhat shorter SSE duration for Housing Estate Y than for Hospital X, 2.5 times more cases occurred in Housing Estate Y than Hospital X.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 139,
+                    "end": 146,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The estimated mean of the infectious period was 9.3 days (95% credible interval: (8.6\u20139.9)), with an estimated standard deviation of 2.3 days (95% credible interval: (1.8\u20132.9)). The proportion of the infectious period spent in the community decreased continuously with time (>60% at the beginning, <20% as early as early April). Toward the end of the epidemic, >95% of the infectious period was spent inside hospitals (see Figure 3).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 423,
+                    "end": 431,
+                    "mention": "Figure 3",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The daily effective contact rates in the community () and hospitals () exhibited progressive a decrease in time, as shown in Figure 4. However, while the contact rate was almost 0 by late March inside hospitals, it remained >0.17 in the community.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 125,
+                    "end": 133,
+                    "mention": "Figure 4",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The case-reproduction number first increased to 5.1 in the general population in late February and to 3.0 for healthcare workers in early March (see Text S3). It then decreased until the end of the epidemic. The case-reproduction numbers was <1 on March 13 for healthcare workers and on March 20 for the general population. Among nosocomial cases, the case-reproduction number was always <1, with a maximum value of 0.2 on March 14.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The model's ability to reproduce the main features of the epidemic was checked by simulating 5000 epidemics with parameters sampled from the estimated joint posterior distribution, as described in Text S4. The size and duration of simulated epidemics, as well as cases breakdown in categories (, , ) mirrored the Hong Kong epidemic (see Figure 2).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 337,
+                    "end": 345,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We also simulated 100 epidemics with a single set of parameters, sampled from the posterior distribution. Then, the estimation procedure was applied to each simulated epidemic in order to reestimate the parameters. The original parameters were in the estimated corresponding 95% credible interval in 87% of cases.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To rapidly and economically design and assess control measures for epidemics in modern societies, added insight into the dynamics of disease transmission is needed. These dynamics are conveniently summarized by critical, albeit non-observable, characteristics, such as the duration of the infectious period and effective contact rates. Estimation of these parameters from the observed data requires the development of mathematical models. Herein, we presented a model for epidemics that provides for social heterogeneity and time variability of transmission parameters. As a working example, the model was applied to the 2003 SARS epidemic in Hong Kong.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The effect of interventions and/or changes in behavior during the 2003 SARS outbreak may be modelled as time varying contact rates [12],[15],[25] or involve shortening of the infectious period [19]. Here, we adopted the first view. To assess if the data supported this choice, a model was fit where, in addition to time varying contact rates, we allowed the mean infectious period to change over three consecutive periods. The three posterior means were 9.5 days (before March 20), 9.2 (March 21 to April 9) and 10 days (after April 10), indicating that the time varying contact rates alone model the data adequately.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 135,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 136,
+                    "end": 140,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 141,
+                    "end": 145,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 193,
+                    "end": 197,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While the duration of the infectious period is an obvious determinant of disease transmission, no estimate has been available for SARS. The distribution of the viral load was found to peak 8\u201310 days after symptom onset [13],[18],[26],[27]. Here, assuming that the infectious period started between 1 day before and 4 days after symptom onset, it was estimated to extend over an average period of 9.3 days. We also found that the proportion of time infectious people spent outside hospitals decreased during the outbreak and was <5% at the very end, in agreement with Anderson et al. [18] and Leung et al. [13] who showed that the time from symptom onset to admission was shorter at the end of the epidemic.",
+            "cite_spans": [
+                {
+                    "start": 219,
+                    "end": 223,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 224,
+                    "end": 228,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 229,
+                    "end": 233,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 234,
+                    "end": 238,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 583,
+                    "end": 587,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 605,
+                    "end": 609,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One of the most striking features of the Hong Kong SARS epidemic was the occurrence of two SSEs. By definition, SSEs correspond to exceptional circumstances that are usually limited to well-circumscribed areas, such as Hospital X and Housing Estate Y, and last for only a few days [10]. In this respect, the very high contact rates generated by the SSEs were modeled as \u2018innovation outliers\u2019 [28], to avoid spurious overestimation of contact rates among the Hong Kong population.",
+            "cite_spans": [
+                {
+                    "start": 281,
+                    "end": 285,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 392,
+                    "end": 396,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Whether SSEs are a result of a few particularly highly infectious cases (excreting much virus and/or highly connected socially), or of particular environmental circumstances, or maybe both, remains unclear [16],[29],[30]. In our model, the force of infection associated with each SSE was independent on the number of currently infectious cases. The duration of SSEs was estimated independently for each SSE, and was independent on the duration of the infectious period. Therefore, our model was consistent with all possible causes of SSEs: one or several super-spreaders, or particular environmental circumstances, etc.",
+            "cite_spans": [
+                {
+                    "start": 206,
+                    "end": 210,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 211,
+                    "end": 215,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 216,
+                    "end": 220,
+                    "mention": "[30]",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The level shift interventions [20] that were superimposed on the process describing the time evolution of the infection rates differed significantly from zero. Taking into account only serologically confirmed cases, we estimated that the Hospital X SSE began on March 1st, lasted 11 days and was responsible for 94 cases; and that the Housing Estate Y SSE began on March 18, lasted 6 days and caused 235 cases. Previous studies investigating SSEs in Hong Kong used all cases. By contact tracing, Lee et al. [11] found that the Hospital X SSE started on March 4 and involved 125 cases; the Housing Estate Y SSE had been estimated to start on March 19 [13] and to involve 312\u2013330 [13] or 331 [12] cases.",
+            "cite_spans": [
+                {
+                    "start": 30,
+                    "end": 34,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 507,
+                    "end": 511,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 650,
+                    "end": 654,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 678,
+                    "end": 682,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 690,
+                    "end": 694,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Effective contact rates were estimated on a daily basis, in the community and hospitals. Both rates tended to decline, probably reflecting the effect of control measures (listed in Figure 4\n[31],[32]) or self-adopted behavioral changes. The measures seem to have been particularly effective in hospitals, where the effective contact rate was 0 by late March, whereas the risk in the community did not decrease as sharply. In both settings, the effective contact rate was almost constant after late March, when no more control measures were introduced.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 194,
+                    "mention": "[31]",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 195,
+                    "end": 199,
+                    "mention": "[32]",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 181,
+                    "end": 189,
+                    "mention": "Figure 4",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Others who studied the dependence of disease transmission on time reported reproduction numbers rather than effective contact rates [12],[14]. While the daily effective contact rates are sensitive to short-term day-to-day variations in transmission, the reproduction numbers reflect the integrated influences of the temporal evolution of effective contact rates, the infectious period duration and other factors, such as time spent in the community before hospitalization. Here, estimates of daily reproduction numbers were obtained for each social category. Notably, unlike Cauchemez et al. [14], it was not necessary to assume prior knowledge or constancy of the generation interval. The reproduction numbers showed a trend similar to the effective contact rates, with a clearly decreasing trend over time, suggesting that the epidemic was under control as early as mid-March (see Figure in Text S3). Moreover, the temporal patterns for the general population and healthcare workers were similar, with the reproduction numbers being higher for the general population, thereby indicating that on average, an infectious healthcare worker did not infect more people than any other infectious person. The reproduction numbers for nosocomial cases were much lower, either because they had fewer contacts or because the people they were in contact with were protected (typically healthcare workers wearing masks).",
+            "cite_spans": [
+                {
+                    "start": 132,
+                    "end": 136,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 137,
+                    "end": 141,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 592,
+                    "end": 596,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our estimation procedure, applied to a set of 100 simulated epidemics, showed that in 87% of cases, the parameters used for simulation were inside the corresponding posterior 95% credible intervals. While most parameters were well estimated, the procedure tended to overestimate the duration of each SSE, while simultaneously underestimating its strength. The number of people affected by each SSE (i.e. population\u00d7duration\u00d7strength) was therefore correct, but its extent in time less robust. Ignoring the 17 days corresponding to both SSEs, 98% of the remaining parameters used for simulation were inside the posterior corresponding 95% credible intervals, indicating very little bias in our estimation procedure.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Herein, we described an approach to estimate the role of time variability and social heterogeneity in epidemic dynamics. Our model's simplifying assumptions such as the fixed duration of the latency period or the constant probability of transmission throughout the infectious period of cases, can be relaxed at the price of increasing complexity. Similarly, a more detailed model taking into account household transmission, and transmission inside and between hospitals, rather than assuming homogeneous mixing in the community and in hospitals, could be implemented, at the cost of a dramatic increase in the number of model parameters. More generally, the model can be easily accommodated to fit the specificities of any transmissible disease.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Superscript letters denote social categories: , general population; , healthcare workers; , hospitalized patients. Disease states are: , susceptible; , exposed (infected but not yet infectious); , infectious not hospitalized; , infectious hospitalized, and , removed (recovered or dead).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Cases were defined as: nosocomial when patients had been hospitalized for \u22655 days before symptom onset ; healthcare workers when they were indeed healthcare workers and not nosocomial ; and general population, otherwise . The grey cloud surrounding the observed epidemic curve corresponds to simulated epidemic curves.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Infectious diseases of humans: Dynamics and control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Epidemiology, transmission dynamics and control of SARS: the 2002\u20132003 epidemic.",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Philos Trans R Soc Lond B Biol Sci",
+            "volume": "359",
+            "issn": "",
+            "pages": "1091-1105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Transmission of pneumococcal carriage in families: a latent Markov process for binary longitudinal data.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Auranen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Arjas",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Leino",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Takala",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of the American Statistical Association",
+            "volume": "95",
+            "issn": "",
+            "pages": "1044-1053",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Intervention analysis with applications to economic and environmental problems.",
+            "authors": [
+                {
+                    "first": "GEP",
+                    "middle": [],
+                    "last": "Box",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Tiao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1975,
+            "venue": "Journal of the American Statistical Association",
+            "volume": "70",
+            "issn": "",
+            "pages": "70-79",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Real-time estimates in early detection of SARS.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Bo\u00eblle",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "110-113",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Severe acute respiratory syndrome (SARS) and healthcare workers.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chan-Yeung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Int J Occup Environ Health",
+            "volume": "10",
+            "issn": "",
+            "pages": "421-427",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "SARS outbreaks in Ontario, Hong Kong and Singapore: the role of diagnosis and isolation as a control mechanism.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Castillo-Garsow",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Theor Biol",
+            "volume": "224",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Outliers in time series.",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Fox",
+                    "suffix": ""
+                }
+            ],
+            "year": 1972,
+            "venue": "Journal of the Royal Statistical Society Series B-Statistical Methodology",
+            "volume": "34",
+            "issn": "",
+            "pages": "350-363",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Estimating individual and household reproduction numbers in an emerging epidemic.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS ONE",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gilks",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Spiegelhalter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Markov chain Monte Carlo in practice",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Modelling strategies for controlling SARS outbreaks.",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Brauer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Biol Sci",
+            "volume": "271",
+            "issn": "",
+            "pages": "2223-2232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Conditional prior proposals in dynamic models.",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Knorr-Held",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Scandinavian Journal of Statistics",
+            "volume": "26",
+            "issn": "",
+            "pages": "129-144",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Using models to identify routes of nosocomial infection: a large hospital outbreak of SARS in Hong Kong.",
+            "authors": [
+                {
+                    "first": "KO",
+                    "middle": [],
+                    "last": "Kwok",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "WY",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc Biol Sci",
+            "volume": "274",
+            "issn": "",
+            "pages": "611-617",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "SARS transmission among hospital workers in Hong Kong.",
+            "authors": [
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Fung",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "280-286",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "A major outbreak of severe acute respiratory syndrome in Hong Kong.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hui",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1986-1994",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The epidemiology of severe acute respiratory syndrome in the 2003 Hong Kong epidemic: an analysis of all 1755 patients.",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chau",
+                    "suffix": ""
+                },
+                {
+                    "first": "IO",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Ann Intern Med",
+            "volume": "141",
+            "issn": "",
+            "pages": "662-673",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Predicting super spreading events during the 2003 severe acute respiratory syndrome epidemics in Hong Kong and Singapore.",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "IT",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Epidemiol",
+            "volume": "160",
+            "issn": "",
+            "pages": "719-728",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Superspreading and the effect of individual variation on disease emergence.",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "355-359",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Curtailing transmission of severe acute respiratory syndrome within a community and its hospital.",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Biol Sci",
+            "volume": "270",
+            "issn": "",
+            "pages": "1979-1989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Factors in the emergence of infectious diseases.",
+            "authors": [
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Emerg Infect Dis",
+            "volume": "1",
+            "issn": "",
+            "pages": "7-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Rapid awareness and transmission of severe acute respiratory syndrome in Hanoi French Hospital, Vietnam.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kuratsuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Quy",
+                    "suffix": ""
+                },
+                {
+                    "first": "NC",
+                    "middle": [],
+                    "last": "Phi",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Van Ban",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Am J Trop Med Hyg",
+            "volume": "73",
+            "issn": "",
+            "pages": "17-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Clinical progression and viral load in a community outbreak of coronavirus-associated SARS pneumonia: a prospective study.",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "VC",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "IF",
+                    "middle": [],
+                    "last": "Hung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1767-1772",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Estimating variability in the transmission of severe acute respiratory syndrome to household contacts in Hong Kong, China.",
+            "authors": [
+                {
+                    "first": "VE",
+                    "middle": [],
+                    "last": "Pitzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Am J Epidemiol",
+            "volume": "166",
+            "issn": "",
+            "pages": "355-363",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Transmission dynamics of the etiological agent of SARS in Hong Kong: impact of public health interventions.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Abu-Raddad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1961-1966",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Robert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "The Bayesian choice: From decision-theoretic foundations to computational implementation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Investigation of a nosocomial outbreak of severe acute respiratory syndrome (SARS) in Toronto, Canada.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Varia",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sarwal",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McGeer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gournis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "CMAJ",
+            "volume": "169",
+            "issn": "",
+            "pages": "285-292",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Chronology of the SARS epidemic in Hong Kong.",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Cluster of SARS among medical students exposed to single patient, Hong Kong.",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "269-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Severe acute respiratory syndrome (SARS): Status of the outbreak and lessons for the immediate future.",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Consensus document on the epidemiology of severe acute respiratory syndrome (SARS).",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "SARS: Chronology of a serial killer.",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

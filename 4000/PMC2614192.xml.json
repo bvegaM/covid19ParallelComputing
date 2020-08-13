@@ -1,0 +1,1662 @@
+{
+    "paper_id": "PMC2614192",
+    "metadata": {
+        "title": "Bayesian, Maximum Parsimony and UPGMA Models for Inferring the Phylogenies of Antelopes Using Mitochondrial Markers",
+        "authors": [
+            {
+                "first": "Haseeb",
+                "middle": [
+                    "A."
+                ],
+                "last": "Khan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ibrahim",
+                "middle": [
+                    "A."
+                ],
+                "last": "Arif",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ali",
+                "middle": [
+                    "H."
+                ],
+                "last": "Bahkali",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ahmad",
+                "middle": [
+                    "H."
+                ],
+                "last": "Al Farhan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ali",
+                "middle": [
+                    "A."
+                ],
+                "last": "Al Homaidan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The antelope Arabian Oryx was extirpated from the wild as a result of massive hunting during early 1970s (Henderson, 1974). Fortunately, the efforts of captive breeding programs succeeded to preserve the Arabian Oryx, which was later reintroduced in certain protected areas (Spalton et al. 1999; Ostrowski et al. 1998; Mesochina et al. 2003). Recently, Iyengar et al. (2007) have recommended maintaining a global perspective for the captive genetic management of Oryx. Individuals from various management programs and regions need to be effectively utilized for sustained future captive breeding in order to ensure that the vital remnants of genetic diversity are retained and represented in future reintroduction programs (Iyengar et al. 2007). It has been suggested that molecular methods can significantly contribute to the captive breeding and reintroduction strategies for conservation of various endangered animals such as Oryx antelopes (Russello and Amato, 2007).",
+            "cite_spans": [
+                {
+                    "start": 106,
+                    "end": 121,
+                    "mention": "Henderson, 1974",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 275,
+                    "end": 294,
+                    "mention": "Spalton et al. 1999",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 296,
+                    "end": 317,
+                    "mention": "Ostrowski et al. 1998",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 319,
+                    "end": 340,
+                    "mention": "Mesochina et al. 2003",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 353,
+                    "end": 374,
+                    "mention": "Iyengar et al. (2007)",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 724,
+                    "end": 743,
+                    "mention": "Iyengar et al. 2007",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 945,
+                    "end": 969,
+                    "mention": "Russello and Amato, 2007",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Molecular fingerprinting based on the nucleotide sequence analysis of various mitochondrial genes plays an important role in studying evolutionary relationship among various taxa. Besides its exclusive maternal inheritance and lack of recombination, different segments of mitochondrial DNA (mtDNA) also possess unique features such as conservativeness in protein-coding regions and high variability in non-coding sequences (Ingman et al. 2000; Olivo et al. 1983). Consequently, the evolutionary rate of mtDNA tends to be variable for different regions and has been utilized to examine various levels of phylogenetic relationships. The 12S rRNA gene sequences being highly conserved, are applied to illustrate higher levels of phylogenies (phyla or subphyla) whereas the 16s rRNA sequences are mainly used for phylogenetic studies at mid-categorical levels (families or genera) (Gerber et al. 2001). Since the mitochondrial protein-coding genes and the d-loop evolve comparatively faster they are considered as powerful tools for inferring evolutionary history in mid to lower categorical levels such as genera and species.",
+            "cite_spans": [
+                {
+                    "start": 424,
+                    "end": 442,
+                    "mention": "Ingman et al. 2000",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 444,
+                    "end": 461,
+                    "mention": "Olivo et al. 1983",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 878,
+                    "end": 896,
+                    "mention": "Gerber et al. 2001",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Probabilistic modeling of sequence evolution has now become inevitable in phylogenetic inference (Felsenstein, 2001). Despite a positive impact of statistical revolution, the emergence of sophisticated evolutionary models has placed a burden on researchers to select the model most appropriate for their data. It is intriguing that the bioinformatics tool used for phylogenetic analysis may have some influence on the topologies of the resulting trees. An inappropriate choice of evolutionary model can affect the outcome of any phylogenetic analysis by incorrectly estimating tree topologies (Penny et al. 1994; Bruno and Halpern, 1999). Bayesian (BA), maximum likelihood (ML) or unweighted pair group method with arithmetic mean (UPGMA) and maximum parsimony (MP) are the main phylogenetic approaches that are often used side by side. While the choice between them has been contentious at times, they frequently give similar results and if they don\u2019t, they can complement each other (Liberles, 2005). In this investigation, we have compared BA, MP and UPGMA methods for phylogenetic analysis of Oryx antelopes using 16S rRNA, cytochrome-b (cyt-b) and d-loop sequences of mtDNA.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 115,
+                    "mention": "Felsenstein, 2001",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 594,
+                    "end": 611,
+                    "mention": "Penny et al. 1994",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 613,
+                    "end": 636,
+                    "mention": "Bruno and Halpern, 1999",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 986,
+                    "end": 1000,
+                    "mention": "Liberles, 2005",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The sequences of 16S rRNA, cyt-b and d-loop of the three Oryx species including Arabian Oryx (Oryx leucoryx), Scimitar Horned Oryx (Oryx dammah) and Plains Oryx (Oryx gazella) were obtained from GenBank. The respective sequences of Addax (Addax nasomaculatus) were used as outgroup due to its close relationship to Oryx yet representing a separate sister taxa (Hassanin and Douzery, 1999; Iyengar et al. 2006). The Gene-Bank accession numbers and the number of nucleotides for the partial sequences of 16S rRNA, cyt-b and d-loop of the four taxa are: Oryx leucoryx (U87021, 342; AF036286, 1143; AJ235326, 1253), Oryx dammah (U87020, 342; AJ222685, 1143; AJ235324, 1261), Oryx gazella (U87022, 342; AF249973, 1140; AJ235325, 1237) and Addax nasomaculatus (U87023, 342; AF034722, 1143; AJ235310, 1324) respectively.",
+            "cite_spans": [
+                {
+                    "start": 361,
+                    "end": 387,
+                    "mention": "Hassanin and Douzery, 1999",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 389,
+                    "end": 408,
+                    "mention": "Iyengar et al. 2006",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Tajima test statistics (Tajima, 1989) and the test of homogeneity of substitution patterns between sequences were performed after sequence alignments, using MEGA4 software (Tamura et al. 2007) while all the positions containing gaps and missing data were eliminated from the dataset (complete deletion option). The probability of rejecting the null hypothesis that sequences have evolved with the same pattern of substitution was judged from the extent of differences in the base composition biases between sequences (disparity index test) whereas a Monte Carlo test (1000 replicates) was used to estimate the respective P-values (Kumar and Gadagkar, 2001).",
+            "cite_spans": [
+                {
+                    "start": 24,
+                    "end": 36,
+                    "mention": "Tajima, 1989",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 173,
+                    "end": 191,
+                    "mention": "Tamura et al. 2007",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 631,
+                    "end": 655,
+                    "mention": "Kumar and Gadagkar, 2001",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The sequence data were subjected to three different methods of phylogenetic reconstruction: (i) Bayesian (BA), (ii) unweighted pair group method with arithmetic mean (UPGMA) and (iii) maximum parsimony (MP). The gamma-corrected Bayesian inference of phylogeny was conduced using MrBayes software (Huelsenbeck and Ronquist, 2001) and the Bayesian trees were visualized with TreeView software (Page, 1996). For UPGMA method, the phylogenetic analyses were performed using the evolutionary distances computed by maximum composite likelihood method (Sneath and Sokal, 1973; Tamura et al. 2004). For MP method, the maximum parsimonious trees were obtained using the close-neighbor-interchange algorithm in which the initial trees were obtained with the random addition of sequences for 10 replicates (Eck and Davhoff, 1966; Nei and Kumar, 2000). Both UPGMA and MP analyses were performed using MEGA4 software and the bootstrap consensus trees inferred from 1000 replicates were taken to represent the evolutionary history of the taxa analyzed (Felsenstein, 1985; Tamura et al. 2007).",
+            "cite_spans": [
+                {
+                    "start": 297,
+                    "end": 327,
+                    "mention": "Huelsenbeck and Ronquist, 2001",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 392,
+                    "end": 402,
+                    "mention": "Page, 1996",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 546,
+                    "end": 568,
+                    "mention": "Sneath and Sokal, 1973",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 570,
+                    "end": 588,
+                    "mention": "Tamura et al. 2004",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 796,
+                    "end": 817,
+                    "mention": "Eck and Davhoff, 1966",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 819,
+                    "end": 838,
+                    "mention": "Nei and Kumar, 2000",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1039,
+                    "end": 1056,
+                    "mention": "Felsenstein, 1985",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1058,
+                    "end": 1076,
+                    "mention": "Tamura et al. 2007",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Both 16S rRNA and cyt-b sequences were perfectly aligned without any insertions/deletions (indels) whereas numerous indels at various sites of different taxa were required to align the sequences of d-loop (please refer to electronic supplementary file). The average frequencies of identical (conserved) sequences between the taxa were 97.65% for 16S rRNA, 94.22% for cyt-b and 87.29% for d-loop (Fig. 1). On an average there were few transitions (2.35%) and none transversions in 16S rRNA as compared to cyt-b (5.61% transitions and 0.17% transversions) and d-loop (11.57% transitions and 1.14% transversions) (Fig. 1).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 396,
+                    "end": 402,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 611,
+                    "end": 617,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The results of Tajima\u2019s neutrality are given in Table 1. Both the number of segregating sites (S) and nucleotide diversities (\u03c0) were directly correlated and were in the order of 16S rRNA (S = 17, \u03c0 = 0.025) < cyt-b (S = 125, \u03c0 = 0.058) < d-loop (S = 270, \u03c0 = 0.122) (Table 1). The test of homogeneity of substitution patterns showed certain identities and certain variations in disparity index as well as Monte Carlo probability for different mitochondrial markers (Table 2).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 48,
+                    "end": 55,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 268,
+                    "end": 275,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 467,
+                    "end": 474,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The topologies of all the Bayesian trees were identical irrespective of the marker type, which clearly differentiated the genus Addax from Oryx, and grouped Oryx dammah with Oryx leucoryx (Fig. 2). The UPGMA trees resulting from 16S rRNA and d-loop sequences were also identical (Oryx dammah grouped with Oryx leucoryx) to Bayesian trees except that the UPGMA tree based on cyt-b showed a slightly different phylogeny (Oryx dammah grouped with Oryx gazella) with a low bootstrap support (Fig. 3). The MP method failed to differentiate the genus Addax from Oryx and Addax nasomaculatus was either grouped with Oryx leucoryx (16S rRNA or cyt-b) or with Oryx gazella (d-loop) (Fig. 4).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 189,
+                    "end": 195,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 488,
+                    "end": 494,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 674,
+                    "end": 680,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In conservation genetics, knowledge of the relatedness between individuals is particularly important for captive breeding programs to recover small populations (Frankham et al. 2002; Montgomery et al. 1997). Genetically impoverished endangered populations often fail to exhibit signs of recovery until crossed with individuals from other populations (Land and Lacy, 2000; Westemeier et al. 1998). However, if the strategy is to maintain the genetic identity of the population, the introduced individuals should be closely related to the recipient population. Recently, Masembe et al. (2006) have recommended the need of conservation efforts to preserve genetic identity of various oryx groups. Molecular methods play an important role in estimating the relatedness between individuals by comparing the genotypes at a number of informative loci (Sunnucks, 2000). The high mutation rate of mtDNA compared to nuclear genes renders mtDNA sequences to possess high levels of informative variation that could be utilized for resolving taxonomic relationship in conservation genetics using appropriate bioinformatics tools.",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 181,
+                    "mention": "Frankham et al. 2002",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 183,
+                    "end": 205,
+                    "mention": "Montgomery et al. 1997",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 351,
+                    "end": 370,
+                    "mention": "Land and Lacy, 2000",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 372,
+                    "end": 394,
+                    "mention": "Westemeier et al. 1998",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 569,
+                    "end": 590,
+                    "mention": "Masembe et al. (2006)",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 845,
+                    "end": 859,
+                    "mention": "Sunnucks, 2000",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We observed no indels in 16S rRNA and cyt-b genes whereas numerous indels were noticed in the aligned sequences of d-loop which is in agreement with an earlier study reporting specific indels in the d-loop of Oryx species (Iyengar et al. 2006). The frequency of conserved sequences was highest in 16S rRNA gene followed by cyt-b and was lowest in d-loop region whereas the converse was true for the substitutions (Fig. 1). Most of the substitutions in the mitochondrial regions studied were transitional indicating a recent species history. Factually, transitions are typically observed more often than transversions in the evolution of real sequences.",
+            "cite_spans": [
+                {
+                    "start": 223,
+                    "end": 242,
+                    "mention": "Iyengar et al. 2006",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 414,
+                    "end": 420,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The BA model with gamma correction appears to be the most efficient method as it produced identical trees using the nucleotide sequences of any of the three segments of mtDNA (Fig. 2). Bayesian inference has been successfully applied to inference of phylogenetic trees using mitochondrial and nuclear genes (Doudy et al. 2003; Xiong et al. 2002; Ragan et al. 2003). Although likelihood-based approaches have proven to be especially powerful for inferring phylogenetic trees they tend to be prohibitively slow due to the requirement of multidimensional space for possible outcomes (optimal trees) and the computational complexity of bootstrap repetitions. On the other hand, BA phylogenetic inference holds promise as an alternative to ML, particularly for large molecular-sequence data sets. Moreover, BA phylogenetic inference has been shown to be as or more robust to ML, particularly when among-sites rate variation is modeled using a gamma distribution (Mar et al. 2005).",
+            "cite_spans": [
+                {
+                    "start": 327,
+                    "end": 344,
+                    "mention": "Xiong et al. 2002",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 346,
+                    "end": 363,
+                    "mention": "Ragan et al. 2003",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 958,
+                    "end": 973,
+                    "mention": "Mar et al. 2005",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 176,
+                    "end": 182,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The UPGMA model also produced similar phylogenies to BA model for 16S rRNA and d-loop sequences however cyt-b inferred a different phylogeny (Fig. 3). These differential phylogenies may be associated with comparatively high variations in non-coding d-loop than coding cyt-b due to reduced functional constraints and relaxed selection pressure. Although, increased polymorphism in d-loop segment may render it superior to cyt-b for species or sub-species level identification, the possibility of reduced phylogenic information due to back mutations and parallel substitutions in rapidly-evolving d-loop may not be ruled out. It is also important to mention that changing the outgroup species or the length of d-loop segment can significantly alter the topology of phylogenic trees (Iyenger et al. 2006).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 142,
+                    "end": 148,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The MP model resulted different phylogenetic inferences than those from the BA and UPGMA models (Fig. 4). A certain degree of contradictive phylogeny using mitochondrial markers has been noticed earlier (Jogger and Garrido, 2001). Shoup and Lewis (2003) have performed BA analyses as well as ML bootstrapping and revealed several instances of conflict between these two approaches to measuring edge support. Kim et al. (2006) have also observed some variation in the topologies of BA and ML-based phylogenic trees to explain the origin and evolution of coronaviruses.",
+            "cite_spans": [
+                {
+                    "start": 231,
+                    "end": 253,
+                    "mention": "Shoup and Lewis (2003)",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 408,
+                    "end": 425,
+                    "mention": "Kim et al. (2006)",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 97,
+                    "end": 103,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In conclusion, this bioinformatics approach demonstrates the superiority of BA and UPGMA models over MP model for phylogenetic analysis using different regions of mtDNA or other datasets of this size. However, the implication of these findings to different data structures e.g. multiple sequences and more numbers of taxa or outgoups is not clear and needs further investigations.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Tajima\u2019s neutrality test for 4 taxa using different mitochondrial markers.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The test of homogeneity of substitution patterns for different mitochondrial markers.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Average frequencies of identical (conserved) and substituted (transitional and transversional) sites observed in sequence comparison for various segments of mtDNA.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Bayesian method for inferring phylogenetic relationship among various Oryx species using Addax as an outgroup.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: UPGMA method for inferring phylogenetic relationship among various Oryx species using Addax as an outgroup. The bootstrap consensus trees inferred from 1000 replicates are taken to represent the phylogeny. The evolutionary distances were computed using the maximum composite likelihood method.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Maximum parsimony method for inferring phylogenetic relationship among various Oryx species using Addax as an outgroup. The bootstrap consensus tree inferred from 1000 replicates is taken to represent the evolutionary history of the taxa analyzed. The maximum parsimonious tree was obtained using the close neighbor interchange algorithm in which the initial trees were obtained with the random addition of sequences (10 replicates).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Topological bias and inconsistency of maximum likelihood using wrong models",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bruno",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Halpern",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol. Biol. Evol",
+            "volume": "16",
+            "issn": "",
+            "pages": "564-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "MrBayes: Bayesian inference of phylogenetic trees",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Huelsenbeck",
+                    "suffix": ""
+                },
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Ronquist",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Bioinformatics",
+            "volume": "17",
+            "issn": "",
+            "pages": "754-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Mitochondrial genome variation and the origin of modern humans",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ingman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kaessmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "P\u00e4\u00e4bo",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Gyllensten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "408",
+            "issn": "",
+            "pages": "708-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Structure and evolution of the mitochondrial control region in oryx",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Iyengar",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Diniz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Woodfine",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Maclean",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol. Phylogenet. Evol",
+            "volume": "40",
+            "issn": "",
+            "pages": "305-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Remnants of ancient genetic diversity preserved within captive groups of scimitar-horned oryx (Oryx dammah)",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Iyengar",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Woodfine",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol. Ecol",
+            "volume": "16",
+            "issn": "",
+            "pages": "2436-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Phylogenetic position of Elephas, Loxodonta and Mammuthus, based on molecular evidence",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Joger",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Garrido",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "544-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Close Relationship Between SARS-Coronavirus and Group 2 Coronavirus",
+            "authors": [
+                {
+                    "first": "OJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "83-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Disparity Index: A simple statistic to measure and test the homogeneity of substitution patterns between molecular sequences",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Gadagkar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genetics",
+            "volume": "158",
+            "issn": "",
+            "pages": "1321-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Introgression level achieved through Florida panther genetic restoration",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Land",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Lacy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Endang. Spec. Upd",
+            "volume": "17",
+            "issn": "",
+            "pages": "99-103",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Using phylogeny to understand genomic evolution",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Liberles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Parsimony, phylogeny and genomics",
+            "volume": "",
+            "issn": "",
+            "pages": "181-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Bayesian and maximum likelihood phylogenetic analyses of protein sequence data under relative branch-length differences and model violation",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Mar",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Harlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Ragan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC. Evol. Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": "1-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Comparison of Bayesian and maximum likelihood bootstrap measures of phylogenetic reliability",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Douady",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Delsuc",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Boucher",
+                    "suffix": ""
+                },
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "Doolittle",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJP",
+                    "middle": [],
+                    "last": "Douzery",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol. Biol. Evol",
+            "volume": "20",
+            "issn": "",
+            "pages": "248-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Three genetically divergent lineages of the oryx in eastern Africa: Evidence for an ancient introgressive hybridization",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Masembe",
+                    "suffix": ""
+                },
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Muwanika",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nyakaana",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Arctander",
+                    "suffix": ""
+                },
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Siegismund",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Conserv. Genet",
+            "volume": "7",
+            "issn": "",
+            "pages": "551-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Reintroducing antelopes into arid areas: lessons learnt from the oryx in Saudi Arabia",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "M\u00e9sochina",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bedin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ostrowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "C. R. Biol",
+            "volume": "326",
+            "issn": "",
+            "pages": "S158-S165",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Minimizing kinship in captive breeding programs",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Montgomery",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Ballou",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Nurthen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "England",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Briscoe",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Frankham",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Zoo. Biol",
+            "volume": "16",
+            "issn": "",
+            "pages": "377-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Molecular Evolution and Phylogenetics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Nucleotide sequence evidence for rapid genotypic shifts in the bovine mitochondrial DNA D-loop",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Olivo",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Van de Walle",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Laipis",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Hauswirth",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "Nature",
+            "volume": "306",
+            "issn": "",
+            "pages": "400-2",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Ten years of Arabian oryx conservation breeding in Saudi Arabia\u2014achievements and regional perspectives",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ostrowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bedin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lenain",
+                    "suffix": ""
+                },
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Abuzinada",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Oryx",
+            "volume": "32",
+            "issn": "",
+            "pages": "209-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "TREEVIEW: An application to display phylogenetic trees on personal computers",
+            "authors": [
+                {
+                    "first": "RDM",
+                    "middle": [],
+                    "last": "Page",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Comp. Appl. Biosci",
+            "volume": "12",
+            "issn": "",
+            "pages": "357-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "The role of models in reconstructing evolutionary trees",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Penny",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Lockhart",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Steel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Hendy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Models in phylogenetic reconstruction",
+            "volume": "",
+            "issn": "",
+            "pages": "211-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Are Ichthyosporea animals or fungi? Bayesian phylogenetic analysis of elongation factor 1\u03b1 of Ichthyophonus irregularis",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Ragan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Rand",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol. Phylogenet. Evol",
+            "volume": "29",
+            "issn": "",
+            "pages": "550-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "On the horns of a dilemma: molecular approaches refine ex situ conservation in crisis",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Russello",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Amato",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol. Ecol",
+            "volume": "16",
+            "issn": "",
+            "pages": "2405-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RV",
+                    "middle": [],
+                    "last": "Eck",
+                    "suffix": ""
+                },
+                {
+                    "first": "MO",
+                    "middle": [],
+                    "last": "Dayhoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "Atlas of Protein Sequence and Structure",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Polyphyletic origin of parallel basal bodies in swimming cells of chlorophycean green algae (Chlorophyta)",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shoup",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Phycol",
+            "volume": "39",
+            "issn": "",
+            "pages": "789-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PHA",
+                    "middle": [],
+                    "last": "Sneath",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Sokal",
+                    "suffix": ""
+                }
+            ],
+            "year": 1973,
+            "venue": "Numerical Taxonomy",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Arabian Oryx reintroduction in Oman: successes and setbacks",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Spalton",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Lawrence",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Brend",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Oryx",
+            "volume": "33",
+            "issn": "",
+            "pages": "168-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Efficient genetic markers for population biology",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sunnucks",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "TREE",
+            "volume": "15",
+            "issn": "",
+            "pages": "199-203",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Statistical methods to test for nucleotide mutation hypothesis by DNA polymorphism",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Tajima",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Genetics",
+            "volume": "123",
+            "issn": "",
+            "pages": "585-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "MEGA4: Molecular Evolutionary Genetics Analysis (MEGA) software version 4.0",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dudley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol. Biol. Evol",
+            "volume": "24",
+            "issn": "",
+            "pages": "1596-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Prospects for inferring very large phylogenies by using the neighbor-joining method",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A",
+            "volume": "101",
+            "issn": "",
+            "pages": "11030-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Tracking the long-term decline and recovery of an isolated population",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Westemeier",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Brawn",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Esker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Walk",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Kershner",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Bouzat",
+                    "suffix": ""
+                },
+                {
+                    "first": "KN",
+                    "middle": [],
+                    "last": "Paige",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Science",
+            "volume": "282",
+            "issn": "",
+            "pages": "1695-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A cytochrome b origin of photosynthetic reaction centers: an evolutionary link between respiration and photosynthesis",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Bauer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Mol. Biol",
+            "volume": "322",
+            "issn": "",
+            "pages": "1025-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Confidence limits on phylogenies: An approach using the bootstrap",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Evolution",
+            "volume": "39",
+            "issn": "",
+            "pages": "783-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "The troubled growth of statistical phylogenetics",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Syst. Biol",
+            "volume": "50",
+            "issn": "",
+            "pages": "465-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Frankham",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Ballou",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Briscoe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Introduction to Conservation Genetics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Does non-neutral evolution shape observed patterns of DNA variation in animal mitochondrial genomes",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Gerber",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Loggins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "TE",
+                    "middle": [],
+                    "last": "Dowling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Ann. Rev. Genet",
+            "volume": "35",
+            "issn": "",
+            "pages": "539-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The tribal radiation of the family Bovidae (Artiodactyla) and the evolution of the mitochondrial cytochrome b gene",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hassanin",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJP",
+                    "middle": [],
+                    "last": "Douzery",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol. Phylogenet. Evol",
+            "volume": "13",
+            "issn": "",
+            "pages": "227-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Were they the last Arabian Oryx",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Oryx",
+            "volume": "12",
+            "issn": "",
+            "pages": "347-50",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,1352 @@
+{
+    "paper_id": "PMC1950496",
+    "metadata": {
+        "title": "Virus detection and identification using random multiplex (RT)-PCR with 3'-locked random primers",
+        "authors": [
+            {
+                "first": "Amy",
+                "middle": [
+                    "L"
+                ],
+                "last": "Clem",
+                "suffix": "",
+                "email": "alclem01@gwise.louisville.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [],
+                "last": "Sims",
+                "suffix": "",
+                "email": "jonathan.t.sims@gmail.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Sucheta",
+                "middle": [],
+                "last": "Telang",
+                "suffix": "",
+                "email": "sucheta.telang@louisville.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "John",
+                "middle": [
+                    "W"
+                ],
+                "last": "Eaton",
+                "suffix": "",
+                "email": "eatonredox@aol.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Jason",
+                "middle": [],
+                "last": "Chesney",
+                "suffix": "",
+                "email": "jason.chesney@louisville.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Relatively benign viruses can be converted into highly virulent viruses via the introduction of genes of interest. For example, Ectromelia virus, a natural pathogen of mice that causes mousepox, recently was recombined with interleukin-4 as part of an effort to develop a live virus immuno-contraceptive vaccine. Surprisingly, the recombined virus caused 60% mortality in 2 strains of mice, whereas the wild type virus caused no death [1]. A credible bioterrorism scenario might entail the release of such a recombined or chimeric virus tailored for maximum infectivity and pathogenicity but not readily detectable using our current \"state-of-the-art\" diagnostics (i.e., PCR and micro-array chips.) Accordingly, there is a need for methods that can identify unknown viral pathogens and which can reveal extensive genomic information. Such methods would not only prove useful for our defense against bioterrorism, but also would improve our capacities to identify and control outbreaks of naturally occurring pathogenic viruses.",
+            "cite_spans": [
+                {
+                    "start": 436,
+                    "end": 437,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The proven technology to rapidly detect and identify known human pathogens as potential causes of disease or as bioweapons is PCR [2]. A recent example involved a case of fatal yellow fever (YF) in a traveler returning from Amazonas, Brazil in March, 2002 [3]. The otherwise healthy 47-year-old male developed fever, headache, pancytopenia, coagulopathy, renal and liver failure. Pan-cultures were negative, and a peripheral smear yielded no plasmodia. Serological tests (IgG, IgM) performed at the CDC were negative for YF, dengue, St. Louis encephalitis, and other agents, but serum specimens (unfortunately examined only post-mortem) were positive for YF viral RNA as measured by RT-PCR [3]. Subsequent attempts to isolate or culture the virus failed. This example highlights the superiority of PCR over other currently available methods. DNA chips that allow the simultaneous measurement of literally thousands of genes through hybridization are now being developed as the next-generation rapid diagnostic test for all known human pathogens [4]. However, both of these technologies rely on a relatively stable genome, and several human pathogens display a high mutation rate (e.g., HIV 2 \u00d7 10-5/base, 9 kB genome [5]). Moreover, the ability to recombine \"non-pathogenic\" viruses in vitro introduces the potential not only for de novo pathogenicity but also for enhanced stealth. These considerations suggest that it may be impossible to design DNA micro-arrays which detect nucleic acids from all known and unknown viruses, including less obvious vehicles of bioterrorism such as adenovirus or rhinovirus recombined with a single gene for enhanced virulence. Accordingly, there is a great need for the development of techniques that enable the universal amplification of viral nucleic acids.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 132,
+                    "mention": "2",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 257,
+                    "end": 258,
+                    "mention": "3",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 691,
+                    "end": 692,
+                    "mention": "3",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1046,
+                    "end": 1047,
+                    "mention": "4",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1218,
+                    "end": 1219,
+                    "mention": "5",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "There are 2 strategies to amplify genetic sequences with PCR without prior knowledge of the precise sequences. The first strategy relies on the degenerate binding of arbitrarily chosen primers to sample multiple cDNAs or genomic DNA species during PCR (two related methods are known as differential display and RNA Arbitrarily Primed PCR [RAP-PCR] [6-8]). The amplicons range in size from ~50\u2013600 bp and overlap. RAP-PCR was recently used successfully to identify a novel human pneumovirus only after the virus had been cultured [9]. These techniques yield an amplicon \"fingerprint\" and are generally used to compare two populations of nucleic acids. Accordingly, the pneumovirus was identified by comparing infected cells with non-infected cells [9]. The other strategy is known as Sequence-Independent, Single-Primer Amplification (SISPA) and involves the directional ligation of a linker/adaptor oligonucleotide onto both ends of a target population of either DS DNA or DS cDNA (after reverse transcription from RNA) [10]. The PCR is accomplished with primers specific for the linked adaptor molecule. SISPA, followed by extensive immunoscreening, enabled the cloning of the Norwalk agent genome from stool and Hepatitis G virus from plasma [11]. Unfortunately, these techniques have not found great utility in the direct discovery or identification of novel viruses from human plasma or serum samples (unless accompanied by immunoscreening) because of the relatively high level of host genomic DNA. However, recent studies indicate that DNAse treatment of serum samples can degrade most of the host genomic DNA but not affect viral nucleic acids, which are protected by stable capsids [12]. The combination of DNAse treatment with SISPA was successfully used to identify and sequence in their entirety 2 novel parvoviruses from bovine serum [12].",
+            "cite_spans": [
+                {
+                    "start": 349,
+                    "end": 350,
+                    "mention": "6",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 351,
+                    "end": 352,
+                    "mention": "8",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 530,
+                    "end": 531,
+                    "mention": "9",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 748,
+                    "end": 749,
+                    "mention": "9",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1021,
+                    "end": 1023,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1245,
+                    "end": 1247,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1690,
+                    "end": 1692,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1846,
+                    "end": 1848,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "While the aforementioned PCR techniques are useful for the discovery of novel viruses, their utility to rapidly detect and identify unknown (or recombined) viruses is quite limited. RAP-PCR, random RT-PCR and SISPA are complicated multi-step procedures requiring infection of cultured cells, days to accomplish, expensive reagents and broad technical expertise. Accordingly, these methods have not found clinical utility for the rapid detection or identification of viral agents.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, we present a novel method for rapid virus detection and identification based on random multiplex (RT)-PCR using 3'-locked random primers to avoid primer-dimer amplification. Once detected, virus amplification products can be shot-gun cloned and sequenced for identification. This method may prove useful for the rapid detection and identification of emerging or recombined viruses.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We hypothesized that random amplification of viral nucleic acids isolated from human plasma might provide a powerful new method to detect and identify novel and recombined viruses. Allander et al. recently found that subjecting bovine plasma to filtration (to remove cells) and DNAse treatment (to remove genomic DNA) was sufficient to separate viral nucleic acids from bovine nucleic acids and thus enable SISPA and cloning of novel viruses [12]. The mechanism for this effect is related to the relative sensitivity of free-host DNA to DNAse treatment and to the relative insensitivity of virus capsid-protected DNA to DNAse treatment. We have found that human plasma is replete with free DNA and RNA species and thus opted to examine the potential of DNAse and RNAse treatment to isolate viral nucleic acids. We inoculated human plasma with Adenovirus Type 17 and examined the effects of filtration, DNAse treatment and RNAse treatment on Adenovirus Type 17 DNA and on human \u03b2-actin genomic DNA and mRNA, using (RT)-PCR. In Figure 1, we demonstrate that filtration, DNAse and RNAse treatment increases the efficiency of amplification of Adenovirus Type 17 DNA, whereas this combined treatment eliminates amplification of genomic \u03b2-actin (upper band) and \u03b2-actin cDNA (lower band). Although the addition of RNAse alone has little effect on the \u03b2-actin mRNA, the combination of DNAse and RNAse completely eliminates \u03b2-actin mRNA. We postulate that this finding may be related to the protection of RNA species by DNA:RNA hybrids. Nevertheless, these data demonstrate that we are able to remove host \u03b2-actin DNA and mRNA without degrading Adenovirus Type 17 DNA.",
+            "cite_spans": [
+                {
+                    "start": 443,
+                    "end": 445,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Filtration and Nuclease Treatment Improves Viral DNA Amplification by Removing Host DNA and mRNA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1033,
+                    "end": 1034,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We next designed a mixture of random primers that would enable the priming and amplification of all DNA or cDNA molecules, but that would be resistant to primer-dimer amplification. We chose 10 base pairs as a compromise length to simultaneously optimize hybridization and possible binding sites. Taq polymerase requires that the three 3' bases of a primer be 100% complementary in order to enable efficient polymerization. We postulated that \"locking\" the 3' end of the primers with 2 adenosines and not incorporating any thymidines into the upstream 5' portion of the primers would prevent primer-dimer amplification (i.e., 5'-VVVVVVVVAA-3'; where V = A, G or C). This primer design will limit the frequency of binding sites within a particular viral genome, but using the EditSeq DNA Editing application (DNAStar), we observed that primers within this mixture will bind every 200\u2013500 bp in both orientations in the 19 viral genomes that were examined, thus providing ample hybridization and amplification potential.",
+            "cite_spans": [],
+            "section": "5'-VVVVVVVVAA-3' Primers Enable Random Multiplex Amplification of Plasmid DNA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "As a first test of these random primers we employed DNA plasmids of known sequence. We found that this mixture of primers enabled a continuum of discrete PCR products to be amplified from 4 different circular DNA plasmids (Figure 2A). We shot-gun cloned these PCR products and confirmed that the amplified DNA had derived from the source plasmids (data not shown). In contrast, primers consisting of the sequence 5'-NNNNNNNNNN-3' (where N = A, T, G, or C) did not enable the production of discrete or clonable PCR amplicons (Figure 2A). We then examined the ability of the V8AA primers to PCR amplify the plasmid, pBabe, and found that we could amplify as little as 100 fg (Figure 2B).",
+            "cite_spans": [],
+            "section": "5'-VVVVVVVVAA-3' Primers Enable Random Multiplex Amplification of Plasmid DNA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 230,
+                    "end": 232,
+                    "mention": "2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "2B",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We inoculated 1 ml of human plasma with Adenovirus Type 17. The plasma was then filtered (220 nm filter) and incubated for 2 hours with nucleases. Remaining nucleic acids were purified and PCR amplified using the 5'-VVVVVVVVAA-3' primers. We found that this mixture of primers enabled discrete PCR products to be amplified in the human plasma that had been inoculated with Adenovirus Type 17 and treated with filtration, DNAse and RNase treatment (Figure 3). Importantly, we observed only minimal amplification products in the un-inoculated plasma. We next shot-gun cloned the PCR amplicons into the TOPO 2.1 cloning vector and PCR screened colonies from E. coli that had been transformed with mixtures of recombined plasmids. In the un-inoculated plasma samples, we were unable to clone and sequence the amplicons (data not shown). In subsequent experiments we have had variable success obtaining random multiplex PCR amplification from human plasma and have obtained only 7 sequences in total from un-inoculated plasma. These sequences did not align with any known sequences in NCBI Non-Redundant database (Blastn searches were conducted.) However, when we shot-gun cloned the DNA amplified from the Adenovirus 17-inoculated human plasma, we obtained 12 recombined vector clones, and all clones matched to Adenovirus Type 17 (see representative example, Figure 4). These data demonstrate that the combination of filtration, DNAse/RNAse treatment and V8AAmer Random Multiplex PCR allows for the detection and identification of Adenovirus Type 17 without using any virus-specific reagents such as primers, antibodies or microarray chips.",
+            "cite_spans": [],
+            "section": "5'-VVVVVVVVAA-3' Primers Allow For the Random Multiplex Amplification of DNA from Human Plasma Inoculated with Adenovirus Type 17 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 455,
+                    "end": 456,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1363,
+                    "end": 1364,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The suspension of Adenovirus Type 17 received from the ATCC had not been quantified and the sensitivity of the random multiplex PCR method thus was uncertain. In order to generate a standard curve, we conducted real-time PCR of a known concentration of PCR-amplified Adenovirus Type 17 genomic template using Adenovirus Type 17-specific primers and found that we could detect as little as 10 copies/ml of template (data not shown). We then subjected the ATCC Adenovirus Type 17 suspension from the ATCC to real-time PCR using the same Adenovirus Type 17-specific primers and found that we could readily detect the genomic DNA (data not shown). Based on the real-time PCR generated from the known concentrations of Adenovirus Type 17 genomic template, we generated a standard curve plotting the concentration of Adenovirus Type 17 genome equivalents versus the cycle number when fluorescence passed the pre-set threshold (Ct; Figure 4A). Based on this standard curve, we determined that the stock solution of Adenovirus Type 17 contained 1 \u00d7 107 genome equivalents/ml. We then titrated down the concentration of virus in human plasma and conducted the combination of filtration, DNAse/RNAse treatment and random multiplex PCR using the 5'-VVVVVVVVAA-3' primers. We found that the random multiplex (RT)-PCR method is sensitive to 1000 genome equivalents/ml (Figure 4B).",
+            "cite_spans": [],
+            "section": "Sensitivity of the Random Multiplex PCR Using 5'-VVVVVVVVAA-3' Primers ::: Results",
+            "ref_spans": [
+                {
+                    "start": 932,
+                    "end": 934,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1363,
+                    "end": 1365,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "We postulated that the random multiplex PCR method would also detect RNA viruses if the viral nucleic acids were first subjected to 1st strand cDNA synthesis. We inoculated human plasma with the RNA virus Coxsackievirus A7 (CSV A7) and then filtered, treated with DNAse and RNAse, purified the remaining nucleic acids and conducted (RT)-PCR, using two commercially available reverse transcriptases (Omniscript and SuperScript II) and CSV A7 specific primers separated by either 200 bp or 1.4 Kb. We found that whereas Omniscript RT was more efficient at amplifying 200 bp cDNA species, SuperScript II RT was more efficient at amplifying 1.4 Kb fragments (Figure 5A). Next, we used the 5'-VVVVVVVVAA-3' primers to random multiplex PCR amplify the cDNA and observed distinct albeit faint amplicons (Figure 5B). We cloned the amplification products and found that the amplified DNA products matched the sequence of the cloned RNA genomes as determined by BlastN alignment searches of the NCBI Non-Redundant database (Figure 6). We were surprised that the cloned DNA from Coxsackievirus A7 aligned with the known sequence for Coxsackievirus A16 until we learned that the Coxsackievirus A7 strain had not been fully sequenced and is thus not in the NCBI Non-Redundant Database (search terms Coxsackievirus AND A7). Accordingly, we had amplified portions of the Coxsackievirus A7 genome that had not previously been sequenced (Figure 7). We also inoculated human plasma with Respiratory Syncytial Virus B and were able to amplify and identify genomic RNA using the 5'-VVVVVVVVAA-3' primers (data not shown). However, the PCR amplification efficiency was poor in both RNA viruses relative to the DNA virus, AV17, and we suspect that this may be related to the efficiency of the reverse transcriptases or the stability of the RNA.",
+            "cite_spans": [],
+            "section": "Application of Random Multiplex PCR to RNA Viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 662,
+                    "end": 664,
+                    "mention": "5A",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 804,
+                    "end": 806,
+                    "mention": "5B",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1021,
+                    "end": 1022,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1428,
+                    "end": 1429,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "In November 2002, an outbreak of atypical pneumonia occurred in Guangdong Province, People's Republic of China [13,14]. The disease did not respond to empirical antibiotic treatment, and no known bacterial or viral pathogens were identified using serological and (RT)-PCR analyses. The disorder was called Severe Acute Respiratory Syndrome (SARS), and by July 2003 it had caused 8439 reported cases and 812 fatalities [13,14]. In an effort to identify the causative agent of SARS, the WHO SARS Aetiology Study Group coordinated the distribution of information and infected materials and the analyses of the data amongst eleven separate laboratories [14]. Researchers cultured fetal rhesus kidney cells with infected nasopharyngeal aspirates and then conducted random RT-PCR using the primer, 5'-GCCGGAGCTCTGCAGAATTCNNNNNN-3' for reverse transcription, and 5'-GCCGGAGCTCTGCAGAATTC-3' for PCR. Unique PCR products in the infected cell preparation were cloned and sequenced, and 57% homology was found with bovine Coronavirus[13]. RT-PCR of hundreds of infected clinical specimens, using primers specific for the novel virus, confirmed the identification [13,14]. While this approach was successful, it is worthwhile to note that it required 5 months and 11 laboratories to identify the virus. By contrast, the procedures described herein are \u2013 at least theoretically \u2013 capable of identifying an unknown virus without the use of specially designed primers. Furthermore, is possible to at least partially identify an unknown agent within 2\u20133 days in one laboratory without intermediate culture steps.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 115,
+                    "end": 117,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 419,
+                    "end": 421,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 422,
+                    "end": 424,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 650,
+                    "end": 652,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1023,
+                    "end": 1025,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1153,
+                    "end": 1155,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1156,
+                    "end": 1158,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In the current study, we have detected and identified 3 separate viruses (i.e., Adenovirus Type 17, Coxsackievirus A7, Respiratory Syncytial Virus B), using the novel approach of random multiplex (RT)-PCR of purified viral nucleic acids. The detection was accomplished in 7 hours using only a micro-centrifuge and PCR machine and did not require any virus-specific reagents. The sensitivity is ~1000 genome equivalents/ml for Adenovirus Type 17 which is not as sensitive as virus-specific PCR (<50 genome equivalents/ml) but should be adequate for the detection of free virus in untreated individuals. Coupled with the potential for direct sequence information, we are confident that this approach may prove useful for our defense against acts of bioterrorism, as well as for the detection and characterization of novel viruses in blood products and in patients displaying hallmarks of infection (e.g., leukocytosis, fever).",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although we believe that the method is adequate in current form to test clinical specimens in a randomized, blinded diagnostic trial, we consider that certain alternative approaches may yield a method that has improved sensitivity and specificity. In particular, we intend to decrease the background amplification that has been variably observed in order to prevent false positives and to increase sensitivity by applying SYBR green fluorescence for DNA detection. Finally, we will apply the optimized approach to blood specimens from virally infected patients in order to detect unsuspected variables and to validate the method within the clinical environment.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our long-term goal is to provide emergency room and primary care physicians with the ability to universally detect viruses in human plasma. The rationale is, in part, that if an emerging or recombined pathogenic virus were intentionally released into a population, then the ability of physicians to detect the pathogen will be crucial for containment. A second and related application of this technique involves identification of previously undescribed \u2013 but naturally occurring \u2013 viruses in patients suffering with idiopathic disease states of possible viral etiology. A third application of these procedures may be in the screening of blood bank blood just for the presence of virus. Although the precise identification of the virus requires cloning and sequencing, the amplification pattern will provide an immediate signature indicating the presence of virus. Most clinical laboratories that service emergency rooms and primary care clinics possess the ability to conduct RT-PCR for known viruses such as HIV, and the unmodified random multiplex (RT)-PCR method does not require any further technical expertise. In conclusion, the optimization and testing of the random multiplex (RT)-PCR technology should allow for the development of a universal virus detection assay that will vastly improve our collective defense against viral bioweapons and against emerging, heretofore unidentified natural viruses.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Plasmids (10 ng each) pEGFP (Clontech), pSuperNeo (Oligoengine), Pet 30b (Calbiochem), and pBabe (Addgene) were added to a PCR mix containing (per reaction): 1 \u03bcl of 40 \u03bcM of one of the primers indicated (Oligos Etc), 2.5 \u03bcl 10\u00d7 PCR buffer (Promega), 5 \u03bcl (5 mM) MgCl2, 1 \u03bcl (5 mM) dNTPs, 14 \u03bcl water, and 0.6 \u03bcl Taq polymerase (Promega). PCR was performed according to the following protocol on an Eppendorf Mastercycler Gradient: 95\u00b0C-2 minutes and then 94\u00b0C-30 seconds, 33\u00b0C-59 seconds, 34\u00b0C-6 seconds (increase in increments of 1\u00b0C for 6 seconds each up to 57\u00b0C for 6 seconds), 58\u00b0C-2 minutes (+ .3\u00b0/s), repeat 50 times, 37\u00b0C-5 minutes, 65\u00b0C-5 minutes (+ .3\u00b0/s), and then hold at 4\u00b0C. Products were run on a 1% agarose gel containing ethidium bromide and images were captured on a UVP, Bio-Doc It, gel documentation system.",
+            "cite_spans": [],
+            "section": "PCR of plasmids using 5'-VVVVVVVVAA-3' and 5'-NNNNNNNNNN-3' primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adenovirus Type 17 was purchased from ATCC (VR-1094). This virus is a dsDNA virus. The source was conjunctival scraping from a 1-year old female, Saudi Arabia, 1955. Coxsackievirus A7 W.P. Parker was purchased from ATCC (VR-166). This virus is a ssRNA virus. The source was stool of a 7-year old with fever, headache, sore throat, stiff neck, and back pain, New York, 1949. Respiratory syncytial virus was purchased from ATCC (VR-1580). This virus is a ssRNA, linear virus. The source was the respiratory secretions from a child with acute respiratory disease.",
+            "cite_spans": [],
+            "section": "Viral samples ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "10 ml of heparinized whole blood was placed into a 15 ml Falcon tube (BD Biosciences) and centrifuged at 1700 \u00d7 g for 10 minutes. 250 \u03bcl of plasma layer was added to 250 \u03bcl room temperature 1\u00d7 PBS and placed in a SPIN-X .22 micron, 2 ml centrifuge tube (Costar). Plasma was then inoculated with virus and the mixture was centrifuged at 2500 \u00d7 g for 15 minutes. If any of the mixture remained above the filter, centrifugation was continued at higher speeds until all plasma had passed the filter into the collection tube. 500 \u03bcl of PBS was added to the filtered mixture and treated with 7 \u03bcl each of un-diluted Riboshredder (Epicentre) and Omnicleave (Epicentre). Treatment of samples with the RNAse and DNAse should cleave any DNA or RNA not protected by viral capsid. All samples were placed in a Thermomixer R (Eppendorf) at 37\u00b0C and shaken for 15 seconds every 3 minutes for 2 hours. Plasma was then ready for viral isolation.",
+            "cite_spans": [],
+            "section": "Blood Plasma Isolation and Viral Separation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1 ml of blood plasma \u00b1 virus was cooled to room temperature and placed into a 2 ml tube. Viral isolation was carried out according to the manufacturer's protocol (Qiagen). Viral DNA or RNA was eluted off the column in a final volume of 30 \u03bcl elution buffer. This product was either used directly for random PCR or used in the reverse transcription reaction.",
+            "cite_spans": [],
+            "section": "Isolation of Virus from Plasma ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Reverse transcription was carried out according to the manufacturer's protocol either with the Omniscript RT (Qiagen) or SuperScript II RT (Invitrogen). The maximum amount of viral RNA was used in place of water for both reactions.",
+            "cite_spans": [],
+            "section": "Reverse Transcription of Viral RNA ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The PCR of viral DNA isolated from whole blood was done according to the method described above utilizing the 5'-VVVVVVVVAA-3' primers. Products were run on a 1% agarose gel containing ethidium bromide. The bands which differed from the water control were excised and the DNA was extracted using the Qiaquick gel extraction kit (Qiagen). DNA was eluted off in a final volume of 20 \u03bcl elution buffer. The DNA was cloned into the TOPO cloning vector (Invitrogen) following the manufacturer's protocol and transformation was carried out in TOP 10 chemically competent E. coli. Resulting colonies were picked randomly and mixed with 20 \u03bcl PBS. 1 \u03bcl of this mixture was used in the PCR reaction using the universal M13 forward and reverse (1 \u03bcl of 10 \u03bcM) primers and 2 \u00d7 PCR master mix (Promega). The following parameters were used for colony screening: 95\u00b0C-2 minutes, and then 36 cycles of 94\u00b0C-30 seconds, 55\u00b0C-30 seconds, 72\u00b0C-1 minute. PCR products were run out on a 1% agarose gel containing ethidium bromide. Those colonies which yielded products greater than 200 bp were grown in LB broth overnight and the DNA was isolated according to the manufacturer's protocol (Qiagen) eluting the DNA off in a final volume of 25 \u03bcl. DNA was sequenced using the universal M13 forward and reverse primers at the University of Louisville's core sequencing facility. Resulting sequences were screened using the BLAST program on the NCBI web site to determine sequence origin.",
+            "cite_spans": [],
+            "section": "Isolation and cloning of random PCR products ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "PCR was carried out with either viral DNA or cDNA using a 2\u00d7 PCR Master Mix (Promega) and 1 \u03bcl of viral DNA. 1 \u03bcl of 10 \u03bcM primers was used for each reaction. The total volume was equal to 25 \u03bcl per reaction. The following parameters were used for viral-specific amplification: 94\u00b0C-5 minutes, 94\u00b0C-30 seconds, 55\u00b0C-30 seconds, 72\u00b0C-2 minutes, repeat 45 times, 72\u00b0C-7 minutes.",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Virus-Specific Primers (standard PCR)",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For generation of 200 bp fragment:",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus forward primer (923): 5'-TTATCAGAGATGGCAGCACC-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus reverse primer (1105C): 5'-CTTGTCCACCGCTGTAGCCT-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For generation of 1.4 Kb fragment:",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus forward primer (923): 5'-TTATCAGAGATGGCAGCACC-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus reverse primer (2161C): 5'-CATTGCCTGCATTCTGTTGG-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Virus-Specific Primers (For Real Time PCR)",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus forward primer (937): 5'-AGCACCACTGCAATCACCGA-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus reverse primer (1094C): 5'-CTGTAGCGTCAGTGTCAGGA-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adenovirus forward primer (5770): 5'-TGTAGGTGTAGGCCACGTGA-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adenovirus reverse primer (6084C): 5'-TCGCCAAGCTTCTCTCCAAC-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Template Production Primers:",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adenovirus forward primer (5492): 5'-CTCTTACCTCGCGTCTCCAT-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adenovirus reverse primer (6084C): 5'-TCGCCAAGCTTCTCTCCAAC-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus forward primer (923): 5'-TTATCAGAGATGGCAGCACC-3'",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coxsackievirus reverse primer (1105C): 5'-CTTGTCCACCGCTGTAGCCT-3",
+            "cite_spans": [],
+            "section": "PCR from Viral DNA or cDNA with Virus-specific Primers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Viral DNA isolated from whole blood plasma was used to generate a template for use in real time PCR. 2 \u03bcl of DNA from the virus was used with Platinum PCR Master Mix (Invitrogen) and 2 \u03bcl of a 10 \u03bcM solution of each of the template primers outlined above. The total volume of the reaction was 50 \u03bcl. The same PCR parameters were used as were used for viral-specific amplification. The resulting products were run on a 1% agarose gel containing ethidium bromide. The bands were excised and DNA was eluted according to manufacturer's instructions (Qiagen).",
+            "cite_spans": [],
+            "section": "Generating viral DNA templates for real time PCR ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All real time PCR samples were run on a Cepheid Smart Cycler. OmniMix Hs Reagent (Cephied, packged by Takara) was re-suspended in 50 \u03bcl of water, which was sufficient for two PCR reactions. 1 \u03bcl of the stock virus and 1 \u03bcl of each of the template primers (10 \u03bcM) were added and mixed. Samples were run at 95\u00b0C for 30 sec, 54\u00b0C for 15 sec, and 72\u00b0C for 20 sec for a total of 40 cycles.",
+            "cite_spans": [],
+            "section": "Real Time PCR ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The molecular weight was determined for each of the dsDNA templates generated by PCR. The OD of the resultant DNA was also recorded. The OD, in grams/\u03bcl was divided by the molecular weight of the product and the result was equal to moles/\u03bcl. This number was then multiplied by Avogadro's number (6.022 \u00d7 1023 molecules/mole) and the resulting number is equal to the number of viral DNA molecules per microliter.",
+            "cite_spans": [],
+            "section": "Determination of viral molecules in viral template ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "ALC: Conducted multiplex (RT)-PCR, cloning, virus-specific PCR, template production and sequencing.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "JS: Optimized the random multiplex (RT)-PCR of RNA viruses.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "ST: Phlebotomy, serum preparation and assisted with the initial development of the 5-VVVVVVVVAA-3' primers.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "JWE: Provided scientific input regarding the universal application of this approach and assisted with the optimization of the random multiplex (RT)-PCR of RNA viruses.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "JC: Conceived and directed the entire project. Conducted initial multiplex PCR for AV17.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Filtration and Nuclease Treatment Improves Viral DNA Amplification by Removing Host DNA and mRNA. Human plasma was inoculated with 1 \u03bcl of an Adenovirus Type 17 suspension, filtered and incubated for 2 hrs with either 10 u DNAse or 5 u RNAse as indicated. Remaining nucleic acids were purified with the QiaAmp UltrasSens Virus Kit and subjected to 1st strand cDNA synthesis and 50 cycles PCR using primers specific for either Adenovirus Type 17 or human \u03b2-Actin DNA (upper band; primers cross an intron) or cDNA (lower band). Amplicons were then visualized on an ethidium bromide impregnated agarose gel.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Random Multiplex PCR With 5'-VVVVVVVVAA-3' Primers Amplifies Circular Plasmid DNA. A. The indicated plasmids were amplified using random multiplex PCR with either 5'-VVVVVVVVAA-3' or 5'-NNNNNNNNNN-3' primers as indicated in the Methods section. B. The pBabe plasmid was diluted to the indicated amounts and amplified using random multiplex PCR with 5'-VVVVVVVVAA-3' primers.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: 5'-VVVVVVVVAA-3' Primers Enable Random Multiplex Amplification of DNA from Human Plasma Inoculated with Adenovirus Type 17. 1 ml of human plasma was inoculated with 0\u20135 \u03bcl of suspended Adenovirus Type 17 (ATCC), filtered and incubated for 2 hours with nucleases. Remaining nucleic acids were purified with the QiaAmp UltrasSens Virus Kit (Qiagen) and subjected to the random multiplex PCR with 5'-VVVVVVVVAA-5' primers as detailed in the Methods section. Amplicons were then visualized on an ethidium bromide impregnated agarose gel.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: PCR Screening and Sequencing of Randomly Amplified Adenovirus Type 17 DNA. Randomly amplified DNA from Adenovirus 17-infected plasma was shot-gun ligated into pCR 2.1-TOPO and competent E. coli were transformed. Resultant colonies were screened for the presence of recombinant plasmid DNA (A) and plasmid DNA from positive colonies was then purified and sequenced (B). Sequence data from recombinant plasmid #9 (see *) was aligned to all sequence data in the Non-Redundant NCBI Database using the NCBI Nucleotide-Nucleotide BLAST (blastn) Search Algorithm (version 2.2.8) (C).",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Real-Time PCR Quantitation of Adenovirus Type 17 DNA Template. A. PCR-amplified genomic DNA from Adenovirus Type 17 was quantitated by spectrophotometry (OD 260 nm) and the genome equivalents/ml calculated based on Avogadro's number (6.02205 \u00d7 1023/mol). Real-time PCR was conducted with Adenovirus Type 17 specific primers using 109 to 101 genome equivalents/ml as template and then using 1 \u03bcl of the stock solution of Adenovirus Type 17 as template. A standard curve was produced based on the threshold cycle number of the tested concentrations of Adenovirus Type 17 DNA template and plotted compared to the threshold cycle number (CT) of the stock solution of Adenovirus Type 17. B. The indicated genome equivalents of Adenovirus Type 17 were added to 1 ml of human plasma, treated with 220 nm filtration and DNAse/RNAse digestion. Total nucleic acids then were purified, amplified by random multiplex PCR (50 cycles) and sequenced as described in the Methods section.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: 5'-VVVVVVVVAA-3' Primers Enable Random Multiplex Amplification of Viral RNA from Human Plasma Inoculated with Coxsackie Virus A7. A. 1 ml of human plasma was inoculated with 5 \u03bcl of suspended Coxsackie Virus A7 (ATCC), filtered and incubated for 2 hours with nucleases. Remaining nucleic acids were purified with the QiaAmp UltrasSens Virus Kit (Qiagen) and subjected to first strand cDNA synthesis using either Omniscript or Superscript reverse transcriptase. Virus-specific primers were used to amplify either a 200 bp or a 1.4 Kb portion of the viral genome. B. The same samples were then subjected to random multiplex PCR with 5'-VVVVVVVVAA-5' primers as detailed in the Methods section. Amplicons were then visualized on an ethidium bromide impregnated agarose gel.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: PCR Screening and Sequencing of Randomly Amplified Coxsackie Virus A7 cDNA. Randomly amplified cDNA from Coxsackie Virus A7-infected plasma was shot-gun ligated into pCR 2.1-TOPO and competent E. coli were transformed. Resultant colonies were screened for the presence of recombinant plasmid DNA (A) and plasmid DNA from positive colonies was then purified and sequenced (B). Sequence data from recombinant plasmid #7 (see *) was aligned to all sequence data in the Non-Redundant NCBI Database using the NCBI Nucleotide-Nucleotide BLAST (blastn) Search Algorithm (version 2.2.8).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Expression of mouse interleukin-4 by a recombinant ectromelia virus suppresses cytolytic lymphocyte responses and overcomes genetic resistance to mousepox",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Ramsay",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Christensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Beaton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Ramshaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "1205-1210",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.3.1205-1210.2001"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Sequence-independent, single-primer amplification (SISPA) of complex DNA populations",
+            "authors": [
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Reyes",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Mol Cell Probes",
+            "volume": "5",
+            "issn": "",
+            "pages": "473-481",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0890-8508(05)80020-9"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "The isolation and characterization of a Norwalk virus-specific cDNA",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Matsui",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "HB",
+                    "middle": [],
+                    "last": "Greenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "DuPont",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Oshiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Reyes",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J Clin Invest",
+            "volume": "87",
+            "issn": "",
+            "pages": "1456-1461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "A virus discovery method incorporating DNase treatment and its application to the identification of two bovine parvovirus species",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Engle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bukh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "11609-11614",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.211424698"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Newly discovered coronavirus as the primary cause of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kuiken",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schutten",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Rimmelzwaan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "van Amerongen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "van Riel",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Laman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "de Jong",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "van Doornum",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Ling",
+                    "suffix": ""
+                },
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Zambon",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gopal",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van der Werf",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Escriou",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Manuguerra",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Stohr",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "362",
+            "issn": "",
+            "pages": "263-270",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(03)13967-0"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Coronavirus as a possible cause of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Yam",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nicholls",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Yee",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "VC",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Yung",
+                    "suffix": ""
+                },
+                {
+                    "first": "TK",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Yuen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1319-1325",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(03)13077-2"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Detection of smallpox virus DNA by LightCycler PCR",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Espy",
+                    "suffix": ""
+                },
+                {
+                    "first": "IF",
+                    "middle": [],
+                    "last": "Cockerill",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Bowen",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Poland",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Hadfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "1985-1988",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.40.6.1985-1988.2002"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Fatal yellow fever in a traveler returning from Amazonas, Brazil, 2002",
+            "authors": [],
+            "year": 2002,
+            "venue": "Jama",
+            "volume": "287",
+            "issn": "",
+            "pages": "2499-2500",
+            "other_ids": {
+                "DOI": [
+                    "10.1001/jama.287.19.2499"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Sequence-specific identification of 18 pathogenic microorganisms using microarray technology",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Strout",
+                    "suffix": ""
+                },
+                {
+                    "first": "TZ",
+                    "middle": [],
+                    "last": "DeSantis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Stilwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Carrano",
+                    "suffix": ""
+                },
+                {
+                    "first": "GL",
+                    "middle": [],
+                    "last": "Andersen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Mol Cell Probes",
+            "volume": "16",
+            "issn": "",
+            "pages": "119-127",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/mcpr.2001.0397"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Estimation of effective population size of HIV-1 within a host: a pseudomaximum-likelihood approach",
+            "authors": [
+                {
+                    "first": "TK",
+                    "middle": [],
+                    "last": "Seo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Thorne",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hasegawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kishino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genetics",
+            "volume": "160",
+            "issn": "",
+            "pages": "1283-1293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Differential display of eukaryotic messenger RNA by means of the polymerase chain reaction",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Pardee",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Science",
+            "volume": "257",
+            "issn": "",
+            "pages": "967-971",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1354393"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "A novel usage of random primers for multiplex RT-PCR detection of virus and viroid in aphids, leaves, and tubers",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Nie",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol Methods",
+            "volume": "91",
+            "issn": "",
+            "pages": "37-49",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0166-0934(00)00242-1"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "RNA fingerprinting using arbitrarily primed PCR identifies differentially regulated RNAs in mink lung (Mv1Lu) cells growth arrested by transforming growth factor beta 1",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ralph",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McClelland",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Welsh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "90",
+            "issn": "",
+            "pages": "10710-10714",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.90.22.10710"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "A newly discovered human pneumovirus isolated from young children with respiratory tract disease",
+            "authors": [
+                {
+                    "first": "BG",
+                    "middle": [],
+                    "last": "van den Hoogen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "de Jong",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Groen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kuiken",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "de Groot",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Med",
+            "volume": "7",
+            "issn": "",
+            "pages": "719-724",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/89098"
+                ]
+            }
+        }
+    }
+}

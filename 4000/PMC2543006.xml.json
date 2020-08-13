@@ -1,0 +1,3535 @@
+{
+    "paper_id": "PMC2543006",
+    "metadata": {
+        "title": "Control of asthma triggers in indoor air with air cleaners: a modeling analysis",
+        "authors": [
+            {
+                "first": "Theodore",
+                "middle": [
+                    "A"
+                ],
+                "last": "Myatt",
+                "suffix": "",
+                "email": "tmyatt@eheinc.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Taeko",
+                "middle": [],
+                "last": "Minegishi",
+                "suffix": "",
+                "email": "tminegishi@eheinc.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Joseph",
+                "middle": [
+                    "G"
+                ],
+                "last": "Allen",
+                "suffix": "",
+                "email": "jallen@eheinc.com",
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [
+                    "L"
+                ],
+                "last": "MacIntosh",
+                "suffix": "",
+                "email": "dmacintosh@eheinc.com",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Asthma is chronic inflammatory disorder of the airways that induces a range of sub-clinical and clinical effects including but not limited to hyperresponsiveness, airflow limitation, and respiratory symptoms. Approximately 6.7% of adults and 8.5% of children in the United States are reported to suffer from asthma with the greatest prevalence among non-Hispanic black and Hispanic children under 18 years of age [1]. Triggers of asthma exacerbation are varied and include viral infections, certain animal allergens and criteria air pollutants, mites, environmental tobacco smoke (ETS), mold, chemical irritants, and exercise in cold air [2]. Reducing exposure to environmental agents shown to increase asthma symptoms or lead to asthma exacerbations is an important component of a strategy to manage asthma for individuals [3].",
+            "cite_spans": [
+                {
+                    "start": 414,
+                    "end": 415,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 639,
+                    "end": 640,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 825,
+                    "end": 826,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Numerous investigations have demonstrated that indoor air cleaning devices can reduce concentrations of asthma triggers in indoor air [4-10]. Some studies have reported associations between use of air cleaners and improvements in respiratory symptoms and breathing problems for children and adults with asthma or persistent allergic rhinitis [11-14]. However, the benefits of air cleaners for breathing problems have not always been reproducible [14-19]. An expert panel recently determined that the evidence offered by health studies is not sufficient to conclude that operation of indoor air cleaning devices alleviates asthma symptoms or improves pulmonary function [14,18-20].",
+            "cite_spans": [
+                {
+                    "start": 135,
+                    "end": 136,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 343,
+                    "end": 345,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 346,
+                    "end": 348,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 670,
+                    "end": 672,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 673,
+                    "end": 675,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 676,
+                    "end": 678,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The heterogeneity in results of air cleaner intervention studies for asthma symptoms may reflect in part the limited efficacy of the portable air cleaners used to mitigate exposure to airborne asthma triggers. Portable air cleaners typically have flow rates of 170 \u2013 340 cubic meters per hour (m3/hr) and removal efficiency for fine particle mass (PM2.5) of only about 70% because of bypass around their high efficiency particle arrestance (HEPA) filters [21]. For a typical U.S. home size of 450 m3, a 180 m3/hr portable device has a theoretical particle removal rate of approximately 0.4 per hour (hr-1), about the same as the air exchange rate for a closed home. Air flow rates through room filters must be equivalent to several air changes per hour in order to achieve substantial control of airborne particulate matter [4]. In contrast, whole house, high efficiency air cleaning systems that can provide clean air delivery rates up to 10 times greater than a portable air cleaner and particle removal rates of approximately 7 per hour are now available for residences [22]. The mitigation of asthma triggers in indoor air by these systems and potential health benefits for sensitive subpopulations have yet to be evaluated.",
+            "cite_spans": [
+                {
+                    "start": 456,
+                    "end": 458,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 825,
+                    "end": 826,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1074,
+                    "end": 1076,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "To address this knowledge gap, we used an indoor air quality modeling system to examine peak and time-integrated concentrations of fungal spores, environmental tobacco smoke, respiratory viruses, and cat allergen in indoor air associated with natural ventilation, portable air cleaners, and forced air ventilation equipped with conventional and high efficiency filtration systems. As part of the modeling, we simulated several conditions that correspond to asthma management guidance published by the American Lung Association and the National Institutes of Health.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Emission rates for cat allergen were based on studies that characterized the occurrence, suspension, and removal of cat allergen, Fel d 1, inside homes [7,42,43]. Based on findings from those studies, we chose to model generation of cat allergen with a constant and intermittent source. The constant source was used to represent Fel d 1 levels in air during quiescent periods. The intermittent source represented resuspension of cat allergen caused by certain activities such as vacuuming or sitting on a couch [10,44]. The intermittent source released a burst of allergen once an hour during typical waking hours, 7:00 AM \u2013 10:00 PM. The constant generation source was located in all rooms of the house other than the bedrooms, while the burst source was released only in the main living space (i.e. living room for template 72 and family room for template 28). We omitted release of cat allergen in bedrooms in order to evaluate the extent to which allergen avoidance achieved by restricting cats from bedrooms as recommended by the NIH (2007), may be influenced by the use and efficacy of indoor air cleaning systems.",
+            "cite_spans": [
+                {
+                    "start": 153,
+                    "end": 154,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 155,
+                    "end": 157,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 158,
+                    "end": 160,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 512,
+                    "end": 514,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Cat Allergen ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Aerosols that contain cat allergen range in aerodynamic diameter from less than 0.4 micrometers (\u03bcm) to greater than 9 \u03bcm [7,45]. Previous research has demonstrated removal of airborne cat allergen by portable air cleaners with HEPA filters [7]. For the electrostatic air cleaner, we assumed that the removal efficiency of cat allergen was equivalent to the particle-size specific performance observed for standard test dust and described elsewhere [22].",
+            "cite_spans": [
+                {
+                    "start": 123,
+                    "end": 124,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 242,
+                    "end": 243,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Cat Allergen ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Particle size information and emission rates for ETS were based on information reported from studies of cigarette smoke in experimental chambers [46]. The total particle mass released for each cigarette was 8.3 mg with a release rate of 1.3 mg/min. A recent national survey indicates that the average adult smoker in the United States consumes 15 cigarettes per day [47]. Taking into account waking hours spent at home [48], we modeled ETS emissions as cigarette consumption within the home twice in the morning hours and six times in the evening hours. All cigarettes were assumed to be smoked in the main living space (i.e. living room for template 72 and family room for template 28). Particle size for ETS has been reported to range from 0.05 \u03bcm to 0.71 \u03bcm [49]. Removal efficiency for ETS is one component of the industry standard method for determining and rating the performance of indoor air cleaning technologies [50].",
+            "cite_spans": [
+                {
+                    "start": 146,
+                    "end": 148,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 367,
+                    "end": 369,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 420,
+                    "end": 422,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 762,
+                    "end": 764,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 923,
+                    "end": 925,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Environmental Tobacco Smoke ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In contrast to the other asthma triggers that were modeled as indoor sources, we modeled indoor air concentrations of airborne fungi that result from penetration of mold spores in ambient air. To coincide with the meteorological data noted earlier, daily mold spore counts for February 14 to November 23, 2005 measured at the Hamilton County Environmental Services Office in Cincinnati were obtained from the Hamilton County Air Quality Management Division. The daily observations from Cincinnati are short-term samples collected with a Rotorod Sampler (Sampling Technology, Inc., Minnetonka, MN) and therefore do not reflect the temporal variability of spore concentrations that may occur over the course of each day. In the absence of more complete data, we assumed that concentrations within the day were constant for purposes of this analysis. The outdoor level of total fungal spores reported in the data for Cincinnati ranged between 32 and 7935 spores per cubic meter (spores/m3) with a geometric mean of 881 spores/m3. As expected, outdoor spore concentrations were highest in the summer and early fall months. The aerodynamic diameter size distribution for total spores is large, ranging from 1 to 40 \u03bcm. While the dominant fungal genera, Cladosporium, has a aerodynamic diameter slightly less than 2 \u03bcm [49], the other dominant types, basidiospores and ascospores have aerodynamic diameters on the order of 5 \u03bcm [51]. Fungal allergens are borne on spores larger than 2.5 \u03bcm as well as hyphael fragments and fragmented spores smaller than 2.5 \u03bcm. Because of the absence of information on fungal fragment levels in outdoor spore data for Cincinnati and the paucity of large spore types in the data, we established 2.5 \u03bcm as a reasonable central estimate of the aerodynamic diameter for fungi in this analysis.",
+            "cite_spans": [
+                {
+                    "start": 1314,
+                    "end": 1316,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1423,
+                    "end": 1425,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Outdoor Fungi ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We modeled the release of two respiratory viruses, influenza virus and rhinovirus, because they have been implicated as triggers of asthma exacerbations and essential information is available on their transmission [52] and aerosol properties. While respiratory syncytial virus and other viruses have also been associated with asthma, a lack of key information on these organisms precluded their inclusion in this analysis. For our respiratory virus modeling we utilized the concept of infectious dose, referred to as quanta, as first described in 1955 [53] Estimates of quanta generation rates from an infectious person are based on analyses of outbreaks of infectious diseases as described elsewhere [54,55]. The greater the quanta generation rate the more infectious the organism. Estimates for influenza, a virus that can spread rapidly, are on the order of 15 to 128 quanta per hour [54,56]. Organisms with slower spreading infections, like rhinovirus and tuberculosis have generation rates on the order of 1 to 10 quanta per hour [54]. For this analysis, we assumed the approximate mid-point of published quanta generation rates for influenza and rhinovirus, 67 q/hr and 5 q/hr, respectively.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 553,
+                    "end": 555,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 702,
+                    "end": 704,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 705,
+                    "end": 707,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 888,
+                    "end": 890,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 891,
+                    "end": 893,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1036,
+                    "end": 1038,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Respiratory Viruses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We also assumed the quanta were evenly distributed among the particles released during a sneeze. The removal processes are based on the particle sizes of the quanta released. We based the particle size distribution on experimental studies of particles emitted during sneezes and coughs conducted in the 1940s and 1960s [57,58] and recently re-analyzed [59]. To establish removal efficiency for respiratory virus achieved by the in-duct media filters, we relied upon size-specific results observed in our test home [22]. For the in-duct electrostatic air cleaner, the removal efficiency was based on laboratory studies in which a suspension of live influenza A virus, PR-8 strain (Advanced Biotechnology, Inc., MD) in phosphate buffered saline was aerosolized within a ventilation duct using a 6-jet Collison nebulizer. Aerosol samples were obtained on Teflo filters (Millipore Corporation, Bedford, MA) in triplicate upstream and downstream of the electrostatic air cleaner on three days. The samples were extracted and assayed for influenza by quantitative polymerase chain reaction (qPCR) following procedures described by Van Elden et al. [60]. The average removal efficiency from the tests was greater than 99% with more precise quantitation limited by the sensitivity of the assay. The removal efficiencies obtained from the laboratory studies were coupled with AHU bypass information for use in the model. Details of this novel application of qPCR will be published elsewhere.",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 322,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 323,
+                    "end": 325,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 353,
+                    "end": 355,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1143,
+                    "end": 1145,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "Respiratory Viruses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Output from the IAQ model for respiratory virus was expressed as quanta per cubic meter (q/m3) of indoor air. We used a modified Wells-Riley equation [61] to estimate the risk of infection based on the concentration of quanta in the room from the model output coupled with conventional central estimates of exposure duration and a breathing rate of 0.48 m3/hr published in a widely used compilation of exposure factors [62]. We used the results to analyze the risk of infection for an individual when (1) spending time in the same room as an infectious individual, (2) spending time in an adjacent room, and (3) occupying other rooms in the house when an infected individual is either in a bedroom or in the living room of the home.",
+            "cite_spans": [
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 420,
+                    "end": 422,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                }
+            ],
+            "section": "Respiratory Viruses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The distribution of hourly average concentrations for airborne cat allergen throughout the home for each of the six ventilation configurations is summarized in Figure 1A. When operating a high efficiency device, the median allergen concentration (4.0 ng/m3) was 46% lower when compared to conventional filtration (6.4 ng/m3). The next best performance was achieved by two systems \u2013 the in-duct 5-inch media filter (C5) and a portable air cleaner in the same room as the intermittent release of allergen (i.e. C+2P). Nominally, peak concentrations were best mitigated by the high efficiency in-duct device (86 ng/m3), although the difference in comparison to peaks associated with the other air cleaning approaches (approximately 100 ng/m3) may not be substantive relative to uncertainties in the modeling analysis. To evaluate the effectiveness of the ventilation configurations at limiting transfer of allergen to bedrooms, all airborne releases of cat allergen in our model occurred outside of the bedrooms. In the bedroom, allergen levels were lower than the whole house average for all configurations, with the high efficiency in-duct filtration performing best at minimizing the transfer of allergen into the bedroom (See Figure 1B).",
+            "cite_spans": [],
+            "section": "Cat Allergen ::: Results",
+            "ref_spans": [
+                {
+                    "start": 167,
+                    "end": 169,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1234,
+                    "end": 1236,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Modeled whole house concentrations of ETS were strongly influenced by use of air cleaners as illustrated by the distribution of hourly average concentrations estimated across the year (Figure 2). The greatest mitigation of ETS was achieved by the high efficiency in-duct device (median <0.01 \u03bcg/m3), followed by use of a portable air cleaner in the same room as the smoker (median 3.2 \u03bcg/m3), the pleated in-duct media filter (median 9.8 \u03bcg/m3), one portable air cleaner in a bedroom (median 17.8 \u03bcg/m3), and a conventional in-duct filter (median 29.9 \u03bcg/m3). Simulation of a home with natural ventilation yielded hourly average ETS concentrations that were similar to the C5 simulation, probably because of the higher AER throughout the year for a home without forced air conditioning.",
+            "cite_spans": [],
+            "section": "Environmental Tobacco Smoke ::: Results",
+            "ref_spans": [
+                {
+                    "start": 192,
+                    "end": 193,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The effect of high efficiency in-duct filtration on peak and short-term time-weighted averaged levels of ETS is depicted in Figure 3A and 3B for a typical 24-hour period (February 1) that had eight smoking events in the living room. For a home with conventional in-duct filtration, each cigarette smoked is associated with a peak concentration of approximately 80 \u03bcg/m3 and a subsequent exposure period of at least 8 hours when windows are closed. In contrast, peak ETS concentrations per cigarette during model runs with the high efficiency in-duct device were about 40 \u03bcg/m3. First-order removal rates for ETS calculated for the conventional and high efficiency in-duct filtration conditions were 0.008 min-1 and 0.049 min-1. Use of the high efficiency in-duct device also substantially limited the distribution of the contaminant into other rooms of the home such as the bedroom.",
+            "cite_spans": [],
+            "section": "Environmental Tobacco Smoke ::: Results",
+            "ref_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "3A",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 138,
+                    "end": 140,
+                    "mention": "3B",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The highest indoor/outdoor ratios for spore concentrations were in the summer and fall months, probably due to the higher AER associated with open windows during those seasons. When averaged over the period for which fungal spore data were available, the indoor/outdoor ratio was highest for the natural ventilation configuration and lowest for the in-duct high efficiency configuration (Table 4). Whole house indoor spore concentrations for the in-duct high efficiency configuration were less than one-half the levels in the conventional configuration and more than eight times lower than the mean outdoor level. Even in the bedroom where the portable air cleaner was located, the in-duct high efficiency achieved lower spore levels.",
+            "cite_spans": [],
+            "section": "Outdoor Fungi ::: Results",
+            "ref_spans": [
+                {
+                    "start": 394,
+                    "end": 395,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "For the virus results, we limited the analysis to December through March to reflect the cold and flu season in the United States. The median AER for this period was 25% lower for the naturally ventilated configuration and essentially unchanged for the mechanically ventilated homes in comparison to the remainder of the year. For this period, we examined the extent to which the risk of infection by either influenza or rhinovirus is modified by the use of an air cleaner for three common scenarios where a healthy individual and infectious individual cohabitate.",
+            "cite_spans": [],
+            "section": "Respiratory Viruses ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In the first scenario, a healthy individual, perhaps a caregiver, spends one hour in the bedroom of an individual infected with influenza. In this case, the use of a portable air cleaner in the room with the infectious individual limits the average risk of infection to less than one-half the risk when conventional filtration is used (Table 5). The high efficiency in-duct system provides the next lowest average risk of infection, followed by the conventional and pleated filter in-duct systems. The risk of infection is lowered for each of the in-duct and portable air cleaner configurations in comparison to natural ventilation",
+            "cite_spans": [],
+            "section": "Respiratory Viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 342,
+                    "end": 343,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "In the second scenario, we evaluated the risk of infection for a person who spends 12 hours in a bedroom adjacent to a second bedroom occupied by an individual infected with influenza. This scenario is representative of many residential configurations including children who normally sleep in separate bedrooms or two children who normally share a bedroom but are separated temporarily when one of them has a chest cold. In this scenario, the risk of influenza infection for a 12-hour exposure for an occupant in the adjacent bedroom was approximately 16% with conventional filtration, 5% for the configurations with a portable air cleaner in the bedroom and 0.6% with the high efficiency filtration (See Table 5).",
+            "cite_spans": [],
+            "section": "Respiratory Viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 711,
+                    "end": 712,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "For the third scenario, we estimated the risk of infection from an individual who remains in the home over the course of a five-day infectious period. We assumed that the infectious individual spent one-half of their time in the bedroom and the other half in the family room, while a healthy individual spent 69% of the corresponding time indoors at home [48] during which they were exposed to the house-wide average concentration of quanta in air. For this scenario, the risk of infection by influenza was greater than 30% in the ventilation configuration with a portable air cleaner in both of the two rooms frequented by the infectious individual (Table 5). In comparison, the risk of infection was 17% for the natural ventilation configuration and less than 4% for the high efficiency in-duct system. The former probably reflects a relatively slow rate of inter-zonal transfer and the latter reflects the comparatively high flow rate and removal efficiency of the in-duct system.",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Respiratory Viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 657,
+                    "end": 658,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "Several studies have assessed the use of air cleaners for reducing indoor air concentrations of chemical and biological materials that exacerbate asthma. In these studies, the air cleaning intervention was typically a portable air cleaner sized for a single room of typical size in a residence. Although based on modeling rather than measurements, our analysis indicates that certain air cleaning configurations can mitigate indoor air concentrations of some common asthma triggers more effectively on average than air cleaning achieved by the type of portable filtration devices evaluated previously as well as by conventional in-duct filtration.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Prior performance evaluations of CONTAM demonstrate that the model provides a reasonable degree of accuracy for the types of indoor air quality simulations upon which our analyses rely. Inter-zonal airflow predictions from CONTAM simulations of a single story home were within 15% of corresponding measured values [29]. Similarly, air exchange rates for a single room building predicted with CONTAM were within 5% of measured levels [24]. In a related analysis, the correlation between predicted and observed concentrations of a conservative gas ranged from 0.95 to 0.998 during six tests within a single room test home [25]. In a tracer gas study conducted in a multi-room occupied townhouse, gas concentrations predicted by the model were within 25% of measured concentrations [26]. Finally, measured and predicted 24-hour average concentrations of 0.3 to 5 \u03bcm particles in a single room building were within 30% of each other [24].",
+            "cite_spans": [
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 434,
+                    "end": 436,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 621,
+                    "end": 623,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 780,
+                    "end": 782,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 930,
+                    "end": 932,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Particle removal efficiencies for air cleaning systems considered in this analysis were derived from empirical data obtained from test homes or test chambers [21,22]. Removal efficiencies for the portable air cleaners were based on chamber studies of four different devices that all claimed to have HEPA filters but whose efficacy under controlled conditions was low compared to HEPA standards [21]. If we had assumed that the portable air cleaners had removal efficiencies approaching those of HEPA filters, those systems would have compared more favorably to the other devices for the rooms of the homes in which they were located. Whole house comparisons of portable and in-duct systems are unlikely to have been changed substantially if we had assumed a higher aerosol removal efficiency for the portable devices.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 395,
+                    "end": 397,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In terms of controlling residence-wide concentrations of cat allergen, ETS, respiratory viruses, and mold spores in indoor air, use of a high efficiency in-duct air cleaner as part of a forced air ventilation system yielded the greatest benefit, followed by multiple portable air cleaners in conjunction with conventional in-duct filtration. The greatest benefit of air cleaning systems over conventional in-duct filtration was observed for ETS, probably because of its sub-micron size distribution and the correspondingly low rate of deposition to surfaces. The extent to which these findings can be generalized to other constituents of indoor air depends upon their similarity in terms of emission profiles and aerodynamic characteristics. Other important indoor allergens such as dust mite and cockroach that have been shown to be associated with relatively particles are unlikely to be represented accurately by our results for cat allergen, ETS, viruses, and fungal spores.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Consistent with results from our evaluation of air cleaners in a test home [22], the whole house performance of each system was directly related to its clean air delivery rate (CADR), the product of air flow rate and removal efficiency. This analysis focused on single family detached homes, however we anticipate that the findings are applicable to multi-family and attached homes as well. Various types of housing stock may differ systematically in terms of air exchange rate because of variation in construction practices, exterior surface area-to-volume ratios, and other factors. Particle deposition has been reported to be positively associated with air exchange rate due to increased turbulence of indoor air [63,64]. Because of modeling constraints, we assumed that particle deposition rates were independent of air exchange rate. This simplifying assumption is unlikely to be a substantial contributor to uncertainty in our results because the range of turbulence-induced deposition rates reported for respirable-sized aerosols is small in comparison to differences in performance among air cleaning devices indicated by our analysis.",
+            "cite_spans": [
+                {
+                    "start": 76,
+                    "end": 78,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 717,
+                    "end": 719,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 720,
+                    "end": 722,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In terms of controlling the contaminant concentrations in a single room, the location of the contaminant source is important. If the contaminant source was in the family room of the home and therefore near a central return, as was the case for the allergen and ETS modeling, the high efficiency in-duct filtration was superior to all configurations including those with a portable air cleaner in the room. Similarly, if the source is outdoors, as was the case with the fungal spore modeling, the high efficiency in-duct filtration was superior. Conversely, when the source was in a location away from a central return, like a bedroom, as was the case for the one-hour influenza scenario, operation of a portable air cleaner in the room was the most effective air cleaning configuration. We anticipate that these results for cat allergen, ETS, and virus are reasonably representative of emissions of other respirable-sized aerosols from indoor sources including fungal spores that may be released from surfaces as a result of mechanical forces.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The utility of the modeling results presented is related primarily to relative differences between the air cleaning systems included in this assessment. If reasonable however, the absolute levels are also of interest for consideration of potential air quality and exposure benefits afforded by indoor air cleaning systems. To assess the accuracy of the model results, we compared the predicted concentrations to measurements from studies that quantified residential airborne levels of animal allergens [5,7,10], ETS [4,65], or fungal spores [6,66]. Several of the studies evaluated the effectiveness of portable air cleaners with HEPA filters which allows us to compare our modeled results to not only the reported levels, but also to the changes in contaminant concentrations associated with use of portable air cleaners. Other studies were designed to measure typical residential contaminant concentrations, both with and without a source present. Data from those investigations provide a reasonable benchmark for our modeled results under typical ventilation configurations.",
+            "cite_spans": [
+                {
+                    "start": 503,
+                    "end": 504,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 505,
+                    "end": 506,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 507,
+                    "end": 509,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 517,
+                    "end": 518,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 542,
+                    "end": 543,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 544,
+                    "end": 546,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The relative differences among the ventilation configurations that we considered are similar to the reductions observed in intervention studies designed to evaluate the effectiveness of portable air cleaners. In a study of dog allergen, airborne levels in two rooms with portable air cleaners were reduced to 25% of the baseline allergen level [5]; similar to the difference in modeled cat allergen concentrations for the bedroom when the portable air cleaner was introduced. In a study of portable air cleaner efficacy in four homes with smokers, PM concentrations in the living room were reduced by 30\u201370% with the use of a portable air cleaner [4]. Our modeling yielded similar reductions in ETS when comparing the conventional filtration to the ventilation configurations with portable air cleaners. In a study designed to evaluate the utility of portable air cleaners for controlling fungal spore concentrations, the intervention effectively reduced spore levels in a bedroom of a residence, however the air cleaner worked best when the bedroom door was closed [6].",
+            "cite_spans": [
+                {
+                    "start": 345,
+                    "end": 346,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 648,
+                    "end": 649,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1067,
+                    "end": 1068,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "When comparing absolute levels of contaminants in the home, the modeled results for the conventional and natural ventilation configurations compare well with values reported in the literature. Our modeled cat allergen concentrations with conventional filtration are similar to concentrations reported in a study of 75 homes with cats in Britain [7] and the levels during our intermittent release of allergen is similar to measured values during periods of disruptions such as vacuuming [10,67]. In a study of homes in six U.S. cities, the authors calculated that smoking one pack of cigarettes daily contributed 20 \u03bcg/m3 to the 24 average hour indoor particle concentration [65], which is similar to our modeled ETS concentrations for the conventional and natural ventilation configurations. For fungal spores, our modeled indoor/outdoor ratios for the conventional and natural ventilation configurations are similar to the ratio of 0.32 for total spores reported in a study conducted in six homes in the Cincinnati area [66].",
+            "cite_spans": [
+                {
+                    "start": 346,
+                    "end": 347,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 487,
+                    "end": 489,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 675,
+                    "end": 677,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1022,
+                    "end": 1024,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Results from a controlled study of rhinovirus transmission provide a reasonable comparison for evaluating the accuracy of our modeled likelihood of infection. In the experimental study, groups of eight students with active rhinovirus infection spent 12-hours in a room with 12 susceptible students and followed a protocol designed to allow transmission of an infectious dose only by inhalation [52]. The resulting risk of infection from this study was 61%. While AER or filtration characteristics were not reported for this study, we assumed that the room was either naturally ventilated or had conventional filtration. Our modeled scenario with one infectious individual in a room of approximately one-half the size of the experimental room resulted in an average risk of infection with influenza of 33.6% and 16.5% with natural and conventional filtration, respectively. If the modeling were conducted with four infectious individuals in the smaller bedroom to more closely mimic the conditions of the experimental study, the risk of modeled infection would rise to a level similar to that observed in the experimental study.",
+            "cite_spans": [
+                {
+                    "start": 395,
+                    "end": 397,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We relied upon the concept of quanta generation to estimate the probability of acquiring an infection through the airborne route, using the Wells-Riley equation [61]. The Wells-Riley equation and modifications of the equation have been used by researchers to estimate the risk of airborne transmission of an infection for a variety of organisms including measles [61], influenza [54], rhinovirus [54,68], severe acute respiratory syndrome (SARS) [69], and tuberculosis [55]. The Wells-Riley equation only estimates the risk of transmission for the inhalation route of exposure. Organisms like rhinovirus and influenza can be transmitted by other routes of exposure such as direct contact, although the relative importance of the respective routes of exposure is not well understood. The ability of various indoor air cleaning configurations to influence virus transmission through surface-mediated pathways remains to be determined. Consideration of virus transmission via surfaces and other pathways is unlikely to influence our findings for modification of the risk of infection through inhalation because of different ventilation and air cleaning configurations.",
+            "cite_spans": [
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 364,
+                    "end": 366,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 380,
+                    "end": 382,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 397,
+                    "end": 399,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 400,
+                    "end": 402,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "69",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 470,
+                    "end": 472,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While the Wells-Riley equation accounts for the ventilation rate of the indoor space of interest to calculate the quanta concentration, it does not, as discussed recently [70], explicitly account for other removal processes such as deposition to surfaces, filtration, and loss of infectiousness in the air. However, quanta generation rates are typically based on disease outbreak data, and therefore inherently account for these processes. Our modeling accounted for deposition and filtration, but not loss of infectiousness. Some data suggest that virus die-off is a slow process that can occur over several days at temperature and humidity levels typical of indoor environments [71]. Therefore, not explicitly controlling die-off is unlikely to influence our results substantively. Including removal mechanisms in our model along with the estimates of virus emissions in units of quanta may have resulted in double counting for removal by filtration and deposition. Therefore, our results may underestimate the actual risk of infection. To evaluate the impact of potential double counting for deposition, we conducted model runs without a deposition rate for virus. In these models, the risk of infection increased approximately 30 to 50% depending on the filtration type. Regardless, our analysis was designed to primarily evaluate the differences in ventilation configurations and the differences between these configurations would not be changed by under or over estimating the risk of infection.",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "71",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While a number of intervention studies clearly demonstrate exposure reductions attributable to the use of portable air cleaners, associated improvements in health have been more difficult to demonstrate. Some air cleaning interventions have yielded improvements in respiratory symptoms and breathing problems for children and adults with asthma or persistent allergic rhinitis [11-13,72]; however, the results of these studies have not always been reproducible [14-18,73]. One explanation for the lack of reproducible results could be that portable air cleaners used in these studies have not effectively reduced personal exposure. Our modeling demonstrates that while the use of a portable air cleaner will provide exposure benefits in the room it is located, concentrations of common asthma triggers throughout the residence, and corresponding personal exposures, are not likely to be mitigated. Our modeling analysis indicate that high efficiency in-duct air cleaning systems would yield a more substantial reduction in personal exposure that the portable air cleaners used in intervention studies published to date. Potential benefits of these systems for personal exposure could be evaluated following methods employed in a study of personal exposure to cat allergen [74].",
+            "cite_spans": [
+                {
+                    "start": 378,
+                    "end": 380,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 381,
+                    "end": 383,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 384,
+                    "end": 386,
+                    "mention": "72",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 462,
+                    "end": 464,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 465,
+                    "end": 467,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 468,
+                    "end": 470,
+                    "mention": "73",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 1273,
+                    "end": 1275,
+                    "mention": "74",
+                    "ref_id": "BIBREF71"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "An Expert Panel convened by the NIH recommended asthmatics with pet allergies that are not willing to part with their pets keep the pet out of the asthmatic's bedroom as one part of an asthma management strategy. Additionally, the National Environmental Education & Training Foundation (NEETF) recommends that the use of portable air cleaners in bedrooms of asthmatics [75]. While the use of portable air cleaners in the bedroom prove to be beneficial in our modeling, the results indicate that the use of high efficiency in-duct air cleaners provide an more effective means of controlling allergen levels not only in a single room, but the whole house.",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 372,
+                    "mention": "75",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The modeling results from this study demonstrate that properly maintained forced air systems with a high efficiency aerosol removal system are expected to provide the best control of the indoor exposure to common asthma triggers such as cat allergen, ETS, fungal spores and respiratory viruses. The modeling results also showed that the potential efficacy of avoidance strategies recommended for asthmatics by the American Lung Association and the National Institutes of Health may be enhanced by the use of certain indoor air cleaning systems.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "ETS: Environmental tobacco smoke; PM2.5: Particles less than 2.5 microns; HEPA: High efficiency particle arrestance; NIST: National Institute of Standards and Technology; AHU: Air-handling units; AER: Air exchange rates; SARS: Severe acute respiratory syndrome; CADR: Clean air delivery rate; qPCR: Quantitative polymerase chain reaction. ",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Funding for this research was provided by Trane Residential Systems, Inc., Tyler, TX and Environmental Health & Engineering, Inc., Needham, MA.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "TAM conceived of the study, and participated in its design and coordination and helped to draft the manuscript. TM carried out the modeling efforts. JA carried out the data analysis. DLM participated in the design of the study and drafted the manuscript. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Ventilation/Filtration Configuration Information\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Model Inputs for Contaminant Emission Rates and Filtration Removal Efficiency Rates\na Between the hours of 7 am \u2013 10 pm, the cat allergen concentration increases for 33% from the intermittent allergen release. Emission rates based on Custovic et al. [76]. b A total of 8 cigarettes per day. Per cigarette emission rates (mg/cigarette) based on Klepeis et al. [46]. c Emission rate of infectious doses (or quanta) per hour (q/hr) based on Liao et al. [56].",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Distribution of simulated 24-hour average air exchange rates for homes with and without forced air ventilation systems.\nDH28 Two story detached home DH72 Single story detached home",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Geometric Mean (Geometric Standard Deviation) of Indoor/Outdoor Ratios and Indoor Spore Concentrations by Ventilation/Filtration Type\naBedroom 2 contains a portable air cleaner",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Mean (Standard deviation) percent risk of infection during three exposure scenarios\na Assumes that that occupant is in the home 68.7% of the time based on Klepeis et al. [48]",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Comparison of Hourly Fel d 1 allergen concentrations by filtration configuration for (1A) the whole house average and (1B) bedroom 2.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Comparison of Hourly ETS concentrations by filtration configuration.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Comparison of 24-hour environmental tobacco smoke (ETS) concentrations in the living room and bedroom between the conventional filter (3A) and the high-efficiency filter (3B) for February 1.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "State of Lung Disease in Diverse Communities: 2007",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Airborne cat allergen (Fel d I). Environmental control with the cat in situ",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "de Blay",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Platts-Mills",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "The American Review of Respiratory Disease",
+            "volume": "143",
+            "issn": "",
+            "pages": "1334-1339",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Allergen reduction measures in houses of allergic asthmatic patients: effects of air-cleaners and allergen-impermeable mattress covers",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "van",
+                        "der"
+                    ],
+                    "last": "Heide",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Kauffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Dubois",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "de Monchy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "European Respiratory Journal",
+            "volume": "10",
+            "issn": "",
+            "pages": "1217-1223",
+            "other_ids": {
+                "DOI": [
+                    "10.1183/09031936.97.10061217"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Clinical effects of air cleaners in homes of asthmatic children sensitized to pet allergens",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [
+                        "van",
+                        "der"
+                    ],
+                    "last": "Heide",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "van Aalderen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Kauffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Dubois",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "de Monchy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Journal of Allergy and Clinical Immunology",
+            "volume": "104",
+            "issn": "",
+            "pages": "447-451",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0091-6749(99)70391-X"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Clinical effects of air filters in homes of asthmatic adults sensitized and exposed to pet allergens",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Francis",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Anthony",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pickering",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Oldham",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hadley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Niven",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Clinical and Experimental Allergy",
+            "volume": "33",
+            "issn": "",
+            "pages": "101-105",
+            "other_ids": {
+                "DOI": [
+                    "10.1046/j.1365-2222.2003.01570.x"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Do air cleaners make a difference in treating allergic disease in homes?",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Reisman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Annals of Allergy, Asthma, and Immunology",
+            "volume": "87",
+            "issn": "",
+            "pages": "41-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Laminar flow air cleaner bed attachment: a controlled trial",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Verrall",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Muir",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Milner",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Johnston",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dolovich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Annals of Allergy",
+            "volume": "61",
+            "issn": "",
+            "pages": "117-122",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A placebo-controlled trial of a HEPA air cleaner in the treatment of cat allergy",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Wood",
+                    "suffix": ""
+                },
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Van Natta",
+                    "suffix": ""
+                },
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Eggleston",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "American Journal of Respiratory and Critical Care Medicine",
+            "volume": "158",
+            "issn": "",
+            "pages": "115-120",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Domiciliary air filtration units, symptoms and lung function in atopic asthmatics",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Warburton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Niven",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Pickering",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hepworth",
+                    "suffix": ""
+                },
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Francis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Respiratory Medicine",
+            "volume": "88",
+            "issn": "",
+            "pages": "771-776",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0954-6111(05)80200-8"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Effect of air filtration systems on asthma: a systematic review of randomized trials",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "McDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cook",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Griffith",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Guyatt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Chest",
+            "volume": "122",
+            "issn": "",
+            "pages": "1535-1542",
+            "other_ids": {
+                "DOI": [
+                    "10.1378/chest.122.5.1535"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Recommendations for the use of residential air-cleaning devices in the treatment of allergic respiratory diseases",
+            "authors": [
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Hirsch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Ohman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TAE",
+                    "middle": [],
+                    "last": "Platts-Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Solomon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Journal of Allergy and Clinical Immunology",
+            "volume": "82",
+            "issn": "",
+            "pages": "661-669",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0091-6749(88)90980-3"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Guidelines for the Diagnosis and Management of Asthma (EPR-3)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Expert Panel Report 3: Guidelines for the Diagnosis and Management of Asthma",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kosar",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Novosel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Reduced energy use through reduced indoor contamination in residential settings",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Whole house particle removal and clean air delivery rates for in-duct and portable ventilation systems",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "MacIntosh",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Myatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ludwig",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Spenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Journal of the Air and Waste Management Association",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Walton",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Dols",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "CONTAM 2.1 Supplemental user guide and program documentation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Emmerich",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nabinger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Measurement and Simulation of the IAQ Impact of Particle Air Cleaners in a Single-Zone Building",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Characterizing gaseous air cleaner performance in the field",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Howard-Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nabinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Emmerich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Building and Environment",
+            "volume": "43",
+            "issn": "",
+            "pages": "368-377",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.buildenv.2006.03.020"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Emmerich",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nabinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gupte",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Howard-Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Comparison of measured and predicted tracer gas concentrations in a townhouse",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Dispersion of automotive alternative fuel vapors within a residence and its attached garage",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lansari",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Streicher",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Huber",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Crescenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zweidinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Duncan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weisel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Burton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Indoor Air",
+            "volume": "6",
+            "issn": "",
+            "pages": "118-126",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-0668.1996.t01-1-00008.x"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Howard-Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nabinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Emmerich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Predicting the performance of non-industrial gaseous air cleaners: measurements and model simulations from a pilot study",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A comprehesive validation of two airflow models \u2013 COMIS and CONTAM",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Haghighat",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Indoor Air",
+            "volume": "6",
+            "issn": "",
+            "pages": "278-288",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-0668.1996.00007.x"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Childhood asthma and environmental interventions",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TK",
+                    "middle": [],
+                    "last": "Takaro",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Environmental Health Perspectives",
+            "volume": "115",
+            "issn": "",
+            "pages": "971-975",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Year 2000 Census",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "The American Housing Survey for the United States",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "A Look at Residential Energy Consumption in 1997",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Persily",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Musser",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Leber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "A Collection of Homes to Represent U.S. Housing Stocks",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Characterization of Framing Factors for Low-Rise Residential Building Envelopes",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "EnergyPlus Version 2.1.0",
+            "authors": [],
+            "year": 2007,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Standard 52.2 \u2013 1999; Method of Testing General Ventilation Air-Cleaning Devices for Removal Efficiency by Particle Size",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "A Guide to Selected Algorithms, Distributions, and Databases Used in Exposure Models Developed by The Office Of Air Quality Planning and Standards",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Factors affecting the association between ambient concentrations and personal exposures to particles and gases",
+            "authors": [
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Sarnat",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Coull",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Schwartz",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Gold",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Environmental Health Perspectives",
+            "volume": "114",
+            "issn": "",
+            "pages": "649-654",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Personal exposures to acid aerosols and ammonia",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Spenger",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Koutrakis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Environmental Science and Technology",
+            "volume": "26",
+            "issn": "",
+            "pages": "2507-2517",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/es00036a026"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Long duration tests of room air filters in cigarette smokers' homes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Batterman",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Godwin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Jia",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Environmental Science & Technology",
+            "volume": "39",
+            "issn": "",
+            "pages": "7260-7268",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/es048951q"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Residential air exchange rates in the United States: Empirical and estimated parametric distributions by season and climate region",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Burmaster",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Risk Analysis",
+            "volume": "15",
+            "issn": "",
+            "pages": "459-465",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1539-6924.1995.tb00338.x"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Effects of room furnishings and air speed on particle deposition rates indoors",
+            "authors": [
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Thatcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "ACK",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Moreno-Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Sextro",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Nazaroff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Atmospheric Environment",
+            "volume": "36",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Relationship between mite, cat, and dog allergens in reservoir dust and ambient air",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hallam",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Craven",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Allergy",
+            "volume": "54",
+            "issn": "",
+            "pages": "612-616",
+            "other_ids": {
+                "DOI": [
+                    "10.1034/j.1398-9995.1999.00062.x"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Effects of various vacuum cleaners on the airborne content of major cat allergen (Fel d 1)",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "de Blay",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Spirlet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gries",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Casel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pauli",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Allergy",
+            "volume": "53",
+            "issn": "",
+            "pages": "411-414",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1398-9995.1998.tb03914.x"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Evolution of the mass distribution of resuspended cat allergen (Fel d 1) indoors following a disturbance",
+            "authors": [
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Montoya",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Hildemann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Atmospheric Environment",
+            "volume": "35",
+            "issn": "",
+            "pages": "859-866",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "The effect of air filtration on airborne dog allergen",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Faragher",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Allergy",
+            "volume": "54",
+            "issn": "",
+            "pages": "484-488",
+            "other_ids": {
+                "DOI": [
+                    "10.1034/j.1398-9995.1999.00029.x"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Determining size-specific emission factors for environmental tobacco smoke particles",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Klepeis",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Apte",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Gundel",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Sextro",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Nazaroff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Aerosol Science and Technology",
+            "volume": "37",
+            "issn": "",
+            "pages": "780-790",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/02786820300914"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "The NSDUH Report: Quantity and Frequency of Cigarette Use",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "The National Human Activity Pattern Survey (NHAPS): a resource for assessing exposure to environmental pollutants",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Klepeis",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Switzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Behar",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Hern",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Engelmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of Exposure Analysis and Environmental Epidemiology",
+            "volume": "11",
+            "issn": "",
+            "pages": "231-252",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.jea.7500165"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Effect of relative humidity on the aerodynamic diameter and respiratory deposition of fungal spores",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Reponen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Willeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Ulevicius",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Reponen",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Grinshpun",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Atmospheric Environment",
+            "volume": "30",
+            "issn": "",
+            "pages": "3967-3974",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/1352-2310(96)00128-8"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "The effect of air filtration on airborne dog allergen",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Faragher",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Allergy",
+            "volume": "54",
+            "issn": "",
+            "pages": "484-488",
+            "other_ids": {
+                "DOI": [
+                    "10.1034/j.1398-9995.1999.00029.x"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "",
+            "authors": [],
+            "year": 2006,
+            "venue": "AC-1-2006 Method for Measuring Performance of Portable Household Electric Room Air Cleaners",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Allergy to Basidiomycetes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Helbling",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Brander",
+                    "suffix": ""
+                },
+                {
+                    "first": "WE",
+                    "middle": [],
+                    "last": "Horner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Lehrer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Fungal Allergy and Pathogenicity",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Aerosol transmission of rhinovirus colds",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Dick",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Jennings",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Mink",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Wartgow",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Inhorn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Journal of Infectious Diseases",
+            "volume": "156",
+            "issn": "",
+            "pages": "442-448",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                }
+            ],
+            "year": 1955,
+            "venue": "Airborne contagion and air hygiene",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Risk of indoor airborne infection transmission estimated from carbon dioxide concentration",
+            "authors": [
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Rudnick",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Milton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Indoor Air",
+            "volume": "13",
+            "issn": "",
+            "pages": "237-245",
+            "other_ids": {
+                "DOI": [
+                    "10.1034/j.1600-0668.2003.00189.x"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Cleaning the air. The theory and application of ultraviolet air disinfection [see comments]. [Review]",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Nardell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "American Review of Respiratory Disease",
+            "volume": "139",
+            "issn": "",
+            "pages": "1286-1294",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "A probabilistic transmission dynamic model to assess indoor airborne infection risks",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Risk Analysis",
+            "volume": "25",
+            "issn": "",
+            "pages": "1097-1107",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1539-6924.2005.00663.x"
+                ]
+            }
+        },
+        "BIBREF52": {
+            "title": "Droplet expulsion from the respiratory tract",
+            "authors": [
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Loudon",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 1967,
+            "venue": "The American Review of Respiratory Disease",
+            "volume": "95",
+            "issn": "",
+            "pages": "435-442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "The size and duration of air-carriage of respiratory droplets and droplet-nuclei",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Duguid",
+                    "suffix": ""
+                }
+            ],
+            "year": 1946,
+            "venue": "Journal of Hygiene",
+            "volume": "44",
+            "issn": "",
+            "pages": "471-479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Toward understanding the risk of secondary airborne infection: emission of respirable pathogens",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nicas",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Nazaroff",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hubbard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Occupational and Environmental Hygiene",
+            "volume": "2",
+            "issn": "",
+            "pages": "143-154",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/15459620590918466"
+                ]
+            }
+        },
+        "BIBREF55": {
+            "title": "Efficiency of a portable indoor air cleaner in removing pollens and fungal spores",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Aerosol Science and Technology",
+            "volume": "29",
+            "issn": "",
+            "pages": "92-101",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/02786829808965554"
+                ]
+            }
+        },
+        "BIBREF56": {
+            "title": "Simultaneous detection of influenza viruses A and B using real-time quantitative PCR",
+            "authors": [
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "van Elden",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nijhuis",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schipper",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schuurman",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "van Loon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "39",
+            "issn": "",
+            "pages": "196-200",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.39.1.196-200.2001"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "Airborne spread of measles in a suburban elementary school",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "American Journal of Epidemiology",
+            "volume": "107",
+            "issn": "",
+            "pages": "421-432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "",
+            "authors": [],
+            "year": 1997,
+            "venue": "Exposure Factors Handbook",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Using time- and size-resolved particulate data to quantify indoor penetration and deposition behavior",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Catalano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Koutrakis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Environ Sci Technol",
+            "volume": "35",
+            "issn": "",
+            "pages": "2089-2099",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/es001477d"
+                ]
+            }
+        },
+        "BIBREF60": {
+            "title": "Relative contribution of outdoor and indoor particle sources to indoor concentrations",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Abt",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Catalano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Koutrakis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Environ Sci Technol",
+            "volume": "34",
+            "issn": "",
+            "pages": "3579-3587",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/es990348y"
+                ]
+            }
+        },
+        "BIBREF61": {
+            "title": "Long-term measurements of respirable sulfates and particles inside and outside homes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Spengler",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Atmospheric Environment",
+            "volume": "15",
+            "issn": "",
+            "pages": "23-30",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0004-6981(81)90121-9"
+                ]
+            }
+        },
+        "BIBREF62": {
+            "title": "Culturability and concentration of indoor and outdoor airborne fungi in six single-family homes",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Grinshpun",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Martuzevicius",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Adhikari",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Crawford",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Reponen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Atmospheric Environment",
+            "volume": "40",
+            "issn": "",
+            "pages": "2902-2910",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.atmosenv.2006.01.011"
+                ]
+            }
+        },
+        "BIBREF63": {
+            "title": "Resuspension of allergen-containing particles under mechanical and aerodynamic disturbances from human walking",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gomes",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Freihaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Bahnfleth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Atmospheric Environment",
+            "volume": "41",
+            "issn": "",
+            "pages": "5257-5270",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.atmosenv.2006.07.061"
+                ]
+            }
+        },
+        "BIBREF64": {
+            "title": "Detection of airborne rhinovirus and its relation to outdoor air supply in office environments",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Myatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Johnston",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zuo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wand",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kebadze",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rudnick",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Milton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "American Journal of Respiratory and Critical Care Medicine",
+            "volume": "169",
+            "issn": "",
+            "pages": "1187-1190",
+            "other_ids": {
+                "DOI": [
+                    "10.1164/rccm.200306-760OC"
+                ]
+            }
+        },
+        "BIBREF65": {
+            "title": "Predictive models of control strategies involved in containing indoor airborne infections",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Indoor Air",
+            "volume": "16",
+            "issn": "",
+            "pages": "469-481",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-0668.2006.00443.x"
+                ]
+            }
+        },
+        "BIBREF66": {
+            "title": "Distribution, aerodynamic characteristics, and removal of the major cat allergen Fel d 1 in British homes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Pahdi",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Thorax",
+            "volume": "53",
+            "issn": "",
+            "pages": "33-38",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Commentary on predictive models of control strategies involved in containing indoor airborne infections, Indoor Air16: 469\u2013481",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fisk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Indoor Air",
+            "volume": "18",
+            "issn": "",
+            "pages": "72-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Survival characteristics of airborne human coronavirus 229E",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Ijaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Brunner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Sattar",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Nair",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Johnson-Lussenburg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Journal of General Virology",
+            "volume": "66",
+            "issn": "",
+            "pages": "2743-2748",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/0022-1317-66-12-2743"
+                ]
+            }
+        },
+        "BIBREF69": {
+            "title": "A double-blind study of the effectiveness of a high-efficiency particulate air (HEPA) filter in the treatment of patients with perennial allergic rhinitis and asthma",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Reisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Mauriello",
+                    "suffix": ""
+                },
+                {
+                    "first": "GB",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Georgitis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "DeMasi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "The Journal of Allergy and Clinical Immunology",
+            "volume": "85",
+            "issn": "",
+            "pages": "1050-1057",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0091-6749(90)90050-E"
+                ]
+            }
+        },
+        "BIBREF70": {
+            "title": "Recommendations for the use of residential air-cleaning devices in the treatment of allergic respiratory diseases",
+            "authors": [
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Hirsch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Ohman",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Platts-Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Solomon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Journal of Allergy and Clinical Immunology",
+            "volume": "82",
+            "issn": "",
+            "pages": "661-669",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0091-6749(88)90980-3"
+                ]
+            }
+        },
+        "BIBREF71": {
+            "title": "Air filtration units in homes with cats: can they reduce personal exposure to cat allergen?",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Gore",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bishop",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Durrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Curbishley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Clinical and Experimental Allergy",
+            "volume": "33",
+            "issn": "",
+            "pages": "765-769",
+            "other_ids": {
+                "DOI": [
+                    "10.1046/j.1365-2222.2003.01678.x"
+                ]
+            }
+        },
+        "BIBREF72": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "Environmental management of pediatric asthma. Guidelines for health care providers",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Domestic allergens in public places III: house dust mite, cat, dog and cockroach allergens in British hospitals",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Custovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Pickering",
+                    "suffix": ""
+                },
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Francis",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Woodcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Clinical and Experimental Allergy",
+            "volume": "28",
+            "issn": "",
+            "pages": "53-59",
+            "other_ids": {
+                "DOI": [
+                    "10.1046/j.1365-2222.1998.00183.x"
+                ]
+            }
+        },
+        "BIBREF74": {
+            "title": "Microanalysis of indoor aerosols and the impact of a compact high-efficiency particulate air (HEPA) filter system",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Abraham",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Indoor Air",
+            "volume": "9",
+            "issn": "",
+            "pages": "33-40",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-0668.1999.t01-3-00006.x"
+                ]
+            }
+        },
+        "BIBREF75": {
+            "title": "Use of air-cleaning devices to create airborne particle-free spaces intended to alleviate allergic rhinitis and asthma during sleep",
+            "authors": [
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Hacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Sparrow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Indoor Air",
+            "volume": "15",
+            "issn": "",
+            "pages": "420-431",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-0668.2005.00387.x"
+                ]
+            }
+        }
+    }
+}

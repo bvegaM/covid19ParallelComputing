@@ -1,0 +1,3127 @@
+{
+    "paper_id": "PMC1444932",
+    "metadata": {
+        "title": "Heterologous expression of Brucella abortus GroEL heat-shock protein in Lactococcus lactis",
+        "authors": [
+            {
+                "first": "Anderson",
+                "middle": [],
+                "last": "Miyoshi",
+                "suffix": "",
+                "email": "miyoshi@icb.ufmg.br",
+                "affiliation": {}
+            },
+            {
+                "first": "Luis",
+                "middle": [
+                    "G"
+                ],
+                "last": "Berm\u00fadez-Humar\u00e1n",
+                "suffix": "",
+                "email": "luis.bermudez@jouy.inra.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Luciana",
+                "middle": [
+                    "A"
+                ],
+                "last": "Ribeiro",
+                "suffix": "",
+                "email": "laribeir@libero.it",
+                "affiliation": {}
+            },
+            {
+                "first": "Yves",
+                "middle": [],
+                "last": "Le Loir",
+                "suffix": "",
+                "email": "Yves.LeLoir@rennes.inra.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "S\u00e9rgio",
+                "middle": [
+                    "C"
+                ],
+                "last": "Oliveira",
+                "suffix": "",
+                "email": "scozeus@icb.ufmg.br",
+                "affiliation": {}
+            },
+            {
+                "first": "Philippe",
+                "middle": [],
+                "last": "Langella",
+                "suffix": "",
+                "email": "philippe.langella@jouy.inra.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Vasco",
+                "middle": [],
+                "last": "Azevedo",
+                "suffix": "",
+                "email": "vasco@icb.ufmg.br",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Brucella abortus, a facultative intracellular Gram-negative bacterium, is the causative agent of brucellosis: a worldwide zoonosis that causes abortion and infertility in cattle, as well as undulant fever, arthritis, endocarditis, meningitis and osteomyelitis in humans [1]; therefore it constitutes both an economic and a public health problem [2]. Current brucellosis vaccines are composed of live attenuated B. abortus strains (e.g. S19, RB51). However, most of them present major drawbacks that limit the control of brucellosis: (i) they are pathogenic for humans; (ii) they cause abortion when administered to pregnant females; and (iii) they interfere with the diagnosis of infected animals [2-5]. There is thus a need for the development of more effective and safer vaccines to better control brucellosis.",
+            "cite_spans": [
+                {
+                    "start": 271,
+                    "end": 272,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 346,
+                    "end": 347,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 698,
+                    "end": 699,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 700,
+                    "end": 701,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Current strategies for the development of new vaccines against B. abortus have been based on the identification of immunodominant antigens able to elicit a cellular immune response [6-9], which is required to resist the intracellular location of this pathogen [10-12]. GroEL, a well-known heat-shock protein present in various pathogens, can elicit humoral and cellular immune responses in different host models [13-15]. Moreover, cattle and mice infected with B. abortus exhibit an immune response to GroEL [8,16,17]. Taken together, these observations suggest the potential of GroEL as a candidate antigen for the development of a brucellosis vaccine.",
+            "cite_spans": [
+                {
+                    "start": 182,
+                    "end": 183,
+                    "mention": "6",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 184,
+                    "end": 185,
+                    "mention": "9",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 261,
+                    "end": 263,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 264,
+                    "end": 266,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 413,
+                    "end": 415,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 416,
+                    "end": 418,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 509,
+                    "end": 510,
+                    "mention": "8",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 511,
+                    "end": 513,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 514,
+                    "end": 516,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Recently, new strategies to develop vaccines against infectious diseases have been reported [18-20]. As most pathogenic microorganisms initiate infection through mucosal surfaces, recent approaches have focused on mucosal immunization [21]. A variety of live, attenuated-bacterial strains have been used as carriers to deliver foreign antigens to mammalian hosts [22-25]; however, they still retain invasiveness and virulence properties that limit their use in humans. Lactic acid bacteria (LAB) are promising candidates for the development of new, safe, mucosal vaccines, and different from attenuated pathogenic bacteria, they are food-grade, non-invasive and non-pathogenic organisms [26,27]. Mucosal immunization with genetically modified LAB to produce bacterial and viral antigens has been shown to elicit an immune response [28-32]. We have been particularly interested in the development of a new mucosal vaccine against brucellosis using Lactococcus lactis, the model LAB, as a delivery vector. Moreover, as L. lactis is a non-commensal and transient bacterium in the digestive tract, induction of immunotolerance to an L. lactis-associated antigen is diminished.",
+            "cite_spans": [
+                {
+                    "start": 93,
+                    "end": 95,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 364,
+                    "end": 366,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 367,
+                    "end": 369,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 688,
+                    "end": 690,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 691,
+                    "end": 693,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 832,
+                    "end": 834,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 835,
+                    "end": 837,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We previously reported targeted production (i.e. in the cytoplasm, in the cell wall or into the extracellular medium) of the immunogenic B. abortus ribosomal protein L7/L12 in L. lactis [33]. Oral administration of a L. lactis strain producing a cytoplasmic form of L7/L12 induced partial protection against this pathogen in mice [29]. We have now cloned the B. abortus groEL into three different nisin-inducible expression vectors [33,34] for production of GroEL in two cellular locations, intracellular and secreted. Only the secreted form of GroEL was stably produced in L. lactis. This new strain has potential for use in vaccination programs to prevent brucellosis.",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 331,
+                    "end": 333,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 433,
+                    "end": 435,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 436,
+                    "end": 438,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "As the protective response depends on the antigen, the delivery system and the location of the antigen [25,35,36], we evaluated the impact of B. abortus GroEL production by L. lactis in two different cellular locations, intracellular and secreted. Two expression vectors were initially constructed, pCYT:groEL and pSEC:groEL for cytoplasmic and secreted GroEL production, respectively. These plasmids are derived from two broad-host-range expression vectors, pCYT:Nuc and pSEC:Nuc (Table 1; [34]); pCYT:Nuc harbors a transcriptional fusion between the ribosome-binding site (RBSusp45) of the usp45 gene [37] and the DNA sequence encoding the mature part of the staphylococcal nuclease, NucB [38] (Table 1), and pSEC:Nuc harbors a transcriptional fusion between RBSusp45 and the DNA sequence encoding the signal peptide (SPusp45) of Usp45 plus nucB (Table 1). In both cases, nucB expression is under the control of the nisin-inducible promoter, PnisA [39].",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 107,
+                    "end": 109,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 492,
+                    "end": 494,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 604,
+                    "end": 606,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 692,
+                    "end": 694,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 951,
+                    "end": 953,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Construction of recombinant L. lactis strains to produce either cytoplasmic or secreted forms of GroEL ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 488,
+                    "end": 489,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 703,
+                    "end": 704,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 855,
+                    "end": 856,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The vector to target GroEL protein in the cytoplasm of L. lactis, pCYT:groEL, was obtained as follows: A 1641-bp DNA fragment encoding GroEL was PCR-amplified from the vector pMal-GroEL (Table 1; [17]). Two oligonucleotides, containing two restriction sites, were designed on the basis of the genomic DNA sequence from the B. abortus groEL gene (Genbank accession number M82975): i) CTFgroEL for the coding strand: 5'- GGATGCATGCTGCAAAAGACGTA -3', in which the NsiI site is underlined; and ii) CTRgroEL for the complementary strand: 5'- CGGAATTCTTAGAAGTCCATGCC -3', in which the EcoRI site is underlined. The resulting amplified product was treated with NsiI and EcoRI and then cloned into purified backbone isolated from NsiI-EcoRI-cut pCYT:Nuc expression vector, replacing the DNA sequence encoding for NucB (Table 1; Figure 1A). To obtain the vector to target GroEL protein to the extracellular medium (i.e. secreted) of L. lactis, pSEC:groEL, the following procedures were adopted: The groEL gene was PCR amplified from pMal-GroEL (Table 1; [17]). The oligonucleotides were: i) SCFgroEL for the coding strand: 5'- GGATGCATCAGCTGCAAAAGACGTA -3', in which the NsiI site is underlined and CA (in bold) was added to adapt the reading frame of spUsp45; and ii) SCRgroEL for the complementary strand: 5'- CGGTTAACTTAGAAGTCCATGCC -3', in which the HpaI site is underlined. The PCR product was then digested by NsiI and HpaI and cloned into purified backbone isolated from NsiI-EcoRV-cut pSEC:Nuc expression vector, again replacing the DNA sequence encoding for NucB (Table 1; Figure 1B).",
+            "cite_spans": [
+                {
+                    "start": 197,
+                    "end": 199,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1046,
+                    "end": 1048,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Construction of recombinant L. lactis strains to produce either cytoplasmic or secreted forms of GroEL ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 827,
+                    "end": 829,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1580,
+                    "end": 1582,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 193,
+                    "end": 194,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 817,
+                    "end": 818,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1042,
+                    "end": 1043,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1570,
+                    "end": 1571,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In both cases, pCYT:groEL and pSEC:groEL were first obtained in E. coli TG1 and then transferred into L. lactis NZ9000 [40,41]. All constructions were confirmed by DNA sequencing. Surprisingly, during procedures to recover L. lactis NZ9000 colonies harboring the pCYT:groEL plasmid, we observed that such colonies did not grow normally, taking around four days to be visible in selective M17-agar plates; while L. lactis NZ9000 colonies harboring the pSEC:groEL plasmid, hereafter called NZ(pSEC:groEL), normally grew in 18\u201324 hours. Moreover, when some colonies were grown in selective liquid medium, they reached a maximum OD600nm of around 0.05, after overnight culture, compared to OD600nm of around 1.5 for NZ(pSEC:groEL). One hypothesis to explain this phenomenon is that the pCYT:groEL plasmid has a basal expression level, and GroEL could therefore interact with lactococcal proteins, generating detrimental disorders in the host cellular metabolism. Prokaryotic chaperones are functionally well conserved and, once cloned in a foreign host, a chaperone may interact with the host proteins [42,43]. We already observed similar phenomena in L. lactis with various viral, prokaryote and eukaryote proteins (for a review see [44]); lactococcal strains engineered to produce cytoplasmic protein forms had a reduced growth rate, and consequent absent or low levels of heterologous protein production.",
+            "cite_spans": [
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 123,
+                    "end": 125,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1099,
+                    "end": 1101,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1102,
+                    "end": 1104,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1231,
+                    "end": 1233,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Construction of recombinant L. lactis strains to produce either cytoplasmic or secreted forms of GroEL ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "As we did not succeeded in obtaining an L. lactis strain that produced GroEL in the cytoplasm, we continued the analysis of the L. lactis strain that produced a secreted form of GroEL. To evaluate whether this recombinant strain is able to produce and export GroEL outside the cell, we performed Western blot analysis of proteins extracted from cell (C) and supernatant (S) fractions of induced and non-induced NZ(pSEC:groEL) cultures. Analysis of induced NZ(pSEC:groEL) samples revealed only one band in the C fraction, with an expected size of around 60 kDa, which corresponds to the GroEL precursor (SPUsp45::GroEL) (Figure 2). In the S fraction, we also detected only one band at the expected size for mature GroEL (around 57 kDa) (Figure 2). However, in this latter case, only trace amounts of mature GroEL could be detected in the S fraction; this indicates that the GroEL precursor remained stacked in the C fraction, probably associated with the cell envelope. Thus, secreted form of GroEL seems not to be interfering with the host physiology due to the fact that GroEL is fused to SPUsp45 which in turn targets the hybrid protein to the extracellular medium, or at least, in this case, to the cell envelope. SPUsp45::GroEL might undergo rapid folding right after their synthesis, which interferes with (or hampers) the secretion process. Moreover, sometimes, secreted proteins require subsequent folding and maturation steps to acquire their active conformation. The secretion efficiency (SE; the ratio of mature protein secreted in the supernatant as a fraction of intracellular content) was estimated to be ~3\u20135%. Inefficiency in B. abortus GroEL secretion was previously reported by Leclerq et al. (2002; [17]), using the mammalian expression vector pCMV-tPA, containing a signal peptide sequence fused to groEL. Very low levels of GroEL were observed both in the C and S fractions from D17 cells (dog osteosarcoma cell line), in spite of the presence of GroEL transcripts. In this case, a possible explanation is that as B. abortus GroEL is able to associate with the bacterial surface through the type IV secretion system and to interact directly or indirectly with cellular prion protein (PrPC) on host cells [45], these properties may interfere with the secretion process. On the other hand, in the case of L. lactis, low GroEL SE may be due to an interaction with the cell envelope, mediated by a secretion system other than the type IV system, which is not present in lactococcal cells [46]. A similar effect was already observed in a L. lactis strain designed to produce a secreted form of bovine rotavirus nonstructural protein 4 (NSP4) [47]. No NSP4 was detected in the S fraction, and both precursor and mature protein were only detected in the C fraction. The authors suggest that NSP4 could be associated with the cell envelope, probably due to hydrophobic domains that prevent its release into the medium.",
+            "cite_spans": [
+                {
+                    "start": 1718,
+                    "end": 1720,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 2225,
+                    "end": 2227,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 2505,
+                    "end": 2507,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 2658,
+                    "end": 2660,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "L. lactis is able to produce a stable secreted form of GroEL ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 627,
+                    "end": 628,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 743,
+                    "end": 744,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Interestingly, the secreted GroEL seems not to be a target for the unique L. lactis housekeeping extracellular protease (HtrA; [48]), since degradation products were not detected by Western blotting (see Methods section) in the S fraction of induced NZ(pSEC:groEL) cultures samples (Figure 2). As previously reported [48,49], a number of exported heterologous proteins already produced in wild type L. lactis strains are recognized by this protease as foreign, being degraded during translocation steps across the cell envelope. We suppose that this did not occur in our strain because B. abortus GroEL seems to be structurally and functionally well-conserved. Comparison analyses of GroEL amino acid sequence from B. abortus S19 (accession number: AAA22997) and L. lactis IL1403 (accession number: NP266550) showed that these sequences possess around 54% identity, and both sequences harbor a highly-conserved Cpn60 chaperonin motif.",
+            "cite_spans": [
+                {
+                    "start": 128,
+                    "end": 130,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 318,
+                    "end": 320,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 321,
+                    "end": 323,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "L. lactis is able to produce a stable secreted form of GroEL ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 290,
+                    "end": 291,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In conclusion, even though low SE was observed, L. lactis was able to produce and target B. abortus GroEL to the extracellular medium. Moreover, degradation products related to lactococcal HtrA activity were not observed in the S fraction from induced NZ(pSEC:groEL) culture samples, and so L. lactis seems to be able to produce a stable form of GroEL.",
+            "cite_spans": [],
+            "section": "L. lactis is able to produce a stable secreted form of GroEL ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Previous studies showed that the synthetic propeptide LEISSTCDA (hereafter called LEISS) can enhance SE of heterologous proteins in L. lactis (for a review see [44]). We examined whether LEISS could improve SE of GroEL. For this purpose, we used pSEC:LEISS vector, which is a derivative of pSEC:Nuc vector, plus a DNA fragment encoding for LEISS synthetic propeptide fused between SPUsp45 and nucB (Table 1; [33]). The DNA fragment encoding GroEL was cloned into pSEC:LEISS, using the same experimental procedure as that used for cloning the secreted form of GroEL (see above). The resulting plasmid, pSEC:LEISS:groEL (Table 1; Figure 1C), was established in L. lactis NZ9000 [NZ(pSEC:LEISS:groEL)] and GroEL production and secretion was then examined by Western blot analysis. LEISS did not exert any significant influence on SE of GroEL, since comparable amounts of GroEL were present in the S fraction from both NZ(pSEC:groEL) and NZ(pSEC:LEISS:groEL) (Figure 2). Note that GroEL is the second reported protein in which LEISS has no influence on the SE. The first one was the hybrid protein Nuc-NSP4 [49].",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1104,
+                    "end": 1106,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Synthetic propeptide does not enhance secretion efficiency of GroEL ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 963,
+                    "end": 964,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 405,
+                    "end": 406,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 625,
+                    "end": 626,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "This work is part of an ongoing project geared to producing and testing new B. abortus antigens that could be used as alternative vaccines against brucellosis. Here we have described the construction of lactococcal strains that produce B. abortus GroEL heat-shock protein, a well-known immunodominant target for both humoral and cellular immune responses [8,16]. L. lactis was able to produce, and to secrete, a stable form of GroEL into the extracellular medium. Despite concerns about the low SE of GroEL, which suggest that this antigen interacts with the cell envelope of L. lactis, secretion seems to be the best way to achieve both production and protein yields, regardless of cellular location. Therefore, this new L. lactis strain has potential for oral immunization trials. Immunization assays using this strain are now in progress and will allow definition of the immune response and the level of protection that GroEL confers against challenge with B. abortus.",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 357,
+                    "mention": "8",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 358,
+                    "end": 360,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Escherichia coli TG1 (Table 1; [50]) was aerobically grown in Luria-Bertani medium at 37\u00b0C. L. lactis NZ9000 (Table 1; [51]) was grown in M17 medium supplemented with 0.5% glucose (GM17) at 30\u00b0C. When required, antibiotics were added as follows: ampicillin (100 \u03bcg/ml) and chloramphenicol (10 \u03bcg/ml) for E. coli, and chloramphenicol (10 \u03bcg/ml) for L. lactis.",
+            "cite_spans": [
+                {
+                    "start": 32,
+                    "end": 34,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Bacterial strains, growth conditions and plasmids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 28,
+                    "end": 29,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 116,
+                    "end": 117,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Lactococcal plasmids pCYT:Nuc, pSEC:Nuc and pSEC:LEISS:Nuc (Table 1; [33,34]) were used in order to: i) control the expression of the B. abortus groEL, through a nisin-inducible promoter, PnisA [39]; and ii) target the B. abortus GroEL either to the cytoplasm or to the extracellular medium. For further details about plasmid constructions, see the results and discussion section.",
+            "cite_spans": [
+                {
+                    "start": 70,
+                    "end": 72,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 73,
+                    "end": 75,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 195,
+                    "end": 197,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Bacterial strains, growth conditions and plasmids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 66,
+                    "end": 67,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "General DNA manipulation techniques were carried out according to standard procedures [40]. Unless otherwise indicated, DNA restriction and modification enzymes were used as recommended by the suppliers. DNA fragments were isolated from agarose gels with the Concert\u2122 Rapid Gel Extraction System (Gibco BRL). PCR amplifications were made using Taq DNA polymerase (Invitrogen\u2122) in a DNA thermocycler (MJ Research, Inc.). Plasmid DNA from E. coli and L. lactis was isolated, as previously described [40,41]. DNA sequencing was carried out on double-stranded plasmid DNA by the dideoxy chain termination method [52] with MegaBACE Sequencing Systems (Amersham Biosciences). Routine amino acid homology searches were performed by the \"Basic Local Alignment Search Tool\" (BLAST; [53]), service of the National Center for Biotechnology Information (NCBI). Amino acid sequence similarity searches were performed by the ClustalW [54], service of the European Bioinformatics Institute. Further analyses for the identification of protein-conserved motifs were performed with the \"Protein Families Database\" (Pfam; [55]), service of the Wellcome Trust Sanger Institute.",
+            "cite_spans": [
+                {
+                    "start": 87,
+                    "end": 89,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 498,
+                    "end": 500,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 501,
+                    "end": 503,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 609,
+                    "end": 611,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 774,
+                    "end": 776,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 921,
+                    "end": 923,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1104,
+                    "end": 1106,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "DNA manipulations ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For induction of the nisin promoter, overnight cultures of recombinant L. lactis strains harboring pCYT:groEL, pSEC:groEL or pSEC:LEISS:groEL (Table 1) were used to inoculate fresh medium at a dilution of 1/100. At an optical density at 600 nm (OD600) of ~0.4, 1 ng/ml of nisin (Sigma) was added and cultures were incubated for one hour, before performing cell fractionation and protein extractions.",
+            "cite_spans": [],
+            "section": "Conditions of nisin induction ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 149,
+                    "end": 150,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Protein samples were prepared from L. lactis cultures, as previously described [56], except for the introduction of protease inhibitors and mild precipitation procedures. Briefly, protein samples were prepared from 2 ml of cultures, and the cell pellet and supernatant were treated separately. To inhibit proteolysis in supernatant samples, 1 mM phenylmethylsulfonyl fluoride (PMSF) and 10 mM dithiothreitol (DTT) were added. Proteins were then precipitated by addition of 100 \u03bcl of 100% trichloroacetic acid, incubated for 10 min on ice, and then centrifuged 10 min at 17,500 \u00d7 g at 4\u00b0C. For the cell fraction, TES-Lys buffer (25% sucrose, 1 mM EDTA, 50 mM Tris-HCl [pH 8.0], lysozyme [10 mg/ml]) was complemented with 1 mM PMSF and 10 mM DTT. Twelve percent sodium dodecyl sulfate-polyacrylamide gel electrophoresis (SDS-PAGE) and Western blot, using anti-GroEL antibodies [17], were performed, as described previously [40]. Immunodetections were carried out with protein G horseradish peroxidase conjugate (BioRad) and the ECL Kit (Dupont-NEN), as recommended by the suppliers. Quantification of GroEL was performed by scanning blots after immunodetection, comparing the signals to those of known amounts of purified GroEL [38].",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 82,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 876,
+                    "end": 878,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 922,
+                    "end": 924,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1227,
+                    "end": 1229,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Protein extractions and Western blotting ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "AM, LGBH, LAR, YLL and SCO equally contributed to this work, participating in the plasmid and strain constructions, molecular biology procedures, sequence alignments, scientific discussion, data interpretation, and manuscript draft. PL and VA share credit in this work for senior authorship.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Bacterial strains and plasmids used in this work\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Schematic representation of expression cassettes for controlled and targeted GroEL production in L. lactis. For details of plasmid constructions, see the text and Table 1. PnisA: nisin-inducible promoter; rbsUsp45: ribosome binding site of Usp45 gene; spUsp45: DNA sequence encoding the signal peptide of Usp45 gene; LEISS: DNA sequence encoding the LEISSTCDA synthetic propeptide; groEL: B. abortus groEL coding sequence (not to scale).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Western blot analyses of nisin-induced L. lactis NZ9000 (pSEC:groEL) and (pSEC:LEISS:groEL) strains. Protein extracts of culture samples of NZ(pSEC:groEL) and NZ(pSEC:LEISS:groEL) strains were prepared from cell (lanes C) and supernatant (lanes S) fractions and were analyzed by Western blotting using anti-GroEL antibodies. The migration positions of precursor- and mature-GroEL forms are indicated by arrows. Purified GroEL (around 12 \u03bcg) was used as the standard (lane Std), and molecular masses are indicated on the left.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Relationship between animal and human disease",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Nicoletti",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Brucellosis: clinical and laboratory aspects",
+            "volume": "",
+            "issn": "",
+            "pages": "41-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Cytokine response of T-cell subsets from Brucella abortus-infected mice to soluble Brucella proteins",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cheers",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Infect Immun",
+            "volume": "61",
+            "issn": "",
+            "pages": "2841-2847",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "CD8+ type 1 CD44hi CD45 RBlo T lymphocytes control intracellular Brucella abortus infection as demonstrated in major histocompatibility complex class I- and class II-deficient mice",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Splitter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Eur J Immunol",
+            "volume": "25",
+            "issn": "",
+            "pages": "2551-2557",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The role of T cell subsets and cytokines in the regulation of intracellular bacterial infection",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Harms",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Rech",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Rodarte",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Bocca",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Goes",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Splitter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Braz J Med Biol Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "77-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Characterization of the heat shock response in Brucella abortus and isolation of the gene encoding the GroEL heat shock protein",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Ficht",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Infect Immun",
+            "volume": "60",
+            "issn": "",
+            "pages": "2425-2431",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Expression of heat-shock proteins in Streptococcus pyogenes and their immunoreactivity with sera from patients with streptococcal diseases",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Lemos",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Castro",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Med Microbiol",
+            "volume": "47",
+            "issn": "",
+            "pages": "711-715",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The potential use of the heat shock proteins to vaccinate against mycobacterial infections",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Silva",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Microbes Infect",
+            "volume": "1",
+            "issn": "",
+            "pages": "429-435",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1286-4579(99)80046-X"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Immunological response to the Brucella abortus GroEL homolog",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Ficht",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Infect Immun",
+            "volume": "64",
+            "issn": "",
+            "pages": "4396-4400",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Induction of a Th1-type of immune response but not protective immunity by intramuscular DNA immunisation with Brucella abortus GroEL heat-shock gene",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Leclerq",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Harms",
+                    "suffix": ""
+                },
+                {
+                    "first": "GMS",
+                    "middle": [],
+                    "last": "Rosinha",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Azevedo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Med Microbiol",
+            "volume": "50",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0167-7012(02)00004-0"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Recent advances with recombinant bacterial vaccine vectors",
+            "authors": [
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Shata",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Stevceva",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Agwale",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Hone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol Med Today",
+            "volume": "6",
+            "issn": "",
+            "pages": "66-71",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1357-4310(99)01633-0"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Recent progress in vaccines development and new trends in immunization",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kurstak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "",
+            "pages": "2198-2200",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(00)00473-4"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Brucellosis: a worldwide zoonosis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Boschiroli",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Foulongne",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "O'Callaghan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Curr Opin Microbiol",
+            "volume": "4",
+            "issn": "",
+            "pages": "58-64",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1369-5274(00)00165-X"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Technologies for the design, discovery, formulation and administration of vaccines",
+            "authors": [
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "",
+            "pages": "2681-2687",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(00)00504-1"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Vaccines and mucosal immunisation",
+            "authors": [
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Cripps",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Kyd",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Foxwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "",
+            "pages": "2513-2515",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(00)00481-3"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Live bacterial delivery systems for development of mucosal vaccines",
+            "authors": [
+                {
+                    "first": "JER",
+                    "middle": [],
+                    "last": "Thole",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "van Dalen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CEG",
+                    "middle": [],
+                    "last": "Havenith",
+                    "suffix": ""
+                },
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Pouwels",
+                    "suffix": ""
+                },
+                {
+                    "first": "JFML",
+                    "middle": [],
+                    "last": "Seegers",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Tielen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "van dar Zee",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Zegers",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Curr Opin Mol Ther",
+            "volume": "2",
+            "issn": "",
+            "pages": "94-99",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Use of live bacterial vaccine vectors for antigen delivery: potential and limitations",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Medina",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Guzm\u00e1n",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "",
+            "pages": "1573-1580",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(00)00354-6"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Recombinant attenuated bacteria for the delivery of subunit vaccines",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Gentschev",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Dietrich",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Spreng",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kolb-Maurer",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Brinkmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Grode",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hess",
+                    "suffix": ""
+                },
+                {
+                    "first": "SHE",
+                    "middle": [],
+                    "last": "Kaufmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Goebel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "",
+            "pages": "2621-2628",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(00)00502-8"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Nasal vaccination using live bacterial vectors",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Mielcarek",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Alonso",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Locht",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Adv Drug Deliv Rev",
+            "volume": "51",
+            "issn": "",
+            "pages": "55-69",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0169-409X(01)00168-5"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Lactic acid bacteria as vaccine delivery vehicles",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Chamberlain",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Schofield",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Le Page",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Antonie Van Leeuwenhoek",
+            "volume": "70",
+            "issn": "",
+            "pages": "317-330",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/BF00395939"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Lactic acid bacteria as antigen delivery vehicles for oral immunization purposes",
+            "authors": [
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Pouwels",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Leer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJH",
+                    "middle": [],
+                    "last": "den Bak-Glashouwer",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Tielen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Smit",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Martinez",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Jore",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Conway",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Int J Food Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "155-167",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0168-1605(98)00048-8"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Immunogenicity and protective efficacy of orally administered recombinant Lactococcus lactis expressing surface-bound HIV Env",
+            "authors": [
+                {
+                    "first": "KQ",
+                    "middle": [],
+                    "last": "Xin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hoshino",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Toda",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Igimi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kojima",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Jounai",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ohba",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kushiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kiwaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hamajima",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Klinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Okuda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Blood",
+            "volume": "102",
+            "issn": "",
+            "pages": "223-228",
+            "other_ids": {
+                "DOI": [
+                    "10.1182/blood-2003-01-0110"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Induction of partial protection in mice after oral administration of Lactococcus lactis producing Brucella abortus L7/L12 antigen",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Pontes",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Dorella",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ribeiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Miyoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Azevedo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Drug Target",
+            "volume": "11",
+            "issn": "",
+            "pages": "489-493",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/10611860410001670035"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Persistence of Brucella abortus strain 19 infection in adult cattle vaccinated with reduced doses",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Corner",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Alton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Res Vet Sci",
+            "volume": "31",
+            "issn": "",
+            "pages": "342-344",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Mucosal and cellular immune responses elicited by recombinant Lactococcus lactis strains expressing tetanus toxin fragment C",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Chamberlain",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rush",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Marcotte",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Le Page",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Infect Immun",
+            "volume": "72",
+            "issn": "",
+            "pages": "2753-2761",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.72.5.2753-2761.2004"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Expression of SARS-coronavirus nucleocapsid protein in Escherichia coli and Lactococcus lactis for serodiagnosis and mucosal vaccination",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Pei",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Appl Microbiol Biotechnol",
+            "volume": "68",
+            "issn": "",
+            "pages": "220-227",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00253-004-1869-y"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "A novel mucosal vaccine based on live lactococci expressing E7 antigen and IL-12 induces systemic and mucosal immune responses and protects mice against Human Papillomavirus Type 16-induced tumors",
+            "authors": [
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Bermudez-Humaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Cortes-Perez",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lefevre",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Guimaraes",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rabot",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Alcocer-Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Gratadoux",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rodriguez-Padilla",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Tamez-Guerra",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Corthier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Immunol",
+            "volume": "175",
+            "issn": "",
+            "pages": "7297-7302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Production and targeting of the Brucella abortus antigen L7/L12 in Lactococcus lactis: first step towards food-grade live vaccines against brucellosis",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ribeiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Azevedo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Dieye",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Piard",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Appl Environ Microbiol",
+            "volume": "68",
+            "issn": "",
+            "pages": "910-916",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.68.2.910-916.2002"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Controlled intra- or extracellular production of staphylococcal nuclease and ovine omega interferon in Lactococcus lactis",
+            "authors": [
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Berm\u00fadez-Humar\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Commissaire",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "L'Haridon",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Corthier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "FEMS Microbiol Lett",
+            "volume": "224",
+            "issn": "",
+            "pages": "307-313",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0378-1097(03)00475-0"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "The immune response to Lactococcus lactis : implications for its use as a vaccine delivery vehicle",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "RWF",
+                    "middle": [],
+                    "last": "Le Page",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "FEMS Microbiol Lett",
+            "volume": "120",
+            "issn": "",
+            "pages": "249-256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Factors affecting the immunogenicity of tetanus toxin fragment C expressed in Lactococcus lactis",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Macpherson",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Le Page",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "FEMS Immunol Med Microbiol",
+            "volume": "14",
+            "issn": "",
+            "pages": "167-177",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Cloning of usp45, a gene encoding a secreted protein from Lactococcus lactis subsp. lactis MG1363",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "van Asseldonk",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rutten",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Oteman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Siezen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "de Vos",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Simons",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Gene",
+            "volume": "95",
+            "issn": "",
+            "pages": "155-160",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0378-1119(90)90428-T"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Direct screening of recombinants in Gram-positive bacteria using the secreted staphylococcal nuclease as a reporter",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Ehrlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Bacteriol",
+            "volume": "176",
+            "issn": "",
+            "pages": "5135-5139",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Controlled gene expression systems for Lactococcus lactis with the food-grade inducer nisin",
+            "authors": [
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "de Ruyter",
+                    "suffix": ""
+                },
+                {
+                    "first": "OP",
+                    "middle": [],
+                    "last": "Kuipers",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "de Vos",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Appl Environ Microbiol",
+            "volume": "62",
+            "issn": "",
+            "pages": "3662-3667",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Biological properties of RB51; a stable rough strain of Brucella abortus",
+            "authors": [
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Schurig",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Roop",
+                    "suffix": "2nd"
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Bagchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Boyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Buhrman",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sriranganathan",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Vet Microbiol",
+            "volume": "28",
+            "issn": "",
+            "pages": "171-188",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0378-1135(91)90091-S"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sambrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Fritsch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Maniatis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Molecular cloning: a laboratory manual",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Efficient plasmid mobilization by pIP501 in Lactococcus lactis subsp. lactis",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Ehrlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "J Bacteriol",
+            "volume": "175",
+            "issn": "",
+            "pages": "5806-5813",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Chaperone-mediated protein folding",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Fink",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Physiol Rev",
+            "volume": "79",
+            "issn": "",
+            "pages": "425-449",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Conservation among HSP60 sequences in relation to structure, function, and evolution",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brocchieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Protein Sci",
+            "volume": "9",
+            "issn": "",
+            "pages": "476-486",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Protein secretion in Lactococcus lactis : an efficient way to increase the overall heterologous protein production",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Azevedo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Freitas",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Miyoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Berm\u00fadez-Humar\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nouaille",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ribeiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Leclercq",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Gabriel",
+                    "suffix": ""
+                },
+                {
+                    "first": "VD",
+                    "middle": [],
+                    "last": "Guimaraes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Charlier",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gautier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Microb Cell Fact",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2859-4-2"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Cellular prion protein promotes Brucella infection into macrophages",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Watarai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Erdenebaatar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Makino",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Horiuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Shirahata",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sakaguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Katamine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Exp Med",
+            "volume": "198",
+            "issn": "",
+            "pages": "5-17",
+            "other_ids": {
+                "DOI": [
+                    "10.1084/jem.20021980"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "The complete genome sequence of the lactic acid bacterium Lactococcus lactis ssp. lactis IL1403",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bolotin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wincker",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mauger",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Jaillon",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Malarme",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Weissenbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Ehrlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sorokin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "731-753",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.GR-1697R"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Bovine rotavirus nonstructural protein 4 produced by Lactococcus lactis is antigenic and immunogenic",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Enouf",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Commissaire",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Corthier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Appl Environ Microbiol",
+            "volume": "67",
+            "issn": "",
+            "pages": "1423-1428",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.67.4.1423-1428.2001"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "HtrA is the unique surface housekeeping protease in Lactococcus lactis and is required for natural protein processing",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Poquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Saint",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Seznec",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Simoes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bolotin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol Microbiol",
+            "volume": "35",
+            "issn": "",
+            "pages": "1042-1051",
+            "other_ids": {
+                "DOI": [
+                    "10.1046/j.1365-2958.2000.01757.x"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Controlled production of stable heterologous proteins in Lactococcus lactis",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Miyoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Poquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Azevedo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Commissaire",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Berm\u00fadez-Humar\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Domakova",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Appl Environ Microbiol",
+            "volume": "68",
+            "issn": "",
+            "pages": "3141-3146",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.68.6.3141-3146.2002"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Immune responses and protection against infection and abortion in cattle experimentally vaccinated with mutant strains of Brucella abortus",
+            "authors": [
+                {
+                    "first": "NF",
+                    "middle": [],
+                    "last": "Cheville",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Stevens",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Tatum",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Halling",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Am J Vet Res",
+            "volume": "54",
+            "issn": "",
+            "pages": "1591-1597",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Studies on the Epstein-Bart virus genome",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "PhD thesis",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Quorum sensing controlled gene expression in lactic acid bacteria",
+            "authors": [
+                {
+                    "first": "OP",
+                    "middle": [],
+                    "last": "Kuipers",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "de Ruyter",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kleerebezem",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "de Vos",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Biotechnol",
+            "volume": "64",
+            "issn": "",
+            "pages": "15-21",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0168-1656(98)00100-X"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "DNA sequencing with chain-terminating inhibitors",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sanger",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nicklen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Coulson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "74",
+            "issn": "",
+            "pages": "5463-5467",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Basic Local Alignment Search Tool \u2013 BLAST",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "ClustalW",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Protein Families Database \u2013 Pfam",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "A nine-residue synthetic propeptide enhances secretion efficiency of heterologous proteins in Lactococcus lactis",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Loir",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gruss",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Ehrlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Langella",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Bacteriol",
+            "volume": "180",
+            "issn": "",
+            "pages": "1895-1903",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Subcloning and expression of the Brucella abortus L7/L12 ribosomal gene and T-lymphocyte recognition of the recombinant protein",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Splitter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Infect Immun",
+            "volume": "62",
+            "issn": "",
+            "pages": "5201-5204",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Identification of an immunoreactive Brucella abortus HtrA stress response protein homolog",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Roop",
+                    "suffix": "2nd"
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Sriranganathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Boyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Schurig",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Infect Immun",
+            "volume": "62",
+            "issn": "",
+            "pages": "1000-1007",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Recombinant Brucella abortus proteins that induce proliferation and gamma-interferon secretion by CD4+ T cells from Brucella-vaccinated mice and delayed-type hypersensitivity in sensitized guinea pigs",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Harms",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Banai",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Splitter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Cell Immunol",
+            "volume": "172",
+            "issn": "",
+            "pages": "262-268",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/cimm.1996.0241"
+                ]
+            }
+        },
+        "BIBREF55": {
+            "title": "Overexpression of protective antigen as a novel approach to enhance vaccine efficacy of Brucella abortus strain RB51",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Vemulapalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Boyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sriranganathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Schurig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Infect Immun",
+            "volume": "68",
+            "issn": "",
+            "pages": "3286-3289",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.68.6.3286-3289.2000"
+                ]
+            }
+        }
+    }
+}

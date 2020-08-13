@@ -1,0 +1,1254 @@
+{
+    "paper_id": "PMC2366929",
+    "metadata": {
+        "title": "Profile\u2013profile comparisons by COMPASS predict intricate homologies between protein families",
+        "authors": [
+            {
+                "first": "Ruslan",
+                "middle": [
+                    "I."
+                ],
+                "last": "Sadreyev",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [],
+                "last": "Baker",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nick",
+                "middle": [
+                    "V."
+                ],
+                "last": "Grishin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The search with COMPASS was performed using the PFAM database of multiple sequence alignments (Bateman et al. 2002; version 6.6). Specifically, we used 1717 PFAM alignments that do not contain sequences with known protein structures for the COMPASS search with default parameters (filtering out alignment columns with more than 50% effective counts of gaps, BLOSUM62 residue substitution matrix, gap penalties 11 + k) against the set of 1354 PFAM families with solved structure, which had members included in the PDB database. The \u201cfull\u201d PFAM alignments were used (as opposed to the \u201cseed\u201d alignments).",
+            "cite_spans": [
+                {
+                    "start": 95,
+                    "end": 114,
+                    "mention": "Bateman et al. 2002",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In parallel, we performed PSI-BLAST searches in the same database. For this task, we extracted all of the individual sequences from the PFAM alignments of the families with known structure, resulting in a database of 311,753 sequences. In this sequence database, we ran PSI-BLAST searches using each of the families with unresolved structures as a query (one round of the PSI-BLAST 2.2.1 search with a PSI-BLAST numerical profile derived from the alignment; the template sequence was set to the first sequence of the query alignment; the maximal number of displayed hits and the maximal E-value were both set to 10,000). After producing a list of sequence hits for the query alignment, we considered the families with known structures, finding a sequence with the best E-value in each of them. This best E-value was assigned to the PSI-BLAST comparison of the query alignment and the given family. This setup for the COMPASS and PSI-BLAST searches has been previously used for the comparisons within the group of PFAM alignments with known structures (Sadreyev and Grishin 2003).",
+            "cite_spans": [
+                {
+                    "start": 1052,
+                    "end": 1077,
+                    "mention": "Sadreyev and Grishin 2003",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To choose COMPASS hits of potential interest, we discarded all similarities between protein families detected by COMPASS that had PSI-BLAST E-values <0.1. COMPASS hits that corresponded to higher PSI-BLAST E-values and thus passed the initial filtering were subjected to a more thorough analysis. From 518 such hits that did not include apparent transmembrane proteins, we chose ~100 COMPASS alignments of interest, which covered substantial protein regions and were not restricted to trivial similarities (e.g., P-loops). After this step, we further excluded the results that could be easily reproduced by running multiple iterations of PSI-BLAST against the NCBI nr sequence database, with various family members as queries, and the families that contained prokaryotic sequences assigned to a characterized COG (Tatusov et al. 1997, 2001). Sequences from the remaining PFAM alignments were submitted to the PHD server (Rost 1996; Przybylski and Rost 2002) for secondary structure predictions (with the option of iterated PSI-BLAST searches against SWISS-PROT, TrEMBL, and PDB databases). Using the available option of the PHD server, we also submitted PFAM alignments for the secondary structure prediction. Both PSI-BLAST and PFAM profiles produced similar PHD predictions. The sequences from the PFAM alignments were also submitted to the fold-recognition servers: 3D-PSSM (Kelley et al. 2000; version 2.6.0, using fold library 1.53.7660 and sequence database 2002.9.4) and bioinbgu (Fischer 2000; version as of September 2002). Iterated PSI-BLAST searches were performed in the NCBI nr database using the sequences from PFAM alignments as queries. The PSI-BLAST hits with E-values higher than the default cutoff were manually inspected. In cases in which the sequence length was <150 residues, it was submitted to the ROSETTA package for the ab initio prediction of protein structure (standalone version as of March 2002). To generate the input profile for ROSETTA, a PSI-BLAST search with the E-value cutoff of 0.001 was used; minimum sequence identity for inclusion in the profile was set to 25%; the PHD secondary structure prediction was used along with the profile to generate two sets of fragments of sizes 9 and 3; and the minimum allowed confidence for fragment prediction was set to 0.25. For each sequence, 2000 decoy structures (output in the PDB format) were generated and clustered by structure similarity. The decoys serving as the centers for the largest 10 clusters were examined.",
+            "cite_spans": [
+                {
+                    "start": 814,
+                    "end": 833,
+                    "mention": "Tatusov et al. 1997",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 835,
+                    "end": 839,
+                    "mention": "2001",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 921,
+                    "end": 930,
+                    "mention": "Rost 1996",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 932,
+                    "end": 956,
+                    "mention": "Przybylski and Rost 2002",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1378,
+                    "end": 1396,
+                    "mention": "Kelley et al. 2000",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1488,
+                    "end": 1500,
+                    "mention": "Fischer 2000",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on this additional information, the COMPASS hits were validated, and the initial profile\u2013profile alignments were manually refined. For any method involving automated sequence alignment, such a refinement increases the quality of the initial prediction by using data other than the sequence information, and by detailed manual assessment of these data. The refinement was based on the analysis of secondary structure elements, residue properties (hydrophobicity, charge, size, etc.), and conservation at the alignment positions, potential functionally and structurally important sites in the protein families. As shown previously (Sadreyev and Grishin 2003), the accuracy of the COMPASS alignments is higher than the accuracy of alignments produced by other tested automated methods for sequence\u2013profile or profile\u2013profile comparison. As shown in Figures 1 \u25b6\u20134 \u25b6, the manually refined alignments were in general similar to those initially produced by COMPASS. The main differences included slight local shifts of aligned positions and inclusion of longer profile regions after the manual analysis. Based on the resulting alignments, the tertiary structure of the families of interest was proposed.",
+            "cite_spans": [
+                {
+                    "start": 636,
+                    "end": 661,
+                    "mention": "Sadreyev and Grishin 2003",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 861,
+                    "end": 863,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 865,
+                    "end": 867,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "We also compared the results of COMPASS to those of two other available methods of profile\u2013profile comparison, LAMA (Pietrokovski 1996) and prof_sim (Yona and Levitt 2002). To perform the LAMA search, we first submitted the PFAM alignment to the Blocks Multiple Alignment Processor server (http://blocks.fhcrc.org/blocks/process_blocks.html) and generated the alignment blocks, which were used as queries to search with LAMA (version as of 04/28/2000) in the Blocks+ database with the default parameters (minimal length of reported alignments set to 4, Z-score cutoff set to 5.6). The version of prof_sim, which was generously provided by G. Yona (Cornell University), performs pairwise comparisons between submitted profiles. We submitted the pairs of interest and compared the resulting alignments and E-values to those by produced COMPASS. For the generated profile\u2013profile alignments, prof_sim estimates P-values, which should be multiplied by the number of profiles in the database (1354 in our case) to obtain E-values (G. Yona, pers. comm.).",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 134,
+                    "mention": "Pietrokovski 1996",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 150,
+                    "end": 170,
+                    "mention": "Yona and Levitt 2002",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "DUF185 is a family of protein domains found in bacteria, plants, and animals. In PFAM 7.6, it is described as \u201cuncharacterized domain in proteins of unknown function.\u201d In the COG database (Tatusov et al. 1997, 2001), this domain corresponds to uncharacterized ACR (COG1565).",
+            "cite_spans": [
+                {
+                    "start": 189,
+                    "end": 208,
+                    "mention": "Tatusov et al. 1997",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 210,
+                    "end": 214,
+                    "mention": "2001",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "DUF185 is homologous to methyltransferases ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Using this PFAM alignment as the query, COMPASS search in the set of PFAM families with known structure detected the similarity of DUF185 to the RrnaAD family (Table 1). RrnaAD contains ribosomal RNA adenine dimethylases found in archaea, bacteria, plants, fungi, and animals. According to SCOP (Murzin et al. 1995) classification, these proteins belong to the family of RNA methylases, with an S-adenosyl-L-methionine-dependent methyltransferase fold.",
+            "cite_spans": [
+                {
+                    "start": 296,
+                    "end": 314,
+                    "mention": "Murzin et al. 1995",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "DUF185 is homologous to methyltransferases ::: Results",
+            "ref_spans": [
+                {
+                    "start": 167,
+                    "end": 167,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 1A \u25b6 shows the alignment of two sequences that represents the profile\u2013profile alignment constructed by COMPASS, and the multiple alignment of representative sequences from the two families that was produced by the manual refinement of the COMPASS result. This multiple alignment includes a portion of DUF185 and the region of RrnaAD that contains the specific signature of this family (PROSITE entry PS01131): [LIVM]\u2013[LIVMFY]\u2013[DE]\u2013x\u2013G\u2013[STAPV]\u2013G\u2013x\u2013[GA]\u2013x\u2013[LIVMF]\u2013[ST]\u2013x(2)\u2013[LIVM]\u2013x(6)\u2013[LIVMY]\u2013x\u2013[STAGV]\u2013[LIVMFYHC]\u2013E\u2013x\u2013D (Fig. 2A \u25b6). In the rRNA methylase structure, this region corresponds to the two adjacent \u03b2/\u03b1 units that are involved in S-adenosyl methionine binding. The produced alignment reveals a remarkable conservation of this signature in the DUF185 family, including the invariant ligand-binding glutamate residues. In addition to the conserved signature pattern, the aligned regions have similar profiles of hydrophobicity and location of small residues. The secondary structure prediction for this part of DUF185 is consistent with the location of the known secondary structure elements in rRNA methylase (PDB ID 1yub; Fig. 2A,B \u25b6). The predicted secondary structure of the full-length DUF185 proteins (data not shown) comprises a pattern of consequent \u03b2\u2013\u03b1 units similar to the secondary structure arrangement of methylases. These similarities indicate that the DUF185 family possesses a Rossmann-like fold and may function as methylases.",
+            "cite_spans": [],
+            "section": "DUF185 is homologous to methyltransferases ::: Results",
+            "ref_spans": [
+                {
+                    "start": 9,
+                    "end": 11,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 534,
+                    "end": 536,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1148,
+                    "end": 1150,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "For the majority of individual DUF185 proteins, PSI-BLAST 2.2.4 searches with default parameters in the NCBI nr database did not produce methylase hits up to convergence, although methylases could be found among the hits with E-values higher than the inclusion cutoff of 0.005. For several DUF185 proteins, PSI-BLAST searches found methylases with E-values lower than the default cutoff, but the hits required as many as 8\u201312 iterations of PSI-BLAST. When the DUF185 alignment was submitted to the Blocks Multiple Alignment Processor server and the resulting blocks were used for the LAMA search in the Blocks+ database, a high Z-score was assigned to a block of the rRNA adenine dimethylase family (Table 1). One of the other three weaker hits (block IPB001566A, LAMA Z-score 6.3) also represented a methyltransferase family, RNA methyltransferase trmA. The prof_sim method produced the alignment of the DUF185 and RrnaAD profiles that reflected the similarity between the main conserved sites found by COMPASS, although with a marginal P-value (Table 1).",
+            "cite_spans": [],
+            "section": "DUF185 is homologous to methyltransferases ::: Results",
+            "ref_spans": [
+                {
+                    "start": 707,
+                    "end": 707,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1054,
+                    "end": 1054,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "This prediction based on a result of COMPASS search and confirmed by PSI-BLAST searches is further supported by the predictions produced by the fold-recognition servers. The bioingbu server assigned a high consensus score (Table 1) to the top consensus prediction, mycolic acid cyclopropane synthase CmaA1 (PDB ID 1kpiA), which is classified within the same SCOP superfamily (S-adenosyl-L-methionine-dependent methyltransferases) as rRNA methylases. rRNA methylase Ermc\u2032 (PDB ID 1qaoA) was assigned a consensus score of 3.9. Similarly, the top two 3D-PSSM predictions were mycolic acid cyclopropane synthase CmaA1 (PDB ID 1kp9A; Table 1) and rRNA methyltransferase Ermc\u2032 (PDB ID 1qamA), with an E-value of 3.32 \u00d7 10\u22121.",
+            "cite_spans": [],
+            "section": "DUF185 is homologous to methyltransferases ::: Results",
+            "ref_spans": [
+                {
+                    "start": 230,
+                    "end": 230,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 636,
+                    "end": 636,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "DUF128 is a family of proteins found in Archaea; the function of these proteins is unknown, according to PFAM 7.6. In the COG database, they correspond to COG1693, which is labeled as an uncharacterized ArCR. Several additional close homologs of DUF128 were detected by PSI-BLAST searches.",
+            "cite_spans": [],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "COMPASS detected profile similarity between DUF128 and the HTH_5 family (Table 1), which includes bacterial transcription regulatory proteins from the arsR family. In the SCOP database, members of HTH_5 belong to the superfamily of \u201cwinged helix\u201d DNA-binding domains, the DNA/RNA-binding 3-helical bundle fold (Fig. 2B \u25b6). The alignment produced by COMPASS includes the N-terminal region of DUF128 that corresponds to the bundle of the three helices and the following \u03b2-hairpin (the \u201cwing\u201d) in HTH_5. This alignment is shown in Figure 2A \u25b6 along with the manually refined multiple alignment of the two families. The multiple alignment reveals a significant similarity in the patterns of hydrophobicity over the major portion of both domains. The secondary structure prediction for the DUF128 representatives is consistent with the structure of the aligned regions in the HTH_5 family. These similarities indicate the putative secondary structure elements in the DUF128 domain (Fig. 2A \u25b6).",
+            "cite_spans": [],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": [
+                {
+                    "start": 318,
+                    "end": 320,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 537,
+                    "end": 539,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 984,
+                    "end": 986,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 80,
+                    "end": 80,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Our prediction that the DUF128 and the HTH_5 families are homologs and possess similar structures was supported by the fold-recognition predictions produced by bioinbgu and 3D-PSSM servers. The top consensus prediction of the bioinbgu server was 1dprA, a structure that contains a winged helix DNA-binding domain, according to SCOP. The produced alignment and predicted secondary structure were consistent with the alignment generated by COMPASS. The top predictions by 3D-PSSM (with E-values ~ 0.1\u20130.3) included 1jmrA (newer version 1mkmA; Table 1), 1fk7A, and 1bib, all containing a winged helix DNA-binding domain.",
+            "cite_spans": [],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": [
+                {
+                    "start": 548,
+                    "end": 548,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "When the N-terminal part of the DUF128 alignment was submitted to the Blocks Multiple Alignment Processor server and the resulting blocks were used for the LAMA search in the Blocks+ database, similarities to three blocks of HTH motifs were detected, the highest similarity being to the ArsR family (Table 1). Prof_sim generated the alignment that included approximately the same regions as were included in the COMPASS alignment, although the P-value corresponded to the high E-value of 66.3 (Table 1). As an additional support of our hypothesis, one of the DUF128 homologs from an archaeal genome (Slesarev et al. 2002) detected by PSI-BLAST in the NCBI nr database (GenBank GI 20093775) was recently annotated as a predicted transcriptional regulator containing a wHTH DNA-binding domain. However, to our knowledge, the prediction has not been discussed in the literature and was not reflected in public databases of protein families.",
+            "cite_spans": [
+                {
+                    "start": 600,
+                    "end": 620,
+                    "mention": "Slesarev et al. 2002",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": [
+                {
+                    "start": 307,
+                    "end": 307,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 501,
+                    "end": 501,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "A relatively small size of the complete domain predicted within DUF_128 allowed us to use the ROSETTA method for ab initio structure prediction. The N-terminal sequence region of 71 residues from a DUF128 protein (GenBank GI 20093775), which was included in the DUF128/HTH_5 alignment, was submitted to ROSETTA. One of the top-ranking structure predictions produced by ROSETTA, the center of the second largest decoy cluster (29 decoys), was strikingly similar to the known structure of an HTH_5 protein, 1smtB (Fig. 2C \u25b6). This structure was consistent with the prediction made by COMPASS. The higher-ranking center of the biggest decoy cluster (50 decoys) did not represent a reasonably folded structure. The situation when the correct prediction corresponds not to the top decoy cluster but to one of the lower-ranking clusters frequently occurs when using ROSETTA (Bonneau et al. 2001; Simons et al. 2001), and at least several largest decoy clusters should be examined for each set of ROSETTA results.",
+            "cite_spans": [
+                {
+                    "start": 869,
+                    "end": 888,
+                    "mention": "Bonneau et al. 2001",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 890,
+                    "end": 908,
+                    "mention": "Simons et al. 2001",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": [
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Furthermore, the structural identities of residues that were indicated by ROSETTA appeared to be a useful additional source of information for the manual refinement of the DUF128/HTH_5 alignment. The alignment of the structure predicted by ROSETTA and the structure of HTH_5 protein 1smtB (Fig. 2A \u25b6) was consistent with the COMPASS alignment in the region of helix C (Fig. 2A \u25b6, highlighted with yellow), but it was significantly different in the region of helix B and the turn between helices B and C (Fig. 2A \u25b6, highlighted with red). The alignment of this region proposed by ROSETTA was more biologically reasonable, because (1) it lined up the DUF128 regions with strong helical propensities (B and C) to the helices of the same length in the HTH protein; and (2) it located a structurally reasonable position of the functionally important turn between the two helices. Therefore, the ROSETTA alignment was used in the refinement of the initial COMPASS result. The alignment in the turn region, which comprises the functional DNA-binding site, was especially challenging, because in DUF128 this region presumably contains a two-residue insertion and is different from the typical turn in HTH proteins (Fig. 2A \u25b6, the site marked with the red line in the ROSETTA alignment).",
+            "cite_spans": [],
+            "section": "DUF128 contains a \u201cwinged helix\u201d domain ::: Results",
+            "ref_spans": [
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 376,
+                    "end": 378,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 511,
+                    "end": 513,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1214,
+                    "end": 1216,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "PPR (pentatricopeptide repeats) is a family of ~35-residue repeats of unknown function, which are found in eukaryotic proteins, with especially wide distribution in plants. No structures of PPR have been solved. This family was hypothesized to be related to a large and functionally diverse superfamily of TPRs (tetratricopeptide repeats; Small and Peeters 2000) involved in protein\u2013protein interactions (Blatch and Lassle 1999; Groves and Barford 1999; Andrade et al. 2001).",
+            "cite_spans": [
+                {
+                    "start": 339,
+                    "end": 361,
+                    "mention": "Small and Peeters 2000",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 405,
+                    "end": 427,
+                    "mention": "Blatch and Lassle 1999",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 429,
+                    "end": 452,
+                    "mention": "Groves and Barford 1999",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 454,
+                    "end": 473,
+                    "mention": "Andrade et al. 2001",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "COMPASS detected a significant similarity of PPR to one particular family of the TPR-related motifs, clathrin repeats (Clathrin in PFAM 7.6 and later versions; Table 1). This family contains repeats from the arm region of the clathrin heavy chain and from vacuolar protein-sorting (VPS) proteins. The heavy chains of clathrin include seven such tandem repeats of two antiparallel \u03b1-helices, which form a groove that may be used for protein\u2013protein interactions (Fig. 3 \u25b6).",
+            "cite_spans": [],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": [
+                {
+                    "start": 468,
+                    "end": 470,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 167,
+                    "end": 167,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "COMPASS alignment of PPR to clathrin repeats included major portions of these motifs and was manually extended to the full-length alignment (Fig. 3A \u25b6). This alignment reveals similar patterns of hydrophobicity between the two families. The predicted secondary structure elements in the PPR motif (two helices connected by a loop) are consistent with the known secondary structure of clathrin repeats.",
+            "cite_spans": [],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": [
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The sequences of the PPR family were too short to produce any hits when used as PSI-BLAST queries. Apparently the length of the query presented a problem for the fold-recognition servers as well: bioingbu did not accept the submission of short sequences, whereas 3D-PSSM produced no predictions with E-value less than 90, the top prediction being a C2H2 zinc-finger motif (Table 1). On the contrary, the scoring system implemented in COMPASS allows statistically significant alignments of short regions because it takes into consideration the effective number of residues in the alignment columns. Thus, the method may assign low E-values to the similarities between short but \u201cthick\u201d alignment segments, which reflects the higher reliability of statistical sampling derived from thick alignments.",
+            "cite_spans": [],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": [
+                {
+                    "start": 380,
+                    "end": 380,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "When the PFAM alignment of the PPR family was submitted to the Blocks Multiple Alignment Processor and the resulting blocks were used as queries for the LAMA search in the Blocks+ database, no hits were found that would correspond to the similarity between PPR and clathrin repeats. The alignment of PPR and Clathrin_repeat profiles generated by prof_sim was assigned the P-value corresponding to the high E-value of 13.2 (Table 1).",
+            "cite_spans": [],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": [
+                {
+                    "start": 430,
+                    "end": 430,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "When a sequence of the PPR family (GenBank GI 1705915) was submitted to ROSETTA for ab initio structure prediction, the top-ranking structure produced by ROSETTA was highly similar to the clathrin repeat structure (Fig. 3B,C \u25b6). It included two antiparallel helices whose location in the sequence was consistent with COMPASS alignment. This ROSETTA prediction further confirms our hypothesis that the clathrin repeat motif is the closest homolog of the PPR motif.",
+            "cite_spans": [],
+            "section": "Clathrin repeats are closest homologs of PPR motif ::: Results",
+            "ref_spans": [
+                {
+                    "start": 224,
+                    "end": 226,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Astro_capsid is the family of viral capsid protein precursors encoded by astrovirus ORF2, one of the three astrovirus ORFs. The members of this family are found in Astroviridae and in avian nephritis virus. The 87-kD precursor undergoes an intracellular cleavage to form a 79-kD protein, and the subsequent extracellular trypsin cleavage produces the three proteins that form the infectious virion (Bass and Qiu 2000).",
+            "cite_spans": [
+                {
+                    "start": 399,
+                    "end": 416,
+                    "mention": "Bass and Qiu 2000",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "A product of the protein precursors from Astro_capsid family is homologous to Viral_coat family ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "COMPASS assigned a low E-value to an extended alignment of Astro_capsid to the Viral_coat family (Table 1). Viral_coat contains the S domain of the capsid proteins from plant icosahedral positive-strand RNA viruses (Dolja and Koonin 1991), the domain that forms the virion shell. COMPASS detected the similarity between this domain and the first of the three Astro_capsid proteins (Fig. 4 \u25b6). After the manual refinement, it was possible to extend COMPASS alignment to the full length of Viral_coat sequences (Fig. 4A \u25b6). The resulting multiple alignment reveals the significant similarity in the patterns of hydrophobicity and in the location of small residues over the whole length of the first Astro_capsid product and the Viral_coat domains. This similarity infers their homology and indicates that the first Astro_capsid protein possesses an all-\u03b2 structure similar to that of the S domain of the capsid proteins from plant icosahedral positive-strand RNA viruses.",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 237,
+                    "mention": "Dolja and Koonin 1991",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "A product of the protein precursors from Astro_capsid family is homologous to Viral_coat family ::: Results",
+            "ref_spans": [
+                {
+                    "start": 388,
+                    "end": 390,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 517,
+                    "end": 519,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 105,
+                    "end": 105,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The top fold-recognition predictions for the N-terminal part of the Astro_capsid precursor were consistent with COMPASS results: both 3D-PSSM and bioinbgu servers predicted the highest similarity to a plant icosahedral virus protein (PDB ID 1bmv, Table 1).",
+            "cite_spans": [],
+            "section": "A product of the protein precursors from Astro_capsid family is homologous to Viral_coat family ::: Results",
+            "ref_spans": [
+                {
+                    "start": 254,
+                    "end": 254,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "This homology could not be detected using Astro_capsid members as queries for extensive PSI-BLAST searches with default parameters. However, for some of the Astro_capsid sequences, PSI-BLAST predicted similarity to the viral coat proteins with E-values higher than the default cutoff. For the blocks prepared from the Astro_capsid alignment with the Blocks Multiple Alignment Processor, several similar blocks of viral capsid proteins were detected in the Blocks+ database by LAMA: coronavirus nucleocapsid proteins (Table 1), as well as herpesvirus UL25 proteins involved in virus penetration and capsid assembly (IPB002493A), tymovirus coat proteins (IPB000574A), and Gag retroviral nucleocapsid proteins (IPB000721B). Prof_sim produced a shorter alignment, with the residue equivalences different from that of COMPASS and a high P-value (Table 1).",
+            "cite_spans": [],
+            "section": "A product of the protein precursors from Astro_capsid family is homologous to Viral_coat family ::: Results",
+            "ref_spans": [
+                {
+                    "start": 524,
+                    "end": 524,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 848,
+                    "end": 848,
+                    "mention": "",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Here we present several examples of novel similarities between PFAM protein families detected by COMPASS. We consider these family relationships interesting because they allow structure and function predictions for proteins with unresolved structure and reveal the evolutionary connections that were not previously reported in the literature. These similarities were assigned low E-values after a single COMPASS search in the set of 1354 PFAM alignments. However, they could not be automatically found by iterative PSI-BLAST searches with default parameters in the NCBI nr database. In several cases (DUF128, DUF185, and Astro_capsid families), the similarities found by COMPASS were also detected by another method for profile\u2013profile comparison, LAMA, which produced high Z-scores for ungapped alignments between short alignment blocks. The third available profile\u2013profile comparison method, prof_ sim, assigned too conservative estimates of E-values for the produced alignments, although in several cases, the alignments were similar to those constructed by COMPASS.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "All of the presented COMPASS hits were independently confirmed by other methods for protein structure predictions. Most of the predicted similarities could be found by a skilled PSI-BLAST user among hits with high E-values, after a number of PSI-BLAST iterations. The secondary structure predictions for the families with unknown structure were consistent with the alignments produced by COMPASS. The predictions made by the fold-recognition (threading) servers (3D-PSSM and bioinbgu), which use versatile additional information (matching of secondary structure elements, propensities of the residues in the respect of solvent accesibility, etc.), were also generally in a good accord with COMPASS results. Finally, in the two cases in which the predicted protein regions were short enough to use ROSETTA, it produced the ab initio structural predictions that were strikingly similar to the proteins with known structure found by COMPASS. Although the presented similarities between the PFAM families could be predicted by other methods, the search by COMPASS was particularly well-fitted for this task, because this method uses only the minimal sequence information from the two compared alignments, and it makes the statistically significant predictions after a single search of the profile database.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The difference between the scoring systems implemented in COMPASS and PSI-BLAST becomes especially pronounced in the case of short regions of similarity between two alignments, which is presented by the found similarity between 34\u201335-residue motifs, PPR, and clathrin repeats (Fig. 3 \u25b6). The scoring system implemented in COMPASS allows statistically significant alignments of short regions because it explicitly takes into account the effective counts of amino acids in the alignment columns rather than the residue frequencies alone. Thus, two alignment columns with similar amino acid frequency distributions will receive a higher matching score if they contain higher effective numbers of residues, because such a positive match is statistically more significant. In many cases (not shown), COMPASS reveals local structural similarities between the families, which are insufficient for homology prediction but represent important localized structural motifs, such as P-loops (Walker A), FAD/NAD binding motifs, Zn fingers, and so on. The evolutionary implications of such local structural similarities between different protein folds have been discussed, arguments being made for both convergent and divergent evolution (Fetrow and Godzik 1998; Copley et al. 2001; Lupas et al. 2001).",
+            "cite_spans": [
+                {
+                    "start": 1225,
+                    "end": 1247,
+                    "mention": "Fetrow and Godzik 1998",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1249,
+                    "end": 1267,
+                    "mention": "Copley et al. 2001",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1269,
+                    "end": 1286,
+                    "mention": "Lupas et al. 2001",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": " \u25b6",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "As for any method of sequence similarity detection, the produced alignments of interest should be further manually refined using the additional predictions provided by other methods. In this respect, ab initio structure predictions made by ROSETTA appeared to be a valuable independent source of information about the reasonable structural identities between the two families. When the tertiary structure suggested by ROSETTA possesses the correct protein fold, it may be superimposed with the known structure of the homolog predicted by another method and produce an alignment of structurally identical residues. These residue identities may be especially useful for the improvement of a sequence-derived alignment, because they are based on a reasonable folding of the polypeptide chain rather than on the information derived from sequence databases.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The PFAM database has been developing for a long time (Sonnhammer et al. 1997, 1998; Bateman et al. 1999, 2000, 2002), and has been extensively investigated for possible similarities between families using different approaches, which include manual inspection of alignment seeds by experts (Sonnhammer et al. 1997, 1998; Schultz et al. 1998; Bateman et al. 1999, 2000, 2002; Yona et al. 2000; de Bakker et al. 2001; Aloy et al. 2002; Pandit et al. 2002). The fact that COMPASS predicted new relations within this database of alignments indicates the high sensitivity of this method and its potential value for the discovery of previously unknown similarities. In particular, COMPASS search may be a useful initial step in the characterization of a novel alignment, because it provides an opportunity for fast and relatively easy detection of similarities to existing protein families.",
+            "cite_spans": [
+                {
+                    "start": 55,
+                    "end": 77,
+                    "mention": "Sonnhammer et al. 1997",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 79,
+                    "end": 83,
+                    "mention": "1998",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 85,
+                    "end": 104,
+                    "mention": "Bateman et al. 1999",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 106,
+                    "end": 110,
+                    "mention": "2000",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 112,
+                    "end": 116,
+                    "mention": "2002",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 291,
+                    "end": 313,
+                    "mention": "Sonnhammer et al. 1997",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 315,
+                    "end": 319,
+                    "mention": "1998",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 321,
+                    "end": 340,
+                    "mention": "Schultz et al. 1998",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 342,
+                    "end": 361,
+                    "mention": "Bateman et al. 1999",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 363,
+                    "end": 367,
+                    "mention": "2000",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 369,
+                    "end": 373,
+                    "mention": "2002",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 375,
+                    "end": 391,
+                    "mention": "Yona et al. 2000",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 393,
+                    "end": 414,
+                    "mention": "de Bakker et al. 2001",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 416,
+                    "end": 432,
+                    "mention": "Aloy et al. 2002",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 434,
+                    "end": 452,
+                    "mention": "Pandit et al. 2002",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: The results produced by various methods on the PFAM families of interest\nPFAM name and accession number are indicated for the families of unknown structure and the related families with solved structure that were found by COMPASS, as well as the COMPASS E-value for the found similarity. The top hits for the families of unknown structure produced by 3D-PSSM (PDB ID and E-value), bioinbgu (PDB ID and consensus score), and LAMA (Blocks accession number and Z-score) are shown, along with the P-values and E-values produced by prof_sim on the PFAM alignment pairs.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Sequence similarity between the DUF185 and RrnaAD families of the PFAM database indicates that DUF185 is a putative methylase domain. (A) Profile\u2013profile alignment, as constructed by COMPASS (shown as the alignment of two representative sequences), and manually refined multiple alignment including representatives from DUF185 (top) and RrnaAD (bottom) are illustrated. The TrEMBL identifier and first residue number are shown for each sequence. In the initial COMPASS alignment, matches with positive scores are highlighted in gray, and invariant residues are boxed. In the refined multiple alignment, the uncharged residues (all amino acids except D, E, K, and R) in mostly hydrophobic sites are highlighted in yellow, the nonhydrophobic residues (all amino acids except W, F, Y, M, L, I, and V) at mostly hydrophilic sites are highlighted in light gray, and the small residues (G, P, A, S, C, T, V) at positions occupied by mostly small residues are shown in red letters. The invariant glutamate residues are boxed in black. The identifier of the sequence with known spatial structure in RrnaAD (PDB Id 1yub) is highlighted in red. The PHD secondary structure predictions (SS pred.) are shown for this sequence and for the top sequence of the DUF185 alignment. The actual secondary structure of the 1yub fragment is shown below the alignment, with secondary structure elements labeled and colored according to the scheme shown in B. \u03b1-Helices and \u03b2-strands are displayed as arrows and cylinders, respectively. The region covered by the initial COMPASS alignment is shown with a red line below the multiple alignment. (B) A ribbon diagram of the fragment of rRNA methylase (PDB ID 1yub) that was drawn by MOLSCRIPT (Kraulis 1991). N and C termini are labeled. The highlighted region corresponds to the alignment in A; \u03b1-helices are colored in blue; \u03b2-strands are colored in yellow.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Sequence similarity between the DUF128 and HTH_5 families of PFAM implies that DUF128 contains a \u201cwinged helix\u201d domain. (A) Profile\u2013profile alignment, as constructed by COMPASS (shown as the alignment of two representative sequences), structure-based alignment of ROSETTA prediction, and manually refined multiple alignment including representatives from DUF128 (top) and HTH_5 (bottom) are illustrated. GenBank identifiers (GI) are shown for the sequences of the extended DUF128 family (top); TrEMBL identifiers are shown for the sequences of the HTH_5 family (bottom). The first residue number is shown for each sequence. In the initial COMPASS alignment, matches with positive scores are highlighted in gray, and invariant residues are boxed. In the structure-based alignment of ROSETTA prediction and a winged helix domain (PDB ID 1smtB), the regions in the vicinity of the functional site that were used in the manual refinement of COMPASS alignment are highlighted. (Yellow) The region consistent with COMPASS alignment; (red) the region that includes the more reasonable ROSETTA-based alignment than that produced by COMPASS. The functionally important turn between the helices B and C, with a two-residue insertion, is marked by the red line above the alignment. In the refined multiple alignment, the uncharged residues (all amino acids except D, E, K, and R) in mostly hydrophobic sites are highlighted in yellow, the nonhydrophobic residues (all amino acids except W, F, Y, M, L, I, and V) at mostly hydrophilic sites are highlighted in light gray, and the small residues (G, P, A, S, C, T, V) at positions occupied by mostly small residues are shown in red letters. Long insertions are not displayed: The numbers of omitted residues are specified in brackets. The identifier of the sequence with known spatial structure in HTH_5 (PDB Id 1smtB) is highlighted in red. The PHD secondary structure predictions (SS pred.) are shown for this sequence and for the top sequence of the DUF128 alignment. The actual secondary structure of the 1smtB fragment is shown below the alignment, with secondary structure elements labeled and colored according to the scheme shown in B. \u03b1-Helices and \u03b2-strands are displayed as arrows and cylinders, respectively. The region covered by the initial COMPASS alignment is shown with a red line below the multiple alignment. (B) A ribbon diagram of the fragment of a \u201cwinged helix\u201d domain (PDB ID 1smtB) that was drawn by MOLSCRIPT (Kraulis 1991). N and C termini are labeled. The highlighted region corresponds to the alignment in A; \u03b1-helices are colored in blue, \u03b2-strands are colored in yellow. (C) The ribbon diagram of ab initio prediction of the tertiary structure for the top sequence in the DUF128 alignment (GenBank GI 20093775) made by ROSETTA. N and C termini are labeled. Secondary structure elements are labeled and colored according to the scheme shown in B; \u03b1-helices are colored in blue; \u03b2-strands are colored in yellow.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Sequence similarity between the PPR and clathrin families of PFAM indicates that clathrin repeats are the closest homologs of the PPR motif. (A) Profile\u2013profile alignment, as constructed by COMPASS (shown as the alignment of two representative sequences), and manually refined multiple alignment including representatives from PPR (top) and clathrin (bottom). The TrEMBL identifier and first residue number are shown for each sequence. In the initial COMPASS alignment, matches with positive scores are highlighted in gray, and invariant residues are boxed. In the refined multiple alignment, the uncharged residues (all amino acids except D, E, K, and R) in mostly hydrophobic sites are highlighted in yellow, the nonhydrophobic residues (all amino acids except W, F, Y, M, L, I, and V) at mostly hydrophilic sites are highlighted in light gray, and the small residues (G, P, A, S, C, T, V) at positions occupied by mostly small residues are shown in red letters. Long insertions are not displayed: The numbers of omitted residues are specified in brackets. The identifier of the sequence with known spatial structure in the clathrin family (PDB Id 1b89A) is highlighted in red. The PHD secondary structure predictions (SS pred.) are shown for this sequence and for the top sequence of the PPR alignment. The actual secondary structure of the 1b89A fragment is shown below the alignment, with secondary structure elements labeled and colored according to the scheme shown in B. \u03b1-Helices are displayed as cylinders. The region covered by the initial COMPASS alignment is shown with a red line below the multiple alignment. (B) A ribbon diagram of the fragment of the clathrin heavy chain (PDB ID 1b89A) that was drawn by MOLSCRIPT (Kraulis 1991). N and C termini are labeled. The highlighted region corresponds to the alignment in A; \u03b1-helices are colored in blue. (C) The ribbon diagram of ab initio prediction of the tertiary structure for the top sequence in the PPR alignment (GenBank GI 1705915) made by ROSETTA. N and C termini are labeled. \u03b1-Helices are labeled and colored according to the scheme shown in B.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Sequence similarity between the Astro_capsid and Viral_coat families of PFAM indicates structural similarity between two viral capsid proteins. (A) Profile\u2013profile alignment, as constructed by COMPASS (shown as the alignment of two representative sequences), and manually refined multiple alignment including representative sequences from Astro_capsid (top) and Viral_coat (bottom). The TrEMBL identifier and first residue number are shown for each sequence. In the initial COMPASS alignment, matches with positive scores are highlighted in gray, and invariant residues are boxed. In the refined multiple alignment, the uncharged residues (all amino acids except D, E, K, and R) in mostly hydrophobic sites are highlighted in yellow, the nonhydrophobic residues (all amino acids except W, F, Y, M, L, I, and V) at mostly hydrophilic sites are highlighted in light gray, and the small residues (G, P, A, S, C, T, V) at positions occupied by mostly small residues are shown in red letters. Long insertions are not displayed: The numbers of omitted residues are specified in brackets. The identifier of the sequence with known spatial structure in Viral_coat (PDB Id 2tbvC) is highlighted in red. The PHD secondary structure predictions (SS pred.) are shown for this sequence and for the top sequence of the Astro_capsid alignment. The actual secondary structure of the 2tbvC fragment is shown below the alignment, with secondary structure elements labeled and colored according to the scheme shown in B. \u03b1-Helices and \u03b2-strands are displayed as arrows and cylinders, respectively. The region covered by the initial COMPASS alignment is shown with a red line below the multiple alignment. (B) A ribbon diagram of the fragment of the S domain of the capsid proteins from plant icosahedral positive-strand RNA viruses (PDB ID 1smtB) that was drawn by MOLSCRIPT (Kraulis 1991). N and C termini are labeled. \u03b1-Helices are colored in blue; \u03b2-strands are colored in yellow.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "Protein Sci.",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": 1997,
+            "venue": "Nucleic Acids Res.",
+            "volume": "25",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Struct. Biol.",
+            "volume": "134",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "J. Virol.",
+            "volume": "74",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Nucleic Acids Res.",
+            "volume": "27",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Nucleic Acids Res.",
+            "volume": "28",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nucleic Acids Res.",
+            "volume": "30",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Bioessays",
+            "volume": "21",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Proteins",
+            "volume": "Suppl 5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Protein Sci.",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Bioinformatics",
+            "volume": "17",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [],
+            "year": 1991,
+            "venue": "J. Gen. Virol.",
+            "volume": "72",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [],
+            "year": 1998,
+            "venue": "Bioinformatics",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [],
+            "year": 1998,
+            "venue": "Pac. Symp. Biocomput.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Pac. Symp. Biocomput.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "",
+            "authors": [],
+            "year": 1993,
+            "venue": "Comput. Appl. Biosci.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [],
+            "year": 1994,
+            "venue": "Comput. Appl. Biosci.",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Curr. Opin. Struct. Biol.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Protein Sci.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Proteins",
+            "volume": "37",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "J. Mol. Biol.",
+            "volume": "299",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [],
+            "year": 1991,
+            "venue": "J. Appl. Crystallog.",
+            "volume": "24",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Mol. Biol.",
+            "volume": "307",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Struct. Biol.",
+            "volume": "134",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [],
+            "year": 1995,
+            "venue": "J. Mol. Biol.",
+            "volume": "247",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nucleic Acids Res.",
+            "volume": "30",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [],
+            "year": 1996,
+            "venue": "Nucleic Acids Res.",
+            "volume": "24",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "Proteins",
+            "volume": "46",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "",
+            "authors": [],
+            "year": 1996,
+            "venue": "Methods Enzymol.",
+            "volume": "266",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Protein Sci.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "",
+            "authors": [],
+            "year": 2003,
+            "venue": "J. Mol. Biol.",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Bioinformatics",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Nucleic Acids Res.",
+            "volume": "29",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "",
+            "authors": [],
+            "year": 1998,
+            "venue": "Proc. Natl. Acad. Sci.",
+            "volume": "95",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Mol. Biol.",
+            "volume": "306",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "Proc. Natl. Acad. Sci.",
+            "volume": "99",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "25",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [],
+            "year": 1997,
+            "venue": "Proteins",
+            "volume": "28",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "",
+            "authors": [],
+            "year": 1998,
+            "venue": "Nucleic Acids Res.",
+            "volume": "26",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "",
+            "authors": [],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "278",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "Nucleic Acids Res.",
+            "volume": "29",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "J. Mol. Biol.",
+            "volume": "315",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "",
+            "authors": [],
+            "year": 2000,
+            "venue": "Nucleic Acids Res.",
+            "volume": "28",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

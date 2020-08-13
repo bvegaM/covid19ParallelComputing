@@ -1,0 +1,1771 @@
+{
+    "paper_id": "PMC1975678",
+    "metadata": {
+        "title": "Prediction of RNA Pseudoknots Using Heuristic Modeling with Mapping and Sequential Folding",
+        "authors": [
+            {
+                "first": "Wayne",
+                "middle": [
+                    "K."
+                ],
+                "last": "Dawson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kazuya",
+                "middle": [],
+                "last": "Fujiwara",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gota",
+                "middle": [],
+                "last": "Kawai",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Martin",
+                "middle": [],
+                "last": "Egli",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "A large percentage of RNA in the cell is composed of RNA that folds up into complex structures [1], [2] that are often described in terms of their base pairing configurations known as secondary structure (See Text S1 for an introduction to this topic). RNA pseudoknots are a class of base pairing structures that appear in many viruses and may comprise as much as 10% of all RNA structures [3]. However, including the complete repertoire of pseudoknots in RNA structure prediction can drastically increase the demands on computational resources [4].",
+            "cite_spans": [
+                {
+                    "start": 95,
+                    "end": 98,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 100,
+                    "end": 103,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 390,
+                    "end": 393,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 545,
+                    "end": 548,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "RNA structure studies provide important information about the mechanisms behind functional RNA. Viruses utilize pseudoknots for mimicry [5], [6] and frame shifting [7]\u2013[9]. An understanding of RNA folding and dynamics is likely to speed up the discovery of critical targets that aid in the rapid development of vaccines in the case of a pandemic [10] and can help model the structure of unknown non-coding RNA sequences that comprises a large fraction of the human genome [11].",
+            "cite_spans": [
+                {
+                    "start": 136,
+                    "end": 139,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 141,
+                    "end": 144,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 164,
+                    "end": 167,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 168,
+                    "end": 171,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 346,
+                    "end": 350,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 472,
+                    "end": 476,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, there are no approaches that consider the long-range effects of polymer-solvent interactions such as swelling and the formation of a globular state. Nor is persistence length (or Kuhn length) used to learn the flexibility (rigidity) of RNA structures: neither alone nor incorporated with swelling. Evolution shows a general selectivity for folding sequences [12], therefore, it should be able to select sequences that make use of this 5\u2032 to 3\u2032 folding process (during transcription) to insure that the native state is found efficiently. Modeling techniques should be able to take advantage of this feature of biological RNA.",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 373,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "To address the question of pseudoknots in RNA structure, we have expanded and further developed a program (vsfold4) that calculates secondary structure [13]. Expanding secondary structure methods to handle all pseudoknots typically costs far more computer resources [1], [4], [14]. Vsfold5 is a unique approach that makes it possible to transition directly to the pseudoknot (PK) problem. The worst case introduces at most a factor N to the computation time (known as time complexity), where N is the sequence length.",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 156,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 266,
+                    "end": 269,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 271,
+                    "end": 274,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 276,
+                    "end": 280,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Here we present a unique pseudoknot modeling algorithm using thermodynamics that utilizes sequential (5\u2032 to 3\u2032) folding along the thermodynamically most-probable folding-pathway, permits use of more realistic polymer models that can handle globular conditions, can find optimal structures including pseudoknots on RNA sequences efficiently, and is unique in using mapping routines of pointers (for secondary structure) and handles (for pseudoknots) to build, parse, analyze and predict the RNA structure as it is folding. The results suggest that RNA-folding in the cell has evolved strategies that help promote the formation of correct structure. They further suggest the direction we need to pursue to achieve better thermodynamic models of RNA. Finally, polymer-solvent effects are predicted for the first time in computational programs of this kind.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "When tRNA has sufficiently many contiguous base pairs located around the D-T loop overlap, a pseudoknot is predicted for E. coli tRNA(Phe)\u2014Fig. 1a.",
+            "cite_spans": [],
+            "section": "tRNA tertiary structure ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 139,
+                    "end": 146,
+                    "mention": "Fig. 1a",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For the self cleavage ribozyme in the human delta virus (HDV), both the genomic form and the antigenomic form are captured in the pseudoknot structure (Figs. 1b and c) [16]. The predicted secondary structure is also shown for reference. The genomic form (Fig. 1b) of the structure largely forms by melting in the leading edge onto the first domain. Some structure is lost in the process first because of an assumed fixed Kuhn length of 8 nucleotides (nt) and second because there is currently no stability enhancement introduced by long range coaxial stacking effects on this short stem. (The Kuhn length measures the rigidity of the RNA and therefore tends to favorably weight the distribution of stem lengths accordingly.) Nevertheless, the most significant parts of the structure are found.",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 172,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Human delta virus (HDV) ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 152,
+                    "end": 166,
+                    "mention": "Figs. 1b and c",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 255,
+                    "end": 262,
+                    "mention": "Fig. 1b",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For different segments of tmRNA pseudoknots [17], the secondary structure is often captured in the structures and many of the pseudoknots are also predicted (e.g., Fig. 1d). With tmRNA, different Kuhn lengths are required for each of these pseudoknots. This makes prediction of the full tmRNA sequence less successful.",
+            "cite_spans": [
+                {
+                    "start": 44,
+                    "end": 48,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "tmRNA pseudoknots ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 164,
+                    "end": 171,
+                    "mention": "Fig. 1d",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The arrows in Fig. 1 indicate that the traditional secondary structure can be predicted as the stable minimum free energy in these calculations. The pseudoknot linkage stem (see Text S1) can be predicted at effectively any convenient time after the secondary structure is folded in such examples. Thus, in a 5\u2032 to 3\u2032 progressively folding scenario, these structures appear to be tuned to fold correctly and can easily catch the pseudoknot at the minimum free energy. There appear to be many classic pseudoknots that tend to follow this pattern of folding. Vsfold5, by utilizing this folding heuristic model, easily reveals this feature in many pseudoknots.",
+            "cite_spans": [],
+            "section": "tmRNA pseudoknots ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 14,
+                    "end": 20,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The tandem frame shift pseudoknots of the tobacco mosaic virus (TMV) [7] are predicted for a minimum PK stem length 4 nt and a minimum stem length 3 bp (Fig. 1e). Using the same parameters, the turnip yellow mosaic virus (TYMV) is also predicted (Fig. 1e) [5].",
+            "cite_spans": [
+                {
+                    "start": 69,
+                    "end": 72,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 256,
+                    "end": 259,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Viral frame shift PK structures ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 153,
+                    "end": 160,
+                    "mention": "Fig. 1e",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 247,
+                    "end": 254,
+                    "mention": "Fig. 1e",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The main structure of the SARS frame shift structure is also found (Kuhn length 5 nt), though the embedded stem appears to be shifted (Fig. 2a) [8], [9]. The difficulties reported in measuring and analyzing the structure of SARS may reflect a composite structure of this region in which both structures exist (possibly in equilibrium). We expect the reported structure to be the most stable. However, the clear imino-proton signal is consistent with either structure and much of the cleavage data appears to fit either structure. Perhaps developing a more detailed approach to analyzing the local structure and fine tuning of the parameterizations will favor the reported structure. An alternative structure is also shown for the case where a Kuhn length of 4 or 6 is used (Fig. 2a). This latter structure resembles the tandem pseudoknots of TMV.",
+            "cite_spans": [
+                {
+                    "start": 144,
+                    "end": 147,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 149,
+                    "end": 152,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Viral frame shift PK structures ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 135,
+                    "end": 142,
+                    "mention": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 774,
+                    "end": 781,
+                    "mention": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Almost all the viral frame shift sequences we studied appear to have a fairly large diversity of structural morphologies. Some of these alternative structures may actually represent alternative states of the structure that are used to decide the frame shift mode. With the development of suboptimal structure prediction, a model as versatile as vsfold5 can study these energy differences more closely.",
+            "cite_spans": [],
+            "section": "Viral frame shift PK structures ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For sequences of order 200 nt, the approach appears to be able to capture the correct structure for the G-box structure (predicted in its entirety Fig. 2b) [18]. An additional pseudoknot is also suggested (right hand side of the Figure). The pseudoknot for G-box can be predicted using a Kuhn length of 4 to 5 nt and invoking the effective Flory option.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 160,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "G-box pseudoknot ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 147,
+                    "end": 154,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "For sequences of order 400 nt, we have differing results. For the group I intron, we found the approach could predict the pseudoknot between the P3 and P6 stems successfully (Fig. 2c) [19]. However, the Flory model [20] and/or the McKenzie-Moore-Domb-Fisher model (Ref. [13]) becomes important for long compact functional RNA structures where polymer-solvent interactions begin to dominate. In Fig. 2b, the structure is fitted using \u03b4 = 1.4, \u03b3 = 1.5 and default parameters for the effective Flory model. The parameter \u03b4 reflects the extent or weight of the correlation in the polymer chain: a large value for \u03b4 indicates that the memory of the previous monomer dies off very rapidly and a small value suggests that the information persists in the structure over a much longer distance. The default parameter is \u03b4 = 2 (the Gaussian distribution). The parameter \u03b3 scales the volume occupied by a polymer in accordance with a self avoiding random walk [13]. This suggests that long sequences with extended interactions also tend to have more correlation over the entire sequence and the dimensionality may be slightly reduced. Many of these structures fold correctly with a variety of parameter values, but long sequences appear to favor smaller values for \u03b4, and \u03b3.",
+            "cite_spans": [
+                {
+                    "start": 184,
+                    "end": 188,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 215,
+                    "end": 219,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 270,
+                    "end": 274,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 949,
+                    "end": 953,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Group I intron pseudoknot ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 175,
+                    "end": 182,
+                    "mention": "Fig. 2c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 394,
+                    "end": 401,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Not all sequences appear to be fully successful within this scheme.",
+            "cite_spans": [],
+            "section": "Structures not immediately successful with the modeling heuristics ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "First, the minimum free energy can only be used to predict the ground state structure and structures not altered by protein interactions. In Fig. 3, the pseudoknot associated with the alpha operon ribosome binding site (http://www.sanger.ac.uk/cgi-bin/Rfam/getacc?RF00140) is shown. For a typical Kuhn length of 7 or 8 nt, the structure takes a form shown in Fig. 3a. This occurs for many of these sequences. The reported structure is obtained when we force open the large loop structure shown in Fig. 3b\n[21].When forced in this way, the structure in Fig. 3b appears to be the minimum free energy. The free energy difference between the two structures is approximately 7 kcal/mol (at 37\u00b0C). The reported activation barrier for the two conformations is \u0394H = 12 kcal/mol [21]. Including the entropy contribution from the model, this is approximately the correct order of magnitude. Therefore, this would suggest that in the fast quenching preparation that was used, obtaining a distribution of RNA structures ranging 7 kcal/mol is not unusual. The ribosome may provide a major part of the binding interaction. Since vsfold5 only predicts the minimum free energy in normal operation, for this structure, only results like Fig. 3a are expected (for Kuhn length around 7 nt or greater).",
+            "cite_spans": [
+                {
+                    "start": 505,
+                    "end": 509,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 770,
+                    "end": 774,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Structures not immediately successful with the modeling heuristics ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 141,
+                    "end": 147,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 359,
+                    "end": 366,
+                    "mention": "Fig. 3a",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 497,
+                    "end": 504,
+                    "mention": "Fig. 3b",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 552,
+                    "end": 559,
+                    "mention": "Fig. 3b",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1220,
+                    "end": 1227,
+                    "mention": "Fig. 3a",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Second, we find with the use of [Mg(H2O)6]2+ localization [22] and the Flory model [20], we can obtain parts of E. coli RNaseP successfully. The actual structure has highly organized coaxial and parallel stem stacking [23]. The S-domain of RNase P can be fit almost perfectly with minimum stem length 3 bp and the [Mg(H2O)6]2+ option. Other global features of the complete sequence can be obtained with similar parameters as the group I intron. To obtain the whole structure, more consideration for very complex coaxial stacking arrangements and parallel stem construction will be needed to stabilize the known structure. Recent indications are that parallel alignment of stems is rather common in functional RNA [24]. The structural mapping design of vsfold5 permits development of advanced coaxial stacking and parallel stem arrangement in the form of modules and methods.",
+            "cite_spans": [
+                {
+                    "start": 58,
+                    "end": 62,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 83,
+                    "end": 87,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 218,
+                    "end": 222,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 713,
+                    "end": 717,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Structures not immediately successful with the modeling heuristics ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "When parts of the structure are forced using constraints, we find that the FE difference between the predicted structure of RNase P and the correct structure is only 3 kcal/mol. The extensive coaxial stacking and parallel stem stacking interactions are likely to contribute at least this much to the free energy of the structure. The P1 and P3 stems are easily obtained with vsfold5, but P2 and P7 (the neck of the structure) appear quite difficult to obtain without introducing corrections that address these complex coaxial stacking and parallel stem configurations as well as permitting a variable Kuhn length in the design of the program.",
+            "cite_spans": [],
+            "section": "Structures not immediately successful with the modeling heuristics ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Several important observations are revealed in the modeling heuristics.",
+            "cite_spans": [],
+            "section": "Observations ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "First, we see that successful predictions could be obtained by a progressive 5\u2032 to 3\u2032 folding strategy for quite a few RNA structures. This suggests that many important pseudoknots fold up in a hierarchical fashion like most secondary structure. The primary difference is that the pseudoknot will form somewhat concomitant with the progressive folding of secondary structure on time scales observable using NMR spectroscopy. Cooperative folding may reflect the time scale of the measurement and the sequence lengths more than the process in these examples. The approach used in vsfold5 is consistent with the hierarchical folding hypothesis [25] and adds further weight to its importance in RNA folding. It is also consistent with contact order models [26]\u2013[28] in that longer sequence lengths take longer to fold.",
+            "cite_spans": [
+                {
+                    "start": 641,
+                    "end": 645,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 752,
+                    "end": 756,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 757,
+                    "end": 761,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Observations ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Second, we obtain deeper information about the RNA itself. Here, we can learn about the flexibility of the RNA under study using the Kuhn length which is a measure of the stiffness. Nascent RNA should have different properties from large functional RNA structures such as the ribosomal RNA. Furthermore, we detect expected polymer solvent effects (Ref. [20]) when the size and complexity of the sequences increases. This is a characteristic of mature RNA involving long sequences. On the other hand, nascent RNA is less able to develop long range structure interactions and tends to form simple structure of short Kuhn length. As a result, vsfold5 provides important structural information about the RNA under study. No other prediction approach offers any information on the flexibility of the structure. It should not be expected that one button pushed answers all further questions.",
+            "cite_spans": [
+                {
+                    "start": 353,
+                    "end": 357,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Observations ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Third, the entropy model is rather stable and even crude adjustments can be used to find a good structure in many cases. Similar structures produce similar free energies with the model used by vsfold [13]. Approaches of this type help us to develop generalizations about RNA. Ultimately, this offers a direction to actually design RNA like an engineer.",
+            "cite_spans": [
+                {
+                    "start": 200,
+                    "end": 204,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Observations ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Further plans to develop the software and the anticipated improvements (based on currently observed information) are outlined in detail in Text S2 (Section S2.4.8).",
+            "cite_spans": [],
+            "section": "Observations ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A discussion of the time complexity of the secondary structure calculations and a theoretical explanation for the contribution from pseudoknots is found in Text S2 (Section S2.3.1). Currently, the time complexity is approximately O(N\n4.7) independent of the pseudoknot option. This is because the secondary structure methods have not been optimized. With optimization, the pseudoknot option can achieve a time complexity of approximately O(N\n4).",
+            "cite_spans": [],
+            "section": "Time complexity ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Vsfold offers a stable solution for long sequences. When the domain size becomes very large, the entropy in this model discourages the formation of such domains. The model's behavior is consistent with the hierarchical folding hypothesis [25] where it is proposed that the secondary structure tends to form first followed by the tertiary structure. Its behavior is also consistent with the contact order model [26]\u2013[28] where it is proposed that the time it takes for a structure to fold is largely dependent on the domain containing the sequence fragment with the largest number of monomers. This model is able to answer the issues raised in Ref. [26] where it was pointed out that there appears to be a correlation between prediction and the contact order model. For vsfold, this correlation is a consequence of the entropy in the model (see Ref. [13] and related references therein). Good predictions can often be obtained with a variety of parameterizations. Hence, the model tends to be stable.",
+            "cite_spans": [
+                {
+                    "start": 238,
+                    "end": 242,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 410,
+                    "end": 414,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 415,
+                    "end": 419,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 648,
+                    "end": 652,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 849,
+                    "end": 853,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "For longer sequences ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For a given instance, we cannot say that this model will definitely yield a better result than any other approach. However, for the biologist who must confront the unknown structure of a new sequence, we think this tool is definitely helpful.",
+            "cite_spans": [],
+            "section": "For longer sequences ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We have introduced a heuristic modeling approach to solve RNA structure including pseudoknots employing structural mapping, sequential folding, and a new entropy model including globular effects that are capable of predicting a number of important pseudoknots with the minimum free energy. The model is consistent with the experimental data and thermodynamics. The unique features of this model are the mapping, its folding strategy, and its ability to explore the role of polymer swelling and globular structure formation within the context of RNA structure. The approach shows that it is possible to develop a calculation approach that accounts for long range interactions and permits the development of modules to address them. Further, if the time window is seen as a progressive process of updating the 3\u2032 end with the new structure, the behavior is consistent with the hierarchical folding hypothesis [25] and the contact order model [26]\u2013[28]. Very complex secondary structures can be built if the components of the structure can be explained in terms of some recognizable folding pathway.",
+            "cite_spans": [
+                {
+                    "start": 907,
+                    "end": 911,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 940,
+                    "end": 944,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 945,
+                    "end": 949,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Summary ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The model assumes that the secondary structure of RNA forms in a 5\u2032 to 3\u2032 direction as the RNA is transcribed, where 5\u2032 and 3\u2032 refers to the beginning and end of the sequence respectively and is by convention drawn from left to right. Two buffers are built up: one that contains the current structure and tests for new secondary structure at the current sequence position and another that tests for pseudoknots on that same structure and sequence. The buffers compete with each other and the minimum free energy is selected from the best result: whether secondary structure or pseudoknot. As a result, the structure that is predicted is the minimum free energy for a given sequence fragment with a given persistence length, temperature and solvent condition.",
+            "cite_spans": [],
+            "section": "General description ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In the mapping approach, there are two types of pseudoknots (PK): core PKs and extended PKs. From the perspective of folding, the major difference lies in whether the PK is formed in advance of potential secondary structure (and is more stable than the alternative secondary structure over the same interval) or is the result of fusing existing secondary structure together (extended PKs). Core PKs can also form as a result of sweeping up leftover free strand after the secondary structure has formed.",
+            "cite_spans": [],
+            "section": "General description ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Core pseudoknots consist of a root stem and a linkage stem that often forms at the 3\u2032 end of the structure (the \u201cleading edge\u201d in Fig. 4a). In its most basic form, it is also referred to as a H-type PK or an ABAB PK [29], [30]. However, the core PK can be embellished with complex motifs of RNA structure to any extent required as long as these structures are thermodynamically stable (Text S2).",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 220,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 222,
+                    "end": 226,
+                    "mention": "[30]",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Core pseudoknots ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 130,
+                    "end": 137,
+                    "mention": "Fig. 4a",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "With the leading edge approach, the 5\u2032 to 3\u2032 folding first builds the minimum free energy (mFE) structure for the current 3\u2032 position (from position 1 to j) and parses it with the leading edge sequence of a predefined length; typically about 7 to 10 nt and shorter than a simple stem-loop (approximately 2 or 3 times the Kuhn length). All of the existing structure is subject to editing around the leading edge. As the secondary structure calculations catch up to the calculated leading edge points, the leading edge has a chance to choose between recently formed secondary structure and a pseudoknot over the same length of sequence.",
+            "cite_spans": [],
+            "section": "Core pseudoknots ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Alternatively, after a stable interval of structure has developed, the existing structure can then collect up the surrounding left over free strand and form a pseudoknot.",
+            "cite_spans": [],
+            "section": "Core pseudoknots ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "An extended PK involves the joining two independent domains of secondary structure that have already formed by a small linkage stem (Fig. 4b). These have also been referred to as ABACBC PKs, but like the core PKs, extended PKs can be embellished to any extent required (Text S2). A domain of RNA structure consists of a RNA sequence fragment that forms a stable isolated secondary structure independent of the remaining sequence on the 5\u2032 and 3\u2032 sides of the domain. In this respect, the fragment can be snipped out and folded without major changes happening to the structure. An example of such a domain is shown in Fig. 4b where domain 1 and domain 2 could be snipped out of the sequence and each structure would persist unaffected. When a pseudoknot joins these independent domains, the entire complex becomes a single domain (Fig. 4b). The approach for extended PKs assumes that evolution has selected domains that are stable when formed during the folding process and do not change significantly even with the addition of pseudoknot interactions. This is shown schematically in Fig. 4b and is consistent with the hierarchical folding hypothesis [25]. A pseudoknot becomes part of a subdomain when it is incorporated into other secondary structure (Fig. 4c).",
+            "cite_spans": [
+                {
+                    "start": 1150,
+                    "end": 1154,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Extended pseudoknots ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 133,
+                    "end": 140,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 617,
+                    "end": 624,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 830,
+                    "end": 837,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1083,
+                    "end": 1090,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1253,
+                    "end": 1260,
+                    "mention": "Fig. 4c",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Unlike secondary structure, where there is a greater amount of space separating secondary structures, the increased proximity of pseudoknot structural features require more attention to existing structure in making predictions. Only simple types of structure features are currently analyzed.",
+            "cite_spans": [],
+            "section": "Structural Considerations ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The first is pleating. When RNA can chose between a single straight stem and a group of stems that fold back on themselves, there is a good chance that the latter will be selected because of the increased interaction between neighbouring (parallel) stems. For example, structures such as the Tetrahymena thermophila group I intron show P5 folded back onto P4 [19]. This folding can bring an otherwise distant free strand into proximity with a pseudoknot forming structure (Fig. 4d).",
+            "cite_spans": [
+                {
+                    "start": 359,
+                    "end": 363,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Structural Considerations ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 473,
+                    "end": 480,
+                    "mention": "Fig. 4d",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Other significant interactions are configuration and orientation strain. This happens when parts of the structure must be stretched or twisted in order to accommodate the linkage stem. To accommodate such structures, it is important to minimize this strain. These features are discussed in further detail in Text S2.",
+            "cite_spans": [],
+            "section": "Structural Considerations ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: (a) An example of base pairing between the D\u2013T loop regions of E. coli tRNA(Phe)\u2013predicted with default parameters. (b,c) Prediction of the hepatitis delta virus (HDV) self cleavage ribozymes for the genomic (b) and antigenomic (c) sequences (Kuhn length 8 nt). For the genomic HDV (b), the secondary structure prediction is also shown above. The secondary structure of the antigenomic HDV is unchanged by pseudoknot formation. (d) Examples of predictions of the pseudoknots in E. coli tmRNA: (PK1) PK1 with default parameters, (PK4) PK4 with Kuhn length of 7 nt and minimum stem length 3 bp. On the left is the predicted secondary structure alone, and on the right, the same prediction including the pseudoknot option. (e) The turnip yellow mosaic virus (TYMV) and the tandem pseudoknots of the tobacco mosaic virus (TMV) frame shift sequence. Structures created using a modified version of naview [15].",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (a) The frame shift sequence of the SARS corona virus for two different Kuhn lengths: \u03be = 4 nt and \u03be = 5 nt. The measured structure is closer to \u03be = 5 nt. (b) G-box structure predicted for the full sequence: Kuhn length \u03be = 4 to 5 nt with the effective Flory option, \u03b4\u223c1.6, and other parameters default. (c) T. thermophila Group I intron structure predicted for the full sequence: \u03be = 10 nt, using effective Flory with settings \u03b4 = 1.4 and \u03b3 = 1.5; where \u2018P\u2019 indicates known pairing, (..) indicate some prediction errors, and \u2018-(..)\u2018 indicates missed in the prediction.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The alpha operon ribosomal binding site [21] is one example where the minimum free energy of the bare RNA is different from that of the observed structure bond to the ribosome. (a) A sequence from E. coli fitted with a Kuhn length of 7 nt. (b) The same sequence under constraints. The correct pseudoknot could only be obtained when the Shine-Dalgarno sequence region and the upper stem regions in the loop (Fig. 3a) were excluded.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: (a) Basic concept of folding for a core pseudoknot. The stable secondary structure is formed first, followed by addition of stem into the loop. The red region corresponds to the point where the linkage stem forms. (b) Basic concept of folding for an extended pseudoknot. An extended pseudoknot involves the fusing of two independent domains via a small segment of secondary structure. As in (a), this stable secondary structure is formed first, followed by joining the two independent domains into a single domain. (c) Basic concept of an embedded pseudoknot. Here, the secondary structure naturally permits a multibranch loop to form, and the extended pseudoknot that links two branches of the secondary structure is shown here in thermodynamic equilibrium with the standard secondary structure. (d) Basic concept of pleating. The secondary structure (shown above in d), appears to require a very long free strand region (green) to insure that the red segment of secondary structure is formed. However, when this is viewed more three dimensionally, the internal loop permits this structure to fold back on itself and requires a much shorter segment length.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Searching for IRES.",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Baird",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Turcotte",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Korneluk",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Holcik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "RNA",
+            "volume": "12",
+            "issn": "",
+            "pages": "1755-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "An improved algorithm for nucleic acid secondary structure display.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bruccoleri",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Heinrich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Com. Appl in Biosci",
+            "volume": "4",
+            "issn": "",
+            "pages": "167-173",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Predicting RNA pseudoknot folding thermodynamics.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucl Acids Res",
+            "volume": "34",
+            "issn": "",
+            "pages": "2634-2652",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "A magnesium ion core at the heart of a ribozyme domain.",
+            "authors": [
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Cate",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Hanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Doudna",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nat Struct Biol",
+            "volume": "4",
+            "issn": "",
+            "pages": "553-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A method for finding optimal RNA secondary structures using a new entropy model (vsfold).",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Dawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Fujiwara",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Futamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yamamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kawai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleotides, Nucleosides, and Nucl Acids",
+            "volume": "25",
+            "issn": "",
+            "pages": "171-189",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Evaluation of the suitability of free-energy minimization using nearest-neighbor energy parameters for RNA secondary structure prediction.",
+            "authors": [
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Doshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Cannone",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Cobaugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Gutell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "BMC Bioinformatics",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "How do RNA folding algorithms work?",
+            "authors": [
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature Biotechnology",
+            "volume": "22",
+            "issn": "",
+            "pages": "1457-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A central pseudoknotted three-way junction imposes tRNA-like mimicry and the orientation of three 5\u2032 upstream pseudoknots in the 3\u2032 terminus of tobacco mosaic virus RNA.",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Felden",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Florentz",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Giege",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Westhof",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "RNA",
+            "volume": "2",
+            "issn": "",
+            "pages": "201-212",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Principles of Polymer Chemistry.",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Flory",
+                    "suffix": ""
+                }
+            ],
+            "year": 1953,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "RNA structural motifs: building blocks of a modular biomolecule.",
+            "authors": [
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Hendrix",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Brenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Holbrook",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Q Rev Biophys",
+            "volume": "38",
+            "issn": "",
+            "pages": "221-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Non-coding RNAs: hope or hype?",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Huttenhofer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Polacek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Trends Genet",
+            "volume": "21",
+            "issn": "",
+            "pages": "289-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "NMR structure of a classical pseudoknot: interplay of single- and double-stranded RNA.",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Kolk",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "van der Graaf",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Wijmenga",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Heus",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Science",
+            "volume": "280",
+            "issn": "",
+            "pages": "434-438",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Random mutations to evaluate the role of bases at two important single-stranded regions of genomic HDV ribozyme.",
+            "authors": [
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "YA",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Miyashiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Nishikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kawakami",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nucl Acids Res",
+            "volume": "20",
+            "issn": "",
+            "pages": "3919-3924",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The interaction networks of structured RNAs.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lescoute",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Westhof",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucl Acids Res",
+            "volume": "34",
+            "issn": "",
+            "pages": "6587-6604",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "RNA pseudoknot prediction and energy-based models.",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Lyngso",
+                    "suffix": ""
+                },
+                {
+                    "first": "NS",
+                    "middle": [],
+                    "last": "Pedersen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Comp Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": "409-427",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "How the folding rate constant of simple, single-domain proteins depends on the number of native contacts.",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Makarov",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Keller",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Plaxco",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Metiu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "3535-3539",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Riboswitches control fundamental biochemical pathways in Bacillus subtilis and other bacteria.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mandal",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Boese",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Barrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Winkler",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Breaker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Cell",
+            "volume": "113",
+            "issn": "",
+            "pages": "577-586",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A thermodynamic framework for Mg2+ binding to RNA.",
+            "authors": [
+                {
+                    "first": "VK",
+                    "middle": [],
+                    "last": "Misra",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Draper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "12456-12461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "An NMR and mutational analysis of an RNA pseudoknot of Escherichia coli tmRNA involved in trans-translation.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nameki",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chattopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Himeno",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Muto",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kawai",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucl Acids Res",
+            "volume": "27",
+            "issn": "",
+            "pages": "3667-3675",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "A three-stemmed mRNA pseudoknot in the SARS coronavirus frameshift signal.",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Perez-Alvarado",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mukhopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Henning",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Beyond Mfold: recent advances in RNA bioinformatics.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Reeder",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hochsmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rehmsmeier",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Voss",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Giegerich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Biotechnol",
+            "volume": "124",
+            "issn": "",
+            "pages": "41-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A dynamic programming algorithm for RNA structure prediction including pseudoknots.",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rivas",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Biol",
+            "volume": "285",
+            "issn": "",
+            "pages": "2053-2068",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Translational repression of the Escherichia coli \u03b1 operon mRNA.",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Schlax",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Xavier",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Gluick",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Draper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biol Chem",
+            "volume": "42",
+            "issn": "",
+            "pages": "38494-38501",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Compact and ordered collapse of randomly generated RNA sequences.",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Schultes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Spasic",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Mohanty",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Bartel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature Struct & Mol Biol",
+            "volume": "12",
+            "issn": "",
+            "pages": "1130-1136",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Reduced contact order and RNA folding rates.",
+            "authors": [
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Sosnick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pan T",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Biol",
+            "volume": "342",
+            "issn": "",
+            "pages": "1359-1365",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "An atypical RNA pseudoknot stimulator and an upstream attenuation signal for -1 ribosomal frameshifting of SARS coronavirus.",
+            "authors": [
+                {
+                    "first": "M-C",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-T",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-H",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-H",
+                    "middle": [],
+                    "last": "Tsai",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucl Acids Res",
+            "volume": "33",
+            "issn": "",
+            "pages": "4265-4275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "How RNA folds.",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tinoco",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bustamante",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Biol",
+            "volume": "293",
+            "issn": "",
+            "pages": "271-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Crystal structure of the RNA component of bacterial ribonuclease P.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Torres-Larios",
+                    "suffix": ""
+                },
+                {
+                    "first": "KK",
+                    "middle": [],
+                    "last": "Swinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Krasilnikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mondragon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "584-587",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A two-amino acid change in the hemagglutinin of the 1918 influenza virus abolishes transmission.",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Tumpey",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Maines",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Van Hoeven",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Glaser",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sol\u00f3rzano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Science",
+            "volume": "315",
+            "issn": "",
+            "pages": "655-659",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Prediction and statistics of pseudoknots in RNA structures using exactly clustered stochastic simulations.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Xayaphoummine",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Bucher",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Thalmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Isambert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "",
+            "pages": "15310-15314",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

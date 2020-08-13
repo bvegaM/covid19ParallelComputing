@@ -1,0 +1,2038 @@
+{
+    "paper_id": "PMC2658664",
+    "metadata": {
+        "title": "Metabolite profiling studies in Saccharomyces cerevisiae: an assisting tool to prioritize host targets for antiviral drug screening",
+        "authors": [
+            {
+                "first": "Konstantin",
+                "middle": [],
+                "last": "Schneider",
+                "suffix": "",
+                "email": "ko.schneider@mx.uni-saarland.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Jens",
+                "middle": [
+                    "Olaf"
+                ],
+                "last": "Kr\u00f6mer",
+                "suffix": "",
+                "email": "j.kromer@uq.edi.au",
+                "affiliation": {}
+            },
+            {
+                "first": "Christoph",
+                "middle": [],
+                "last": "Wittmann",
+                "suffix": "",
+                "email": "c.wittmann@tu-bs.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Isabel",
+                "middle": [],
+                "last": "Alves-Rodrigues",
+                "suffix": "",
+                "email": "isabelcristina.alves@upf.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Andreas",
+                "middle": [],
+                "last": "Meyerhans",
+                "suffix": "",
+                "email": "viamey@uniklinik-saarland.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Juana",
+                "middle": [],
+                "last": "Diez",
+                "suffix": "",
+                "email": "juana.diez@upf.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Elmar",
+                "middle": [],
+                "last": "Heinzle",
+                "suffix": "",
+                "email": "e.heinzle@mx.uni-saarland.de",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Viruses continue to threaten human health. Well known examples are the human immunodeficiency virus (HIV) and the human hepatitis C virus (HCV) that have worldwide infected around 40 and 170 million people, respectively. While the former slowly destroys the immune system of its host resulting in acquired immunodeficiency and death due to the uncontrolled expansion of opportunistic infections, the latter, when becoming a chronic infection, leads to liver cell destruction and after decades to cirrhosis and possibly liver cell carcinoma. Even more frightening can be viruses that have a much faster disease course like some influenza strains, the SARS corona virus and hemorrhagic fever viruses which can kill their hosts in the order of days and weeks rather than several years. Without having efficient vaccines available, the best at hand to combat these threads are antiviral drugs. But there are major limitations. For many of the viruses, especially for the novel emerging viruses, there are no or only limited options for antiviral therapy. Furthermore, as most of the antivirals are specifically targeting individual viral proteins and, on the other hand, viruses most frequently exhibit high replication error rates combined with a rapid turnover of large populations, the selection of drug resistant strains within an infected host is common. While this problem can in part be solved by combining drugs with different target specificities, a setback is the increased side effects inherent to multi-drug intake [1].",
+            "cite_spans": [
+                {
+                    "start": 1524,
+                    "end": 1525,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The fast developing omics-technologies in the last few years have witnessed a remarkable increase in our understanding of how complex cell systems are regulated at the level of their genes, transcripts and proteins. Such types of studies are now opening up a new era in antiviral drug research [1]. Due to its genetic tractability and the new technological platforms and tools recently created, global studies in the yeast Saccharomyces cerevisiae have been at the forefront of such technical advances [2]. Moreover, since there is a notable gene homology between yeast and human genes and a high conservation of fundamental biochemical pathways, studies in yeast are helpful to discover fundamental cellular processes Remarkably, yeast-based studies have provided main achievements in virus research as well. These include, for example, the elucidation of key processes in viral replication and its use in antiviral drug development [2]. For drug development high throughput genomic analyses are performed to systematically screen the effect of a given drug on every gene. Such analyses will promote the identification and understanding of metabolic pathways and regulatory circuits involved in the action of a drug. This information will also provide a more detailed measure of toxicity and will therefore assist fundamentally the development of drug candidates.",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 296,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 503,
+                    "end": 504,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 935,
+                    "end": 936,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Large screens for host factor requirements of different viruses have recently been completed demonstrating the intimate and complex dependence of virus expansion on cellular factors [3-6]. By targeting these so-called virus dependency factors of the host cell by drugs, virus multiplication might not only be inhibited but in addition might restrict the rapid generation of resistance. Furthermore, as groups of viruses share common replication strategies and common host factor requirements, it might become possible to even inhibit multiple viruses with a single agent [1]. For example, some of the factors required for the replication of model viruses in yeast are also required for the replication of human viruses in human cells [4,6,7] While this gives exciting future perspectives, the present challenge is how to prioritize among the many virus dependency factors experimentally determined.",
+            "cite_spans": [
+                {
+                    "start": 183,
+                    "end": 184,
+                    "mention": "3",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 185,
+                    "end": 186,
+                    "mention": "6",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 572,
+                    "end": 573,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 735,
+                    "end": 736,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 737,
+                    "end": 738,
+                    "mention": "6",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 739,
+                    "end": 740,
+                    "mention": "7",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "BMV belongs to the family of alpha viruses which include a number of plant, animal and also human positive strand RNA viruses which exhibit common replication mechanisms. In our previous work, we have shown that the proteins Pat1p, Lsm1p-7p and Dhh1p that form a complex essentially involved in the host deadenylation-dependent mRNA decapping are required for BMV replication in yeast. Deletion of PAT1, LSM1 or DHH1 genes led to a comparable and dramatic inhibition of viral replication [8]. Homologues of these factors are also found in human and thus could serve as potential antiviral drug targets for human positive-strand RNA viruses such as the Hepatitis C virus [7,9-11].",
+            "cite_spans": [
+                {
+                    "start": 489,
+                    "end": 490,
+                    "mention": "8",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 671,
+                    "end": 672,
+                    "mention": "7",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 673,
+                    "end": 674,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 675,
+                    "end": 677,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Antiviral drugs should not only inhibit virus expansion but also be non-toxic for the infected cells and the host. One would expect the latter condition to be best fulfilled if the change in cellular viability characteristics would be minimal. Growth rate or even respiration are relevant primary characteristics [12]. Even more relevant are metabolic flux distributions [13] but the presumably most sensitive and most comprehensive indicator of such changes is the cellular metabolome [14]. Any modification on the level of DNA, RNA or proteins is expected to be further manifested in metabolite level changes. The scope of this work is to study the effect of the deletion of PAT1, LSM1 and DHH1 on central metabolites in S. cerevisiae and to estimate the adverse effects on the host organism and its metabolism by quantitatively comparing their metabolomes. We found that the levels of metabolites differed clearly between the reference strain S. cerevisiae BY4742 and the deletion strains pat1\u0394, lsm1\u0394 and dhh1\u0394. PAT1 gene deletion resulted in the smallest deviation from reference cells. This seems therefore the most promising target with respect to host cell toxicity. High throughput drug screening approaches should therefore focus on the human analogue of PAT1.",
+            "cite_spans": [
+                {
+                    "start": 314,
+                    "end": 316,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 487,
+                    "end": 489,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Measured growth characteristics of studied yeast strains are summarized in Table 1. These are specific growth rate, \u03bc, the specific glucose uptake rate, qglucose, the specific glycerol production rate, qglycerol, and the specific ethanol production rate, qethanol. The specific growth rate of pat1\u0394, 0.22 h-1, was quite similar to that of the reference strain, 0.28 h-1, whereas dhh1\u0394, 0.16 h-1, and lsm1\u0394, 0.15 h-1, grew clearly slower. The specific glucose uptake rates of pat1\u0394 and dhh1\u0394, 2.00 \u00b1 0.11 g g-1 CDW h-1 and 2.10 \u00b1 0.10 g g-1 CDW h-1, were quite similar but differed significantly compared to the reference strain, 2.45 \u00b1 0.13 g g-1 CDW h-1, and lsm1\u0394, 1.67 \u00b1 0.10 g g-1 CDW h-1. Considering standard deviations specific glycerol production rates were similar for the reference strain and the deletion strains pat1\u0394 and dhh1\u0394 with 0.22 \u00b1 0.03 g g-1 CDW h-1, 0.15 \u00b1 0.03 g g-1 CDW h-1 and 0.18 \u00b1 0.02 g g-1 CDW h-1. The specific glycerol production rate of 0.10 \u00b1 0.02 g g-1 CDW h-1 for the lsm1\u0394 strain was clearly lower. The specific ethanol production rate of 1.05 \u00b1 0.05 g g-1 CDW h-1 for the reference strain was higher than for the deletion strains pat1\u0394 and dhh1\u0394 with 0.72 \u00b1 0.04 g g-1 CDW h-1 and 0.83 \u00b1 0.04 g g-1 CDW h-1. The specific ethanol production rate of the lsm1\u0394 mutant was lowest, 0.60 \u00b1 0.03 g g-1 CDW h-1. Based on these results the deletion of the PAT1 and DHH1 genes seem to have the least influence on the metabolism of the cell. A clear prioritization is, however not possible only considering these data. Generally, the specific uptake and production rates were proportional to the specific growth rate \u03bcmax as described earlier [12] which holds for the reference strain, pat1\u0394 and lsm1\u0394. The specific rates for dhh1\u0394 were slightly higher compared to pat1\u0394.",
+            "cite_spans": [
+                {
+                    "start": 1671,
+                    "end": 1673,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Physiological growth characterization ::: Results",
+            "ref_spans": [
+                {
+                    "start": 81,
+                    "end": 82,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "A typical GC/MS chromatogram of intracellular metabolites of S. cerevisiae BY4742 pat1\u0394 is depicted in Figure 1. This figure shows that most of the identified metabolites were in the low abundance region of the chromatogram. Most of the high abundant peaks are substances derived from column bleeding or the derivatization reagent. Of the detected 47 metabolites 41 were identified using their fragmentation pattern and retention index. Among the identified metabolites were proteinogenic and non-proteinogenic amino acids, organic acids, bases, sugars, phosphorylated sugars and several unidentified metabolites.",
+            "cite_spans": [],
+            "section": "Metabolite identification and quantification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 110,
+                    "end": 111,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Another seven metabolites could not be identified but were also included in the metabolite profiling of the three strains since they differed significantly in the investigated strains. The identified metabolites are shown in Table 2. Relative quantification was carried out using only characteristic m/z values of these identified metabolites which are also shown in Table 2. Compared to the use of the total ion current for the calculation of relative signals this resulted in a significant decrease of the signal-to-noise ratio and allowed a precise quantification even in the presence of co-eluting or incompletely separated metabolites. This kind of normalization yielded more consistent results compared to normalization to CDW or internal standards and was therefore used for the comparison of the four strains (Table 3). The resulting average error was approximately 20% comparing six samples from each strain. For checking the suitability of the chosen normalization method, intracellular amino acid concentrations of the same samples were determined by HPLC [15] and GC/MS. A good correlation was found between normalized peak areas and intracellular amino acid concentration as depicted in Figure 2 for the amino acids phenylalanine, aspartic acid and glycine.",
+            "cite_spans": [
+                {
+                    "start": 1068,
+                    "end": 1070,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Metabolite identification and quantification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1207,
+                    "end": 1208,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 231,
+                    "end": 232,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 373,
+                    "end": 374,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 824,
+                    "end": 825,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The three deletion strains pat1\u0394, dhh1\u0394 and lsm1\u0394 and the reference strain BY4742 were compared using relative pool sizes of intracellular metabolites, characterized by normalized peak areas, derived from GC/MS measurements. Figure 3 compares the intracellular metabolite pool sizes in the three deletion strains to the reference strain BY4742. Metabolites on the straight line have the same concentration in both strains.",
+            "cite_spans": [],
+            "section": "Strain comparison using GC/MS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 232,
+                    "end": 233,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Based on the normalized peak areas, the Euclidian distance between the three deletion strains and the reference strain was calculated and used for characterizing similarity. In this way we could estimate the influences of the deletions of the PAT1, DHH1 and LSM1 genes on the cellular metabolism. The comparison was made in three steps and is presented in dendrograms (Figure 4). In a first calculation the whole data set was used (Figure 4A). In a second all metabolites usually not observed in human that are indicated in Table 3 were used (Figure 4B). Finally, also the essential amino acids that are not synthesized by human were removed in a third analysis (Figure 4C). In all cases it is evident that the deletion of the PAT1 gene caused the smallest differences in the metabolite pattern compared to the reference strain. Therefore, the whole data set was used for further analysis. The deletion of the genes DHH1 and LSM1 caused larger deviations. This is in accordance with the specific growth rates of the four strains describing the overall fitness of the cells.",
+            "cite_spans": [],
+            "section": "Strain comparison using GC/MS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 376,
+                    "end": 377,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 439,
+                    "end": 441,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 550,
+                    "end": 552,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 670,
+                    "end": 672,
+                    "mention": "4C",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 530,
+                    "end": 531,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Principal component analysis (PCA) using normalized peak areas from GC/MS analysis of the cell extracts reveals clear separation of the four strains (WT, pat1\u0394, lsm1\u0394 and dhh1\u0394). Figure 5 shows the corresponding scores plot. The four strains form distinct clusters using two parallel cultures and three sampling times each. These results confirm that cells were in true exponential growth and therefore constant concentrations of intracellular metabolites could be assumed during the entire sampling period. At the different sampling times biomass concentration was varying between 0.73 \u2013 1.44 g CDW l-1, but did obviously not cause significant disturbances. These results also indicate the applicability of the chosen normalization procedure since resulting PLS scores are randomly distributed within their specific cluster. Figure 5 again shows that metabolites measured in the pat1\u0394 deletion strain are least deviating from those in the reference strain. The two deletion strains lsm1\u0394 and dhh1\u0394 are obviously more distant agreeing with the Euclidian distance calculations depicted in Figure 4.",
+            "cite_spans": [],
+            "section": "Principal component analysis and strain separation ::: Results",
+            "ref_spans": [
+                {
+                    "start": 186,
+                    "end": 187,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 833,
+                    "end": 834,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1095,
+                    "end": 1096,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The selection of statistically significant metabolites was made using loading plots for each of the three comparisons (Figure 6). All metabolites whose confidence intervals do not include zero were assumed statistically significant. Strain comparison was carried out using only these metabolites. The concentration differences are presented in a heat plot (Figure 7).",
+            "cite_spans": [],
+            "section": "Identification of statistically significant metabolites using PLS-DA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 126,
+                    "end": 127,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 364,
+                    "end": 365,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The most significant differences between the reference strain BY4742 and the three deletion strains was the accumulation of intracellular trehalose. Intracellular pools were clearly increased in the three deletion strains. The highest concentration was found in the lsm1\u0394 strain (200 times the concentration in the reference strain) while the intracellular pools of the two strains pat1\u0394 and dhh1\u0394 were approximately 25 times higher compared to the reference strain pool size of intracellular trehalose. Increased intracellular trehalose levels were observed when applying a heat shock or oxidative stress to the cells [16]. The measured TCA cycle metabolites succinic acid, malic acid, fumaric acid, \u03b1-ketoglutaric acid and citric acid were more accumulated in the deletion strains. Especially malic acid was concentrated 2 times, 3 times and 6 times higher in the strains pat1\u0394, dhh1\u0394 and lsm1\u0394 compared to the reference strain. The citric acid pool size of the deletion strain dhh1\u0394 was 5 times higher than the corresponding reference strain pool size. The urea cycle metabolites ornithine and arginine were slightly higher concentrated in the deletion strains pat1\u0394 and dhh1\u0394 but levels are decreased in the lsm1\u0394 strain. Fumaric acid, which is also produced via the urea cycle, showed a higher abundance in the lsm1 deletion strain compared to the reference strain and pat1\u0394 and dhh1\u0394 indicating that the urea cycle was affected in another way in this strain.",
+            "cite_spans": [
+                {
+                    "start": 620,
+                    "end": 622,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Identification of statistically significant metabolites using PLS-DA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Intracellular amino acid concentrations were always higher in the deletion strains or not significantly changed. The only exception was arginine in the lsm1 deletion strain as discussed above. A comparison of the reference strain S. cerevisiae BY4742 with the non-auxotrophic wild type S. cerevisiae ATCC 32167 revealed that the intracellular concentrations of leucine, histidine and lysine were always higher than in the non-auxotrophic wild type strain. Here the concentration of leucine, histidine and lysine of strain BY4742 were 13.1, 39.2 and 93.9 \u03bcmol/g CDW. In the wild type strain S. cerevisiae ATCC 32167 all other intracellular amino acid concentrations were in the same range as in S. cerevisiae BY4742, except the three amino acids supplied in the medium with concentrations 0.9, 3.4 and 9.5 \u03bcmol/g CDW, respectively. Their concentrations were approximately 10 times higher compared to S. cerevisiae ATCC 32167. This difference can be explained by the feeding of these essential amino acids in excess to the S. cerevisiae BY4742 and mutant cultures.",
+            "cite_spans": [],
+            "section": "Identification of statistically significant metabolites using PLS-DA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Previously it was shown that the proteins Pat1p, Lsm1p-7p and Dhh1p are required for BMV replication in yeast [8]. Homologues of these factors are also found in humans and can serve as potential antiviral drug targets for human positive strand RNA viruses like Hepatitis C virus [7,9-11]. To analyze which of the proteins is the most promising target for a new inhibitory drug, it is of primary importance to show the efficacy of the target inhibition but at the same time it is equally important to find out which of the potential targets would be least harmful to the host organism. Such studies are difficult in human cells and yeast seems suitable as model organism to prioritize amongst the potential targets. It is not a priori clear which parameter would be most reasonable to measure deletion effects most sensitively. We think however that metabolome analysis is a most ideal candidate to describe the phenotype of a cell [17-19] since it reflects effects on the gene, RNA and protein levels comprehensively.",
+            "cite_spans": [
+                {
+                    "start": 111,
+                    "end": 112,
+                    "mention": "8",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 280,
+                    "end": 281,
+                    "mention": "7",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 282,
+                    "end": 283,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 284,
+                    "end": 286,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 932,
+                    "end": 934,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 935,
+                    "end": 937,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "All three genes, PAT1, LSM1 and DHH1 essential for virus propagation are dispensable for yeast growth. However, the quantitative effects of the individual deletions on physiological parameters as growth and substrate consumption rates and intracellular metabolite levels were different. In our study we could identify 41 intracellular metabolites and 6 metabolites of unknown chemical structure in polar extracts of S. cerevisiae using GC/MS covering nearly all parts of central metabolism. The average variation of intracellular metabolite concentrations of the six independent samples of one single strain was around 20%. The variation in the analysis of polar leaf extracts of Arabidopsis thaliana resulted in 101 identified metabolites and 113 of unknown chemical structure and a biological variation of 35% in average [20]. Strelkov et al. [21] identified 88 intracellular metabolites in the polar extracts of Corynebacterium glutamicum. More metabolites could be identified with less stringent identification criteria; however here we used the standard identification criteria of the AMDIS software. As Figure 2 shows, there are a lot more compounds visible in the chromatogram than identified and used for strain comparison in this work. Using less stringent identification rules resulted in the identification of 39 additional metabolites which were, however, not used for strain comparison. Most importantly, this study showed clear differences on the intracellular metabolome changes between the different gene deletion strains. Intracellular metabolite levels of all three deletion strains, pat1\u0394, lsm1\u0394 and dhh1\u0394 differed from those of the reference strain S. cerevisiae BY4742. It was, however, found that the deletion of PAT1 showed the least differences to the reference strain. Some of the metabolites found (Table 3) are usually not observed in human, others are essential amino acids that are not synthesized by human. It is interesting to see that metabolome differences were similar with and without these metabolites. This indicates a certain robustness of the method. The most pronounced non-human metabolite, trehalose, may, however, be replaced by glycogen in human. The other non-human metabolites, erythritol, mannitol and homoserine are changed only little. Intracellular concentrations of amino acids essential in human are changed significantly in yeast but this did not have any significant effect on the overall analysis. The metabolome results are supported by the fact that the measured specific growth rates of the pat1\u0394 strain and the reference strain were most similar. In general it can however be expected that metabolome analysis is much more sensitive than mere growth rate determination and will, together with genomic, transcriptomics and proteomic assays, greatly enhance our understanding of mechanisms of drug effect and of adverse drug reactions [14].",
+            "cite_spans": [
+                {
+                    "start": 824,
+                    "end": 826,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 846,
+                    "end": 848,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 2893,
+                    "end": 2895,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1116,
+                    "end": 1117,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1831,
+                    "end": 1832,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "In this work the intracellular metabolome of a series of S. cerevisiae strains with deletions of genes coding for the cellular proteins Pat1p, Lsm1p, and Dhh1p was analyzed. These proteins are required for the replication of some positive-strand viruses and are therefore potential targets for new antiviral drugs. In our attempt to prioritize host targets for antiviral drug screening we arrived at the conclusion that the human gene corresponding to Pat1p seems the most promising therapeutic target of the selected proteins essential for the development of antiviral drugs against positive-strand RNA viruses. The results presented here also show that intracellular metabolome analysis is a sensitive and powerful tool to tackle problems of this type.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "S. cerevisiae ATCC 32167 was purchased from ATCC. S. cerevisiae deletion mutants with the parental phenotype BY4742 Mat\u03b1 his3\u03941 leu2\u03940 lys2\u03940 ura3\u03940 were obtained from Open Biosystems (Heidelberg, Germany). The derived yeast deletion mutants \u0394lsm1 \u0394pat1 and \u0394dhh1 are resistant to the antibiotic geneticin and exhibit auxothrophies for histidine, leucine, lysine and uracil. Yeast cells were grown on YPD-agar plates (10 g/l yeast extract, 20 g/l peptone, 20 g/l glucose) containing 200 mg/l Geneticin. Cultivation was carried out first on complex YPD-medium at 30\u00b0C followed by a second pre-culture on defined synthetic medium containing (NH)4HPO4 1 g/l, (NH)4SO4 8.75 g/l, MgSO4\u00b77 H2O 1 g/l, citric acid 1.1 g/l, CaCl2\u00b72 H2O 0.15 g/l, glucose 20 g/l, 0.5 M Na-phosphate buffer (pH 6.0) 100 ml/l, 100\u00d7 trace element solution 10 ml/l and 100\u00d7 vitamin solution 10 ml/l. Lysine, leucine (each 120 mg/l), histidine and uracil (each 80 mg/l) were added from 100\u00d7 stock solutions to allow growth of the deletion mutants. 100\u00d7 vitamin solution consists of myo-inositol 301.5 mg/l, Ca-panthotenate 150 mg/l, thiamin/HCl 30 mg/l, pyridoxine/HCl 7,5 mg/l and biotin 0,15 mg/l. 100\u00d7 trace element solution consists of FeCl3\u00b76 H2O 75 mg/l, MnSO4\u00b7H2O 53 mg/l, ZnSO4\u00b77 H2O 45 mg/l and CuSO4\u00b75 H2O 12 mg/l [12]. The main culture was carried out in defined synthetic medium using 1000 ml baffled shake flasks. The same medium without additional amino acids and uracil was also used for the cultivation of S. cerevisiae ATCC 32167 that is the wild type of the used reference strain BY4742.",
+            "cite_spans": [
+                {
+                    "start": 1293,
+                    "end": 1295,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Organisms and cultivation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For inter-strain comparison of intracellular metabolite concentrations, two parallel cultures were grown, and three samples were taken during the exponential growth phase. Cells were harvested at optical densities between 2 and 3. Exponential growth was observed for at least 30 min after taking samples for metabolite extraction to ensure that no changes in cell metabolism occurred, due to substrate limitation effects.",
+            "cite_spans": [],
+            "section": "Organisms and cultivation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Cell dry weight (CDW) was determined gravimetrically after washing cells twice with double distilled water. After centrifugation (10 min, 8,000 \u00d7 g, 4\u00b0C, Biofuge stratos, Heraeus, Hanau, Germany) the drying was performed at 80\u00b0C until constant weight was observed. Optical density (OD660 nm) was determined at 660 nm (Novaspec II, Pharmacia Biotech, Freiburg, Germany). The linear correlation between CDW and OD660 is CDW [g/l] = 0.51 [g/l]\u00b7OD660 nm. OD-CDW correlations of the four strains were identical.",
+            "cite_spans": [],
+            "section": "Analytics ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Concentrations of extracellular glycerol, glucose and ethanol were determined by HPLC (Kroma System, Kontron Instruments, Neufahrn, Germany) with an Aminex HPX-87H column (300 \u00d7 7,8 mm; Bio-Rad, Hercules, USA) and an isocratic flow of 0.5 ml/min 22 mM H2SO4 at 35\u00b0C. Glucose and ethanol concentrations in the supernatant were determined using enzymatic kits (Boehringer Mannheim, R-Biopharm GmbH, Darmstadt, Germany) in addition to HPLC analysis. Intracellular amino acid concentrations were determined by HPLC using an OPA method [22].",
+            "cite_spans": [
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Analytics ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For metabolome analysis three independent samples of 10 ml were drawn from each of the two cultures during the exponential growth phase and transferred immediately under vigorous shaking to a 50 ml falcon tube, filled with pre-cooled quenching solution (-40\u00b0C, 60% methanol, 10 mM HEPES, pH 7.5). Separation of cells and medium was performed by centrifugation (5 min, 8,000 \u00d7 g, -19\u00b0C, Biofuge stratos, Heraeus, Hanau, Germany) [23]. The temperature was always below -25\u00b0C during the whole quenching process. After an additional washing step the metabolite extraction was achieved by incubating the pellet with 2 ml of boiling water for 15 min. Cell-debris was separated by centrifugation (10 min, 1,500 \u00d7 g, 4\u00b0C, Labofuge 400R, Heraeus, Hanau, Germany) and extracted again with 750 \u03bcl chloroform (37\u00b0C, 10 min). The two phases were combined and separated again by centrifugation. The polar phase was further analyzed. The sampling process until quenching was not oxygen limited. This was ensured by measuring dissolved oxygen (DO) concentration using an optical method [24]. DO concentrations were always above 30% of air saturation.",
+            "cite_spans": [
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1071,
+                    "end": 1073,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Quenching and metabolite extraction ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Prior to GC/MS analysis 100 \u03bcl of the cell extract was lyophilized (Lyovac GT2, GEA Lyophil GmbH, Huerth, Germany). The remaining powder was derivatised using 25 \u03bcl 20 g/l methoxylamine/HCl in pyridine for oximation (30 min, 80\u00b0C) followed by 50 \u03bcl N-methyl-N-trimethylsilyl-trifluoroacetamide (MSTFA) for silylation. Sample analysis was carried out on a HP6890 GC System using a Mass Selective Detector 5973 (Agilent Technologies, Waldbronn, Germany). Full scan mass spectra were acquired ranging from 30 to 600 amu using a scan rate of 9 scans/s. Separation was performed using a 60 m \u00d7 0.2 mm I.D. fused silica HP-5 ms column (Agilent Technologies, Waldbronn, Germany) and a helium carrier gas flow rate of 0.7 ml/min. After 1 min at 70\u00b0C the temperature was increased to 75\u00b0C (1\u00b0C/min) followed by a second increase to 315\u00b0C (5\u00b0C/min) and finally to 340\u00b0C (25\u00b0C/min). 1\u03bcl of derivatised sample was injected splitless for 2 min using a PTV with a temperature gradient from 75\u00b0C to 340\u00b0C with a rate of 360\u00b0C/min. injector. Temperatures of ion source and transfer liner were 200\u00b0C and 240\u00b0C. For electron impact ion generation a 70-eV electron beam was used. Intracellular amino acid concentrations were determined by HPLC using the OPA method [15].",
+            "cite_spans": [
+                {
+                    "start": 1247,
+                    "end": 1249,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "GC/MS analysis of intracellular metabolites ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Metabolite identification and signal deconvolution was performed using the AMDIS software (version 2.64, National Institute of Standards and Technology, Gaithersburg, USA) as well as the Enhanced ChemStation software (Agilent Technologies, Waldbronn, Germany). Identification of metabolites is based on the comparison of measured mass spectra and retention indices (RI) with in-house library entries [25] of pure component mass spectra and retention indices or the National Institute of Standards and Technology (NIST) library. Retention indices were scaled using a standard of 33 hydrocarbons ranging from C8 to C40. To determine the differences among the reference and the deletion strains a relative quantification is sufficient. Relative quantification of metabolites was carried out using peak areas of characteristic m/z ratio intensities of these metabolites that were normalized to the integral of the total intensity over the whole chromatogram.",
+            "cite_spans": [
+                {
+                    "start": 401,
+                    "end": 403,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Metabolite identification and deconvolution ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To find statistically significant differences between the metabolite profiles of the reference strain and the three deletion strains, the partial least squares to latent structures (PLS) regression method was applied [26]. This is commonly used in the analysis of data from multivariate studies to find significant relationships between different classes, here the reference strain and deletion strains. The PLS estimation resulted in three sets of model parameters each one comparing one of the deletion strains with the reference strain. Calculation of the model parameters was carried out using SIMCA-P 11.5+ (Umetrics, Malm\u00f6, Sweden). To reduce the impact of artifacts and noise during the modeling process, pareto scaling was used for all variables. For data visualization and selection of interesting metabolites loading plots with jack-knifed confidence intervals were chosen as described by Wiklund et al. [27].",
+            "cite_spans": [
+                {
+                    "start": 218,
+                    "end": 220,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 915,
+                    "end": 917,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "PLS modeling and PCA ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Euclidian distances between different strains were calculated using Matlab (version 7.2.0.232, The Math Works, Inc., Boston, USA). The Euclidian distance d(x, y) between two points x = (x1, x2,..., xn) and y = (y1, y2,..., yn) in a n-dimensional space is defined as",
+            "cite_spans": [],
+            "section": "Euclidian distance ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "d(x,y)=\u2211i=1n(xi\u2212yi)2.",
+            "cite_spans": [],
+            "section": "Euclidian distance ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each knock-out strain the Euclidian distance to the reference strain was calculated and visualized in the form of a dendrogram. Each vector includes the normalized areas of the corresponding metabolites which are statistically significant based on the PLS-DA (PLS-discriminant analysis).",
+            "cite_spans": [],
+            "section": "Euclidian distance ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Peptone was obtained form Bacto (Sparks, USA). Yeast Extract and nutrient agar were obtained from Difco (Sparks, USA). MSTFA was obtained form Macherey-Nagel (D\u00fcren, Germany). All other chemicals used were of analytical grade and obtained either from Sigma-Aldrich (St. Louis, USA) or Fluka (Buchs, Switzerland).",
+            "cite_spans": [],
+            "section": "Chemicals ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "KS was involved in conception and design, made all experiments and most of the data evaluation and interpretation, drafted major parts of the manuscript and revised the manuscript. JOK contributed during the set-up of the GC-MS-PTV system and was involved in the initial experiments. CW was involved in conception and design and contributed with his know how for metabolome analysis using GC-MS. IAR was involved in conception and design and in manuscript revision. AM and JD were involved in conception and design, drafting of the manuscript, data interpretation and in manuscript revision. EH was the primary responsible for the whole work, was involved in conception and design, drafting of the manuscript, data analysis and interpretation and in manuscript revision. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Specific rates during growth on glucose of the reference strain S. cerevisiae BY4742 and the used deletion strains pat1\u0394, dhh1\u0394 and lsm1\u0394.\n\u03bc \u2013 specific growth rate. q \u2013 specific rate.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Metabolites identified in the cell extracts of BY4742 and the used deletion mutants using the software AMDIS v2.0 and a TMS library.\nPeak numbers correspond to the labelling of the data points in Figure 2. #TMS denotes tert-methyl-silyl residues in the detected analyte originating from derivatization, MeOx denotes methoxymation of the metabolite. 1n.k., not known; u.m., unknown metabolite.",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Peak areas of detected metabolites normalized to total peak area in BY4742 and the three deletion strains pat1\u0394, dhh1\u0394 and lsm1\u0394 using GC/MS.\nE indicates essential amino acids; N indicates metabolites usually not observed in human cells.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: GC/MS spectrum of a S. cerevisiae  BY4742 pat1\u0394 cell extract. The numerical labels of the identified compounds are specified in Table 2. (A) whole intensity rage, (B) 0 -1% of abundance range.\n",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Comparison of intracellular amino acid concentrations determined by HPLC using the method of Hans et al. (2001) in \u00b5mol/g CDW and normalized peak areas for the amino acids (A) aspartic acid, (B) glycine and (C) phenylalanine determined by GC/MS.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Comparison of intracellular metabolites of S. cerevisiae strains analyzed by GC/MS using normalized peak areas, Ii. (A) dhh1\u0394 mutant versus reference BY4742, (B) pat1\u0394 versus reference BY4742, (C) lsm1\u0394 versus reference BY4742. The solid line indicates identical concentrations in both strains. Data points denote the mean of the normalized areas taken from six independent samples. Error bars in both directions indicate the corresponding standard deviations. The numerical labels of the single metabolites are defined in Table 2.\n",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Strain comparison based on intracellular metabolites extracted form S. cerevisiae BY4742 and the tree deletion strains pat1\u0394, dhh1\u0394 and lsm1\u0394 and analyzed using GC/MS. A \u2013 full data set; B \u2013 data without metabolites not observed in human as indicated in Table 3; C \u2013 same as B but with additional removal of essential amino acids that are not synthesized in human. The distances between the four strains correspond to the Euclidian distance calculated by using the normalized areas of the extracted metabolites of the four strains.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: PCA scores plot based on normalised peak areas from GC/MS analysis of cell extracts and the four strains BY4742 (reference), pat1\u0394, dhh1\u0394 and lsm1\u0394 (each one n=6). Analysis was conducted using SIMCA-P+ 11.5 (Umetrics, Malm\u00f6, Sweden). Data were pareto scaled and the first two components were autofitted.\n",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Loading plots of PLS-DA analysis of (A) reference and pat1\u0394, (B) reference and lsm1\u0394 and (C) reference and dhh1\u0394 (each one n=6) cell extracts from GC/MS analysis using normalized peak areas. Error-bars indicate jack-knifed confidence intervals. Values below zero indicate a higher concentration compared to the reference strain. Values above zero denote lower concentrations compared to the reference strain. Data were pareto scaled and analysis was carried out using SIMCA-P+ 11.5 (Umetrics, Malm\u00f6, Sweden).\n",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Heat map of 47 metabolites that show statistically significant changes between the\nreference strain (n=6) and the three deletion strains pat1\u0394, dhh1\u0394 and lsm1\u0394 (each one n=6). \nRed color denotes lower concentrations in the deletion strains; green color indicates higher \nconcentrations in the deletion strains. Statistically significant metabolites were identified \nusing the loading plots shown in Figure 6. G6P, glucose-6-phosphate; G1P, glycerol-1-\nphosphate; X5P, xylulose-5-phosphate; u. m.; unknown metabolite; WT, reference strain BY4742. \n",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Systems biology and the host response to viral infection",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ganji",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Paeper",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Proll",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Katze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Biotechnol",
+            "volume": "25",
+            "issn": "",
+            "pages": "1383-1389",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt1207-1383"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "P bodies: at the crossroads of post-transcriptional pathways",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Eulalio",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Behm-Ansmant",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Izaurralde",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Rev Mol Cell Biol",
+            "volume": "8",
+            "issn": "",
+            "pages": "9-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrm2080"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Identification of PatL1, a human homolog to yeast P body component Pat1",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Scheller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Resa-Infante",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "de la Luna",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Galao",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Albrecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaestner",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lipp",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lengauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meyerhans",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1773",
+            "issn": "",
+            "pages": "1786-1792",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bbamcr.2007.08.009"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Metabolic Screening of Saccharomyces cerevisiae Single Knockout Strains Reveals Unexpected Mobilization of Metabolic Potential",
+            "authors": [
+                {
+                    "first": "VR",
+                    "middle": [],
+                    "last": "Velagapudi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lengauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Talwar",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Process Biochem",
+            "volume": "41",
+            "issn": "",
+            "pages": "2170-2179",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.procbio.2006.06.016"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Metabolic flux screening of Saccharomyces cerevisiae single knockout strains on glucose and galactose supports elucidation of gene function",
+            "authors": [
+                {
+                    "first": "VR",
+                    "middle": [],
+                    "last": "Velagapudi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Biotechnol",
+            "volume": "132",
+            "issn": "",
+            "pages": "395-404",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbiotec.2007.08.043"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Metabolomics: a global biochemical approach to drug response and disease",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kaddurah-Daouk",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Kristal",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Weinshilboum",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Annu Rev Pharmacol Toxicol",
+            "volume": "48",
+            "issn": "",
+            "pages": "653-683",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.pharmtox.48.113006.094715"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Quantification of intracellular amino acids in batch cultures of Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hans",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Appl Microbiol Biotechnol",
+            "volume": "56",
+            "issn": "",
+            "pages": "776-779",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s002530100708"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Stress responses in yeasts: what rules apply?",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gonzalez-Parraga",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sanchez-Fresneda",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Martinez-Esparza",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Arguelles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Arch Microbiol",
+            "volume": "189",
+            "issn": "",
+            "pages": "293-296",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00203-007-0332-8"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Yeast as a navigational aid in genome analysis",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Oliver",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Microbiology",
+            "volume": "143",
+            "issn": "",
+            "pages": "1483-1487",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A functional genomics strategy that uses metabolome data to reveal the phenotype of silent mutations",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Raamsdonk",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Teusink",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Broadhurst",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hayes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Walsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Berden",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Brindle",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Kell",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Rowland",
+                    "suffix": ""
+                },
+                {
+                    "first": "HV",
+                    "middle": [],
+                    "last": "Westerhoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "van Dam",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Oliver",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Biotechnol",
+            "volume": "19",
+            "issn": "",
+            "pages": "45-50",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/83496"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Metabolic profiling: a Rosetta Stone for genomics?",
+            "authors": [
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Trethewey",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Krotzky",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Willmitzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Curr Opin Plant Biol",
+            "volume": "2",
+            "issn": "",
+            "pages": "83-85",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1369-5266(99)80017-X"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Saccharomyces cerevisiae: a versatile eukaryotic system in virology",
+            "authors": [
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Galao",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Scheller",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Alves-Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Breinig",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meyerhans",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Microb Cell Fact",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2859-6-32"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Metabolite profiling for plant functional genomics",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fiehn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kopka",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Dormann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Altmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Trethewey",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Willmitzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nat Biotechnol",
+            "volume": "18",
+            "issn": "",
+            "pages": "1157-1161",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/81137"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Comprehensive analysis of metabolites in Corynebacterium glutamicum by gas chromatography/mass spectrometry",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Strelkov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "von Elstermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Schomburg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biol Chem",
+            "volume": "385",
+            "issn": "",
+            "pages": "853-861",
+            "other_ids": {
+                "DOI": [
+                    "10.1515/BC.2004.111"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "In vivo quantification of intracellular amino acids and intermediates of the methionine pathway in Corynebacterium glutamicum",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Kr\u00f6mer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fritz",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Anal Biochem",
+            "volume": "340",
+            "issn": "",
+            "pages": "171-173",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ab.2005.01.027"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "In vivo analysis of intracellular amino acid labelings by GC/MS",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hans",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Anal Biochem",
+            "volume": "307",
+            "issn": "",
+            "pages": "379-382",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0003-2697(02)00030-1"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Integrated optical sensing of dissolved oxygen in microtiter plates: a novel tool for microbial cultivation",
+            "authors": [
+                {
+                    "first": "GT",
+                    "middle": [],
+                    "last": "John",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Klimant",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Heinzle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biotechnol Bioeng",
+            "volume": "81",
+            "issn": "",
+            "pages": "829-836",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/bit.10534"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "GMD@CSB.DB: the Golm Metabolome Database",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kopka",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Schauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Krueger",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Birkemeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Usadel",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bergmuller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Dormann",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Weckwerth",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Gibon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Stitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Willmitzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Fernie",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Steinhauser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "1635-1638",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/bti236"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Some recent developments in PLS modeling",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wold",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Trygg",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Berglund",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Antti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Chemom Intell Lab Syst",
+            "volume": "58",
+            "issn": "",
+            "pages": "131-150",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0169-7439(01)00156-3"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Visualization of GC/TOF-MS-based metabolomics data for identification of biochemically interesting compounds using OPLS class models",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wiklund",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Sjostrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Mellerowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Edlund",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Shockcor",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gottfries",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Moritz",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Trygg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Anal Chem",
+            "volume": "80",
+            "issn": "",
+            "pages": "115-122",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/ac0713510"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Identification of host proteins required for HIV infection through a functional genomic screen",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Brass",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Dykxhoorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Benita",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Engelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Xavier",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lieberman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Elledge",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "319",
+            "issn": "",
+            "pages": "921-926",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1152725"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Systematic, genome-wide identification of host genes affecting replication of a positive-strand RNA virus",
+            "authors": [
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Kushner",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Lindenbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "VZ",
+                    "middle": [],
+                    "last": "Grdzelishvili",
+                    "suffix": ""
+                },
+                {
+                    "first": "AO",
+                    "middle": [],
+                    "last": "Noueiry",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Ahlquist",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "100",
+            "issn": "",
+            "pages": "15764-15769",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.2536857100"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Identification of host genes involved in hepatitis C virus replication by small interfering RNA technology",
+            "authors": [
+                {
+                    "first": "TI",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mo",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pilot-Matias",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Koev",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Krishnan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mondal",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pithawalla",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dekhtyar",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Packer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schurdak",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Hepatology",
+            "volume": "45",
+            "issn": "",
+            "pages": "1413-1421",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/hep.21608"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Cellular cofactors affecting hepatitis C virus infection and replication",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Randall",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Panis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Tellinghuisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Sukhodolets",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pfeffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Landthaler",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Landgraf",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Lindenbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chien",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Weir",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ju",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Brownstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sheridan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zavolan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tuschl",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "104",
+            "issn": "",
+            "pages": "12884-12889",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0704894104"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Translation and replication of hepatitis C virus genomic RNA depend on ancient cellular proteins that control mRNA fates",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Scheller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diez",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Host deadenylation-dependent mRNA decapping factors are required for a key step in brome mosaic virus RNA replication",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mas",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Alves-Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Noueiry",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Ahlquist",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "246-251",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.80.1.246-251.2006"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Xenopus Xp54 and human RCK/p54 helicases functionally replace yeast Dhh1p in brome mosaic virus RNA replication",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Alves-Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mas",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Virol",
+            "volume": "81",
+            "issn": "",
+            "pages": "4378-4380",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.02246-06"
+                ]
+            }
+        }
+    }
+}

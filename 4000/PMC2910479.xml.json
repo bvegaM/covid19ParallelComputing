@@ -1,0 +1,3196 @@
+{
+    "paper_id": "PMC2910479",
+    "metadata": {
+        "title": "Vaxign: The First Web-Based Vaccine Design Program for Reverse Vaccinology and Applications for Vaccine Development",
+        "authors": [
+            {
+                "first": "Yongqun",
+                "middle": [],
+                "last": "He",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zuoshuang",
+                "middle": [],
+                "last": "Xiang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Harry",
+                "middle": [
+                    "L.",
+                    "T."
+                ],
+                "last": "Mobley",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Reverse vaccinology is an emerging vaccine development approach that starts with the prediction of vaccine targets by bioinformatics analysis of microbial genome sequences [1]. Predicted proteins are selected based on desirable attributes. Normal wet laboratory experiments are conducted in a later stage  to test all or selected vaccine targets. Rino Rappuoli, the pioneer of reverse vaccinology    [1, 2], first applied this approach to the development of a vaccine against serogroup B Neisseria meningitidis (MenB), the major cause of sepsis and meningitis in children and young adults    [2]. In this study, bioinformatic methods were first used to screen the complete genome of a MenB strain MC58 for genes encoding putative surface-exposed or secreted proteins. These proteins were predicted to be antigenic and therefore may represent the most suitable vaccine candidates. In total, 350 novel vaccine candidates were predicted and expressed in Escherichia coli; 28 were found to elicit protective immunity. It took less than 18 months to identify more vaccine candidates in MenB than had been discovered during the past 40 years by conventional methods    [2]. Since then, the concept of reverse vaccinology has also successfully been applied to other pathogens, including Bacillus anthracis    [3], Porphyromonas gingivalis    [4], Chlamydia pneumoniae    [5], Streptococcus pneumoniae    [6], Helicobacter pylori    [7], and Mycobacterium tuberculosis [8]. Compared to a conventional vaccine development approach that starts from the wet laboratory, reverse vaccinology begins with bioinformatics analysis, which dramatically quickens the process of vaccine development.",
+            "cite_spans": [
+                {
+                    "start": 173,
+                    "end": 174,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 401,
+                    "end": 402,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 404,
+                    "end": 405,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 593,
+                    "end": 594,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1164,
+                    "end": 1165,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1303,
+                    "end": 1304,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1336,
+                    "end": 1337,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1365,
+                    "end": 1366,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1398,
+                    "end": 1399,
+                    "mention": "6",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1426,
+                    "end": 1427,
+                    "mention": "7",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1462,
+                    "end": 1463,
+                    "mention": "8",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Since reverse vaccinology was conceived and applied in a test case ten years ago, this technology has progressed dramatically. Subcellular location is still considered as one main criterion for vaccine target prediction. However, more criteria have been added. For example, since it was found that outer membrane proteins containing more than one transmembrane helix were, in general, difficult to clone and purify    [2], the number of transmembrane domains for a vaccine target is often considered in bioinformatics filtering. More and more genomes are now available for each pathogenic species. It is now required to examine all completed genomes and predict vaccine targets that are conserved in all genomes. If genomes from non-pathogenic strains of the species are also available, ideal vaccine targets are those that exist in genomes of virulent pathogen strains but are absent from the avirulent strains. To induce strong immunity and avoid autoimmunity, predicted vaccine targets are required not to have sequence similarity to proteins of hosts (e.g., human). Epitope-based vaccines have been demonstrated to induce protection against many infectious diseases [9]. To optimize epitope vaccines, it has become an essential task to predict immune epitopes from protective antigens. ",
+            "cite_spans": [
+                {
+                    "start": 419,
+                    "end": 420,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1171,
+                    "end": 1172,
+                    "mention": "9",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "While reverse vaccinology has been used for a decade, this approach is often not accessible to the general laboratory, due to the lack of software programs that are easy to use and implement. Although many individual software programs are available to aid in vaccine target prediction    [10\u201317], they are individually developed for different purposes and contain disparate data formats and programming settings. This makes tool and data integration difficult. Successful use of these tools often requires local installation, command line execution, and substantial computational power. Many tools are not optimized for high throughput data processing. NERVE, for example, is a new enhanced reverse vaccinology environment that includes several steps of programs for reverse vaccinology [18]. NERVE aims to help save time and money in vaccine design. However, it also requires software download and database setup. In addition, NERVE does not include precomputed data of vaccine target prediction, which makes the prediction time extensive.  In addition, NERVE does not perform MHC class I and II epitope predictions. ",
+            "cite_spans": [
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 292,
+                    "end": 294,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 788,
+                    "end": 790,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Many immunoinformatics epitope mapping tools have been developed during the last three decades [19]. For example, DeLisi and Berzofsky developed the earliest computer-driven algorithm for epitope mapping based on empirical observations of amino acid residue periodicity in T-cell epitopes [20]. The anchor-based MHC binding motifs were used for T-cell epitope identification by many researchers, such as Sette et al. in 1989 [21] and Rotzschke et al. in 1991 [22]. Matrix-based approached for T-cell epitope mapping have been developed by a number of research teams such as Sette et al. [23], Davenport et al. [24], De Groot et al. [25], and Reche et al. [15]. Many databases of MHC-binding peptides, starting from MHCPEP developed by Brusic et al. in 1994 [26] to the currently frequently used IEDB [27], have been developed for use with matrices and neural network-based epitope prediction tools. ",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 290,
+                    "end": 292,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 426,
+                    "end": 428,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 460,
+                    "end": 462,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 588,
+                    "end": 590,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 611,
+                    "end": 613,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 633,
+                    "end": 635,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 656,
+                    "end": 658,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 758,
+                    "end": 760,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 801,
+                    "end": 803,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Uropathogenic  Escherichia coli   (UPEC) is the most common cause of community-acquired urinary tract infection (UTI).  Over half (53%) of all women (and 14% of men) experience at least one urinary tract infection (UTI), leading to an estimated 6.8 million annual physician visits in the United States alone, 1.3 million emergency room visits, and 246,000 hospitalizations of women with an annual cost of more than $2.4 billion    [28].  Although many groups have attempted to develop vaccines against UPEC    [29\u201333], no preparations are yet in general use in the United States.  Complete and annotated genomic sequences have now been determined for four strains of extraintestinal pathogenic E. coli including CFT073, UTI89, 536, and F11; these UPEC strains were isolated from human cases of cystitis, pyelonephritis, and/or bacteremia. These provide a basis for predicting UPEC vaccine targets using these genome sequences based on reverse vaccinology. Recently, we have also performed several high throughput proteomic and genomic studies including in vivo microarray    [34], proteomics of urine-grown bacteria [35], and in vivo induced antigen technology (IVIAT)    [36]. We hypothesized that vaccine targets predicted based on genome analysis largely correlate with the results obtained from these high throughput data analyses. ",
+            "cite_spans": [
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 511,
+                    "end": 513,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 514,
+                    "end": 516,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1076,
+                    "end": 1078,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1117,
+                    "end": 1119,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1173,
+                    "end": 1175,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaxign (http://www.violinet.org/vaxign/), the first web-based, publically available vaccine design system, was first introduced in the second Vaccine Congress meeting in December 2008 in Boston, MA, USA. Vaxign was demonstrated to successfully predict vaccine targets against different pathogens [37]. Since then, Vaxign has significantly been improved in terms of performance and speed. In this report, we systematically introduce the updated Vaxign prediction system, and describe how Vaxign was used to predict vaccine targets against uropathogenic E. coli (UPEC). Many predicted results, based on genome sequence analyses, were also confirmed by wet-lab testing and other studies based on RNA, protein, and antibody analyses. ",
+            "cite_spans": [
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaxign integrates open source tools and internally developed programs with user-friendly web interfaces. Input data for Vaxign execution are amino acid sequences from one protein or whole genomes. This Vaxign pipeline includes the following components (Figure 1). ",
+            "cite_spans": [],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": [
+                {
+                    "start": 253,
+                    "end": 261,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "(1) Prediction of subcellular localization. Vaxign predicts different subcellular locations using optimized PSORTb 2.0 that has a measured overall precision of 96% [10]. ",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(2) Transmembrane domain prediction. The transmembrane helix topology analysis is performed using optimized HMMTOP based on a general hidden Markov model (HMM) decoding algorithm [11]. A profile-based hidden Markov model implemented in PROFtmb is used in Vaxign for the prediction and discrimination of bacterial transmembrane beta barrels [38]. The resulting PROFtmb method reaches an overall four-state (up-, down-strand, periplasmic-,and outer-loop) accuracy as high as 86% [38]. Since the execution of PROTtmb is very time consuming, not all proteins in all genomes in the Vaxign database were preanalyzed for transmembrane beta barrel analysis. ",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 478,
+                    "end": 480,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(3) Calculation of adhesin probability. Adhesin probability is predicted using optimized SPAAN [12]. The SPAAN prediction has a sensitivity of 89% and specificity of 100% based on a defined test set [12]. The probability of being an adhesin has a default cut-off of 0.51. ",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(4) Protein conservation among different genomes. This program identifies conserved sequences among more than one genome. OrthoMCL is applied to calculate the homology between different sequences [13]. The E-value of 10\u22125 is set as the default value. An internally developed reciprocal best fit method, based on BLAST, was also developed for result comparison. ",
+            "cite_spans": [
+                {
+                    "start": 197,
+                    "end": 199,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(5) Exclusion of sequences present in nonpathogenic strains. OrthoMCL is used to calculate the homology between predicted sequences and all proteins in a specified non-pathogenic strain genome(s) [13]. ",
+            "cite_spans": [
+                {
+                    "start": 197,
+                    "end": 199,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(6) Comparison of sequence similarity between predicted proteins and host (human and/or mouse) proteome. OrthoMCL is customized for this purpose.",
+            "cite_spans": [],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(7) Prediction of MHC class I- and class II-binding epitopes. Vaxign uses an internally developed program Vaxitope to predict MHC class I and class II binding epitopes. Vaxitope is developed based on PSSM (Position Specific Scoring Matrix) motif prediction. The PSSMs for the prediction of peptide binders to MHC class I or II are calculated based on a position-based weighting method using the BLK2PSSM utility included in the BLIMPS package    [14]. Data for generating the PSSMs came from known epitope data from the IEDB immune epitope database [27]. The P value for the predicted epitope binding to PSSMs is calculated by the MAST sequence homology search algorithm [39]. A receiver operating characteristic (ROC) curve and the values of the area under the ROC Curve (AUC) were used to calculate the accuracy of the Vaxitope prediction [40]. For the AUC analysis, the epitope data from the IEDB immune epitope database [27] were used. A leave-one-out approach was applied to test if a known epitope can be predicted on the condition that this epitope is excluded in initial generation of PSSMs. ",
+            "cite_spans": [
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 550,
+                    "end": 552,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 672,
+                    "end": 674,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 842,
+                    "end": 844,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 925,
+                    "end": 927,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(8) Protein functional analysis: Predicted proteins can be selected and automatically exported to the DAVID bioinformatics resources [41] for functional protein analysis.",
+            "cite_spans": [
+                {
+                    "start": 134,
+                    "end": 136,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "2.1. Vaxign Software Components for Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaxign is implemented using a three-tier architecture built on two Dell Poweredge 2580 servers which run the Redhat Linux operating system (Redhat Enterprise Linux ES 5). Users can submit database or analysis queries through the web. These queries are then processed using PHP/HTML/SQL (middle-tier, application server based on Apache) against a MySQL (version 5.0) relational database (back-end, database server), or executed in runtime based on the Vaxign algorithm pipeline. The result of each query is then presented to the user in the web browser (Figure 1). Two servers are scheduled to regularly backup each others' data.",
+            "cite_spans": [],
+            "section": "2.2. Vaxign Server and Web Implementation ::: 2. Methods",
+            "ref_spans": [
+                {
+                    "start": 553,
+                    "end": 561,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To predict vaccine targets against uropathogenic E. coli (UPEC) using Vaxign, four UPEC strains with fully sequenced genomes were used: strains CFT073 (RefSeq ID: NC_004431), 536 (NC_008253), UTI89 (NC_007946), and F11 (NZ_AAJU00000000). Microbial genomes and protein sequences were downloaded from NCBI RefSeq genome database [42]. To determine whether predicted antigens exist in UPEC strains but not in non-pathogenic E. coli, the non-pathogenic E. coli K-12 strain MG1655 (RefSeq ID: NC_000913)    [43] was used as a control genome.",
+            "cite_spans": [
+                {
+                    "start": 328,
+                    "end": 330,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 503,
+                    "end": 505,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "2.3. Application of Vaxign in Prediction of UPEC Vaccine Targets ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The results of UPEC vaccine targets predicted by Vaxign were manually compared with results from our previous studies using microarray    [34], proteomics [35], immunoproteomic analysis    [36].",
+            "cite_spans": [
+                {
+                    "start": 139,
+                    "end": 141,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "2.4. Comparison of Different Methods in UPEC Vaccine Target Prediction ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To experimentally verify the predicted data, UPEC proteins were prepared using recombinant cloning technology. For active immunization, CBA/J mice (N = 10 for each group) were intranasally immunized with individual proteins combined with cholera toxin. As negative control, cholera toxin alone was also used to vaccinate mice.  The vaccinated group were boosted at 7 and 14 days. One week after the final boost, control (na\u00efve: Ctx-treated) and vaccinated mice were transurethrally challenged with 5 \u00d7 108 CFU E. coli CFT073. After a one-week, the efficacy of protection by individual subunit vaccines was evaluated by measuring the CFU/ml urine and CFU/g bladder or kidney tissue. The vaccine challenge experiments were reported in a recent publication [33].",
+            "cite_spans": [
+                {
+                    "start": 755,
+                    "end": 757,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "2.5. Verification of UPEC Vaccine Targets Predicted by Vaxign ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The workflow of the Vaxign pipeline is shown in Figure 1. The predicted features in Vaxign include protein subcellular location, transmembrane helices, adhesin probability, sequence conservation among pathogen genomes, and sequence similarity to host (human and mouse) proteomes. For those pathogens against which a strong B cell response (for antibody production) is critical, surface-exposed proteins such as secreted proteins and outer membrane proteins (especially adhesins) are ideal targets for vaccine development. For these pathogens, nonsurface proteins such as cytoplasmic or inner membrane proteins, however, may not represent good targets for vaccine development due to lack of close contact with the host cells    [1, 2]. However, for the vaccine development against those pathogens where T cell response is critical, subcellular localization is not an issue since a T cell response could be directed to any protein target. It has been reported that 250 out of 600 vaccine candidates from N. meningitidis B failed to be cloned and expressed due to the presence of more than one transmembrane spanning region    [2]. Therefore, it might also be prudent to ignore those proteins with multiple transmembrane spanning regions in the first place. The adherence of microbial pathogens to host cells is mediated by adhesins. Adhesins are essential for bacterial colonization and survival and represent possible targets for vaccine development. The conserved vaccine targets among different strains in one pathogen offer protection against these different strains. A vaccine candidate with similar sequence to the host (e.g., human or mouse) is likely to be a poor immunogen due to epitope mimicry, or if an immune response is triggered, cause autoimmunity in the host    [44\u201346]. These aspects are considered in the Vaxign prediction pipeline (Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 728,
+                    "end": 729,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 731,
+                    "end": 732,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1125,
+                    "end": 1126,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1778,
+                    "end": 1780,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1781,
+                    "end": 1783,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "3.1. The Vaxign Algorithm for Vaccine Target Prediction ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 48,
+                    "end": 56,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1850,
+                    "end": 1858,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "During the past decades, many algorithms and software programs have been developed to address individual processes in the Vaxign vaccine design pipeline.  Many software programs have been widely tested and validated. To avoid reinventing the wheel, we have incorporated many existing software programs into Vaxign as described in the Section 2. All open source programs (e.g., BLAST) have been customized. The Vaxitope (vaccine epitope prediction) is a new program that is internally developed and will be described later in this paper in more detail. One focus of the Vaxign development was to seamlessly incorporate different programs with different development styles and even program languages into a comprehensive analysis system. To achieve this goal, MySQL relational database was used to replace plain text input files typically used in original programs. In a typical scenario, output data of one program is stored in MySQL, and SQL query scripts are used to retrieve and process the data as input for another program. Each component program except Vaxitope in the Vaxign pipeline has individually been tested and validated in the literature    [10\u201313]. The testing of Vaxitope is described below.",
+            "cite_spans": [
+                {
+                    "start": 1155,
+                    "end": 1157,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1158,
+                    "end": 1160,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "3.1. The Vaxign Algorithm for Vaccine Target Prediction ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The Vaxign database contains precomputed prediction results using 76 genomes from 13 pathogens (Table 1). In total, 191,192 proteins have been precomputed.  These data can be queried using the Vaxign web interface. A user can also input protein sequence data for dynamic computation and result output.",
+            "cite_spans": [],
+            "section": "3.1. The Vaxign Algorithm for Vaccine Target Prediction ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 96,
+                    "end": 103,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Vaxign predicts both MHC class I and class II binding epitopes using an internally developed tool Vaxitope. Vaxitope is based on Position Specific Scoring Matrix (PSSM), a type of scoring matrix used in protein similarity searches in which amino acid substitution scores are given separately for each position in a protein multiple sequence alignment. In PSSM, a Tyr-Trp substitution at position A of an alignment may receive a very different score than the same substitution at position B. In contrast, in position-independent matrices such as the PAM and BLOSUM matrices, the Tyr-Trp substitution receives the same score no matter at what position it occurs. The general strategy of using PSSMs for prediction of MHC Class I and II binding has proven effective in RANKPEP [15].  ",
+            "cite_spans": [
+                {
+                    "start": 775,
+                    "end": 777,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "3.2. Vaxitope: Prediction of MHC Class I and Class II Binding Epitopes ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To evaluate the performance of Vaxitope, a receiver operating characteristic (ROC) curve analysis was generated for prediction of epitopes against 40 MHC class I or II alleles (Table 2). The ROC analysis detects the ability of predictions to classify each predicted epitope peptide into MHC class I or II binding based on its comparison with existing epitope database [40]. Plotting the rates of true-positive predictions (sensitivity) as a function of the rate of false-positive predictions (1-specificity) gives an ROC curve. For example, a ROC curve based on Vaxign analysis was generated using HLA A*0201 specific PSSM (Figure 2). HLA A*0201 is one of the most studied HLA MHC Class I allele. According to the IEDB immune epitope database [27], 3216 epitopes are known to positively bind to this allele (as positive testing dataset), and 4826 epitopes cannot bind to this allele (as negative testing dataset). The positive HLA A*0201 alleles were used to calculate the True Positive Rate (Sensitivity). The negative alleles were used to calculate the False Positive Rate (1-Specificity) (Figure 2). The areas under the ROC curve (AUC) provide a way to measure prediction quality. An AUC of 0.5 represents random predictions, and an AUC of 1.0 indicates perfect predictions    [16]. The value of the Area Under the ROC Curve (AUC) for the HLA A*0201 analysis using Vaxitope is 0.929. Our analysis of 30 alleles indicates that Vaxitope is a very specific and sensitive method for MHC Class I and II binding epitope prediction (Table 2). ",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 371,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 744,
+                    "end": 746,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1281,
+                    "end": 1283,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "3.2. Vaxitope: Prediction of MHC Class I and Class II Binding Epitopes ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 624,
+                    "end": 632,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1092,
+                    "end": 1100,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 177,
+                    "end": 184,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1529,
+                    "end": 1536,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "It is interesting to compare Vaxign and RANKPEP since both methods are based on PSSM. If only AUC values are taken into account, our prediction results are in general better than the results predicted by RANKPEP [15]. However, the results may not be comparable, since the data required to generate PSSMs might be different. Different from RANKPEP, which uses a percentage or top number as the cut off as shown in RANKPEP [15], Vaxitope defines statistical P-values based on a random sequence model that assumes each position in a random sequence is generated according to the average letter frequencies of all sequences in the NCBI peptide non-redundant database [39]. Our studies indicate that the P value of  .05 provides a cutoff with high and balanced sensitivity and specificity (Table 2). Another unique feature in Vaxitope is that it integrates with other vaccine design components in Vaxign. For example, the input sequence of Vaxitope may come from those peptides that are part of an outer membrane protein and exposed outside the bacterial membrane (Figure 3). These protein peptides are predicted by Vaxign and easily available as input data for Vaxitope. Vaxitope also allows genome-wide query on different MHC host species. ",
+            "cite_spans": [
+                {
+                    "start": 213,
+                    "end": 215,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 422,
+                    "end": 424,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 664,
+                    "end": 666,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "3.2. Vaxitope: Prediction of MHC Class I and Class II Binding Epitopes ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 1060,
+                    "end": 1068,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 785,
+                    "end": 792,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Traditional reverse vaccinology does not consider prediction of epitopes. With the P value cut off of  .05, 1436 epitopes from E. coli protein Hma for 39 MHC Class I alleles in 4 hosts and 515 epitopes for 23 MHC Class II alleles have been found in 4 hosts\u2014human, mouse,  macaque, and chimpanzee. It remains a challenge to rank and optimize the epitopes for vaccine development. Possible solutions to address this challenge are described in the Discussion.",
+            "cite_spans": [],
+            "section": "3.2. Vaxitope: Prediction of MHC Class I and Class II Binding Epitopes ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To make Vaxign easy to use, two methods of implementation have been developed. Users can either directly query precomputed prediction results from the Vaxign database, or request Vaxign to dynamically calculate results based on the users' input sequences. The prediction data from the precomputed Vaxign database can be easily queried using our Vaxign web query interface (Figure 3). ",
+            "cite_spans": [],
+            "section": "3.3. User-Friendly Vaxign Web Interface ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 373,
+                    "end": 381,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "A simple web query interface is available for querying the precomputed Vaxign results from the protein level or genome level (Figure 3).  Users are prompted to set up preferred query criteria; the output data are then provided. The query of precomputed Vaxign results is fast. A typical query involved in four genomes and all the steps as shown in our UPEC use case (Figure 3) takes approximately 2\u20135 seconds. ",
+            "cite_spans": [],
+            "section": "3.3. User-Friendly Vaxign Web Interface ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 126,
+                    "end": 134,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 367,
+                    "end": 375,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The other form is dynamic Vaxign analysis, which is similar to the precomputed Vaxign except that a user is prompted to provide information for up to 300 proteins at one time. The protein information may be protein sequences using FASTA format, NCBI protein GI, or RefSeq accession number. Vaxign predicts vaccine targets based on runtime execution. It typically takes 30\u201360 seconds to execute all the steps in run time for one single protein. Therefore, it would take 150\u2013300 minutes to finish analysis of 300 proteins. Once all steps are finished, the web link of the predicted results will be sent to a registered user through email.",
+            "cite_spans": [],
+            "section": "3.3. User-Friendly Vaxign Web Interface ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The genomes of all four UPEC strains (CFT073, 536, UT189, and F11) for which complete sequence data are available were analyzed by Vaxign (Figure 4). These four genomes contain 4704\u20135379 genes. Only outer membrane proteins (OMP) are predicted and analyzed. From the total 5379 proteins in UPEC strain CFT073, Vaxign detects 107 outer membrane proteins. Among the 107 proteins, three proteins contain more than one transmembrane helix. Vaxign further predicts 70 proteins from the 107 OMPs in strain CFT073 as possible adhesins or adhesin-like proteins    [34]. These predicted adhesins are likely critical for colonization, a major challenge facing UPEC in the urinary tract. While some of these proteins, such as PapC [47], are adhesins, many of these 70 proteins (e.g., Hma, FepA) predicted to be adhesins are not typically considered as adhesins. The roles of these adhesin-like proteins in adhering to host cells require further investigation. None of these 70 proteins shows sequence similarity to any human or mouse proteins. Similar strategy was applied to obtain vaccine targets for the other three UPEC strains (Figure 4). ",
+            "cite_spans": [
+                {
+                    "start": 556,
+                    "end": 558,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 720,
+                    "end": 722,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "3.4. Vaxign Predicts 22 Outer Membrane Proteins as UPEC Vaccine Targets ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 139,
+                    "end": 147,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1121,
+                    "end": 1129,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Ortholog analysis was then applied to obtain conserved vaccine targets from four UPEC strains. In total, 85 OMPs were found to be conserved across all four pathogenic UPEC strains (Figure 4). Among these 85 OMPs, two proteins (NP_755264.1, NP_756232.1) are predicted to contain three transmembrane helixes. Multiple transmembrane helixes make it difficult to purify recombinant proteins [48]. Therefore, these two proteins may not be good vaccine targets as whole protein antigens. When adhesin probability is taken into account, 58 out of the 83 proteins have an adhesin probability of   \u2265.051. ",
+            "cite_spans": [
+                {
+                    "start": 388,
+                    "end": 390,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "3.4. Vaxign Predicts 22 Outer Membrane Proteins as UPEC Vaccine Targets ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 181,
+                    "end": 189,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Functional gene enrichment analysis was performed to classify the roles of these 58 OMPs using the software DAVID (Table 3). Only 48 genes have annotation in DAVID and thus included in the DAVID analysis. Among these 48 genes, significantly enriched function annotations are in the areas of transport activities, TonB-dependent receptor (beta-barrel), Gram-negative porin, iron ion transmembrane transporter activity, and fimbrial biogenesis in outer membrane (Table 3). ",
+            "cite_spans": [],
+            "section": "3.4. Vaxign Predicts 22 Outer Membrane Proteins as UPEC Vaccine Targets ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 115,
+                    "end": 122,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 461,
+                    "end": 468,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Of these 58 outer membrane proteins identified by Vaxign, 36 were further found to be present in the non-pathogenic E. coli K-12 strain MG1655    [43]. K-12 is used to remove those proteins that have been exposed to the host environment (e.g., gut) and may be tolerant by the host    [49]. Only 22 proteins have been identified to be unique to the pathogenic UPEC strains (Figure 4). ",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 285,
+                    "end": 287,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "3.4. Vaxign Predicts 22 Outer Membrane Proteins as UPEC Vaccine Targets ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 373,
+                    "end": 381,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "A table of genes in different categories were further generated based on the Figure 4 and Table 3 and manual curation of literature data (Table 4). Eight E. coli proteins are predicted to contain iron-binding and iron siderophore transporter activity. Ten proteins are associated with a TonB box    [50], and thus may play a role in iron acquisition by the bacterium. Another eight proteins are fimbrial biogenesis outer membrane usher proteins. Nine proteins are related to porin and ion transport. Indeed, many proteins in the list participate in transporter activity. Many lipoproteins have also been found. All of these targets would be logical selections. Many hypothetic proteins have been found with no defined functions or annotations.",
+            "cite_spans": [
+                {
+                    "start": 300,
+                    "end": 302,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "3.4. Vaxign Predicts 22 Outer Membrane Proteins as UPEC Vaccine Targets ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 77,
+                    "end": 86,
+                    "mention": "Figure 4 ",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 90,
+                    "end": 98,
+                    "mention": "Table 3 ",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 138,
+                    "end": 145,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The predicted results based on DNA sequence analysis are compared with data from transcriptomic microarray data    [34], mass spectrometry proteomic studies    [35, 51], and antigenicity analysis    [36]. Out of 85 predicted outer membrane proteins that are conserved among four UPEC strains, 23 proteins have been found upregulated in vivo or in urine at the mRNA and/or protein levels (Table 4). It was found that many proteins with upregulated gene expression belong to iron ion binding proteins and porin family. However, only one protein (FimD) from fimbrial biogenesis outer membrane protein family was shown to be upregulated in DNA microarray analysis (Table 4)    [34].",
+            "cite_spans": [
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "3.5. Comparison of Vaxign Prediction Results and other Methods ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 388,
+                    "end": 395,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 661,
+                    "end": 668,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Five out of 14 iron binding proteins (IroN, FepA, FhuA, Hma, and ChuA) discovered by Vaxign have been found to be upregulated in vivo or in urine (Table 4)    [34\u201336, 51]. Since iron metabolism is critical for UPEC pathogenesis, these proteins are important vaccine targets. Five proteins from porin family have also been found upregulated in vivo or in urine, including NmpC, OmpC, LamB, OmpF, and FadL (Table 4). Limited study has been performed to investigate the roles of these porin proteins in induction of protective immunity against UPEC infection.",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 163,
+                    "end": 165,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 167,
+                    "end": 169,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "3.5. Comparison of Vaxign Prediction Results and other Methods ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 147,
+                    "end": 154,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 405,
+                    "end": 412,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Iron binding proteins were chosen for development of UPEC subunit vaccines. These proteins are typically outer membrane \u03b2-barrel proteins that function as receptors for iron-containing compounds. This group of proteins were predicted by Vaxign (Table 4) and significantly enriched based on gene enrichment analysis (Table 3). The antigen c2482 (renamed Hma for heme acquisition), a heme-binding protein, was first cloned and purified, and used for in vivo mouse testing. It was found that intranasal immunization with Hma generated an antigen-specific humoral response, antigen-specific production of IL-17 and IFN-\u03b3, and provided significant protection against experimental infection with UPEC strain CFT073 [33].",
+            "cite_spans": [
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "3.6. Verification of Vaxign Predicted Results ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 245,
+                    "end": 252,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 316,
+                    "end": 323,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "ChuA was another heme/hemoglobin receptor that was also present in microarray & proteomics studies (Table 4)    [34, 35]. Our experimental studies found that recombinant ChuA induced severe sickness in mice. Mice that recovered from the ChuA vaccination were challenged with strain CFT073, but were not protected (data not shown). ",
+            "cite_spans": [
+                {
+                    "start": 113,
+                    "end": 115,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 117,
+                    "end": 119,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "3.6. Verification of Vaxign Predicted Results ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 100,
+                    "end": 107,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "IroN has been found to be a protective antigen    [49]. However, our study did not find significant protection stimulated by IroN [33]. This protein also exists in E. coli K-12, which may bring a discussion about whether it is needed to use this cutoff.  ",
+            "cite_spans": [
+                {
+                    "start": 51,
+                    "end": 53,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "3.6. Verification of Vaxign Predicted Results ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Two other proteins, IreA (NP_757022.1, c5174) and IutA (NP_755498.1), were also tested based on six independent screens [33]. Both are putative iron-regulated outer membrane virulence proteins. Our studies found that IreA and IutA were able to independently stimulate protective immunity in mouse bladder against challenge with UPEC strain CFT073 [33]. These two proteins were not shown in our final list of vaccine candidates predicted by our Vaxign analysis pipeline because they were filtered out due to their absence in the other three UPEC genomes.",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 123,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 348,
+                    "end": 350,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "3.6. Verification of Vaxign Predicted Results ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaxign is the first web-based vaccine design software program freely available for the purpose of facilitating reverse vaccinology. Vaxign optimizes the conditions and performance of many public tools and provides new programs in a way optimal for analyzing high throughput data. The seamless integration makes Vaxign a user-friendly environment  specific for reverse vaccinology. Our analysis indicates that Vaxign specifically and sensitively predicts known vaccine targets and also provides new vaccine target candidates deserving further wet lab confirmation. Vaxign is expected to become a publically available web-based program for vaccine researchers to efficiently design vaccine targets and develop vaccines using a rationale reverse vaccinology strategy.",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To test whether Vaxign is capable of predicting those protective antigens that have been validated based on wet laboratory experiments, we have curated the literature and obtain a list of proteins and used Vaxign to analyze those protective antigens. Vaxign has also been used to predict vaccine targets using other bacteria such as Brucella spp., Neisseria meningitides, and Mycobacterium tuberculosis. Our studies indicated that Vaxign predicted results are consistent with existing reports [37]. ",
+            "cite_spans": [
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We showed in this report that Vaxign can be successfully used for prediction of UPEC vaccine candidates. While UPEC FimH was reported to be a protective antigen    [52], it was not included in our list of predicted genes (Table 4). FimH is predicted by Vaxign as an adhesin with an adhesin probability of  .96. This prediction is consistent with current knowledge about this protein    [52]. Based on an X-ray structure analysis, FimH is folded into two domains of the all-beta class connected by a short extended linker    [53]. FimH was not shown in our final predicted list since its subcellular localization was predicted unknown (Probability = .2). If only a high adhesin probability is considered, FimH would be included in our prediction list. This also indicates different Vaxign options selected by a user would change the results. However, we identified another protein in that complex (FimD) (Table 4). Vaxign identified IroN, Hma, and ChuA (Table 4) which were selected as possible protective antigens after lengthy experimental assessment [33]. Our study found that Hma induced protection in mice from transurethral challenge with UPEC. Another independent study indicated that subcutaneous immunization with denatured IroN conferred significant protection against renal, but not bladder, urinary tract infection in a mouse model    [54]. ",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 525,
+                    "end": 527,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1053,
+                    "end": 1055,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1347,
+                    "end": 1349,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": [
+                {
+                    "start": 222,
+                    "end": 229,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 904,
+                    "end": 911,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 953,
+                    "end": 960,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "While recombinant ChuA induced severe sickness in mice, the immunized mice did not protect against virulent UPEC infection. This sickness was probably due to its Heme-binding activity. The possible release of high levels of inflammatory cytokines and innate immune response might lead to mouse death. It is likely that ChuA contains some immunodominant T cell epitope(s) that activates effector (inflammatory) T cell immunity [46]. In many cases, subdominant epitopes that induce subdominant responses may be important components of an effective immune defence [19]. Immunization with subdominant but optimal epitopes can often induce T cell responses that are more effective than immunodominant epitopes.  A more advanced in silico prediction would be able to predict and optimize epitopes for vaccine development.",
+            "cite_spans": [
+                {
+                    "start": 427,
+                    "end": 429,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 562,
+                    "end": 564,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\t\t\t\tOur study also indicated that microarray and proteomics gene expression data were complementary to DNA sequence-based analysis in predicting vaccine targets (Table 4). Future directions of further Vaxign development may include addition of other components such as analysis of high throughput transcriptomic (e.g., DNA microarray and superarray) and proteomic data for vaccine target prediction. Predicted vaccine targets can also be analyzed based on gene annotation enrichment to further refine vaccine targets using tools such as DAVID. The gene enrichment results combined with predictions based on DNA sequence analysis as well as mRNA and protein gene expression allowed us to focus on the group of iron binding proteins for experimental testing. ",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": [
+                {
+                    "start": 163,
+                    "end": 170,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "\n\t\t\t\tMore than 700 microbial genomes have been sequenced and analyzed, which provide a foundation for scientists to develop vaccines using the reverse vaccinology. Reverse vaccinology shortens the period of vaccine target discovery and evaluation to 1-2 years [1]. This new strategy also revolutionizes new vaccine development against pathogens for which the applications of Pasteur's principles have failed. ",
+            "cite_spans": [
+                {
+                    "start": 261,
+                    "end": 262,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The use of proteins is a common approach for genetically engineered vaccine development. However, generating epitope vaccines has many advantages and is currently an active research area. To give the most simplified example, if only one epitope of a large protein is protective, using the peptide epitope would allow the delivery of much higher dose of the key epitope during vaccination. Therefore, prediction of a successful epitope would increase efficacy for the vaccine. ",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our studies found that Vaxitope is a sensitive and specific program for predicting immune epitopes that provide good candidates for epitope vaccine development. We are in the processing of designing and evaluating epitope-based UPEC vaccines using Vaxign. We will first target to predict epitopes from antigens (e.g., Hma) that have proven able to induce protective immunity.  ",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It often occurs that many epitopes can be predicted from one specific protein. It is often challenging to rank predicted epitopes for vaccine testing. The epitope ranking can also be used to rank proteins. Many programs, such as EpiAssembler by EpiVax    [55], allow epitope content ranking. It is known that the best T cell epitopes tend to contain \u201cclusters\u201d of MHC binding motifs, and the clustering is highly correlated with the immunogenicity [46]. Therefore, it is more effective to design a peptide(s) containing clustered epitopes for induction of better immunogenicity in rational vaccine development. Promiscuous epitopes are those MHC ligands or T-cell epitopes that are recognized in the context of more than one MHC molecule and recognized by more than one T-cell clone. Many software programs, such as TEPITOPE [56], enable the computational identification of promiscuous MHC ligands. The prediction of promiscuous epitopes is also an important feature for epitope-based vaccine design.",
+            "cite_spans": [
+                {
+                    "start": 256,
+                    "end": 258,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 449,
+                    "end": 451,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 826,
+                    "end": 828,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It is often that a vaccine candidate that is effective in a mouse model is not effective in human. If the epitopes are designed for human use, the mice used for testing the epitope vaccine usually need to be transgenic. Generating HLA transgenic mice is costly and time consuming. It is possible, however, to design epitopes that are effective for both mouse and human. For example, it was reported that an epitope in human immunodeficiency virus 1 reverse transcriptase was recognized by both mouse and human cytotoxic T lymphocytes    [57]. Prediction and screening of such epitopes would simplify our testing of human vaccine candidates in the mouse model.  ",
+            "cite_spans": [
+                {
+                    "start": 538,
+                    "end": 540,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The molecular mimicry or the cross-reactivity between self epitopes and pathogen epitopes has been found a common reason for many pathogen-induced autoimmune diseases [46]. Many pathogens, such as Klebsiella pneumoniae, Proteus mirabilis, human coronavirus, and Lyme disease spirochete Borrelia burgdorferi carry antigens which cross-react with human antigens    [44, 46]. For example, the oligopeptide QTDRED is common to both K. pneumoniae and HLA-B27 nitrogenase reductase enzyme. This sequence similarity appears to cause ankylosing spondyltis. Proteus mirabilis hemolysin contains a molecular mimicry sequence ESRRAL that has the same shape and charge distribution as the rheumatoid arthritis susceptibility sequence EQRRAA. Antibody levels against P. mirabilis hemolysin and a synthetic peptide ESRRAL were significantly higher in rheumatoid arthritis patients [44]. To avoid the autoimmunity, it is important to eliminate the epitopes that are conserved. Currently Vaxign provides a genome-wide sequence similarity analysis at protein levels. Many programs, such as Conservatrix [19] and IEDB Sequence Mapping tool (http://tools.immuneepitope.org/esm/esmhelp.jsp?tab=help), have been developed to map epitope sequences. We plan to develop such epitope sequence mapping tool in Vaxign in the future.",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 364,
+                    "end": 366,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 368,
+                    "end": 370,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 868,
+                    "end": 870,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1087,
+                    "end": 1089,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaxign is part of VIOLIN, a web-based vaccine database and analysis resource [58]. The predicted vaccine targets from Vaxign will also integrate with those manually annotated vaccine data available in VIOLIN. An literature mining program based on the Vaccine Ontology (http://www.violinet.org/vaccineontology) is also being developed to facilitate automated literature data processing and inference for the purpose of retrieving valuable data for rational vaccine design.",
+            "cite_spans": [
+                {
+                    "start": 78,
+                    "end": 80,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Pathogens currently analyzed by Vaxign.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Epitope prediction performance by Vaxitope as measured by AUC values.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Selected function annotations significantly enriched for UPEC vaccine candidates based on DAVID analysis.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Conserved UPEC outer membrane proteins predicted by Vaxign.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The Vaxign algorithm pipeline. ",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: ROC curve analysis of epitopes binding HLA A*0201.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Vaxign prediction of UPEC vaccine targets. (a) Selection of E. coli CFT073 as a seed genome. Different filter options are applied: only outer membrane proteins, maximum of one transmembrane helix, minimum adhesin probability of.51, having orthologs in other three UPEC genomes but no orthologs in K-12 strain M1655, and no similarity to any human or mouse proteins. (b) In total 22 proteins were predicted to meet selected criteria. (c) Detailed results for a particular protein, for example, NmpC. MHC Class I and II epitope prediction results are also available and can be further filtered. (d) Prediction of \u03b1-helices and their possible cellular locations of NmpC. (e) Prediction of \u03b2-barrels and their possible cellular locations of NmpC. ",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Prediction of UPEC vaccine targets conserved in four sequenced UPEC genomes using Vaxign. Note: * Co-ed represents the conserved proteins.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Reverse vaccinology",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rappuoli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Current Opinion in Microbiology",
+            "volume": "3",
+            "issn": "5",
+            "pages": "445-450",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "PSORTb v.2.0: expanded prediction of bacterial protein subcellular localization and insights gained from comparative proteome analysis",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Gardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Laird",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "5",
+            "pages": "617-623",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Advantages of combined transmembrane topology and signal peptide prediction\u2014the Phobius web server",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "K\u00e4ll",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krogh",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Sonnhammer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Research",
+            "volume": "35",
+            "issn": "",
+            "pages": "W429-W432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "SPAAN: a software program for prediction of adhesins and adhesin-like proteins using neural networks",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Sachdeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ramachandran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "4",
+            "pages": "483-491",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "OrthoMCL: identification of ortholog groups for eukaryotic genomes",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Stoeckert",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Roos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genome Research",
+            "volume": "13",
+            "issn": "9",
+            "pages": "2178-2189",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Blocks+: a non-redundant database of protein alignment blocks derived from multiple compilations",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pietrokovski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Bioinformatics",
+            "volume": "15",
+            "issn": "6",
+            "pages": "471-479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Enhancement to the RANKPEP resource for the prediction of peptide binding to MHC molecules using profiles",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Reche",
+                    "suffix": ""
+                },
+                {
+                    "first": "J-P",
+                    "middle": [],
+                    "last": "Glutting",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Reinherz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Immunogenetics",
+            "volume": "56",
+            "issn": "6",
+            "pages": "405-419",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A community resource benchmarking predictions of peptide binding to MHC-I molecules",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Frankild",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Computational Biology",
+            "volume": "2",
+            "issn": "6 , article e65",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "SYFPEITHI: database for MHC ligands and peptide motifs",
+            "authors": [
+                {
+                    "first": "H-G",
+                    "middle": [],
+                    "last": "Rammensee",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bachmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "NPN",
+                    "middle": [],
+                    "last": "Emmerich",
+                    "suffix": ""
+                },
+                {
+                    "first": "OA",
+                    "middle": [],
+                    "last": "Bachor",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stevanovi\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Immunogenetics",
+            "volume": "50",
+            "issn": "3-4",
+            "pages": "213-219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "NERVE: new enhanced reverse vaccinology environment",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Vivona",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Bernante",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Filippini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Biotechnology",
+            "volume": "6, article 35",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Immuno-informatics: mining genomes for vaccine components",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sbai",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Aubin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McMurry",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Immunology and Cell Biology",
+            "volume": "80",
+            "issn": "3",
+            "pages": "255-269",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Identification of vaccine candidates against serogroup B meningococcus by whole-genome sequencing",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Scarlato",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Masignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "287",
+            "issn": "5459",
+            "pages": "1816-1820",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "T-cell antigenic sites tend to be amphipathic structures",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "DeLisi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Berzofsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "82",
+            "issn": "20",
+            "pages": "7048-7052",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Prediction of major histocompatibility complex binding regions of protein antigens by sequence pattern analysis",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Buus",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Appella",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "86",
+            "issn": "9",
+            "pages": "3296-3300",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Exact prediction of a natural T cell epitope",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Rotzschke",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Falk",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stevanovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Walden",
+                    "suffix": ""
+                },
+                {
+                    "first": "H-G",
+                    "middle": [],
+                    "last": "Rammensee",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "European Journal of Immunology",
+            "volume": "21",
+            "issn": "11",
+            "pages": "2891-2894",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "HLA DR4w4-binding motifs illustrate the biochemical basis of degeneracy and specificity in peptide-DR interactions",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Oseroff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Journal of Immunology",
+            "volume": "151",
+            "issn": "6",
+            "pages": "3163-3170",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "An empirical method for the prediction of T-cell epitopes",
+            "authors": [
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Davenport",
+                    "suffix": ""
+                },
+                {
+                    "first": "IAPH",
+                    "middle": [],
+                    "last": "Shon",
+                    "suffix": ""
+                },
+                {
+                    "first": "AVS",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Immunogenetics",
+            "volume": "42",
+            "issn": "5",
+            "pages": "392-397",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "An interactive web site providing major histocompatibility ligand predictions: application to HIV research",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Jesdale",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Szu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Schafer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Chicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Deocampo",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "AIDS Research and Human Retroviruses",
+            "volume": "13",
+            "issn": "7",
+            "pages": "529-531",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "MHCPEP: a database of MHC-binding peptides",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Brusic",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rudy",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Nucleic Acids Research",
+            "volume": "22",
+            "issn": "17",
+            "pages": "3663-3665",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "The immune epitope database and analysis resource: from vision to blueprint",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Biology",
+            "volume": "3",
+            "issn": "3, article e91",
+            "pages": "379-381",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Urologic diseases in America project: analytical methods and principal findings",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Litwin",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Saigal",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Yano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Urology",
+            "volume": "173",
+            "issn": "3",
+            "pages": "933-937",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Type 1 fimbrial expression enhances Escherichia coli virulence for the urinary tract",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Connell",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Agace",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Klemm",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schembri",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "M\u00e5rild",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Svanborg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "93",
+            "issn": "18",
+            "pages": "9827-9832",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Search for potential vaccine candidate open reading frames in the Bacillus anthracis virulence plasmid pXO1: in silico and in vitro screening",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ariel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zvi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Grosfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Infection and Immunity",
+            "volume": "70",
+            "issn": "12",
+            "pages": "6817-6827",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Vaccination with FimH adhesin protects cynomolgus monkeys from colonization and infection by uropathogenic Escherichia coli",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Langermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "M\u00f6llby",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Burlein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of Infectious Diseases",
+            "volume": "181",
+            "issn": "2",
+            "pages": "774-778",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Phase 2 clinical trial of a vaginal mucosal vaccine for urinary tract infections",
+            "authors": [
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Uehling",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Hopkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Elkahwaji",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Leverson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Urology",
+            "volume": "170",
+            "issn": "3",
+            "pages": "867-869",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Protective efficacy and immunogenicity of Escherichia coli K13 diphtheria toxoid conjugate against experimental ascending pyelonephritis",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "NK",
+                    "middle": [],
+                    "last": "Ganguly",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Joshi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Medical Microbiology and Immunology",
+            "volume": "194",
+            "issn": "4",
+            "pages": "211-217",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Mucosal immunization with iron receptor antigens protects against urinary tract infection",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Alteri",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Hagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Sivick",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "HLT",
+                    "middle": [],
+                    "last": "Mobley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS Pathogens",
+            "volume": "5",
+            "issn": "9",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Transcriptome of uropathogenic Escherichia coli during urinary tract infection",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Snyder",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Haugen",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Buckles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Infection and Immunity",
+            "volume": "72",
+            "issn": "11",
+            "pages": "6373-6381",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Quantitative profile of the uropathogenic Escherichia coli outer membrane proteome during growth in human urine",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Alteri",
+                    "suffix": ""
+                },
+                {
+                    "first": "HLT",
+                    "middle": [],
+                    "last": "Mobley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infection and Immunity",
+            "volume": "75",
+            "issn": "6",
+            "pages": "2679-2688",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Uropathogenic Escherichia coli outer membrane antigens expressed during urinary tract infection",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Hagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HLT",
+                    "middle": [],
+                    "last": "Mobley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infection and Immunity",
+            "volume": "75",
+            "issn": "8",
+            "pages": "3941-3949",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Vaxign: a web-based vaccine target design program for reverse vaccinology",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Procedia in Vaccinology",
+            "volume": "1",
+            "issn": "1",
+            "pages": "23-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Predicting transmembrane beta-barrels in proteomes",
+            "authors": [
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Bigelow",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Petrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Przybylski",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rost",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Research",
+            "volume": "32",
+            "issn": "8",
+            "pages": "2566-2577",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Combining evidence using p-values: application to sequence homology searches",
+            "authors": [
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gribskov",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Bioinformatics",
+            "volume": "14",
+            "issn": "1",
+            "pages": "48-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Identification of vaccine candidate antigens from a genomic analysis of Porphyromonas gingivalis",
+            "authors": [
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Ross",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Czajkowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hocking",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "30",
+            "pages": "4135-4142",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Measuring the accuracy of diagnostic systems",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Swets",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Science",
+            "volume": "240",
+            "issn": "4857",
+            "pages": "1285-1293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Systematic and integrative analysis of large gene lists using DAVID bioinformatics resources",
+            "authors": [
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lempicki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature Protocols",
+            "volume": "4",
+            "issn": "1",
+            "pages": "44-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "NCBI Reference Sequence (RefSeq): a curated non-redundant sequence database of genomes, transcripts and proteins",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maglott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Research",
+            "volume": "33",
+            "issn": "",
+            "pages": "D501-D504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "The complete genome sequence of Escherichia coli K-12",
+            "authors": [
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Plunkett",
+                    "suffix": "III"
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Bloch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "277",
+            "issn": "5331",
+            "pages": "1453-1462",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Molecular mimicry between HLA-DR alleles associated with rheumatoid arthritis and Proteus mirabilis as the aetiological basis for autoimmunity",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tiwana",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ebringer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Microbes and Infection",
+            "volume": "2",
+            "issn": "12",
+            "pages": "1489-1496",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Campylobacter species and Guillain-Barre syndrome",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Nachamkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Allos",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Clinical Microbiology Reviews",
+            "volume": "11",
+            "issn": "3",
+            "pages": "555-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "T cell epitope: friend or foe? Immunogenicity of biologics in context",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Mehta",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ardito",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Moise",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Advanced Drug Delivery Reviews",
+            "volume": "61",
+            "issn": "11",
+            "pages": "965-976",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Correlation between virulence factors and in vitro biofilm formation by Escherichia coli strains",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Naves",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "del Prado",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huelves",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Microbial Pathogenesis",
+            "volume": "45",
+            "issn": "2",
+            "pages": "86-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Meningococcus B: from genome to vaccine",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Serruto",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rappuoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pizza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genomics, Proteomics and Vaccines",
+            "volume": "",
+            "issn": "",
+            "pages": "185-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Identification of candidates for a subunit vaccine against extraintestinal pathogenic Escherichia coli",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Durant",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Metais",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Soulama-Mouze",
+                    "suffix": ""
+                },
+                {
+                    "first": "J-M",
+                    "middle": [],
+                    "last": "Genevard",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Nassif",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Escaich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infection and Immunity",
+            "volume": "75",
+            "issn": "4",
+            "pages": "1916-1925",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Genomic approach for analysis of surface proteins in Chlamydia pneumoniae",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Montigiani",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Falugi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Scarselli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Infection and Immunity",
+            "volume": "70",
+            "issn": "1",
+            "pages": "368-379",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "TonB-dependent systems of uropathogenic Escherichia coli: aerobactin and heme transport and TonB are required for virulence in the mouse",
+            "authors": [
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Torres",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Redford",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Welch",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Payne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Infection and Immunity",
+            "volume": "69",
+            "issn": "10",
+            "pages": "6179-6185",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Identification of uropathogenic Escherichia coli surface proteins by shotgun proteomics",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Walters",
+                    "suffix": ""
+                },
+                {
+                    "first": "HLT",
+                    "middle": [],
+                    "last": "Mobley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Journal of Microbiological Methods",
+            "volume": "78",
+            "issn": "2",
+            "pages": "131-135",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Prevention of mucosal Escherichia coli infection by FimH-adhesin-based systemic vaccination",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Langermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Palaszynski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barnhart",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "276",
+            "issn": "5312",
+            "pages": "607-611",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "X-ray structure of the FimC-FimH chaperone-adhesin complex from uropathogenic Escherichia coli",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Choudhury",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Stojanoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Science",
+            "volume": "285",
+            "issn": "5430",
+            "pages": "1061-1066",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "The Siderophore receptor IroN of extraintestinal pathogenic Escherichia coli is a potential vaccine candidate",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "McFadden",
+                    "suffix": ""
+                },
+                {
+                    "first": "UB",
+                    "middle": [],
+                    "last": "Carlino-MacDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Beanan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Wilding",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Infection and Immunity",
+            "volume": "71",
+            "issn": "12",
+            "pages": "7164-7169",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "HIV vaccine development by computer assisted design: the GAIA vaccine",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Marcon",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Bishop",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Vaccine",
+            "volume": "23",
+            "issn": "17-18",
+            "pages": "2136-2148",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Generation of tissue-specific and promiscuous HLA ligand databases using DNA microarrays and virtual HLA class II matrices",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sturniolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bono",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nature Biotechnology",
+            "volume": "17",
+            "issn": "6",
+            "pages": "555-561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "An epitope in human immunodeficiency virus 1 reverse transcriptase recognized by both mouse and human cytotoxic T lymphocytes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hosmalin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Clerici",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Houghten",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "87",
+            "issn": "6",
+            "pages": "2344-2348",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "VIOLIN: vaccine investigation and online information network",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Todd",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Ku",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Research",
+            "volume": "36",
+            "issn": "1",
+            "pages": "D923-D928",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Use of a whole genome approach to identify vaccine molecules affording protection against Streptococcus pneumoniae infection",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Wizemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Heinrichs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Adamou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Infection and Immunity",
+            "volume": "69",
+            "issn": "3",
+            "pages": "1593-1598",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Application of genomics and proteomics for identification of bacterial gene products as potential vaccine candidates",
+            "authors": [
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Chakravarti",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Fiske",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Zagursky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "6",
+            "pages": "601-612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Transcriptomics and proteomics: tools for the identification of novel drug targets and vaccine candidates for tuberculosis",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Betts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "IUBMB Life",
+            "volume": "53",
+            "issn": "4-5",
+            "pages": "239-242",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Immunomics: discovering new targets for vaccines and therapeutics",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Drug Discovery Today",
+            "volume": "11",
+            "issn": "5-6",
+            "pages": "203-209",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

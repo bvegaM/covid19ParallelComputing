@@ -1,0 +1,848 @@
+{
+    "paper_id": "PMC2443186",
+    "metadata": {
+        "title": "Surveillance Sans Fronti\u00e8res: Internet-Based Emerging Infectious Disease Intelligence and the HealthMap Project",
+        "authors": [
+            {
+                "first": "John",
+                "middle": [
+                    "S"
+                ],
+                "last": "Brownstein",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Clark",
+                "middle": [
+                    "C"
+                ],
+                "last": "Freifeld",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ben",
+                "middle": [
+                    "Y"
+                ],
+                "last": "Reis",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kenneth",
+                "middle": [
+                    "D"
+                ],
+                "last": "Mandl",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "As developed nations continue to strengthen their electronic disease surveillance capacities [1], the parts of the world that are most vulnerable to emerging disease threats still lack essential public health information infrastructure [2,3]. The existing network of traditional surveillance efforts managed by health ministries, public health institutes, multinational agencies, and laboratory and institutional networks has wide gaps in geographic coverage and often suffers from poor and sometimes suppressed information flow across national borders [4]. At the same time, an enormous amount of valuable information about infectious diseases is found in Web-accessible information sources such as discussion sites, disease reporting networks, and news outlets [5,6,7]. These resources can support situational awareness by providing current, highly local information about outbreaks, even from areas relatively invisible to traditional global public health efforts [8]. These data are plagued by a number of potential hazards that must be studied in depth, including false reports (mis- or disinformation) and reporting bias. Yet these data hold tremendous potential to initiate epidemiologic follow-up studies and provide complementary epidemic intelligence context to traditional surveillance sources. This potential is already being realized, as a majority of outbreak verifications currently conducted by the World Health Organization (WHO)'s Global Outbreak Alert and Response Network are triggered by reports from these nontraditional sources [5,6].",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 95,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 237,
+                    "end": 238,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 239,
+                    "end": 240,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 554,
+                    "end": 555,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 764,
+                    "end": 765,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 766,
+                    "end": 767,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 768,
+                    "end": 769,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 968,
+                    "end": 969,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1552,
+                    "end": 1553,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1554,
+                    "end": 1555,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "The Opportunity",
+            "ref_spans": []
+        },
+        {
+            "text": "In one of the most frequently cited examples [9], early indications of the severe acute respiratory syndrome (SARS) outbreak in Guangdong Province, China, came in November 2002 from a Chinese article that alluded to an unusual increase in emergency department visits with acute respiratory illness [9,10]. This was followed by media reports of a respiratory disease among health care workers in February 2003, all captured by the Public Health Agency of Canada's Global Public Health Intelligence Network (GPHIN) [10,11,12]. In parallel, online discussions on the ProMED-mail system referred to an outbreak in Guangzhou, well before official government reports were issued [13].",
+            "cite_spans": [
+                {
+                    "start": 46,
+                    "end": 47,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 299,
+                    "end": 300,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 301,
+                    "end": 303,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 514,
+                    "end": 516,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 517,
+                    "end": 519,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "The Opportunity",
+            "ref_spans": []
+        },
+        {
+            "text": "These Web-based data sources not only facilitate early outbreak detection, but also support increasing public awareness of disease outbreaks prior to their formal recognition. Through low-cost and real-time Internet data-mining, combined with openly available and user-friendly technologies, both participation in and access to global disease surveillance are no longer limited to the public health community [14,15]. The availability of Web-based news media provides an alternative public health information source in under-resourced areas. However, the myriad diverse sources of infectious disease information across the Web are not structured or organized; public health officials, nongovernmental organizations, and concerned citizens must routinely search and synthesize a continually growing number of disparate sources in order to use this information. With the aim of creating an integrated global view of emerging infections based not only on traditional public health datasets but rather on all available information sources, we developed HealthMap, a freely accessible, automated electronic information system for organizing data on outbreaks according to geography, time, and infectious disease agent [16] (Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 410,
+                    "end": 412,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 413,
+                    "end": 415,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1214,
+                    "end": 1216,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "The Opportunity",
+            "ref_spans": [
+                {
+                    "start": 1219,
+                    "end": 1227,
+                    "mention": "Figure 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "HealthMap relies on a variety of electronic media sources, including online news sources through aggregators such as Google News, expert-curated discussion such as ProMED-mail [13,21,22], and validated official reports from organizations such as the WHO. Currently, the system collects reports from 14 sources, which in turn represent information from over 20,000 Web sites, every hour, 24 hours a day. Internet search criteria include disease names (scientific and common), symptoms, keywords, and phrases. The system collects an average of 300 reports per day, with the majority acquired from news media sources (85.1%). Although most of the reports collected to date have been in English, HealthMap also monitors information sources in Chinese, Spanish, Russian, and French, with additional languages such as Hindi, Portuguese, and Arabic under development. As HealthMap reports are acquired solely from free news sources, operational costs are minimal. The Web site is freely accessible on the Internet without subscription fees.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 183,
+                    "end": 185,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Knowledge sources. ::: The System",
+            "ref_spans": []
+        },
+        {
+            "text": "The use of international news media for public health surveillance has a number of potential biases that merit consideration. While local news sources may report on incidents involving a few cases that would not be picked up at the national level, such sources may be less reliable, lacking resources and training, and may report stories without adequate confirmation. Furthermore, other biases may be intentionally introduced for political reasons through disinformation campaigns (false positives) or state censorship of information relating to outbreaks (false negatives). We have attempted to better understand some of these issues through ongoing analysis and evaluation research. We ran a 43-week evaluation of HealthMap data, covering the period of October 1, 2006 through July 18 2007. We found that pathogen diversity was substantial across news sources, with 141 unique infectious disease categories reported through the Google News feed alone (Table 1). We found the frequency of reports about particular pathogens to be related not to their associated morbidity or mortality impact, but rather to the direct or potential economic and social disruption caused by the outbreak.",
+            "cite_spans": [],
+            "section": "Knowledge sources. ::: The System",
+            "ref_spans": [
+                {
+                    "start": 955,
+                    "end": 962,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "For instance, we found substantial skew towards reporting on stories about avian influenza and food-borne illnesses. Over the evaluation time period, 174 countries had reports of infectious disease outbreaks, with the greatest reporting from the United States (n = 4351), the United Kingdom (n = 1018), Canada (n = 880), and China (n = 737) (Figure 3A). There was a clear bias towards increased reporting from countries with higher numbers of media outlets, more developed public health resources, and greater availability of electronic communication infrastructure (approximated by number of Internet hosts) (Figure 3B). These trends are highly relevant for users of the system, and thus the individual impact of these factors on surveillance will form the basis of a detailed user guide currently under development.",
+            "cite_spans": [],
+            "section": "Knowledge sources. ::: The System",
+            "ref_spans": [
+                {
+                    "start": 342,
+                    "end": 350,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 610,
+                    "end": 618,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The system characterizes disease outbreak reports by means of a series of text mining algorithms. (A complete technical description of the system may be found elsewhere [23].) Characterization stages include: (a) identifying disease and location; (b) determining relevance\u2014namely, whether a given report refers to any current outbreak; and (c) grouping similar reports together while removing exact duplicates. Once the reports are automatically processed, curators correct the misclassifications of the system where necessary (Figure 2). Currently, only one analyst reviews and corrects the posts. However, additional resources would enable more detailed multilingual curation and annotation of collected reports.",
+            "cite_spans": [
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Knowledge extraction. ::: The System",
+            "ref_spans": [
+                {
+                    "start": 528,
+                    "end": 536,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Extracting location and disease names from text reports presents the most formidable challenge. HealthMap draws from a continually expanding dictionary of pathogens (human, plant, and animal diseases) and geographic names (country, province, state, and city) to classify outbreak alert information. However, disease and place names are often ambiguous, colloquial, and subject to change, and may have multiple spellings (e.g., diarrhea, common in the US, and diarrhoea, common in the UK). Thus, the expansion and editing of the database requires extensive manual data entry.",
+            "cite_spans": [],
+            "section": "Knowledge extraction. ::: The System",
+            "ref_spans": []
+        },
+        {
+            "text": "Once location and disease have been identified, articles are automatically tagged according to their relevance. Specifically, we identify whether a given report refers to a current outbreak (\u201cbreaking news\u201d), as opposed to reporting on other infectious disease\u2013related news, such as vaccination campaigns, scientific research, or public health policy. In this case, HealthMap makes use of a Bayesian machine learning algorithm, trained on manually characterized existing reports, to automatically tag and separate breaking news. Finally, duplicate reports are filtered, identified, and grouped based on the similarity of the article's headline, body text, and disease and location categories. Using a similarity score threshold, the system groups related articles into clusters that provide the collective information on a given outbreak.",
+            "cite_spans": [],
+            "section": "Knowledge extraction. ::: The System",
+            "ref_spans": []
+        },
+        {
+            "text": "HealthMap is particularly focused on providing users with news of immediate interest and reducing information overload. Overwhelming public health officials with information on outbreaks of low public health impact may distract them from investigating outbreaks of greater priority that might receive reduced media attention. Thus, only articles classified as breaking news are posted to the site. Although they are filtered from the initial display, other article types and duplicate articles are shown in a related information window, providing a situational report on an ongoing outbreak as well as recent reports concerning either the same disease or location, and links for further research (Figure 4).",
+            "cite_spans": [],
+            "section": "Knowledge integration and dissemination. ::: The System",
+            "ref_spans": [
+                {
+                    "start": 697,
+                    "end": 705,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "HealthMap also addresses the computational challenges of integrating multiple sources of unstructured information by generating meta-alerts of disease outbreaks. As false alarms can often be reduced by thorough aggregation and cross-validation of reported information, a composite activity score (or heat index) is calculated based on (a) the reliability of the data source (for instance, increased weight is given to WHO reports and reduced weight to local media reports); and (b) the number of unique data sources, with increased weight to multiple types of information (e.g., discussion sites and media reports on the same outbreak). This meta-alert derivation is based on the idea that multiple sources of information about an incident provide greater confidence in the reliability of the report than any one source alone.",
+            "cite_spans": [],
+            "section": "Knowledge integration and dissemination. ::: The System",
+            "ref_spans": []
+        },
+        {
+            "text": "A wide range of further improvements are currently being developed across all components of the HealthMap system. In particular, population and geography gaps in the coverage of the monitored sources need to be better understood and accounted for. For example, there are critical gaps in media reporting in tropical and lower-latitude areas, including major parts of Africa and South America\u2014the very regions that have the greatest burden and risk of emerging infectious diseases (Figure 3) [3]. Monitoring other Internet-based sources such as blogs, discussion sites, and listservs could complement news coverage. The use of click-stream data and individual search queries is also a promising new surveillance source [24]. Multilingual surveillance is critical for capturing greater geographic coverage and for providing earlier and more comprehensive reporting from local news media.",
+            "cite_spans": [
+                {
+                    "start": 492,
+                    "end": 493,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 719,
+                    "end": 721,
+                    "mention": "24",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "The Future",
+            "ref_spans": [
+                {
+                    "start": 481,
+                    "end": 489,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Potential future challenges include the possibility that news data sources that are freely available now will no longer be available if current business models change. In addition, the way news is reported online (content, format, communication standards, etc.) may change and develop in the coming years, which will require a re-tooling of the system in order to capture the appropriate information. Potential future benefits of technological advances include better meta-data tagging if/when the semantic Web becomes a reality. Also, as location-based services become more widespread, including on portable devices, HealthMap feeds can be tailored and targeted to specific users and their locations.",
+            "cite_spans": [],
+            "section": "The Future",
+            "ref_spans": []
+        },
+        {
+            "text": "Future work must also focus on improving natural language processing capability to clearly identify the pathogen, filter non-pertinent reports and duplicates, and enhance the spatial resolution of location extraction. However, while improvements in machine learning techniques are undoubtedly critical, they cannot currently replace human analysis. The success of Wikipedia has shown that leveraging collaborative human networks of trained public health professionals has the potential to support improved classification, severity assignment, conflict resolution, geocoding, and confirmation of reports on rare or unknown infectious diseases [25]. A recently established collaboration between HealthMap and ProMED-mail (http://www.healthmap.org/promed) is helping to pave the way for such a bidirectional system of classification and curation of information flow [26].",
+            "cite_spans": [
+                {
+                    "start": 643,
+                    "end": 645,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 864,
+                    "end": 866,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "The Future",
+            "ref_spans": []
+        },
+        {
+            "text": "Continued system evaluation is also essential. The fundamental characteristics of different news source types need to be quantified, including sensitivity, specificity, and timeliness [27,28,29,30]. Consideration should also be given to integrating unstructured online information sources with other health indicator data to provide a broader context for reports. Pertinent data sets include mortality and morbidity estimates, laboratory data, field surveillance (e.g., vector and animal reservoir distribution), environmental predictors (e.g., climate and vegetation), population density and mobility, and pathogen seasonality and transmissibility. Such integration could yield a more precise relevance score for a given report, define populations at risk, and predict disease spread.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 188,
+                    "end": 190,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 191,
+                    "end": 193,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "The Future",
+            "ref_spans": []
+        },
+        {
+            "text": "HealthMap is a member of a new generation of surveillance systems that mine media sources in near real-time for reports of infectious disease outbreaks, including GPHIN [10,12], MedISys, developed by the Directorate General Health and Consumer Affairs of the European Commission [31], the US government-funded Argus [32], and EpiSPIDER [33]. While Internet-based online media sources are becoming a critical tool for global infectious disease surveillance, important challenges still need to be addressed. Since regions with the least advanced communication infrastructure also tend to carry the greatest infectious disease burden and risk, system development must be aimed at closing the gaps in these critical areas. Hence, achieving global coverage requires attention to creating and capturing locally feasible channels of communication. It also involves making the outputs of the system more accessible to users in these regions through user interfaces in additional languages and low-bandwidth display options, including mobile phone alerts.",
+            "cite_spans": [
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 173,
+                    "end": 175,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 280,
+                    "end": 282,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 317,
+                    "end": 319,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 337,
+                    "end": 339,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Ultimately, the monitoring of diverse media-based sources will augment epidemic intelligence with information derived outside the traditional public health infrastructure, yielding a more comprehensive and timely global view of emerging infectious disease threats. A truly open and accessible system can also assist users in overcoming existing geographical, organizational, and societal barriers to information, a process that can lead to greater empowerment, involvement, and democratization across the increasingly interconnected global health sphere.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Infectious Disease Occurrences Extracted from Google News Searches from October 1, 2006 through July 18, 2007\n",
+            "type": "table"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (1) Web-based data are acquired from a variety of Web sites every hour, 7 days a week (ranging from rumors on discussion sites to news media to validated official reports). (2) The extracted articles are then categorized by pathogen and location of the outbreak in question. (3) Articles are then analyzed for duplication and content. Duplicate articles are removed, while those that discuss new information about an ongoing situation are integrated with other related articles and added to the interactive map. (4) Once classified, articles are filtered by their relevance into five categories. Only \u201cbreaking news\u201d articles are added as markers to the map.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Geographic coverage of English language news reports of infectious disease outbreaks collected through Google News from October 1, 2006 through July 18, 2007. (A) displays counts of disease outbreak reports; (B) displays population-adjusted outbreak reporting as number of reports per million inhabitants.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: All articles related to a given outbreak are aggregated by text similarity matching in order to provide a situational awareness report. Furthermore, other outbreaks occurring in the same geographic area or involving the same pathogen are provided. The window also provides links to further research on the subject. In this example, we show all alerts relating to a recent cholera outbreak in Nigeria.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Implementing syndromic surveillance: A practical guide informed by the early experience",
+            "authors": [],
+            "year": 2004,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "11",
+            "issn": "",
+            "pages": "141-150",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Disease surveillance needs a revolution",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "6-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Global trends in emerging infectious diseases",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "451",
+            "issn": "",
+            "pages": "990-993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The new international health regulations: Considerations for global public health surveillance",
+            "authors": [],
+            "year": 2007,
+            "venue": "Disaster Med Public Health Prep",
+            "volume": "1",
+            "issn": "",
+            "pages": "117-121",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Rumors of disease in the global village: Outbreak verification",
+            "authors": [],
+            "year": 2000,
+            "venue": "Emerg Infect Dis",
+            "volume": "6",
+            "issn": "",
+            "pages": "97-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Hot spots in a wired world: WHO surveillance of emerging and re-emerging infectious diseases",
+            "authors": [],
+            "year": 2001,
+            "venue": "Lancet Infect Dis",
+            "volume": "1",
+            "issn": "",
+            "pages": "345-353",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Use of the internet to enhance infectious disease surveillance and outbreak investigation",
+            "authors": [],
+            "year": 2006,
+            "venue": "Biosecur Bioterror",
+            "volume": "4",
+            "issn": "",
+            "pages": "293-300",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Official versus unofficial outbreak reporting through the Internet",
+            "authors": [],
+            "year": 1997,
+            "venue": "Int J Med Inform",
+            "volume": "47",
+            "issn": "",
+            "pages": "31-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Global surveillance, national surveillance, and SARS",
+            "authors": [],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "173-175",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Global Public Health Intelligence Network (GPHIN)",
+            "authors": [],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "SARS and population health technology",
+            "authors": [],
+            "year": 2003,
+            "venue": "J Med Internet Res",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "The Global Public Health Intelligence Network and early warning outbreak detection: A Canadian contribution to global public health",
+            "authors": [],
+            "year": 2006,
+            "venue": "Can J Public Health",
+            "volume": "97",
+            "issn": "",
+            "pages": "42-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The internet and the global monitoring of emerging diseases: Lessons from the first 10 years of ProMED-mail",
+            "authors": [],
+            "year": 2005,
+            "venue": "Arch Med Res",
+            "volume": "36",
+            "issn": "",
+            "pages": "724-730",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Internet and computer-based resources for travel medicine practitioners",
+            "authors": [],
+            "year": 2001,
+            "venue": "Clin Infect Dis",
+            "volume": "32",
+            "issn": "",
+            "pages": "757-765",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "[Traveller's medicine on the Internet]. [Article in Danish]",
+            "authors": [],
+            "year": 2005,
+            "venue": "Ugeskr Laeger",
+            "volume": "167",
+            "issn": "",
+            "pages": "3971-3973",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "HealthMap: The development of automated real-time internet surveillance for epidemic intelligence",
+            "authors": [],
+            "year": 2007,
+            "venue": "Euro Surveill",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "HealthMap: Internet-based emerging infectious disease intelligence",
+            "authors": [],
+            "year": 2007,
+            "venue": "Infectious disease surveillance and detection: Assessing the challenges\u2014Finding solutions",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Netwatch: Diseases on the move",
+            "authors": [],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "314",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Technology and public health: Healthmap tracks global diseases",
+            "authors": [],
+            "year": 2007,
+            "venue": "Lancet Infect Dis",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Get your daily plague forecast. Wired News",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Global awareness of disease outbreaks: The experience of ProMED-mail",
+            "authors": [],
+            "year": 2001,
+            "venue": "Public Health Rep",
+            "volume": "116",
+            "issn": "Suppl 2",
+            "pages": "27-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "ProMED-mail: Background and purpose",
+            "authors": [],
+            "year": 2001,
+            "venue": "Emerg Infect Dis",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "HealthMap: Global infectious disease monitoring through automated classification and visualization of internet media reports",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "15",
+            "issn": "",
+            "pages": "150-157",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Infodemiology: Tracking flu-related searches on the web for syndromic surveillance",
+            "authors": [],
+            "year": 2006,
+            "venue": "AMIA Annu Symp Proc",
+            "volume": "",
+            "issn": "",
+            "pages": "244-248",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Internet encyclopaedias go head to head",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "900-901",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Interactive map of ProMED reports available",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "The emerging science of very early detection of disease outbreaks",
+            "authors": [],
+            "year": 2001,
+            "venue": "J Public Health Manag Pract",
+            "volume": "7",
+            "issn": "",
+            "pages": "51-59",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Integrating syndromic surveillance data across multiple locations: Effects on outbreak detection performance",
+            "authors": [],
+            "year": 2003,
+            "venue": "Proc AMIA Sym",
+            "volume": "",
+            "issn": "",
+            "pages": "549-553",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Finding leading indicators for disease outbreaks: Filtering, cross-correlation, and caveats",
+            "authors": [],
+            "year": 2007,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "14",
+            "issn": "",
+            "pages": "76-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Identifying pediatric age groups for influenza vaccination using a real-time regional surveillance system",
+            "authors": [],
+            "year": 2005,
+            "venue": "Am J Epidemiol",
+            "volume": "162",
+            "issn": "",
+            "pages": "686-693",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "MedISys (Medical Intelligence System)",
+            "authors": [],
+            "year": 2007,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A heuristic indication and warning staging model for detection and assessment of biological events",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "15",
+            "issn": "",
+            "pages": "158-171",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Scanning the emerging infectious diseases horizon\u2014Visualizing ProMED emails using EpiSPIDER",
+            "authors": [],
+            "year": 2007,
+            "venue": "Adv Dis Surveill",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

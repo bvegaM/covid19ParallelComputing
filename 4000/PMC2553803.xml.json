@@ -1,0 +1,2463 @@
+{
+    "paper_id": "PMC2553803",
+    "metadata": {
+        "title": "LOMA: A fast method to generate efficient tagged-random primers despite amplification bias of random PCR on pathogens",
+        "authors": [
+            {
+                "first": "Wah",
+                "middle": [
+                    "Heng"
+                ],
+                "last": "Lee",
+                "suffix": "",
+                "email": "leewhc@gis.a-star.edu.sg",
+                "affiliation": {}
+            },
+            {
+                "first": "Christopher",
+                "middle": [
+                    "W"
+                ],
+                "last": "Wong",
+                "suffix": "",
+                "email": "wongc@gis.a-star.edu.sg",
+                "affiliation": {}
+            },
+            {
+                "first": "Wan",
+                "middle": [
+                    "Yee"
+                ],
+                "last": "Leong",
+                "suffix": "",
+                "email": "leongwy1@gis.a-star.edu.sg",
+                "affiliation": {}
+            },
+            {
+                "first": "Lance",
+                "middle": [
+                    "D"
+                ],
+                "last": "Miller",
+                "suffix": "",
+                "email": "millerl@gis.a-star.edu.sg",
+                "affiliation": {}
+            },
+            {
+                "first": "Wing",
+                "middle": [
+                    "Kin"
+                ],
+                "last": "Sung",
+                "suffix": "",
+                "email": "ksung@comp.nus.edu.sg",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In diagnostic laboratories, specific detection of a small number of pathogens is performed using pathogen-specific primers in separate RT-PCR assays. While microarrays allow for the parallel detection of hundreds of pathogens in one assay, there are significant technical and bioinformatics challenges for RT-PCR using specific primers.",
+            "cite_spans": [],
+            "section": "Tagged Random Primer Amplification ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Therefore random primers have traditionally been used for the unbiased amplification of samples in microarrays [2,7,15]. A tagged random primer consists of two parts: a constant 17 bp at the 5'-end known as the 5' tag and a random oligomer (unknown base N) of length 9\u201315 at the 3'-end which could theoretically bind to any sequence [16]. In a RT-PCR assay, the first (reverse transcription) step uses the tagged random primer to generate 500\u20131000 bp products with tagged primer sequences at both ends. In the second (PCR) step, the primer with the constant 17 bp sequence is used to amplify the PCR products from the first step.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 113,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 114,
+                    "end": 115,
+                    "mention": "7",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 334,
+                    "end": 336,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Tagged Random Primer Amplification ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Recently, we have published a pathogen detection approach using microarrays based on random primer amplification [14]. In our paper, we reported an observation that experiments using random priming amplification often resulted in incomplete hybridization of the pathogen genome marked by interspersed genomic regions not detected by tiling probes on the microarray (Figure 1.). In fact, this phenomenon has also been reported by several others [17,18].",
+            "cite_spans": [
+                {
+                    "start": 114,
+                    "end": 116,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 445,
+                    "end": 447,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 448,
+                    "end": 450,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Genome-wide Amplification Bias ::: Background",
+            "ref_spans": [
+                {
+                    "start": 373,
+                    "end": 374,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Further analysis on the probes and RSV B genome rule out sequence polymorphisms, probe GC content and genome secondary structure as significant causes of this phenomenon. This suggests that a PCR-based amplification bias due to differential binding of the random primers to different parts of the viral genome at the reverse transcription (RT) step could be the main cause of incomplete hybridization. This differential binding behavior of random primers could be influenced by the presence of intra-primer secondary structure formation (ie the 5'-end tag forms a dimer or hairpin with the 3'-end random oligomer) or melting temperatures [19].",
+            "cite_spans": [
+                {
+                    "start": 639,
+                    "end": 641,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Genome-wide Amplification Bias ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "One way to avoid hybridization inaccuracies is to refrain from designing probes or filter probes from potential regions of a viral genome where amplification by a given random primer is likely to fail. We develop a model of the random primer amplification process on a viral genome to predict the regions where amplification may fail. Using this model, we compute an Amplification Efficiency Score (AES) for each position of the given genome to predict its binding affinity with the given tagged random primer. Regions of the given genome with high AES are predicted to have good binding affinity with the given tagged random primer and thus would be ideal locations to design probes from. Conversely, regions of the given genome with low AES are predicted to have poor binding affinity with the given tagged random primer. We should avoid designing probes from such regions.",
+            "cite_spans": [],
+            "section": "Genome-wide Amplification Bias ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Although we have the capability to predict the binding affinities of a given tagged random primer to a given genome, it would be most useful if we know the tagged random primer that binds to the given genome optimally. However, computing the AES for all possible tagged random primers with the given genome to obtain the optimal primer is impractical.",
+            "cite_spans": [],
+            "section": "Genome-wide Amplification Bias ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In the following sections, we describe experiments that provide further evidence that intra-primer secondary structure formation resulting in differential binding of the random primers is indeed the main reason behind incomplete hybridization. Subsequently, we propose a fast and practical algorithm to generate a tagged random primer that is able to optimally amplify a set of given genomes.",
+            "cite_spans": [],
+            "section": "Genome-wide Amplification Bias ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Amplification failure may occur if there are many regions of the target genome where the tagged random primer cannot bind. As such, using any available commercial random primer or a random primer that was used in other publications may not guarantee a successful amplification on a target genome. In the previous section, we have introduced the AES and described how it allows us to compare the amplification efficiency of different random primers on a target genome.",
+            "cite_spans": [],
+            "section": "Generating the Tag of a Random Primer using LOMA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The best way to obtain the most efficient tagged random primer to amplify a target genome is to compute the AES graph for all possible combinations of the 17-bp 5'end tag and choose the tag that has the highest average AES with the target genome. This is impractical as this would require 417 runs of the AES computation algorithm. A na\u00efve approach would be to randomly generate a large number of tags (eg. 10000) and choose the one that has the highest average AES with the target genome. Other similar randomization approaches could also be used to improve the chances of getting a more efficient tag to amplify the target genome. However, these approaches are still slow especially when we need to choose an efficient random-tag primer for multiple genomes.",
+            "cite_spans": [],
+            "section": "Generating the Tag of a Random Primer using LOMA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We propose LOMA (Least Occurrence Merging Algorithm), a more deterministic and faster algorithm to generate an efficient tag for a target genome va. The idea is to use a \"divide and conquer\" strategy to generate n-bp tags by concatenating m shorter k-mers where m = n/k. Recall that the 5'end tag of the random primer should be not similar to va to avoid mispriming. To form such a tag, the consistuent k-mers should also be dissimilar to va. Based on this criterion, we compute the number of occurrences with more than 75% similarity in va for each of the 4k k-mers. Then, we sort the k-mers based on their occurrence count in va in ascending order. Tags are generated using the top ranking k-mers whose number of occurrences in va is lower than some threshold T. Ideally, we want to generate tags using only k-mers with no occurrence in va, ie T = 0.",
+            "cite_spans": [],
+            "section": "Generating the Tag of a Random Primer using LOMA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Suppose x k-mers have occurrences in va less than T. We generate a tag by concatenating any m of the x k-mers. This results in xm possible tags. Since x is small and m is typically 2 or 3, the total number of tags generated is much less compared to a brute force or randomized approach. Furthermore, the xm tags generated by our method are guaranteed to be dissimilar to va. Thus, all there is left to do is to compute the AES with va of each of the xm tags and choose the one with the highest average AES across va. Figure 2. shows the flowchart of our algorithm.",
+            "cite_spans": [],
+            "section": "Generating the Tag of a Random Primer using LOMA ::: Results",
+            "ref_spans": [
+                {
+                    "start": 524,
+                    "end": 525,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Unlike randomized approaches, LOMA is easily extended to generate an efficient tag for multiple genomes. Specifically, given a set of genomes V, we need only to modify step one of the algorithm to compute the number of occurrences with more than 75% similarity in every genome in V for each of the 4k k-mers. Once candidate random-tags are generated, we compute their AES with each of the genomes in V and choose the one with the highest average AES for all the genomes in V.",
+            "cite_spans": [],
+            "section": "Generating the Tag of a Random Primer using LOMA ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We describe experiments to test the hypothesis that different tagged-random primers have different amplification efficiencies and to assess the effectiveness of our algorithm to generate a good tagged-random primer. In our experiments, we use eight human nasopharyngeal aspirate patient samples obtained from childen under 4 years of age with lower respiratory tract infections. Using real-time PCR with specific primers, we confirmed that five samples contain human respiratory syncytial virus (RSV) while the remaining three samples contain human metapneumovirus (HMPV) [14].",
+            "cite_spans": [
+                {
+                    "start": 573,
+                    "end": 575,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Three tagged-random primers are then used to amplify the eight samples:",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Primer A1 (5'-GTT TCC CAG TCA CGA TAN NNN NNN NN-3'): A commercially available tagged-random primer used in many publications. [20-22]",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 134,
+                    "end": 136,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Primer A2 (5'-GAT GAG GGA AGA TGG GGN NNN NNN NN-3'): Primer with highest AES among 10000 randomly generated tags.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "3. Primer A3 (5'-TAG GTC GGT CGG TAG GTN NNN NNN NN-3'): Primer generated using our proposed algorithm LOMA.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Subsequently, the samples are hybridized onto our pathogen detection chip. Since our pathogen detection chip contains tiling 40-mer probes of both RSV and HMPV, the number and distribution of the probes with high signal intensities would give a good indication of the amount of PCR products generated across the target genome by a tagged-random primer. We expect that a tagged-random primer with desirable amplification efficiency that generates sufficient PCR products uniformly across the whole target genome would result in high signal intensity probes distributed evenly across the whole genome.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We present the first set of experiments involving the amplification of five RSV patient samples by the three random-tagged primers A1, A2 and A3 [see Additional file 1]. In each experiment involving a particular pair of RSV patient sample and random-tagged primer, hybridization signal intensities for the 1948 probes tiled across the 15225 bp RSV genome were compared to their corresponding AES along the genome. When using primer A1, we obtained AES with values less than 5000 with an average of 3300. However, when primers A2 and A3 are used, the AES averages are 110000 and 140000, respectively. This dramatic increase in predicted amplification efficiency gave an indication that in theory, our designed random-tagged primers A2 and particularly A3 perform much better than A1.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Recall that probes in regions of high AES are expected to be least affected by a poor amplification and thus have the correct high hybridization signals if the pathogen is present in the sample. For all the experiments, we observed that high AES significantly correlates to probe hybridization signal intensity above the detection threshold with a p-value of 2.2 \u00d7 10-16 using the Fisher's exact test. About 80% of the probes with high signal intensities (\u2265 mean + 3 standarad deviation) have high AES values. We also observed that primers A2 and A3 showed a tremendous improvement in overall PCR efficiency in amplifying RSV over primer A1. This increase in PCR efficiency resulted in increased hybridization of DNA to the probes and is reflected in the uniformly higher signal intensities observed using primer A2 and A3. This is illustrated in Figure 3. Further analysis of the RSV experiments revealed that only 20% to 30% of the 1948 RSV probes had signal intensities above detection threshold when primer A1 was used. By contrast, the use of primer A2 resulted in 60% to 71% of probes with signal intensities above detection threshold. Primer A3 fared slightly better than primer A2, resulting in more than 70% of the probes having signal intensities above detection threshold.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": [
+                {
+                    "start": 854,
+                    "end": 855,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "We conducted another set of experiments to verify that the observations made involving RSV and the three random-tagged primers are not isolated observations and that they can be replicated in other genomes as well. Following the experimental procedure used in the previous set of experiments, three patient samples containing HMPV are subjected to amplification by primers A1, A2 and A3 [see Additional file 2]. Similarly, in each experiment involving a particular pair of HMPV patient sample and random-tagged primer, hybridization signal intensities for the 1705 probes tiled across the 13335 bp HMPV genome were compared to their corresponding AES along the genome. Figure 4. shows the heatmaps and AES plots of the HMPV genome when amplified by primers A1, A2 and A3. The results are similar to that of the first set of experiments on RSV. In the three samples, Primer A1 performs worse on HMPV than RSV, causing only < 8% of the 1705 probes to be detected above threshold. Primers A2 and A3 performed much better than primer A1, causing >80% and > 88% of the probes to be detected above threshold respectively.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": [
+                {
+                    "start": 676,
+                    "end": 677,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Our experiments have shown that the commonly used primer A1 amplify RSV and HMPV poorly. Further analysis reveals that many instances of the primer A1 that are supposed to bind to RSV and HMPV form self-dimers and hence unable to amplify the genome efficiently. On the other hand, primers A2 and A3 amplified RSV and HMPV efficiently. However, compared to primer A2, primer A3 was generated in a much shorter time by LOMA and performs just as well, if not better.",
+            "cite_spans": [],
+            "section": "Experimental Results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "LOMA generates random-tagged primers that are capable of amplifying their target genomes efficiently with coverage of more than 70% up to 90%. We explore the possibility of using multiple random-tagged primers to achieve a more complete amplification of the target genome.",
+            "cite_spans": [],
+            "section": "Multiplexing Random-Tagged Primers ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In our experiments, we observed that one random-tagged primer may amplify a particular region of a target genome more efficiently than another random-tagged primer. For example in Figure 4. at genomic positions 1500\u20131900 of HMPV, the heatmap shows that primer A3 performs much better than primer A2. On the other hand, on the same genome at positions 2000\u20132200, the heatmap shows that primer A2 performs better than primer A3. This suggests that it is possible to design multiple collaborating random-tagged primers to amplify a target genome. The idea is to design additional random-tagged primers that have regions with high AES covering the regions with low AES of existing random-tagged primers. This is shown in Figure 5.",
+            "cite_spans": [],
+            "section": "Multiplexing Random-Tagged Primers ::: Discussion",
+            "ref_spans": [
+                {
+                    "start": 187,
+                    "end": 188,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 724,
+                    "end": 725,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Although this approach is highly viable as suggested by our experimental results, achieving a successful multiplexing of multiple random-tagged primers in the laboratory may not be as straight-forward as the traditional multiplexing of specific primers [23]. Recall that a random-tagged primer consists of random oligomers that could theoretically bind to all possible sequences. Using two or more random-tagged primers simultaneously in a PCR amplification reaction may result in the formation of primer-dimers among all instances of the random-tagged primers and cause the amplification to fail. To ensure higher success of multiplexing random-tagged primers, an alternative solution is to perform the PCR reaction with the first random-tagged primer, then perform another PCR reaction with the second random-tagged primer and so on. In other words, we multiplex n random-tagged primers by performing n PCR reactions in series. This will avoid the problem of primer-dimers when multiplexing random-tagged primers.",
+            "cite_spans": [
+                {
+                    "start": 254,
+                    "end": 256,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Multiplexing Random-Tagged Primers ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "New generation pathogen detection chips need to be able to detect a wide range of known pathogens and potentially novel pathogens. As it is not cost-effective to design specific primers for all the pathogens on the chip and quite impossible to design specific primers for yet to be known pathogens, random primer amplification is preferred over primer-specific amplification. However, genome-wide amplification bias of random primers is a serious yet commonly overlooked problem.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we built on our previous paper and described a model to predict the amplification efficiency of a random-tagged primer given a target genome(s). The AES provided us with a measurement that we can use to compare the amplification efficiency of different random-tagged primers on the target genome. This paved the way for the development of LOMA, a fast and effective random-tagged primer generator. Through experiments, we have shown that the random-tagged primer generated by LOMA performs significantly better than a commonly used random-tagged primer on different genomes. Furthermore, LOMA is able to generate good tagged-random primers much faster than randomized approaches.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Unlike specific primers that are almost always selected from the target genome under stringent primer design criteria [24], people tend to use random primers without checking their suitability with the target genome. This is a serious oversight that may cause inaccuracies in downstream work such as microarray analysis. Our research has shown that the blind use of a random-tagged primer in a PCR reaction on a pathogen sample may not lead to a successful amplification. Thus, the design of random-tagged primers is an important consideration when performing PCR and should be a common practice when using random-tagged primers.",
+            "cite_spans": [
+                {
+                    "start": 119,
+                    "end": 121,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "LOMA is implemented in java and is available at ",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Using complete genome sequences of 35 human viruses downloaded from the NCBI Taxonomy Database [25], we generated 40-mer probes tiled across each genome and overlapping at an average 8-base resolution. Seven replicates of each probe were synthesized at random positions on the microarray using Nimblegen proprietary technology [26]. In addition, 10000 random probes with 40\u201360% GC-content were added to the microarray to assess background signal levels for quality control. Additional controls included 400 probes to human immune genes (positive controls) and 162 probes of a plant virus, PMMV (negative control). In total, 390482 probes were hybridized onto the array.",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 328,
+                    "end": 330,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Microarray Design ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Nasopharyngeal washes were obtained from an Indonesian pediatric population using a standardized WHO protocol as described [27]. The patients, aged between 0\u201348 months, showed symptoms of lower respiratory tract infrections and were diagnosed with bronchiolitis or pneumonia when they visited the clinic between Feb 1999 till Feb 2001. The samples were stored at -80\u00b0C in RNAzol (Leedo Medical Laboratories, Inc., Friendswood, TX). RNA was later extracted from samples with RNAzol according to the manufacturer's instructions [28,29], resuspended in RNA storage solution (Ambion, Inc., Austin, TX) and frozen at -80\u00b0C until further use. RNA was reverse transcribed to cDNA using tagged random primers as described [7,30]. The cDNA was then amplified by random PCR, fragmented, end-labeled with biotin, hybridized onto the microarray and stained as previously described [31] with one exception: 0.82 M TMAC to Nimblegen's hybridization buffer to minimize nonspecific hybridization. Refer to our previous paper [14] for a detailed protocol description.",
+            "cite_spans": [
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 527,
+                    "end": 529,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 530,
+                    "end": 532,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 715,
+                    "end": 716,
+                    "mention": "7",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 717,
+                    "end": 719,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 870,
+                    "end": 872,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1010,
+                    "end": 1012,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Sample Preparation and Hybridization ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Microarrays were scanned at 5 \u03bcm resolution using an Axon 400b scanner and Genepix 4 software (Molecular Devices, Sunnyvale, CA). Signal intensities were extracted using Nimblescan 2.1 software (NimbleGen Systems, Madison, WI). From the seven replicates of each probe, we computed the median and standard deviation signal intensity of the probe. The probe median signal intensities are then visualized through heatmaps and used to analyze the accuracy of our AES predictions.",
+            "cite_spans": [],
+            "section": "Spot Intensity Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "How well a primer pair binds to the target genome impacts RT-PCR efficiency. In the case of using random primers, the quality of the RT-PCR product depends on how well a random primer instantiation pair binds to the target genome. Here, we termed a particular configuration of the given random primer as a random primer instance. For example, GTTTCCCAGTCACGATATTTTAAAAG and GTTTCCCAGTCACGATACATCATCAT are instantiations of the random primer GTTTCCCAGTCACGATANNNNNNNNN. Some instantiations of the random primer can bind better to the target genome than others. The identification of such random primer instantiations and where they bind to the target genome gives us an indication of how likely a particular region of the target genome will be amplified. Using this approach, we proposed an amplification efficiency model in our previous paper [14] which computes an Amplification Efficiency Score (AES) for every position of a target genome. We provide a more detailed description of our model here.",
+            "cite_spans": [
+                {
+                    "start": 844,
+                    "end": 846,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As a concrete example for our modeling, we use a random primer that has a fixed 17-mer header and a variable 9-mer tail of the form (5'-GTT TCC CAG TCA CGA TAN NNN NNN NN-3'). This random primer is commonly used in virus detection experiments [20-22]. Let va be the actual virus in the sample. To get a RT-PCR product in a region between positions i and j of va, we require (1) a forward primer binding to position i, (2) a reverse primer binding to position j and (3) \u03bbl \u2264 |i - j| \u2264 \u03bbu where \u03bbl and \u03bbu are the lower and upper bounds of the desired PCR product length respectively. Figure 6. shows a typical binding of a pair of random primers on a virus genome sequence.",
+            "cite_spans": [
+                {
+                    "start": 244,
+                    "end": 246,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 247,
+                    "end": 249,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 589,
+                    "end": 590,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Consider a pair of forward and reverse random primer instantiations where the forward primer is at a particular position i of va, the reverse primer is at position j of va and |i - j| is the product length. Let Pf(i) and Pr(j) be the probability that the forward primer can bind to position i and the probability that the reverse primer can bind to position j respectively. For simplicity, we assume that a random (forward or reverse) primer instantiation can bind to a particular position i of va only if 9-mer of the instantiated random oligomers of the random primer is a reverse complement of the length-9 substring at position i of va (Note that other binding criteria such as 75% similarity rule or nearest-neighbour binding free energy [5] can be used as well). Thus, all other instantiations of the given random primer whose instantiated random oligomers is not a subsequence of va, do not contribute to the amplification process and thus omitted from the computation of AES. We compute Pf(i) and Pr(j) based on well-established primer design criteria [32]. The idea is that Pf(i) and Pr(j) will be small if the forward primer or reverse primer forms self-dimers or has extreme melting temperatures, or form a significant primer-dimer with each other. Another consideration is that if the fixed 17 basepairs 5-end tag of the given random primer is similar to va, it may lead to mispriming and thus results in a lower Pf(i) and Pr(j) for all i and j.",
+            "cite_spans": [
+                {
+                    "start": 744,
+                    "end": 745,
+                    "mention": "5",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1061,
+                    "end": 1063,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "It is difficult to assess the exact extent of influence of primer-dimers and melting temperatures on amplification. Hence, we estimate Pf(i) and Pr(j) using a simple model:",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. A primer cannot bind to the sequence efficiently if it folds onto itself. A primer is a self-dimer if it forms a 3' end or internal hairpin with three or more bases. Thus, Pf(i) = 0 if the forward primer at i forms a self-dimer. Similarly, Pr(j) = 0 if the reverse primer at j forms a self-dimer.",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. The RT-PCR process is performed at a certain temperature, normally 55\u00b0C\u201360\u00b0C. If the melting temperature of a primer is not at this ideal temperature, then the primer may not bind to the sequence. Hence, we model this observation by decreasing Pf(i) and Pr(j) proportionally to the difference in the melting temperature of the forward primer and reverse primer to the ideal experimental temperature respectively. Specifically, Pf(i) = 1 - (|Tm(forward primer) - TM|/TM) and Pr(j) = 1 - (|Tm(reverse primer) - TM|/TM) where TM is the ideal experimental temperature and Tm(x) is the melting temperature of a primer x. We compute Tm(x) of the primer x using the formula given in [33].",
+            "cite_spans": [
+                {
+                    "start": 680,
+                    "end": 682,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. To avoid mispriming, if the 17 basepairs fixed tag of the random primer has more than 75% similarity to any subsequence of the target genome, we discard this random primer. That is, Pf(i) = 0 if the forward primer at i has a fix tag with more than 75% similarity to any subsequence of the target genome. Similarly, Pr(j) = 0 if the reverse primer at j has a fix tag with more than 75% similarity to any subsequence of the target genome.",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on our model, the probability that a pair of random primer instantiations give a good quality PCR product from position i to j on va is Pf(i) \u00d7 Pr(j). Due to the abundance of random primer instantiations used in a RT-PCR process, it is likely that all pairs of random primer instantiations that can effectively bind to va will contribute a PCR product. Thus, for a valid forward primer at position i, we must compute the above probabilities for a range of positions j at which a valid reverse primer exists, ie \u03bbl |i - j| \u2264 \u03bbu. Thus, an Amplification Efficiency Score, AESx, for every position x of va can be computed by considering the combined effect of all forward and reverse primer-pairs that amplifies it:",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "(1)AESx=\u2211i=x\u2212\u03bbux{Pf(i)\u00d7\u2211j=max\u2061(x+1,i+\u03bbl)i+\u03bbuPr(j)}",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Once we compute the AES for all positions of va, we plot the AES against the genomic positions of va. This generates a graph which indicates the regions in va predicted to be amplified efficiently by the given random primer (represented by peaks) and regions that do not (represented by troughs). These regions in va predicted to be amplified efficiently will be very useful in designing probes in a pathogen-detection microarray. Conversely, we should omit probes from regions in va which are predicted not to amplify efficiently since we cannot tell if these probes did not hybridize due to the absence of va in the sample or just that the amplification by the random primers failed.",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Our model allows us to predict how successful the amplification on a target viral genome will be given a particular tagged random primer. An ideal tagged random primer would generate high AES values uniformly across the whole target genome. This quantification of the efficiency of amplification of a tagged random primer on a target genome in the form of AES also enables us to compare the effectiveness of different tagged random primers if they are to be used to amplify the genome. For example, random primer r1 is predicted to work better than random primer r2 if the average AES of r1 across a target genome is higher than that of r2. This implies that we can now design a tagged random primer that maximizes the amplification efficiency on a given set of target genomes.",
+            "cite_spans": [],
+            "section": "Amplification Efficiency Model of the RT-PCR Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "CWW and WYL carried out the amplification and microarray experiments for the study. WHL designed the algorithm, performed the analysis and drafted the manuscript. LDM and WKS conceived of the study, and participated in its design and coordination and helped to draft the manuscript. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Heatmap of probe signal intensity for a RSV B sample following random RT-PCR. Red regions correspond to probes that did not have signal intensities above threshold. As probe signal intensity increases, the heatmap changes from red to orange to yellow to white.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Flowchart of LOMA. Flowchart of LOMA with n = 17, k = 9 and T = 0.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Application of AES on a RSV sample. An RSV patient sample was amplified separately using primer A1, primer A2 and primer A3. Hybridization signals of probes after amplification by each primer are shown as a heatmap. The probes that have detectable signals above threshold are shown in orange/yellow in the corresponding heatmaps. The graph below the heatmaps shows our AES prediction for the three primers: A1 (orange line), primer A2 (pink line) and primer A3 (dark blue line). Our AES predictions closely matches the actual hybridization results, ie primer A3 performs slightly better than primer A2 but both A3 and A2 performs significantly better than A1 on RSV.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Application of AES on a HMPV sample. An HMPV patient sample was amplified separately using primer A1, primer A2 and primer A3. Hybridization signals of probes after amplification by each primer are shown as a heatmap. The probes that have detectable signals above threshold are shown in orange/yellow in the corresponding heatmaps. The graph below the heatmaps shows our AES prediction for the three primers: A1 (orange line), primer A2 (pink line) and primer A3 (dark blue line). Our AES predictions closely matches the actual hybridization results, ie primer A3 performs slightly better than primer A2 but both A3 and A2 performs significantly better than A1 on HMPV.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Design of multiple random-tagged primers to amplify a target genome g. Original primer p has a region with low AES on g. We design additional primer q such that it has high AES in that region.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: RT-PCR binding process. RT-PCR binding process of a pair of random primers on a target virus sequence va.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "RNA Viral Community in Human Feces: Prevalence of Plant Pathogenic Viruses",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Breitbart",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JQ",
+                    "middle": [],
+                    "last": "Run",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Soh",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Hibberd",
+                    "suffix": ""
+                },
+                {
+                    "first": "ET",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PloS Biology",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0040003"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Microarray analysis of evolution of RNA viruses: evidence of circulation of virulent highly divergent vaccine-derived polioviruses",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Cherkasova",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Laassri",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chrizhikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Korotkova",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Dragunsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "VL",
+                    "middle": [],
+                    "last": "Agol",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chumakov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "100",
+            "issn": "",
+            "pages": "9398-403",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1633511100"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Options available for profiling small samples: a review of sample amplification technology when combined with microarray profiling",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Nygaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hovig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "",
+            "pages": "996-1014",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkj499"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Pitfalls of Quantitative Real-Time Reverse-Transcription Polymerase Chain Reaction",
+            "authors": [
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Bustin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nolan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Biomolecular Techniques",
+            "volume": "15",
+            "issn": "",
+            "pages": "155-166",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Generation of non-genomic oligonucleotic tag sequences for RNA template-specific PCR",
+            "authors": [
+                {
+                    "first": "FL",
+                    "middle": [],
+                    "last": "Pinto",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Svensson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lindblad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Biotechology",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1472-6750-6-31"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Optimization and clinical validation of a pathogen detection microarray",
+            "authors": [
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "WY",
+                    "middle": [],
+                    "last": "Leong",
+                    "suffix": ""
+                },
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Soh",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Kartasasmita",
+                    "suffix": ""
+                },
+                {
+                    "first": "AF",
+                    "middle": [],
+                    "last": "Simoes",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Hibberd",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Sung",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Biology",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/gb-2007-8-5-r93"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Multiplex real time RT-PCR for the detection and quantitation of norovirus genogroups I and II in patients with acute gastroenteritis",
+            "authors": [
+                {
+                    "first": "XL",
+                    "middle": [],
+                    "last": "Pang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Preiksaitis",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Clin Virol",
+            "volume": "33",
+            "issn": "",
+            "pages": "168-171",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jcv.2004.12.014"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Amplification of Megabase DNA with Tagged Random Primers (T-PCR)",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Grothues",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Cantor",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Nucleic Acids Research",
+            "volume": "21",
+            "issn": "",
+            "pages": "1321-1322",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/21.5.1321"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Genomic DNA Amplification from a Single Bacterium",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Raghunathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Bornarth",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Driscoll",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Lasken",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Applied and Environmental Microbiology",
+            "volume": "71",
+            "issn": "",
+            "pages": "3342-3347",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.71.6.3342-3347.2005"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Detection of Respiratory Viruses and Subtype Identification of Influenza A Viruses by GreeneChipResp Oligonucleotide Microarray",
+            "authors": [
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Quan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Palacios",
+                    "suffix": ""
+                },
+                {
+                    "first": "OJ",
+                    "middle": [],
+                    "last": "Jabado",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Conlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Hirschberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Pozo",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJM",
+                    "middle": [],
+                    "last": "Jack",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cisterna",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Renwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hui",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Drysdale",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Amos-Ritchie",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Baumeister",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Savy",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Lager",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Richt",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Boyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Garcia-Sastre",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Casas",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Perez-Brena",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Clin Microbiol",
+            "volume": "45",
+            "issn": "",
+            "pages": "2359-2364",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.00737-07"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Minimizing the secondary structure of DNA targets by incorporation of a modified deoxynucleotide: implications for nucleic acid analysis by hybridization",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Southern",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res",
+            "volume": "28",
+            "issn": "",
+            "pages": "3904-3909",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/28.20.3904"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Microarray-based detection and genotyping of viral pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Coscoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zylberberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Avila",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Boushey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "15687-15692",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.242579699"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Simultaneous detection, subgrouping, and quantitation of respiratory syncytial virus A and B by real-time PCR",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Colella",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rappaport",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "149-154",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.1.149-154.2003"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Role of deficient type III interferon-lambda production in asthma exacerbations",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Contoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Message",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Laza-Stanca",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Wark",
+                    "suffix": ""
+                },
+                {
+                    "first": "NW",
+                    "middle": [],
+                    "last": "Bartlett",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kebadze",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Mallia",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Stanciu",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Slater",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lewis-Antes",
+                    "suffix": ""
+                },
+                {
+                    "first": "OM",
+                    "middle": [],
+                    "last": "Kon",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Holgate",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Davies",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Kotenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Papi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Johnston",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat Med",
+            "volume": "12",
+            "issn": "",
+            "pages": "1023-1026",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm1462"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "A novel panacoronavirus RT-PCR assay: frequent detection of human coronavirus NL63 in children hospitalized with respiratory tract infections in Belgium",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Mo\u00ebs",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Vijgen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Keyaerts",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Zlateva",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Maes",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [
+                        "van",
+                        "der"
+                    ],
+                    "last": "Hoek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Van Ranst",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Infectious Diseases",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2334-5-6"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "High-Level Multiplex DNA Amplification",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Broude",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Driscoll",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Cantor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Antisense and Nucleic Acid Drug Development",
+            "volume": "11",
+            "issn": "",
+            "pages": "327-332",
+            "other_ids": {
+                "DOI": [
+                    "10.1089/108729001753231704"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Real-time Primer Design for DNA chips",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Simmler",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Singpiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "M\u00e4nner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proceedings Parallel and Distributed Processing Symposium",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "NCBI Taxonomy Database",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Gene expression analysis using oligonucleotide arrays produced by maskless photolithography",
+            "authors": [
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pitas",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gorski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Berg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ballin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McCormick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pollock",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sumwalt",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Butcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Porter",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Sussman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Cerrina",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "1749-1755",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.362402"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Respiratory syncytial virus infection: denominator-based studies in Indonesia, Mozambique, Nigeria and South Africa",
+            "authors": [
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roca",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Alonso",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Simoes",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Kartasasmita",
+                    "suffix": ""
+                },
+                {
+                    "first": "DO",
+                    "middle": [],
+                    "last": "Olaleye",
+                    "suffix": ""
+                },
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "Odaibo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Collinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bull World Health Organ",
+            "volume": "82",
+            "issn": "",
+            "pages": "914-922",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Molecular approaches to detecting herpes simplex virus and enteroviruses in the central nervous system",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Smalling",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Sefers",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "YW",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "2317-2322",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.40.7.2317-2322.2002"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "A colorimetric microtiter plate PCR system detects respiratory syncytial virus in nasal aspirates and discrimiates subtypes A and B",
+            "authors": [
+                {
+                    "first": "YW",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Heimgartner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Tollefson",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Berg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PN",
+                    "middle": [],
+                    "last": "Rys",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Persing",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Diagn Microbiol Infect Dis",
+            "volume": "34",
+            "issn": "",
+            "pages": "333-337",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0732-8893(99)00049-8"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Robust sequence selection method used to develop the FluChip diagnostic microarray for influenza virus",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mehlmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "ED",
+                    "middle": [],
+                    "last": "Dawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Townsend",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Smagala",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Kuchta",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Rowlen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "44",
+            "issn": "",
+            "pages": "2857-2862",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.00135-06"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "A method for the rapid sequence-independent amplification of microdissected chromosomal material",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Bohlander",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Espinosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Rafael",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Le Beau",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Rowley",
+                    "suffix": ""
+                },
+                {
+                    "first": "MO",
+                    "middle": [],
+                    "last": "Diaz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Genomics",
+            "volume": "13",
+            "issn": "",
+            "pages": "1322-1324",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0888-7543(92)90057-Y"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Tracking the Evolution of the SARS Coronavirus Using High-Throughput, High-Density Resequencing Arrays",
+            "authors": [
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Vega",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Cutler",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "LW",
+                    "middle": [],
+                    "last": "Stanton",
+                    "suffix": ""
+                },
+                {
+                    "first": "ET",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genome Res",
+            "volume": "14",
+            "issn": "",
+            "pages": "398-405",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.2141004"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "A critical review of PCR primer design algorithms and crosshybridization case study",
+            "authors": [
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Burpo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biochemistry",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A rapid method for detecting and mapping homology between heterologous DNAs. Evaluation of polyomavirus genomes",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Howley",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Israel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M-F",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "J Biol Chem",
+            "volume": "254",
+            "issn": "",
+            "pages": "4876-4883",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Design of Microarray Probes for Virus Identification and Detection of Emerging Viruses at the Genus Level",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "TT",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Hsiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-7-232"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Improved Nearest-Neighbor Parameters for Predicting DNA Duplex Stability",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "SantaLucia",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "Allawi",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Seneviratne",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Biochemistry",
+            "volume": "35",
+            "issn": "",
+            "pages": "3555-3562",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/bi951907q"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Expression monitoring by hybridization to high-density oligonucleotide arrays",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lockhart",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Byrne",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Follettie",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Gallo",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Chee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Horton",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Nature Biotechnology",
+            "volume": "14",
+            "issn": "",
+            "pages": "1675-1680",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt1296-1675"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Viral discovery and sequence recovery using DNA microarrays",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Urisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Springer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Mardis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hickenbotham",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Magrini",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eldred",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Latreille",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "PloS Biology",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0000002"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Fast and accurate probe selection algorithm for large genomes",
+            "authors": [
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Sung",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc IEEE Comput Soc Bioinform Conf",
+            "volume": "2",
+            "issn": "",
+            "pages": "65-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Options available-from start to finish for obtaining data from DNA microarrays II",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Van Laar",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Tothill",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Bowtell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature Genet",
+            "volume": "32",
+            "issn": "",
+            "pages": "481-489",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng1030"
+                ]
+            }
+        }
+    }
+}

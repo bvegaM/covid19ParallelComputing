@@ -1,0 +1,1842 @@
+{
+    "paper_id": "PMC2254600",
+    "metadata": {
+        "title": "Viral genome sequencing by random priming methods",
+        "authors": [
+            {
+                "first": "Appolinaire",
+                "middle": [],
+                "last": "Djikeng",
+                "suffix": "",
+                "email": "adjikeng@jcvi.org",
+                "affiliation": {}
+            },
+            {
+                "first": "Rebecca",
+                "middle": [],
+                "last": "Halpin",
+                "suffix": "",
+                "email": "rhalpin@jcvi.org",
+                "affiliation": {}
+            },
+            {
+                "first": "Ryan",
+                "middle": [],
+                "last": "Kuzmickas",
+                "suffix": "",
+                "email": "rkuzmick@jcvi.org",
+                "affiliation": {}
+            },
+            {
+                "first": "Jay",
+                "middle": [],
+                "last": "DePasse",
+                "suffix": "",
+                "email": "DePasseJ@dom.pitt.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Jeremy",
+                "middle": [],
+                "last": "Feldblyum",
+                "suffix": "",
+                "email": "jfeldbly@umd.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Naomi",
+                "middle": [],
+                "last": "Sengamalay",
+                "suffix": "",
+                "email": "nmiller@jcvi.org",
+                "affiliation": {}
+            },
+            {
+                "first": "Claudio",
+                "middle": [],
+                "last": "Afonso",
+                "suffix": "",
+                "email": "cafonso@seprl.usda.gov",
+                "affiliation": {}
+            },
+            {
+                "first": "Xinsheng",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "email": "zhang.282@osu.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Norman",
+                "middle": [
+                    "G"
+                ],
+                "last": "Anderson",
+                "suffix": "",
+                "email": "normananderson@viraldefense.org",
+                "affiliation": {}
+            },
+            {
+                "first": "Elodie",
+                "middle": [],
+                "last": "Ghedin",
+                "suffix": "",
+                "email": "GhedinE@dom.pitt.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [
+                    "J"
+                ],
+                "last": "Spiro",
+                "suffix": "",
+                "email": "dspiro@jcvi.org",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The emergence of highly pathogenic viral agents from zoonotic reservoirs has energized a wave of research into viral ecology, viral discovery [4-7] and a parallel drive to develop large datasets of complete viral genomes for the study of viral evolution and pandemic prediction [8,9]. Viral discovery has been aided by the development of sequence independent methodologies for the generation of genomic data [10]. The most prominent of these methodologies include representational difference analysis (RDA) and sequence independent single primer amplification (SISPA) with several variations. The SISPA method, first developed by Reyes and Kim [11], entails the directional ligation of an asymmetric primer at either end of a blunt-ended DNA molecule. Following several cycles of denaturation, annealing and amplification, minute amounts of the initial DNA are enriched and then cloned, sequenced and analyzed. Several modifications of the SISPA method have so far been implemented including random-PCR (rPCR) [12]. The rPCR method combines reverse transcription primed with an oligonucleotide made up of random hexamers tagged with a known sequence which is subsequently used as a primer-binding extension sequence. This initial modification was first used to construct a whole cDNA library from low amounts of viral RNA. A more recent modification, the DNAse-SISPA technique [1,2,5], includes steps to detect both RNA and DNA sequences. Combining sample filtration through a 0.22 micrometer column and a DNAse I digestion step led to the identification of viruses from clinical samples. The DNase-SISPA technique has been used for the detection of novel bovine and human viruses from screens of clinical samples [1,2,13]. Other groups have used the protocol for the characterization of common epitopes in enterovirus [14], for the identification of a novel human coronavirus [15] and for viral discovery in the plasma of HIV infected patients [16].",
+            "cite_spans": [
+                {
+                    "start": 143,
+                    "end": 144,
+                    "mention": "4",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 145,
+                    "end": 146,
+                    "mention": "7",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 279,
+                    "end": 280,
+                    "mention": "8",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 281,
+                    "end": 282,
+                    "mention": "9",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 645,
+                    "end": 647,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1011,
+                    "end": 1013,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1378,
+                    "end": 1379,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1380,
+                    "end": 1381,
+                    "mention": "2",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1382,
+                    "end": 1383,
+                    "mention": "5",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1715,
+                    "end": 1716,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1717,
+                    "end": 1718,
+                    "mention": "2",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1719,
+                    "end": 1721,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1820,
+                    "end": 1822,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1878,
+                    "end": 1880,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1946,
+                    "end": 1948,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to its utility for viral discovery and viral surveillance, the DNase-SISPA method has utility in obtaining full genome sequence from uncharacterized viral isolates or viral isolates from highly divergent families. In this study, we demonstrate the utility of the SISPA method and its use as a rapid and cost effective method for generating full genome coverage of a wide range of viral types from several sources.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Given the success of earlier efforts for the identification of novel viral nucleic acids using SISPA, we sought to adapt and optimize this method as a general and cost effective technique for large scale de novo viral genome sequencing (Figures 1 and 2). An RNase treatment step was added to the SISPA protocol to reduce contaminating exogenous RNAs such as ribosomal RNAs. In the case of polyA-tailed viruses, we perform reverse transcription using a combination of random (FR26RV-N) and poly T tagged (FR40RV-T) primers in order to increase the coverage of the 3' end (Figure 2). Additionally, in order to capture 5' ends of viral RNA, a random hexamer primer tagged with a conserved sequence at the 5' end was added to the Klenow reaction (Figure 2 shows a 5' oligo specific for rhinoviruses).",
+            "cite_spans": [],
+            "section": "Optimization of the SISPA method for whole genome sequencing ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 245,
+                    "end": 246,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 251,
+                    "end": 252,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 578,
+                    "end": 579,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 750,
+                    "end": 751,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We have successfully used the SISPA method on viral samples from different viral types. In this paper we discuss seven representative samples (Table 1). We have found that the method works consistently on dsDNA, ssDNA, ssRNA positive and ssRNA negative viruses. We have also found that the method can result in complete genome sequence of viruses ranging in size from 3,000\u201315,000 kb in a single experimental procedure. Figure 3 shows the sequence coverage obtained for three viruses: positive ssRNA phage MS2, positive ssRNA rhinovirus and negative ssRNA Newcastle disease virus (NDV).",
+            "cite_spans": [],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 427,
+                    "end": 428,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 149,
+                    "end": 150,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 4A shows an analysis of sequence coverage for the viruses examined in this study. On average, four contigs were generated per experiment, ranging in size from 248 nt to 4495 nt with a median contig size of 1395 nt. The contigs had high sequence redundancy, with a median depth of coverage of 14.33, varying from 11.18 for turkey astrovirus (TA) to a high of 40.29 for MS2.",
+            "cite_spans": [],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 7,
+                    "end": 9,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "One parameter that is taken into consideration when designing an efficient protocol for construction of a sequence library is the number of independent colonies needed to obtain sequence coverage of a given reference genome. Experiments were conducted using M13 (a 6 kb genome), NDV (a 15 kb genome), and lambda phage (48.5 kb) to compare the level of coverage obtained by bidirectional sequencing of 96, 192, and 288 clones (Figure 4B). For M13, 94% genome coverage was achieved from sequencing one 96 well block of clones, and 97% genome coverage was obtained from two 96 well blocks. For NDV, 89.7%, 97.4% and 97.7% sequence coverage were obtained from one, two or three 96 well blocks respectively. In contrast to M13 and NDV, the coverage for lambda was 26.7%, 42.9%, and 52.4% after one two and three 96 well blocks were sequenced",
+            "cite_spans": [],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 433,
+                    "end": 435,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The efficiency of the SISPA method as a tool for obtaining full genome coverage was analyzed using the Lander and Waterman model [17], which estimates the number of gaps present as a function of sequence number and genome size. Table 2 compares the expected coverage and redundancy (depth of coverage) as predicted by the Lander-Waterman model with the observed genome coverage and redundance. With the exception of lambda phage, observed coverage and redundancy approach expected coverage and redundancy.",
+            "cite_spans": [
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 234,
+                    "end": 235,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "However when taking into account the scaled difference, as described by Wendl [18], we see a dramatically increased \"shortfall\" between actual and expected coverage as more clones are sequenced. For example, in the case of NDV which has a genome size of 15 Kb, the scaled difference D between the expected coverage and the observed coverage (see equation description in methods section) at the different levels of sequence redundancy is 48.3 for the sequencing of a plate of 96 clones, 464.4 for two plates and 5477.4 for three plates.",
+            "cite_spans": [
+                {
+                    "start": 79,
+                    "end": 81,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SISPA method works efficiently on viruses purified from a number of sources and by several methods. Enterobacteriophages M13, MS2, and lambda were isolated from bacterial growth media and plasma after concentration by density gradient centrifugation. Woodchuck hepatitis virus was purified from plasma by cesium chloride gradient centrifugation. Human rhinovirus 16, purchased as a cell culture supernatant from ATCC, was subjected to a low speed spin to remove cellular debris. Turkey astrovirus was isolated from fecal material collected from turkey poults showing clinical signs of diarrhea. The intestinal fecal content was diluted in PBS and centrifuged at 14,000 K before filtration and nuclease treatment. Newcastle disease virus RNA was purified from allantoic fluids derived from inoculated eggs.",
+            "cite_spans": [],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the number of viral particles necessary to generate full genome sequences, we conducted dilution series with viruses whose titer was determined by plaque assays. The results of these experiments demonstrate that the SISPA method is very efficient as a genome sequencing method for samples with greater than 106 viral particles per RT-PCR reaction (Figure 5). Below 106 particles, the specific viral signal is overwhelmed by competition with non-specific or host sequences and is rarely detected from sequencing two blocks (192) of colonies.",
+            "cite_spans": [],
+            "section": "Viral genome assembly metrics ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 368,
+                    "end": 369,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Our initial results indicated low sequence coverage at the 3' and 5' ends of most viral genomes. In order to address this problem in viruses with polyA tails the FR40RV-T primer (Figure 2) is added to the RT reaction. This increases the number of cDNAs produced at the 3' end of the genome, and results in a much greater depth of coverage at the 3' end. The polyT containing primer is added to the RT reaction at a concentration 200 fold lower than the random primer in order to reduce competition with the random primer.",
+            "cite_spans": [],
+            "section": "Resolution of 3' and 5' ends ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 186,
+                    "end": 187,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We used human rhinoviruses to develop the methodology for improving the coverage of the 5' end. We took advantage of a conserved region from nucleotide 1 to nucleotide 10 in the 5' untranslated region. The conserved primer was used in the Klenow step of the SISPA protocol to enrich for the presence of amplicons from the 5' end. When used in combination with the 3' primer, we have been able to obtain full rhinovirus genome coverage in a 192 clone experiment (data not shown).",
+            "cite_spans": [],
+            "section": "Resolution of 3' and 5' ends ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One inherent difficulty of a method that relies on a random reverse transcription and PCR to generate amplicons for sequencing is the likelihood of detecting contaminant sequences as well as sequences of interest. Although filtration and nuclease treatment does reduce the presence of nucleic acids from whole cells and host chromosomes, contaminating RNA species will inevitably remain and thus be amplified (Table 3).",
+            "cite_spans": [],
+            "section": "Contaminant sequences ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 416,
+                    "end": 417,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "To determine the presence of contaminant sequences in the clone population, all generated sequences were subjected to a blastn search against the NCBI (non-redundant) database. A cutoff e value of 10-25 was used to identify viral sequences which matched the reference genome. Non-specific sequences (i.e., those that did not match the input viral isolate) were identified as mammalian, avian, bacterial, etc., if their best hit was below a cut off value of 10 -10. If no blast results were found below the 10 -10 cut off value the sequences were not given a specific designation. In experiments resulting in nearly complete genome sequences, contaminant sequences ranged from 3\u201340%. The nature of the contaminant sequence depended on the initial viral host and included mammalian, avian, bacterial, fungal, viral and unknown sequences. In the case of rhinoviruses, which were purified from HeLa cell culture, the majority of contaminant was of derived from human or mycobacterial nucleic acids. Newcastle (NDV) and astrovirus (TA) which were purified from chicken egg allantoic fluid and turkey feces, respectively, were contaminated primarily with nucleic acids of avian origin. Table 3 shows the results of blast analyses of two samples, TA and HRV16.",
+            "cite_spans": [],
+            "section": "Contaminant sequences ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 1186,
+                    "end": 1187,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The work presented here demonstrates the utility of the random genome sequencing method for the generation of viral sequence from positive strand ssRNA (Human Rhinovirus, Turkey astrovirus) and negative strand ssRNA viruses (Newcastle disease virus), ssDNA (enterobacteriphage M13) and dsDNA viruses (woodchuck hepatitis virus and lambda phage). In addition, using the DNase I-SISPA technique we were able to amplify sufficient target material for sequencing from various sources, including cell culture isolates and field isolates which have not been purified by ultracentrifugation. Although ultracentrifugation is an efficient procedure to purify viruses, it is not practical for processing samples of relatively low viral titer in a small volume or high throughput processing of viral samples for genomic sequencing.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Genome coverage and redundancy for viral samples from 3\u201315 kb approach the ideal values as predicted by the Lander-Waterman model [17]. However, as the sequence number increases, the efficiency of the method as measured by the scaled difference [18] decreases dramatically. Thus, while the number of gaps declines as more clones are sequenced, the efficiency is reduced (i.e. there is more 'loss'. Remaining gaps and areas of 1\u00d7 coverage may be due to regions of secondary structure, hydrolysis of the RNA template or cloning bias. Additionally, AT rich regions may inhibit the annealing of random primers during the RT, Klenow or PCR step. We routinely pick a total of 192 clones (or two 96 well blocks) per viral sample for bidirectional sequencing as this represents the most affordable sequence coverage to efficiency ratio. While significant coverage is obtained from a single experiment, final genome assembly requires varying levels of targeted RT-PCRs to close the genome (Figure 3).",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 246,
+                    "end": 248,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": [
+                {
+                    "start": 988,
+                    "end": 989,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The 3' end of the virus generally has the lowest coverage in any use of this protocol. In theory, given the directionality of the reverse transcriptase (3' to 5') and assuming an equal distribution of binding sites for the random primer, the 5' end of any viral genome will get higher depth of sequence coverage than the 3' end. We have found that addition of a tagged oligo dT primer significantly reduces this problem for viruses with polyA tails (most positive ssRNA viruses), but this remains a limitation for other virus genome types. The 5' end of most viruses has also proved difficult to complete and we have found that the addition to the RT reaction of degenerate oligos based on conserved 5' sequences can increase coverage. However we have not been able to develop a universally applicable method for obtaining complete 5' coverage. We strongly anticipate that specific adaptations of the SISPA method to conserved regions of different viruses will demonstrate its versatility in a wide range of viral genome sequencing initiatives.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Limitations to the method include the need for samples containing a minimum of 106 particles (in the original 1 ml or 0.2 ml samples). Moreover because the capsid structure renders the viral genomes nuclease-resistant, this protocol requires encapsidated viral genomes to allow the removal of most extra-viral contaminants. The viral nucleic acids in samples whose capsid structures have been disrupted cannot be separated from contaminants, and therefore cannot be efficiently amplified by SISPA. In the experiments discussed in this paper DNAse I was used to reduce host contaminant. For samples with high levels of host nucleic acid contaminant, we have used 5 \u03bcg of RNAse A to treat 500 \u03bcl of filtered virus for 1 hr. We have found that RNAse A treatment eliminates the majority of host RNA derived sequence contaminant in these cases.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SISPA method is particularly useful for obtaining genome sequence from RNA viruses. Because most sequencing methods for RNA viruses depend on RT-PCR with primers designed from pre-existing sequence data, the utility of this protocol is particularly evident for highly variable or degenerate viral families or for viruses with little available sequence information. In addition, the SISPA method will be useful for uncharacterized viruses as no prior sequence information is required.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Viral RNA and DNA was prepared following the guidelines provided by [1,2] with some modifications. Culture supernatants purchased from the American Tissue Culture Collection (ATCC) and other virus-containing biological samples were prepared for viral RNA and DNA extraction. Each biological sample was first spun to remove cellular debris and processed through a 0.22 \u03bcM filter to enrich viral particles in the flow-through while retaining bacterial and other large cells in the filter. When necessary, viral particles were concentrated by ultracentrifugation at 149, 000 \u00d7 g (45, 000 RPM in a 70.ti Beckman rotor) and the pellet was resuspended in 200 \u03bcl of 2% Normal Human Serum prepared in sterile water. To eliminate residual nucleic acid contaminants in the filtrate, 100 units of DNAse I and/or 10 \u03bcg/ml RNAse A was added to the viral resuspension and was incubated at 37\u00b0C for 1 hour. RNA and/or DNA was then isolated from the sample. For viral RNA preparation, the Trizol-LS reagent (Invitrogen) was used according to the manufacturer's instructions. The RNA pellet was resuspended in 20 \u03bcl of nuclease-free water. To prepare viral DNA, the QIAmp DNA Preparation kit (Qiagen, Cat. # 51104) was used as recommended and the DNA was eluted with 50 \u03bcl of nuclease-free water.",
+            "cite_spans": [
+                {
+                    "start": 69,
+                    "end": 70,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 71,
+                    "end": 72,
+                    "mention": "2",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Preparation of viral nucleic acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The extracted RNA was processed for random reverse transcription as previously described [1,2] using the FR26RV-N primer (5' GCC GGA GCT CTG CAG ATA TCN NNN NN 3') at a concentration of 1 \u03bcM. In addition, FR40RV-T (5' GCC GGA GCT CTG CAG ATA TC (T)20 3') was added at a concentration of 5 nM to specifically amplify the 3' end of positive strand viruses. After the first cDNA synthesis, the double stranded cDNA was synthesized by Klenow reaction the presence of random primers. In order to amplify 5' ends of rhinoviruses the following primer was added to the Klenow reaction at a concentration of 10\u201320 nM (5'GCC GGA GCT CTG CAG ATA TC TTA AAA CTG G 3'). PCR amplification used high fidelity Taq Gold DNA polymerase (ABI) with the FR20RV primer (5' GCC GGA GCT CTG CAG ATA TC 3'). PCR amplicons were A-tailed with dATP and 5 units of low fidelity DNA polymerase (Invitrogen) at 72\u00b0C for 30 minutes. A-tailed PCR amplicons were analyzed in a 1% agarose gel and fragments between 500 and 1000 nt were gel purified. Amplicons were ligated en masse into the Topo TA cloning vector (Invitrogen) and transformed into competent one shot Topo top 10 bacterial cells (Invitrogen). For DNA viruses, the purified viral DNA was denatured and complementary strands synthesized by Klenow reaction as indicated for ds-cDNA from first strand cDNA. Clones were plated on LB/Amp/XGal agar, and individual colonies were picked for sequencing. The clones were sequenced bidirectionally using the M13 primers from the topo TA vector. We routinely sequenced a total of 192 or more per library. Sequencing reactions were performed at the Joint Technology Center (an affiliate of the J Craig Venter Institute: JCVI) on an ABI 3730 xl sequencing system using Big Dye Terminator chemistry (Applied Biosystems).",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 91,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 92,
+                    "end": 93,
+                    "mention": "2",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Construction of a library of random PCR fragments and sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In the Lander and Waterman analysis of genome coverage [17] G = Size (bp) of Reference Genome, L = Sequence Length (bp) and N = # sequences; Redundancy represents the depth of sequence coverage and Coverage represents the fraction of genome covered by sequence data.",
+            "cite_spans": [
+                {
+                    "start": 56,
+                    "end": 58,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The Ideal Redundancy (R) = LN/G and the Ideal Coverage = 1-e-R [17]",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 66,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Observed Coverage = sum of the length of all contigs/G. Observed Redundancy = the average of total sequence length (length of all sequence reads in a contig including gaps)/contig Length. Both Observed coverage and Observed Redundancy are experimentally derived values. The average sequence read size for the experiments described was 507.83 +/- 47.16 bp.",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The loss of coverage due to various biases is represented as the difference between the ideal coverage and the actual coverage. To allow quantitative comparison, this 'shortfall' difference is scaled by the standard deviation of the coverage probability distribution as given by Wendl [18]. Following Wendl, we use the moments of the vacancy (which is the complement of the coverage) to calculate the standard deviation.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "E\u27e8V\u27e9 = (1 - \u03b1)N",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Where \u03b1 is the ratio of the read length and the genome length and N is the number of reads.",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The second moment is given as:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "E\u27e8V2\u27e9 = exp(-2\u03c1) + 2/N\u00b7exp(-\u03c1)",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Where \u03c1, the redundancy, is define to be equal to N\u03b1",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The expression for the variance is then:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03c32 = (1 - \u03b1)2N - exp(-2\u03c1) + 2/N\u00b7exp(-\u03c1))",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The standard deviation is then:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "S=(1\u2212\u03b1)2N\u2212(exp(\u22122\u03c1)+2/N\u22c5exp(\u2212\u03c1))",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The ideal coverage is given by:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "E\u27e8C\u27e9 = 1 - exp(-\u03c1)",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the standard deviation for the vacancy in place of that for the coverage, the correctly-scaled difference D between ideal coverage and the actual coverage A is:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "D = (E\u27e8C\u27e9 - A)/S",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Note that for large N the mean vacancy converges to exp(-\u03c1) allowing the following simplified approximation of S:",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "S=2/N\u22c5exp(\u2212\u03c1)",
+            "cite_spans": [],
+            "section": "Analysis of genome coverage ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequence reads were trimmed to remove amplicon primer sequence as well as low quality sequence, and assembled. A small genome assembler called Elvira (Executive for Large-scale Viral Assembly), based on the open-source Minimus assembler, was developed to automate these tasks. For some figures images were generated using the SeqMan II sequence analysis software, DNASTAR Inc. 1989\u20132002.",
+            "cite_spans": [],
+            "section": "Assembly of viral genomes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The following complete genomes were used as reference genomes for the viruses discussed in this study: Woodchuck hepatitis virus (AY628095); Enterobacteriophage MS2 (NC_001417); Enterobacteriophage M13 (NC_003287); Human Rhinovirus 16 (L24917); Turkey Astrovirus (NC_002470);",
+            "cite_spans": [],
+            "section": "Reference genomes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Newcastle disease virus LaSota (AY845400) Enterobacteria phage lambda (NC_001416)",
+            "cite_spans": [],
+            "section": "Reference genomes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "SISPA: Sequence-independent single primer amplification; rPCR: Random polymerase chain reaction; RT: Reverse transcription; NDV: Newcastle disease virus LaSota; TA: Turkey astrovirus 2; HRV: Human rhinovirus.",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declares that there are no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "AD participated in drafting the article, experimental design, and data analysis and carried out molecular studies. JD participated in data analysis. RH, RK, JF and NS participated in experimental design and carried out molecular studies. CA, XZ and NG provided materials used in the study. EG participated in experimental planning and drafting the manuscript. DS conceived of and coordinated the study, and participated in data analysis and drafting the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Viral isolates discussed in this study.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Lander-Waterman analysizs of viral genome coverage.\nObserved coverage and redundancy was compared with the expected coverage and redundancy as predicted by the Lander-Waterman model for the total number of sequences in each assembly.",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Specific sequences and contaminants in turkey astrovirus and human rhinovirus 16 assemblies.\nSequences were analyzed against a non redundant database using a blastn algorithm. Viral specific sequences were identified as matching the reference genome with a blastn cut off below 10-25. Non-specific (non-viral contaminant) sequences were identified if they had a cut off value below 10-10, while None means that no blastn results were found below the 10-10 cut off value.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Overview of the strategy. Viral particles are separated from host contaminants using centrifugation and filtration. Viral particles are treated with DNAse I to remove contaminated nucleic acids. Random priming is used to generate 500\u20131000 bp amplicons which are size-selected and cloned. Colonies are picked and sequenced. Sequence is trimmed and assembled. Contigs are closed using sequence-specific primers.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Outline of the SISPA method. A. Viral RNA is converted to cDNA using random-tagged and poly-A tagged primers (FR26RV-N and FR40RV-T). B. Second strand DNA is synthesized using Klenow exo-DNA polymerase, in the presence of random tagged and virus specific 5' end oligo primers. C. Double stranded DNA is amplified by PCR using the primer tag (FR20RV). D. Amplicons are separated by electrophoresis and products ranging from 500\u20131000 nucleotides are cloned into the TOPO vector. 96\u2013288 colonies are picked, plasmid DNA is purified and the inserts are sequenced.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Representative assemblies of viruses described in this study. Images shown were generated using DNASTAR Seqman program. A. Enterobacteriophage MS2 (3569 bp). B. Human Rhinovirus 16 (7124 bp). C. Newcastle disease virus Lasota (15186 bp). All assemblies have been aligned with their reference genomes. Gaps and low coverage areas which require closure are circled.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: A. Depth of coverage of viruses. Depth of coverage statistics were generated for each contig (using the output of DNAStar Seqman program). Average coverage is the summed length of all sequence reads in a contig, including gaps divided by the contig length. The average and standard deviation for each virus was determined. B. Correlation of genome coverage with colonies picked. The SISPA method was performed for enterobacteriophage M13 (6407 bp), Newcastle disease virus Lasota (15,186 bp) and enterobacteriophage lambda (48502 bp). One, two or three 96-well blocks of clones were sequenced, trimmed and assembled. The sum of the total lengths of edited contigs for each condition was calculated as percent of the total reference genome length.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Relationship between initial virus particle number, genome coverage and percent non-specific sequences generated by SISPA. MS2 viruses were diluted to 108, 106, 104, and 102 particles per SISPA DNAse I reaction. The sum of the total lengths of edited contigs for each dilution was calculated as percent of the total reference genome length. Non-specific sequences were determined as those sequences which did not match reference genome with a cutoff value less than 10-25.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "A virus discovery method incorporating DNase treatment and its application to the identification of two bovine parvovirus species",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Engle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bukh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "98",
+            "issn": "",
+            "pages": "11609-11614",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.211424698"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Virus discovery by sequence-independent genome amplification",
+            "authors": [
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Ambrose",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Clewley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Reviews in medical virology",
+            "volume": "16",
+            "issn": "",
+            "pages": "365-383",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/rmv.515"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Sequence-independent, single-primer amplification (SISPA) of complex DNA populations",
+            "authors": [
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Reyes",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Molecular and cellular probes",
+            "volume": "5",
+            "issn": "",
+            "pages": "473-481",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0890-8508(05)80020-9"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "A random-PCR method (rPCR) to construct whole cDNA library from low amounts of RNA",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Froussard",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nucleic acids research",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/20.11.2900"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Identification of a third human polyomavirus",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Andreasson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bjerkner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bogdanovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Persson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dalianis",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ramqvist",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Andersson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Journal of virology",
+            "volume": "81",
+            "issn": "",
+            "pages": "4130-4136",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.00028-07"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Identification of enteroviruses by using monoclonal antibodies against a putative common epitope",
+            "authors": [
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Cheon",
+                    "suffix": ""
+                },
+                {
+                    "first": "BK",
+                    "middle": [],
+                    "last": "Na",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Cheong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "NY",
+                    "middle": [],
+                    "last": "Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Son",
+                    "suffix": ""
+                },
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Jee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of clinical microbiology",
+            "volume": "41",
+            "issn": "",
+            "pages": "3028-3034",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.7.3028-3034.2003"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Identification of a new human coronavirus",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van der Hoek",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Jebbink",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Vermeulen-Oost",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                },
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Wolthers",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Wertheim-van Dillen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kaandorp",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Spaargaren",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature medicine",
+            "volume": "10",
+            "issn": "",
+            "pages": "368-373",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm1024"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "New DNA viruses identified in patients with acute viral infection syndrome",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "VV",
+                    "middle": [],
+                    "last": "Lukashov",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Hecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Delwart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of virology",
+            "volume": "79",
+            "issn": "",
+            "pages": "8230-8236",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.13.8230-8236.2005"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Genomic mapping by fingerprinting random clones: a mathematical analysis",
+            "authors": [
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Waterman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Genomics",
+            "volume": "2",
+            "issn": "",
+            "pages": "231-239",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0888-7543(88)90007-9"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Occupancy modeling of coverage distribution for whole genome shotgun DNA sequencing",
+            "authors": [
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Wendl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bulletin of mathematical biology",
+            "volume": "68",
+            "issn": "",
+            "pages": "179-196",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s11538-005-9021-4"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Cloning of a human parvovirus by molecular screening of respiratory tract samples",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Tammi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eriksson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bjerkner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tiveljung-Lindell",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Andersson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "102",
+            "issn": "",
+            "pages": "12891-12896",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0504666102"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "RNA viral community in human feces: prevalence of plant pathogenic viruses",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Breitbart",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JQ",
+                    "middle": [],
+                    "last": "Run",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Soh",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Hibberd",
+                    "suffix": ""
+                },
+                {
+                    "first": "ET",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS biology",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0040003"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "The marine viromes of four oceanic regions",
+            "authors": [
+                {
+                    "first": "FE",
+                    "middle": [],
+                    "last": "Angly",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Felts",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Breitbart",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Salamon",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Carlson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Haynes",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kelley",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Mahaffy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Mueller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nulton",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Parsons",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rayhawk",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Suttle",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS biology",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0040368"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Method for discovering novel DNA viruses in blood using viral particle selection and shotgun sequencing",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Breitbart",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BioTechniques",
+            "volume": "39",
+            "issn": "",
+            "pages": "729-736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Environmental genome shotgun sequencing of the Sargasso Sea",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Remington",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Heidelberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Halpern",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rusch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Eisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Paulsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Fouts",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                },
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Knap",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Lomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nealson",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Parsons",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Baden-Tillson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pfannkoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Rogers",
+                    "suffix": ""
+                },
+                {
+                    "first": "HO",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "304",
+            "issn": "",
+            "pages": "66-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1093857"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Metagenomic analysis of coastal RNA virus communities",
+            "authors": [
+                {
+                    "first": "AI",
+                    "middle": [],
+                    "last": "Culley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Lang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Suttle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "312",
+            "issn": "",
+            "pages": "1795-1798",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1127404"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Whole-genome analysis of human influenza A virus reveals multiple persistent lineages and reassortment among recent H3N2 viruses",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ghedin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "St George",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS biology",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0030300"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Large-scale sequencing of human influenza reveals the dynamic nature of viral genome evolution",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ghedin",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Sengamalay",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shumway",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zaborsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Feldblyum",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Subbu",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Spiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Koo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bolotov",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dernovoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "St George",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "1162-1166",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04239"
+                ]
+            }
+        }
+    }
+}

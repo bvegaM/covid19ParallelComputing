@@ -1,0 +1,2985 @@
+{
+    "paper_id": "PMC2684143",
+    "metadata": {
+        "title": "Genome Signatures, Self-Organizing Maps and Higher Order Phylogenies: A Parametric Analysis",
+        "authors": [
+            {
+                "first": "Derek",
+                "middle": [],
+                "last": "Gatherer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Molecular evolutionary methodology revolves around the production of sequence alignments and trees. However, as evolutionary distance increases between two homologous molecules, their similarity may decay to the point where they are no longer alignable. Construction of a phylogenetic tree under such circumstances becomes impossible. One method that has been suggested for the study of distant evolutionary relationships is that of genomic signatures or genome signatures\u2020 (Karlin and Ladunga, 1994; Karlin and Burge, 1995; Karlin and Mrazek, 1996). At least one reviewer has come to the conclusion that it is the preferred method in cases where evolutionary distance, recombination, horizontal transmission or variable mutation rates may confound traditional alignment-based techniques (Brocchieri, 2001).",
+            "cite_spans": [
+                {
+                    "start": 475,
+                    "end": 499,
+                    "mention": "Karlin and Ladunga, 1994",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 501,
+                    "end": 523,
+                    "mention": "Karlin and Burge, 1995",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 525,
+                    "end": 548,
+                    "mention": "Karlin and Mrazek, 1996",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 789,
+                    "end": 805,
+                    "mention": "Brocchieri, 2001",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The first derivation of genome signatures predates the invention of DNA sequencing. Biochemical studies revealed that the frequencies of nearest-neighbour dinucleotide pairs in DNA were generally consistent within genomes, and often different between genomes. These characteristic nearest neighbour patterns were termed general schemes (Russell et al. 1976; Russell and Subak-Sharpe, 1977), and constitute, in modern terminology, a subset of genome signatures, those of length k = 2.",
+            "cite_spans": [
+                {
+                    "start": 337,
+                    "end": 356,
+                    "mention": "Russell et al. 1976",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 358,
+                    "end": 388,
+                    "mention": "Russell and Subak-Sharpe, 1977",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "As long DNA sequences began to be isolated and computers entered the biological laboratory, it became a simple matter to produce nearest-neighbour frequency tables. Indeed, for any DNA sequence of length N, it is theoretically possible to derive frequency tables for all k-mers ranging from 1 to N, within that sequence. The frequency table at k = 1 corresponds to the raw nucleotide content on one strand. On the assumption that DNA is double stranded under most circumstances in most species, the complementary bases are also scored. This reduces the raw count of the four bases to a single value, between zero and one, representing the GC content of that DNA sequence. Correspondingly, at k = 2, the raw count of 16 dinucleotide frequencies, can be reduced to a vector containing 10 values if the count for each dimer on the top strand is added to the count for its complement on the other strand. There are 10 values, not 8, in this vector since GC, CG, AT and TA are self-complementary. This process is called symmetrization (Karlin and Ladunga, 1994). The symmetrized values in the vector are then usually corrected for the frequencies of their component monomers, as follows:\n\u03c1XY = fXY/fXfYwhere fXY is the symmetrized frequency of dinucleotide XY, and fX and fY are the symmetrized frequencies of bases X and Y, respectively. The whole vector is referred to as the genome signature at k = 2 or, particularly in the extensive literature of the Karlin group, simply as \u03c1* XY. For all values of k, the nomenclature GS-k is here adopted.",
+            "cite_spans": [
+                {
+                    "start": 1031,
+                    "end": 1055,
+                    "mention": "Karlin and Ladunga, 1994",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The vector thus becomes an array of the ratios of observed frequencies of k-mers to their expected frequencies given an underlying zero-order Markov chain model of a DNA sequence. Even though symmetrization will reduce the size of the vector for large values of k, it is apparent that it will still grow in size at the order of 4k for an alphabet of length 4. In practice, most investigators have confined themselves to the study of genome signatures of k = 2, in other words to \u03c1 *XY, symmetrized dinucleotide frequencies corresponding to general schemes, although in recent years the availability of faster computers has undoubtedly contributed to the increasing use of genome signatures up to k = 10 (Deschavanne et al. 1999; Edwards et al. 2002; Abe et al. 2003a; Sandberg et al. 2003; Campanaro et al. 2005; Dufraigne et al. 2005; Wang et al. 2005; Paz et al. 2006).",
+            "cite_spans": [
+                {
+                    "start": 704,
+                    "end": 727,
+                    "mention": "Deschavanne et al. 1999",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 729,
+                    "end": 748,
+                    "mention": "Edwards et al. 2002",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 750,
+                    "end": 766,
+                    "mention": "Abe et al. 2003a",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 768,
+                    "end": 788,
+                    "mention": "Sandberg et al. 2003",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 790,
+                    "end": 811,
+                    "mention": "Campanaro et al. 2005",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 813,
+                    "end": 834,
+                    "mention": "Dufraigne et al. 2005",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 836,
+                    "end": 852,
+                    "mention": "Wang et al. 2005",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 854,
+                    "end": 869,
+                    "mention": "Paz et al. 2006",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The length of DNA required to generate a genome signature has conventionally been taken to be around 50 kb, and for this value it has been observed that the Hamming or Euclidean distances between signatures derived from contigs within species are generally considerably smaller than the corresponding average values between species (Karlin and Ladunga, 1994; Karlin and Burge, 1995; Karlin et al. 1997; Abe et al. 2002; Teeling et al. 2004), even when the same-species contigs are on different chromosomes (Gentles and Karlin, 2001). However, recent work has established that genome signatures within species may be stable over lengths as short as 10 kb (Deschavanne et al. 1999; Karlin, 2001; Abe et al. 2002) or less (Sandberg et al. 2001; Jernigan and Baran, 2002; Abe et al. 2003a; Sandberg et al. 2003; McHardy et al. 2007). This has led to their practical application in the detection of pathenogenicity islands (pIs) in pathogenic bacteria. These are sequences originating in horizontal transmission from one bacterium to another, converting a previously innocuous strain into a pathogenic one. Their foreign origin is often reflected in a genome signature closer to their species of origin than their current host genome (Karlin, 1998; Karlin, 2001; Dufraigne et al. 2005).",
+            "cite_spans": [
+                {
+                    "start": 333,
+                    "end": 357,
+                    "mention": "Karlin and Ladunga, 1994",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 359,
+                    "end": 381,
+                    "mention": "Karlin and Burge, 1995",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 383,
+                    "end": 401,
+                    "mention": "Karlin et al. 1997",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 403,
+                    "end": 418,
+                    "mention": "Abe et al. 2002",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 420,
+                    "end": 439,
+                    "mention": "Teeling et al. 2004",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 519,
+                    "end": 531,
+                    "mention": "Karlin, 2001",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 655,
+                    "end": 678,
+                    "mention": "Deschavanne et al. 1999",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 680,
+                    "end": 692,
+                    "mention": "Karlin, 2001",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 694,
+                    "end": 709,
+                    "mention": "Abe et al. 2002",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 720,
+                    "end": 740,
+                    "mention": "Sandberg et al. 2001",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 742,
+                    "end": 766,
+                    "mention": "Jernigan and Baran, 2002",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 768,
+                    "end": 784,
+                    "mention": "Abe et al. 2003a",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 786,
+                    "end": 806,
+                    "mention": "Sandberg et al. 2003",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 808,
+                    "end": 827,
+                    "mention": "McHardy et al. 2007",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1230,
+                    "end": 1242,
+                    "mention": "Karlin, 1998",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1244,
+                    "end": 1256,
+                    "mention": "Karlin, 2001",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1258,
+                    "end": 1279,
+                    "mention": "Dufraigne et al. 2005",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Phylogenetic conclusions drawn from comparison of genome signatures have sometimes been controversial. For instance, Karlin et al. (1997) found that cyanobacteria do not form a coherent evolutionary group, and that Methanococcus jannaschii is closer to eukaryotes than to other proteobacteria, and Campbell et al. (1999) suggested that archaea do not form a coherent clade. Karlin (1998) posited a wide variety of further revisions of the prokaryotic phylogeny based on genome signature results, as well as a novel origin for mitochondria (Karlin et al. 1999). Edwards et al. (2002) used genome signatures as part of a revision of the phylogeny of birds. Nevertheless, few authors have felt confident enough to draw phylogenetic trees based on genome signature comparisons. Coenye and Vandamme (2004) have shown that dinucleotide content is only a reliable indicator of relatedness for closely related organisms. To visualize genome signature relationships between species, a variety of other representational schemes have been used including histograms (Karlin and Mr\u00e1zek, 1997), partial ordering graphs (Karlin et al. 1997), chaos games (Deschavanne et al. 1999; Edwards et al. 2002; Wang et al. 2005), and self-organizing maps (Abe et al. 2003b).",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 137,
+                    "mention": "Karlin et al. (1997)",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 298,
+                    "end": 320,
+                    "mention": "Campbell et al. (1999)",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 374,
+                    "end": 387,
+                    "mention": "Karlin (1998)",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 540,
+                    "end": 558,
+                    "mention": "Karlin et al. 1999",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 561,
+                    "end": 582,
+                    "mention": "Edwards et al. (2002)",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 774,
+                    "end": 800,
+                    "mention": "Coenye and Vandamme (2004)",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1055,
+                    "end": 1078,
+                    "mention": "Karlin and Mr\u00e1zek, 1997",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1106,
+                    "end": 1124,
+                    "mention": "Karlin et al. 1997",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1140,
+                    "end": 1163,
+                    "mention": "Deschavanne et al. 1999",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1165,
+                    "end": 1184,
+                    "mention": "Edwards et al. 2002",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1186,
+                    "end": 1202,
+                    "mention": "Wang et al. 2005",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1231,
+                    "end": 1247,
+                    "mention": "Abe et al. 2003b",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "This paper uses self-organizing maps (SOMs) as a tool to explore genome signature variability at phylogenetic levels from superkingdom down to genus. The SOM is a neural network method which spreads multi-dimensional data onto a two-dimensional surface (Kohonen, 1997). Its endpoint is therefore similar to multi-dimensional scaling or principal components analysis, and like these other techniques has been extensively used in biology, principally for the analysis of micro-array data but also to a lesser extent for sequence analysis (Arrigo et al. 1991; Giuliano et al. 1993; Andrade et al. 1997; Tamayo et al. 1999; Kanaya et al. 2001; Wang et al. 2001; Abe et al. 2002; Covell et al. 2003; Ressom et al. 2003; Xiao et al. 2003; Mahony et al. 2004; Oja et al. 2005; Abe et al. 2006; Samsonova et al. 2006). The resulting \u201cflat\u201d representation may be a strong aid to intuitive understanding of the structure of complex multidimensional datasets. The SOM is not a clustering technique per se, but the surface may be divided up into zones that are then treated as clusters. Alternatively, cluster boundaries on the surface may be defined more objectively using additional algorithms (Ultsch, 1993). The SOM is also not hierarchical (unlike UPGMA but like K-means clustering, two other commonly used techniques for the analysis of microarrays). This absence of hierarchy means that it is particularly suited to situations where the natural hierarchy of species relationships, reflecting evolutionary descent, may have been violated, e.g. by horizontal gene transfer.",
+            "cite_spans": [
+                {
+                    "start": 254,
+                    "end": 267,
+                    "mention": "Kohonen, 1997",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 537,
+                    "end": 555,
+                    "mention": "Arrigo et al. 1991",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 557,
+                    "end": 577,
+                    "mention": "Giuliano et al. 1993",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 579,
+                    "end": 598,
+                    "mention": "Andrade et al. 1997",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 600,
+                    "end": 618,
+                    "mention": "Tamayo et al. 1999",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 620,
+                    "end": 638,
+                    "mention": "Kanaya et al. 2001",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 640,
+                    "end": 656,
+                    "mention": "Wang et al. 2001",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 658,
+                    "end": 673,
+                    "mention": "Abe et al. 2002",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 675,
+                    "end": 693,
+                    "mention": "Covell et al. 2003",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 695,
+                    "end": 713,
+                    "mention": "Ressom et al. 2003",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 715,
+                    "end": 731,
+                    "mention": "Xiao et al. 2003",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 733,
+                    "end": 751,
+                    "mention": "Mahony et al. 2004",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 753,
+                    "end": 768,
+                    "mention": "Oja et al. 2005",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 787,
+                    "end": 808,
+                    "mention": "Samsonova et al. 2006",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1185,
+                    "end": 1197,
+                    "mention": "Ultsch, 1993",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, the main parameters of the SOM: its size and the number of iterations used in its construction, are investigated for their effects on its classificatory accuracy. These parameters must be chosen at the beginning of each run of SOM building, and there is little guidance in the SOM literature as to their optimal values. As well as the parameters of the SOM, the value of k used in the genome signature is similarly examined. High k genome signatures are extremely long vectors that may present considerable memory problems even on modern computers. Likewise, lengthy iterations in training the SOM, especially if it is a large one, may consume considerable time.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Complete genome sequences were downloaded from NCBI Taxonomy Browser (http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/). A Perl script was written to divide complete genome sequences into consecutive strings of 10 or 100 kb, as required. Trailing ends, and genomes shorter than the required string length, were discarded. The resulting FASTA-formatted datasets were then processed to calculate their genome signatures.",
+            "cite_spans": [],
+            "section": "Genome sequences ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 1 lists the genomes used as the main data set for the paper, that of viruses of the family Herpesviridae. The analyses shown in Figures 3 to 7 use this set. A larger set of genomes with the widest possible phylogenetic range, including all three superkingdoms of cellular life as well as viruses, is given in Table 2. These are used for the \u201call-life\u201d and superkingdom-level SOMs in Figure 1. Table 3 lists those viral genomes used for the SOM across a wide set of viral genomes, displayed in Figure 2.",
+            "cite_spans": [],
+            "section": "Genome sequences ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 134,
+                    "end": 143,
+                    "mention": "Figures 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 147,
+                    "end": 148,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 389,
+                    "end": 397,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 499,
+                    "end": 507,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 315,
+                    "end": 322,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 399,
+                    "end": 406,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "A Perl script was written to derive raw k-mer counts on FASTA-formatted databases of input sequences, using the SeqWords.pm module from BioPerl (http://www.bioperl.org/Pdoc-mirror/bioperl-live/Bio/Tools/SeqWords.html). The raw k-mer frequencies were then symmetrized, as follows:\nfvs = fv + fv\u2212compwhere f\u03bd and f\u03bd-comp are the raw frequencies of a k-mer \u03bd and its complement \u03bd-comp.",
+            "cite_spans": [],
+            "section": "Calculation of genome signatures ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Symmetrization means that a sequence and its complement will generate the same answer. The symmetrized frequencies are then corrected for the 1-mer content. For instance for a 2-mer XY, where X and Y can each represent any nucleotide base {A, C, T, G}:\n\u03c1XY = fXYs/fXsfYswhere fsXY is the symmetrized frequency for dimer XY and fsX and fsY are the symmetrized frequencies of its component 1-mers. For a 3-mer XYZ, the correction would be for the 1-mers, X, Y and Z and so on.",
+            "cite_spans": [],
+            "section": "Calculation of genome signatures ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The genome signature vector for length k, is thus composed of a series of ratios of observed to expected values of its component k-mers, where the expected values are determined by a zero-order Markov chain (Bernouilli series) model. Genome signatures are therefore not distorted by gross base compositional differences between genomes, which would otherwise be the dominant factor.",
+            "cite_spans": [],
+            "section": "Calculation of genome signatures ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Self-organizing maps (SOMs) were run following Tamayo et al. (1999), using a Perl script. Input consisted of an array of the genome signatures generated as described above. The dimensions of the SOM and the number of iterations in training were variables entered by the user. Euclidean distances were used when comparing vectors.",
+            "cite_spans": [
+                {
+                    "start": 47,
+                    "end": 67,
+                    "mention": "Tamayo et al. (1999)",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Once the dimensions of the SOM were set, x columns by y rows, weight vectors initializing each of the xy cells of the SOM were selected at random from the entire set of genome signature data vectors. The SOM is thus initially simply filled with a random subset of the data. Training then commences, for nominated t iterations. At each iteration m, each data vector in turn was compared to each weight vector, and the closest weight vector for each data vector designated the winning weight vector of that data vector in that iteration. Each time a winning weight vector is identified, the winning weight vector, and the weight vectors of cells within a spatial range \u211c on the SOM, were then trained by the data vector as follows.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Each value c in the winning weight vector w is altered, so that its value at iteration, m, becomes at the next iteration m+1:\nwm+1c = wmc + \u03c4m(wmc \u2212 vc)where wcm \u2013 vc represents the difference between the winning weight vector and the data vector for each value c along the vectors. In other words, one simply aligns the data vector and the winning weight vector and subtracts them. Each value of the winning weight vector is then altered to bring it closer to the data vector by a factor of \u03c4, the training effect, which is derived as follows:\n\u03c4m = \u03b1m/\u03b3\u03c4 changes at each iteration of the process, and is the ratio of two other values \u03b1 and \u03b3.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b1 is calculated for each iteration m as follows:\n\u03b1m = 1 \u2212 (m \u2212 1t)where m is the number of the current iteration, and t the number of total iterations requested. There-fore, the number of iterations of the SOM, a parameter chosen at the start of the process, determines the gradient at which \u03b1 will decrease as the iterations progress.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Whereas \u03b1 is the same for all cells in the SOM and changes according to the iteration number only, \u03b3 is the Euclidean distance on the SOM from the weight vector being trained within range \u211b of the winning weight vector.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03c4 can therefore be seen to decrease as the SOM progresses, since \u03b1 decreases, and also to decrease the further one goes away from the winning weight vector, since \u03b3 increases.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The range within which weight vectors are trained at each iteration is calculated:\n\u211cm = \u03b1mSwhere S is the length or breadth of the SOM, whichever is the smaller. The area of the SOM being trained therefore also shrinks as \u03b1 decreases with increasing iterations.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Once each data vector has found its winning weight vector and trained it, also training the weight vectors within range \u211c of the winning weight vector, then one iteration is completed. New values of \u03b1,\u03c4 and \u211c are then calculated, and the second iteration can commence. It can be intuitively grasped that there is a great deal of \u201cchurn\u201d in initial iterations of the SOM. When \u03b1 is close to 1, data vectors will effectively change their winning weight vector to copies of themselves. Only at the limits of the trained area R will the effect be subtler. However, as the number of iterations mounts, \u03b1 will decrease and each data vector will have a relatively weaker effect on its winning weight vector and even less on those weight vectors in its vicinity. Observation (data not shown) of distribution of a simple data set over a SOM through the iterative process shows that a relatively chaotic process dominates until approximately halfway through the nominated number of iterations, at which point structure rapidly builds in the SOM. The final 10% or so of iterations consist mostly of fine-tuning of the final weight vector values. Training SOMs can also be time consuming, especially for large data sets of high dimensionality vectors trained over large numbers of iterations. The longest run presented here (that in Fig. 2) took in excess of 3 weeks on a single 2.8 GHz Intel processor under a Linux operating system. One of the major motivations of this paper was to define ways to reduce SOM training time without losing accuracy or sensitivity.",
+            "cite_spans": [],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 1321,
+                    "end": 1327,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "After the final iteration, each data vector is again compared to each weight vector and assigned to the closest. This results in partition of each data vector to one cell in the SOM, thus spreading the multi-dimensional data across the two-dimensional surface of the SOM. Conversely, each final weight vector in the SOM is assigned to its closest data vector, the centroid nearest neighbour (cnn). If the data vectors belong to several categories, each cell in the SOM can be colored according to the origin of its cnn, which is then said to dominate that cell in the SOM. This allows the production of color-coded dominance maps indicating the general spread of the data vector set over the SOM. NCBI taxonomic categories were used throughout, except for herpesviruses where the International Committee on the Taxonomy of Viruses (ICTV) usage is followed (Davison 2002; Davison et al. 2005; Fauquet et al. 2005).",
+            "cite_spans": [
+                {
+                    "start": 857,
+                    "end": 869,
+                    "mention": "Davison 2002",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 871,
+                    "end": 890,
+                    "mention": "Davison et al. 2005",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 892,
+                    "end": 911,
+                    "mention": "Fauquet et al. 2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Self-organizing map ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All Perl scripts, for processing genomes, calculating genome signatures, and running SOMs are available on request from the author (\nd.gatherer@mrcvu.gla.ac.uk).",
+            "cite_spans": [],
+            "section": "Availability of scripts ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The ability of SOMs to distinguish the origin of fragments of DNA based on their genome signatures, was initially tested using GS-2 (see Methods, section 2, above) measured over fragments of 100 kb. At the time of analysis there were 79 eukaryotic, 156 eubacterial, 30 archaeal and 122 viral genomes with more than 100 kb of sequence each (Table 2). The dimension of the SOM was 50 \u00d7 50 and 100 iterations were used. At the end of the iterations, dominance areas (see Methods, section 3, above), were used to color the SOM. For the entire data set, \u201call life\u201d in Figure 1, the superkingdoms of archaea, eubacteria and eukaryota were chosen, along with the unranked category of viruses. Within each of the SOMs applied to the superkingdoms and the viruses, the next level down was used for coloring dominance maps. This is the phylum level in the archaea and eubacteria, and the family level in the viruses. In the eukaryota, the relative scarcity of completely sequenced genomes required a more ad hoc classification.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 563,
+                    "end": 571,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 340,
+                    "end": 347,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "When all input sets are pooled, GS-2 produces a SOM in which eubacterial sequences cluster together (Fig. 1; \u201cAll life\u201d, green). Archaeal sequences are split into several groups that are situated along the boundary between the eubacteria and the eukaryotes. Likewise, viral sequences are split into one group in the top left corner and other clusters along the eubacterial-eukaryotic border. It is evident that this \u201call life\u201d SOM does not contribute to the issue of the phylogeny of the three superkingdoms, except to underline that archaea are not derivatives of either eukaryotes or eubacteria.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 101,
+                    "end": 107,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "When the SOM is confined to archaeal sequences (Fig. 1; \u201cArchaea\u201d), those genomes designated \u201cunclassified\u201d by NCBI, are located well within the territory of the Euryarchaeota, strongly suggesting that they belong to this phylum. In general the archaeal inter-phylum boundaries are clear, although the Crenarchaeaota are split into two clusters. The predominance of Euryarchaeota in terms of area is a reflection of the larger number of complete genomes in that phylum.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 48,
+                    "end": 54,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Likewise, in the eukaryotes (Fig. 1; \u201cEukaryota\u201d), the large size of the human genome contributes to a large area dominated by the Vertebrata. It should be remembered that the classification in the eukaryotes is ad hoc owing to the relatively small number of complete genomes. However, it is interesting that the boundaries between the dominance areas are as distinct as those in the archaea.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 29,
+                    "end": 35,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The situation is considerably more complicated within the eubacteria (Fig. 1; \u201cEubacteria\u201d), being the superkingdom with the greatest number of completely sequenced genomes. Some eubacterial phyla are rather fragmented in their dominance areas. For instance, the phylum Firmicutes occupies several partly adjacent areas. The phylum Deinococcus has two small and rather distant dominance areas, and the Bacteroidetes and Spirochaetes both have small outlying fragments. The Proteobacteria dominate the right side of the SOM and penetrate between the various groups on the left side. The overall impression is of less clear-cut differences in GS-2 between phyla in eubacteria than in eukaryotes or archaea.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 70,
+                    "end": 76,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "A similar situation is observed in the SOM on viral sequences (Fig. 1; \u201cViruses\u201d). A few viral families, such as the Baculoviridae, the family Mimivirus and the Nimaviridae do manage coherent dominance areas, but all others are extensively mixed. The Baculoviridae are the only family of any size than maintain a distinctive dominance area.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": [
+                {
+                    "start": 63,
+                    "end": 69,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "This basic illustration of the SOM in action demonstrates that for a single parameter set, namely 50 \u00d7 50 SOM and 100 iterations, different phylogenetic groups exhibit variable degrees of partition across the SOM.",
+            "cite_spans": [],
+            "section": "SOMs on large sequence datasets ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To increase the resolution of the SOM against viral sequences, GS-2 was reapplied to viral sequences only using 10 kb fragments. This enables a larger number of viral genomes to be analysed, up from 122 to 579, as genomes of 10 kb or more can be included (Table 3). The number of iterations was increased to 1000. The resulting dominance map is shown in Figure 2.",
+            "cite_spans": [],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 354,
+                    "end": 362,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 256,
+                    "end": 263,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "When viral sequences alone are considered at higher resolution, the SOM becomes very complex. The family level classification is maintained for the dominance map but there are now more families, since viruses as small as 10 kb are eligible. Perhaps the most salient feature is that Poxviridae are divisible into sheep/goat pox viruses and others (Fig. 2: \u201csheep/goat\u201d and \u201cother pox\u201d). Additionally phages, within the family Caudovirales, tend to be differentially located on the SOM in four major areas, one of which, mycophages, accounts for two of these areas (Fig. 2: \u201cmyco-\u03d5\u201d, \u201centero-\u03d5\u201d and \u201ccocco-\u03d5\u201d). Again the Baculoviridae form a noticeably large and coherent cluster. Herpesviridae, by contrast, are spread across the entire map.",
+            "cite_spans": [],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 347,
+                    "end": 353,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 564,
+                    "end": 570,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Herpesviridae (Table 1) are next considered alone under the same conditions as in Figure 2. Dominance maps for this narrower selection are shown in Figure 3.",
+            "cite_spans": [],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 82,
+                    "end": 90,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 148,
+                    "end": 156,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 15,
+                    "end": 22,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 3 shows that when family-level taxonomy is considered within herpesviruses, GS-2 distinguishes the ostreid herpesviruses and the ictaluriviruses as two fairly homogenous blocs distinct from the Alloherpesviridae (Davison, 2002), comprising the alpha, beta and gamma families. At the genus-level, Muromegalovirus alone forms a nearly contiguous bloc although Mardivirus nearly does so. The remaining genera, like the families, are considerably mixed across the SOM. Like the wide spread of herpesvirus signatures across the viral SOM, this is a reflection of the degree of sequence heterogeneity with the Herpesviridae.",
+            "cite_spans": [
+                {
+                    "start": 220,
+                    "end": 233,
+                    "mention": "Davison, 2002",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The three figures presented above demonstrate that the SOM is an intriguing tool for the conceptualisation of relationships between genome signatures. However, the evident complexity of some of the topographical arrangements raises serious questions concerning its utility as a diagnostic tool for phylogeny.",
+            "cite_spans": [],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Therefore, some experiments are described which address this issue in a quantitative way.",
+            "cite_spans": [],
+            "section": "Increased resolution SOM on viruses ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to investigate if genome signatures of longer k give better resolution than k = 2, 10 kb herpesvirus sequences were processed into genome signature of GS-2 to GS-6 and the SOM was trained for 100 iterations (Fig. 4). On first inspection, it does not appear that a higher genome signature provides any better resolution than a lower one. The GS-3 SOM was also run on a 20 \u00d7 20 map, but again this produces no major change to the overall pattern. In all cases, ostreid herpesvirus and ictalurivirus have coherent dominance areas on the SOM. At GS-5, alpha herpes-viruses also have a coherent dominance area, but this disappears again at GS-6. In order to further investigate this apparent lack of improvement at higher values of k, the density of sequences of each family was plotted onto the SOM (Fig. 5). Instead of the dominance map approach, in which each cell is colored according to the affiliation of its cnn (Fig. 1\u20134 are all of this type), cells in which more than 95% of allocated sequences are of a single type are colored red, and those with fewer than 5% of that type are white. Cells between these two extremes are colored yellow. A ratio is then produced of red-to-yellow in each SOM. A perfectly partitioned SOM will therefore have a ratio of infinity, indicating no mixed cells, or more accurately no cells with greater than 5% mixture of the \u201cwrong\u201d family.",
+            "cite_spans": [],
+            "section": "Effect of length of k-mer used to generate genome signature ::: Results",
+            "ref_spans": [
+                {
+                    "start": 217,
+                    "end": 223,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 805,
+                    "end": 811,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 924,
+                    "end": 930,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 931,
+                    "end": 932,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Figure 5 demonstrates that family level taxonomy is better determined at higher GS in all five families of herpesviruses. The ratio of high alpha-density (>95%, red) to medium alpha-density (5% to 95%, yellow) increases from 0.88 to 2.83 as the GS increases from 2 to 4. The corresponding increases for the beta and gamma families are from 0.52 to 2.33 and from 1.91 to 2.11 respectively. For the ostreid herpesviral sequences, perfect partition is reached at GS-4 and for the ictalurid viruses at GS-3. This is probably a reflection of the presence of a single virus in each of these categories with a correspondingly lower number of sequences analysed.",
+            "cite_spans": [],
+            "section": "Effect of length of k-mer used to generate genome signature ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "It is therefore apparent that genome signature of longer values of k produce some improvement in the accuracy of the final partition on the SOM. However, longer k results in longer data vectors, increasing at order 4k and therefore much slower training of the SOM. One way to speed training of the SOM is simply to reduce the number of training cycles. The effect of the number of iterations on density of each family is displayed in Figure 6.",
+            "cite_spans": [],
+            "section": "Effect of length of training phase of SOM ::: Results",
+            "ref_spans": [
+                {
+                    "start": 434,
+                    "end": 442,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Figure 6 shows that increasing the number of iterations has a mixed effect on the density of family sequences. The alpha herpesviral sequences increase in density from 0.92 to 1.35 as the number of iterations increases from 10 to 1000, and the beta herpesviruses from 0.52 to 0.83. The ostreid herpesviral sequences are also perfectly clustered at 100 iterations. However, the gamma and ictalurid sequences are more poorly partitioned at higher numbers of iterations.",
+            "cite_spans": [],
+            "section": "Effect of length of training phase of SOM ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Figures 1\u20136 provide a largely qualitative impression of the effectiveness of SOMs in correctly assigning the origins of DNA sequences based on their genome signature. To provide a further more quantitative assessment of the parameters of the process, a jack-knifing analysis was carried out. All herpesviral sequences were divided randomly into two groups. Genome signatures and SOMs were constructed as appropriate using one half. Then the remaining half was applied to the SOM to predict their origin at the family and genus level. To make a prediction concerning the origin of a data vector, the Euclidean distances between that vector and all of the weight vectors of the preconstructed SOM, are calculated. The origin of the nearest weight vector is taken to be the classification of the data vector being tested. Where a data vector falls into a cell on the SOM containing none of the original data vectors used to construct the SOM, its origin is deemed to be \u201cundecided\u201d (Fig. 7).",
+            "cite_spans": [],
+            "section": "Jack-knifing analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 9,
+                    "mention": "Figures 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 10,
+                    "end": 11,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 980,
+                    "end": 986,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "When SOM size is varied for GS-2 at 100 iterations (Fig. 7, top left table), SOMs of greater than 10 \u00d7 10 introduce considerably uncertainty into the assignment. However, for those sequences that can be assigned, 95% accuracy at the subfamily level is achieved in a 50 \u00d7 50 SOM. Likewise, a 30 \u00d7 30 SOM gives 94% accuracy at the genus level. When SOM size is held at 10 \u00d7 10 and the signature length at GS-2 and the number of iterations is varied (Fig. 7, lower left table), there is little effect on the sensitivity. At the subfamily level, there are never more than 4.4% of sequences that cannot be assigned, and never more than 7.2% at the genus level. Where sequences can be assigned, optimal accuracy is achieved at 1000 or 5000 iterations, but the variation in accuracy is low. Increasing the iterations from 10 to 5000 only gives a 4% increase in accuracy of assignment at the sub-family level. When 100 iterations are used and the SOM size is held at 10 \u00d7 10 (Fig. 7, top right table), GS-4 or GS-5 appear to be optimal.",
+            "cite_spans": [],
+            "section": "Jack-knifing analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 52,
+                    "end": 58,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 448,
+                    "end": 454,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 968,
+                    "end": 974,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Genome signatures provide a summary of the k-mer content of a genome, corrected for compositional bias. Various studies in a wide range of species have revealed that genome signatures are generally constant within genomes and similar in related genomes (Karlin and Ladunga, 1994; Karlin et al. 1998; Gentles and Karlin, 2001). The extent to which this is a phenomenon of neutral drift or one of active conservation is unknown. It is intuitively obvious that two identical genomes will have identical genome signatures, and that as they diverge the genome signatures will also diverge. Indeed this is the basis of a least one bioinformatical tool that assesses sequence relatedness (Li et al. 2001; Li et al. 2002). However, various suggestions have been made for conservative selection pressures which would act to maintain genome signature similarity in related organisms, including dinucleotide stacking energies, curvature, methylation, superhelicity, context-dependent mutation biases and effects deriving from related replication machinery (Karlin and Burge, 1995; Blaisdell et al. 1996). If these factors are similar within a clade, they might act as a brake on genome signature divergence. The conservation of genome signatures within genomes (which is what originally gave rise to the term \u201csignature\u201d in this context) would tend to suggest that signatures do not drift neutrally, at least within genomes.",
+            "cite_spans": [
+                {
+                    "start": 254,
+                    "end": 278,
+                    "mention": "Karlin and Ladunga, 1994",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 280,
+                    "end": 298,
+                    "mention": "Karlin et al. 1998",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 300,
+                    "end": 324,
+                    "mention": "Gentles and Karlin, 2001",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 682,
+                    "end": 696,
+                    "mention": "Li et al. 2001",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 698,
+                    "end": 712,
+                    "mention": "Li et al. 2002",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1046,
+                    "end": 1068,
+                    "mention": "Karlin and Burge, 1995",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1070,
+                    "end": 1091,
+                    "mention": "Blaisdell et al. 1996",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 1 demonstrates that at the phylum level within the three superkingdoms of cellular life, satisfactory partition of GS-2 can be obtained by the SOM. However, this is less true for eubacteria than it is for eukaryotes and archaea. At the family level in viruses the picture is considerably more confused, with only the Baculoviridae demonstrating anything like territorial coherence on the SOM at GS-2 (Fig. 1 and 2). This may well be a reflection of speed of substitution in viral genomes. However at the species level, the same coherence within genomes as found in cellular organisms may well be the norm. For instance, when the ostreid and ictalurid herpes-virus families are included in a SOM with the Alloherpesviridae, these two families, both represented by a single viral genome, have strongly discrete areas on the SOM (Fig. 3 and 4).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 408,
+                    "end": 414,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 419,
+                    "end": 420,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 834,
+                    "end": 840,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 845,
+                    "end": 846,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "This does not mean that genome signatures are not diagnostic tools for phylogenetic assignment at the family and sub-family level in herpesviruses, merely that the results should be interpreted with caution. The use of higher values of k appears to have a marginal effect on improving the discrete distribution of family-level herpesviral signatures on the SOM (Fig. 5) but jack-knifing indicates that this does not improve above k = 5 (Fig. 7). The effects of larger dimension SOMs and increased iterations are ambiguous at best. Optimal values appear to be around GS-4 or GS-5 with 500 to 1000 iterations of the SOM. The size of the SOM might be varied, with an initial run at high dimension (e.g. 50 \u00d7 50) followed by a lower dimension run (e.g. 10 \u00d7 10) for sequences unassigned by the first run (Fig. 7).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 362,
+                    "end": 368,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 437,
+                    "end": 443,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 801,
+                    "end": 807,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The use of genome signatures in the identification of pathogenicity islands is by now well established (Karlin, 1998; Karlin, 2001; Dufraigne et al. 2005). They are valuable in this context in that they indicate regions within genomes that have characteristics different to the rest of the genome. However, it is apparent from the present work that it is difficult on the basis of genome signatures to accurately identify the origin of the exogenous DNA. A BLAST search is more likely to generate informative hits in this context. Nevertheless for sequences that cannot be precisely identified on the basis of alignment-based methods such as BLAST, genome signatures with SOMs holds out the prospect of identification of origin to a reasonable level.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 116,
+                    "mention": "Karlin, 1998",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 118,
+                    "end": 130,
+                    "mention": "Karlin, 2001",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 132,
+                    "end": 153,
+                    "mention": "Dufraigne et al. 2005",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The optimization of SOM parameters reported here may also extend to other applications of SOMs. Of particular interest in bioinformatics is their use for the analysis of microarray data. The experimental design would be the same, with a standard microarray data set (e.g. the breast cancer data provided by Reid et al. 2005) substituting for the genome signature arrays. Dominance mapping would be done by clinical outcome, and jack-knife analysis could test the accuracy and sensitivity of assignment of that outcome.",
+            "cite_spans": [
+                {
+                    "start": 307,
+                    "end": 323,
+                    "mention": "Reid et al. 2005",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Herpesvirus genome sequences used for the analyses shown in Figures 3 to 7. The nomenclature follows the International Committee on Taxonomy of Viruses (Fauquet et al. 2005).\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Genomes used for the analysis shown in Figure 1. In total there are 79 eukaryotic, 156 eubacterial, 30 archaeal and 122 viral genomes with more than 100kb of sequence.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Viral genomes used for the SOM covering a wide range of viruses, shown in Figure 2. 579 viral genomes have at least 10kb of sequence. This is approximately 35% of all fully sequenced viral genomes available at the time of the analysis.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Dominance maps for GS-2 applied to a 50 \u00d750 SOM over 100 iterations. The eubacterial and viral SOMs are shown at a larger scale owing to their greater detail. Dominance areas are color coded.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Dominance map for GS-2 of 10kb fragments of viruses applied to a 50 \u00d750 SOM over 1000 iterations. The category \u201cBacteriophages\u201d refers to unclassified phages. Most phages are members of the family Caudovirales. The text added to the dominance map shows the general divisions of the Poxviridae and Caudovirales which form more than one well defined dominance area.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Dominance maps for GS-2 of 10kb fragments of herpesviruses applied to a 50 \u00d750 SOM over 500 iterations. The SOM is colored first according to genus membership and then according to family membership (reduced scale inset).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Dominance maps herpesvirus families, illustrating the effect of varying GS values using 10kb herpesvirus sequences, on a 10 \u00d710 SOM (except for GS-3 at 20 \u00d720) over 100 iterations.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: The density of herpesviral sequences, classed by family, on a 10 \u00d710 SOM after 100 iterations. >95% density: red; 5%\u201395% density: yellow; <5% density: white. The figure in each box is the ratio of sequences in red to yellow areas of the SOM.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6.: The density of herpesviral sequences, classed by family, on a 10 \u00d710 SOM of GS-2, run over a varying number of iterations, i. >95% density: red; 5%\u201395% density: yellow; <5% density: white. The figure in each box is the ratio of sequences in red to yellow areas of the SOM.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7.: Jack-knifing experiments to determine effects of SOM size (top left), GS number (top right) and number of iterations (lower left). The \u201cundecided\u201d column indicates the percentage of sequences in the test set that could not be assigned to a sub-family or genus. The \u201ccorrect\u201d column indicates the percentage of assignable sequences that were correctly assigned. Optimal values are highlighted in yellow.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Informatics for unveiling hidden genome signatures",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kanaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kinouchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ichiba",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kozuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ikemura",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Genome. Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "693-702",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Use of the genomic signature in bacterial classification and identification",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Coenye",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vandamme",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Systematic and Applied Microbiology",
+            "volume": "27",
+            "issn": "",
+            "pages": "175-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Molecular classification of cancer: unsupervised self-organizing map analysis of gene expression microarray data",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Covell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wallqvist",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Rabow",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Thanki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol. Cancer Ther",
+            "volume": "2",
+            "issn": "",
+            "pages": "317-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Evolution of the herpesviruses",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Veterinary Microbiology",
+            "volume": "86",
+            "issn": "",
+            "pages": "69-88",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A planned order: Herpesvirales",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Davison",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Eberle",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Ehlers",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hayward",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Minson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pellett",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Roizman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Studdert",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Thiry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "ICTV",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Genomic signature: Characterization and classification of species assessed by chaos game representation of sequences",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Deschavanne",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Giron",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vilain",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Fagot",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Fertil",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol. Biol. Evol",
+            "volume": "16",
+            "issn": "",
+            "pages": "1391-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Detection and characterization of horizontal transfers in prokaryotes using genomic signature",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dufraigne",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Fertil",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lespinats",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Giron",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Deschavanne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucl. Acids Res",
+            "volume": "33",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A genomic schism in birds revealed by phylogenetic analysis of DNA strings",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Fertil",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Giron",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Deschavanne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Syst Biol",
+            "volume": "51",
+            "issn": "",
+            "pages": "599-613",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fauquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Maniloff",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Desselburger",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virus Taxonomy: The Eighth Report of the International Committee on Taxonomy of Viruses",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Genome-scale compositional comparisons in eukaryotes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gentles",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "540-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Potentially functional regions of nucleic acids recognized by a Kohonen\u2019s self-organizing map",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Giuliano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Arrigo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Scalia",
+                    "suffix": ""
+                },
+                {
+                    "first": "PP",
+                    "middle": [],
+                    "last": "Cardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Damiani",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Comput Appl Biosci",
+            "volume": "9",
+            "issn": "",
+            "pages": "687-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A novel bioinformatic strategy for unveiling hidden genome signatures of eukaryotes: Self-organizing map of oligonucleotide frequency",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kanaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kinouchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ichiba",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kozuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ikemura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Informatics",
+            "volume": "13",
+            "issn": "",
+            "pages": "13-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Pervasive properties of the genomic signature",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jernigan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Baran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "BMC Genomics",
+            "volume": "3",
+            "issn": "",
+            "pages": "23-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Analysis of codon usage diversity of bacterial genes with a self-organizing map (SOM): characterization of horizontally transferred genes with emphasis on the E. coli O157 genome",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kanaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kinouchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kudo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yamada",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mori",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ikemura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Gene",
+            "volume": "276",
+            "issn": "",
+            "pages": "89-99",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Detecting anomalous gene clusters and pathogenicity islands in diverse bacterial genomes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Trends in Microbiology",
+            "volume": "9",
+            "issn": "",
+            "pages": "335-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Global dinucleotide signatures and analysis of genomic heterogeneity",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Current Opinion in Microbiology",
+            "volume": "1",
+            "issn": "",
+            "pages": "598-610",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "A chimeric prokaryotic ancestry of mitochondrial and primitive eukaryotes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brocchieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mrazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "AM",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci., U.S.A",
+            "volume": "96",
+            "issn": "",
+            "pages": "9190-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Dinucleotide relative abundance extremes: a genomic signature",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Burge",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Trends in Genetics",
+            "volume": "11",
+            "issn": "",
+            "pages": "283-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Comparative DNA analysis across diverse genomes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mr\u00e1zek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Annual. Review. of Genetics",
+            "volume": "32",
+            "issn": "",
+            "pages": "185-225",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Comparisons of eukaryotic genomes sequences",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ladunga",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A",
+            "volume": "91",
+            "issn": "",
+            "pages": "12832-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "What drives codon choices in human genes?",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mrazek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Mol. Biol",
+            "volume": "262",
+            "issn": "",
+            "pages": "459-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Compositional differences within and between eukaryotic genomes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mr\u00e1zek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc. Natl. Acad. Sci., U.S.A",
+            "volume": "94",
+            "issn": "",
+            "pages": "10227-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Self-organizing maps reveal hidden genome characteristics on a single map analysing 90 genomes of prokaryotes and eukaryotes",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kanaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kinouchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ishihara",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kosaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kozuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ohyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ikemura",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Human Genome Mapping 2003",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Compositional biases of bacterial genomes and evolutionary implications",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mr\u00e1zek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Journal of Bacteriology",
+            "volume": "179",
+            "issn": "",
+            "pages": "3899-913",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kohonen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Self-Organizing Maps",
+            "volume": "vol 30",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Clustering of highly homologous sequences to reduce the size of large protein database",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Jaroszewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Godzik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Bioinformatics",
+            "volume": "17",
+            "issn": "",
+            "pages": "282-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Tolerating some redundancy significantly speeds up clustering of large protein databases",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Jaroszewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Godzik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Bioinformatics",
+            "volume": "18",
+            "issn": "",
+            "pages": "77-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Gene prediction using the Self-Organizing Map: automatic generation of multiple gene models",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mahony",
+                    "suffix": ""
+                },
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "McInerney",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Golden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "BMC Bioinformatics",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Accurate phylogenetic classification of variable-length DNA fragments",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "McHardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tsirigos",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hugenholtz",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Rigoutsos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nature Methods",
+            "volume": "4",
+            "issn": "",
+            "pages": "63-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Self-organizing map-based discovery and visualization of human endogenous retroviral sequence groups",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Oja",
+                    "suffix": ""
+                },
+                {
+                    "first": "GO",
+                    "middle": [],
+                    "last": "Sperber",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Blomberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kaski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Int. J. Neural. Syst",
+            "volume": "15",
+            "issn": "",
+            "pages": "163-79",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Coevolution of DNA-interacting proteins and genome \u201cdialect\u201d",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Paz",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kirzhner",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Nevo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Korol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol. Biol. Evol",
+            "volume": "23",
+            "issn": "",
+            "pages": "56-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Limits of predictive models using microarray data for breast cancer clinical treatment outcome",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Reid",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lusa",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "De Cecco",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Coradini",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Veneroni",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Daidone",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gariboldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Pierotti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Natl. Cancer Inst",
+            "volume": "97",
+            "issn": "",
+            "pages": "927-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Clustering gene expression data using adaptive double self-organizing map",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ressom",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Natarajan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Physiol. Genomics",
+            "volume": "14",
+            "issn": "",
+            "pages": "35-46",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Classification of protein families and detection of the determinant residues with an improved self-organizing map",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Andrade",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Casari",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Valencia",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Biol Cybern",
+            "volume": "76",
+            "issn": "",
+            "pages": "441-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Similarity of the general designs of protochordates and invertebrates",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Subak-Sharpe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Nature",
+            "volume": "266",
+            "issn": "",
+            "pages": "533-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Doublet frequency analysis of fractionated vertebrate nuclear DNA",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Elton",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Subak-Sharpe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1976,
+            "venue": "J. Mol. Biol",
+            "volume": "108",
+            "issn": "",
+            "pages": "1-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The protective role of pregnancy in breast cancer",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Moral",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Balogh",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mailo",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Breast Cancer Research",
+            "volume": "7",
+            "issn": "",
+            "pages": "131-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "TreeSOM: Cluster analysis in the self-organizing map",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Samsonova",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Kok",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Ijzerman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Neural Networks",
+            "volume": "19",
+            "issn": "",
+            "pages": "935-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Quantifying the species-specificity in genomic signatures, synonymous codon choice, amino acid usage and G + C content",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sandberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-I",
+                    "middle": [],
+                    "last": "Br\u00e4nden",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ernberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "C\u00f6ster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Gene",
+            "volume": "311",
+            "issn": "",
+            "pages": "35-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Capturing whole-genome characteristics in short sequences using a naive Bayesian classifier",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sandberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Winberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-I",
+                    "middle": [],
+                    "last": "Br\u00e4nden",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kaske",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ernberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "C\u00f6ster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "1404-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Interpreting patterns of gene expression with self-organizing maps: methods and application to hematopoietic differentiation",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tamayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Slonim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mesirov",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kitareewan",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Dmitrovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Golub",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci., U.S.A",
+            "volume": "96",
+            "issn": "",
+            "pages": "2907-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Application of tetranucleotide frequencies for the assignment of genomic fragments",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Teeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meyerdierks",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Amann",
+                    "suffix": ""
+                },
+                {
+                    "first": "FO",
+                    "middle": [],
+                    "last": "Glockner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Environ. Microbiol",
+            "volume": "6",
+            "issn": "",
+            "pages": "938-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Self-organized feature maps for monitoring and knowledge acquisition of a chemical process",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ultsch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Proc. Intl. Conf. on Artificial Neural Networks (ICANN)",
+            "volume": "",
+            "issn": "",
+            "pages": "864-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Analysis of codon usage patterns of bacterial genomes using the self-organizing map",
+            "authors": [
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Badger",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kearney",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Mol. Biol. Evol",
+            "volume": "18",
+            "issn": "",
+            "pages": "792-800",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Identification of a new motif on nucleic acid sequence data using Kohonen\u2019s self-organizing map",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Arrigo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Giuliano",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Scalia",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rapallo",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Damiani",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Comput. Appl. Biosci",
+            "volume": "7",
+            "issn": "",
+            "pages": "353-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "The spectrum of genomic signatures: from dinucleotides to chaos game representation",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Gene",
+            "volume": "346",
+            "issn": "",
+            "pages": "173-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Component plane presentation integrated self-organizing map for microarray data analysis",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Teng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "FEBS Lett",
+            "volume": "538",
+            "issn": "",
+            "pages": "117-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Similarities and dissimilarities of phage genomes",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Blaisdell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Proc. Natl. Acad. Sci., U.S.A",
+            "volume": "93",
+            "issn": "",
+            "pages": "5854-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Phylogenetic inferences from molecular sequences: review and critique",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brocchieri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Theoretical Population Biology",
+            "volume": "59",
+            "issn": "",
+            "pages": "27-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Laterally transferred elements and high pressure adaptation in Photobacterium profundum strains",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Campanaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vezzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Vitulo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lauro",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "D\u2019Angelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Simonato",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Cestaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Malacrida",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bertoloni",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Valle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Genomics",
+            "volume": "6",
+            "issn": "",
+            "pages": "122-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Genome signature comparisons among prokaryotic, plasmid and mitochondrial DNA",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mrazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc. Natl. Acad. Sci., U.S.A",
+            "volume": "96",
+            "issn": "",
+            "pages": "9184-9",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

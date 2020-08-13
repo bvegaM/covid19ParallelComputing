@@ -1,0 +1,5593 @@
+{
+    "paper_id": "PMC2717845",
+    "metadata": {
+        "title": "Using LongSAGE to Detect Biomarkers of Cervical Cancer Potentially Amenable to Optical Contrast Agent Labelling",
+        "authors": [
+            {
+                "first": "Julie",
+                "middle": [
+                    "M."
+                ],
+                "last": "Kneller",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Thomas",
+                "middle": [],
+                "last": "Ehlen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jasenka",
+                "middle": [
+                    "P."
+                ],
+                "last": "Matisic",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dianne",
+                "middle": [],
+                "last": "Miller",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dirk",
+                "middle": [],
+                "last": "Van Niekerk",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Wan",
+                "middle": [
+                    "L."
+                ],
+                "last": "Lam",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Marco",
+                "middle": [],
+                "last": "Marra",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rebecca",
+                "middle": [],
+                "last": "Richards-Kortum",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michelle",
+                "middle": [],
+                "last": "Follen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Calum",
+                "middle": [],
+                "last": "MacAulay",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Steven",
+                "middle": [
+                    "J.",
+                    "M."
+                ],
+                "last": "Jones",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Clinical diagnosis of most cancers and their precursors is predominantly based on phenotypic markers such as appearance of cell nuclei. Classification and staging of disease is determined by evaluation of gross structural features, such as extent of local tumour invasion and presence of disease in other organs. It is now established that cancer arises as a result of successive genetic changes altering cellular processes including growth, angiogenesis, senescence, and apoptosis (Hanahan and Weinburg, 2000). Additionally, many cancers appear to have active inflammation and wound healing mechanisms (Chang et al. 2004). Proteins taking part in these cellular mechanisms are often strong candidates for biomarkers and molecular targets.",
+            "cite_spans": [
+                {
+                    "start": 483,
+                    "end": 509,
+                    "mention": "Hanahan and Weinburg, 2000",
+                    "ref_id": "BIBREF110"
+                },
+                {
+                    "start": 604,
+                    "end": 621,
+                    "mention": "Chang et al. 2004",
+                    "ref_id": "BIBREF76"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Cervical cancer is usually the result of a human papillomavirus (HPV) infection which initiates neoplastic progression mainly through viral oncoproteins E6 and E7 within the cervical transformation zone at the squamous/columnar junction. The role of HPV to the pathogenesis of cervical cancer has been addressed in recent reviews (zur Hausen, 2002; Woodman et al. 2007). Many HPV types produce only productive lesions following infection and are not associated with human cancers. In such lesions, the expression of viral gene products is carefully regulated, with viral proteins being produced at defined times and at regulated levels as the infected cell migrates towards the epithelial surface. The events that lead to viral synthesis in the upper epithelial layers appear common to both the low- and high-risk HPV types. Virus-induced cancers most often arise at sites where productive infection cannot be suitably supported. Productive infection can be divided into distinct phases, with different viral proteins playing specific roles (Doorbar, 2006). Upon infection, normal cells gradually advance through stages of cervical intraepithelial neoplasia (CIN). Mild dysplasia (CINI) presents as only a subset of the low third of the epithelium appearing dysplastic, moderate dysplasia (CINII) occurs where the dysplastic cells involve about one-half of the thickness of the epithelium of the cervix, and severe dysplasia (CINIII), or carcinoma-in-situ, is described as the condition where the entire thickness of the epithelium is disordered but the abnormal cells have not yet spread below the surface. If carcinoma-in-situ is not treated, it will often grow into an invasive cervical cancer. High grade dysplasia is considered the most advanced dysplasia with atypical changes in many of the cells and a very abnormal growth pattern of the glands; some of the glands are branching or budding. More than 50% of the cells have large, spotted nuclei and are frequently dividing while the cellular cytoplasm is reduced and looks abnormal. Cancer of the cervix was one of the most common causes of cancer death for American women, but between 1955 and 1992 the number of cervical cancer deaths in the United States dropped by 74% due to the introduction of the Pap test (Papanicolaou and Traut, 1943). Death rates from cervical cancer continue to decline by nearly 4% per year. Even so, the American Cancer Society reports that in 2006, about 3,700 of the 9,710 women diagnosed with cervical cancer in the United States have died from this disease.",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 347,
+                    "mention": "Hausen, 2002",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 349,
+                    "end": 368,
+                    "mention": "Woodman et al. 2007",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1042,
+                    "end": 1055,
+                    "mention": "Doorbar, 2006",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 2272,
+                    "end": 2300,
+                    "mention": "Papanicolaou and Traut, 1943",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "HPV infection causes changes in expression levels of a wide variety of genes (Yim and Park, 2006). These differences in gene expression between pre-invasive neoplastic and non-neoplastic tissue give clues to the molecular basis of cancer. Early detection of cervical cancer based on molecular characterization would be clinically advantageous; risk of neoplastic lesion progression could be predicted and response to therapy could be monitored in real time at a molecular level. To monitor molecular characterisation of cancer it follows that the ability to optically image in real-time the molecular features of cancer in vivo is critical (Gonz\u00e1lez et al. 1999; Rajadhyaksha et al. 1999; White et al. 1999; Huzaira et al. 2001; Langley et al. 2001; Selkin et al. 2001; Collier et al. 2002) and requires safe, molecular-specific contrast agents whose images can be monitored rapidly and non-invasively during their uptake and distribution. The analysis presented here evaluates serial analysis of gene expression (SAGE) libraries to identify novel, cell-surface gene products. Upon mapping of highly differentially expressed SAGE tags to their corresponding genes, the gene products are candidates for antibody testing and optical contrast agent development.",
+            "cite_spans": [
+                {
+                    "start": 78,
+                    "end": 96,
+                    "mention": "Yim and Park, 2006",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 641,
+                    "end": 661,
+                    "mention": "Gonz\u00e1lez et al. 1999",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 663,
+                    "end": 687,
+                    "mention": "Rajadhyaksha et al. 1999",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 689,
+                    "end": 706,
+                    "mention": "White et al. 1999",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 708,
+                    "end": 727,
+                    "mention": "Huzaira et al. 2001",
+                    "ref_id": "BIBREF123"
+                },
+                {
+                    "start": 729,
+                    "end": 748,
+                    "mention": "Langley et al. 2001",
+                    "ref_id": "BIBREF138"
+                },
+                {
+                    "start": 750,
+                    "end": 768,
+                    "mention": "Selkin et al. 2001",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 770,
+                    "end": 789,
+                    "mention": "Collier et al. 2002",
+                    "ref_id": "BIBREF79"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Short of prevention, improved early stage cancer diagnosis would provide the greatest benefit for cancer patients. Because proteins may regulate gene expression, ligand-binding properties, molecular structure and dynamics on a temporal basis, protein biomarkers have a significant impact in cancer detection and therapy as therapies are becoming targeted to specific signal transduction and metabolic pathways. For example, breast cancers respond to HERCEPTIN (trastuzumab) if the tumor over-expresses Her-2/neu (Baselga et al. 2004; Ross et al. 2004). In the same way, GLEEVEC (imatinib) is most effective against cancers carrying the bcr-Abl translocation (Druker, 2004) and targeted molecular cancer therapy is already used successfully for the eradication of acute leukaemia (Frater et al. 2003; Yee and Keating, 2003). These examples imply that it will be important to produce biomarkers for all stages of cancer. Reliable diagnostics such as DNA screening and immunocytochemical analysis of known cervical neoplasia biomarkers p16INK4A and minichromosome maintenance (MCM) proteins are not implemented in vivo. Real-time biomarkers of the physiological state of the disease process or markers representative of treatment efficacy will bring immeasurable benefit to cancer care in terms of individualized agent selection and dosing. Furthermore, series of agents could be tested to determine empirically the localization of cancer and/or the most effective therapy.",
+            "cite_spans": [
+                {
+                    "start": 513,
+                    "end": 532,
+                    "mention": "Baselga et al. 2004",
+                    "ref_id": "BIBREF155"
+                },
+                {
+                    "start": 534,
+                    "end": 550,
+                    "mention": "Ross et al. 2004",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 659,
+                    "end": 671,
+                    "mention": "Druker, 2004",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 780,
+                    "end": 798,
+                    "mention": "Frater et al. 2003",
+                    "ref_id": "BIBREF101"
+                },
+                {
+                    "start": 800,
+                    "end": 821,
+                    "mention": "Yee and Keating, 2003",
+                    "ref_id": "BIBREF69"
+                }
+            ],
+            "section": "Contrast Agents and Optical Imaging",
+            "ref_spans": []
+        },
+        {
+            "text": "Routine clinical cancer detection employs non-specific contrast agents such as acetic acid which enhance the nuclear backscattering but are limited by small signal magnitude. The field of molecular imaging is rapidly developing imaging agents with high affinity and specificity for targeted biomarkers. These new agents allow for the possibility of disease detection earlier than is currently feasible (Weissleder, 2001; Jaffer and Weissleder, 2005). For example, cancer metastases missed by conventional anatomically based imaging methods may be detected in patients by molecular imaging (Harisinghani et al. 2003). Optical imaging of tissue can be carried out non-invasively in real time, giving high spatial resolution (<1 \u03bcm lateral resolution). A number of optical techniques have been established including confocal microscopy (White et al. 1999; Collier et al. 2005), multispectral fluorescence imaging (Andersson-Engels et al. 1997; Ferris et al. 2001), reflectance spectroscopy with polarised and unpolarised light (Sokolov et al. 1999, 2002; Utzinger et al. 2001), multispectral reflectance imaging with polarised and unpolarised light (Ferris et al. 2001; Gurjar et al. 2001), and fluorescence spectroscopy (Gillenwater et al. 1998; Wagni\u00e8res et al. 1998; Ramanujam, 2000; Sokolov et al. 2002). Together with emerging molecular tools (e.g. DNA screening, tissue proteomic and serum markers), biomarker imaging may soon be used for real-time screening, diagnosis, and detection of disease recurrence and progression (Rudin and Weissleder, 2003).",
+            "cite_spans": [
+                {
+                    "start": 421,
+                    "end": 448,
+                    "mention": "Jaffer and Weissleder, 2005",
+                    "ref_id": "BIBREF127"
+                },
+                {
+                    "start": 590,
+                    "end": 614,
+                    "mention": "Harisinghani et al. 2003",
+                    "ref_id": "BIBREF116"
+                },
+                {
+                    "start": 834,
+                    "end": 851,
+                    "mention": "White et al. 1999",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 911,
+                    "end": 939,
+                    "mention": "Andersson-Engels et al. 1997",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 941,
+                    "end": 959,
+                    "mention": "Ferris et al. 2001",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1025,
+                    "end": 1044,
+                    "mention": "Sokolov et al. 1999",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1046,
+                    "end": 1050,
+                    "mention": "2002",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1052,
+                    "end": 1072,
+                    "mention": "Utzinger et al. 2001",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1147,
+                    "end": 1165,
+                    "mention": "Ferris et al. 2001",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1167,
+                    "end": 1185,
+                    "mention": "Gurjar et al. 2001",
+                    "ref_id": "BIBREF107"
+                },
+                {
+                    "start": 1219,
+                    "end": 1242,
+                    "mention": "Gillenwater et al. 1998",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 1244,
+                    "end": 1265,
+                    "mention": "Wagni\u00e8res et al. 1998",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1267,
+                    "end": 1282,
+                    "mention": "Ramanujam, 2000",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1284,
+                    "end": 1303,
+                    "mention": "Sokolov et al. 2002",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1527,
+                    "end": 1553,
+                    "mention": "Rudin and Weissleder, 2003",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Contrast Agents and Optical Imaging",
+            "ref_spans": []
+        },
+        {
+            "text": "Contrast agents consist of a biomarker specific probe molecule, such as an antibody, conjugated to an optically suitable label. By topically applying molecular specific contrast agents to tissues, the scope of molecular changes that can be probed using optical imaging is significantly enhanced. Presently, contrast agents based on metal nanoparticles, organic fluorescent dyes, and quantum dots coupled to monoclonal antibodies against cancer specific biomarkers are being developed (Sokolov et al. 2003; Rahman et al. 2005).",
+            "cite_spans": [
+                {
+                    "start": 485,
+                    "end": 504,
+                    "mention": "Sokolov et al. 2003",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 506,
+                    "end": 524,
+                    "mention": "Rahman et al. 2005",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Contrast Agents and Optical Imaging",
+            "ref_spans": []
+        },
+        {
+            "text": "The SAGE technique is capable of producing a molecular representation of cervical tissue based on expressed genes. SAGE is not dependent on pre-existing databases of expressed genes and so provides an independent view of gene expression profiles within the mRNA populations (Velculescu et al. 1997). SAGE library construction is well documented in the literature (Velculescu et al. 1995 and 1997; Madden et al. 2000; Saha et al. 2002; Pleasance et al. 2003; Sander et al. 2005). Several recent gene expression profiles of in vitro HPV-infected cultured keratinocytes and from cervical carcinoma clinical samples have proposed changes in gene expression induced by HPV and in early cervical carcinomas (Thomas et al. 2001; Ruutu et al. 2002; Duffy et al. 2003; P\u00e9rez-Plasencia et al. 2005). Some studies have compared normal versus tumor-induced gene expression in cervical samples with the aim of identifying potential tumor markers of clinical value (Shim et al. 1998; Chen et al. 2003).",
+            "cite_spans": [
+                {
+                    "start": 275,
+                    "end": 297,
+                    "mention": "Velculescu et al. 1997",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 364,
+                    "end": 386,
+                    "mention": "Velculescu et al. 1995",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 391,
+                    "end": 395,
+                    "mention": "1997",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 397,
+                    "end": 415,
+                    "mention": "Madden et al. 2000",
+                    "ref_id": "BIBREF152"
+                },
+                {
+                    "start": 417,
+                    "end": 433,
+                    "mention": "Saha et al. 2002",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 435,
+                    "end": 456,
+                    "mention": "Pleasance et al. 2003",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 458,
+                    "end": 476,
+                    "mention": "Sander et al. 2005",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 702,
+                    "end": 720,
+                    "mention": "Thomas et al. 2001",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 722,
+                    "end": 739,
+                    "mention": "Ruutu et al. 2002",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 741,
+                    "end": 758,
+                    "mention": "Duffy et al. 2003",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 760,
+                    "end": 787,
+                    "mention": "P\u00e9rez-Plasencia et al. 2005",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 952,
+                    "end": 968,
+                    "mention": "Shim et al. 1998",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 970,
+                    "end": 986,
+                    "mention": "Chen et al. 2003",
+                    "ref_id": "BIBREF77"
+                }
+            ],
+            "section": "SAGE Libraries and Tag Mapping",
+            "ref_spans": []
+        },
+        {
+            "text": "To identify genes expressed at dissimilar levels in preinvasive neoplastic and non-neoplastic untyped cervical tissue, we analysed sixteen long-SAGE libraries; 4 from normal cervical tissue samples, 3 of a mild dysplasia (CINI), 3 of moderate dysplasia (CINII), and 6 of severe dysplasia (CINIII), or carcinoma-in-situ. The CIN tissues are positive for MUC16. Raw numbers of longSAGE tags generated and library names are given in Tables 1 and 2. DiscoverySpace (Robertson et al. 2007), an in-house graphical software application backed by a relational database system designed to support SAGE gene expression analysis, was used to query data from over 25 publicly available data sources, as well as internal experimental results. Using DiscoverySpace, selected SAGE tag sequences were mapped to counterpart RefSeq (Pruitt et al. 2000, 2005) genes and confirmed using SAGE tag co-ordinates to establish gene identity through Ensembl (Hubbard et al. 2007; homo_sapiens_ core_41_36c). Genes were manually curated (EntrezGene) to ascertain gene identity and gene product localisation. These cervical longSAGE libraries were created from the epithelium of cervical biopsy samples collected just prior to LEEP (Loop Electrosurgical Excision Procedure). Tissue samples were placed into RNAIater and frozen at \u221280 \u00b0C within 10 minutes of being excised from the patient. These longSAGE libraries (Shadeo et al. 2007) have been submitted to the NCBI Gene Expression Omnibus (GEO) repository.",
+            "cite_spans": [
+                {
+                    "start": 462,
+                    "end": 483,
+                    "mention": "Robertson et al. 2007",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 815,
+                    "end": 833,
+                    "mention": "Pruitt et al. 2000",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 835,
+                    "end": 839,
+                    "mention": "2005",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 933,
+                    "end": 952,
+                    "mention": "Hubbard et al. 2007",
+                    "ref_id": "BIBREF121"
+                },
+                {
+                    "start": 1388,
+                    "end": 1406,
+                    "mention": "Shadeo et al. 2007",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "SAGE Libraries and Tag Mapping",
+            "ref_spans": [
+                {
+                    "start": 430,
+                    "end": 438,
+                    "mention": "Tables 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 443,
+                    "end": 444,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Any protein differentially expressed in cancer tissue, compared to normal tissue, or any protein known to be involved in cancer development, has potential as a candidate cancer biomarker. Genes presenting properties which identify them as likely targets for cancer diagnosis or prognosis must be separated from thousands of other genes which also may also possess clinical potential. Hundreds of potential candidates must be set aside in favour of gene products which offer the most promising characteristics. We focus on genes encoding membrane associated proteins because membrane-bound proteins are most likely to be accessible to topical application of contrast agents and have a rapid time frame for contrast agent visualization. Genes expressing the greatest number of tags combined with high levels of differential expression between dysplastic and normal tissue are the most likely to be observed by contrast agents in vivo.",
+            "cite_spans": [],
+            "section": "SAGE Libraries and Tag Mapping",
+            "ref_spans": []
+        },
+        {
+            "text": "For optical imaging of tumors by topical application in vivo of contrast agents to be of practical use, a large number of contrast agent receptors are required. One of the standard methods to detect candidate biomarkers is to identify genes with amplified expression in cancer and/or normal tissues. We compared transcription profiles and retained the most highly expressed membrane-bound gene products whose differential expression level is greater than two-fold. Many cell-surface proteins can potentially be developed as targets for optical contrast agents. Using longSAGE, we have also identified the most highly differentially expressed transcripts between disease and normal tissue. Table 1 specifies those genes (with cell-surface gene products) up-regulated in the CINI and CINIII stages of dysplasia and Table 2 lists genes up-regulated in normal tissue. Short descriptions of these protein biomarkers are given in the appendix and annotations of protein structural information, if available, are included. Given that CINII is difficult to determine clinically, it was not included in these comparisons. Contrast agent visualization of the epidermal growth factor receptor (EGFR) using an anti-EGFR monoclonal antibody has already been successful (Rahman et al. 2005). More of these markers should prove amenable to contrast agent development and topical formulations consisting of a range of contrast agents could help adjust to individual patient differences in gene expression.",
+            "cite_spans": [
+                {
+                    "start": 1257,
+                    "end": 1275,
+                    "mention": "Rahman et al. 2005",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "SAGE Libraries and Tag Mapping",
+            "ref_spans": [
+                {
+                    "start": 689,
+                    "end": 696,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 813,
+                    "end": 820,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "It is possible to evaluate a marker for presence or absence, but to correlate a marker or array of markers to changes in cellular localization relative to other markers is probably the most interesting and beneficial in terms of dysplasia progression, environment, therapy selection, and follow-up. The known function of these genes grants some insight into the biology of cervical neoplasia. For instance, several of these cell surface markers are involved in transport and/or signaling. MUCX and CD74, upregulated in CINI and CINIII, have signaling gene products known to be associated with carcinomas. CD74 is also known to be a high affinity binding protein for macrophage migration-inhibitory factor (MIF) which is implicated in tumor cell growth and angiogenesis. TSPAN1, upregulated in CINIII almost 10-fold, also plays a role in cell motility and growth. See Appendix for gene-specific references.",
+            "cite_spans": [],
+            "section": "Cervical Intraepithelial Neoplasia Stage Biomarkers",
+            "ref_spans": []
+        },
+        {
+            "text": "Our analysis of cervical cancer longSAGE expression profiles direct attention to some genes with relatively equal distribution in CINI and CINIII, such as PIGR. Another marker, ANPEP, is present at significantly different expression levels in CINI and CINIII. This knowledge expands the possibilities for rapid visualization between normal and stages of dysplasia in vivo. As discussed earlier, these cell surface targets were found by identifying differentially expressed genes. More often than not, a highly expressed tag is not localised to the cell surface and, for these purposes, does not warrant further attention. However, a highly differentially expressed gene whose gene product is not membrane-bound is sometimes found to be part of a mechanism which affects the cell surface and thereby the gene product becomes of potential use. TFF3 (trefoil factor 3), for instance, is up-regulated 13-fold in CINIII and 27-fold in CINI. Members of the trefoil family are characterised by having at least one copy of the trefoil motif, a 40-amino acid domain that contains three conserved disulphides. They are stable, secretory proteins whose functions are not defined but may protect the mucosa from insults, stabilize the mucus layer and affect healing of the epithelium. VANGL1 (Van Gogh-like protein 1) is an integral membrane protein which is serine/threonine phosphorylated and translocated to cytoplasmic vesicles in response to TFF3 stimulation (Kalabis et al. 2006). VANGL1 protein acts as a downstream effector of TFF3 signalling and regulates wound healing of intestinal epithelium. TFF3 is commonly expressed in hepatocellular carcinoma and its expression correlates with tumor grade (Khoury et al. 2005). TFF3 overexpression may be a critical process in mouse and human hepatocellular carcinogenesis (Okada et al. 2005). The group of trefoil factor peptides (TFF1-3) are part of the protective mechanism operating in the intestinal mucosa and play a fundamental role in epithelial protection, repair, and restitution (Vieten et al. 2005). TFF3 and the essential tumor angiogenesis regulator VEGF exert potent pro-invasive activity through STAT3 signalling in human colorectal cancer cells (Rivat et al. 2005). That VANGL1 returned to cell membranes within 45 minutes of TFF3 stimulation (Kalabis et al. 2006) could explain the low VANGL1 tag counts, 1\u20133 tags per library, observed in the longSAGE libraries.",
+            "cite_spans": [
+                {
+                    "start": 1453,
+                    "end": 1472,
+                    "mention": "Kalabis et al. 2006",
+                    "ref_id": "BIBREF131"
+                },
+                {
+                    "start": 1696,
+                    "end": 1714,
+                    "mention": "Khoury et al. 2005",
+                    "ref_id": "BIBREF134"
+                },
+                {
+                    "start": 1813,
+                    "end": 1830,
+                    "mention": "Okada et al. 2005",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 2030,
+                    "end": 2048,
+                    "mention": "Vieten et al. 2005",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 2202,
+                    "end": 2219,
+                    "mention": "Rivat et al. 2005",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 2300,
+                    "end": 2319,
+                    "mention": "Kalabis et al. 2006",
+                    "ref_id": "BIBREF131"
+                }
+            ],
+            "section": "Cervical Intraepithelial Neoplasia Stage Biomarkers",
+            "ref_spans": []
+        },
+        {
+            "text": "Molecular specific contrast agents may provide the ability to directly image the cancer process; but biomarker discovery can be a lengthy process as candidate markers suitable for the task-at-hand must be identified from among thousands of proteins. SAGE-identified biomarkers hold promise for recognition of the stages of neoplasia by proteomic patterns. Optical contrast agents bound to these membrane-bound protein biomarkers will serve as a complement to histopathology, thus allowing more effective determination of tumor borders and non-invasive observation of response to treatment at a molecular level. We present fifty-six cell-surface gene products differentially expressed during progression of cervical intraepithelial neoplasia. Differential gene expression of these biomarkers will allow individualized selection of therapeutic combinations that best target the entire disease-protein system and advance understanding of carcinogenesis.",
+            "cite_spans": [],
+            "section": "Conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Highly expressed genes with membrane-bound gene products up-regulated in cervical dysplasia stages CINI and CINIII. Up-regulated gene expression, from normal, \u22652-fold.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Highly expressed genes with membrane-bound gene products up-regulated in normal cervical tissue. Up-regulated gene expression, from CINI and/or CINIII, \u22652-fold.\n",
+            "type": "table"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Catalytic cleavage of the androgen-regulated TMPRSS2 protease results in its secretion by prostate and prostate cancer epithelia",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Afar",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Vivanco",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Hubert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Cancer Res",
+            "volume": "61",
+            "issn": "4",
+            "pages": "1686-92",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "CD74 Is a Member of the Regulated Intramembrane Proteolysis-processed Protein Family",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Becker-Herman",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Arie",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Medvedovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Molecular Biology of the Cell",
+            "volume": "16",
+            "issn": "",
+            "pages": "5061-69",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Differential expression of IgG Fc binding protein (FcgammaBP) in human normal thyroid tissue, thyroid adenomas and thyroid carcinomas",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "O\u2019Donovan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Abdo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Endocrinol",
+            "volume": "174",
+            "issn": "3",
+            "pages": "517-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Frequent trefoil factor 3 (TFF3) overexpression and promoter hypomethylation in mouse and human hepatocellular carcinomas",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Okada",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Int J Oncol",
+            "volume": "26",
+            "issn": "2",
+            "pages": "369-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Cloning and functional characterization of a mammalian zinc transporter that confers resistance to zinc",
+            "authors": [
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Palmiter",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Findley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "EMBO J",
+            "volume": "14",
+            "issn": "4",
+            "pages": "639-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Diagnosis of Uterine Cancer by the Vaginal Smear. New York: The Commonwealth Fund. 1997. The diagnostic value of vaginal smears in carcinoma of the uterus, 1941. 1997",
+            "authors": [
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "Papanicolaou",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Traut",
+                    "suffix": ""
+                }
+            ],
+            "year": 1943,
+            "venue": "Arch Pathol Lab Med",
+            "volume": "121",
+            "issn": "3",
+            "pages": "211-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Characterization of the global profile of genes expressed in cervical epithelium by Serial Analysis of Gene Expression (SAGE)",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "P\u00e9rez-Plasencia",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Riggins",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "V\u00e1zquez-Ortiz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Genomics",
+            "volume": "6",
+            "issn": "",
+            "pages": "130-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Assessment of SAGE in transcript identification",
+            "authors": [
+                {
+                    "first": "ED",
+                    "middle": [],
+                    "last": "Pleasance",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJM",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genome Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "1203-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Clinical value of p53, c-erbB-2, CEA and CA125 regarding relapse, metastasis and death in resectable non-small cell lung cancer",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pollan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Varela",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Torres",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Int J Cancer",
+            "volume": "107",
+            "issn": "5",
+            "pages": "781-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Introducing RefSeq and LocusLink: curated human genome resources at the NCBI",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Katz",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sicotte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Trends Genet",
+            "volume": "16",
+            "issn": "1",
+            "pages": "44-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "NCBI Reference Sequence (RefSeq): a curated non-redundant sequence database of genomes, transcripts and proteins",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maglott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "1",
+            "pages": "D501-D504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "MUC1 expression and anti-MUC1 serum immune response in head and neck squamous cell carcinoma (HNSCC): a multivariate analysis",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Rabassa",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Croce",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pereyra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Cancer",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Characterization of a tumor-associated gene, a member of a novel family of genes encoding membrane glycoproteins",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ben-Porath",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Benvenisty",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Gene",
+            "volume": "183",
+            "issn": "1\u20132",
+            "pages": "69-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "MUC1 oncoprotein blocks nuclear targeting of c-Abl in the apoptotic response to DNA damage",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Raina",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Ahmad",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "EMBO J",
+            "volume": "25",
+            "issn": "16",
+            "pages": "3774-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Optical imaging of cervical pre-cancers with structured illumination: An integrated approach",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Abd-El-Barr",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Mack",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Gynecologic Oncology",
+            "volume": "99",
+            "issn": "",
+            "pages": "S112-S115",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Video-rate confocal scanning laser microscope for imaging human tissues in vivo",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Applied Optics",
+            "volume": "38",
+            "issn": "",
+            "pages": "2105-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Fluorescence spectroscopy of neoplastic and non-neoplastic tissues",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ramanujam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Neoplasia",
+            "volume": "2",
+            "issn": "1\u20132",
+            "pages": "89-117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Prostate stem cell antigen: a cell surface marker overexpressed in prostate cancer",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Reiter",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Watabe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "95",
+            "issn": "4",
+            "pages": "1735-40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "MUC1 oncoprotein functions in activation of fibroblast growth factor receptor signaling",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Raina",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Cancer Res",
+            "volume": "4",
+            "issn": "11",
+            "pages": "873-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Urothelial umbrella cells of human ureter are heterogeneous with respect to their uroplakin composition: different degrees of urothelial maturity in ureter and bladder?",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Riedel",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Eur J Cell Biol",
+            "volume": "84",
+            "issn": "2\u20133",
+            "pages": "393-405",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Human Trop-2 is a tumor-associated calcium signal transducer",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ripani",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sacchetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Corda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Int J Cancer",
+            "volume": "76",
+            "issn": "5",
+            "pages": "671-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "The CLCA gene locus as a modulator of the gastrointestinal basic defect in cystic fibrosis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ritzka",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Stanke",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Hum Genet",
+            "volume": "115",
+            "issn": "6",
+            "pages": "483-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Implication of STAT3 signaling in human colonic cancer cells during intestinal trefoil factor 3 (TFF3)\u2014and vascular endothelial growth factor-mediated cellular invasion and tumor growth",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rivat",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bruyneel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cancer Res",
+            "volume": "65",
+            "issn": "1",
+            "pages": "195-202",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Functions of cell surface heparan sulfate proteoglycans",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bernfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gotte",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Annu Rev Biochem",
+            "volume": "68",
+            "issn": "",
+            "pages": "729-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "DiscoverySpace: an interactive data analysis application",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Oveisi-Fordorei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zuyderduyn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Biology",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Crystal structure of Arp2/3 complex",
+            "authors": [
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Turbedsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Kaiser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "679-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Targeted therapy in breast cancer: the HER-2/neu gene and protein",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Ross",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Bloom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Cell Proteomics",
+            "volume": "3",
+            "issn": "4",
+            "pages": "379-98",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Protein tyrosine phosphatase PRL-3 in malignant cells and endothelial cells: expression and function",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rouleau",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roy",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "St Martin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Cancer Ther",
+            "volume": "5",
+            "issn": "2",
+            "pages": "219-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Molecular imaging in drug discovery and development",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rudin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Weissleder",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "2",
+            "issn": "",
+            "pages": "123-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Transcriptional profiling of a human papillomavirus 33-positive squamous epithelial cell line which acquired a selective growth advantage after viral integration",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ruutu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Peitsaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Int J Cancer",
+            "volume": "100",
+            "issn": "",
+            "pages": "318-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Using the transcriptome to annotate the genome",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saha",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Sparks",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rago",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Biotechnol",
+            "volume": "20",
+            "issn": "",
+            "pages": "508-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A methodology for analyzing SAGE libraries for cancer profiling",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                },
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Sleumer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "ACM Transactions on Information Systems",
+            "volume": "23",
+            "issn": "1",
+            "pages": "35-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Common genetic variants of the FADS1 FADS2 gene cluster and their reconstructed haplotypes are associated with the fatty acid composition in phospholipids",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Schaeffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Gohlke",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Hum Mol Genet",
+            "volume": "15",
+            "issn": "11",
+            "pages": "1745-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Differential gene expression in human mammary carcinoma cells: identification of a new member of a receptor family",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schiemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ruckels",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Engelholm",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Anticancer Res",
+            "volume": "17",
+            "issn": "1A",
+            "pages": "13-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Characterization of a cascade of protein interactions initiated at the IL-1 receptor",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Boch",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yoshida",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Koyama",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "303",
+            "issn": "2",
+            "pages": "525-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "A new cytokine-receptor binding mode revealed by the crystal structure of the IL-1 receptor with an antagonist",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Schreuder",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tardif",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Trump-Kallmeyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "386",
+            "issn": "",
+            "pages": "194-200",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "In vivo confocal microscopy in dermatology",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Selkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gonz\u00e1lez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Dermatologic Clinics",
+            "volume": "19",
+            "issn": "2",
+            "pages": "369-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Shadeo",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chari",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Lonergan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pusic",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ehlen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Van Niekerk",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Matisic",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Richards-Kortum",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Follen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Guillaud",
+                    "suffix": ""
+                },
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "MacAulay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Genomics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Profiling of differentially expressed genes in human primary cervical cancer by complementary DNA expression array",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Shim",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Rhee",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Clin Cancer Res",
+            "volume": "4",
+            "issn": "",
+            "pages": "3045-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Reflectance spectroscopy with polarized light: is it sensitive to cellular and nuclear morphology?",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sokolov",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Drezek",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Gossage",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Opt Express",
+            "volume": "5",
+            "issn": "13",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Optical spectroscopy for detection of neoplasia",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sokolov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Follen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Richards-Kortum",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Curr Opin Chem Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": "651-58",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Optical systems for in vivo molecular imaging of cancer",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sokolov",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Aaron",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hsu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Technology in Cancer Research and Treatment",
+            "volume": "2",
+            "issn": "6",
+            "pages": "491-504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "The 3.2-A crystal structure of the human IgG1 Fc fragment-Fc gammaRIII complex",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sondermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Huber",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Oosthuizen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "406",
+            "issn": "",
+            "pages": "267-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Carcinoembryonic antigen (CEA) inhibits NK killing via interaction with CEA-related cell adhesion molecule 1",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Stern",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Markel",
+                    "suffix": ""
+                },
+                {
+                    "first": "TI",
+                    "middle": [],
+                    "last": "Arnon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Immunol",
+            "volume": "174",
+            "issn": "11",
+            "pages": "6692-701",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Multiple roles of the invariant chain in MHC class II function",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Stumptner-Cuvelette",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Benaroch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1542",
+            "issn": "",
+            "pages": "1-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Structural Models for Carcinoembryonic Antigen and its Complex with the Single-Chain Fv Antibody Molecule Mfe23",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Boehm",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Perkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "FEBS Lett",
+            "volume": "475",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Species- and cell type-specific interactions between CD47 and human SIRPalpha",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Subramanian",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Parthasarathy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Blood",
+            "volume": "107",
+            "issn": "6",
+            "pages": "2548-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Crystal structure at 2.6-\u00c5 resolution of human macrophage migration inhibitory factor",
+            "authors": [
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bernhagen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bucala",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "93",
+            "issn": "",
+            "pages": "5191-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Cellular changes induced by low-risk human papillomavirus type 11 in keratinocytes that stably maintain viral episomes",
+            "authors": [
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Oh",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Terhune",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "7564-71",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Sequences and expression of six new members of the tetraspanin/TM4SF family",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Todd",
+                    "suffix": ""
+                },
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Doctor",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1399",
+            "issn": "1",
+            "pages": "101-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "SLURP-2, a novel member of the human Ly-6 superfamily that is up-regulated in psoriasis vulgaris",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tsuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Okamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Matsuzaka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genomics",
+            "volume": "81",
+            "issn": "1",
+            "pages": "26-33",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Reflectance spectroscopy for in vivo characterization of ovarian tissue",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Utzinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Brewer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Silva",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Lasers Surg Med",
+            "volume": "28",
+            "issn": "",
+            "pages": "56-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Characterization of the yeast transcriptome",
+            "authors": [
+                {
+                    "first": "VE",
+                    "middle": [],
+                    "last": "Velculescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Cell",
+            "volume": "88",
+            "issn": "2",
+            "pages": "243-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Serial analysis of gene expression",
+            "authors": [
+                {
+                    "first": "VE",
+                    "middle": [],
+                    "last": "Velculescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Vogelstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Science",
+            "volume": "270",
+            "issn": "",
+            "pages": "484-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Impaired mucosal regeneration in neonatal necrotising enterocolitis",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Vieten",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Corfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Carroll",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Pediatr Surg Int",
+            "volume": "21",
+            "issn": "3",
+            "pages": "153-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "In vivo fluorescence spectroscopy and imaging for oncological applications",
+            "authors": [
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Wagni\u00e8res",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Star",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Photochem Photobiol",
+            "volume": "68",
+            "issn": "5",
+            "pages": "603-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Developmental expression pattern of Stra6, a retinoic acid-responsive gene encoding a new type of membrane protein",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bouillet",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sapin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chazaud",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Mech Dev",
+            "volume": "63",
+            "issn": "2",
+            "pages": "173-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Scaling down imaging: molecular mapping of cancer in mice",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Weissleder",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Rev Cancer",
+            "volume": "2",
+            "issn": "",
+            "pages": "11-18",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Actin polymerization is induced by Arp2/3 protein complex at the surface of Listeria monocytogenes",
+            "authors": [
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Welch",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Iwamatsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Mitchison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "385",
+            "issn": "6613",
+            "pages": "265-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Prostate stem cell antigen is a putative target for immunotherapy in pancreatic cancer",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Wente",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kono",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Pancreas",
+            "volume": "31",
+            "issn": "2",
+            "pages": "119-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Desmosomal glycoprotein DGI, a component of intercellular desmosome junctions, is related to the cadherin family of cell adhesion molecules",
+            "authors": [
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "88",
+            "issn": "11",
+            "pages": "4796-800",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Noninvasive imaging of human oral mucosa in vivo by confocal reflectance microscopy",
+            "authors": [
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gonz\u00e1lez",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Laryngoscope",
+            "volume": "109",
+            "issn": "",
+            "pages": "1709-17",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Epidermal growth factor and transforming growth factor alpha bind differently to the epidermal growth factor receptor",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Winkler",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "O\u2019Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Winget",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Biochemistry",
+            "volume": "28",
+            "issn": "15",
+            "pages": "6373-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Identification of a new proliferation-associated protein NET-1/C4.8 characteristic for a subset of high-grade cervical intraepithelial neoplasia and cervical carcinomas",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Wollscheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kuhne-Heid",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Stein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Int J Cancer",
+            "volume": "99",
+            "issn": "6",
+            "pages": "771-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "The natural history of cervical HPV infection: unresolved issues",
+            "authors": [
+                {
+                    "first": "CBJ",
+                    "middle": [],
+                    "last": "Woodman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SI",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Young",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nature Rev Cancer",
+            "volume": "7",
+            "issn": "",
+            "pages": "11-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Expression of MHC I and NK ligands on human CD133(+) glioma cells: possible targets of immunotherapy",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wiesner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Neurooncol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "A mutation in OTOF, encoding otoferlin, a FER-1-like protein, causes DFNB9, a nonsyndromic form of deafness",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yasunaga",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Grati",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cohen-Salmon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat Genet",
+            "volume": "21",
+            "issn": "4",
+            "pages": "363-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Human coronavirus 229E: receptor binding domain and neutralization by soluble receptor at 37 degrees C",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Breslin",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Mork",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "7",
+            "pages": "4435-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Human aminopeptidase N is a receptor for human coronavirus 229E",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Yeager",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Ashmun",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nature",
+            "volume": "357",
+            "issn": "6377",
+            "pages": "420-2",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Advances in targeted therapy for chronic myeloid leukemia",
+            "authors": [
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Yee",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Keating",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Expert Review of Anticancer Therapy",
+            "volume": "3",
+            "issn": "",
+            "pages": "295-310",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Biomarkers in cervical cancer",
+            "authors": [
+                {
+                    "first": "E-K",
+                    "middle": [],
+                    "last": "Yim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biomarker Insights",
+            "volume": "2",
+            "issn": "",
+            "pages": "215-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Ovarian cancer antigen CA125 is encoded by the MUC16 mucin gene",
+            "authors": [
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dnistrian",
+                    "suffix": ""
+                },
+                {
+                    "first": "KO",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Int J Cancer",
+            "volume": "98",
+            "issn": "5",
+            "pages": "737-40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Uroplakins Ia and Ib, two major differentiation products of bladder epithelium, belong to a family of four transmembrane domain (4TM) proteins",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "XR",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Cell Biol",
+            "volume": "125",
+            "issn": "1",
+            "pages": "171-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Human Rhesus B and Rhesus C glycoproteins: properties of facilitated ammonium transport in recombinant kidney cells",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Zidi-Yahiaoui",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Mouro-Chanteloup",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "D\u2019Ambrosio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biochem J",
+            "volume": "391",
+            "issn": "Pt 1",
+            "pages": "33-40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Papillomaviruses and cancer: from basic studies to clinical application",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "zur Hausen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature Rev Cancer",
+            "volume": "2",
+            "issn": "",
+            "pages": "342-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Prenylation of oncogenic human PTP(CAAX) protein tyrosine phosphatases",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Cates",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Michael",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Stayrook",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Cancer Lett",
+            "volume": "110",
+            "issn": "1\u20132",
+            "pages": "49-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Gene expression signature of fibroblast serum response predicts human cancer progression: similarities between tumors and wounds",
+            "authors": [
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Sneddon",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Alizadeh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "PloS Biol",
+            "volume": "2",
+            "issn": "2",
+            "pages": "206-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Identification of cervical cancer markers by cDNA and tissue microarrays",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mosher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Cancer Res",
+            "volume": "63",
+            "issn": "",
+            "pages": "1927-35",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Identification of three novel members of the calcium-dependent chloride channel (CaCC) family predominantly expressed in the digestive tract and trachea",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Agnel",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Vermat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Culouscou",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "FEBS Lett",
+            "volume": "455",
+            "issn": "3",
+            "pages": "295-301",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Near real-time confocal microscopy of amelanotic tissue: detection of dysplasia in ex vivo cervical tissue",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Collier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lacy",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Richards-Kortum",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Acad Radiol",
+            "volume": "9",
+            "issn": "",
+            "pages": "504-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "Expression and characterization of the FXYD ion transport regulators for NMR structural studies in lipid micelles and lipid bilayers",
+            "authors": [
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Crowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Franzin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Koltay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1645",
+            "issn": "1",
+            "pages": "15-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "The crystal structure of the Fgfr2 tyrosine kinase domain in complex with 4-aryl-2-phenylamino pyrimidine angiogenesis inhibitors",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Ceska",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Owens",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Structure of the human Epha3 receptor tyrosine kinase and juxtamembrane region",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "The growth arrest-specific gene, gas1, is involved in growth suppression",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Del Sal",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Ruaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Philipson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Cell",
+            "volume": "70",
+            "issn": "4",
+            "pages": "595-607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Molecular biology of human papillomavirus infection and cervical cancer",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Doorbar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Clin Sci (Lond)",
+            "volume": "110",
+            "issn": "",
+            "pages": "525-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "The cell surface receptors for interleukin-1 alpha and interleukin-1 beta are identical",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Dower",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Kronheim",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Hopp",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Nature",
+            "volume": "324",
+            "issn": "6094",
+            "pages": "266-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "Imatinib as a paradigm of targeted therapies",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Druker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Adv Cancer Res",
+            "volume": "91",
+            "issn": "",
+            "pages": "1-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Microarray analysis identifies differentiation-associated genes regulated by human papillomavirus type 16 E6",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Duffy",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Phillips",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Klingelhutz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Virology",
+            "volume": "314",
+            "issn": "",
+            "pages": "196-205",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "Structure, function, and regulation of a subfamily of mouse zinc transporter genes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dufner-Beattie",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Langmade",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biol Chem",
+            "volume": "278",
+            "issn": "50",
+            "pages": "50142-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "In vivo fluorescence imaging for tissue diagnostics",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Andersson-Engels",
+                    "suffix": ""
+                },
+                {
+                    "first": "Ca",
+                    "middle": [],
+                    "last": "Klinteberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Svanber",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Phys Med Biol",
+            "volume": "42",
+            "issn": "",
+            "pages": "815-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "The MAL proteolipid restricts detergent-mediated membrane pore expansion and percolation",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dukhovny",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Goldstein Magal",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hirschberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Membr Biol",
+            "volume": "23",
+            "issn": "3",
+            "pages": "245-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "Three genes for the human high affinity Fc receptor for IgG (Fc gamma RI) encode four distinct transcription products",
+            "authors": [
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Ernst",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "van de Winkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Chiu",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J Biol Chem",
+            "volume": "267",
+            "issn": "22",
+            "pages": "15692-700",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Tumor-suppressive activity of the growth arrest-specific gene GAS1 in human tumor cell lines",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Evdokiou",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Cowled",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Int J Cancer",
+            "volume": "75",
+            "issn": "4",
+            "pages": "568-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "Structure of the N-terminal domain of human CEACAM1: binding target of the opacity proteins during invasion of Neisseria meningitidis and N. gonorrhoeae",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fedarovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tomberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Nicholas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Acta Crystallogr, Sect D",
+            "volume": "62",
+            "issn": "",
+            "pages": "971-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "Multimodal hyper-spectral imaging for the noninvasive diagnosis of cervical neoplasia",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Ferris",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lawhead",
+                    "suffix": ""
+                },
+                {
+                    "first": "ED",
+                    "middle": [],
+                    "last": "Dickman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Low Genital Tract Dis",
+            "volume": "5",
+            "issn": "2",
+            "pages": "65-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "The ephrins and Eph receptors in neural development",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Flanagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vanderhaeghen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Annu Rev Neurosci",
+            "volume": "21",
+            "issn": "",
+            "pages": "309-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF98": {
+            "title": "Prominin-1/CD133, a neural and hematopoietic stem cell marker, is expressed in adult human differentiated cells and certain types of kidney cancer",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Florek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Haase",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Marzesco",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell Tissue Res",
+            "volume": "319",
+            "issn": "1",
+            "pages": "15-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF99": {
+            "title": "Correlation of gene and protein structures in the FXYD family proteins",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Franzin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Thai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Mol Biol",
+            "volume": "354",
+            "issn": "4",
+            "pages": "743-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "SLURP-2: A novel cholinergic signaling peptide in human mucocutaneous epithelium",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Arredondo",
+                    "suffix": ""
+                },
+                {
+                    "first": "AI",
+                    "middle": [],
+                    "last": "Chernyavsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Jolkovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Cell Physiol",
+            "volume": "208",
+            "issn": "1",
+            "pages": "238-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF101": {
+            "title": "Chronic myeloid leukemia following therapy with imatinib mesylate (Gleevec) Bone marrow histopathology and correlation with genetic status",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Frater",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Tallman",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Variakojis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "American Journal of Clinical Pathology",
+            "volume": "119",
+            "issn": "6",
+            "pages": "833-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "Functional expression of the human hZIP2 zinc transporter",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Gaither",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Eide",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Biol Chem",
+            "volume": "275",
+            "issn": "",
+            "pages": "5560-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF103": {
+            "title": "The human ZIP1 transporter mediates zinc uptake in human K562 erythroleukemia cells",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Gaither",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Eide",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biol Chem",
+            "volume": "276",
+            "issn": "",
+            "pages": "22258-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "Crystal structure of a truncated epidermal growth factor receptor extracellular domain bound to transforming growth factor alpha",
+            "authors": [
+                {
+                    "first": "TPJ",
+                    "middle": [],
+                    "last": "Garrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "McKern",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Cell",
+            "volume": "110",
+            "issn": "",
+            "pages": "763-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "Fluorescence spectroscopy: a technique with potential to improve the early detection of aerodigestive tract neoplasia",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gillenwater",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jacob",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Richards-Kortum",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Head Neck",
+            "volume": "20",
+            "issn": "",
+            "pages": "556-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF106": {
+            "title": "Confocal imaging of sebaceous gland hyperplasia in vivo to assess efficacy and mechanism of pulsed dye laser treatment",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gonz\u00e1lez",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Lasers in Surgery and Medicine",
+            "volume": "25",
+            "issn": "",
+            "pages": "8-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF107": {
+            "title": "Imaging human epithelial properties with polarized light-scattering spectroscopy",
+            "authors": [
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Gurjar",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Backman",
+                    "suffix": ""
+                },
+                {
+                    "first": "LT",
+                    "middle": [],
+                    "last": "Perelman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Med",
+            "volume": "7",
+            "issn": "11",
+            "pages": "1245-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF108": {
+            "title": "Unconventional topology of self peptide-major histocompatibility complex binding by a human autoimmune T cell receptor",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Nicholson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pyrdol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat Immunol",
+            "volume": "6",
+            "issn": "",
+            "pages": "490-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF109": {
+            "title": "Crystal structure of a polymeric immunoglobulin binding fragment of the human polymeric immunoglobulin receptor",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Hamburger",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bjorkman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Structure",
+            "volume": "12",
+            "issn": "",
+            "pages": "1925-35",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF110": {
+            "title": "The hallmarks of cancer",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hanahan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Weinburg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Cell",
+            "volume": "100",
+            "issn": "",
+            "pages": "57-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF111": {
+            "title": "The intracellular domain of teneurin-2 has a nuclear function and represses zic-1-mediated transcription",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bagutti",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Forro",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ferralli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Cell Sci",
+            "volume": "116",
+            "issn": "Pt 14",
+            "pages": "2957-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF112": {
+            "title": "Calcium-dependent conformation of desmoglein 1 is required for its cleavage by exfoliative toxin",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hanakawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Selwood",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Invest Dermatol",
+            "volume": "121",
+            "issn": "2",
+            "pages": "383-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF113": {
+            "title": "Cloning a calcium channel alpha2delta-3 subunit gene from a putative tumor suppressor gene region at chromosome 3p21.1 in conventional renal cell carcinoma",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hanke",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bugert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chudek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Gene",
+            "volume": "264",
+            "issn": "1",
+            "pages": "69-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF114": {
+            "title": "Structural analysis and tissue localization of human C4.4A: a protein homologue of the urokinase receptor",
+            "authors": [
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Gardsvoll",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem J",
+            "volume": "380",
+            "issn": "Pt 3",
+            "pages": "845-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF115": {
+            "title": "Human IgGFc binding protein (FcgammaBP) in colonic epithelial cells exhibits mucin-like structure",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Harada",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Iijima",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Biol Chem",
+            "volume": "272",
+            "issn": "24",
+            "pages": "15232-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF116": {
+            "title": "Non-invasive detection of clinically occult lymph-node metastases in prostate cancer",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Harisinghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Barentsz",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Hahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "2491-99",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF117": {
+            "title": "The solution structure of human transforming growth factor alpha",
+            "authors": [
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Harvey",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Wilkinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Tappin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Eur J Biochem",
+            "volume": "198",
+            "issn": "",
+            "pages": "555-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF118": {
+            "title": "Hepatocyte growth factor is a preferred in vitro substrate for human hepsin, a membrane-anchored serine protease implicated in prostate and ovarian cancers",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Herter",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Piper",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Aaron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biochem J",
+            "volume": "390",
+            "issn": "",
+            "pages": "125-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF119": {
+            "title": "Expression of AC133, a novel hematopoietic precursor antigen, on acute myeloid leukemia cells",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Horn",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tesch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Staib",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Blood",
+            "volume": "93",
+            "issn": "4",
+            "pages": "1435-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF120": {
+            "title": "Use of all-trans retinoic acid in the treatment of acute promyelocytic leukemia",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YC",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Blood",
+            "volume": "72",
+            "issn": "2",
+            "pages": "567-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF121": {
+            "title": "Ensembl 2007",
+            "authors": [
+                {
+                    "first": "TJP",
+                    "middle": [],
+                    "last": "Hubbard",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Aken",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Beal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nuc Acids Res",
+            "volume": "00",
+            "issn": "Database issue ",
+            "pages": "D1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF122": {
+            "title": "Prognostic significance of CA 125, CD44, and epithelial membrane antigen in renal cell carcinoma",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bamias",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chorti",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Deliveliotis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Urology",
+            "volume": "62",
+            "issn": "2",
+            "pages": "368-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF123": {
+            "title": "Topographic variations in normal skin, as viewed by in vivo reflectance confocal microscopy",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Huzaira",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rius",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "The Journal of Investigative Dermatology",
+            "volume": "116",
+            "issn": "",
+            "pages": "846-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF124": {
+            "title": "Perpetrating p53-dependent apoptosis",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Ihrie",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Attardi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Cell Cycle",
+            "volume": "3",
+            "issn": "3",
+            "pages": "267-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF125": {
+            "title": "High-density SNP map of human ITR, a gene associated with vascular remodeling",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Iida",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Hum Genet",
+            "volume": "48",
+            "issn": "4",
+            "pages": "170-2",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF126": {
+            "title": "Molecular cloning and chromosomal mapping of a bone marrow stromal cell surface gene, BST2, that may be involved in pre-B-cell growth",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ishikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kaisho",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tomizawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Genomics",
+            "volume": "26",
+            "issn": "3",
+            "pages": "527-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF127": {
+            "title": "Molecular imaging in the clinical arena",
+            "authors": [
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Jaffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Weissleder",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "JAMA",
+            "volume": "293",
+            "issn": "7",
+            "pages": "855-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF128": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Tindell",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Laux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "102",
+            "issn": "33",
+            "pages": "11858-63",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF129": {
+            "title": "Structure of a trimeric domain of the MHC class II-associated chaperonin and targeting protein Ii",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jasanoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wiley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "EMBO J",
+            "volume": "17",
+            "issn": "",
+            "pages": "6812-18",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF130": {
+            "title": "Trimeric structure of PRL-1 phosphatase reveals an active enzyme conformation and regulation mechanisms",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Mol Biol",
+            "volume": "345",
+            "issn": "",
+            "pages": "401-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF131": {
+            "title": "Vangl1 protein acts as a downstream effector of intestinal trefoil factor (ITF)/TFF3 signaling and regulates wound healing of intestinal epithelium",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kalabis",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Rosenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Podolsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Biol Chem",
+            "volume": "281",
+            "issn": "10",
+            "pages": "6434-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF132": {
+            "title": "A family of proteins that inhibit signalling through tyrosine kinase receptors",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kharitonenkov",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Sures",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "386",
+            "issn": "6621",
+            "pages": "181-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF133": {
+            "title": "Expression of keratinocyte growth factor and its receptor in human breast cancer",
+            "authors": [
+                {
+                    "first": "GS",
+                    "middle": [],
+                    "last": "Bansal",
+                    "suffix": ""
+                },
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Marsh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Br J Cancer",
+            "volume": "75",
+            "issn": "11",
+            "pages": "1567-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF134": {
+            "title": "Expression of intestinal trefoil factor (TFF-3) in hepatocellular carcinoma",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Khoury",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chadha",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Javle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Int J Gastrointest Cancer",
+            "volume": "35",
+            "issn": "3",
+            "pages": "171-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF135": {
+            "title": "Interaction of pro-apoptotic protein HGTD-P with heat shock protein 90 is required for induction of mitochondrial apoptotic cascades",
+            "authors": [
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "FEBS Lett",
+            "volume": "580",
+            "issn": "13",
+            "pages": "3270-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF136": {
+            "title": "Structure of human PRL-3, the phosphatase associated with cancer metastasis",
+            "authors": [
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Jee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Febs Lett",
+            "volume": "565",
+            "issn": "",
+            "pages": "181-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF137": {
+            "title": "The molecular configuration and ultrastructural locations of an IgG Fc binding site in human colonic epithelium",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hamada",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Blaser",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J Immunol",
+            "volume": "146",
+            "issn": "1",
+            "pages": "68-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF138": {
+            "title": "Confocal scanning laser microscopy of benign and malignant melanocytic skin lesions in vivo",
+            "authors": [
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rajadhyaksha",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Dwyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of the American Academy of Dermatology",
+            "volume": "45",
+            "issn": "",
+            "pages": "365-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF139": {
+            "title": "Cloning and sequence analysis of a cDNA for rat transforming growth factor-alpha",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "NR",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Nature",
+            "volume": "313",
+            "issn": "6002",
+            "pages": "489-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF140": {
+            "title": "Identification of the hypoxia-inducible factor 1 alpha-responsive HGTD-P gene as a mediator in the mitochondrial apoptotic pathway",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Suk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Cell Biol",
+            "volume": "24",
+            "issn": "9",
+            "pages": "3918-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF141": {
+            "title": "LY-6K gene: a novel molecular marker for human breast cancer",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Yoo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Oncol Rep",
+            "volume": "16",
+            "issn": "6",
+            "pages": "1211-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF142": {
+            "title": "High-resolution solution structure of human intestinal trefoil factor and functional insights from detailed structural comparisons with the other members of the trefoil family of mammalian cell motility factors",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Lemercinier",
+                    "suffix": ""
+                },
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Muskett",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cheeseman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biochemistry",
+            "volume": "40",
+            "issn": "",
+            "pages": "9552-59",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF143": {
+            "title": "MIF signal transduction initiated by binding to CD74",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Leng",
+                    "suffix": ""
+                },
+                {
+                    "first": "CN",
+                    "middle": [],
+                    "last": "Metz",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Exp Med",
+            "volume": "197",
+            "issn": "",
+            "pages": "1467-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF144": {
+            "title": "PRL-3 expression in metastatic cancers",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bardelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saha",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Sager",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Clin Cancer Res",
+            "volume": "9",
+            "issn": "15",
+            "pages": "5607-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF145": {
+            "title": "Trimeric structure of the wild soluble chloride intracellular ion channel CLIC4 observed in crystals",
+            "authors": [
+                {
+                    "first": "YF",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Zeng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "343",
+            "issn": "",
+            "pages": "1272-78",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF146": {
+            "title": "Functional mimicry of a protein hormone by a peptide agonist: the EPO receptor complex at 2.8 \u00c5",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Livnah",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Stura",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Science",
+            "volume": "273",
+            "issn": "",
+            "pages": "464-71",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF147": {
+            "title": "Caveolin-1 and MAL are located on prostasomes secreted by the prostate cancer PC-3 cell line",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Llorente",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "de Marco",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Alonso",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Cell Sci",
+            "volume": "117",
+            "issn": "Pt 22",
+            "pages": "5343-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF148": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF149": {
+            "title": "Autoproteolysis coupled to protein folding in the SEA domain of the membrane-bound MUC1 mucin",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Macao",
+                    "suffix": ""
+                },
+                {
+                    "first": "DGA",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Hansson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat Struct Mol Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "71-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF150": {
+            "title": "Mammalian actin-related protein 2/3 complex localizes to regions of lamellipodial protrusion and is composed of evolutionarily conserved proteins",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Machesky",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Reeves",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Wientjes",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Biochem J",
+            "volume": "328",
+            "issn": "Pt 1",
+            "pages": "105-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF151": {
+            "title": "The three-dimensional structure of HLA-B27 at 2.1 \u00c5 resolution suggests a general mechanism for tight peptide binding to MHC",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Gorga",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Strominger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Cell",
+            "volume": "70",
+            "issn": "",
+            "pages": "1035-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF152": {
+            "title": "Serial analysis of gene expression: from gene discovery to target identification",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Landes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Drug Discovery Today",
+            "volume": "5",
+            "issn": "9",
+            "pages": "415-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF153": {
+            "title": "RIG-E, a human homolog of the murine Ly-6 family, is induced by retinoic acid during the differentiation of acute promyelocytic leukemia cell",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mao",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "PNAS",
+            "volume": "93",
+            "issn": "",
+            "pages": "5910-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF154": {
+            "title": "cDNA cloning, genomic structure, and chromosomal localization of three members of the human fatty acid desaturase family",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Marquardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Stohr",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Genomics",
+            "volume": "66",
+            "issn": "2",
+            "pages": "175-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF155": {
+            "title": "Future options with trastuzumab for primary systemic and adjuvant therapy. Semin",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Baselga",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gianni",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Geyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Oncol",
+            "volume": "31",
+            "issn": "",
+            "pages": "51-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF156": {
+            "title": "Role of PRL-3, a human muscle-specific tyrosine phosphatase, in angiotensin-II signaling",
+            "authors": [
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "Matter",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Estridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "283",
+            "issn": "5",
+            "pages": "1061-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF157": {
+            "title": "A novel IL-1 receptor, cloned from B cells by mammalian expression, is expressed in many cell types",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "McMahan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Slack",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mosley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "EMBO J",
+            "volume": "10",
+            "issn": "10",
+            "pages": "2821-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF158": {
+            "title": "Conformational changes in surface structures of isolated connexin 26 gap junctions",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Hand",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Engel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "EMBO J",
+            "volume": "21",
+            "issn": "14",
+            "pages": "3598-607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF159": {
+            "title": "The class II MHC protein HLA-DR1 in complex with an endogenous peptide: implications for the structural basis of the specificity of peptide binding",
+            "authors": [
+                {
+                    "first": "VL",
+                    "middle": [],
+                    "last": "Murthy",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Stern",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Structure",
+            "volume": "5",
+            "issn": "",
+            "pages": "1385-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF160": {
+            "title": "Solution structure of the disulfide-linked dimer of human intestinal trefoil factor (TFF3): the intermolecular orientation and interactions are markedly different from those of other dimeric trefoil proteins",
+            "authors": [
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Muskett",
+                    "suffix": ""
+                },
+                {
+                    "first": "FE",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Westley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochemistry",
+            "volume": "42",
+            "issn": "51",
+            "pages": "15139-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF161": {
+            "title": "Solution structure of the first ig-like domain of signal-regulatory protein beta-1 (SIRP-beta-1)",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nagashima",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Hayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yoshida",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF162": {
+            "title": "The chondroitin sulfate form of invariant chain can enhance stimulation of T cell responses through interaction with CD44",
+            "authors": [
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Naujokas",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Morin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Cell",
+            "volume": "74",
+            "issn": "",
+            "pages": "257-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF163": {
+            "title": "Macrophage migration inhibitory factor (MIF): its potential role in tumor growth and tumor-associated angiogenesis",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nishihira",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ishibashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fukushima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Ann NY Acad Sci",
+            "volume": "995",
+            "issn": "",
+            "pages": "171-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF164": {
+            "title": "Structures of the cancer related Aurora-A, FAK and EphA2 protein kinases from nanovolume crystallography",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nowakowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "CN",
+                    "middle": [],
+                    "last": "Cronin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "McRee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Structure",
+            "volume": "10",
+            "issn": "",
+            "pages": "1659-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF165": {
+            "title": "The CA 125 gene: an extracellular superstructure dominated by repeat sequences",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "O\u2019Brien",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Beard",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Underwood",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Tumour Biol",
+            "volume": "22",
+            "issn": "6",
+            "pages": "348-66",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

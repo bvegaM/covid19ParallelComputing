@@ -1,0 +1,3537 @@
+{
+    "paper_id": "PMC2244602",
+    "metadata": {
+        "title": "Analysis and prediction of protective continuous B-cell epitopes on pathogen proteins",
+        "authors": [
+            {
+                "first": "Johannes",
+                "middle": [],
+                "last": "Sollner",
+                "suffix": "",
+                "email": "johannes.soellner@emergentec.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Rainer",
+                "middle": [],
+                "last": "Grohmann",
+                "suffix": "",
+                "email": "rainer.grohmann@univie.ac.at",
+                "affiliation": {}
+            },
+            {
+                "first": "Ronald",
+                "middle": [],
+                "last": "Rapberger",
+                "suffix": "",
+                "email": "ronald.rapberger@emergentec.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Paul",
+                "middle": [],
+                "last": "Perco",
+                "suffix": "",
+                "email": "paul.perco@meduniwien.ac.at",
+                "affiliation": {}
+            },
+            {
+                "first": "Arno",
+                "middle": [],
+                "last": "Lukas",
+                "suffix": "",
+                "email": "arno.lukas@emergentec.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Bernd",
+                "middle": [],
+                "last": "Mayer",
+                "suffix": "",
+                "email": "bernd.mayer@emergentec.com",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The applicability of peptides for the generation of preventive vaccines, therapeutics and diagnostics is an actively investigated field. Although historically disfavored the application of peptides in vaccine design is currently experiencing a renaissance[1]. While the focus is often on T-cell responses especially the generation of B-cell responses is of relevance against certain pathogens such as HIV to prevent initial infection [2]. It is thus not surprising that since the early days of computational biology scientists have attempted to predict the relevance of protein domains and peptides in several areas of application. Initial hallmarks of the field are represented, among many others, by work of Hopp and Woods [3,4]. During the following and more recent years various methods and problems concerning the prediction of continuous B-cell epitopes have been proposed [5-12]. Recently the usability of amino acid scales for the prediction of B-cell epitopes has been profoundly questioned [13] and common standards regarding the validation of epitope predictions have been discussed [14].",
+            "cite_spans": [
+                {
+                    "start": 256,
+                    "end": 257,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 435,
+                    "end": 436,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 726,
+                    "end": 727,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 728,
+                    "end": 729,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 880,
+                    "end": 881,
+                    "mention": "5",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 882,
+                    "end": 884,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1001,
+                    "end": 1003,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1095,
+                    "end": 1097,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Generally, B-cell antigenicity predictions should probably be understood as a measure of the likelihood to develop antibodies against a particular determinant or part of a surface, rather than another. In addition, most proposed classifiers of continuous epitopes are ultimately a composite of accessibility and charge-interaction potential prediction with a strong focus on delivering a few experimentally applicable peptides rather than an overall complete probability distribution for raising antibodies. In addition, continuous epitopes make up an undefined but presumably small part of the complete \"epitope space\" of an antigen. This even so when assuming distinct epitopes rather than a continuous surface and accepting dominant continuous elements of structural epitopes as continuous epitopes.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study we extend previous work by investigating a subgroup of continuous B-cell epitopes, namely protective continuous epitopes. This aspect has to the best of our knowledge not been systematically tackled so far.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "From a biological point of view several principles should govern the availability and evolutionary behavior of protective amino-acid sites on proteins. One of the questions we ask is whether these principles or constraints lead to signals which can be used for predicting or rather detecting candidate epitopes. We assume that an antibody (and hence it's epitope) is protective because the function of the antigen (target protein) is inhibited and the activity of the organism is thus reduced. Or alternatively because immunological processes are activated leading to the destruction of the organism. The prior (protectivity class I) might most likely be expected in adhesion molecules or pathogenicity factors like matrix degrading proteases and toxins.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The second category (protectivity class II) would primarily refer to downstream events of antibody induced complement activation such as pore formation and opsonization leading to phagocytosis. It can be considered likely that the two mechanisms would often lead to differently characterized epitopes. Consequently as different functional constraints can be expected separate strategies for detecting them may be required. Basically any protein of high expression and density on the surface with at least one good epitope can be the target of class II protectivity. We define a \"good\" epitope as a surface area of high interaction potential, shape complementarity to the basic layout of an antibody [15] and dissimilar to self. Predicting that class therefore also requires to assess (or estimate) the density of a protein on the cell during pathogenesis, optimally experimentally or by inference from related organisms. A practically applicable continuous epitope could then be any exposed, possibly evolutionarily highly variable loop with an amenable antigenicity and solvent-accessibility profile. Class II protectivity may often be comparably straightforward to predict as soon as a target protein has been identified because selection of high scoring B-cell epitope scores often seems to be relatively straightforward and selection routines primarily falter in the domain of suboptimal scores as has been indicated by Sollner and Mayer [9]. However, immunologically sub-dominant or even cryptic B-cell epitopes can be of special interest regarding protectivity and inter-strain cross-reactivity [16] and are sometimes consistently immuno-silent during natural infection [17,18]. As a consequence we focus on conserved and therefore presumably functionally constrained epitopes without post-translational modifications which still exhibit amenable antigenicity scores. Regarding the previous definition these epitopes may often fall into class I of protective continuous epitopes.",
+            "cite_spans": [
+                {
+                    "start": 700,
+                    "end": 702,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1443,
+                    "end": 1444,
+                    "mention": "9",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1602,
+                    "end": 1604,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1677,
+                    "end": 1679,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1680,
+                    "end": 1682,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Such principles are primarily valid for pathogens already adapted to the host. Organisms in the process to adapt to new hosts or receptors can undergo significant alterations in their antigenic structure as has been demonstrated for SARS virus [19-21] and HIV [22], respectively.",
+            "cite_spans": [
+                {
+                    "start": 245,
+                    "end": 247,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 248,
+                    "end": 250,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 261,
+                    "end": 263,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We speculate that by means of functional constraints centers of biological activity can exert conserving pressure on closely associated potential epitopes while less relevant regions can be more variable. It may also be viable to suggest that conservation of posttranslational modification patterns may be different when comparing highly variable exposed loops and sites of functional relevance as modifications can play a major role in the masking of protective epitopes [23,24] but may often be undesired near functional centers.",
+            "cite_spans": [
+                {
+                    "start": 473,
+                    "end": 475,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "As Class II protectivity is to a certain degree already approached by standard B-cell epitope prediction (the maximization of antigenicity) and on the other hand depends on a bioinformatically more elusive factor (expression levels of pathogen protein) we see reason to focus on the prediction of conserved, functionally constrained epitopes (class I protectivity).",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "This work assesses in how far correlation between antigenicity, variability, post-translational modifications and protectivity/functional relevance can be put to use in a predictive model without the availability of 3D data. To compensate for the lack of 3D data multiple alignments of selected proteins are harnessed to derive information regarding the conservation of post-translational modification motifs as well as sequence variability per-se. We believe that understanding evolutionary \"movement\" of pathogen proteins allows insights into the importance of potential epitopes and we interpret such importance as indicator of protectivity.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We examined regression models based on 505 amino acid propensity scales. As described in Methods each of these scales characterizes amino acid residues regarding specific properties by assigning a value. From this representation, the information of 505 amino acid propensity scales was transformed into 19 principal components applying principal component analysis.",
+            "cite_spans": [],
+            "section": "Logistic regression models based on PCA of 505 amino acid propensity scales ::: Antigenicity Classification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on these 19 principal components, a logistic regression model was derived. It is in the following mentioned as PCA19.",
+            "cite_spans": [],
+            "section": "Logistic regression models based on PCA of 505 amino acid propensity scales ::: Antigenicity Classification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Briefly, a dataset of 197 proteins was obtained by clustering all BCIPEP sequences with at least 30% identity. This step removed redundancies potentially biasing validation procedures. In a second step non-antigenic amino-acids were randomized (maintaining the original amino-acid composition) to avoid the misclassification of unknown epitopes.",
+            "cite_spans": [],
+            "section": "Logistic regression models based on PCA of 505 amino acid propensity scales ::: Antigenicity Classification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Each amino-acid of those proteins was then parameterised using all of the described 19 components. Validation on the training set by bootstrap analysis in combination with a logistic regression indicated an AROC value of 0.60.",
+            "cite_spans": [],
+            "section": "Logistic regression models based on PCA of 505 amino acid propensity scales ::: Antigenicity Classification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To obtain an unbiased impression of the performance of the PCA19 classifier compared to an accepted gold standard such as ABCpred [25] an independent validation-dataset published by Blythe and Flower was used. To make methods compatible ABCpred predictions were run with standard settings except that the threshold was lowered to 0.1. Scores reported for peptides by ABCpred were assigned to each comprising amino-acid where larger values superseded the prediction of an overlapping peptide. AROC values were calculated. Both methods performed close to random (as is not too astonishing concerning the findings by Blythe et.al), with AROC values of 0.55 and 0.52 for PCA19 and ABCpred, respectively. These results are relativated later in this work when using only potentially relevant domains of a protein antigen, indicating systematic problems of the way B-cell epitope prediction validation is usually conducted.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Validation of antigenicity predictions on an independent dataset ::: Antigenicity Classification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To assess the effect of domain accessibility filtering (masking) from protectivity prediction AROC values of the described linear parameter combination before and after filtering were compared. Whereas the median AROC over all protein was determined as 0.56 before masking of presumably inaccessible trans-membrane or cytoplasmic domains it increased to 0.65 afterwards. While the AROC before masking is comparable to the one obtained by antigenicity prediction on the Blythe and Flower validation dataset the improvement to 0.65 strongly indicates the benefit of the procedure. Domain accessibility filtering can be considered an aspect of fair evaluation in B-cell epitope classification as a whole as it can be assumed that continuous epitopes of accessible domains are more likely mapped or otherwise reported than others, besides the protectivity aspect. While it may be argued that inclusion of Uniprot data into the process adds an aspect of human intervention we see that many data-sources can and are used for the annotation of putative ectodomains. Among those are also experimental data, which is in itself not a problem for bioinformatical validation strategies as long as the validation dataset was not engineered to fit these data particularly well. That is not the case. The domain filter was simply built by manually collecting different data-sources according to simple rules as we considered automated harvesting for 57 proteins and unnecessary effort.",
+            "cite_spans": [],
+            "section": "Effect of domain-accessibility filtering on protectivity prediction ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To evaluate the prediction of protective linear epitopes a new validation dataset was generated as described in Methods and Data. Briefly, the IEDB resource was queried for pathogen proteins with linear antibody determinants which lead to a biological effect upon interaction.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In viral polyproteins commonly only the dominant surface proteins were used as could be expected for a newly sequenced pathogen without in detail knowledge. To limit predictions to candidate regions (i.e. possibly immunologically accessible regions) domain accessibility filtering was applied. To do so domain data regarding polyproteins, trans-membrane structures or signal-peptides (predicted or experimentally determined) were taken from UniProt [26] or predicted using the TMHMM v.2.0 [27] and SignalP 3.0 Servers [28]. Domains which were not considered relevant for protective B-cell responses were intracellular domains of trans-membrane proteins, the first 10 amino-acids of a putative extra-cellular domain after a trans-membrane region and leader-peptides. Briefly, proteins were completely scored for antigenicity/protectivity but amino-acid scores in regions outside domains assumed to be surface exposed were set to 0 thus leading to a generic classification as non-protective. Masked amino-acid stretches were still considered for ROC calculation to reflect the impact of the analysis as a whole. AROC measures were thus based on completely scored proteins partially set to 0.",
+            "cite_spans": [
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For each amino-acid of proteins in the protectivity dataset variability and percentage of modifications (ratio of sequences which carry a modification motif indicating this specific amino acid versus all aligned sequences) based on multiple alignments were calculated as described earlier. Finally the average predicted antigenicity was calculated for each alignment column. Each of the three sub-scores was then rescaled between 0 and 1 for easier comparability.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To asses the power of score-combinations antigenicity, 1 \u2013 variability and 1 \u2013 PTM ratio were summed for all overlapping 10-mers where the score was assigned to the central amino-acid.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "See Table 1 for AROC values of individual proteins using any of the three sub-scores alone as well as the linear combination (sum score). The last row of the table indicates the overall AROC when analyzing all unmasked amino-acids together.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 10,
+                    "end": 11,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Considering the AROC merged value (resulting from the concatenation of all putatively accessible domains after scoring) antigenicity alone outperforms all other scores, including the combined one. Yet, although Table 1 indicates overall better performance of antigenicity, the distribution of AROC values for individual proteins indicates a different view. Table 2 shows that for the combined score fewer proteins fall in the very low AROC area (7 versus 10 are < = 0.35) whereas substantially more (30 versus 21) fall in the AROC area we considered good (> = 0.65). Eight of the 57 proteins used for protectivity prediction are similar or identical to sequences used for training the PCA19 classifier (as identified using blastp). To evaluate this bias/contamination the AROC value medians of truly independent versus dependent (contaminated) proteins has been listed in Table 2. Interestingly and against expectation contaminated proteins underperform when measured by median compared to independent entries leading to the observation that no pre-emptive separation of shared sequences is necessary in this case. For an overview of AROC distributions see the histograms in figure 3.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1182,
+                    "end": 1183,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 217,
+                    "end": 218,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 363,
+                    "end": 364,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 878,
+                    "end": 879,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Taken together 25 or 30 (44 or 53%) of 57 investigated proteins reveal AROC values > = 0.65 depending on whether contaminated proteins are neglected or not. This population is characterised by mean and median AROC values of 0.77 and 0.74, respectively. We interpret this as a roughly 50% probability that protectivity prediction will significantly enhance selection of peptides for the stimulation of protective immune responses for a particular protein, given that a relevant protein has been identified beforehand. We also want to point out that overall up to 65% of proteins show AROC values < = 0.35 or > = 0.65.",
+            "cite_spans": [],
+            "section": "Prediction of protective linear epitopes using a sum-score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "As described in Methods a \"Synthesis Score\" representing the number of peptides required for likely experimental success is a relevant readout concerning minimization of experimental cost. For vaccine design it is crucial to limit the number of synthesized peptides which enter experimental validation to a practically feasible amount. How many peptides can be synthesized depends on budget and resources as well as ethical considerations regarding the number of lab-animals, entities which are tied to the number of proteins (antigens) to be screened as well as available time. To provide such a measure we defined the size of peptides to be synthesized as 17-mers (a size commonly used by us) and the minimal overlap with protective epitopes to call it a hit as five amino-acids. Selected peptides could overlap, but each new epitope had to be centered on a hitherto uncovered amino-acid. These central amino acids were selected by maximizing the described sum score of antigenicity + (1-variability) and (1-maximal modification ratio).",
+            "cite_spans": [],
+            "section": "Synthesis Score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Following this procedure we determined how many peptides had to be selected per protein to provide a likely working selection for at least 50% of screened proteins. The presented combination method required six peptides to be selected compared to eight for random picking. This compares to five versus eight peptides when only the 30 proteins with AROC > = 0.65 were looked at. Note that random picking of central-amino acids was also restricted to the regions not filtered out by domain-exclusion to warrant fairness in the comparison.",
+            "cite_spans": [],
+            "section": "Synthesis Score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "By synthesizing and validating a maximum of six peptides, on average every second potentially protective protein can be expected to be the source of likely quite conserved, optimally unmodified, continuous and protective or at least functionally altering epitopes.",
+            "cite_spans": [],
+            "section": "Synthesis Score ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To assess the relationship of antigenicity, variability and modifications Pearson correlation-coefficients were calculated. After domain-filtering all distinct (non-overlapping) protective regions were analyzed separately to obtain an idea whether a common trend could be identified. In summary, overall average and median correlation were not significant between antigenicity, variability and modification ratio (generally < = 0.30 and > = -0.18). For each combination a subset of epitopes showed high correlation, however. Results have been summarized in Table 3.",
+            "cite_spans": [],
+            "section": "Analysis of feature correlation in protective epitopes ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 563,
+                    "end": 564,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Note that no pair of features shows significant positive or negative correlation for more than 30% of the total number of 110 considered epitopic regions. However, for all pairs of sub-scores strong positive and negative associations exist. In the case of antigenicity and variability more than 50% of analyzed epitopes show strong correlation between the two, but at practically equal numbers positive and negative association. This means that roughly 25% of epitopes are either markedly antigenic and conserved or non-antigenic and variable. Furthermore another 25% are markedly antigenic and variable or non-antigenic and conserved. Protective epitopes seem to be tendencially positively correlated considering antigenicity and conservation of motifs for posttranslational modification while variability and the evolutionary constraint index (ECI) are often negatively associated, as could be expected. Unfortunately no association between protein functional class and type of correlation could be detected (data not shown). Preliminary experiments evaluating the potential power of the correlation coefficient as a new parameter for protectivity prediction indicated close to random performance (data not shown).",
+            "cite_spans": [],
+            "section": "Analysis of feature correlation in protective epitopes ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The previously described observation that for about 65% of proteins either substantially good or bad predictive power can be seen suggests that the described 30% correlated epitopes are distinct sets depending on the parameter-combination. Alternatively it may also be that weaker correlations than -0.5 and +0.5 can still positively influence AROC.",
+            "cite_spans": [],
+            "section": "Analysis of feature correlation in protective epitopes ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An unweighted linear combination score is a simple way to combine parameters without optimizing a model, i.e. as a first approach strategy or if non independent optimization dataset exists. To extend this strategy, albeit without the option to analyse the unbiased effect on the entire protectivity dataset, machine-learning procedures were applied.",
+            "cite_spans": [],
+            "section": "Machine Learning models ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In particular, to analyse the validity of using all three parameters as well as the relative merit of the sum-score the protectivity dataset was converted into a format amenable for machine learning procedures such as decision trees. As described in the Methods section the entire protectivity set of 57 proteins was subjected to domain filtering to restrict to possibly accessible residues which were then compiled into the CML set. The class separation baseline of this set is 93,01%, due to the massive domination of non-protective residues. Using WEKA standard settings a C4.5 decision tree achieved 96.12% separation on the same set.",
+            "cite_spans": [],
+            "section": "Machine Learning models ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Because relative merits of machine learning are difficult to assess on strongly biased datasets such as CML, balanced and stratified training and validation sets (MTS and MVS, respectively) were randomly sampled from CML to make independent validation possible. Using the training set (MTS) and again applying C4.5 different parameter combinations were assessed. Results can be seen in table 4 and figure 4. The decision tree algorithm was applied because for single parameters this should basically be a search for the entropically optimal class-split whereas for parameter combinations also non-linear relationships (particularly the presence of distinct groups) can be captured. The table shows that each parameter contributes significantly and the best model comprises all three attributes as well as the sum-score as a fourth attribute. Independent of variability alone shows the best class-separation among individual parameters. Interestingly PTM alone yields no improvement over random classification while the combination with the remaining features significantly boots its impact.",
+            "cite_spans": [],
+            "section": "Machine Learning models ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 405,
+                    "end": 406,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 392,
+                    "end": 393,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "To assess the performance of a somewhat more sophisticated machine-learning technique validation using the validation set and cross-validation are compared in table 5 for a C4.5 tree and a Random Forest. Obviously there is much potential for improvement over a single decision tree as the Random Forest achieves a class separation power of up to 83\u201384% compared to 70\u201373% using a single tree.",
+            "cite_spans": [],
+            "section": "Machine Learning models ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 165,
+                    "end": 166,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of the C4.5 tree generated from the validation set indicates the merit of all four attributes including the sum-score as an additional parameter as all four were incorporated by the algorithm (tree not shown). In addition the resulting tree is astonishingly complicated (109 leaves) when considering that only four parameters were used, again indicating the existence of different clusters. Preliminarily, these groups may well be interpreted as distinct epitope signatures pointing towards different types of protective epitopes. In other words, different but recognizable epitope profiles should be considered. It also becomes obvious that a single unweighted combination score has its merit but is outperformed by variability alone and both of them by decision tree based multi-parameter models, at least in the stratified data representation. Also, the sum-score proves to be an important additional component in the decision models as can be seen by the increase from 63% class separation to 70% class separation by inclusion of this extra feature.",
+            "cite_spans": [],
+            "section": "Machine Learning models ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To exemplarily show how the described methods may be used for the prediction of continuous, protective epitopes a recently published relevant epitope on Borrelia burgdorferi OspC has been used [29]. The protein was selected because it was the first to show up in a new IEDB query for functionally altering epitopes and because it shows no significant homology to any protein in the protectivity dataset. Figure 5 indicates the experimentally determined epitope (fat red bar) together with a masked signal peptide (fat gray bar) together with results from three predictive methods. The top-most plot shows the sum-score which does not obviously correlate strongly with the epitope. Even after removal of isolated, positively predicted amino-acids (which can be considered as noise) both the C4.5 prediction and the Random Forest predict amino acids inside the 15-mer epitope. As the Random Forest performed best during validation it is used for the selection of five 17-mer peptides each centered on a cluster of a least two amino-acids. One of these peptides covers more than 50% of the protective epitope. While the proposed methods do not excel on this independently chosen protein five selected peptides may be enough to sufficiently cover the relevant site. As a remark it is also of interest that the consensus prediction of the C4.5 tree and the Random forest would obviously reduce the selection to two peptides with the same epitope coverage.",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Exemplary prediction of a protective continuous epitope ::: Protectivity Analysis and Prediction ::: Results",
+            "ref_spans": [
+                {
+                    "start": 411,
+                    "end": 412,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "This work describes the generation of a novel B-cell classifier based on the logistic regression of amino acid parameters derived from principal component analysis of a commonly used parameter database. We extend the classical application of antigenicity classifiers from the prediction of continuous B-cell epitopes to the prediction of protectivity by introducing measured variability and predicted modification patterns into the concept.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We could show that validation on the data-set by Blythe and Flower revealed close to random performance for both the gold standard ABCpred as well as for PCA19, although our method exhibited marginally better performance in comparison. This result is clearly relativated as we could show far better performance on a different dataset when considering only potentially relevant domains.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In detail, to assess the benefit of excluding presumably irrelevant domains from the prediction of protective continuous determinants a manual selection of protein regions was created based on standard bioinformatical tools. For this selection we used a curated set of 57 proteins with known protective or otherwise functionally altering, continuous epitopes. On this compilation protectivity prediction using PCA19 in combination with variability and modification likelihood performed significantly better after domain-accessibility filtering as measured by AROC values, while without filtering performance was comparable (although again slightly better) to antigenicity validation results on the Blythe et.al validation-set. Even when disregading eight proteins which contaminate the validation process due to similarity with the PCA19 training data the difference persists and is even enhanced.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Another primary observation is the gross variance in AROC values observed for various proteins. Approximately 65% of sequences exhibited AROC values < = 0.35 or > = 0.65, indicating a pattern substantially different from random noise. It may be wise to investigate the performance on a per-protein or per-epitope basis and to register how many percent of known, distinct sites were found with high reliability. That may help to avoid an averaging effect leading to the underestimation of the predictive power of classifiers. If a method performs well on every second protein or on certain epitopes that may be sufficient for many practical applications in the life-sciences field. This is especially so where high throughput is involved. Interestingly no correlation between the functional category of a protein or pathogen class (bacterial or viral) and the AROC could be established, indicating a more complex situation than just two types of epitope each associated with a distinct functional class.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "By determining the number of theoretically required synthetic peptides to achieve satisfying protectivity in a vaccine or mAb approach we conclude that up to six peptides would be required to achieve success in every second protein. Such success naturally requires the existence of protective, largely conserved and possibly unmodified epitopes.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We also want to point out that the selected validation set presumably represents a combination of differently well mapped proteins. In addition, each of these can contain one or several protective B-cell epitopes of both class I and II. As we tried to detect only one of these in the set, neglecting the other, validation is skewed against our method. It may also be good to remember that calculated AROC values are averaged over entire proteins, not distinct epitopes.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The application of machine-learning procedures potentially combines the prediction of different epitope classes and allows an estimation of the information content in the data. A Random Forest model achieved 83% class separation in an equilibrated model, pointing towards the potential to significantly improve upon the single-score method.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the selection of pathogen proteins relevant for the stimulation of protective immune-responses can be enhanced by bioinformatics that is a topic distinct from the prediction of likely protective epitopes on these antigens [30,31]. By combining in-silico ranking of likely protective targets and likely protective peptides from these targets completely automatized screening for applicable peptides is possible. Although methods do exist now for both aspects of in silico protectivity screening caution is still necessary. For example, the method published by Doytchinova and Flower predicts 95% of the proteins in our dataset as protective antigens (or at least antigens). On the other hand 65% of the proteome of Staphylococcus aureus COL (1727 of 2618 proteins) are also predicted to be relevant antigens which although possible seems to be a very high number suggesting a higher false positive rate than approximated by validation procedures in the publication. On the other hand all proteins are ranked by a score, so an order of predicted relevance is available, in our view essential for practical use. Unfortunately 701 proteins would be selected to cover all four proteins for which S. aureus protectivity data is available in the IEDB and which have close homologues also in strain COL (fibronectin-binding protein A and B, enterotoxin B and enterotoxin type A), yet not all may be required for a protective immune response and others may contain unmapped or discontinuous epitopes [32]. These findings indicate that several predictive methods and experimental data should be combined when selecting candidates for the generation of protective immune responses.",
+            "cite_spans": [
+                {
+                    "start": 232,
+                    "end": 234,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 235,
+                    "end": 237,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1501,
+                    "end": 1503,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our work solely focuses on the prediction of candidate peptides after such a selection has taken place, independent whether by means of experimental data, literature mining or purely bioinformatical/biological considerations.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We can show that prediction of protective or at least functionally relevant continuous B-cell epitopes can be efficiently done for approximately 50% of 57 analyzed proteins of pathogen origin. By minimizing sequence variability and probability of post-translational modification it can also be assumed that selected peptides are particularly suited for vaccine or monoclonal antibody generation. Exclusion of rationally selected domains strongly enhances the prediction of protective sites, indicating the relevance of a filtering step to restrict to immunologically likely accessible regions. Furthermore, analysis of correlation between variability, conservation of modification profiles and predicted antigenicity shows different and opposed categories of correlation thus indicating the existence of distinct epitope types. At this point it is difficult to verify or falsify our basic assumption of the two-class nature of protective epitopes. On the other hand the high percentage of epitopes with either positive or negative feature correlation indicates the existence of at least two types. Also, decision tree based models significantly outperform the single score-model pointing towards more complex relationships as well as possibly several distinct epitope signatures.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Future paths may lie in the detailed unraveling of parameter-associations and the utilization of more sophisticated classification methods such as regression trees for the assessment of biological relevance and protectivity in the selection of peptides for biotechnological application, as indicated by initial Random Forest classification.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The set of 505 unique amino acid propensity scales taken from the AAINDEX database [33] forms a 20 \u00d7 505 descriptor matrix of rank 19. Calculation of sequence properties from propensity scales can be expressed as a matrix multiplication of the amino acid sequence in matrix representation with the descriptor matrix. Hence, the resulting property matrix is of rank 19 as well, corresponding to 19 linearly independent vectors. From this only 19 coefficients plus the intercept can be estimated in regression models. Therefore Principal Component Analysis (PCA) was employed to transform the propensity scales from the 505-dimensional space to a 19-dimenstional subspace spanned by all 19 principal components with non-zero Eigenvalues, comparable to how parameter reduction has been done before [34,35]. The 20 \u00d7 505 descriptor matrix was centered and scaled to unity variance before the application of PCA. The full information contained in the original 20 \u00d7 505 descriptor matrix is retained, because no component is omitted. From this PCA-transformation, a new 20 \u00d7 19 descriptor matrix was built. These 19 PCA-derived propensity scales were used in turn to calculate sequence characteristics for the data set. The values were averaged over a sliding window of nine amino acids. Logistic regression employing the logit function was used to build models for the classification of single amino acid residues as epitopic or non epitopic.",
+            "cite_spans": [
+                {
+                    "start": 84,
+                    "end": 86,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 796,
+                    "end": 798,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 799,
+                    "end": 801,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Generation of a B-cell epitope (antigenicity) classifier ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to estimate the generalization error, bootstrap validation was employed. Error estimates were acquired from out-of-bag validation \u2013 i.e. using those residues that are not part of the bootstrap sample as validation data. 50 replicates were calculated for the validation of each investigated model.",
+            "cite_spans": [],
+            "section": "Generation of a B-cell epitope (antigenicity) classifier ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For validation of antigenicity classifiers a published antigenicity validation set by Blythe et.al (2005) was used. The list of 48 proteins we used from the dataset (because the mapping was clear) can be found in the supplementary material [see Additional file 2]. The data itself can be requested from Blythe et.al.",
+            "cite_spans": [],
+            "section": "The Blythe and Flower dataset ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To numerically represent variability of a protein at a certain amino acid position an information-entropy measure has been applied. For each protein where variability should be determined the sequence was BLASTed against the non-redundant protein database (nr) and hits were selected manually. The aim was to choose a diverse but not too diverse set of sequences to optimally represent the degree of evolutionary freedom of each amino acid position. Those proteins were downloaded and multiply aligned using clustalw. For each alignment column a variability value was calculated as follows:",
+            "cite_spans": [],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Randomly draw 100 samples of size 30 (i.e. 100 times 30 amino acids which is a combination with repetition) from each column, independent of how many sequences have been aligned. That way the evaluation should be less dependent on the number of homologues as for some proteins only five elements can be found whereas for others hundreds are available. Determine the most abundantly found amino-acid in the column. Then calculate the Shannon-entropy weighted by the EMBOSS [36] EBLOSUM variant of the BLOSUM62 [37] substitution scores between each amino acid and the most abundant one in the column. After averaging over all 100 samples to obtain the mean variability the final variability score for each alignment column computes as",
+            "cite_spans": [
+                {
+                    "start": 473,
+                    "end": 475,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 510,
+                    "end": 512,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "f(j)=fxlog(fx)+\u22110<i<|j|i\u2260xi\u2282jf(fi)={filog(fi)abs(Wix)if Wix<0filog(fi)if Wix=0filog(fi)abs(Wix)if Wix>0",
+            "cite_spans": [],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where f(j) is the score at alignment column j, fx is the frequency of the most abundant letter x in column j, fi is the frequency of letter i in column j and Wix is the substitution weight between letters i and x. For each alignment variability scores are independently rescaled between 0 and 1. The variability score ultimately used for protectivity scoring is 1 \u2013 rescaled f(j).",
+            "cite_spans": [],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Note that each individual gap is regarded as a new character which occurs only once (thus extending the 20 letter alphabet to a potentially high number leading to the perception of strongly gapped positions as highly variable).",
+            "cite_spans": [],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As an independent strategy an evolutionary constraint index (ECI) was calculated for each alignment column. This constraint is essentially the difference between the standard Shannon entropy and the entropy after reducing the amino acid alphabet according to the same substitution matrix as above. Briefly, amino acid identities were grouped as follows: E < = E, D, Q, K, R ; I < = I, L, M, V; Y < = Y, W, F, H; S < = S, T, A. Other amino-acids remained ungrouped. The ECI is primarily discussed when parameter correlations are analyzed.",
+            "cite_spans": [],
+            "section": "Capturing protein variability ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To predict posttranslational protein modifications PROSITE [38] patterns were used. In particular we considered patterns PS00001, PS00002, PS00003, PS00004, PS00005, PS00006, PS00007, PS00008, PS00009, PS00010, PS00012, PS00013, PS00294, PS00409. All sequences in the previously created multiple alignments were searched for the occurrence of these patterns. For each hit the amino acid putatively carrying the modification was marked and for each column in the alignment the ratio m of modified amino-acids was calculated. As for sequence variability the value used for protectivity scoring is 1-m. The advantage of using motif predictions on aligned sequences is the possibility to derive the degree of conservation of the motif. Combined with the assumption that conserved motifs of post-translational modification are more reliable and do otherwise carry a high false positive rate this increases the weight of the prediction.",
+            "cite_spans": [
+                {
+                    "start": 60,
+                    "end": 62,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Posttranslational protein modifications ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A reference data set was generated from the antibody binding site repository BCIPEP [39]. This database holds a collection of experimentally determined B-cell epitopes. The BCIPEP data set is highly redundant with plenty of entries showing relation to more than one source protein.",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Data for training antigenicity classifiers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To realize a non-redundant data set, homologue proteins of this collection were grouped. Members of two different groups differed by at least 30% in sequence identity. After this partitioning, the number of epitopes with length between 6 to 30 amino acids that could be localized on each protein was determined. Finally, the proteins bearing the largest number of epitopes were selected as the representative for their group. This procedure leads to a diverse set of protein sequences with experimentally determined immunogenic regions for each protein.",
+            "cite_spans": [],
+            "section": "Data for training antigenicity classifiers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "This data set holds in total 197 proteins with an average length of 449 amino acids. The prevalence of amino acids being part of an epitope is 7.6%. The mean length of an epitope is 16 residues. Out of the 197 proteins 60 originate from bacteria, 55 from viruses, 14 from fungi, 11 from human, 3 from allergens, and 54 from other sources (e.g. eukaryotic parasites). The data set holds in total 401 continuous epitopes, i.e. about 2 epitopes per protein.",
+            "cite_spans": [],
+            "section": "Data for training antigenicity classifiers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Since no systematic epitope mapping of all the proteins in the data set has been performed, categorizing sequence regions as non-antigenic is problematic, as these could be categorized false negative. Epitopes classified as non-epitopes do exist, yet it is problematic to discern whether those are the results of organism or individual (i.e. responses varying from individual to individual) or yet other biases. We chose to declare the non-defined regions of our reference dataset as non-epitopes. Regions not part of an epitope were randomized while maintaining the average amino-acid frequency of BciPep. The resulting was used for training B-cell epitope classifiers.",
+            "cite_spans": [],
+            "section": "Data for training antigenicity classifiers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Each amino-acid functioned as the central amino acid of a 9-mer (peptide), inheriting its class (antigenic or non-antigenic) to the peptide which was then used for parameterization and training/validation. Nine-mers were used due to the desire to use an intermediate between common assumptions about sizes of continuous epitopes (usually between 7 and 15 amino-acids).",
+            "cite_spans": [],
+            "section": "Data for training antigenicity classifiers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Each sequence in the generated multiple alignments was independently scored for its antigenicity using the PCA19 classifier. PCA19 classification resulted in the assignment of an antigenicity value for each amino acid in the multiple alignment with the exception of the flanking 5 amino acids due to a window effect. For each alignment column overall antigenicity was calculated as the average antigenicity over the corresponding amino acids of individual sequences.",
+            "cite_spans": [],
+            "section": "Antigenicity scores for alignments ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Proteins with known B-cell determinants were downloaded from the \"The Immune Epitope Database and Analysis Resource\" (IEDB) [40,41]. The IEDB allows filtering by various criteria. We applied the following step-wise exclusion filters to obtain a protectivity-related dataset:",
+            "cite_spans": [
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 128,
+                    "end": 130,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. 'Assay Group' = 'Ab binding leading to biological activity' (767 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. 'Epitope Structure Chemical Type' = 'Peptide/Protein' (735 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. 'Epitope Source Species' must be defined (679 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "4. Exclude linear fragments shorter than 3 and linear fragments longer than 50 aa and structural epitopes (381 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "5. 'Qualitative Measurement' = 'Positive' (235 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "6. Remove 'Epitope Source Species' = 'Homo Sapiens' (227 proteins remained)",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "7. Remove identical rows and obvious redundancies or identical sequences in different strains of the same organism. (184 proteins remained).",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "8. Remove entries from non-pathogens (including pathogenic plants).",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "SRC6129 and SRC6623 were removed because no Uniprot or GenBank Ids were specified. A neutral protease (gi 30260755) of Bacillus anthracis str. Ames was manually added from a literature source [42]. All proteins were then clustered and identified groups multiply aligned using the standard tools blastclust and clustalw, respectively. Epitopes of all sequences present in the alignment were manually mapped to the homologous sequence where the fewest remapping steps were necessary, or where all epitopes could be represented as can be the case for large deletions or proteins with precursor variants. The process is thus similar to the one applied at the Los Alamos National Laboratory HIV database where all reported epitopes are remapped to the reference strain HXB2 [43].",
+            "cite_spans": [
+                {
+                    "start": 193,
+                    "end": 195,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 770,
+                    "end": 772,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After removal of all redundancies and impractically short proteins 57 entries (31785 amino acids), with an average peptide coverage (and thus protectivity prevalence) of 7.25% remained, which are from now on referred to as \"protectivity dataset\". It has to be cautioned that the functional effect of antibodies directed against these determinants is classified only as \"leading to biological activity\", not necessarily protectivity. For our purposes we consider this close enough an approximation. This dataset can be found in the supplementary materials [see Additional file 1].",
+            "cite_spans": [],
+            "section": "Data for validating predictions of protectivity ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Validation results were analyzed using the ROCR package)[44] where specifically AROC (area under the curve of true-positive rate versus false-positive rate plots) calculation has been most relevant.",
+            "cite_spans": [
+                {
+                    "start": 57,
+                    "end": 59,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Calculation of validation characteristics and Machine-Learning ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The WEKA package [45] was used where machine-learning functions were needed, in particular a C4.5 and a Random Forest implementation.",
+            "cite_spans": [
+                {
+                    "start": 18,
+                    "end": 20,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Calculation of validation characteristics and Machine-Learning ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "From a practical point of view predictions of continuous epitopes should be measured by the number of synthesized peptides required to cover known epitopes. The Synthesis Score is defined as the number of peptides required to cover at least five epitopic amino-acids in the protectivity validation dataset. Five has been selected as a minimum requirement for an epitope.",
+            "cite_spans": [],
+            "section": "Synthesis Score ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To analyse the relevance of the used parameters simple machine learning techniques were applied as implemented in the WEKA package. For these analyses a dataset was generated based on the entire protectivity dataset (i.e. not the antigenicity dataset) after exclusion of likely inaccessible regions. Essentially all residues which were likely immune-accessible according to the rules mentioned earlier were represented by the sum score (individually rescaled between 0 and 1 for each protein), antigenicity, PTM pattern conservation and variability. This dataset of dimension 21293 with 1485 antigenic (protective) and 19808 non-antigenic residues (baseline prediction 6.97%) will be termed complete machine learning set (CML set). In a second step for each antigenic (protective) residue a non-antigenic residue was randomly sampled to obtain an equilibrated set. This set was then randomly re-sampled into two stratified sets representing 80% and 20% of CML for training and validation, respectively. The training set (2376 instances) and validation set (594 instances) are termed MTS and MVS, respectively.",
+            "cite_spans": [],
+            "section": "Machine Learning datasets ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "ROC \u2013 Receiver Operator Characteristic",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "AROC \u2013 Area under the ROC curve",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "PCA \u2013 Principal Component Analysis",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "PTM \u2013 Post-translational modifications",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "CML \u2013 Complete machine learning set",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "MTS \u2013 Machine-learning training set",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "MVS \u2013 Machine-learning validation set",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "FPrate \u2013 False-Positive rate",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "TPrate \u2013 True-Positive rate",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Amino-acid Attribute, Parameter \u2013 features of an amino acid such as hydrophilicity",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "C4.5 \u2013 A commonly used decision tree algorithm",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "ECI \u2013 Evolutionary Constraint Index",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "WEKA \u2013 The Waikato Environment for Knowledge Analysis",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "R \u2013 The R Project for statistical computing",
+            "cite_spans": [],
+            "section": "List of abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "JS designed the study, assembled the protectivity dataset, performed all analysis based on this data and drafted the manuscript. RG and RR prepared the BCIPEP dataset (removed redundancies) and developed the PCA19 antigenicity classifier. RG, RR, PP and AL worked on the validation of the PCA19 classifier and investigated the contribution of individual sequence features. BM conceived of the study, and participated in its design and coordination.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: protectivity AROC values for individual proteins separately derived from predictions based either on antigenicity, 1 \u2013 modifications or 1 \u2013 variability as well as a combined (sum) score for individual proteins\nProteins highlighted in bold are markedly homologous or identical to sequences used for the training of the PCA19 antigenicity classifier. Values derived from those proteins are denoted as \"contaminated\". The last five rows compare overall (global) classification performances of concatenated (merged) proteins as well as mean and median values between individual parameters and the combined score. Note that \"merged\" does not mean averaged and is thus biased by the length of individual proteins.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The table lists AROC performance of protectivity classifications for individual proteins based on different parameters\nNote that measured by the AROC median non-contaminated proteins unexpectedly seem to perform better than contaminated sequences. The combined classifier yields higher median AROC values than classifications based on individual parameters. Possibly more important, the number of proteins with AROC values > = 0.65 is substantially higher when comparing the combined score (protein count 30) with the best single score antigenicity (protein count 21).",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: The table lists numbers of protective epitopes exhibiting negative or positive feature association when considering all six possible combinations of antigenicity, modification percentage, variability and evolutionary constraint index (ECI)\nNote that like for the prediction of protectivity the used modification and variability scores (features) have been used as 1-value, so actual associations have to inverted as well. Each field in the table contains a pair of numbers where the first and second indicate the number of epitopes associated with a Pearson coefficient of < = -0.5 and > = 0.5, respectively. High numbers therefore indicate a strong degree of feature association.",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: The table shows the class separation measured by 10-fold stratified cross-validation using a C4.5 decision tree learner on the training dataset (MTS). In each row a different combination of input parameters was used as indicated by X (present) in the last four columns. Separation baseline for this dataset is 50%\nColumn abbreviations: %sep (% class separation), score (sum score), antigen (PCA19 derived antigenicity score), PTM (post-translational modifications), var (variability score), TPrate (True Positive rate) and FPrate (False Positive rate).",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: The table compares the performance of a decision tree derived using the C4.5 algorithm and a Random Forest, both generated with standard parameters. Ten-fold stratified cross-validation (on MTS) and validation on an independent protectivity validation set (MVS) are compared\nColumn abbreviations: %sep (% class separation), FPrate (False Positive rate) and TPrate (True Positive rate).",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The figure shows the first part of the overall workflow applied in this project.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: The figure shows the second part of the overall workflow applied in this project.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The figure shows the distribution of AROC values for protectivity predictions solely based on antigenicity, PTM (post translational modifications), variability as well as the sum score of the three.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: The figure shows the ROC plot of C4.5 decision trees used to determine the relevance of individual parameters and parameter combinations for the prediction of protectivity. For details on the obtained classifications please see table 4.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: The figure plots the classification results of the C4.5 tree (in blue), the Random Forest (in green) as obtained during validation in comparison to the signal peptide (fat grey bar) and the published continuous epitope (fat red bar). On top the values for the sum-score are plotted. The last line indicates the hypothetical selection of five 17-mers (slim red bars) based on the Random Forest prediction as it performed best during cross-validation.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "More than one reason to rethink the use of peptides in vaccine design",
+            "authors": [
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McCluskey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rossjohn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "6",
+            "issn": "",
+            "pages": "404-414",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrd2224"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Predicting antigenic determinants in proteins: looking for unidimensional solutions to a three-dimensional problem?",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Van Regenmortel",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Pellequer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Pept Res",
+            "volume": "7",
+            "issn": "",
+            "pages": "224-228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Mapping Epitope Structure and Activity: From One-Dimensional Prediction to Four-Dimensional Description of Antigenic Specificity",
+            "authors": [
+                {
+                    "first": "MHV",
+                    "middle": [],
+                    "last": "Van Regenmortel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Methods",
+            "volume": "9",
+            "issn": "",
+            "pages": "465-472",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/meth.1996.0054"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Improved method for predicting linear B-cell epitopes",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Immunome Res",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1745-7580-2-2"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Benchmarking B cell epitope prediction: underperformance of existing methods",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Blythe",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Protein Sci",
+            "volume": "14",
+            "issn": "",
+            "pages": "246-248",
+            "other_ids": {
+                "DOI": [
+                    "10.1110/ps.041059505"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Towards a consensus on datasets and evaluation metrics for developing B-cell epitope prediction tools",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Greenbaum",
+                    "suffix": ""
+                },
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Andersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Blythe",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Cachau",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Crowe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Davies",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Kolaskar",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Morrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mumey",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ofran",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Pellequer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pinilla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Ponomarenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "van Regenmortel",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Roggen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schlessinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sollner",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zand",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Mol Recognit",
+            "volume": "20",
+            "issn": "",
+            "pages": "75-82",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmr.815"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Identification of discontinuous antigenic determinants on proteins based on shape complementarities",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rapberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lukas",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mayer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Mol Recognit",
+            "volume": "20",
+            "issn": "",
+            "pages": "113-121",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmr.819"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Protective immunity to rabbit oral and cutaneous papillomaviruses by immunization with short peptides of L2, the minor capsid protein",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Embers",
+                    "suffix": ""
+                },
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Budgeon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pickel",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Christensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "9798-9805",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.19.9798-9805.2002"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Universal influenza B vaccine based on the maturational cleavage site of the hemagglutinin precursor",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bianchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Ingallinella",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Finotto",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Chastain",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Fu",
+                    "suffix": ""
+                },
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Horton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Freed",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Manger",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Ionescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Price",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wenger",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Emini",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Cortese",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ciliberto",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Shiver",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pessi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "7380-7388",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.12.7380-7388.2005"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Formalin inactivation of the lactate dehydrogenase-elevating virus reveals a major neutralizing epitope not recognized during natural infection",
+            "authors": [
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Harty",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Plagemann",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "J Virol",
+            "volume": "62",
+            "issn": "",
+            "pages": "3210-3216",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Receptor and viral determinants of SARS-coronavirus adaptation to human ACE2",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sui",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "IC",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Vasilieva",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Murakami",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Marasco",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Choe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Farzan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Embo J",
+            "volume": "24",
+            "issn": "",
+            "pages": "1634-1643",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.emboj.7600640"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Cellular immunity elicited by human immunodeficiency virus type 1/ simian immunodeficiency virus DNA vaccination does not augment the sterile protection afforded by passive infusion of neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mascola",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "VanCott",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stiegler",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Katinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Seaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Beaudry",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Barouch",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Korioth-Schmitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Krivulka",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sambor",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Welcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Douek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Montefiori",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Shiver",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Poignard",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Burton",
+                    "suffix": ""
+                },
+                {
+                    "first": "NL",
+                    "middle": [],
+                    "last": "Letvin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "10348-10356",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.77.19.10348-10356.2003"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Cross-host evolution of severe acute respiratory syndrome coronavirus in palm civet and human",
+            "authors": [
+                {
+                    "first": "HD",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Tu",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Lei",
+                    "suffix": ""
+                },
+                {
+                    "first": "QX",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "YW",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "HQ",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Chern",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "YF",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "PZ",
+                    "middle": [],
+                    "last": "Qin",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "YQ",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YD",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "XW",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Di",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Du",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bernini",
+                    "suffix": ""
+                },
+                {
+                    "first": "XJ",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Spiga",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZM",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "WZ",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Manuguerra",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fontanet",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Danchin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Niccolai",
+                    "suffix": ""
+                },
+                {
+                    "first": "YX",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "CI",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "",
+            "pages": "2430-2435",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0409608102"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Adaptive evolution of the spike gene of SARS coronavirus: changes in positively selected sites in different epidemic groups",
+            "authors": [
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Microbiol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2180-6-88"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Cryptic nature of a conserved, CD4-inducible V3 loop neutralization epitope in the native envelope glycoprotein oligomer of CCR5-restricted, but not CXCR4-using, primary human immunodeficiency virus type 1 strains",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lusso",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Earl",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sironi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Santoro",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ripamonti",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Scarlatti",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Longhi",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Burastero",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "6957-6968",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.79.11.6957-6968.2005"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Evolutionary dynamics of the glycan shield of the human immunodeficiency virus envelope during natural infection and implications for exposure of the 2G12 epitope",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Dacheux",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Moreau",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ataman-Onal",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Biron",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Verrier",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Barin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "12625-12637",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.22.12625-12637.2004"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Influence of N-linked glycosylation of porcine reproductive and respiratory syndrome virus GP5 on virus infectivity, antigenicity, and ability to induce neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "IH",
+                    "middle": [],
+                    "last": "Ansari",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Kwon",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Osorio",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Pattnaik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "3994-4004",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.80.8.3994-4004.2006"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Prediction of continuous B-cell epitopes in an antigen using recurrent neural network",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saha",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proteins",
+            "volume": "65",
+            "issn": "",
+            "pages": "40-48",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/prot.21078"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "UniProt: the Universal Protein knowledgebase",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Barker",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Boeckmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ferro",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gasteiger",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Magrane",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Natale",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "O'Donovan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Redaschi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Yeh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "D115-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh131"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "A hidden Markov model for predicting transmembrane helices in protein sequences",
+            "authors": [
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Sonnhammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "von Heijne",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krogh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Int Conf Intell Syst Mol Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": "175-182",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Machine learning approaches for the prediction of signal peptides and other protein sorting signals",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Brunak",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "von Heijne",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Protein Eng",
+            "volume": "12",
+            "issn": "",
+            "pages": "3-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/protein/12.1.3"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Characterization of a unique borreliacidal epitope on the outer surface protein C of Borrelia burgdorferi",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Luft",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "FEMS Immunol Med Microbiol",
+            "volume": "48",
+            "issn": "",
+            "pages": "64-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1574-695X.2006.00122.x"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Prediction of protein antigenic determinants from amino acid sequences",
+            "authors": [
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Hopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Woods",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "78",
+            "issn": "",
+            "pages": "3824-3828",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.78.6.3824"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "VaxiJen: a server for prediction of protective antigens, tumour antigens and subunit vaccines",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Doytchinova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-8-4"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "SPAAN: a software program for prediction of adhesins and adhesin-like proteins using neural networks",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Sachdeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ramachandran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "483-491",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/bti028"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "A novel Staphylococcus aureus vaccine: iron surface determinant B induces rapid antibody responses in rhesus macaques and specific increased survival in a murine S. aureus sepsis model",
+            "authors": [
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Kuklin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Secore",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cook",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Cope",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "McNeely",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Zorman",
+                    "suffix": ""
+                },
+                {
+                    "first": "XM",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pancari",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Isett",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Burgess",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Brownlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Meinz",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Liddell",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Schultz",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Montgomery",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Onishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Losada",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ebert",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Schofield",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Nagy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meineke",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Joyce",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Kurtz",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Caulfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "KU",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "McClements",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Infect Immun",
+            "volume": "74",
+            "issn": "",
+            "pages": "2215-2223",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.74.4.2215-2223.2006"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "AAindex: Amino Acid Index Database",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kawashima",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ogata",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucleic Acids Res",
+            "volume": "27",
+            "issn": "",
+            "pages": "368-369",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/27.1.368"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Peptide quantitative structure-activity relationships, a multivariate approach",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hellberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sjostrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Skagerberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wold",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Med Chem",
+            "volume": "30",
+            "issn": "",
+            "pages": "1126-1135",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/jm00390a003"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "A new set of amino acid descriptors and its application in peptide QSARs",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mei",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SZ",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biopolymers",
+            "volume": "80",
+            "issn": "",
+            "pages": "775-786",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/bip.20296"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "EMBOSS: the European Molecular Biology Open Software Suite",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Longden",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bleasby",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Trends Genet",
+            "volume": "16",
+            "issn": "",
+            "pages": "276-277",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0168-9525(00)02024-2"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Amino acid substitution matrices from protein blocks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "89",
+            "issn": "",
+            "pages": "10915-10919",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.89.22.10915"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "PROSITE: a dictionary of sites and patterns in proteins",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Nucleic Acids Res",
+            "volume": "19 Suppl",
+            "issn": "",
+            "pages": "2241-2245",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Bcipep: a database of B-cell epitopes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saha",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bhasin",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Genomics",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-6-79"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "A computer program for predicting protein antigenic determinants",
+            "authors": [
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Hopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Woods",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "Mol Immunol",
+            "volume": "20",
+            "issn": "",
+            "pages": "483-489",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0161-5890(83)90029-9"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "An ontology for immune epitopes: application to the design of a broad scope database of immune reactivities",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sathiamurthy",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mokili",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fleri",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "McGuinness",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Immunome Res",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1745-7580-1-2"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Curation of complex, context-dependent immunological data",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Vita",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Vaughan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zarebski",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Salimi",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fleri",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Grey",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sathiamurthy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mokili",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ponomarenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "de Castro",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stewart",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Way",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-7-341"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Effective antiprotease-antibiotic treatment of experimental anthrax",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Popov",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Popova",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hopkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Weinstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "MacAfee",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Fryxell",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chandhoke",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Alibek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Infect Dis",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2334-5-25"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "HIV Molecular Immunology Database",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "ROCR",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Waikato Environment for Knowledge Analysis",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "A semi-empirical method for prediction of antigenic determinants on protein antigens",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Kolaskar",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Tongaonkar",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "FEBS Lett",
+            "volume": "276",
+            "issn": "",
+            "pages": "172-174",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0014-5793(90)80535-Q"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Predictive estimation of protein linear epitopes by using the program PEOPLE",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Alix",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Vaccine",
+            "volume": "18",
+            "issn": "",
+            "pages": "311-314",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(99)00329-1"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "BEPITOPE: predicting the location of continuous epitopes and patterns in proteins",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Odorico",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Pellequer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Mol Recognit",
+            "volume": "16",
+            "issn": "",
+            "pages": "20-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmr.602"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Selection and combination of machine learning classifiers for prediction of linear B-cell epitopes on proteins",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sollner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Mol Recognit",
+            "volume": "19",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmr.770"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Machine learning approaches for prediction of linear B-cell epitopes on proteins",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sollner",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mayer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Mol Recognit",
+            "volume": "19",
+            "issn": "",
+            "pages": "200-208",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmr.771"
+                ]
+            }
+        }
+    }
+}

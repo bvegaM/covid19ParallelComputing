@@ -1,0 +1,939 @@
+{
+    "paper_id": "PMC2229842",
+    "metadata": {
+        "title": "C-ME: A 3D Community-Based, Real-Time Collaboration Tool for Scientific Research and Training",
+        "authors": [
+            {
+                "first": "Anand",
+                "middle": [],
+                "last": "Kolatkar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kevin",
+                "middle": [],
+                "last": "Kennedy",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dan",
+                "middle": [],
+                "last": "Halabuk",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Josh",
+                "middle": [],
+                "last": "Kunken",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dena",
+                "middle": [],
+                "last": "Marrinucci",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kelly",
+                "middle": [],
+                "last": "Bethel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rodney",
+                "middle": [],
+                "last": "Guzman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tim",
+                "middle": [],
+                "last": "Huckaby",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Peter",
+                "middle": [],
+                "last": "Kuhn",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Robert",
+                "middle": [],
+                "last": "Futrelle",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "To address these concerns, \u201ccollaboratory systems\u201d have been put into operation. Collaboratory systems are often computer-based systems that manage research workflow processes and allow different lab units to communicate and share data. Wulf defined a collaboratory as a \u201ccenter without walls, in which the nation's researchers can perform their research without regard to physical location, interacting with colleagues, accessing instrumentation, sharing data and computational resources, and accessing information in digital libraries\u201d (Wulf W (1989) \u201cThe national collaboratory.\u201d Towards a National Collaboratory. Unpublished report of a National Science Foundation invitational workshop, New York: Rockefeller University). Bly refines the definition to \u201ca system which combines the interests of the scientific community at large with those of the computer science and engineering community to create integrated, tool-oriented computing and communication systems to support scientific collaborations\u201d [1].",
+            "cite_spans": [
+                {
+                    "start": 1004,
+                    "end": 1007,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Collaboratory Science Systems ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Chin and Lansing state that the research and development of scientific collaboratories has, thus far, been a tool-centric approach [2]. The main goal was to provide tools for shared access and manipulation of specific software systems or scientific instruments. Such an emphasis on tools was necessary in these early development years because of the lack of basic collaboration tools\u2014text chat, synchronous audio, videoconferencing\u2014to support rudimentary levels of communication and interaction. Today, however, such tools are available in off-the-shelf software packages, such as Microsoft LiveMeeting, and IBM Lotus Sametime. The design of collaboratories can move beyond developing general communication mechanisms to evaluating and supporting data sharing in the scientific context. New communication channels can be added to facilitate collaborative exchange of ideas and data. Social network services are an example of a novel communication channel that has attracted large numbers of participants. Services like MySpace and Facebook provide a web site for members with similar interests to interact and share information through a variety of formats, such as, discussion groups, voice and video, file sharing, and email. The success of these services has to be considered within a scientific context to provide an effective on-line environment for scientific collaboration.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 134,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Collaboratory Science Systems ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A key challenge is to represent and visualize molecular and cellular data as a function of time, space, and ontological state, and then to efficiently and productively manage and share that data with collaborators and the scientific community. Effective proteome-wide prediction of cell signaling interactions require that data on biological relevance, structural accessibility, and molecular sequence be combined to allow for the accurate modeling of cell signaling pathways, for example [3]. When structural genomics intersect with functional proteomics, real-time three-dimensional (3-D) annotation is needed to integrate the two by providing the structural contextual basis upon which to attach the functional information.",
+            "cite_spans": [
+                {
+                    "start": 489,
+                    "end": 492,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Collaboratory Science Systems ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Another challenge is to efficiently communicate and discuss these models and their interpretation with collaborators. Research teams are increasingly interdisciplinary and collaborative among laboratories in different departments and institutions located around the world, so it is important for them to have the tools to bridge the gaps of specialization, geography, and time. Researchers must employ data organization and workflow management tools to share the context of their data. The ability to quickly search and retrieve complex 3-D data in real time is critical to the efficiency and productivity of large-scale research work. Currently, the insufficient level of detail made available by published literature, both in print and online, makes it challenging for researchers to share their knowledge. For instance, data from large-scale structural genomics initiatives , such as, PSI I & II (US), SGC (Europe), SPINE (Europe), RIKEN (Japan), will require centralized and automated facilities across continents, new methods to divide labor, and novel tools to disseminate and annotate the data to put it into the larger scientific context of systems biology.",
+            "cite_spans": [],
+            "section": "Collaboratory Science Systems ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A number of approaches to combine the power of computerized data storage with advanced visualization technology have been developed in the past. Some of the systems below are specific to molecular structures and others are more broad-based client/server collaboration systems offering additional communication and data sharing functionality.",
+            "cite_spans": [],
+            "section": "Available Collaborative Viewing and Annotation Systems ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Kinemage was the first desktop software tool used to visualize macromolecules, making it possible to enhance the communication of 3-D concepts in journal articles with electronic mass distribution of interactive graphics images. Developed at Duke University Medical Center, Kinemage illustrated a particular idea about a 3-D object, rather than neutrally displaying that object [4]. Kinemages, at the time, were a new type of published illustration, providing 3-D views in addition to standard figures, stereo figures, and color plates. Operations on the displayed Kinemage could be rotated in real time, parts of the display could be turned on or off, points could be identified and annotated, and changes between different forms could be animated. This was the first widely available molecular viewing and communication tool that allowed researchers to better communicate ideas that depended on 3-D information.",
+            "cite_spans": [
+                {
+                    "start": 378,
+                    "end": 381,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Kinemage-1992 ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The Molecular Interactive Collaborative Environment (MICE) is an application that provides collaborative, interactive visualization of complex scientific data in 3-D environments within which multiple users can examine complex data sets in real time [5]. MICE is portable and enables users to not only view molecular scenes on their own computer, but to distribute these scenes and interact with other users anywhere on the Internet. Components of MICE are already in use in other San Diego Supercomputer Center projects that require platform-independent collaborative software.",
+            "cite_spans": [
+                {
+                    "start": 250,
+                    "end": 253,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Molecular Interactive Collaborative Environment (MICE)-1998 ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The BioCoRE system developed at the University of Illinois is a large, complex collaboration environment that provides many features, such as data sharing, electronic laboratory notebooks, collaborative molecular viewing and message boards [6]. The BioCoRE system is being used for research and data management as well as for training and uses a combination of a web browser and specialized molecular viewer software to interact with the system and other users.",
+            "cite_spans": [
+                {
+                    "start": 240,
+                    "end": 243,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Biological Collaborative Environment (BioCoRE)-1999 ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The EMSL Collaboratory provides both a Scientific Annotation Middleware (SAM) server and an Electronic Laboratory Notebook (ELN) client as tools for developing collaboration systems [7]. In particular, these tools have been used to develop an NMR Virtual Facility which enables remote NMR operation as well as sharing documents, data, and images and interacting with personnel at the NMR facility.",
+            "cite_spans": [
+                {
+                    "start": 182,
+                    "end": 185,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "EMSL (Environmental Molecular Laboratory Sciences) Collaboratory-2004 ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "iSee is a software tool that allows users to leverage structural biology data by integrating data from many sources into a single data file and browser [8]. Structures can be annotated with methods, key points of interests, and alignments. Users can then browse the annotated structures, add new annotations, and evaluate existing ones. The files are small enough to be sent as an e-mail message, and the browser runs under Windows, Mac, and Linux operating systems. Though iSee offers saved view states, it is not quite a scientific wiki\u2014where users can make annotations without restrictions\u2014because of its prepackaged annotation system.",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 155,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "iSee-2006 ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Most recently we have developed the Collaborative Molecular Modeling Environment (C-ME), a new collaboratory system that integrates many of the key features available on Kinemage, MICE, iSee, and BioCoRE systems into one thin-client Windows application. The key features that C-ME provides include 2-D image and 3-D molecular structure annotation support in real-time, as well as centralized data storage and organization using hierarchical layers (Projects\u2192Entities\u2192Annotations); the annotation system is not limited to predefined ontological categories (Figure 1).",
+            "cite_spans": [],
+            "section": "Collaborative Molecular Modeling Environment (C-ME)-Community-based Collaboration Environment-2007 ::: Introduction",
+            "ref_spans": [
+                {
+                    "start": 556,
+                    "end": 564,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "C-ME is being developed using a rapid prototyping methodology and new programming tools from Microsoft, including the C# programming language, .NET 3.0 Framework, and the Windows Presentation Foundation (WPF). Other systems, such as Java, Eclipse and NetBeans, also provide built-in features for rapid application development. However, since we are leveraging MOSS 2007 for the data organization and storage functionality, we are using the .NET 3.0 Framework and WPF because of their tight integration with the Microsoft Windows and Server systems [9]. WPF is the graphical subsystem of the .NET 3.0 Framework and provides a programming model for building applications with a separation between the user interface and the underlying logic. The built-in WPF features for rendering 2D and 3D graphic objects were particularly helpful in more quickly assembling the functionality that supports C-ME. The rapid prototyping has enabled us to review iterations of the prototypes in two-week cycles providing bug and usability feedback to the developers for the next cycle of development.",
+            "cite_spans": [
+                {
+                    "start": 548,
+                    "end": 551,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Software Integration and Implementation Process ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nFigure 3 illustrates the relationships among the image rendering components and the back-end components, which communicate through industry-standard web services. The C-ME graphical client application communicates via web service calls to the MOSS 2007 application programming interface (API) to read or write data to a specific MOSS 2007 entity or project site or to create new project and entity sites. Figure 4 shows the flow of data as it is entered into C-ME and directed to the appropriate site on the MOSS 2007 server which uses SQL Server 2005 as the relational database system for data storage.",
+            "cite_spans": [],
+            "section": "Software Integration and Implementation Process ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 1,
+                    "end": 9,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 406,
+                    "end": 414,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Allowing multiple participants to jointly create and edit web pages is known as a \u201cwiki,\u201d first developed and implemented by Ward Cunningham in 1995 (http://en.wikipedia.org/wiki/Wiki). The Wikipedia is perhaps the most widely known and used wiki and is essentially an encyclopedia collaboratively written by volunteers [10], [11].",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 324,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 326,
+                    "end": 330,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "By allowing researchers to publish their data sets to a larger community through a publicly or privately available data portal, C-ME creates the possibility of a \u201cwiki-like\u201d research community, where any number of authorized participants can view and annotate research results interactively in a specific 2-D or 3-D context. Importantly, C-ME is a collaboratory system that enables the sharing and analysis of biological data with project level security in addition to the large wiki features through:",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Controlled access\u2013Users are authenticated against an Active Directory to determine their level of access to projects and entities. Access can also be provided to accounts residing on external LDAP repositories via MOSS. Anonymous read-only access is also available.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Simple graphical interface\u2013The graphical interface provides a standard set of mouse and keyboard controls to manipulate and annotate images and structures.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Data organization\u2013Data entered into C-ME is organized in a hierarchical system that allows creation of projects containing multiple sub-projects.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Data consistency\u2013All data is stored in one location so that all users access the same data from the C-ME application. All changes are immediately available to all users.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Robust data backend\u2013All C-ME data is stored in an industry-standard SQL Server 2005 database accessed through the MOSS 2007 application programming interface.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Context-specific annotation\u2013Annotations are related graphically to the feature in the image or molecular structure that is pertinent.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The system supports several data formats, has data translation capabilities, and is able to interact and exchange data with other sources, such as external databases. By leveraging MOSS 2007 functionality, C-ME offers subscription capabilities, performs user authentication, establishes and manages permissions and privileges, and has data encryption capabilities to ensure secure data transmission as part of its security package.",
+            "cite_spans": [],
+            "section": "C-ME as a 3D Community-Based Collaboratory System ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C-ME organizes data into a hierarchical structure that displays the organization of a data set at three abstraction levels: the Project (multiple) level, the Entity level, and the Annotation level. Each layer of the hierarchy contains one or more instances of the layer below it. The user may select a particular level from one the three list boxes along the left side of the C-ME window.",
+            "cite_spans": [],
+            "section": "Data Management & Information Hierarchies ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A project is a collection of entities created around a particular research goal, organization, or any other meaningful category that a research team might create. Each project can have an associated image to provide context for any data to be added to the project. Projects, in turn, contain entities, which can be either a 3-D atomic coordinate file created in Protein Data Bank format, a 2-D image file created in PNG, GIF, or JPG format, or a set of microscope images from a clinical blood sample in the case of specimen entities. 3-D entities can be rotated, zoomed and translated to orient the view as required. Entities can then be annotated, by adding notes, documents, images, e-mail threads, or other forms of information. Annotations are anchored to specific locations in the 2-D or 3-D entities, so an annotation is always placed in a specific context and in a precise relationship to related annotations.",
+            "cite_spans": [],
+            "section": "Data Management & Information Hierarchies ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The C-ME application does not provide advanced molecular viewing features, such as surface display, geometry analysis, and electron density viewing. It is not intended to replace existing advanced or specialized molecular viewers, such as Pymol or Coot [12], [13]. Instead, other viewers can be launched from C-ME to provide more detailed molecular analysis.",
+            "cite_spans": [
+                {
+                    "start": 253,
+                    "end": 257,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 259,
+                    "end": 263,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Data Management & Information Hierarchies ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C-ME provides basic 2-D image analysis functionality which includes the following image manipulation functions: RGB color filtering, zooming, and basic image enhancements such as contrast and brightness control. Advanced image analysis operations should be performed with an appropriate external image manipulation application (e.g. Adobe Photoshop or a purpose-specific image analysis application).",
+            "cite_spans": [],
+            "section": "Data Management & Information Hierarchies ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C-ME presents a user with an intuitive interface that reflects the three levels of information within the system. Individual windows on the left side of the screen reflect the selections made by the user at each level of the C-ME system (Figure 5). The top left window reflects the projects that are currently established on the system. The middle left window reflects the entities that have been chosen for examination by the user. The lower left window reflects the list of annotations that have already been entered by other users and allows users to navigate through them as well as to open the annotations for viewing.",
+            "cite_spans": [],
+            "section": "User Interface ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 238,
+                    "end": 246,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Since MOSS 2007 creates a central repository for data in almost any format, users are not limited in the ways they organize their data. Being able to link multiple kinds of data to an image or a protein structure, for example, makes it easier to organize experiments, collect and distribute results, and speed up the process of uncovering deeper knowledge from various experiments. Each entity, sample, or laboratory report can become its own site. All information about that entity can be collected and retrieved from one point either using C-ME or a web browser. A movie demonstrating major C-ME features and usage is available (Video S1, Supporting Information).",
+            "cite_spans": [],
+            "section": "User Interface ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Once an entity is created, a user can begin annotating the molecule, image or specimen. Annotations to molecule entities can be attached to the entire molecule, a set of user-defined amino acid residues, or a set of user-defined atoms. For an image entity, annotations are attached to the entire image or to a user-selected region of the image. Specimen entities are different in that the annotations are actually the set of images (called Cell Hit annotations) associated with a specific sample added to the entity when the specimen entity was created. Additional images can be added to a specimen entity by right-clicking on the entity name in the Entities window at the left. Annotations provide additional information and points of discussion for a molecular structure. Text notes, URLs, files, screen captures and discussions are all types of annotations that can be added to a structure or image. A user can then either double-click the annotation from the list in the lower left window or select the annotation flag from the graphical window to open that annotation. Office documents and PDF files are opened for reading in a new tab in the C-ME graphical window (Figure 6). The user may then decide to open that document for editing.",
+            "cite_spans": [],
+            "section": "Annotations ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 1171,
+                    "end": 1179,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Any file can be attached as an annotation. Commonly used file annotations include generic text files, images, audio or video media files, and PDF files. C-ME relies on the user's installed software to open these files with the appropriate application. In addition, Microsoft Word, Excel and PowerPoint documents can be attached as annotations in C-ME and are more tightly integrated with C-ME and open in a separate tab in the graphical window. For example, Excel spreadsheets can be attached as annotations and accessed through C-ME, where data or formulas in the cells can be modified by users with appropriate permissions from local or remote locations. Multiple users can open a given document simultaneously. A check-in/check-out feature is available. When a user edits an annotation, it is checked out to the first person who edits it. Another user who wants to edit the same file at the same time can only open it as a \u201cRead-Only\u201d version.",
+            "cite_spans": [],
+            "section": "Files and Office Documents ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "General text descriptions can be added as a Note annotation and can be attached to the entire entity or to a specific region of the entity. A note annotation flag appears as a small pad-and-pen icon.",
+            "cite_spans": [],
+            "section": "Notes ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A Uniform Resource Locator (URL) annotation is an HTML link that can be attached to an entity. This allows any web page to be added as additional information without having to actually extract information from the web site.",
+            "cite_spans": [],
+            "section": "URL ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A screen capture annotation allows an arbitrary rectangle of the user's screen to be captured as an image and attached to an entity. When selecting a screen capture annotation, C-ME is minimized and the rest of the desktop is shown with a light grey color. The mouse cursor becomes a cross-hair cursor which can be used to drag out a rectangle to save as the screen captured image. A window then appears with the captured image in the bottom pane and a place to enter a title for the screen capture annotation, and optionally, an associated URL and additional notes.",
+            "cite_spans": [],
+            "section": "Screen Capture ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Users can also discuss aspects of an entity by creating a discussion thread. When creating a new discussion annotation, a window appears to enter the subject of the discussion and the actual text of the discussion. Another user can then double-click this discussion and select a particular subject and click on the Reply button to continue the discussion. Other users with access to that entity can view all the entries in the discussion and contribute if desired.",
+            "cite_spans": [],
+            "section": "Discussions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Microsoft InfoPath forms, which are XML-based and are used to enter data about experiments and samples, can be published directly into a custom list or automatically sent via an e-mail message to a predefined e-mail account. InfoPath forms are currently being used to gather pathologist reviews of microscope images of stained cells. These forms are then processed to determine an overall score for each image from each pathologist's review. These scores can then be used to classify a cell image.",
+            "cite_spans": [],
+            "section": "Forms ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "By relying on industry-standard commercial off-the-shelf software products, C-ME addresses three areas of concern related to security: authentication and information access, data backup, and data transport. C-ME is built on the Windows Server 2003 operating system, and relies on the Active Directory for authentication and access control. System administrators or lab directors can control access and grant varying levels of privilege\u2014from \u201cRead Only,\u201d to \u201cContribute,\u201d to \u201cDesign Pages\u201d\u2014or deny access entirely. The data backup function is built into the MOSS 2007 data portal and data contributed to C-ME is automatically backed up. Furthermore, data is encrypted and transferred using the SSL standard.",
+            "cite_spans": [],
+            "section": "Security ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Generally, C-ME is being used during regular laboratory operations to discuss and share current progress and problems in a particular research project. Rather than having to create new PowerPoint presentations, the presenter can start the C-ME application and browse to the appropriate project to share the current thoughts and results. The annotations placed there collaboratively by other researchers working on that project can be viewed and edited, and new annotations can be added on the spot.",
+            "cite_spans": [],
+            "section": "C-ME Use Cases ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Similarly, C-ME is being used to provide a tour of a completed crystal structure using the published research paper as a basis. Now, the reader can step through the C-ME annotations extracted from the paper and watch as the relevant portions of the structure are highlighted to place additional data, such as activity assays, sequence comparisons, and protein purification gels, in the context of the structural features. In addition, this guided display feature of C-ME will also be used to share ideas, concepts and data with external collaborators allowing them to review, amend or add annotations.",
+            "cite_spans": [],
+            "section": "C-ME Use Cases ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "From the bench-top perspective, C-ME is being used in both structure-based and cell-based research projects. There are currently two primary projects which represent similar but different challenges for the collaborative environment. The Functional and Structural Proteomics analysis of SARS-CoV related proteins (FSPS, http://visp.scripps.edu/SARS/default.aspx) is an NIH-funded project that requires the production of over 30 SARS virus proteome proteins, their crystallization, and eventually, determination of their crystal structures. C-ME is being used to collect, organize and share the known FSPS structures as well as to annotate them with functional study information.",
+            "cite_spans": [],
+            "section": "C-ME Use Cases ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The second project is the Cancer Bioengineering Research Project (CBRP, http://cancer.scripps.edu). This project is focused on detecting rare circulating tumor cells in blood specimens from cancer patients. These cells have similarities that allow for their automated detection, and once detected, a 2D image of each cell is produced and is analyzed in multiple ways, requiring annotation of various types. These image analysis results need to be associated with the patient sample they came from, and each specimen might result in 200+ different images, each of which requires evaluation and annotation by a pathologist. C-ME is being used to store and organize the scanned microscope cell images, with the image analysis annotations and scoring attached to each stored image. In addition, InfoPath forms are used to allow pathologists to input the image analysis data to determine whether circulating tumor cells exist.",
+            "cite_spans": [],
+            "section": "C-ME Use Cases ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C-ME is being used in clinical classrooms. For example, the viewing and annotation features make it suitable for advanced-level molecular biology courses. Using C-ME, instructors can present molecular-based material to students at a level of detail not available in print textbooks. It also organizes course materials in hierarchical trees and makes it possible for students to experience the process of research collaboration with their instructors. An instructor in a graduate level pathology course, for example, uses C-ME to present students with examples of pathology reports in 2-D image formats. The instructor prepares appropriate annotations ahead of class time, and students reviewing the material after class can add comments or leave questions for the instructor. Additionally, image-based medical specialties can use the features of C-ME for education. In a pathology fellowship training program, where visual microscopic skills are paramount, learning modules for various pathologic diseases are created. This gives trainees the opportunity to practice making diagnoses by looking at microscopic images, as they will in their future daily practice. But unlike in real life, these microscopic images come with embedded annotations, files, PowerPoint presentations and on-line literature reviews, highlighting the corresponding disease information the trainees need to master in association with each image of abnormal cells. Trainees can also add modules to C-ME as they pursue special interests in one disease or another, eventually creating a training \u2018wiki\u2019 for future year trainees.",
+            "cite_spans": [],
+            "section": "C-ME Use Cases ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While C-ME contains significant capability for use by researchers today, the application will be enhanced to increase its utility. Currently, C-ME requires an internet connection to access the project and entity data and annotations. We are planning enhancements that would allow offline use of C-ME with data synchronization when C-ME is re-connected to the internet.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C-ME will also be extended to leverage the search and indexing functionality already present in MOSS 2007 to provide searching functionality from the C-ME client application. A C-ME user would be able to perform searches within and across projects or entities to find relevant documents, notes, and other annotations related to the search criteria.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, C-ME will detect user presence to signal a user that a collaborator is currently on-line. This would allow users to send an email or initiate an instant messenger session to discuss annotations and results if the other users or collaborators are currently using C-ME.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, InfoPath Forms are used to capture pathologists' scores from surveys designed to evaluate cell images. The use of InfoPath forms will be extended to include tests and quizzes for use by instructors to evaluate student performance and understanding of material presented in a C-ME project or entity.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Collaborative Molecular Modeling Environment (C-ME) enhances existing laboratory resources with interactive, real-time annotation and visualization capabilities. With this technology, researchers can create wiki-style collaborations for internal or distributed laboratory environments. As a content management and collaboration tool, Collaborative Molecular Modeling Environment (C-ME) has the potential to improve research efficiency by providing collaborators real-time access to data organized at the molecular and project levels. Its platform consolidates data from disparate sources, allowing users to easily compare, contrast, and merge information from different file systems. It complements existing visualization and collaboration software tools, such as iSee, Kinemage, MICE, and BioCoRE by allowing for real-time two-dimensional and three-dimensional annotation, hierarchical project and data organization, and dynamic collaboration.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The C-ME installation is available for download for computers running the Windows XP or Vista operating system (http://c-me.scripps.edu). This web site also contains additional information about the C-ME application.",
+            "cite_spans": [],
+            "section": "Future Directions ::: Results and Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: The Project, Entity and Annotations list boxes are displayed along the left hand side and the graphical window for displaying the 3D molecule representations or 2D images to the right. A project can have an associated 2D image to provide additional context as shown in the graphical window for the selected Cancer Therapeutics project. For this project, a protein structure entity is displayed on the project image as a thumbnail image of the cartoon representation of its 3D structure which can then be opened for viewing and annotation by double-clicking it.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: All data and annotations for a project or entity are stored in a site on the MOSS 2007 portal. If the C-ME client application is not available, the annotations and data can be accessed via a standard web browser (Mozilla Firefox) as shown here.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The data and annotations used in C-ME reside in various MOSS 2007 portal project and entity web sites (bottom\u2013orange). Each project and entity has its own site for data and annotations (bottom\u2013red).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Information entered into C-ME flows through the system to the appropriate levels in the hierarchy, which is managed by the MOSS 2007 data management component. The C-ME client (upper left) reads and writes data to and from MOSS 2007 (upper right). MOSS 2007 organizes C-ME data and annotations into a research site with multiple project sites (lower right). Each of the project sites can contain multiple entity sites (lower left) for each 3D molecule or 2D image to be annotated and shared.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Right-clicking the mouse provides functionality based on the context. In this case, there are options for adding annotations, changing the molecule's rendering and creating a shortcut. The Project, Entity and Annotation windows are seen along the left side of the application window.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Supported file types are opened in a new tab to save space on the desktop. This example shows a PowerPoint presentation annotation displayed in a tab.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Disseminating structural genomics data to the public: from a data dump to an animated story.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Abagyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Raush",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Budagyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Totrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sundstrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Marsden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends in Biochemical Sciences",
+            "volume": "31",
+            "issn": "",
+            "pages": "76-78",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Structures in Systems Biology.",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Beltrao",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Serrano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Curr Opin Struct Biol",
+            "volume": "17",
+            "issn": "",
+            "pages": "378-384",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "\u201cBioCoRE: A collaboratory for structural biology.\u201d",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bhandarkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Budescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "Humphrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Izaguirre",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Izrailev",
+                    "suffix": ""
+                },
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Kal\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Kosztin",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Molnar",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Phillips",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Schulten",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "San Francisco: Proceedings of the SCS International Conference on Web-Based Modeling and Simulation",
+            "volume": "",
+            "issn": "",
+            "pages": "242-251",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Special section on collaboratories.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bly",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Interactions",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A Prototype Molecular Interactive Collaborative Environment (MICE).",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gribskov",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Moreland",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Weissig",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Pacific Symposium on Biocomputing",
+            "volume": "",
+            "issn": "",
+            "pages": "118-129",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "\u201cCapturing and supporting contexts for scientific data sharing via the biological sciences collaboratory,\u201d",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chin",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Lansing",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the 2004 ACM Conference on Computer Supported Cooperative Work",
+            "volume": "",
+            "issn": "",
+            "pages": "409-418",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The PyMOL Molecular Graphics System.",
+            "authors": [
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "DeLano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Coot: Model-Building Tools for Molecular Graphics.",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Emsley",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Cowtan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Acta Cryst Section D-Biol Cryst",
+            "volume": "60",
+            "issn": "",
+            "pages": "2126-2132",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Khamsi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "\u201cElectronic Notebooks: An Interface Component for Semantic Records Systems.\u201d",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Saripalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Talbott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Anaheim: 227th American Chemical Society (ACS) National Meeting.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Applications\u200a=\u200aCode+Markup: A Guide to the Microsoft\u00ae Windows\u00ae Presentation Foundation.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Petzold",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "The Kinemage: a tool for scientific communication.",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Protein Sci",
+            "volume": "1",
+            "issn": "",
+            "pages": "3-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Wikinomics: How Mass Collaboration Changes Everything.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Tapscott",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

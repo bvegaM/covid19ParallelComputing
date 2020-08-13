@@ -1,0 +1,3203 @@
+{
+    "paper_id": "PMC2408589",
+    "metadata": {
+        "title": "Complete genome sequence of Treponema pallidum ssp. pallidum strain SS14 determined with oligonucleotide arrays",
+        "authors": [
+            {
+                "first": "Petra",
+                "middle": [],
+                "last": "Mat\u011bjkov\u00e1",
+                "suffix": "",
+                "email": "matej@med.muni.cz",
+                "affiliation": {}
+            },
+            {
+                "first": "Michal",
+                "middle": [],
+                "last": "Strouhal",
+                "suffix": "",
+                "email": "strouhal@med.muni.cz",
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [],
+                "last": "\u0160majs",
+                "suffix": "",
+                "email": "dsmajs@med.muni.cz",
+                "affiliation": {}
+            },
+            {
+                "first": "Steven",
+                "middle": [
+                    "J"
+                ],
+                "last": "Norris",
+                "suffix": "",
+                "email": "steven.j.norris@uth.tmc.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Timothy",
+                "middle": [],
+                "last": "Palzkill",
+                "suffix": "",
+                "email": "timothyp@bcm.tmc.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Joseph",
+                "middle": [
+                    "F"
+                ],
+                "last": "Petrosino",
+                "suffix": "",
+                "email": "jpetrosi@bcm.tmc.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Erica",
+                "middle": [],
+                "last": "Sodergren",
+                "suffix": "",
+                "email": "esodergr@wustl.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Jason",
+                "middle": [
+                    "E"
+                ],
+                "last": "Norton",
+                "suffix": "",
+                "email": "jnorton@nimblegen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Jaz",
+                "middle": [],
+                "last": "Singh",
+                "suffix": "",
+                "email": "jaz@nimblegen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Todd",
+                "middle": [
+                    "A"
+                ],
+                "last": "Richmond",
+                "suffix": "",
+                "email": "todd@nimblegen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [
+                    "N"
+                ],
+                "last": "Molla",
+                "suffix": "",
+                "email": "molla@bu.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Thomas",
+                "middle": [
+                    "J"
+                ],
+                "last": "Albert",
+                "suffix": "",
+                "email": "talbert@nimblegen.com",
+                "affiliation": {}
+            },
+            {
+                "first": "George",
+                "middle": [
+                    "M"
+                ],
+                "last": "Weinstock",
+                "suffix": "",
+                "email": "geowei@mac.com",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Treponema pallidum subspecies pallidum (TPA) is the causative agent of syphilis, a sexually transmitted disease affecting more than 12 million people worldwide each year [1]. After a period of decline in the 1990s, the number of reported cases of primary and secondary syphilis has been raising annually since 2000 in the United States [2]. Sequencing of the 1.14 Mbp genome of the Nichols strain of TPA in 1998 [3] greatly stimulated study of this unculturable pathogen. One important direction not yet developed is use of the Nichols sequence for comparative studies to determine variation between different syphilis isolates, how representative Nichols is of TPA, and the genetic differences between closely related treponemes causing different diseases (e.g. syphilis, yaws, bejel, pinta). To sample strains on a sufficient scale, rapid, inexpensive, and highly accurate sequencing methods are needed. Traditional whole genome shotgun sequencing methods using dideoxy-terminators (WGS-DDT) are relatively slow and costly to be applied to numerous samples. Here we sequence a treponemal genome by Comparative Genome Sequencing (CGS) [4], which provides an alternative to WGS-DDT sequencing of closely related genomes. CGS was previously used for mutation discovery in viruses [5], in mutagenized laboratory bacterial and fungal strains [4,6-9], in clinical isolates of bacteria [10,11], and for whole genome scale comparative studies [12-14].",
+            "cite_spans": [
+                {
+                    "start": 171,
+                    "end": 172,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 337,
+                    "end": 338,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 413,
+                    "end": 414,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1137,
+                    "end": 1138,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1280,
+                    "end": 1281,
+                    "mention": "5",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1340,
+                    "end": 1341,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1342,
+                    "end": 1343,
+                    "mention": "6",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1344,
+                    "end": 1345,
+                    "mention": "9",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1382,
+                    "end": 1384,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1385,
+                    "end": 1387,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1438,
+                    "end": 1440,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1441,
+                    "end": 1443,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The TPA isolate Street Strain 14 (SS14) was isolated in 1977 in Atlanta from a patient with secondary syphilis [15] who did not respond to erythromycin therapy that was used because of a penicillin allergy [16]. In vitro testing of SS14 revealed it to be less susceptible to a variety of antibiotics when compared to Nichols [16]. Nichols strain was isolated in 1912 in Washington, D.C. from cerebrospinal fluid of the patient with neurosyphilis [17]. Previous studies (D. \u0160majs, G. M. Weinstock, unpublished results) showed SS14 had all genes of the Nichols genome as judged by hybridization to a microarray containing PCR products of all annotated Nichols open reading frames (ORFs) [18]. To compare these closely related, yet phenotypically distinct strains, we sequenced the SS14 genome by CGS.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 326,
+                    "end": 328,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 686,
+                    "end": 688,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In the first mapping stage of CGS, no regions with significantly stronger labeled SS14 DNA signals were observed, indicating no increase in gene copy number in the SS14 genome. Regions giving significantly weaker SS14 signals indicated 1731 candidate regions of variation encompassing 1 or more overlapping oligonucleotide targets. The sequencing data identified 213 SNPs in the SS14 genome. An additional 17 questionable SNPs were suggested in repeated sequences of the genome but did not score well in a SNP uniqueness algorithm [4], and thus could represent false positives due to cross hybridization with the other repeats. DDT sequencing of 12 such regions revealed 5 real SNPs, 6 false positives, and one position with 2 alleles within the SS14 population (intrastrain heterogeneity). Therefore these questionable SNPs were not included in the final sequence, unless they were verified by DDT sequencing (data not shown). An additional 62 positions out of the 213 SNPs identified by CGS were DDT sequenced. 60 SNPs were confirmed (Tables 1, 2, 3 last column) and 2 false positives were found.",
+            "cite_spans": [
+                {
+                    "start": 532,
+                    "end": 533,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Identification of heterologous regions and sequence changes between Nichols and SS14 strains ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1044,
+                    "end": 1045,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1047,
+                    "end": 1048,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1050,
+                    "end": 1051,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "1674 out of 1731 candidate regions were identified as SNPs in the second sequencing stage but there were 57 regions encompassing 124 oligonucleotide targets where sequence changes could not be determined. These represented possible hypervariable regions with multiple differences from Nichols in the sequencing 29 mers. DNA regions comprising these sites were grouped into 38 larger regions (29\u20131507 bp), amplified by PCR and DDT sequenced. In 21 of the 38 cases, mostly closely spaced SNPs and/or short insertions or deletions (indels ranging from 1 to 7 nts) were found while no changes were seen in 17 cases (Table 1, column 7), which is in agreement with data obtained by others [12]. DDT sequencing of hypervariable regions suggested by the first phase of CGS identified nucleotide changes in these regions (Table 1, column 7) and also in the vicinity of these regions, where results of the first CGS phase suggested no changes (Table 1, column 8), indicating the need for extension of DDT sequenced regions of at least 100 bp in both directions. Additional short indels were discovered during DDT sequencing of regions identified by WGF (Table 3). Altogether, 2 false positive SNPs (data not shown), 19 false negative SNPs and an additional 16 indels (Tables 1, 3) were found in these DDT sequenced regions (42,344 bp). The overall confirmation of data suggests that repeated regions of the genome are limitations for SNP discovery and almost half of possible hypervariable regions are false positive results.",
+            "cite_spans": [
+                {
+                    "start": 684,
+                    "end": 686,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Identification of heterologous regions and sequence changes between Nichols and SS14 strains ::: Results",
+            "ref_spans": [
+                {
+                    "start": 618,
+                    "end": 619,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 819,
+                    "end": 820,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 940,
+                    "end": 941,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1150,
+                    "end": 1151,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 1265,
+                    "end": 1266,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1268,
+                    "end": 1269,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The accuracy of CGS was determined by comparison to the results of DDT sequencing for 27 regions encompassing 27,141 bp (Table 2). Selection of these regions was focused on possible variable regions in SS14/Nichols hybridization experiments (D. \u0160majs, G. M. Weinstock, unpublished results) using a microarray of TPA coding sequences [18] and thus was not completely random. These regions included 5 SNPs and no false positive or false negative SNPs/indels were found. These results indicate an error frequency comparable to or lower than that of high quality finished DDT sequence.",
+            "cite_spans": [
+                {
+                    "start": 334,
+                    "end": 336,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Identification of heterologous regions and sequence changes between Nichols and SS14 strains ::: Results",
+            "ref_spans": [
+                {
+                    "start": 127,
+                    "end": 128,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "To test the reproducibility of the method, the genome of TPA SS14 was sequenced twice with the CGS approach, using 2 independent DNA isolations from two subsequent inoculations of rabbit testes (i.e. 4950 and 4951, respectively). When most of the variable genomic regions were excluded from the analysis (CGS cannot identify closely spaced SNPs and/or short indels), CGS discovered 198 SNPs in each DNA preparation. The experiments agreed at 192 SNPs (97%), and 12 SNPs were predicted by only one CGS experiment. Out of these 12 SNPs, 7 were found to be real, as shown by DDT sequencing (data not shown), three loci showed intrastrain heterogeneity in one of the two SS14 DNA isolations, with one allele identical to the Nichols genome sequence and a second allele identical to the base change found by CGS. Two SNPs were predicted falsely, and in both cases the false SNP was located next to a real SNP. The reproducibility of the CGS method is thus likely to be limited by the presence of SNP clusters and influenced by genetically different subpopulations in the test sample.",
+            "cite_spans": [],
+            "section": "Assessment of reproducibility of CGS experiments ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To verify the complete sequence of SS14 strain, to screen for possible discrepancies in cross-reacting repeat regions (tpr genes) and insertions of unique sequences, WGF was performed. This physical mapping approach showed the order of the ORFs along the chromosome is identical to Nichols genome and 4 large indel regions were identified. A 64 bp deletion upstream of TP0136 was found by both CGS and WGF methods. Three additional indels were found only by WGF, two insertions (between genes TP0126\u2013TP0127 and within overlapping genes TP0433\u2013TP0434) and one deletion (in TP0470) (Table 3). A deletion in TP0470 and an insertion in TP0433\u2013TP0434 comprised tandem repeats of 24 and 60 bp, respectively. Similar analysis of the Nichols strain revealed length differences in genes TP0433\u2013TP0434 compared to the published sequence [GenBank:AE000520] as described previously [19]. Moreover, intrastrain heterogeneity in the Nichols strain was observed in regions comprising TP0126\u2013TP0127 and upstream of TP0136 with one allele identical to the published sequence. In the Nichols BAC library [20], similar intrastrain heterogeneity was found in the vicinity of gene TP0126. This region comprises a 1255 bp insertion between genes TP0126 and TP0127 in SS14 strain. A similar region was previously described in another syphilitic strain (Chicago, [GenBank:AY587909]) and was found to contain a sequence similar to tprK and is believed to be recipient site of the tprK conversion [21]. Altogether, three large indels were not detected by CGS. We suggest probable reasons for this fact are (1) the length of the repeats is similar to/longer than oligonucleotides used on the array and (2) sequence changes were found in Nichols DNA when compared to published complete sequence used for mapping array design [GenBank:AE000520].",
+            "cite_spans": [
+                {
+                    "start": 871,
+                    "end": 873,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1087,
+                    "end": 1089,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1472,
+                    "end": 1474,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Physical mapping of treponemal chromosome ::: Results",
+            "ref_spans": [
+                {
+                    "start": 587,
+                    "end": 588,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "When results of CGS, WGF and DDT sequencing were combined, 327 SNPs (224 transitions and 103 transversions), 14 deletions and 18 insertions were identified (Fig. 1). Sequence changes of variable regions V1\u2013V7 of TP0897, tprK, were not included, because sequences of these regions were found to differ greatly in both length and sequence within the SS14 population, in agreement with investigations published previously [22-24]. Obtained data have been used to compile the sequence of the SS14 genome [GenBank:CP000805]. The GenBank entry contains Ns in the positions of variable regions V1\u2013V7 of tprK gene. All discovered sequence changes are listed in Table S1 (See Additional file 1: Supplemental data).",
+            "cite_spans": [
+                {
+                    "start": 420,
+                    "end": 422,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Analysis of whole genome interstrain heterogeneity between Nichols and SS14 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 162,
+                    "end": 163,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Interstrain sequence heterogeneity discovered between strains Nichols and SS14 included silent mutations, amino acid alterations/indels, gene fusions, and truncations and elongations of open reading frames due to indels. Among the SNPs found by CGS was an adenine to guanine transition in both copies of 23S rDNA in SS14 strain. This sequence change was previously described in association with the SS14 erythromycin resistance [25]. Many discovered indels did not disrupt the open reading frames and represented variable number of nucleotides in homopolymeric tracts (e.g. in TP0012, TP0127), variable number of short motif repeats of 3 and 6 nucleotides (e.g. in TP0136, TP0304, TP0544, TP0668, TP0865), and variable number of longer motif repeats of 60 and 24 nts (TP0433\u2013TP0434, TP0470).",
+            "cite_spans": [
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Analysis of whole genome interstrain heterogeneity between Nichols and SS14 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Frameshift mutations and other changes affecting protein length are presented in Table 4. Besides 11 hypothetical proteins (including two possible surface proteins \u2013 Tp75 and p83/100), FlaB1 and Tex protein were affected. Sequence changes in four cases led to fusion of ORFs (TP0006 and TP0007 \u2013 elongation of Tp75 protein; hypothetical proteins TP0433 and TP0434, TP0597 and TP0598; conserved hypothetical proteins TP0468 and TP0469). Three of these genes (TP0006, TP0470, TP0486) were predicted to code for possible surface protein virulence factors [26]. Moreover, antigen p83/100, hypothetical gene TP0127, conserved hypothetical gene TP0470 and the fused proteins TP0433\u2013TP0434 and TP0468\u2013TP0469 were described to be antigenic in rabbits [27]. Two of the frameshift changes were confirmed to be present in the Nichols strain genomic DNA (TP0486 and TP0598).",
+            "cite_spans": [
+                {
+                    "start": 553,
+                    "end": 555,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 744,
+                    "end": 746,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Analysis of whole genome interstrain heterogeneity between Nichols and SS14 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 87,
+                    "end": 88,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "SNPs in SS14 were found to be non-uniformly distributed with the number of SNPs per ORF varying from 0 to 49. Hypervariable regions are listed in Table 5 and include ORFs encoding 3 hypothetical proteins, Tpr proteins (TprC, TprL) and outer membrane protein TP0326. TP0326 was predicted to be a virulence factor [26] and was experimentally verified to be an antigen [27]. It is of interest that the most variable region of the genome represents TP0136 (and sequence upstream of this gene) which encodes a protein that is antigenic in both rabbit and human infections [27,28] and was found to serve as fibronectin and laminin binding protein [29].",
+            "cite_spans": [
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 367,
+                    "end": 369,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 571,
+                    "end": 573,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 642,
+                    "end": 644,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Analysis of whole genome interstrain heterogeneity between Nichols and SS14 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 152,
+                    "end": 153,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "The distribution of SNPs in coding and non-coding sequences of SS14 was not significantly different. ORFs represent 92.9% of total genomic sequence; 94.8% of all SNPs were in coding sequences corresponding to 310 SNPs in genes (212 transitions and 98 transversions) and 17 SNPs (5.2%) in intergenic regions (12 transitions, 5 transversions). The frequency of SNPs was different among putative protein classes (Table 6). The highest frequency of SNPs was in hypothetical genes, lowest in housekeeping genes. In addition, housekeeping genes had the lowest number of SNPs altering amino acid sequences indicating conservation of these gene products.",
+            "cite_spans": [],
+            "section": "Analysis of whole genome interstrain heterogeneity between Nichols and SS14 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 416,
+                    "end": 417,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "Because DDT sequencing of some PCR products did not result in an unambiguous sequence, WGS-DDT sequencing of small insert libraries was performed. Analysis of libraries and PCR products revealed multiple (intrastrain) sequence variants in TP0117 (tprC), TP0402 (coding for flagellum-specific ATP synthase), TP0620 (tprI), TP0621 (tprJ), TP0971 (pathogen-specific membrane antigen) and TP1029 (hypothetical protein) and in the intergenic region between tprI and tprJ. Consensus sequences were mostly identical to the Nichols published sequence, but some positions had minor alternative sequences or vice versa. Altogether, intrastrain genetic heterogeneity comprised polymorphisms in 43 nucleotide positions and one polymorphism in a homopolymeric stretch (Table 7).",
+            "cite_spans": [],
+            "section": "Identification of intrastrain variability in TPA population ::: Results",
+            "ref_spans": [
+                {
+                    "start": 762,
+                    "end": 763,
+                    "mention": "7",
+                    "ref_id": "TABREF6"
+                }
+            ]
+        },
+        {
+            "text": "Obtaining the complete genome sequence of a second syphilis spirochete (SS14) shows the utility of the CGS strategy for treponemal comparative genomics. This is the first application of this approach to sequence an entire genome. This approach can be used when highly similar genomes are investigated and one genome sequence of closely related organism is known. The CGS strategy represents a rapid (days to weeks) and scalable methodology to sequence multiple syphilitic strains and clinical isolates. In the present study there was a need to further investigate some variable regions, but the directed DDT sequencing required was much less than needed to sequence a whole genome, thus lowering the total cost of obtaining the genome sequence.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There are some of the TPA-specific limitations of this approach to whole genome sequencing. Because the CGS strategy uses genomic DNA as a probe, accuracy is affected by the presence of repeated sequences. Repeat regions hybridize to more than one oligonucleotide on a tiling array resulting in both reduced sensitivity to detect changes, as well as ambiguity in assigning locations for the variants detected. Precautions have to be taken when inspecting tpr regions and others (arp gene, TP0470) which cross-react based on sequence similarity. Such regions, together with highly variable regions, need to be analyzed by WGF and sequenced by DDT to reveal true nucleotide changes and numbers of repeated regions. Another possible restriction of this methodology arises from the character of the TPA population. Multiple sequence variants in the Nichols strain population were both described previously and identified in this work, and hybridization based sequence changes discovery in these regions is influenced by the ratio between/among different sequence variants in the population. Finally, the accuracy of the genome sequence produced by CGS is dependent on the accuracy of the reference genome sequence. As suggested by two newly revealed frameshifts in Nichols strain sequence, discovered sequence changes have to be verified in Nichols sequence to describe real sequence changes compared to Nichols genome.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SS14 genome brings a first insight into the whole genome variability within TPA. Both Nichols and SS14 cause infection in rabbits and so are not believed to be attenuated to cause infection in man, thus it is very probable none of the differences may affect the ability of the bacteria to cause the disease. The examples of interstrain heterogeneity and multiple alleles in a population of haploid organisms are candidates for antigenic variation, contingency genes and other types of SSR (short sequence repeats) [30,31]. Changes resulting in significant differences in protein sequences (frameshifts and sequence changes causing protein length shifts) and hypervariable regions affected novel genes, membrane antigens and Tpr proteins. The Tpr protein family includes 12 Treponema pallidum repeat proteins, found uniquely in this bacterium and showing sequence similarity to major sheath protein of Treponema denticola. 8 out of 12 tpr genes (66%) were found to be affected by sequence changes representing a higher proportion than the whole genome rate (13.1%). Positions showing interstrain and intrastrain heterogeneity or both were found in tpr genes. Altogether 53 SNPs and 38 intrastrain variable nucleotide positions, with at least one allele identical to the sequence of the Nichols genome, were found in tpr genes (V1\u2013V7 regions of tprK were excluded from this analysis). Based on the fact that tpr genes share a high degree of similarity on the DNA level, we expect differences could be underestimated due to the limitations of the hybridization method for repeated sequences. Multiple alleles of tpr genes were described among and within TPA strains [22-24,32,33] and some TPA repeated regions (tpr genes, arp gene) were used as loci for typing of clinical isolates [34-38]. Newly identified hypervariable regions (Table 5) represent candidate sequences to screen clinical isolates and have potential to be used as typing markers of strains and isolates. In addition, different strains of TPA have already been tested for association with higher risk for neuroinvasion in rabbits [39] and identification of underlying sequence changes will enable prediction of such risks. The identified variation in novel genes suggests other targets besides tpr genes could be responsible for antigenic variation in TPA, or without support of further expression and antigenicity data, these could represent pseudogenes.",
+            "cite_spans": [
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 522,
+                    "end": 524,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1668,
+                    "end": 1670,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1671,
+                    "end": 1673,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1674,
+                    "end": 1676,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1677,
+                    "end": 1679,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1784,
+                    "end": 1786,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1787,
+                    "end": 1789,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 2098,
+                    "end": 2100,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1838,
+                    "end": 1839,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "The CGS strategy combined with WGF represents a rapid and simply scalable method to assess genome-wide genetic variability within TPA strains and subspecies, which share a very unusual degree of sequence similarity and lack genome rearrangements (as shown in this study). We expect this method to be combined with new sequencing technologies to produce high quality genome sequences to provide important data to design genotyping systems for more intensive strain sampling. Sequence variants could be readily used for molecular typing and identification of SS14 and Nichols strains and, with accumulation of additional data from other TPA genomes, for epidemiologic applications and clinical discrimination between reinfection and reactivation of syphilitic processes. Moreover, the ability to now sequence numerous TPA strains, especially those showing different degrees of virulence, will allow phenotype to be correlated with sequence. This is a significant development for an organism of important public health impact, but for which standard bacterial genetic methods are untenable.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "TPA strains Nichols and SS14 were maintained by rabbit inoculation and purified by Hypaque gradient centrifugation as described previously [40]. Chromosomal DNA was prepared as described previously [3].",
+            "cite_spans": [
+                {
+                    "start": 140,
+                    "end": 142,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 199,
+                    "end": 200,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "DNA isolation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "100 ng of treponemal genomic DNA was amplified to approximately 100 \u03bcg using the REPLI-g kit (Qiagen, Valencia, CA). For each array hybridization, 5 \u03bcg of amplified genomic DNA was digested with 0.005 U DNase I in 1\u00d7 One-Phor-All Buffer (Amersham Pharmacia Biotech, Piscataway, NJ) for 5 min at 37\u00b0C, followed by inactivation at 95\u00b0C for 15 min. To label the digested DNA fragments, 4 \u03bcl 5\u00d7 Terminal Transferase Buffer (Promega, Madison, WI), 1 nmol Biotin-N6-ddATP, and 25 U Terminal Transferase were added directly to the inactivated digestion mix and incubated at 37\u00b0C for 90 min, followed by inactivation at 95\u00b0C for 15 min.",
+            "cite_spans": [],
+            "section": "Comparative genome sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Mutation mapping microarrays were designed to map mutations by selecting a 29 mer oligonucleotide every 7 bases for both strands of the complete TPA Nichols genome sequence [3], [GenBank:AE000520]. All 325,138 oligonucleotides were synthesized in parallel as described by others [41,42].",
+            "cite_spans": [
+                {
+                    "start": 174,
+                    "end": 175,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 280,
+                    "end": 282,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Comparative genome sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Arrays were hybridized to digested, labeled genomic DNA of Nichols and SS14 strains separately and processed as described in [4] with an additional step after second wash in stringent buffer consisting of staining with a solution containing Cy3-Streptavidin conjugate (Amersham Pharmacia Biotech) for 10 min, and washing again with non-stringent wash buffer. The Cy3 signal was amplified by secondary labeling of the DNA with biotinylated goat anti-streptavidin (Vector Laboratories, Burlingame, CA). The secondary antibody was washed off with non-stringent wash buffer, and arrays were re-stained with the Cy3-Streptavidin solution.",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 127,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Comparative genome sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, the stain solution was removed, and arrays were washed in non-stringent wash buffer followed by two 30 sec washes in 0.5 \u00d7 SSC and a 15 sec wash in 70% EtOH. Arrays were spun dry in a custom centrifuge and stored until scanning.",
+            "cite_spans": [],
+            "section": "Comparative genome sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Microarray scanning, data analysis and sequencing microarray design and procedure were described previously [4]. The second array designed to sequence SS14 strain contained 392,000 oligonucleotides, with 8 oligos per base position (4 for each strand) and 48,600 bases were sequenced in total. Because mutations are sequenced in step two, inclusion of false positives from the mapping arrays does not affect the final data set.",
+            "cite_spans": [
+                {
+                    "start": 109,
+                    "end": 110,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Comparative genome sequencing ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After the second sequencing stage of the array analysis, some regions (Table 1) of the SS14 genome showed clear differences but SNPs could not be clearly identified. These regions were sequenced by DDT sequencing. Coordinates of these regions were extended with at least 150 bp in both directions and amplified with Taq-polymerase using oligonucleotide primers designed with Primer3 software [43]. The resulting PCR products were purified using QIAquick PCR purification Kit (Qiagen) and DDT sequenced using the original amplification primers and internal primers where applicable. Due to sequence similarity between tpr (Treponema pallidum repeat) genes, 3 of the heterologous regions (comprising genes TP0620\u2013TP0621, TP0896\u2013TP0898, TP1029\u2013TP1030) were XL PCR amplified using primers annealing to unique regions in the vicinity of the desired sequence. XL PCR products were purified and mechanically sheared to fragments 500 \u2013 1000 bp in length. These fragments were cloned into the pUC18 vector resulting in small insert libraries and recombinant plasmids isolated from at least 48 colonies were DDT sequenced to multiple coverage using pUC18 primers. All sequence reads were analyzed using Lasergene software (DNASTAR, Inc., Madison, WI).",
+            "cite_spans": [
+                {
+                    "start": 393,
+                    "end": 395,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Dideoxy-terminator sequencing of heterologous SS14 genome regions ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 77,
+                    "end": 78,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Whole genome fingerprinting was performed as described previously [44]. The chromosomal DNA was amplified in 102 Treponema pallidum interval (TPI) regions with median length of 12,204.5 bp (ranging from 1,778 to 24,758 bp) using the GeneAmp\u00ae XL PCR Kit (Applied Biosystems, Foster City, CA). The primer pairs for these amplifications are listed in Table S2 (See additional file 1: Supplemental data). Each PCR product was digested with BamH I, EcoR I and Hind III (New England Biolabs, Ipswich, MA) or their combinations. To asses the possible presence of indels in restriction fragments \u2265 4 kb, additional digestions using Acc I, Cla I, EcoR V, Kpn I, Mlu I, Nco I, Nhe I, Rsr II, Sac I, Spe I, Xba I or Xho I were performed as needed. The resulting fingerprints of TPA Nichols and SS14 strains were compared.",
+            "cite_spans": [
+                {
+                    "start": 67,
+                    "end": 69,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Whole genome fingerprinting ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The complete sequence of TPA SS14 strain was deposited in the GenBank under the accession number CP000805.",
+            "cite_spans": [],
+            "section": "Nucleotide sequence accession number ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "GMW designed the study. PM performed genome sequence analysis, finishing using DDT sequencing and wrote the manuscript. MS and ES performed WGF analysis. JEN, JS, TAR, MNM, TJA composed the CGS technique team and analyzed hybridization data. JFP contributed to SNP and proteome analysis. DS, TP, SJN and GMW provided critical expertise of the manuscript. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: DDT sequencing of 38 hypervariable regions where SNPs could not be identified by CGS\nORF \u2013 open reading frame; nt \u2013 nucleotide; SNP \u2013 single nucleotide polymorphism; igr \u2013 intergenic region; aas described in [3]; bSNPs identified using CGS in these regions were verified by DDT sequencing; c two SNPs represent the group of 17 SNPs in non-unique sites, originally excluded from list of total changes; didentified variable regions in TP0897 were identical to the variable regions V1\u2013V7 described previously [22\u201324].",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: DDT sequencing of regions selected based on pilot SS14/Nichols comparison using microarray hybridization experiments\nORF \u2013 open reading frame; nt \u2013 nucleotide; SNP \u2013 single nucleotide polymorphism; aas described in [3]; bSNPs identified using CGS in these regions were verified by DDT sequencing.",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: DDT sequencing of regions showing different whole genome fingerprint profiles in SS14 strain\nnt \u2013 nucleotide; SNP \u2013 single nucleotide polymorphism; aas described in [3]; bregions previously described in Table 1 were excluded; cSNPs identified using CGS in these regions were verified by DDT sequencing.",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Genes with mutations that significantly affect protein length\nORF \u2013 open reading frame; SNP \u2013 single nucleotide polymorphism; aa \u2013 amino acid; aas described in [3]; bsame sequence change detected in Nichols Houston strain genomic DNA; c same sequence change described in [19].",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: ORFs with the highest number of detected SNPs (+ indels)\nORF \u2013 open reading frame; SNP \u2013 single nucleotide polymorphism; aa \u2013 amino acid; nt \u2013 nucleotide; aas described in [3]; bthis protein was described to be fibronectin and laminin protein [29].",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Distribution of SNPs in different gene function groups and their effects on protein sequences\nanumber of genes (ORFs) in the complete genome of TPA Nichols strain [3]; bnumber of all genes with sequence changes in the genome of SS14 strain; cnumber of SNP changes identified within ORF groups in the genome, other sequence changes were not included; damino acid changes caused by SNPs, changes in length of the protein molecule are listed in Table 4.",
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Table 7: Genetic heterogeneity in the SS14 population isolated from rabbit testes\nORF \u2013 open reading frame; aa \u2013 amino acid; NA \u2013 not available; aas described in [3]; bnumbers in parentheses show sequence reads for each alternative sequence.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Scheme to identify sequence changes in the SS14 genome.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Global prevalence and incidence of selected curable sexually transmitted infections: overview and estimates",
+            "authors": [],
+            "year": 2001,
+            "venue": "Tech Report No WHO/HIV_AIDS/20 WHO/CDS/CSR/EDC/200110",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Differential stability and trade-off effects of pathoadaptive mutations in the Escherichia coli FimH adhesin",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Weissman",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Beskhlebnaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chesnokova",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chattopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "WE",
+                    "middle": [],
+                    "last": "Stamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Hooton",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Sokurenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infect Immun",
+            "volume": "75",
+            "issn": "",
+            "pages": "3548-3555",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.01963-06"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Probing genomic diversity and evolution of Escherichia coli O157 by single nucleotide polymorphisms",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Motiwala",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Alland",
+                    "suffix": ""
+                },
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Hyytia-Trees",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ribot",
+                    "suffix": ""
+                },
+                {
+                    "first": "PI",
+                    "middle": [],
+                    "last": "Fields",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Whittam",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Swaminathan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Res",
+            "volume": "16",
+            "issn": "",
+            "pages": "757-767",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.4759706"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Molecular genetic anatomy of inter- and intraserotype variation in the human bacterial pathogen group A Streptococcus",
+            "authors": [
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Beres",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Richter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Nagiec",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sumby",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Porcella",
+                    "suffix": ""
+                },
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "DeLeo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Musser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "7059-7064",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0510279103"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Whole-genome analysis of the methyl tert-butyl ether-degrading beta-proteobacterium Methylibium petroleiphilum PM1",
+            "authors": [
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Kane",
+                    "suffix": ""
+                },
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Chakicherla",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Chain",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Legler",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Scow",
+                    "suffix": ""
+                },
+                {
+                    "first": "FW",
+                    "middle": [],
+                    "last": "Larimer",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lucas",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Hristova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Bacteriol",
+            "volume": "189",
+            "issn": "",
+            "pages": "1931-1945",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.01259-06"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Virulence potential of Ehrlichia chaffeensis strains of distinct genome sequences",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Miura",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Rikihisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infect Immun",
+            "volume": "75",
+            "issn": "",
+            "pages": "3604-3613",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.02028-06"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Identification and preliminary characterization of Treponema pallidum protein antigens expressed in Escherichia coli",
+            "authors": [
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Stamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Kerner",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Bankaitis",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bassford",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 1983,
+            "venue": "Infect Immun",
+            "volume": "41",
+            "issn": "",
+            "pages": "709-721",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "In vitro assay to demonstrate high-level erythromycin resistance of a clinical isolate of Treponema pallidum",
+            "authors": [
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Stamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Stapleton",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bassford",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 1988,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "32",
+            "issn": "",
+            "pages": "164-169",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Demonstration of Spirochaeta pallida in the cerebrospinal fluid",
+            "authors": [
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Nichols",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Hough",
+                    "suffix": ""
+                }
+            ],
+            "year": 1913,
+            "venue": "JAMA-J Am Med Assoc",
+            "volume": "60",
+            "issn": "",
+            "pages": "108-110",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Transcriptome of Treponema pallidum: gene expression profile during experimental rabbit infection",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Smajs",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McKevitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Palzkill",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Bacteriol",
+            "volume": "187",
+            "issn": "",
+            "pages": "1866-1874",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.187.5.1866-1874.2005"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Molecular characterization and analysis of a gene encoding the acidic repeat protein (Arp) of Treponema pallidum",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rodes",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Steiner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Med Microbiol",
+            "volume": "56",
+            "issn": "",
+            "pages": "715-721",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/jmm.0.46943-0"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Sexually Transmitted Disease Surveillance 2005 Supplement",
+            "authors": [],
+            "year": 2006,
+            "venue": "Syphilis Surveillance Report",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "BAC library of T. pallidum DNA in E. coli",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Smajs",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McKevitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Palzkill",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "515-522",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.207302"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Gene conversion: a mechanism for generation of heterogeneity in the tprK gene of Treponema pallidum during infection",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Centurion-Lara",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "LaFond",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hevner",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Godornes",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Molini",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Van Voorhis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Microbiol",
+            "volume": "52",
+            "issn": "",
+            "pages": "1579-1596",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1365-2958.2004.04086.x"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Sequence diversity of Treponema pallidum subsp. pallidum tprK in human syphilis lesions and rabbit-propagated isolates",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "LaFond",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Centurion-Lara",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Godornes",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Rompalo",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Van Voorhis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Bacteriol",
+            "volume": "185",
+            "issn": "",
+            "pages": "6262-6268",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.185.21.6262-6268.2003"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "TprK sequence diversity accumulates during infection of rabbits with Treponema pallidum subsp. pallidum Nichols strain",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "LaFond",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Centurion-Lara",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Godornes",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Van Voorhis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Infect Immun",
+            "volume": "74",
+            "issn": "",
+            "pages": "1896-1906",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.74.3.1896-1906.2006"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "The sequence-variable, single-copy tprK gene of Treponema pallidum Nichols strain UNC and Street strain 14 encodes heterogeneous TprK proteins",
+            "authors": [
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Stamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Bergen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Infect Immun",
+            "volume": "68",
+            "issn": "",
+            "pages": "6482-6486",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.68.11.6482-6486.2000"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "A point mutation associated with bacterial macrolide resistance is present in both 23S rRNA genes of an erythromycin-resistant Treponema pallidum clinical isolate",
+            "authors": [
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Stamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Bergen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "44",
+            "issn": "",
+            "pages": "806-807",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AAC.44.3.806-807.2000"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "The genome of Treponema pallidum: new light on the agent of syphilis",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Hardham",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "McLeod",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Sodergren",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "FEMS Microbiol Rev",
+            "volume": "22",
+            "issn": "",
+            "pages": "323-332",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1574-6976.1998.tb00373.x"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Genome scale identification of Treponema pallidum antigens",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McKevitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Brinkman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McLoughlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Perez",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Palzkill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Infect Immun",
+            "volume": "73",
+            "issn": "",
+            "pages": "4445-4450",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.73.7.4445-4450.2005"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Reactivity of antibodies from syphilis patients to a protein array representing the Treponema pallidum proteome",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Brinkman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McKevitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McLoughlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Perez",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Palzkill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Clin Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "888-891",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.44.3.888-891.2006"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "A novel Treponema pallidum antigen, TP0136 is an outer membrane protein that binds human fibronectin",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Brinkman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "McGill",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Petterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rogers",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Matejkova",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Smajs",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Palzkill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Infect Immun",
+            "volume": "76",
+            "issn": "",
+            "pages": "1848-1857",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.01424-07"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Complete genome sequence of Treponema pallidum, the syphilis spirochete",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Sutton",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Dodson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gwinn",
+                    "suffix": ""
+                },
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Hickey",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Clayton",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Ketchum",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sodergren",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Hardham",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "McLeod",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Khalak",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chidambaram",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Utterback",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "McDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Artiach",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bowman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Cotton",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fujii",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Garland",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hatch",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Horst",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sandusky",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Weidman",
+                    "suffix": ""
+                },
+                {
+                    "first": "HO",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Science",
+            "volume": "281",
+            "issn": "",
+            "pages": "375-388",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.281.5375.375"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "The simple sequence contingency loci of Haemophilus influenzae and Neisseria meningitidis",
+            "authors": [
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Bayliss",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Field",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Moxon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Clin Invest",
+            "volume": "107",
+            "issn": "",
+            "pages": "657-662",
+            "other_ids": {
+                "DOI": [
+                    "10.1172/JCI12557"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Short-sequence DNA repeats in prokaryotic genomes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "van Belkum",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Scherer",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van Alphen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Verbrugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Microbiol Mol Biol Rev",
+            "volume": "62",
+            "issn": "",
+            "pages": "275-293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "The tprK gene is heterogeneous among Treponema pallidum strains and has multiple alleles",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Centurion-Lara",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Godornes",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castro",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Van Voorhis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Infect Immun",
+            "volume": "68",
+            "issn": "",
+            "pages": "824-831",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.68.2.824-831.2000"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Multiple alleles of Treponema pallidum repeat gene D in Treponema pallidum isolates",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Centurion-Lara",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castro",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Van Voorhis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Bacteriol",
+            "volume": "182",
+            "issn": "",
+            "pages": "2332-2335",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.182.8.2332-2335.2000"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Molecular typing of Treponema pallidum strains from patients with neurosyphilis in Pretoria, South Africa",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Molepo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Hoosen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Sex Transm Infect",
+            "volume": "83",
+            "issn": "",
+            "pages": "189-192",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/sti.2006.023895"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Molecular subtyping of Treponema pallidum subspecies pallidum",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Sturm",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Steiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Sex Transm Dis",
+            "volume": "25",
+            "issn": "",
+            "pages": "408-414",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/00007435-199809000-00004"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Molecular typing of Treponema pallidum in South Africa: cross-sectional studies",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ebrahim",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Fehler",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Ballard",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Steiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Sturm",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "256-258",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.40.1.256-258.2002"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Molecular subtyping of Treponema pallidum from North and South Carolina",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Pope",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Fox",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Marfin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Leone",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Sena",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chapin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Fears",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Markowitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Clin Microbiol",
+            "volume": "43",
+            "issn": "",
+            "pages": "3743-3746",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.43.8.3743-3746.2005"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Molecular subtyping of Treponema pallidum in an Arizona County with increasing syphilis morbidity: use of specimens from ulcers and blood",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Sutton",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Steiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mickey",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Finelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Markowitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "St Louis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Infect Dis",
+            "volume": "183",
+            "issn": "",
+            "pages": "1601-1606",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/320698"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Treponema pallidum strain-specific differences in neuroinvasion and clinical phenotype in a rabbit model",
+            "authors": [
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Tantalo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lukehart",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Infect Dis",
+            "volume": "191",
+            "issn": "",
+            "pages": "75-80",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/426510"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Mutation discovery in bacterial genomes: metronidazole resistance in Helicobacter pylori",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dailidiene",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Dailide",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kalia",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Berg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat Methods",
+            "volume": "2",
+            "issn": "",
+            "pages": "951-953",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nmeth805"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Purification of Treponema pallidum from Infected Rabbit Tissue: Resolution into Two Treponemal Populations",
+            "authors": [
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Baseman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Nichols",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Rumpp",
+                    "suffix": ""
+                },
+                {
+                    "first": "NS",
+                    "middle": [],
+                    "last": "Hayes",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Infect Immun",
+            "volume": "10",
+            "issn": "",
+            "pages": "1062-1067",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Light-directed 5'-->3' synthesis of complex oligonucleotide microarrays",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Stengele",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gng035"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Gene expression analysis using oligonucleotide arrays produced by maskless photolithography",
+            "authors": [
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nuwaysir",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pitas",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gorski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Berg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ballin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McCormick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pollock",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sumwalt",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Butcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Porter",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Sussman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Cerrina",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "1749-1755",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.362402"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Primer3 on the WWW for general users and for biologist programmers",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rosen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Skaletsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Bioinformatics Methods and Protocols: Methods in Molecular Biology",
+            "volume": "",
+            "issn": "",
+            "pages": "365-386",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Identification of virulence genes in silico: infectious disease genomics",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Norris",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sodergren",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Smajs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virulence Mechanisms of Bacterial Pathogens",
+            "volume": "",
+            "issn": "",
+            "pages": "251-261",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Tracking the evolution of the SARS coronavirus using high-throughput, high-density resequencing arrays",
+            "authors": [
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Vega",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Cutler",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "LW",
+                    "middle": [],
+                    "last": "Stanton",
+                    "suffix": ""
+                },
+                {
+                    "first": "ET",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genome Res",
+            "volume": "14",
+            "issn": "",
+            "pages": "398-405",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.2141004"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Genetic changes that correlate with reduced susceptibility to daptomycin in Staphylococcus aureus",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Alder",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "50",
+            "issn": "",
+            "pages": "2137-2145",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AAC.00039-06"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Comparative genome sequencing of Escherichia coli allows observation of bacterial evolution on a laboratory timescale",
+            "authors": [
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Herring",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Raghunathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Honisch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Applebee",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Joyce",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "van den Boom",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Cantor",
+                    "suffix": ""
+                },
+                {
+                    "first": "B\u00d8",
+                    "middle": [],
+                    "last": "Palsson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature Genet",
+            "volume": "38",
+            "issn": "",
+            "pages": "1406-1412",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng1906"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Identification of a nitroimidazo-oxazine-specific protein involved in PA-824 resistance in Mycobacterium tuberculosis",
+            "authors": [
+                {
+                    "first": "UH",
+                    "middle": [],
+                    "last": "Manjunatha",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Boshoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Dowd",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Norton",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Daniels",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dick",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Pang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Barry",
+                    "suffix": "3rd"
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "431-436",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0508392103"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Mutations in rsmG, encoding a 16S rRNA methyltransferase, result in low-level streptomycin resistance and antibiotic overproduction in Streptomyces coelicolor A3(2)",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nishimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hosaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tokuyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Okamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ochi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Bacteriol",
+            "volume": "189",
+            "issn": "",
+            "pages": "3876-3883",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.01776-06"
+                ]
+            }
+        }
+    }
+}

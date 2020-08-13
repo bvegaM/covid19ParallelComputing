@@ -1,0 +1,2012 @@
+{
+    "paper_id": "PMC2739203",
+    "metadata": {
+        "title": "SNAD: sequence name annotation-based designer",
+        "authors": [
+            {
+                "first": "Igor",
+                "middle": [
+                    "A"
+                ],
+                "last": "Sidorov",
+                "suffix": "",
+                "email": "i.a.sidorov@lumc.nl",
+                "affiliation": {}
+            },
+            {
+                "first": "Denis",
+                "middle": [
+                    "A"
+                ],
+                "last": "Reshetov",
+                "suffix": "",
+                "email": "reshetov@genebee.msu.ru",
+                "affiliation": {}
+            },
+            {
+                "first": "Alexander",
+                "middle": [
+                    "E"
+                ],
+                "last": "Gorbalenya",
+                "suffix": "",
+                "email": "a.e.gorbalenya@lumc.nl",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Identifiers (ID) composed of alphanumeric and other symbols are commonly used for tagging protein and nucleotide sequences and associated annotation in GenBank [1], UniProt [2], and other sources that either use these sequences or deal with molecular properties of associated biological entities (Table 1). For instance in UniProt, the primary accession number is the sole UID. In GenBank three fields, locus, accession and version, carry four different IDs, but only gi number (known also as primary ID) and accession number combined with version form unique IDs (UIDs). Each UID is assigned to a single entry. In contrast, a particular non-unique ID may be found in numerous entries. The UIDs ensure efficient computer-mediated data storage, maintenance and processing. To facilitate data mapping and transfer between different databases, in which ID inter-conversion plays important part, several specialized resources including GoMiner [3], ErmineJ [4], SOURCE [5], RESOURCERER [6]; IDconverter and IDClight [7], and DAVID [8] have been developed.",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 162,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 174,
+                    "end": 175,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 941,
+                    "end": 942,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 954,
+                    "end": 955,
+                    "mention": "4",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 966,
+                    "end": 967,
+                    "mention": "5",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 983,
+                    "end": 984,
+                    "mention": "6",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1013,
+                    "end": 1014,
+                    "mention": "7",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1028,
+                    "end": 1029,
+                    "mention": "8",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": [
+                {
+                    "start": 303,
+                    "end": 304,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Sequence IDs are used for tagging sequences also in multiple sequence alignments and sequence-based phylogenetic trees in various presentations including publications [9-12]). Notwithstanding UniProt/SwissProt [2] entry names (Table 1), these machine-readable IDs are not very informative in human communications. Consequently, sequence IDs are commonly replaced by biologically meaningful names and acronyms, e.g. species names in trees and gene/protein names in alignments. When a large-scale dataset is to be processed, manual replacement of IDs with names could be a tedious task prone to mistakes and omissions.",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 169,
+                    "mention": "9",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 211,
+                    "end": 212,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": [
+                {
+                    "start": 233,
+                    "end": 234,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "By some considerations, the ID-to-name conversion for viral sequences is both of particular relevance and of considerable complexity. First, a large body of results in virus research can be linked to underlying sequences, owing to relatively small number of known viruses and comparatively small sizes of their extensively characterized genomes. Second, the virus naming, at the species level and below, is not governed by either the binomial Latin name convention traditional for cellular organisms or another broadly accepted nomenclature [13] that complicates communication in virology. For species, naming viruses is under auspices of the International Committee of Virus Taxonomy (ICTV) [14]. At the isolate and strain level, it is left up to individuals or groups of researchers to decide how to proceed [15,16]. Researchers studying few economically most important viruses developed nomenclatures restricted for these viruses [17-22]. In contrast, each decision about naming that concerns a majority of viruses is an ad hoc and, often, lengthy process. Likewise, naming viruses with artificially designed genomes, which are not product of natural evolution [23], is formally outside of the ICTV authority and completely unregulated.",
+            "cite_spans": [
+                {
+                    "start": 542,
+                    "end": 544,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 693,
+                    "end": 695,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 811,
+                    "end": 813,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 814,
+                    "end": 816,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 934,
+                    "end": 936,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 937,
+                    "end": 939,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1165,
+                    "end": 1167,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The problem of ID-to-name conversion has been partially addressed in the NEXUS alignment format [24], which has a reserved part (block) for converting names in a predefined manner, and in the stand-alone tool Phyutility [25] that allows combining a limited number of GenBank characteristics with a custom separator to form sequence names. Here we introduce a dedicated web tool dubbed Sequence Name Annotation-based Designer (SNAD) that provides a versatile facility with user-friendly interface for automatic conversion of sequence UIDs into biologically informative names and acronyms in controllable manner using annotation associated with sequences. Several examples are provided to illustrate how SNAD can be used to generate names for practical purposes, particularly in virology.",
+            "cite_spans": [
+                {
+                    "start": 97,
+                    "end": 99,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 221,
+                    "end": 223,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "SNAD (ver. 1.6) is accessible at . SNAD code is written in Perl (BioPerl for dynamic retrieval of entries from databases, CGI for interfacing Perl code with web server, original Perl code for analysis of sequence objects retrieved from databases, and conversion of sequence annotation into complex names, part of application programming interface \u2013 API), JavaScript (graphical user interface for uploading data, designing format of name conversion and representing results), Java (part of API) and HTML for SNAD web site pages (see  where a detailed description of all SNAD options and parameters can be found). SNAD can be used as a web server with APIs in Perl and Java available on SNAD web site. SNAD recognizes input as alignment or tree with the use of BioPerl drivers (Bio::TreeIO and Bio::AlignIO). If the input is not recognized as alignment or tree, SNAD processes it as a list of identifiers separated by one or more of the following symbols: space, new line, tabulator, or comma. To map IDs on database entries, Bio::DB::(GenBank, SwissProt, EMBL or SeqHound) drivers and Bio::EnsEMBL::DBSQL::DBAdaptor are used. SNAD uses standard BioPerl functions from Bio::Seq for extracting features/annotation from the database entries (GenBank/RefSeq/GenPept, UniProt, EMBL, SeqHound) or functions from database programming interface (EnsEMBL). Detailed description of all available functions is presented in \"Introduction\" page of the web site. SNAD code is available for downloading by non-commercial users per request sent to SNAD@lumc.nl.",
+            "cite_spans": [],
+            "section": "Implementation",
+            "ref_spans": []
+        },
+        {
+            "text": "The diagram of SNAD dataflow is shown in Figure 1. The user submits sequence IDs, defines a format of conversion, and selects a database to be searched. Currently available databases include GenBank/RefSeq/GenPept, UniProt, EMBL, SeqHound and EnsEMBL (Gene and Transcripts divisions for Human sequences). SNAD extracts IDs from the input and queries the database with these IDs to locate associated annotation. After retrieving annotation, SNAD designs names according to a name template that defines name structure and annotation-based content for submitted entries. The final step of the SNAD-mediated processing is substitution of submitted IDs in the input with the designed names to return results to the user.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 48,
+                    "end": 49,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The SNAD web site has six pages including a detailed guide to SNAD with examples (\"Introduction\"), program execution page (\"Execution\"), guided access to Java and Perl APIs (\"APIs\"), frequently asked questions page (\"FAQs\"), list of the SNAD versions (\"History\"), and \"Reference\" page. SNAD execution page has three vertically arranged sections: \"Before unique ID (UID) conversion\" for uploading input, \"Names/format designer\" for choosing and refining pre-compiled name templates, and \"After UID conversion\" for accessing output (Figure 2).",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 538,
+                    "end": 539,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The input can be either copy-pasted or uploaded from a file. SNAD accepts IDs from five databases (Table 1) including GenBank (gi or accession number) and UniProt (accession number or entry name) that are automatically recognized in and extracted from the input data prepared in several formats: as part of tree ('newick' and 'nexus') and alignment ('fasta', 'msf', 'clustalw', 'nexus', 'phylip', 'mega' and 'stockholm') or supplied as a plain list (Figure 2). Examples of IDs, unique and non-unique, in alignment, tree, and plain list are available for testing purposes. SNAD may accept input with non-unique IDs, e.g. GenBank accession number or locus name, that are most popular among researchers. Since these IDs may be associated with multiple entries, SNAD must decide which entry is to be used to retrieve annotation. The adopted approach is to use the most recent entry that might be not the one the user aimed at to retrieve annotation. The user may request automatically generated ID-to-name log (see below) for checking the quality of the conversion. To ensure unequivocal ID processing the user must use UIDs in input. UIDs from one database can be used to query another non-cognate database in which it may be not recognized at all or recognized as non-unique IDs (Table 2). For instance, UIDs from UniProt (primary accession numbers) are recognized as non-unique IDs in GenBank (accession numbers) while all UIDs from GenBank (gi or accession.version) are not recognized as valid IDs in UniProt.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 457,
+                    "end": 458,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 105,
+                    "end": 106,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1284,
+                    "end": 1285,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The user has a choice of reading SNAD output either on the \"Execution\" web page, or at a separate web page in plain text mode, or receiving it via e-mail. For tree input, SNAD generates, additionally to the standard output, a respective tree drawn to facilitate visual inspection of the generated names in graphic format. The web page output can be enhanced with links to cognate entries accessible through the generated names.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There are two ways of defining format of the UID conversion: using either precompiled or user-defined name templates. The user is currently provided with several precompiled templates for name generation, which can be used \"as is\" or after refinement (see below). Each template is accompanied with examples of input to illustrate its usage. \"Entry name\" template can be useful for identifying misspelled identifiers, as well as for comparative inspection of basic information about the entries in UniProt. Two other templates (\"Gene\" and \"Species\") can be used for converting UIDs into gene and species names, respectively, as they are specified in GenBank. The \"Complex species name\" template combines full species name with primary ID (gi) that are neatly separated. The \"Complex protein name\" includes primary ID, condensed species name, protein description and CDS, and locus tag, in a size restricted manner to facilitate reading a complex name structure. These templates are suited for producing names of sequences originated from a wide range of organisms. \"Acronym\" template converts GenBank organism name annotation into acronym. Three templates were designed specifically for viruses to address specifics of this group for which the naming remains a matter of debate [15,17]. For several medically important viruses with large sampling from the natural diversity, e.g. influenza and noroviruses [18,22], names conventions were accepted by the field to include reference to serotype, host species, country of isolation, strain or isolate name, collection date and, for influenza viruses, subtype. These names are part of the GenBank entries where from they can be readily extracted. To demonstrate that similar names can be also generated on-the-fly from two components, using the isolate/strain and serotype fields in respective entries, a separate \"Influenza virus name\" template is provided. We extended this approach by designing two other virus templates, \"Complex virus name I\" and \"Complex virus name II\", that could generate names with complex structure for majority of other viruses for which no consensus on the naming has been reached. These templates combine information from up to six separate entry fields, each keeping an elementary record e.g. about date or place of virus isolation. \"Complex virus name II\" additionally includes reference to protein function. These templates could help researchers studying many viruses, e.g. coronaviruses and picornaviruses [15] communicate their sequence-based data in a name format similar to that accepted for influenza virus. SNAD-mediated solution to the generation of complex virus names reinforces the role of diverse fields in sequence entries as the primary source of information. If these fields are completed with records as expected, virus names can be readily generated under different and evolving conventions. Thus, SNAD provides a tool for exploration of different name arrangements that could facilitate the development of conventions for naming different viruses by the virology community.",
+            "cite_spans": [
+                {
+                    "start": 1278,
+                    "end": 1280,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1281,
+                    "end": 1283,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1406,
+                    "end": 1408,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1409,
+                    "end": 1411,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 2487,
+                    "end": 2489,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "SNAD users can initiate refining of any of the provided templates (by using \"Refine name template\" option) or generate de novo templates by choosing \"User defined\" template that automatically activates the refining mode. In both instances, the advanced template-building facility becomes available for the user. It empowers the user with fine control over the output name format, including the number of independently designed parts of the name, characteristic of each part, parts order, size of each part, and type of delimiter preceding each part (Figure 2). Design of each part in the name is controlled by a separate row. The name parts \u2013 from left to right \u2013 are defined by respective rows in the template-building facility from top to bottom. Rows can be moved up and down or deleted and inserted with a respective effect on the name structure and content. For retrieving sequence characteristics from database entries SNAD uses BioPerl scheme with internally controlled vocabulary of annotation [26]. Information from two or more annotation fields can also be combined in a single characteristic in a template. For instance, for virus name templates, a combination \"strain OR isolate\" may be used to form a characteristic. For name designing, the user can choose from a dropdown menu of sequence characteristics and features that were derived from available databases. These characteristics can be used separately or in combination to design a name format that can combine, for instance, unique reference to the original database with a concise biological description of the entry (see Figure 2 for an example). For characteristics which values are described with several words, first letters of these words can be combined using characteristic's \"abbreviate\" option to produce acronyms. If a selected characteristic is not available in annotation for a sequence, it is replaced in the sequence name with a symbol that the user selected from a separate drop-down menu. Due to gaps in annotation, names designed with the templates may not be complete for every entry.",
+            "cite_spans": [
+                {
+                    "start": 1003,
+                    "end": 1005,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 557,
+                    "end": 558,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1600,
+                    "end": 1601,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "SNAD has a menu that controls output display interactively. By default, output includes ID-to-name log in which selected information about generated names is detailed in table format that can be downloaded as an Excel file. This table can be useful for controlling the name generation procedure and preparing legends to accompany an alignment or a phylogenetic tree in publication. The user can also extract IDs from submitted alignment or tree by activating \"names only\" option, or retrieve annotation from cognate entries in table format. In the current implementation of SNAD, the most time-consuming stage is data retrieval from databases. For large queries and complex name formats, also using API, it is therefore advisable to start with less than 10 sequences to design a format to be used for the full query. Queries containing up to 500 IDs and including sequence alignments up to 50000 characters can be processed through SNAD web page. For queries containing more than 500 IDs, the user is advised to use one of the SNAD APIs.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The availability of description for characteristics in a particular set of entries from databases is a major factor determining how well names designed with SNAD match expectation. The amount and accuracy of annotation in sequence databases vary markedly between entries that has been a major concern for the bioinformatics community continuously working toward improving this critical aspect of sequence databases [7,8,27]. Involving other researchers in this effort, especially those who submit original sequence annotation in the first place, could accelerate the process. We hope that through using SNAD service, researchers could see immediate benefits from better annotation for their research that may create impetus for contributing quality annotation to public databases. To improve the user experience with SNAD, we plan to expand the diversity of databases and templates upon future upgrades of SNAD. Any template that the users designed and considered useful could be included in the future SNAD releases.",
+            "cite_spans": [
+                {
+                    "start": 416,
+                    "end": 417,
+                    "mention": "7",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 418,
+                    "end": 419,
+                    "mention": "8",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 420,
+                    "end": 422,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A tool for controllable annotation-based conversion of sequence UIDs into biologically meaningful names and acronyms has been developed and placed into service, fostering links between quality of sequence annotation, and efficiency of communication and knowledge dissemination among researchers.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Project name: SNAD, Sequence Name Annotation-based Designer. Project home page: . Operating system(s): web service, platform independent. Programming languages: Java, JavaScript, Perl, HTML. Restrictions to use SNAD web site by non-academics: none.",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "AEG conceived SNAD; IAS, DAR, and AEG developed SNAD design and performed testing; DAR and IAS carried out programming; IAS and AEG wrote the manuscript. All authors read and approved the final version of the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Unique and non-unique identifiers in databases used by SNAD\n1) 2)  3) [28] 4)  5)  6) [29] 7)  8) Gene and Transcript part of EnsEMBL,  9) Some replaced or removed records in GenBank have no accession number but they can be retrieved from GenBank with the primary ID.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Cross-database recognition of UIDs in databases by SNAD*\n*With the use of standard BioPerl drivers for GenBank, UniProt, EMBL and SeqHound  and API drivers from EnsEMBL web site , UIDs from source DB can be used for searching in target DB. In some target DBs they are recognized as UID, in others as non-unique IDs (NUID) or not recognized as identifiers (NR). Although same five DBs make the source and target DB lists, the table is not symmetrical. **, only gi's from GenBank are recognized as UID in SeqHound.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: SNAD dataflow. User submits sequence UIDs and defines a format of conversion by choosing a template. SNAD analyzes the input, extracts UIDs from it and queries a user-defined database to locate cognate entries. The next step is extracting annotation from the entries and parsing the user-selected template to generate separate parts. They are mapped onto annotation to produce name parts, which are combined into names according to the template. Finally, SNAD substitutes the submitted UIDs in list, alignment, or tree with the designed names and returns results to the user.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Unique IDs conversion with SNAD. Nine IDs from GenBank (section \"Before UID conversion\") are converted using a pre-compiled four-characteristic template \"Complex protein name\" that includes the following GenBank characteristics: \"Primary ID\" (gi number); organism name formatted as \"G [enus].species\"; protein product and gene locus tag. Three delimiters are used: space, \" [\" and \"]\", and none of characteristics is abbreviated. First three characteristics have their size limited to: 9, 6, and 17 symbols, respectively. Results of the conversion are shown in \"After UID conversion\" section. Each arrow links a delimiter to a part of converted names. {...} indicates that more than one organism name characteristic is found for a submitted ID (see [GenBank/Protein: 126224], features source/organism).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "GenBank",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Karsch-Mizrachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucl Acids Res",
+            "volume": "36",
+            "issn": "",
+            "pages": "D25-D30",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkm929"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Phylogeny of the genus Arenavirus",
+            "authors": [
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Charrel",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "de Lamballerie",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Emonet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Current Opinion in Microbiology",
+            "volume": "11",
+            "issn": "",
+            "pages": "362-368",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mib.2008.06.001"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "A highly prevalent and genetically diversified Picornaviridae genus in South Asian children",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Victoria",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Slikas",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Chieochansin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Naeem",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shaukat",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sharif",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Alam",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Angez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proceedings of National Academy of Sciences",
+            "volume": "105",
+            "issn": "",
+            "pages": "20482-20487",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0807979105"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "A comparative sequence analysis to revise the current taxonomy of the family Coronaviridae",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gomez-Puertas",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Gorbalenya",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Enjuanes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Archives of Virology",
+            "volume": "148",
+            "issn": "",
+            "pages": "2207-2235",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-003-0162-1"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Virus nomenclature: consensus versus chaos",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "van Regenmortel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fauquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maniloff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Archives of Virology",
+            "volume": "145",
+            "issn": "",
+            "pages": "2227-2232",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s007050070053"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fauquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maniloff",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Desselberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virus Taxonomy, Eighth report of the International Committee on Taxonomy of Viruses",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "A nomenclature for avian coronavirus isolates and the question of species status",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Avian Pathology",
+            "volume": "30",
+            "issn": "",
+            "pages": "109-115",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/03079450120044506"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Transmission Networks and Population Turnover of Echovirus 30",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Leitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bendig",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cabrerizo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cardosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hyypia",
+                    "suffix": ""
+                },
+                {
+                    "first": "OE",
+                    "middle": [],
+                    "last": "Ivanova",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Kroes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lukashev",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "MacAdam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Virol",
+            "volume": "83",
+            "issn": "",
+            "pages": "2109-2118",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.02109-08"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Taxonomy of the Caliciviruses",
+            "authors": [
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ando",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Balayan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Berke",
+                    "suffix": ""
+                },
+                {
+                    "first": "IN",
+                    "middle": [],
+                    "last": "Clarke",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Estes",
+                    "suffix": ""
+                },
+                {
+                    "first": "DO",
+                    "middle": [],
+                    "last": "Matson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nakata",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Neill",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Studdert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "The Journal of Infectious Diseases",
+            "volume": "181",
+            "issn": "",
+            "pages": "S322-S330",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/315591"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Family Orthomyxoviridae",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Haller",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Hongo",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kaverin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H-D",
+                    "middle": [],
+                    "last": "Klenk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lamb",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McCauley",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Palese",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rimstad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virus Taxonomy, Eighth report of the International Committee on Taxonomy of Viruses",
+            "volume": "",
+            "issn": "",
+            "pages": "681-693",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Geminivirus strain demarcation and nomenclature",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fauquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Briddo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Moriones",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zerbini",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Archives of Virology",
+            "volume": "153",
+            "issn": "",
+            "pages": "783-821",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-008-0037-6"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "UniProt: the Universal Protein knowledgebase",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Barker",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Boeckmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ferro",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gasteiger",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Magrane",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucl Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "D115-D119",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh131"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "DengueInfo: A web portal to dengue information resources",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Ong",
+                    "suffix": ""
+                },
+                {
+                    "first": "RCG",
+                    "middle": [],
+                    "last": "Holland",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Hibberd",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Infection, Genetics and Evolution",
+            "volume": "7",
+            "issn": "",
+            "pages": "540-541",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.meegid.2007.02.002"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Consensus proposals for a unified system of nomenclature of hepatitis C virus genotypes",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bukh",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Combet",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Deleage",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Enomoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Feinstone",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Halfon",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Inchauspe",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kuiken",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Maertens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Hepatology",
+            "volume": "42",
+            "issn": "",
+            "pages": "962-973",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/hep.20819"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Norovirus classification and proposed strain nomenclature",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ando",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Fankhauser",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Beard",
+                    "suffix": ""
+                },
+                {
+                    "first": "RI",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Monroe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virology",
+            "volume": "346",
+            "issn": "",
+            "pages": "312-323",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.virol.2005.11.015"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Virus Attenuation by Genome-Scale Changes in Codon Pair Bias",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Coleman",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Papamichail",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Skiena",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Futcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mueller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "320",
+            "issn": "",
+            "pages": "1784-1787",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1155761"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "NEXUS: an extensible file format for systematic information",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maddison",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Swofford",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Maddison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Systematic Biology",
+            "volume": "46",
+            "issn": "",
+            "pages": "590-621",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Phyutility: a phyloinformatics tool for trees, alignments and molecular data",
+            "authors": [
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "",
+            "pages": "715-716",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btm619"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "The Bioperl Toolkit: Perl Modules for the Life Sciences",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Stajich",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Block",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Boulez",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Brenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Chervitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dagdigian",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Fuellen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JGR",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Korf",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lapp",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "1611-1618",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.361602"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "The Gene Ontology Annotation (GOA) Project\u2013Application of GO in SWISS-PROT, TrEMBL and InterPro",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Camon",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Barrel",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Brooksbank",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Magrane",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Comarative and Functional Genomics",
+            "volume": "4",
+            "issn": "",
+            "pages": "71-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/cfg.235"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "The EMBL Nucleotide Sequence Database: major new developments",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stoesser",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [
+                        "van",
+                        "den"
+                    ],
+                    "last": "Broek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Garcia-Pastor",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kanz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kulikova",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Leinonen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lombard",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucl Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "17-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg021"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "SeqHound: biological sequence and structure database as a platform for bioinformatics research",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Michalikova",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Bader",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dumontier",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lieu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Betel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Isserlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "CWV",
+                    "middle": [],
+                    "last": "Hogue",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "BMC Bioinformatics",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-3-32"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "GoMiner: a resource for biological interpretation of genomic and proteomic data",
+            "authors": [
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Zeeberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Fojo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sunshine",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Narasimhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Kane",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Reinhold",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lababidi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genome Biology",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/gb-2003-4-4-r28"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "ErmineJ: Tool for functional analysis of gene expression data sets",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Braynen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Keshav",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pavlidis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Bioinformatics",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-6-269"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "SOURCE: a unified genomic resource of functional annotations, ontologies, and gene expression data",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Diehn",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Sherlock",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Binkley",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Matese",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hernandez-Boussard",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Rees",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Cherry",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Botstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "PO",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucl Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "219-223",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg014"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "RESOURCERER: a database for annotating and linking microarray resources within and across species",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tsai",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sultana",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pertea",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karamycheva",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Antonescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Parvizi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Quackenbush",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Biology",
+            "volume": "2",
+            "issn": "",
+            "pages": "1-4",
+            "other_ids": {
+                "DOI": [
+                    "10.1186/gb-2001-2-11-software0002"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "IDconverter and IDClight: Conversion and annotation of gene and protein IDs",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Alibes",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Yankilevich",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Canada",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "az-Uriarte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": "9-17",
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-8-9"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "DAVID Knowledgebase: a gene-centered database integrating heterogeneous gene annotation resources to facilitate high-throughput gene functional analysis",
+            "authors": [
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bour",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Stephens",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Baseler",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Lane",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lempicki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": "426-436",
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-8-426"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "A non-canonical lon proteinase lacking the ATPase domain employs the ser-Lys catalytic dyad to exercise broad control over the life cycle of a double-stranded RNA virus",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Birghan",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Mundt",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Gorbalenya",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "EMBO Journal",
+            "volume": "19",
+            "issn": "",
+            "pages": "114-123",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/emboj/19.1.114"
+                ]
+            }
+        }
+    }
+}

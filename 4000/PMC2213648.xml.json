@@ -1,0 +1,2458 @@
+{
+    "paper_id": "PMC2213648",
+    "metadata": {
+        "title": "Predictability and epidemic pathways in global outbreaks of infectious diseases: the SARS case study",
+        "authors": [
+            {
+                "first": "Vittoria",
+                "middle": [],
+                "last": "Colizza",
+                "suffix": "",
+                "email": "vcolizza@isi.it",
+                "affiliation": {}
+            },
+            {
+                "first": "Alain",
+                "middle": [],
+                "last": "Barrat",
+                "suffix": "",
+                "email": "alain.barrat@th.u-psud.fr",
+                "affiliation": {}
+            },
+            {
+                "first": "Marc",
+                "middle": [],
+                "last": "Barth\u00e9lemy",
+                "suffix": "",
+                "email": "marc.barthelemy@gmail.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Alessandro",
+                "middle": [],
+                "last": "Vespignani",
+                "suffix": "",
+                "email": "alexv@indiana.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The outbreak of severe acute respiratory syndrome (SARS) in 2002\u20132003 represented a serious public health threat to the international community. Its rapid spread to regions far away from the initial outbreak created great concern for the potential ability of the virus to affect a large number of countries and required a coordinated effort aimed at its containment [1]. Most importantly, it clearly pointed out that people's mobility and traveling along commercial airline routes is the major channel for emerging disease propagation at the global scale. Spatio-temporal structures of human movements thus need to be considered for a global analysis of epidemic outbreaks [2], as for example in [3], which incorporates the airline network structure of the largest 500 airports of the world.",
+            "cite_spans": [
+                {
+                    "start": 367,
+                    "end": 368,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 674,
+                    "end": 675,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 697,
+                    "end": 698,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In this article, we present a stochastic meta-population epidemic model, based on the extension of the deterministic modeling approach to global epidemic diffusion [4,5], for the study of the worldwide spread of emerging diseases that includes the complete International Air Transport Association (IATA) commercial airline traffic database associated with urban areas census information [6,7]. Once the disease parameters are determined, no free adjustable parameters are left in the model. A toolkit of specific indicators that consider the stochastic nature of the process is introduced to provide risk analysis scenarios and to assess the reliability of epidemic forecasts. In particular, the predictive power of the model is linked to the emergence of epidemic propagation pathways related to the complex properties of the transportation network. The SARS epidemic is used as a case study to assess the model effectiveness and accuracy against real data. The model considers disease parameters estimated from the Hong Kong outbreak in a way consistent with the global nature of the meta-population model by including the impact of infectious individuals traveling in and out of the city. The temporal and geographic pattern of the disease is analyzed, and the proposed toolkit of epidemic indicators is tested against empirical data.",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 166,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 167,
+                    "end": 168,
+                    "mention": "5",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 388,
+                    "end": 389,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 390,
+                    "end": 391,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The likelihood to experience an outbreak can be provided by analyzing different stochastic occurrences of the epidemic with the same initial conditions, and by evaluating the probability that the infection will reach a given country. In the following we will consider statistics over 103 different realizations of the stochastic noise, and define the probability of outbreak in each country as the fraction of realizations that produced a positive number of cases within the country. This allows for the identification of areas at risk of infection, with a corresponding quantitative measure expressed by the outbreak probability. A more quantitative analysis is obtained by inspecting the predicted cumulative number of cases for each country, conditional to the occurrence of an outbreak in the country. The outbreak likelihood and magnitude analysis can be broken down at the level of single urban areas. In the following section we present an example of the results available at this resolution scale.",
+            "cite_spans": [],
+            "section": "Outbreak likelihood and magnitude ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The very high potential value of forecasting tools, in a planning perspective against emerging infectious diseases, points to the necessity of assessing the accuracy of such epidemic forecasts with respect to the various stochastic elements present in the process. Indeed, the present computational approach provides meaningful predictions only if all stochastic realizations of the epidemic, with the same initial conditions and parameters, are somehow similar in intensity, locations and time evolution. The airline network structure explicitly incorporated into the model is composed by more than 17 000 different connections among 3 100 cities. Such a large number of connections produce a huge amount of possible different paths available for the infection to spread throughout the world. This in principle could easily result in a set of simulated epidemic outbreaks that are very different one from the other \u2013 though starting from the same initial conditions \u2013 thus leading to a poor predictive power for the computational model. By contrast, while the airline network topology tends to lower the predictability of the disease evolution, the heterogeneity of the passenger volume on the various connections defines specific diffusion channels on the high traffic routes. Ultimately, the degree of predictability is determined by the competing effects of connectivity and traffic heterogeneities [6,7] once the initial starting conditions and parameters of the disease are fixed [13]. In order to measure quantitatively the stochastic variability in the computational model of a specific disease we follow [6,7] and consider an overlap function \u0398(t), which describes the similarity of two different outbreak realizations starting from the same initial conditions. The overlap function measures the similarity of two different realizations of the epidemic outbreak by comparing the evolution in time of the number of active individuals Aj(t) in each urban area j, defined as those individuals carrying the infection. Each outbreak starting from the same initial conditions is characterized by a vector \u03c0\u2192(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaacciGaf8hWdaNbaSaacqGGOaakcqWG0baDcqGGPaqkaaa@30CC@ whose j-th component represents the probability that an active individual is in city j at time t, \u03c0j(t) = Aj(t)/\u2211lAl. Following [6,7], we compute the statistical similarity between two different realizations characterized by the vectors \u03c0\u2192I(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaacciGaf8hWdaNbaSaadaahaaWcbeqaaiabdMeajbaakiabcIcaOiabdsha0jabcMcaPaaa@321E@ and \u03c0\u2192II(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaacciGaf8hWdaNbaSaadaahaaWcbeqaaiabdMeajjabdMeajbaakiabcIcaOiabdsha0jabcMcaPaaa@3339@, respectively, by considering the Hellinger affinity defined as sim(\u03c0\u2192I,\u03c0\u2192II)=\u2211j\u03c0jI\u03c0jII\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaGaem4CamNaemyAaKMaemyBa0MaeiikaGccciGaf8hWdaNbaSaadaahaeWcbeqaaiabdMeajbaakiabcYcaSiqb=b8aWzaalaWaaWbabSqabeaacqWGjbqscqWGjbqsaaGccqGGPaqkcqGH9aqpdaaeqaqaamaakaaabaGae8hWda3aa0baaSqaaiabdQgaQbqaaiabdMeajbaakiab=b8aWnaaDaaaleaacqWGQbGAaeaacqWGjbqscqWGjbqsaaaabeaaaeaacqWGQbGAaeqaniabggHiLdaaaa@481D@. This normalized measure is invariant under a rescaling of the vectors \u03c0\u2192I(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaacciGaf8hWdaNbaSaadaahaaWcbeqaaiabdMeajbaakiabcIcaOiabdsha0jabcMcaPaaa@321E@ and \u03c0\u2192II(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaacciGaf8hWdaNbaSaadaahaaWcbeqaaiabdMeajjabdMeajbaakiabcIcaOiabdsha0jabcMcaPaaa@3339@ by a constant factor. Therefore, we introduce also the similarity between the worldwide epidemic prevalence obtained in the two realizations: sim(a\u2192I,a\u2192II)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaGaem4CamNaemyAaKMaemyBa0MaeiikaGIafmyyaeMbaSaadaahaeWcbeqaaiabdMeajbaakiabcYcaSiqbdggaHzaalaWaaWbabSqabeaacqWGjbqscqWGjbqsaaGccqGGPaqkaaa@390D@, where a\u2192I(II)=(aI(II),1\u2212aI(II))\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xH8viVGI8Gi=hEeeu0xXdbba9frFj0xb9qqpG0dXdb9aspeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaGafmyyaeMbaSaadaahaaWcbeqaaiabdMeajjabcIcaOiabdMeajjabdMeajjabcMcaPaaakiabg2da9iabcIcaOiabdggaHnaaCaaaleqabaGaemysaKKaeiikaGIaemysaKKaemysaKKaeiykaKcaaOGaeiilaWIaeGymaeJaeyOeI0Iaemyyae2aaWbaaSqabeaacqWGjbqscqGGOaakcqWGjbqscqWGjbqscqGGPaqkaaGccqGGPaqkaaa@44E9@ and a(t) = \u2211jAj/\u2135, with \u2135 = \u2211jNj being the world population. The overlap function \u0398(t) is thus defined as:",
+            "cite_spans": [
+                {
+                    "start": 1404,
+                    "end": 1405,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1406,
+                    "end": 1407,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1487,
+                    "end": 1489,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1614,
+                    "end": 1615,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1616,
+                    "end": 1617,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 2534,
+                    "end": 2535,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 2536,
+                    "end": 2537,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Predictability and epidemic pathways ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u0398(t)=sim(a\u2192I(t),a\u2192II(t))\u22c5sim(\u03c0\u2192I(t),\u03c0\u2192II(t)).\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacPC6xNi=xI8qiVKYPFjYdHaVhbbf9v8qqaqFr0xc9vqFj0dXdbba91qpepeI8k8fiI+fsY=rqGqVepae9pg0db9vqaiVgFr0xfr=xfr=xc9adbaqaaeGacaGaaiaabeqaaeqabiWaaaGcbaGaeuiMdeLaeiikaGIaemiDaqNaeiykaKIaeyypa0Jaem4CamNaemyAaKMaemyBa02aaeWaaeaacuWGHbqygaWcamaaCaaaleqabaGaemysaKeaaOGaeiikaGIaemiDaqNaeiykaKIaeiilaWIafmyyaeMbaSaadaahaaWcbeqaaiabdMeajjabdMeajbaakiabcIcaOiabdsha0jabcMcaPaGaayjkaiaawMcaaiabgwSixlabdohaZjabdMgaPjabd2gaTnaabmaabaacciGaf8hWdaNbaSaadaahaaWcbeqaaiabdMeajbaakiabcIcaOiabdsha0jabcMcaPiabcYcaSiqb=b8aWzaalaWaaWbaaSqabeaacqWGjbqscqWGjbqsaaGccqGGOaakcqWG0baDcqGGPaqkaiaawIcacaGLPaaacqGGUaGlaaa@5C7F@",
+            "cite_spans": [],
+            "section": "Predictability and epidemic pathways ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The overlap \u0398(t) assumes values between 0 and 1, being equal to 0 if at time t the two epidemic patterns do not share any common infected city, and equal to 1 if at time t the two realizations are identical. The more an outbreak is predictable, the more likely the two realizations will be similar, leading to a high value of the overlap function. In view of the strong fluctuations inherent to the infection process and the movement of individuals, the presence of an appreciable overlap can be possible only in the presence of a robust mechanism driving the disease propagation and leading to the emergence of epidemic pathways, i.e. preferential channels along which the epidemic will more likely spread [6,7]. These pathways on their turn may find their origin in the large heterogeneities encountered in the traffic volume \u2013 ranging from a few passengers to 106 passengers per year \u2013 associated with the air travel connections. In order to pinpoint the presence of epidemic pathways, starting from identical initial conditions, one can simulate different outbreaks subject to different realizations of the stochastic noise and obtain the time evolution of the epidemic in each urban area as described in the main text. During the simulations, one observes the propagation of the virus from one country to the other by means of the air travel and thus monitors the path followed by the infection at the country level. At each outbreak realization, it is possible to identify for each country Ci the country Cj origin of the infection and construct the graph of virus propagation; namely, if a latent or an infectious individuals travels from Cj to Ci and causes an outbreak in the country Ci \u2013 not yet infected \u2013 a directed link from Cj to Ci is created with weight equal to 1. Once the origin of infection for Ci has been identified, the following multiple introductions in Ci are not considered as we are only interested in the path followed by the disease in infecting a geographical region not yet infected. After a statistically significant number of realizations, a directed weighted network is obtained in which the direction of a link indicates the direction of the virus diffusion and the weight represents the number of times this flow has been observed out of n realizations. For each country Ci we renormalize to 1 the sum of the weights on all incoming links, in order to define the probability of infection on each flow. The network of epidemic pathways is then pruned by deleting all directed links having an occurrence probability less than a given threshold, in order to clearly identify the major pathways along which the epidemic will spread. This information identifies for each country the possible origins of infection and provides a quantitative estimation of the probability of receiving the infection from each identified origin. It is therefore information of crucial importance for the development and assessment of preparation plans of single countries. Travel advisories or limitations and medical screenings at the ports of entry \u2013 such as those put in place during SARS epidemic \u2013 might well strongly benefit from the analysis and identification of such epidemic pathways.",
+            "cite_spans": [
+                {
+                    "start": 708,
+                    "end": 709,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 710,
+                    "end": 711,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Predictability and epidemic pathways ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In Figure 2 we represent on a map the countries that are more likely to be infected with a color code, ranging from gray, signaling low outbreak probability, to red for a high probability of experiencing an outbreak. It represents a quantitative indication of the risk to which each country would be exposed in presence of a SARS-like infectious disease in which the same containment measures are implemented. It therefore provides a starting point for the development of appropriate intervention scenarios aimed at reducing that risk. The map readily identifies geographical areas with an appreciable likelihood for an outbreak. In particular, many countries of South-East Asia display a large probability of outbreak, as could be expected from their vicinity from the initial seed. The fact that Western Europe and North America also suffer outbreaks in most realizations illustrates the role of large air traffic in the propagation events. Figure 3 maps the outbreak likelihood at a higher resolution scale, i.e. at the level of urban areas, showing the expected situation in Canada. It is worth noting that despite the large number of airports in the country, only very few areas display a significant probability of outbreak, the two largest values corresponding to the actual outbreaks experienced in Toronto and Vancouver.",
+            "cite_spans": [],
+            "section": "Outbreak likelihood ::: Results",
+            "ref_spans": [
+                {
+                    "start": 10,
+                    "end": 11,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 950,
+                    "end": 951,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To proceed further in the comparison with empirical data, we group countries in two categories according to a risk threshold in the outbreak occurrence probability. The no-risk countries are those where the probability of outbreak is lower than the risk threshold. In any other situation the country is defined at risk. In the following we set a risk threshold of 20%. Small variations of the risk threshold do not alter substantially the obtained results. In particular we show in Additional file 1 the results for the case of a 10%, and 30% risk threshold. The results do not differ considerably from those reported for the 20% risk threshold. Obviously, progressively larger values of the risk threshold leads to less significant results, and a risk threshold of 40\u201350% is not providing valuable information as defining a not at risk a country with a 45% outbreak probability would be quite unreasonable. In Figure 4 we represent the comparison between data reported by WHO on 11 July and the results obtained from the numerical simulations for the same date and the 20% risk threshold. The report for 11 July, cross-checked with the WHO final summary obtained after laboratory tests, was of 28 infected countries, spread on different continents [35]. Figure 4 shows in red the agreement of our results with the empirical data, with full color for countries that our simulations declare at risk and are found to be infected according to the WHO report (correct prediction of outbreak), and striped pattern for countries that are not infected according to official reports and which we classify as no-risk countries. Countries that belong to a class that is not in agreement with the data are represented in green. The map shows a very good agreement of forecasts with official updates: the simulations capture the worldwide spread of SARS by recovering with high success rate countries that either were infected or remained uninfected. Out of a total number of 220 countries in the world, simulations are able to predict correctly 23 of the 28 infected countries by 11 July. Five countries are not classified at risk in the simulations while they reported probable cases \u2013 Mongolia, Sweden, Kuwait, Ireland, Romania \u2013 and 10 countries are considered at risk while no official update ever reported any case (Table 2). In other words, the model provides a correct classification for 205 out of 220 countries. Additional analysis shows that the agreement of our forecasts with empirical data extends over the whole duration of SARS outbreak, with a maximal error of about 7% only (wrong classification for 15 countries out of 220).",
+            "cite_spans": [
+                {
+                    "start": 1250,
+                    "end": 1252,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Outbreak likelihood ::: Results",
+            "ref_spans": [
+                {
+                    "start": 918,
+                    "end": 919,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1262,
+                    "end": 1263,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2316,
+                    "end": 2317,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "A more quantitative analysis is obtained by comparing the predicted cumulative number of cases for each country, conditional to the occurrence of an outbreak in the country, with the corresponding empirical data [35]. The forecasts on the cumulative number of cases are reported in Figure 5 with a box plot representing median, quartiles and 90% CI and compared to the empirical data (red symbols). All countries listed in the last WHO report are shown for analysis, regardless of their predicted probability of outbreak. Even for the five countries not classified at risk it is indeed possible to test simulations against empirical data by considering the cumulative number of cases conditional to the presence of an outbreak. Panel (A) shows the countries for which the empirical data lie inside the fluctuations associated with the model forecasts. For 22 countries, out of the 28 of the final report, the model is able to provide results where the actual number of cases falls within the error bars of the statistical predictions. The best agreement is obtained for Hong Kong, as expected, as the initial conditions were fitted to Hong Kong data. It is worth to note that all five countries wrongly predicted as no-risk show statistics conditional to the outbreak in agreement with empirical data (see inset of panel (A)). Panels (B) and (C) correspond to the predictions for which the observed data lie outside the range of fluctuations of the model. Five countries fall in this category, two of which \u2013 Thailand and Republic of Korea \u2013 report fluctuations very close to the empirical data. While at first sight the error bars associated to the model predictions might appear large and the results of panels (B) and (C) of Figure 5 for large outbreaks quite far from the real occurrence, it is worth stressing that the predicted numbers of cases are strikingly in the correct ballpark if we consider that we are dealing with a few hundred cases over the total country population, typically of the order of several millions. Finally, Table 2 reports data for the 10 countries predicted at risk by simulations but where no infection from SARS was reported. Japan represents an outlier: a large number of cases is predicted by the numerical simulations (the median being 83). Remarkably however, the predicted number of cases remains small (median at most equal to six cases) in the other nine countries. Forecasts reported in Figures 2, 3, 4, 5 and Table 2, though with some deviations from empirical data, provide quantitative evidence in agreement with previous findings [3] that air travel represents a crucial ingredient for describing SARS propagation on a global scale. In the Additional file 1 we report the outbreak magnitude in the case of no delay and 2 weeks delay in the reduction of the transmission rate since the detection of the first case in each country. It is possible to observe that for increasing delays the simulations results increase their accuracy for countries experiencing large outbreaks such as Canada and Singapore. The results thus show that the delay has an impact in determining the extent of the outbreak in certain countries. It is therefore important to stress that it is very likely different delays have to be considered in each country depending on the local health infrastructure.",
+            "cite_spans": [
+                {
+                    "start": 213,
+                    "end": 215,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 2577,
+                    "end": 2578,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Outbreak magnitude ::: Results",
+            "ref_spans": [
+                {
+                    "start": 289,
+                    "end": 290,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1735,
+                    "end": 1736,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 2437,
+                    "end": 2438,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 2440,
+                    "end": 2441,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 2443,
+                    "end": 2444,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2446,
+                    "end": 2447,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 2044,
+                    "end": 2045,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 2458,
+                    "end": 2459,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "In order to test the predictability inherent to the model in the case of the SARS case study, Figure 6 shows the overlap as defined in the Methods section as a function of time. The average value is displayed together with the 95% confidence interval. The overlap starts from a value equal to 1, as all stochastic realizations share the same initial conditions, and decreases monotonically with time. However, \u0398(t) assumes values larger than 0.8 in the time window investigated, confirming the relatively strong computational reproducibility of the synthetic SARS outbreak. The simulated disease seems indeed to follow a very similar evolution at each realization of the process. As discussed in the previous section, the origin of such reproducibility lies in the emergence of epidemic pathways, i.e. preferential channels along which the epidemic will more likely spread [6,7]. In order to identify these pathways, we monitor the spreading path followed by the virus in 103 outbreaks starting from the same initial conditions. More precisely, starting from Hong Kong, we follow the propagation of the virus and identify for each infected country Ci the country Cj where the infection came from, thus defining a probability of origin of infection for each country. Results are reported in Figure 7 where the epidemic pathways are represented by arrows whose thickness accounts for the probability of infection. Almost every country in which at least one case was detected in our simulations received the infection most likely directly from Hong Kong, with probabilities ranging from 32% for Italy, to 99% for Taiwan. Spain is the only exception as it belongs to a second level of infection from the seed and is predicted to receive the infection from other European countries (see the bottom left panel of Figure 7). While this is not a completely surprising results in the case of an airport hub such Hong Kong, it is worth noting that results in Figure 7 do not represent the distribution of infecting paths going out of a given country but rather the probability associated to infecting paths entering in a given country. In the case of a different starting infected city, epidemic pathways can be highly nontrivial and therefore informative in the deployment of monitoring and control resources.",
+            "cite_spans": [
+                {
+                    "start": 874,
+                    "end": 875,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 876,
+                    "end": 877,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Overlap and epidemic pathways ::: Results",
+            "ref_spans": [
+                {
+                    "start": 101,
+                    "end": 102,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1297,
+                    "end": 1298,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1814,
+                    "end": 1815,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1956,
+                    "end": 1957,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "While the results shown in Figures 2, 3, 4, 5 indicate that computational models can attain a predictive power, the present case study for the SARS epidemic is still subject to approximations and assumptions and very accurate predictions need the introduction of much more detail into the computational scheme. Taiwan is the prominent example in which the quantitative magnitude of the outbreak is not well predicted. Indeed, the model still lacks many features that are likely responsible for the deviations of simulation results from the official reports. Population heterogeneity in terms of travel frequency, obviously related to wealth distribution, is not considered. Specific features relative to single countries (such as health care systems, specific control strategies, travel screening etc.) are not taken into account by our stochastic model. We also do not consider variations in the virus transmissibility among infected individuals in each compartment. Similarly, we account only in an effective way for the occurrence of superspreading events and outbreak diversity in the initial stage of SARS transmission [33,34,36]. By contrast, the model readily allows the integration of the heterogeneity shown by SARS in the way it affected different countries and which represented a very peculiar feature of the virus. Finally, the inclusion of other transportation systems is likely to have an impact in contiguous geographical regions.",
+            "cite_spans": [
+                {
+                    "start": 1125,
+                    "end": 1127,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1128,
+                    "end": 1130,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1131,
+                    "end": 1133,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 35,
+                    "end": 36,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 38,
+                    "end": 39,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 41,
+                    "end": 42,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 44,
+                    "end": 45,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "It is worth also noting, however, that the countries for which forecasts underestimate the empirical data showed some peculiarities in the evolution of the SARS spread. Taiwan for instance experienced an anomalous outbreak explosion after a temporary failure in the infection containment procedures in a single hospital [37]. Moreover, it ought to be considered that the situation in mainland China is not trivially reproducible, due to the lack of available information on the actual initial conditions of the spread. Results for China are therefore not reported in the charts of Figure 5, as numerical simulations seeded in Hong Kong are likely not able to describe the outbreak occurred in that country. This fact is expected to have an impact especially in South-East Asian countries \u2013 such as Taiwan, Singapore and Vietnam \u2013 that have airline connections with large traffic towards China.",
+            "cite_spans": [
+                {
+                    "start": 321,
+                    "end": 323,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 588,
+                    "end": 589,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The computational approach presented here is the largest scale epidemic model at the worldwide level. Its good agreement with historical data of the SARS epidemic suggests that the transportation and census data used here are the basic ingredients for the forecast and analysis of emerging disease spreading at the global level. A more detailed version of the model including the interplay of different transportation systems, information about the specific conditions experienced by each country and a refined compartmentalization to include variations in the susceptibility and heterogeneity in the infectiousness would clearly represent a further improvement in the a posteriori analysis of epidemic outbreaks. In the case of a new emergent global epidemic the computational approach could be useful in drawing possible scenarios for the epidemic evolution. Though the initial conditions and the disease parameters will be unknown before the disease has already spread to a few countries, the computational approach would however allow in a short time the exploration of a wide range of values for the basic parameters and initial conditions, providing extensive data on the worst and best case scenarios as well as likelihood intervals, to the benefit of decision makers. In general, the encouraging results achieved with the present level of details introduced in the modeling schemes suggests that large scale computational approaches can be a useful predictive tool to assess risk management and preparedness plans for future emerging diseases and in understanding space-time variations of outbreak occurrences.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "All authors conceived the study, collected data and performed experiments for the study, analyzed results and contributed to writing the paper. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "The pre-publication history for this paper can be accessed here:",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Parameter values\nBaseline values for all epidemiological parameters and initial conditions. Parameters marked with an asterisk (*) are estimated by our model through the fitting procedure described in the main text. The three successive decreasing values for the \u03bc-1model are the prompter, identification and subsequent isolation of infectious individuals [11]. A step function is also assumed for the scaling factor sf(t) of the transmission parameter \u03b2, with values taken from the estimates of the effective reproductive number Rt with respect to R0 during the early stage of SARS epidemic in Hong Kong [9]. This corresponds to the effective reduction of the reproductive number due to the application of control measures [9].",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Forecasted number of cases for the countries with an incorrect prediction of outbreak\nList of countries that were not infected according to WHO official reports but are predicted as at risk by numerical simulations. Median and 90% CI are reported; results correspond to 11 July 2003.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Flow diagram of the transmission model. The population of each city is classified into seven different compartments, namely susceptible (S), latent (L), infectious (I), hospitalized who either recover (HR) or die (HD), dead (D) and recovered (R) individuals. We assume that hospitalized as well as infectious individuals are able to transmit the infection, given the large percentage of the cases among health care workers [37-39]. The actual efficiency of hospital isolation procedures is modeled through a reduction of the transmission rate \u03b2 by a factor r\u03b2 for hospitalized patients, with r\u03b2 = 20% as estimated for the early stage of the epidemic in Hong Kong [9]. The infectiousness of patients in the compartments HR and HD are assumed to be equal (although this assumption can easily be changed in the model). Susceptible individuals exposed to SARS enter the latent class. Latents represent infected who are not yet contagious and are assumed to be asymptomatic, as suggested by results based on epidemiologic, clinical and diagnostic data in Canada [40]. They become infectious after an average time \u03b5-1 (mean latency period). The individual is classified as infectious during an average time equal to \u03bc-1 from the onset of clinical symptoms to his admission to the hospital where he eventually dies or recovers. Patients admitted to the hospital are not allowed to travel. The average periods spent in the hospital from admission to death or recovery are equal to \u03bcD-1 and \u03bcR-1, respectively. The average death rate is denoted by d.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Worldwide map representation of the outbreak likelihood as predicted by the stochastic model. Countries are represented according to the color code, ranging from gray for low outbreak probability to red for high outbreak probability.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Map representation of the outbreak likelihood within Canada at the urban area resolution scale. Urban areas are represented according to the color code, ranging from gray for low outbreak probability to red for high outbreak probability. Airports within Canada are also shown.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Map representation of the comparison between numerical results and WHO reported cases. Countries are considered at risk if the probability of reporting an outbreak \u2013 computed on n = 103 different realizations of the stochastic noise \u2013 is larger than 20%. In red we represent countries for which model forecasts are in agreement with WHO official reports, distinguishing between correct predictions of outbreak (filled red) and correct predictions of no outbreak (striped red). Forecasts that deviate from observed data are represented in green. Results shown refer to the date of 11 July 2003.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Number of cases by country: comparison with WHO official reports. Quantitative comparison of forecasted number of cases (conditional of the occurrence of an outbreak) with observed data. Simulated results are represented with a box plot in which lowest and highest values represent the 90% CI and the box is delimited by lower and upper quartile and reports the value of the median. Red symbols represent WHO official reports and are accompanied by the value of the number of cases for sake of clarity. (A) Agreement of model predictions with observed data: symbols are compatible with the model predictions. Broken scale and inset are used for sake of visualization. (B,C) Disagreement of model predictions with observed data: WHO data lie outside the 90% CI obtained from n = 103 numerical simulations. Results are reported in two different plots characterized by two different scales for a better visualization.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Overlap profile. The value of the overlap is shown as a function of time, from the initial day of the simulations (21 February 2003) to 11 July 2003. Details on relevant events occurring during SARS epidemics are shown for reference.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Map representation of epidemic pathways. Arrows show the paths followed by the virus in the transmission of the infection from Hong Kong to the other countries. The thickness of the arrows represents the probability associated to a given path, where all paths with probability less than 10% have been filtered out for sake of simplicity. Two different colors are used: black for paths that transmit the virus directly from the seed \u2013 Hong Kong \u2013 to the first level of infected countries; gray for paths that start from the first level of infected countries.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "McLean",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pattison",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "SARS A Case Study in Emerging Infections",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gopalakrishna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Samore",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086616"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Epidemiological determinants of spread of causal agent of severe acute respiratory syndrome in Hong Kong",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Abu-Raddad",
+                    "suffix": ""
+                },
+                {
+                    "first": "L-M",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "T-Q",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chau",
+                    "suffix": ""
+                },
+                {
+                    "first": "K-P",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T-H",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JHB",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "EMC",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1761-1766",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(03)13410-1"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Modeling the worldwide spread of pandemic influenza: baseline case and containment scenario",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A-J",
+                    "middle": [],
+                    "last": "Valleron",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Med",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0040013"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Epidemic predictability in meta-population models with heterogeneous couplings: the impact of disease parameter values",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Int J Bif Chaos",
+            "volume": "17",
+            "issn": "",
+            "pages": "2491-2500",
+            "other_ids": {
+                "DOI": [
+                    "10.1142/S0218127407018567"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Dynamically modeling SARS and other newly emerging respiratory illnesses \u2013 past, present, future",
+            "authors": [
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Bauch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Coffee",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Epidemiol",
+            "volume": "16",
+            "issn": "",
+            "pages": "791-801",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/01.ede.0000181633.80269.4c"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Curtailing transmission of severe acute respiratory syndrome within a community and its hospital",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc R Soc Lond B",
+            "volume": "270",
+            "issn": "",
+            "pages": "1979-1989",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2003.2481"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "SARS outbreaks in Ontario, Hong Kong and Singapore: the role of diagnosis and isolation as a control mechanism",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Castillo-Garsow",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Theor Biol",
+            "volume": "224",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0022-5193(03)00228-5"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Model parameters and outbreak control for SARS",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Kribs-Zaleta",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Arriola",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "1258-1263",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A double epidemic model for the SARS propagation",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Turinici",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Danchin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "BMC Infect Dis",
+            "volume": "3",
+            "issn": "",
+            "pages": "19-35",
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2334-3-19"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "A simple approximate mathematical model to predict the number of severe acute respiratory syndrome cases and deaths",
+            "authors": [
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Pak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Epidemiol Community Health",
+            "volume": "57",
+            "issn": "",
+            "pages": "831-835",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/jech.57.10.831"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Modeling the SARS epidemic",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dye",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Gay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1884-1885",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086925"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Simulating the SARS outbreak in Beijing with limited data",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Theor Biol",
+            "volume": "227",
+            "issn": "",
+            "pages": "369-379",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2003.11.014"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Severe acute respiratory syndrome in Asia",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Emerg Infect Dis",
+            "volume": "9",
+            "issn": "",
+            "pages": "1608-1610",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Network theory and SARS: predicting outbreak diversity",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pourbohloul",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Theor Biol",
+            "volume": "232",
+            "issn": "",
+            "pages": "71-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2004.07.026"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Different epidemic curves for severe acute respiratory syndrome reveal similar impacts of control measures",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wallinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Teunis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Epidemiol",
+            "volume": "160",
+            "issn": "",
+            "pages": "509-516",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwh255"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Modeling strategies for controlling SARS outbreak",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Gume",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Troy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Brauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gabrielson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bowman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Alexander",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ardal",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Sahai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc R Soc Lond B",
+            "volume": "271",
+            "issn": "",
+            "pages": "2223-2232",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2004.2800"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "SARS outbreak, Taiwan, 2003",
+            "authors": [
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Hsieh",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Hsu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "201-206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Modeling potential response to severe acute respiratory syndrome in Japan: the role of initial attack size, precaution, and quarantine",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Patanarapelert",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sriprom",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Sarakorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sriyab",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ming Tang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Epidemiol Community Health",
+            "volume": "58",
+            "issn": "",
+            "pages": "186-191",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/jech.2003.014894"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Real-time estimates in early detection of SARS",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Boelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A-J",
+                    "middle": [],
+                    "last": "Valleron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "110-113",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "The effect of global travel on the spread of SARS",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Levin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Math Biosci Engin",
+            "volume": "3",
+            "issn": "",
+            "pages": "205-218",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "The epidemiology of severe acute respiratory syndrome in the 2003 Hong Kong epidemic: an analysis of all 1755 patients",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chau",
+                    "suffix": ""
+                },
+                {
+                    "first": "IOL",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "TQ",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P-Y",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JCK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tsui",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                },
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Ann Intern Med",
+            "volume": "141",
+            "issn": "",
+            "pages": "662-673",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Forecast and control of epidemics in a globalized world",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Hufnagel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Brockmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Geisel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "15124-15129",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0308344101"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "World Health Organization. Severe acute respiratory syndrome (SARS): status of the outbreak and lessons for the immediate future. May 20, 2003",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A major outbreak of severe acute respiratory syndrome in Hong Kong",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hui",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Joynt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ahuja",
+                    "suffix": ""
+                },
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Yung",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "To",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Lui",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Szeto",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJY",
+                    "middle": [],
+                    "last": "Sung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1986-1994",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa030685"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Hong Kong Special Administrative Region of The People's Republic of China \u2013 Government Information Centre. Outbreak of severe acute respiratory syndrome (SARS) at Amoy Gardens, Kowloon Bay, Hong Kong. Main findings of the investigation",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Epidemiology \u2013 dimensions of superspreading",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "293-295",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/438293a"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Superspreading and the effect of individual variation on disease emergence",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "355-359",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04153"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "World Health Organization. Cumulative number of reported cases of severe acute respiratory syndrome (SARS)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Network theory and SARS: predicting outbreak diversity",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pourbholoul",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Theor Biol",
+            "volume": "232",
+            "issn": "",
+            "pages": "71-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2004.07.026"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "World Health Organization. SARS: breaking the chains of transmission. July 5, 2003",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "World Health Organization SARS information",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Clinical features and short-term outcomes of 144 patients with SARS in the greater Toronto area",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Booth",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Matukas",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Tomlinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Rachlis",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Dwosh",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Walmsley",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mazzulli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Avendano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Derkach",
+                    "suffix": ""
+                },
+                {
+                    "first": "IE",
+                    "middle": [],
+                    "last": "Ephtimios",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Kitai",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Mederski",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Shadowitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Gold",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Hawryluck",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rea",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Chenkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Cescon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Poutanen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Detsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "JAMA",
+            "volume": "289",
+            "issn": "",
+            "pages": "2801-2809",
+            "other_ids": {
+                "DOI": [
+                    "10.1001/jama.289.21.JOC30885"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "An attempt at large-scale influenza epidemic modeling by means of a computer",
+            "authors": [
+                {
+                    "first": "OV",
+                    "middle": [],
+                    "last": "Baroyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Genchikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Rvachev",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Shashkov",
+                    "suffix": ""
+                }
+            ],
+            "year": 1969,
+            "venue": "Bull Internat Epidemiol Assoc",
+            "volume": "18",
+            "issn": "",
+            "pages": "22-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Taiwan Headlines. Health Chief says 94 percent of SARS cases result from hospital infections. 20 May 2003",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Identification of severe acute respiratory syndrome in Canada",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Poutanen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Low",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Henry",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Finkelstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tellier",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Draker",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Adachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ayers",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Salit",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Simor",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Slutsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Krajden",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Petric",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "McGeer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1995-2005",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa030634"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "A mathematical model for the global spread of influenza",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Rvachev",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Math Biosci",
+            "volume": "75",
+            "issn": "",
+            "pages": "3-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0025-5564(85)90064-1"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "The role of the airline transportation network in the prediction and predictability of global epidemics",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "2015-2020",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0510525103"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "The modeling of global epidemics: stochastic dynamics and predictability",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bull Math Biol",
+            "volume": "68",
+            "issn": "",
+            "pages": "1893-1921",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s11538-006-9077-9"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "International Air Transport Association",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Transmission dynamics of the etiological agent of SARS in Hong Kong: impact of public health interventions",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Abu-Raddad",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "L-M",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "T-H",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "TQ",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chau",
+                    "suffix": ""
+                },
+                {
+                    "first": "K-P",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-V",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P-Y",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "K-H",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "EMC",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1961-1966",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086478"
+                ]
+            }
+        }
+    }
+}

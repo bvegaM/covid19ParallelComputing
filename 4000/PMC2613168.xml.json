@@ -1,0 +1,1717 @@
+{
+    "paper_id": "PMC2613168",
+    "metadata": {
+        "title": "Cost effective strategies for completing the Interactome",
+        "authors": [
+            {
+                "first": "Ariel",
+                "middle": [
+                    "S."
+                ],
+                "last": "Schwartz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jingkai",
+                "middle": [],
+                "last": "Yu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kyle",
+                "middle": [
+                    "R."
+                ],
+                "last": "Gardenour",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Russell",
+                "middle": [
+                    "L."
+                ],
+                "last": "Finley",
+                "suffix": "Jr.",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Trey",
+                "middle": [],
+                "last": "Ideker",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In contrast to a genome, the interactome has been more difficult to define. Some authors have argued32 that the \u201cTrue Interactome\u201d should be defined as all possible interactions encoded by a genome\u2014 i.e., the set of all pairwise protein interactions that occur in at least one biological condition or cell type. The assumption is that every true interaction will be detectable by some assay, and that given enough independent measurements, most of the interactome could be detected. Many assay types have been described for detecting protein-protein interactions, a few of which have been adapted to large-scale screening1,32\u201334. On the other hand, some interactions may be immeasurable by any available assay, or will not arise in the conditions surveyed. Therefore, we use the term \u201cMappable Interactome\u201d for the subset of true pairwise interactions that are reproducibly detectable by any given assay method or combination of methods.",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 102,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 621,
+                    "end": 622,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 623,
+                    "end": 625,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 626,
+                    "end": 628,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Interactome mapping\u2014problem definition ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "To define appropriate criteria for determining when an interactome map is \u201ccomplete\u201d, we distinguish between the terms saturation and coverage. Saturation measures the percentage of true interactions that have been experimentally observed at least once. Coverage we define more strictly to mean the percentage of true interactions that have been experimentally validated with high confidence such that the percentage of false interactions (i.e., the False Discovery Rate or FDR) is kept below a predetermined threshold. We treat \u201ccompletion\u201d as achieving 95% coverage of the Mappable Interactome at 5% FDR, which requires that the map include at least 95% of all true interactions with no more than 5% of the reported interactions being false.",
+            "cite_spans": [],
+            "section": "Interactome mapping\u2014problem definition ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We simulated a series of mapping strategies implementing a variety of basic and sophisticated features (Fig. 1; Flowcharts of each strategy are provided in Supplementary Fig. 1). All strategies were evaluated using a statistical model based on na\u00efve Bayes to estimate saturation and coverage of the Drosophila interactome as a function of the number of interaction tests. We programmed this model with the assumption that the fly interactome contains approximately 105 interactions overall, along with estimates for the false positive rate (FPR\u2014the probability that a non-interacting protein pair is reported as interacting) and the false negative rate (FNR\u2014the probability that an interacting pair is reported as non-interacting). Although the magnitudes of these errors are still under debate, previous studies2,5,29,35,36 have reported Y2H error rates of FPR < 1% with FNR in the range 50\u201380% (note that several of these studies erroneously refer to FDR as FPR). Here, we used 0.2% FPR and 66% FNR.",
+            "cite_spans": [
+                {
+                    "start": 467,
+                    "end": 468,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 812,
+                    "end": 813,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 814,
+                    "end": 815,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 816,
+                    "end": 818,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 819,
+                    "end": 821,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 822,
+                    "end": 824,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "A model of interactome coverage ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 104,
+                    "end": 110,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Due to the high FNR of a particular assay, it becomes clear that multiple assay types will likely be needed to achieve complete coverage, and that these assays should be independent or at least only partially dependent. Although the precise correlations between different assay types have not been well studied, complementarity between assays has been widely assumed and occasionally demonstrated: For instance, protein interactions have been shown to be of substantially higher confidence if they are detected in different orientations (bait-prey vs. prey-bait)2; in different Y2H screens3,8,35; by different types of Y2H system such as LexA-based vs. Gal4-based36; or by both Y2H and co-affinity purification29.",
+            "cite_spans": [
+                {
+                    "start": 562,
+                    "end": 563,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 589,
+                    "end": 590,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 591,
+                    "end": 592,
+                    "mention": "8",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 593,
+                    "end": 595,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 663,
+                    "end": 665,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "A model of interactome coverage ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We first simulated a \u201cBasic serial\u201d strategy, in which all pairs of proteins are tested for interaction sequentially. Under this formulation, achieving a saturation of 95% required eight comprehensive screens, in which each protein pair was tested by eight independent assays, equivalent to ~7\u00d7108 pairwise tests assuming a total of 13,600 protein-encoding genes in fly37 (Table 1 and Fig. 2a). Moreover, 93% of all observed interactions in this network were false positives (including 99% of interactions observed exactly once and 21% of interactions observed twice\u2014Fig. 2b). The false-positives predominate because, although the 0.2% FPR seems low, the number of non-interacting protein pairs is far in excess of the number of true interactions.",
+            "cite_spans": [
+                {
+                    "start": 296,
+                    "end": 297,
+                    "mention": "8",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 369,
+                    "end": 371,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Basic mapping strategies in current use ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 385,
+                    "end": 392,
+                    "mention": "Fig. 2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 567,
+                    "end": 574,
+                    "mention": "Fig. 2b",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 373,
+                    "end": 380,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "To ensure an overall FDR < 5%, we found that every interaction must be reported by at least three independent assays. After eight screens 55% of the interactome was covered under these conditions. The coverage goal of 95% was achieved only after 21 comprehensive pair-wise screens (Fig. 2c). This overall outcome\u2014that the number of experiments required to reach full coverage is two to three times that required to reach saturation\u2014was observed over a range of error parameters (Supplementary Table 1). Clearly, completing the interactome map under these conditions is impractical, as it would require testing 92 million protein pairs 21 separate times.",
+            "cite_spans": [],
+            "section": "Basic mapping strategies in current use ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 282,
+                    "end": 289,
+                    "mention": "Fig. 2c",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "To reduce the number of tests, assays such as Y2H typically use pooled screens in which a single protein \u201cbait\u201d is tested for interaction against pools of protein \u201cpreys\u201d (phase I)38. For pools that test positive, pairwise tests are immediately conducted between the bait and each prey in the pool (phase II\u2014this second phase can also be conducted by sequencing3,5). The benefit of pooling is that large numbers of potential interactions can be sampled at relatively low cost. This comes at the expense of FNR, as the chance a true interaction is missed in the pool is higher than the chance it would be missed by direct pairwise tests38. Through simulation, we found that basic two-phase pooling (Pooling strategy) does indeed achieve a four- to five-fold reduction in coverage cost over pairwise testing (~4 million plates for Pooling compared to ~20 million plates for Basic-serial, Table 1). However, assuming the rate of interaction screening of a typical laboratory (e.g., ~2400 plate-matings per person per year), pooled screens would still require approximately 1700 person-years to achieve completion of the Drosophila protein network.",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 361,
+                    "end": 362,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 363,
+                    "end": 364,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Basic mapping strategies in current use ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 886,
+                    "end": 893,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We next considered an interaction mapping strategy that, rather than treat all protein pairs equally, maintains a rank-ordered list of pairs according to their probabilities of interaction (Thresholding strategy, Table 1). All probabilities start at the background frequency of interaction for random protein pairs (as for Basic-serial and Pooling). Protein interactions are initially tested using pooled screening, and after each two-phase pooled experiment the probabilities increase for interactions that are observed and decrease for interactions that are tested but not observed. Unlike previous strategies, however, protein pairs with probability greater than an upper threshold (i.e., 95%) are declared to be definite \u201cinteractors\u201d and are removed from subsequent testing (Fig. 1b). Likewise, interactions with probability beneath a lower threshold are declared to be \u201cnon-interactors\u201d and are also removed from further consideration. The motivation for thresholding is to more quickly exclude the overwhelming number of non-interacting protein pairs. Finally, candidate interactions are defined as those with probabilities between the upper threshold and background. When candidates are available they are always tested immediately using pairwise assays, before resorting to pooling, until their probabilities are pushed above the upper threshold or below background. The motivation for prioritizing candidate interactions is to more quickly cover the interactions likely to be positive. Overall, Thresholding resulted in more than a two-fold cost reduction compared to Pooling (Table 1 and Fig. 3a).",
+            "cite_spans": [],
+            "section": "Advanced mapping strategies ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 780,
+                    "end": 787,
+                    "mention": "Fig. 1b",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1599,
+                    "end": 1606,
+                    "mention": "Fig. 3a",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 213,
+                    "end": 220,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1587,
+                    "end": 1594,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Lastly, we considered whether computational prediction of interactions, based on prior knowledge and data, could hasten the time to interactome completion. A variety of prediction methods have been proposed based on evolutionary conservation39\u201341\u2014i.e., transfer of interaction measurements from one species to another\u2014or based on integrating conservation with additional features such as co-expression and co-annotation42\u201347. Such predictions impact the experimental design by setting the prior probabilities of interaction for each protein pair in lieu of background probabilities. In the Prediction strategy, we explored the effect of setting these prior probabilities using theoretical prediction methods simulated over a range of predetermined prediction accuracies (a range of different values for FPR, FNR, and corresponding FDR of the predictions). We found that even predictors with very high FDRs could have a major impact on the mapping cost (Table 1 and Fig. 3b). For example, a predictor with 92.2% FDR gave a four-fold reduction in cost over Pooling, with a >50-fold reduction in cost to achieve 50% coverage and a savings of hundreds of fold in the early stages of mapping. Moreover, the 92.2% FDR means that even a predictor that makes 12 false predictions for every true one can lead to a major reduction in the cost of interactome completion. The best prediction method required approximately 385 person-years to achieve 95% coverage of the Drosophila protein network and 12 person-years to achieve 50% coverage. Thus, while obtaining full coverage of an interactome map may still be some years away, a draft scaffold providing half coverage might be feasibly achieved by a team of ~12 technicians working over a period of one year.",
+            "cite_spans": [
+                {
+                    "start": 241,
+                    "end": 243,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 244,
+                    "end": 246,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 419,
+                    "end": 421,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 422,
+                    "end": 424,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "Advanced mapping strategies ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 965,
+                    "end": 972,
+                    "mention": "Fig. 3b",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 953,
+                    "end": 960,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Given the high performance of the Prediction strategy in simulations, we explored an experimental implementation in which Drosophila protein interactions were predicted using the cross-species method of Sharan et al.39 (Fig. 4a). According to this method, existing protein interaction networks in yeast, worm, and fly are aligned based on sequence similarity to identify conserved interaction clusters, and these alignments are used to transfer interactions that have been observed in some species but not yet in others (Fig. 4b). A total of 1,294 interactions were predicted using this method, each of which was prioritized as a candidate with high prior probability (92.4%) based on the FDR reported by Sharan et al.39 (7.6%).",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 718,
+                    "end": 720,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "From theory to practice: An experimental proof-of-concept ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 220,
+                    "end": 227,
+                    "mention": "Fig. 4a",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 521,
+                    "end": 528,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Since this prior was much greater than the background probability of other protein pairs (0.1%), we began by using the pairwise Lex-A Y2H assay48 to test all 606 predictions for which sequence-verified clones were available. Of these, 136 tested positive and 470 negative. After each 96-well plate of tests (seven plates total), the interaction probabilities were updated resulting in an increase to >99.9% for pairs testing positive and a decrease to 90.5% for pairs testing negative. Since the 136 positives now had probability greater than the upper threshold (95%), all of these could be added to the interactome map and removed from further testing.",
+            "cite_spans": [
+                {
+                    "start": 143,
+                    "end": 145,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "From theory to practice: An experimental proof-of-concept ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the remaining 470 predictions had tested negative once, their high probability (90.5%) still prioritized them as candidate interactions. Therefore, as dictated by the Prediction strategy these pairs were tested again immediately using a second assay type.",
+            "cite_spans": [],
+            "section": "From theory to practice: An experimental proof-of-concept ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "For this second assay, Lex-A Y2H was run in a \u201creverse\u201d orientation in which the two proteins cloned as bait and prey, respectively, were exchanged as prey and bait. We tested 251 of the 470 predictions for which sequence-verified clones were available in the opposite orientation. This resulted in 35 positives, elevating these interactions to probability >99.9% and adding them to the map. The pairs that tested negative in the reverse orientation were downgraded to 88.1% probability. Overall, after performing Y2H in both forward and reverse orientations, 171 new interactions were identified out of 606 protein pairs for a success rate of 28%. Although we ended our experimentation at this point, the Prediction strategy could be continued by next testing the \u201cdouble negatives\u201d (pairs testing negative in both orientations of Lex-A Y2H) using a third type of assay such as Gal4-based Y2H.",
+            "cite_spans": [],
+            "section": "From theory to practice: An experimental proof-of-concept ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "A means of predicting additional protein interactions is to probabilistically integrate many different lines of evidence into a single classifier42\u201347. Along these lines, we applied a machine-learning-based classifier for predicting interactions that combined many relevant features including gene expression, domain-domain interactions, conserved protein-protein interactions, genetic interactions, and shared gene annotations (Supplementary Methods). We used this approach to generate 24,798 high confidence predictions. We randomly selected 2,047 of these for testing using forward-orientation Y2H and, as above, retested the negative pairs using reverse-orientation Y2H (for which clones were available). In total, this procedure added 279 new high-confidence interactions to the map for a 13.6% success rate. Combined over both conservation-based and multiple-evidence-based predictions, 450 new protein-protein interactions were added to the Drosophila map using 47 96-well plates (Fig. 3a,b). To establish the background rate of interaction, we also tested 2,354 randomly chosen pairs, 72 of which were positive yielding a 3% background rate (Fig. 4b). These results show that both types of prediction are highly enriched for true interactions. Note that even if all predicted interactions were true, the expected confirmation rate would be limited by the false negative rate of the Y2H assay, equal to 1\u2013FNR =33% in our model.",
+            "cite_spans": [
+                {
+                    "start": 145,
+                    "end": 147,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "From theory to practice: An experimental proof-of-concept ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 988,
+                    "end": 997,
+                    "mention": "Fig. 3a,b",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1150,
+                    "end": 1157,
+                    "mention": "Fig. 4b",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "An underlying assumption of our simulations is that different assay types are conditionally independent\u2014i.e., given that a tested protein pair is known to be positive or negative, the result of one assay is uncorrelated with that of another. To examine the extent to which this assumption holds, we compared Y2H data for protein pairs tested in both forward and reverse orientations\u2014the two assay types used in our study. Overall, we obtained Y2H tests in both orientations for 309 conservation-based predictions (including data reported above combined with additional tests; Supplementary Data). Of these, we observed 58 positives in the forward orientation and 50 positives in the reverse orientation, for an average positive rate of 17% [(58 + 50)/(309 * 2)]. Fifteen positives were found in both orientations, representing 4.9% of the tests. Assuming all predictions are true interactions, this percentage is very close to that predicted by conditional independence, for which 3.1% of tests are expected to be positive in both orientations [17% ^ 2]. If some predictions are not true as expected, the percentages come into even better agreement\u2014e.g., a prediction FDR of 20% predicts that 4.8% positives would arise in both orientations. A similar analysis was performed on a set of 1,572 combined-evidence predictions that were tested in both orientations, leading to similar agreement with the conditional independence assumption.",
+            "cite_spans": [],
+            "section": "Testing the conditional independence between assay types ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The interactions predicted by cross-species conservation were at least as accurate as we had assumed in our simulations. On the other hand, their power to prioritize interactions is dependent on the network coverage in other species, and the long-term viability of this approach will depend on obtaining greater numbers of predictions than the 1,294 that are currently available. As interactome maps progress across an ever-widening array of species, these maps might be dynamically cross-compared to continually generate sufficient numbers of candidate interactions for testing. The second set of predictions, made by integrating various lines of evidence, had a lower success rate than the predictions based solely on conservation. Their potential utility is higher, however, since the number of available predictions is nearly 20 times that of the conservation-based predictions and could be increased further by including lower confidence predictions. Even with a lower success rate, the performance of the integrated classifier was superior to the best theoretical predictor we simulated.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Predictions lead to a lower interactome mapping cost for two reasons. First, predicted protein pairs are much more likely than arbitrary pairs to be true. Second, protein pairs with high prior probabilities do not require repeated positive measurements to confirm them as true interactions. Both effects underlie the finding that 450 new predicted interactions could be added to the interaction map using just 47 microtiter plates. In contrast, the Pooling strategy would require nearly 105 plates to add this number of interactions to the map.",
+            "cite_spans": [
+                {
+                    "start": 489,
+                    "end": 490,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "One might intuitively object that, rather than test predicted interactions, a better strategy would focus on the \u201cnovel\u201d areas of the interactome that have never before been suggested by any species or data set. The problem with such an approach is that it would very quickly produce an interactome map with a very high error rate. Conversely, the rationale behind the Thresholding and Prediction strategies is that one should first clean up the map by validating predicted interactions using real experiments, and only then resort to testing random protein pairs in pools.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "A second objection might be that prioritizing candidate interactions requires the corresponding Y2H baits and preys to be rearrayed in microtiter plates in different orders over the course of an interaction mapping project. While the cost of rearraying was not included in our analysis, in our lab (Finley) these costs are greatly alleviated through robotic transfer systems. Certainly, failure to rearray leads to a ~4-fold increase in cost and a ~10-fold increase in the early stages of mapping (compare Pooling versus Prediction in Table 1).",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 535,
+                    "end": 542,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Regardless, mapping the Interactome remains a daunting task. Our study makes it clear that achieving 95% coverage of an interactome requires many more screens than one pass through all pools or over all protein pairs. If complete coverage is to be obtained in the near future, it will be necessary to invoke better strategies for experimental design, technologies reporting fewer false negatives, or both. In terms of experimental design, we have shown that the cost of completion is reduced substantially by careful ordering of pooled screens. In terms of technology, our study underscores the importance of decreasing the FNR or of different assays that provide independent samples of a protein pair. Even if the error rates are lower than assumed here, advanced mapping strategies are still likely to be worthwhile (Suppl. Table 1). Here we have used two types of Y2H assay, forward and reverse orientations, to obtain multiple samples which appear largely independent. If the assays were partially dependent, multiple tests might still be worth the cost as long as they were not perfectly correlated (and the dependence could be handled quantitatively using a statistical model). In the present study, the conditional independence assumption leads to a \u201cbest-case scenario\u201d or lower-bound on the number of interaction tests that will likely be required to achieve full coverage of an interactome. Further work will be needed to better characterize the relative dependencies among the wide range of other interaction assays that are currently available\u2014 if the current assays are highly dependent, then the required number of tests will be greater than was estimated here.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "\u201cTrue\u201d reference interactomes for fly and human were generated by random sampling of interactions from the set of all possible pairs of proteins using the interaction probabilities in the String database46. Protein pairs not included in the String database were sampled using a low background probability, such that the total number of interactions in the sampled interactomes agreed with current estimates of interactome sizes30 (~100,000 fly interactions and ~260,000 human interactions). The detectability of each protein pair was independently sampled for each new assay type (representing a new type of measurement technology or new bait/prey orientation) using a 66% FNR for true interactions and 0.2% FPR for false interactions (corresponding to 82% FDR). Once an interaction was defined as \u201cDetectable/Undetectable\u201d, direct pairwise experiments were assumed to be 100% reproducible for a given protein pair and assay. For pooled assays, each detectable interaction in the sample space of a pool was assumed to be observed in the pool with probability equal to the pooling sensitivity (Table 1). Pools with at least one observed interaction were declared positive. For each strategy, after every 1000 experiments the mapped interactomes were compared to the \u201ctrue\u201d interactomes and the coverage and FDR were recorded.",
+            "cite_spans": [
+                {
+                    "start": 203,
+                    "end": 205,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 427,
+                    "end": 429,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Simulation procedure ::: METHODS",
+            "ref_spans": [
+                {
+                    "start": 1093,
+                    "end": 1100,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We used the LexA-based yeast two-hybrid mating assay48 using sequence-verified clones as previously described36 (Supplementary Methods). All new protein interactions have been submitted to the IMEx consortium (http://imex.sf.net) through IntAct49 and assigned the identifier IM-9552. The data are also available at DroID (www.droidb.org).",
+            "cite_spans": [
+                {
+                    "start": 52,
+                    "end": 54,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 109,
+                    "end": 111,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 244,
+                    "end": 246,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Yeast two-hybrid test of predicted interactions ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Detailed descriptions of the interaction probability model, the combined-evidence method for interaction prediction, the computation of thresholds, and the yeast two-hybrid test protocol appear in the Supplementary Methods.",
+            "cite_spans": [],
+            "section": "Additional Methods ::: METHODS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Summary of the features and performance of the different strategies*\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: (a) At any given point in the project, every pair of proteins is assigned an interaction probability based on its experimental history (initially these probabilities are set to background or informed by predictions). The interaction probabilities and experimental history are used to design a 96-well plate Y2H experiment according to one of the strategies. The result of this experiment is simulated based on the detectability of the tested interactions (given the assay type) and the pooling sensitivity. The new experimental results are recorded in the history and also (b) used to update the interaction probabilities of the relevant protein pairs. The pyramid represents the ordered list of protein pairs ranked by probability. It is wider at the bottom than at the top to reflect that most pairs are negative\u2014i.e., most pairs will have low probability and only a few pairs will percolate to the top of the list with high probability. Interactions with probability above an upper threshold are added to the mapped interactome, which is compared to the simulated \u201cTrue Network\u201d at intervals of 1,000 plates for reporting coverage and FDR.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (a) The percentage of true interactions that are observed >1 (orange), >2 (purple), >3 (green), >4 (yellow), and >5 (cyan) times as a function of the number of times they are tested with independent assays. Increasing the threshold of independent observations increases the number of independent assays needed to reach the 95% coverage target. (b) The false discovery rate (FDR) of interactions that are observed exactly once (orange), twice (purple), thrice (green), four times (yellow), and five times (cyan) as a function of the number of times they are tested with independent assays. To achieve FDR < 5% interactions should be observed at least twice when tested with < 5 independent assays, and at least three times when tested with 5\u201317 assays. (c) The effective coverage level at FDR < 5% is shown (red curve) by embedding the observation threshold from (b) into the curves of (a). While saturation is achieved after 8 screens, 21 screens are required for 95% coverage at FDR < 5%.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: (a) Comparison of the Pooling strategy (numbers 2.1\u20132.4) with a Thresholding strategy (numbers 3.1\u20133.3) which combines pooling with direct experiments based on thresholding and prioritization. (a INSET) Zoomed view showing the number of plates required to add the first 450 interactions to the map using Pooling. (b) Performance of the Prediction strategy (numbers 4.1\u20134.4) over a range of FPR, FNR, and FDR of the predictions. (b INSET) Zoomed view including an experimental proof-of-principle based on predictions from network conservation (cFwd, cRev) or multiple types of evidence (mFwd, mRev). Fwd and Rev denote the series of experiments performed in the forward then reverse Y2H orientations, respectively. X-axis units of INSETs are absolute number of plates, not millions of plates as for the parent figures (a) and (b).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: (a) State diagram of the Prediction strategy. This strategy combines interaction predictions with direct and pooled experiments to reduce the intermediate and total costs of Interactome mapping. (b) Application of the first steps of the Prediction strategy to the Drosophila interactome using conservation-based predictions from Sharan et al.39 or predictions made by integrating multiple evidence types (this study). Representative plates are shown for tests of conservation-based predictions using the X-Gal (top) or LEU2 (bottom) reporters.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "High-throughput two-hybrid analysis. The promise and the peril",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fields",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Febs J",
+            "volume": "272",
+            "issn": "",
+            "pages": "5391-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Functional organization of the yeast proteome by systematic analysis of protein complexes",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Gavin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "415",
+            "issn": "",
+            "pages": "141-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Global landscape of protein complexes in the yeast Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Krogan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "637-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Transcriptional regulatory code of a eukaryotic genome",
+            "authors": [
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Harbison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "431",
+            "issn": "",
+            "pages": "99-104",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Genome-wide map of nucleosome acetylation and methylation in yeast",
+            "authors": [
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Pokholok",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "122",
+            "issn": "",
+            "pages": "517-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Genome-wide location and function of DNA binding proteins",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "290",
+            "issn": "",
+            "pages": "2306-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Systematic genetic analysis with ordered arrays of yeast deletion mutants",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "2364-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A strategy for extracting and analyzing large-scale quantitative epistatic interaction data",
+            "authors": [
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schuldiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Krogan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Weissman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Combining gene expression QTL mapping and phenotypic spectrum analysis to uncover gene regulatory relationships",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mamm Genome",
+            "volume": "17",
+            "issn": "",
+            "pages": "575-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "WebQTL: rapid exploratory analysis of gene expression and genetic networks for brain and behavior",
+            "authors": [
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Chesler",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "Manly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Neurosci",
+            "volume": "7",
+            "issn": "",
+            "pages": "485-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Heritability and tissue specificity of expression quantitative trait loci",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Petretto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Genet",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A protein interaction map of Drosophila melanogaster",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Giot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": "1727-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Genetics of gene expression surveyed in maize, mouse and man",
+            "authors": [
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Schadt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "422",
+            "issn": "",
+            "pages": "297-302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The protein-protein interaction map of Helicobacter pylori",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Rain",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "409",
+            "issn": "",
+            "pages": "211-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "A proteome-wide protein interaction map for Campylobacter jejuni",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Parrish",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Biol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A protein interaction network of the malaria parasite Plasmodium falciparum",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "LaCount",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "103-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Herpesviral protein networks and their interaction with the human proteome",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Uetz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "311",
+            "issn": "",
+            "pages": "239-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Analysis of intraviral protein-protein interactions of the SARS coronavirus ORFeome",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "von Brunn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS ONE",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Genomic mapping by fingerprinting random clones: a mathematical analysis",
+            "authors": [
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Waterman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Genomics",
+            "volume": "2",
+            "issn": "",
+            "pages": "231-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Human whole-genome shotgun sequencing",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Genome Res",
+            "volume": "7",
+            "issn": "",
+            "pages": "401-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Comparative assessment of large-scale data sets of protein-protein interactions",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "von Mering",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "417",
+            "issn": "",
+            "pages": "399-403",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A comprehensive two-hybrid analysis to explore the yeast protein interactome",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "4569-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "How complete are current yeast and human protein-interaction networks?",
+            "authors": [
+                {
+                    "first": "GT",
+                    "middle": [],
+                    "last": "Hart",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Ramani",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Marcotte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Unraveling protein interaction networks with near-optimal efficiency",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lappe",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Holm",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Biotechnol",
+            "volume": "22",
+            "issn": "",
+            "pages": "98-103",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Interactome: gateway into systems biology",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Cusick",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Klitgord",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Vidal",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Hum Mol Genet",
+            "volume": "14",
+            "issn": "",
+            "pages": "R171-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Mass spectrometry-based functional proteomics: from molecular machines to protein networks",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kocher",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Superti-Furga",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Methods",
+            "volume": "4",
+            "issn": "",
+            "pages": "807-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Yeast two-hybrid contributions to interactome mapping",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Parrish",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Gulyas",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Finley",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2006,
+            "venue": "Curr Opin Biotechnol",
+            "volume": "17",
+            "issn": "",
+            "pages": "387-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Protein interactions: two methods for assessment of the reliability of high throughput observations",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Deane",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Salwinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Xenarios",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Eisenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Mol Cell Proteomics",
+            "volume": "1",
+            "issn": "",
+            "pages": "349-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "A Drosophila protein-interaction map centered on cell-cycle regulators",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Stanyon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genome Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "The genome sequence of Drosophila melanogaster",
+            "authors": [
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "287",
+            "issn": "",
+            "pages": "2185-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A strategy for constructing large protein interaction maps using the yeast two-hybrid system: regulated expression arrays and two-phase mating",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Stanyon",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Tromp",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Finley",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2003,
+            "venue": "Genome Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "2691-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Conserved patterns of protein interaction in multiple species",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sharan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "",
+            "pages": "1974-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "A map of the interactome network of the metazoan C. elegans",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "303",
+            "issn": "",
+            "pages": "540-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Identification of potential interaction networks using sequence-based searches for conserved protein-protein interactions or \u201cinterologs\u201d",
+            "authors": [
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "2120-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Combined functional genomic maps of the C. elegans DNA damage response",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Boulton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "295",
+            "issn": "",
+            "pages": "127-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Kernel methods for predicting protein-protein interactions",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ben-Hur",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21 ",
+            "issn": "Suppl 1",
+            "pages": "i38-46",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "A Bayesian networks approach for predicting protein-protein interactions from genomic data",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": "449-53",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "A probabilistic functional network of yeast genes",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Date",
+                    "suffix": ""
+                },
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Adai",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Marcotte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "306",
+            "issn": "",
+            "pages": "1555-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Assessing the limits of genomic data integration for predicting protein networks",
+            "authors": [
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xia",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Paccanaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gerstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Genome Res",
+            "volume": "15",
+            "issn": "",
+            "pages": "945-53",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "STRING: a database of predicted functional associations between proteins",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "von Mering",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "258-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Predicting interactions in protein networks by completing defective cliques",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Paccanaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Trifonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gerstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "",
+            "pages": "823-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Interaction mating reveals binary and ternary connections between Drosophila cell cycle regulators",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Finley",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brent",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "91",
+            "issn": "",
+            "pages": "12980-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "IntAct--open source resource for molecular interaction data",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kerrien",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "",
+            "pages": "D561-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Towards a proteome-scale map of the human protein-protein interaction network",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Rual",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "1173-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "A human protein-protein interaction network: a resource for annotating the proteome",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Stelzl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "122",
+            "issn": "",
+            "pages": "957-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Protein-protein interaction panel using mouse full-length cDNAs",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genome Res",
+            "volume": "11",
+            "issn": "",
+            "pages": "1758-65",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "A comprehensive analysis of protein-protein interactions in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Uetz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "403",
+            "issn": "",
+            "pages": "623-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Proteome survey reveals modularity of the yeast cell machinery",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Gavin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "631-6",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

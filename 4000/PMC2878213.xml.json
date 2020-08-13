@@ -1,0 +1,821 @@
+{
+    "paper_id": "PMC2878213",
+    "metadata": {
+        "title": "Effects of Internal Border Control on Spread of Pandemic Influenza",
+        "authors": [
+            {
+                "first": "James",
+                "middle": [
+                    "G."
+                ],
+                "last": "Wood",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nasim",
+                "middle": [],
+                "last": "Zamani",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "C.",
+                "middle": [
+                    "Raina"
+                ],
+                "last": "MacIntyre",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Niels",
+                "middle": [
+                    "G."
+                ],
+                "last": "Becker",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Average daily volumes of domestic air travel between Sydney, Melbourne, and Darwin were obtained from the Australian Domestic Airline Activity report (17). Only direct flights were considered. Seasonal variations in the volume of air traffic were not taken into account. Approximately 78% of the traffic from Sydney to Melbourne and 70% of the traffic from the Northern Territory to the eastern Australian states is by air (18).",
+            "cite_spans": [
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 424,
+                    "end": 426,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Data ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As a separate indicator of travel volumes that incorporates the average length of stay and information on the origin of travelers, we used survey estimates of nights stayed by domestic visitors to the 3 study destinations (Melbourne, Sydney, and Darwin). The data were obtained from the state government tourism websites for Victoria (20), New South Wales (NSW) (19), and the Northern Territory (21). Because details on visitor origin were only obtained at the state level, we assumed that each person in that state would make an equal contribution to visitor nights in the destination city. These values were then used to estimate the proportions of the travel volume due to each of the 2 cities on a route and to modify force of infection calculations by incorporating the average length of stay. The travel rates (weighted by length of stay) used in the simulations are provided in Table 1. Demographic data on cities and states were acquired from the Australian Bureau of Statistics population estimates for 2004 (16).",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 337,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 363,
+                    "end": 365,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 396,
+                    "end": 398,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1018,
+                    "end": 1020,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Data ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 885,
+                    "end": 892,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Simulations of influenza epidemics were computed by using a stochastic SIR model, in which the population is separated into 3 mutually exclusive classes: susceptible (S), infectious (I), and recovered (R). A stochastic model can capture random variation near the beginning of an epidemic, when the number of infectious persons is small. Homogeneous mixing is assumed, i.e., all susceptible members of the population in a city are equally likely to be infected by a given infectious person.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A schematic of the model is given in Figure 1B, and the defining equations are presented in the Technical Appendix, part A. The model evolves in discrete time, with the step length equal to 1 day. This time frame accords with real-life epidemics, for which incidence and other epidemiologic data are usually recorded daily. The discrete time structure simplifies the introduction of a variable infectivity profile, incorporating a latent, noninfectious period and a changing degree of infectivity for each person during the course of his or her illness. This feature of the model is supported by virus-shedding studies (22) and enables us to contrast the effect of a highly peaked infectivity profile, similar to that used by Ferguson et al. (6), with the effect of a constant infectivity profile (7), as depicted in Figure 1C.",
+            "cite_spans": [
+                {
+                    "start": 620,
+                    "end": 622,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 743,
+                    "end": 744,
+                    "mention": "6",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 798,
+                    "end": 799,
+                    "mention": "7",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 37,
+                    "end": 46,
+                    "mention": "Figure 1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 817,
+                    "end": 826,
+                    "mention": "Figure 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "A key factor governing the effectiveness of our travel restrictions is the average doubling time of the attack rate during the early stages of the epidemic, when growth is exponential. The doubling time is determined by the basic reproduction number (R0), defined as the average number of secondary infections due to a single primary infected person in a completely susceptible population, and the form of the infectivity profile. The infectivity profile primarily influences the growth rate through the mean time (or serial interval) between cases: \u22482.8 days for the peaked infectivity function and 4 days for the flat infectivity function used here. The doubling time depends linearly on the serial interval so that epidemics that use the peaked infectivity profile double in size almost 1.5\u00d7 as quickly as epidemics that use the flat infectivity profile, for the same value of R0. The infectivity profile and R0 depend on properties of the pathogen and on social, environmental, and genetic factors.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Although influenza appears to be a highly infectious disease, with regular winter epidemics, this is largely due to its short incubation period and genetic drift, which nullifies preexisting immunity. Thus, literature estimates of the effective reproduction number for influenza are typically <4 (14) (whereas for measles R0 is 20 [15]), although in localized outbreaks it can be considerably higher (23). We take R0 to be in the range 1.5\u20133.5, which corresponds to attack rates of 58%\u201397% (including subclinical infections) in a population without prior immunity or behavioral changes in response to the pandemic.",
+            "cite_spans": [
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 332,
+                    "end": 334,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 401,
+                    "end": 403,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The total period of infection, including latent period, was assumed to be 6 days (7). For each infectivity profile, the latent period was \u22481 day, which is at the low end of literature estimates (other researchers have used values of 1\u20134 days [8,9,24]). Spread from city to city is incorporated by assuming that each person is equally likely to travel; the daily travel rates were estimated from the data sources described above. This assumption was pessimistic, since symptomatic infected persons may not travel, but it did not greatly influence the results (Technical Appendix, part A).",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 83,
+                    "mention": "7",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 243,
+                    "end": 244,
+                    "mention": "8",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 245,
+                    "end": 246,
+                    "mention": "9",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 247,
+                    "end": 249,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Travel restrictions were implemented as a reduction of the rate of all forms of travel. For this analysis, reductions of 80%, 90%, and 99% were compared with the base case of unrestricted travel. The values of 80% and 90% might be realistic reduction targets, whereas the value of 99% indicates what near-perfect compliance might achieve. Travel restrictions were switched on in the model at some time (measured in weeks) after the initial case occurred and remained on for the rest of the simulations.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The principal measure used in this analysis for gauging the effect of travel restrictions is T20, the delay between the epidemic\u2019s becoming established in city 1 and taking off in city 2. We considered the outbreak to have taken off in a city once there were 20 current infectious cases\u2014hence, the notation T20 for the delay between the epidemics. This choice conveniently limited comparisons to simulated epidemics that do take off. Since the model is stochastic, T20 is random, and the results shown in the graphs are for m20, the median value for outbreaks that take off. Ranges, when given, cover 90% of outbreak simulations.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The simulations were run with MATLAB version 7.04 (The MathWorks, Natick, MA, USA) with Poisson random variables simulated by the poissrnd function in version 5.02 of the Statistics Toolbox (MathWorks). Our results are based on 10,000 runs of the model.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Motivated by the results of the simulation study, we then analyzed the effects of city size and travel rates by using a deterministic approximation of the above model (details given in the Technical Appendix, part B). This approximation has the advantage of being much simpler to use in analyzing sensitivity to these factors, while reproducing the average behavior of the stochastic model.",
+            "cite_spans": [],
+            "section": "Model Structure ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The median and mean numbers of days until there are 20 infectious persons in Sydney for an epidemic that began with 1 infectious person in Sydney on day 0 are presented in Table 2. Figure 2 illustrates how m20, the median time between the day when the number of infected persons first reached 20 in Sydney and the day when the number of infected persons first reached 20 in Melbourne, depends on R0, the form of the infectivity profile, and the timing and severity of travel restrictions.",
+            "cite_spans": [],
+            "section": "Scenario 1 (Sydney to Melbourne) ::: Results",
+            "ref_spans": [
+                {
+                    "start": 181,
+                    "end": 189,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 172,
+                    "end": 179,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Each of the graphs covers 1 of the 6 combinations of the 3 values of R0 and 2 infectivity profiles. The 4 curves shown on each graph describe the median values for each of the 4 levels of travel restrictions (none, 80%, 90%, and 99%), applied at delays from importation of the first case from 0 to 6 weeks (8 weeks for R0 = 1.5). The gray panes highlight the time during which the epidemic grows from 20 to 1,000 cases in Sydney.",
+            "cite_spans": [],
+            "section": "Scenario 1 (Sydney to Melbourne) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The travel restrictions are most effective for the optimistic assumption R0 = 1.5 and constant infectivity (Figure 2A). Figure 2B and C more closely resemble the epidemic growth rates used in recent modeling papers (6,7). In Figure 2B (R0 = 1.5, peaked infectivity), an increase in m20 from 22 to 32 days is seen for 80% restrictions, with a further increase to 52 days for 99% restrictions, if applied immediately. These improvements appear robust for delays of up to 4 weeks, but in fact a sizeable proportion of the simulations have spread to Melbourne by this point. This effect is illustrated in Figure 3A and B, in which we compare the full distribution of T20 in the presence of 99% travel restrictions applied at the 2- and 4-week marks, respectively. Both distributions are bimodal, but in Figure 3B, the first mode is substantial. This difference arises because a large proportion of simulated outbreaks spread to Melbourne between the 2- and 4-week marks for this combination of disease parameters, a finding that emphasizes that timing can be critical for the success of travel restrictions. Under the pessimistic assumption of R0 = 3.5 and peaked infectivity, the impact of travel restrictions is muted, and a delay of just 2 weeks renders the restrictions ineffective.",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 217,
+                    "mention": "6",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 218,
+                    "end": 219,
+                    "mention": "7",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Scenario 1 (Sydney to Melbourne) ::: Results",
+            "ref_spans": [
+                {
+                    "start": 108,
+                    "end": 117,
+                    "mention": "Figure 2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 120,
+                    "end": 135,
+                    "mention": "Figure 2B and C",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 225,
+                    "end": 234,
+                    "mention": "Figure 2B",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 601,
+                    "end": 616,
+                    "mention": "Figure 3A and B",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 799,
+                    "end": 808,
+                    "mention": "Figure 3B",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "For an epidemic originating in Darwin, the median times until there are 20 infectious persons in Darwin are almost identical to those for scenario 1 (Table 2), although the 90% ranges are a little wider. In this scenario, m20 is the median time between the first day on which there are 20 infected persons in Darwin and the first day on which there are 20 currently infected persons in Sydney. The effects of R0, the infectivity function, and the delay in and severity of travel restrictions are captured in Figure 4.",
+            "cite_spans": [],
+            "section": "Scenario 2 (Darwin to Sydney) ::: Results",
+            "ref_spans": [
+                {
+                    "start": 508,
+                    "end": 516,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 150,
+                    "end": 157,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "These results, presented in the same format as Figure 2, show 2 key differences from those in scenario 1. The median delay, m20, is shorter in scenario 2, given the same combination of disease parameters, as is the time interval over which restrictions can be applied effectively. This finding appears counterintuitive because the volume of travelers on the Darwin-to-Sydney route is much smaller than that on the Sydney-to-Melbourne route.",
+            "cite_spans": [],
+            "section": "Scenario 2 (Darwin to Sydney) ::: Results",
+            "ref_spans": [
+                {
+                    "start": 47,
+                    "end": 55,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "By using the simpler model described in the Technical Appendix part B, we performed a sensitivity analysis (Appendix Figure) on the effect of city size and travel rates on epidemic spread. This analysis implies that in scenario 2, in which there is a large difference in population size (Darwin:Sydney \u22481:40), infection of susceptible travelers from Sydney is the primary reason for the rapid intercity spread, despite the lower rate of travel for Sydney residents on this route. The Appendix Figure, panel B, shows that this effect would be reduced if the rate at which Sydney residents travel to Darwin were much lower than that for Darwin residents traveling to Sydney. Such a reduction could be achieved by applying tighter restrictions on Sydney-based travelers.",
+            "cite_spans": [],
+            "section": "Scenario 2 (Darwin to Sydney) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The ratio of city populations also influences the time interval when restrictions can be applied effectively. Travel restrictions were less effective if applied after the time at which there were 20 current cases in Darwin (Figure 4). This feature was illustrated by Figure 3C and D which show the full distributions of T20 for 2- and 4-week delays in restrictions, respectively. For a 2-week delay (Figure 4C), most outbreaks were delayed but a sizeable minority were not. A 4-week delay (Figure 4D) nullified any impact of the restrictions for this scenario. If, however, travel restrictions were applied immediately after the first case was detected, the increase in T20 due to restrictions was almost identical to the increases described in scenario 1.",
+            "cite_spans": [],
+            "section": "Scenario 2 (Darwin to Sydney) ::: Results",
+            "ref_spans": [
+                {
+                    "start": 224,
+                    "end": 232,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 267,
+                    "end": 282,
+                    "mention": "Figure 3C and D",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 400,
+                    "end": 409,
+                    "mention": "Figure 4C",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 490,
+                    "end": 499,
+                    "mention": "Figure 4D",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Now consider a situation in which a small isolated center (town A, population 1,000) attempts to remain pandemic free. Let us assume that on any given day, N visitors stay in the town, and N town members visit pandemic-affected regions. A simple stochastic model of disease spread (Technical Appendix, part D) can predict the probability that the outbreak can be kept out of town A in terms of N and R0 (Technical Appendix part D). Predictions from this model agree well with simulations, as shown in Appendix Figure, panel C. These results indicate that travel restrictions are likely to prevent an outbreak if N is reduced to \u22481/10 per day.",
+            "cite_spans": [],
+            "section": "Scenario 2 (Darwin to Sydney) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The sensitivity of the results to the duration of infection and form of the infectivity function were entirely a result of the change in the epidemic growth rate. If, for example, an additional day of latent infection were added, then the delays in spread, when the flat and peaked infectivity functions were used, were \u224825% and \u224837% longer, respectively, which is a considerable effect. However, epidemic growth rates in past pandemics are typically not consistent with longer latent periods and low values of R0, so these additional delays should be viewed with caution.",
+            "cite_spans": [],
+            "section": "Sensitivity to Other Factors ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The sensitivity to the estimated travel volumes was relatively weak: increasing or reducing travel by a factor of 2 in each direction increases or reduces the delay by 1.5\u20137 days, and 4.5 or 2.5 days as compared to data in Figures 2 and 4, respectively. These results are consistent for both scenarios.",
+            "cite_spans": [],
+            "section": "Sensitivity to Other Factors ::: Results",
+            "ref_spans": [
+                {
+                    "start": 223,
+                    "end": 232,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 237,
+                    "end": 238,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The simulations we describe showed that although travel restrictions might delay the spread of an influenza epidemic between 2 cities by several weeks, this delay is highly sensitive to assumptions about the transmissibility of the influenza virus. A more surprising result is that the delay is also sensitive to the ratio of city sizes, differences in travel rates, and the originating city. In particular, the modeling suggests that if the epidemic begins in a smaller town, restricting visitors from entering or leaving that town is important.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Moderate delays in the pandemic could be achievable when the epidemic growth rate is low. The growth rate can be estimated from case counts during an epidemic and used in a simple formula to predict the delay due to travel restrictions (Technical Appendix, part D). These predictions could provide practical estimates of the benefits of longer term travel restrictions based on the first clusters of cases during an outbreak. For smaller communities with low travel rates, the probability of preventing an outbreak can also be estimated ( Technical Appendix, part D), with good agreement with the results of our simulations (Appendix Figure, panel C). If the estimated growth rate is high (e.g., assumptions used in Figures 2 and 4 with R0 = 3.5, peaked infectivity), the additional median delay between 20 cases occurring in city 1 and 20 cases occurring in city 2 might be just 3 days, providing little benefit from longer term implementation of travel restrictions",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 716,
+                    "end": 725,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 730,
+                    "end": 731,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Our results do not account for additional importations. Thus, they are most applicable to the arrival of a pandemic in Australia, while the pandemic outside Australia remains contained or border control is effective. Our simulated delays will be overestimates if additional importations are substantial. Another concern is that stringent travel restrictions may be required for several weeks to maximize delays in spread. Inevitably, such restrictions would cause economic and social disruption, which must be balanced against any benefits from delaying the domestic spread of an epidemic.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "If combined with restrictions on overseas travel, restrictions on internal travel may have a role in pandemic control, even for major centers. However, the economic impact of restrictions in major centers could be enormous, with severe consequences for service and travel industries, as seen in the SARS crisis (25), and the potential to affect trade and other sections of the economy. Some of the benefits and costs of reduced travel may also accrue without restrictions, with persons avoiding travel because of perceived risks. Our modeling suggests that travel restrictions could have a greater effect in more isolated communities that lack international ports.",
+            "cite_spans": [
+                {
+                    "start": 312,
+                    "end": 314,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The travel restrictions we discussed have been examined in isolation, without consideration of other disease control measures. Other measures could lower the effective value of the reproduction number, or even curtail the epidemic; in these circumstances, reducing all travel by only 80% might be beneficial. Alternatively, if the R0, is much higher than used here (23), internal travel restrictions would be ineffective. Limitations of our modeling approach are summarized in Table 3.",
+            "cite_spans": [
+                {
+                    "start": 366,
+                    "end": 368,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 477,
+                    "end": 484,
+                    "mention": "Table 3",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The key points in our study are that delays induced by internal border control are strongly influenced by epidemic growth rates and demographic factors such as the relative sizes of cities, travel rates, and the origin of travelers. When used without other control measures, stopping at least 99% of travel would be required to significantly increase time available for vaccine production and distribution. Although any delay in spread might be attractive for logistical purposes, the economic impact of such restrictions may be prohibitive if sustained for more than a few days. In view of these points, the situation in which they might be most applicable for extended use is in the protection of small, relatively isolated centers.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Schematic of travel locations and model. A) Model schematic showing the SIR (susceptible, infectious, and recovered) classes and travel connecting the cities; B) locations of the cities and routes used in the model; C) the form of the 2 infectivity functions used to simulate the infectivity of persons over the course of their infection.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: For an epidemic beginning in Sydney, the value of the median time delay, m20, in the presence of travel restrictions applied at a delay of 0\u20136 weeks (10 and 8 weeks in [A] and [B], respectively). Assumptions are A) reproduction number (R0) = 1.5, constant infectivity profile; B) R0 = 1.5, peaked infectivity profile; C) R0 = 2.5, constant infectivity profile; D) R0 = 2.5, peaked infectivity profile; E) R0 = 3.5, constant infectivity profile; F) R0 = 3.5, peaked infectivity profile. The gray panes cover the periods when the epidemic grows from 20 to 1,000 infected people in Sydney; dotted, dashed, dash-dotted, and solid lines correspond to 99%, 90%, 80% and no travel restrictions, respectively.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Distributions, based on 10,000 simulations, of the time delay, T20, given reproduction number (R0) = 1.5 and the peaked infectivity function, with 99% travel restrictions imposed in scenario 1 (A) and (B) and scenario 2 (C) and (D). Scenario 1 simulates an epidemic beginning in Sydney and spreading to Melbourne. In scenario 2, the epidemic begins in Darwin and spreads to Sydney. In (A) and (C), the restrictions are imposed after 2 weeks; in (B) and (D), they are imposed after 4 weeks.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: For an epidemic beginning in Darwin, the value of the median time delay, m20, in the presence of travel restrictions applied at a delay of 0\u20136 weeks (8 weeks in [A] and [B], respectively). Assumptions are (A) reproduction number (R0) = 1.5, constant infectivity profile; (B) R0 = 1.5, peaked infectivity profile; (C) R0 = 2.5, constant infectivity profile; (D) R0 = 2.5, peaked infectivity profile; (E) R0 = 3.5, constant infectivity profile; (F) R0 = 3.5, peaked infectivity profile. The gray panes cover the periods when the epidemic grows from 20 to 1,000 infected people in Darwin. Dotted, dashed, dash-dotted, and solid lines correspond to 99%, 90%, 80%, and no travel restrictions, respectively.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Travel epidemiology: WHO perspective.",
+            "authors": [],
+            "year": 2003,
+            "venue": "Int J Antimicrob Agents",
+            "volume": "21",
+            "issn": "",
+            "pages": "86-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0924-8579(02)00365-5"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Will travel restrictions control the international spread of pandemic influenza?",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nat Med",
+            "volume": "12",
+            "issn": "",
+            "pages": "497-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm0506-497"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Nonpharmaceutical influenza mitigation strategies, US communities, 1918\u20131920 pandemic.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "1961-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": 1920,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Assessing the impact of airline travel on the geographic spread of pandemic influenza.",
+            "authors": [],
+            "year": 2003,
+            "venue": "Eur J Epidemiol",
+            "volume": "18",
+            "issn": "",
+            "pages": "1065-72",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1026140019146"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Transmissibility of 1918 pandemic influenza.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "432",
+            "issn": "",
+            "pages": "904-6",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature03063"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": 1991,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [],
+            "year": 2004,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Local and systemic cytokine responses during experimental human influenza a virus infection. Relation to symptom formation and host defense.",
+            "authors": [],
+            "year": 1998,
+            "venue": "J Clin Invest",
+            "volume": "101",
+            "issn": "",
+            "pages": "643-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1172/JCI1355"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Factors that make an infectious disease outbreak controllable.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "101",
+            "issn": "",
+            "pages": "6146-51",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0307506101"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Potential impact of antiviral drug use during influenza pandemic.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Emerg Infect Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "1355-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "",
+            "authors": [],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "(NACI). Statement on travel, influenza, and prevention.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Can Commun Dis Rep",
+            "volume": "31",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-14",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Containing pandemic influenza at the source.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1083-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1115717"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Strategies for mitigating an influenza pandemic.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "442",
+            "issn": "",
+            "pages": "448-52",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04795"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Delaying the international spread of pandemic influenza.",
+            "authors": [],
+            "year": 2006,
+            "venue": "PLoS Med",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0030212"
+                ]
+            }
+        }
+    }
+}

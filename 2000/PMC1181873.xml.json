@@ -1,0 +1,2031 @@
+{
+    "paper_id": "PMC1181873",
+    "metadata": {
+        "title": "Appropriate Models for the Management of Infectious Diseases",
+        "authors": [
+            {
+                "first": "Helen",
+                "middle": [
+                    "J"
+                ],
+                "last": "Wearing",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pejman",
+                "middle": [],
+                "last": "Rohani",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Matt",
+                "middle": [
+                    "J"
+                ],
+                "last": "Keeling",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Stephen",
+                "middle": [
+                    "P."
+                ],
+                "last": "Ellner",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The past decade has seen a dramatic increase in the significance attached to infectious diseases from the public health perspective. This trend is due in part to the emergence of new and highly pathogenic infections such as Ebola [1], West Nile virus [2], and SARS [3]. There are also well-publicized concerns surrounding the deliberate introduction of pathogens as bioterrorism weapons [4,5], and the continued persistence and resurgence of older infections, several of which now boast strains resistant to more than one drug [6]. In addition, there have been a number of high-profile and economically expensive disease outbreaks in domestic livestock [7\u20139] as well as wildlife populations [10].",
+            "cite_spans": [
+                {
+                    "start": 231,
+                    "end": 232,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 252,
+                    "end": 253,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 266,
+                    "end": 267,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 388,
+                    "end": 389,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 390,
+                    "end": 391,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 528,
+                    "end": 529,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 654,
+                    "end": 655,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 656,
+                    "end": 657,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 692,
+                    "end": 694,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The effective management and control of such infections is increasingly done with substantial input from mathematical models, which are used not only to provide information on the nature of the infection itself, through estimates of key parameters such as the basic reproductive ratio R\n0 [11], but also to make predictions about the likely outcome of alternative courses of action [12\u201315]. During the 2001 outbreak of foot-and-mouth disease in the United Kingdom, for example, the former UK Ministry of Agriculture, Fisheries, and Food set up a committee that included two groups with expertise in mathematical modeling of disease dynamics. It is becoming increasingly important, therefore, that epidemiological models produce accurate quantitative predictions, and this in turn relies on accurate parameterization. Here, we examine the dynamical consequences of an unrealistic yet almost ubiquitous assumption embedded in such models concerning the distribution of the latent and infectious periods. In particular, we show that without greater care in model formulation, we may risk systematic biases when parameterizing models from data and may make overly optimistic policy recommendations.",
+            "cite_spans": [
+                {
+                    "start": 290,
+                    "end": 292,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 383,
+                    "end": 385,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 386,
+                    "end": 388,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The most commonly used framework for epidemiological systems, is still the susceptible\u2013infectious\u2013recovered (SIR) class of models, in which the host population is categorized according to infection status as either susceptible, infectious, or recovered [16,17]. Subsequent refinements of the model have incorporated an additional exposed (infected but not yet infectious) class (susceptible\u2013exposed\u2013infectious\u2013recovered [SEIR] models) (see Protocol S1 for mathematical equations). One of the fundamental mathematical assumptions in such models is that the rate of leaving the exposed or infectious class is constant, irrespective of the period already spent in that class. While mathematically very convenient, this assumption gives rise to exponentially distributed latent and infectious periods, which is epidemiologically unrealistic for most infections [18\u201320]. A more sensible formulation would be to specify the probability of leaving a class as a function of the time spent within the class, such that initially the chance of leaving the class is small, but the probability increases as the mean infectious/latent period is reached. This would give rise to a more realistic distribution of latent and infectious periods, with a stronger central tendency. A convenient way to describe such distributions is to write an expression for the infectious class (neglecting the latent class for this example) as follows:",
+            "cite_spans": [
+                {
+                    "start": 254,
+                    "end": 256,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 257,
+                    "end": 259,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 858,
+                    "end": 860,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 861,
+                    "end": 863,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "which translates mathematically into",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "where \u03b2 is the infection transmission rate and N is the total population size. The probability of remaining infectious through time is governed by the survivorship function, P(t), and as such the average infectious period, denoted by 1/\u03b3, is given by  [21]. The probability density function of the infectious period, p(t), is just the negative derivative of the survivorship function, \u2212dP(t)/dt. Different functional forms for p(t) give rise to alternative assumptions concerning the distribution of the infectious period in the model. For example, setting p(t) equal to e\u2212\u03b3t/\u03b3 recovers the classical exponentially distributed SIR model. More realistic distributions can be obtained by choosing p(t) to be a gamma probability density function [22\u201327], with parameters \u03b3 and n (see Protocol S1). An alternative (and computationally efficient) means of modeling infections with gamma distributions is to divide the infectious class into n subclasses with n\u03b3 being the rate of sequential progression through the subclasses. The advantage of this formalism is that when n = 1 we recover the exponentially distributed model, which has a large variance, while as n\u2192\u221e we obtain a fixed infectious period. The effects of n on the distribution of the infectious period are demonstrated in Figure 1A; in Table 1 we present some examples of latent and infectious period distributions estimated from data.\n",
+            "cite_spans": [
+                {
+                    "start": 253,
+                    "end": 255,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 744,
+                    "end": 746,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 747,
+                    "end": 749,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 1280,
+                    "end": 1288,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1294,
+                    "end": 1301,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The dynamical consequences of these differences in the distribution of infectious and latent periods have received some attention over the past two decades. It has been shown, for example, that the precise distribution of the infectious period has no qualitative effects on the asymptotic values or properties of the system [21,24], though perturbations to the endemic equilibrium take longer to die out as n increases [22,26]. When contact rates vary seasonally, for example, to mimic the aggregation of children in schools [28,29], changes in p(t) are known to have important consequences for the persistence likelihood of infections [25,26,30]. An issue that has received surprisingly little attention, despite its obvious applicability to emerging infections and possible \u201cdeliberate exposure,\u201d is the influence of latent and infectious period distributions on the invasion dynamics of an infection into a largely susceptible population. This is in contrast to the conceptually similar situation of within-host dynamics of viral disease, such as HIV, for which some models already adopt realistic distributions to describe stages in the cell life cycle [31,32]. In particular, Lloyd [33] has shown how parameter estimates made from viral load data are affected by different assumptions about these distributions. Here we are interested in the application of this work to between-host transmission dynamics. As can be seen in Figure 1B, changes in the gamma distribution parameter n have substantial quantitative consequences for the epidemic curve: in comparison to a gamma-distributed model, the epidemic given by the exponentially distributed model (i) takes off at a dramatically slower rate, (ii) predicts a significantly smaller (approximately 56%) peak number of cases, and (iii) lasts much longer (almost twice as long).",
+            "cite_spans": [
+                {
+                    "start": 325,
+                    "end": 327,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 328,
+                    "end": 330,
+                    "mention": "24",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 420,
+                    "end": 422,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 529,
+                    "end": 531,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 637,
+                    "end": 639,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 640,
+                    "end": 642,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 643,
+                    "end": 645,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1158,
+                    "end": 1160,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1161,
+                    "end": 1163,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1188,
+                    "end": 1190,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 1429,
+                    "end": 1437,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Whether these marked differences between alternate model formulations may translate into potentially important public health concerns is a key question, which we address in two ways. First, we document systematic differences in the model parameters estimated from an epidemic using the exponential and gamma-distributed models. Second, we demonstrate that the use of exponential models produces overoptimistic predictions about the low levels of control required to subdue an epidemic.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "During the early phase of an epidemic, the observed exponential growth rate, \u03bb, is related to the basic reproductive ratio, R\n0, of the infection. Mathematically, \u03bb is just the dominant eigenvalue of the disease-free equilibrium, and one can show that \u03bb must satisfy",
+            "cite_spans": [],
+            "section": "The Relationship between R\n0 and Initial Epidemic Growth Rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n",
+            "cite_spans": [],
+            "section": "The Relationship between R\n0 and Initial Epidemic Growth Rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "for the SEIR model with gamma-distributed latent and infectious periods (further details are given in Protocol S1). This equation translates into an expression for R\n0 in terms of \u03bb and the other parameters, as is presented in equation 4. Therefore, if we can estimate the growth rate \u03bb from data, we can use equation 4 to obtain an estimate of R\n0.",
+            "cite_spans": [],
+            "section": "The Relationship between R\n0 and Initial Epidemic Growth Rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To study the effects of contact tracing and isolation, we modify the assumptions of the SEIR epidemic model, while still incorporating gamma-distributed latent and infectious periods. In the new model, isolation of newly infectious cases occurs at a daily rate of dI after a delay of \u03c4D days, which represents a period when infected individuals are infectious but asymptomatic or undetectable (IA). A fraction q of those who had contact with an infectious and symptomatic individual (IS) (but did not contract the infection) are removed to the quarantined susceptible class, SQ, where they spend exactly \u03c4Q days. An identical fraction of newly exposed individuals is also quarantined. Full details of the model equations are given in Protocol S1.",
+            "cite_spans": [],
+            "section": "Contact Tracing and Isolation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We may obtain an estimate for R\n0 by calculating the initial growth rate (\u03bb) of an infection from data and equating it to the growth rate of the equations, calculated from the dominant eigenvalue of the disease-free equilibrium (see Methods). Such an exercise reveals that for any observed \u03bb, the precise value of R\n0 estimated is crucially dependent on the fundamental assumptions made concerning the distributions of latent and infectious periods. Specifically, we find that the following equation determines the relationship between R\n0 and an empirically estimated epidemic growth rate, \u03bb:\n",
+            "cite_spans": [],
+            "section": "Estimating R\n0 from Initial Epidemic Growth Rate ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n",
+            "cite_spans": [],
+            "section": "Estimating R\n0 from Initial Epidemic Growth Rate ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where m and n represent the number of subclasses in the exposed and infectious categories, respectively. The mean latent and infectious periods are represented by 1/\u03c3 and 1/\u03b3, respectively, and are assumed to be known or estimated from independent data. This relationship was first determined by Anderson and Watson [36] and has recently been applied in the context of viral life cycle dynamics by Lloyd [33].",
+            "cite_spans": [
+                {
+                    "start": 317,
+                    "end": 319,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 405,
+                    "end": 407,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Estimating R\n0 from Initial Epidemic Growth Rate ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The relationship between estimated R\n0 and the distributions of the latent and infectious periods is demonstrated in Figure 2A. It reveals a subtle yet very important interaction between model structure and estimated R\n0. In general, as the infectious period becomes more tightly distributed (increasing n), lower values of R\n0 are estimated for any given growth rate \u03bb. On the other hand, as the variance in the latent period is reduced (increasing m), higher values of R\n0 are estimated. Indeed, we may use the relationship given by equation 4 to arrive at the following general principle: if we ignore the latent period, then models with an exponentially distributed infectious period will always overestimate the infection's basic reproductive ratio. When the latent period is included, however, this finding is reversed when the growth rate is large (Figure 2B). In closely examining equation 4, we note that the basic reproductive ratio estimated from a model without an exposed class (1/\u03c3 = 0) is always lower than the estimate from the corresponding model when a latent period is included (1/\u03c3 > 0) (see equation S1 in Protocol S1). Therefore, when faced with a rapidly spreading infection, either entirely ignoring the latent period or assuming exponential distributions will lead to an underestimate of R\n0 and therefore will underestimate the level of global control measures (such as mass vaccination) that will be needed to control the epidemic.",
+            "cite_spans": [],
+            "section": "Estimating R\n0 from Initial Epidemic Growth Rate ::: Results",
+            "ref_spans": [
+                {
+                    "start": 117,
+                    "end": 125,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 856,
+                    "end": 864,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "While the results described in the previous section are based on the rate of epidemic take-off, we reach the same qualitative conclusions about the effects of the distributions of latent and infectious periods when estimating R\n0 by other data-fitting methods. For illustration, we use data from an influenza outbreak in an English boarding school [37] to estimate model parameters by trajectory matching. In the absence of independent data, this method can be used to provide estimates of the key infectious parameters. Of course, here we can also compare the parameter estimates to observed parameter ranges, since the influenza virus is known to have a latent period of between 1 and 4 d and infected individuals may transmit the virus up to 4 or 5 d after the onset of illness [38]. We determine the best fit of the model output to daily incidence data by minimizing the least squares errors for different values of the distribution parameters m and n. For comparison, we also determine the best-fit parameters in the absence of any latent period. The least squares errors and estimated R\n0 of the best fit for a combination of m and n are presented in Figure 3. These results clearly illustrate the points raised in the previous section: (i) entirely ignoring the latent period gives a significantly lower estimate of R\n0, and (ii) the assumption of exponentially distributed latent and infectious periods results in consistently lower estimates of R\n0 than their gamma-distributed counterparts.",
+            "cite_spans": [
+                {
+                    "start": 349,
+                    "end": 351,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 782,
+                    "end": 784,
+                    "mention": "38",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Estimating R\n0 from Trajectory Matching ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1157,
+                    "end": 1165,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Despite visually similar solutions, the SIR best-fit and SEIR best-fit models (Figure 3C) result in strikingly different estimates of R\n0: 3.74 for the SIR model versus 35.9 for the SEIR model, which is partly a result of the small population size. However, the best-fit estimate of R\n0 obtained from the gamma-distributed SEIR model (m = 2, n = 2) is much more sensitive to the number of points used to obtain the fit (Figure 3D): the exponentially distributed SIR model gives the same estimate whether the first six (up to the peak in incidence) or more points are used. This difference is further emphasized if we use the first few points of the data to estimate the rate of epidemic take-off (\u03bb = 1.0837 d\u22121), and then take the final estimates of the average latent and infectious periods to compute R\n0 using equation 4. For the SIR model (n = 1, 1/\u03b3 = 2.2 d) we obtain an R\n0 of 4.38 whereas for the SEIR model (m = 2, n = 2, 1/\u03c3 = 2.6 d, 1/\u03b3 = 2.1 d) we obtain an R\n0 of 16.9. Thus the initial rate of increase in incidence does well in estimating R\n0 for the exponentially distributed SIR model but significantly less well for the gamma-distributed SEIR model. Given that we are fitting an additional parameter, it is to be expected that a limited number of data points confounds the estimation of R\n0 when we include a latent period in the model assumptions. However, this also highlights that even when incorporating a latent period, estimates of R\n0 based on the initial epidemic growth rate may potentially underestimate the true value of R\n0.",
+            "cite_spans": [],
+            "section": "Estimating R\n0 from Trajectory Matching ::: Results",
+            "ref_spans": [
+                {
+                    "start": 79,
+                    "end": 87,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 420,
+                    "end": 428,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The results outlined above highlight the pitfalls of making a priori assumptions concerning the distributions of latent and infectious periods when estimating parameters. Depending on the precise details, inappropriate model selection may give rise to either gross over- or underestimates for the basic reproductive ratio of an infection. However, even when parameter estimates are reliable, choice of model structure can also be very important when making recommendations concerning individual-level control strategies. Historically, it has been shown that contact tracing and the effective quarantine of infected individuals and those potentially exposed is an important means of infection management [13,39,40]. We introduce both these measures into the SEIR epidemic model, assuming that there is a small delay in detecting newly infectious individuals, which may represent an asymptomatic phase or uncertainty in diagnosing symptoms (see Methods and Protocol S1). As we show in Figure 4, the precise levels of isolation of infected individuals and of quarantining contacts required to control the outbreak and the predicted level of disease incidence are crucially affected by whether the classic exponentially distributed SEIR model or a more realistic framework is used.",
+            "cite_spans": [
+                {
+                    "start": 704,
+                    "end": 706,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 707,
+                    "end": 709,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Management Consequences ::: Results",
+            "ref_spans": [
+                {
+                    "start": 983,
+                    "end": 991,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The process of isolating infected individuals results in a reduction in the mean infectious period (see Protocol S1). It is much more effective when the infectious period is exponentially distributed because it essentially truncates the tail of the distribution, so that the infectious period of a few individuals is dramatically reduced. This effect is not as pronounced in the gamma-distributed models because there is less variation in the infectious periods (see Figure 1A). In the same way, a longer delay in detecting infected individuals has fewer consequences for the exponentially distributed model because during this time many individuals will have naturally left the infectious class. Under the assumption of a gamma-distributed infectious period most individuals are infectious for a minimum period of time so early detection is more important. While the predicted difference between the exponential and gamma-distributed models depends on the duration of the infectious period and the fraction of contacts traced, it is generally true that models with an exponentially distributed infectious period will give rise to overly optimistic predictions concerning the effectiveness of isolating infected individuals.",
+            "cite_spans": [],
+            "section": "Management Consequences ::: Results",
+            "ref_spans": [
+                {
+                    "start": 467,
+                    "end": 475,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To focus on the effects of the infectious period distribution on different courses of intervention we have assumed that all those who are quarantined and exposed are detected before the end of the quarantine period and are not released back into the general population. We have also formulated a model that takes into account the distribution of the latent period during quarantine and find similar qualitative results to those shown in Figure 4. However, if the average latent period is increased relative to the fixed quarantine period and there is only a small amount of isolation of infected individuals, then the control measures are predicted to be more effective for the gamma-distributed model, because more exposed individuals in the exponentially distributed model will leave quarantine before they develop the infection.",
+            "cite_spans": [],
+            "section": "Management Consequences ::: Results",
+            "ref_spans": [
+                {
+                    "start": 437,
+                    "end": 445,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The use of models in epidemiology dates back almost a century, and while traditional models have often been highly successful in explaining observed dynamics [17,20,28,29,41], our results show that within a strict management setting, epidemiological details can make a crucial difference. Although a body of theoretical work [25,26,30] has demonstrated the importance of incorporating realistic distributions of latent and infectious periods into models of endemic disease, few studies have considered the effects associated with making predictions for an emerging disease [42].",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 171,
+                    "end": 173,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 326,
+                    "end": 328,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 332,
+                    "end": 334,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 574,
+                    "end": 576,
+                    "mention": "42",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The large discrepancies between estimates of R\n0 from the exponentially distributed and gamma-distributed fits reiterate the importance of accurately determining the precise distributions of latent and infectious periods. Although the data required for such a task are often available from post hoc analyses of epidemics they are certainly lacking for a novel emerging infection. Instead, the uncertainty surrounding assumptions about the distributions should be incorporated into quantitative predictions made from epidemiological models, especially since this may well be greater than any uncertainty that arises from noise in the data. Of course, more sophisticated fitting methods than those used in this paper exist [43\u201346], but if the underlying structure of the model is inappropriate, the method of parameterization is largely irrelevant.",
+            "cite_spans": [
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "43",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 725,
+                    "end": 727,
+                    "mention": "46",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The take home message from our work is that when developing models for public health use, we need to pay careful attention to the intrinsic assumptions embedded within classical frameworks. While some practitioners are already using the approach we advocate [3,15,34,39,47], the vast majority of applied epidemiological studies still use models that incorporate exponentially distributed latent and infectious periods. Perhaps this work points to the next steps in delivering quantitatively accurate epidemiological models.",
+            "cite_spans": [
+                {
+                    "start": 259,
+                    "end": 260,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 261,
+                    "end": 263,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 264,
+                    "end": 266,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 267,
+                    "end": 269,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 270,
+                    "end": 272,
+                    "mention": "47",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: (A) The change in the probability of remaining infectious as a function of time when the number of subdivisions within the infected class increases from n = 1 to n = 100. Irrespective of the value of n, the mean duration of the infectious period is 1 wk. When n = 1, the distribution of the infectious period is exponential, but as n increases the infectious period becomes closer to a constant length. (B) The consequences of changes in n for the SIR-type epidemic without births or deaths. For the same basic reproductive ratio, R\n0 = 5, and the same average infectious period, \u03b3 = 1, larger values of n lead to a steeper increase in prevalence and an epidemic of shorter duration.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (A) The effects of changing the distributions of the latent and infectious periods on the estimated value of R\n0, with \u03bb assumed to be 100 per year and the average latent and infectious periods fixed at 1 wk. The gray grid surfaces show the asymptotic values of R\n0 when the latent and infectious periods are both exponentially distributed (lower surface) or fixed (higher surface). We note that the shape of each surface is independent of the exact value of \u03bb. (B) At higher values of \u03bb, R\n0 may be substantially over- or underestimated using the classical exponentially distributed model (n = m = 1) compared to periods of fixed lengths (n = m\u2192\u221e), depending on whether an exposed class is included (solid lines) or not (dashed lines).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: (A and B) The least squares error (LSE) (A) and R\n0 (B) of the best-fit model under different assumptions about the distribution of the latent and infectious periods. (The label \u201cw/o\u201d denotes no latent class.) (C) We plot the incidence data along with the SEIR best fit (m = 2, n = 2) and that obtained by ignoring any latent period (n = 1)\u2014the SIR best fit. (D) The best-fit estimate of R\n0 changes for these two models as we increase the number of points used in the fitting procedure. When fitting the models, for each value of n (and m), we are estimating the average infectious period, 1/\u03b3, and transmission parameter, \u03b2 (and average latent period, 1/\u03c3). The effective population size for the influenza outbreak was known to be N = 763.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: (A) The proportion of the population contracting an introduced infection is depicted as a function of the infected isolation rate (dI) and the infectious period (1/\u03b3). (B) The consequences of contact tracing. In both, the surfaces represent predictions of the SEIR model with an exponential (colored surface) or gamma (black grid surface; m = n = 10) distribution of the latent and infectious periods, respectively. Model parameters: \u03b2 = 0.5 per day, 1/\u03c3 = 5 d, \u03c4Q = 10 d, and \u03c4D = 2 d. In (B), 1/\u03bb = 10 d.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Death toll continues to climb in Congo Ebola outbreak",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Frankish",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Emerging infectious diseases of wildlife\u2014Threats to biodiversity and human health",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Hyatt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "287",
+            "issn": "",
+            "pages": "443-449",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Epidemiological determinants of spread of causal agent of severe acute respiratory syndrome in Hong Kong",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1761-1766",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Transmission potential of smallpox in contemporary populations",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gani",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Leach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "414",
+            "issn": "",
+            "pages": "748-751",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Containing bioterrorist smallpox",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nizam",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "298",
+            "issn": "",
+            "pages": "1428-1432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Bubonic plague: A metapopulation model of a zoonosis",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Gilligan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Proc R Soc Lond B Biol Sci",
+            "volume": "267",
+            "issn": "",
+            "pages": "2219-2230",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Transmission dynamics and epidemiology of BSE in British cattle",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Watt",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Nature",
+            "volume": "382",
+            "issn": "",
+            "pages": "779-788",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Foot-and-mouth disease under control in the UK",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chase-Topping",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Haydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Friar",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "411",
+            "issn": "",
+            "pages": "258-259",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Outbreak of chicken flu rattles Hong Kong",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cyranoski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "412",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Epidemiology of chronic wasting disease in captive white-tailed and mule deer",
+            "authors": [
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Wild",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Wildl Dis",
+            "volume": "40",
+            "issn": "",
+            "pages": "320-327",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "A brief history of R\n0 and a recipe for its calculation",
+            "authors": [
+                {
+                    "first": "JAP",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Acta Biotheor",
+            "volume": "50",
+            "issn": "",
+            "pages": "189-204",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Dynamics of the 2001 UK foot and mouth epidemic: Stochastic dispersal in a heterogeneous landscape",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chase-Topping",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "813-817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Planning for smallpox outbreaks",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Edmunds",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gant",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "425",
+            "issn": "",
+            "pages": "681-685",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Factors that make an infectious disease outbreak controllable",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "101",
+            "issn": "",
+            "pages": "6146-6151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A contribution to the mathematical theory of epidemics",
+            "authors": [
+                {
+                    "first": "WO",
+                    "middle": [],
+                    "last": "Kermack",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "McKendrick",
+                    "suffix": ""
+                }
+            ],
+            "year": 1927,
+            "venue": "Proc R Soc Lond A",
+            "volume": "115",
+            "issn": "",
+            "pages": "700-721",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Infectious diseases of humans: Dynamics and control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "The distribution of incubation periods of infectious disease",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Sartwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1950,
+            "venue": "Am J Hyg",
+            "volume": "51",
+            "issn": "",
+            "pages": "310-318",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Infectiousness of communicable diseases in the household (measles, chickenpox, and mumps)",
+            "authors": [
+                {
+                    "first": "REH",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1952,
+            "venue": "Lancet",
+            "volume": "263",
+            "issn": "",
+            "pages": "549-554",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "NTJ",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1975,
+            "venue": "The mathematical theory of infectious diseases, 2nd ed",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Integral equation models for endemic infectious diseases",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Tudor",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "J Math Biol",
+            "volume": "9",
+            "issn": "",
+            "pages": "37-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Oscillatory phenomena in a model of infectious diseases",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Grossman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "Theor Popul Biol",
+            "volume": "18",
+            "issn": "",
+            "pages": "204-243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "The dynamics of population models with distributed maturation periods",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Blythe",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Nisbet",
+                    "suffix": ""
+                },
+                {
+                    "first": "WSC",
+                    "middle": [],
+                    "last": "Gurney",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Theor Popul Biol",
+            "volume": "25",
+            "issn": "",
+            "pages": "289-311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Distributed incubation and infectious periods in models of the transmission dynamics of the human immunodeficiency virus (HIV)",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Blythe",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "IMA J Math Appl Med Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": "1-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Disease extinction and community size: Modeling the persistence of measles",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "275",
+            "issn": "",
+            "pages": "65-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Destabilization of epidemic models with the inclusion of realistic distributions of infectious periods",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc R Soc Lond B Biol Sci",
+            "volume": "268",
+            "issn": "",
+            "pages": "985-993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "The dynamical consequences of developmental variability and demographic stochasticity for host-parasitoid interactions",
+            "authors": [
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Wearing",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rohani",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Sait",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am Nat",
+            "volume": "164",
+            "issn": "",
+            "pages": "543-558",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Recurrent outbreaks of measles, chickenpox and mumps. I. Seasonal variations in contact rates",
+            "authors": [
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "London",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Yorke",
+                    "suffix": ""
+                }
+            ],
+            "year": 1973,
+            "venue": "Am J Epidemiol",
+            "volume": "98",
+            "issn": "",
+            "pages": "453-468",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "An age-structured model of pre- and post-vaccination measles transmission",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Schenzle",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "IMA J Math Appl Med Biol",
+            "volume": "1",
+            "issn": "",
+            "pages": "169-191",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Realistic distributions of infectious periods in epidemic models: Changing patterns of persistence and dynamics",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Theor Popul Biol",
+            "volume": "60",
+            "issn": "",
+            "pages": "59-71",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "HIV infection: How effective is drug combination treatment?",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Grossman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Feinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kuznetsov",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dimitrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Immunol Today",
+            "volume": "19",
+            "issn": "",
+            "pages": "528-532",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Influence of delayed viral production on viral dynamics in HIV-1 infected patients",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Mittler",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Sulzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "AU",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Perelson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Math Biosci",
+            "volume": "152",
+            "issn": "",
+            "pages": "143-163",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "The dependence of viral parameter estimates on the assumed viral life cycle: Limitations of studies of viral load data",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc R Soc Lond B Biol Sci",
+            "volume": "268",
+            "issn": "",
+            "pages": "847-854",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Transmission dynamics of the etiological agent of SARS in Hong Kong: Impact of public health interventions",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Abu-Raddad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1961-1966",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "The basic reproductive number of Ebola and the effects of public health measures: The cases of Congo and Uganda",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "NW",
+                    "middle": [],
+                    "last": "Hengartner",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Theor Biol",
+            "volume": "229",
+            "issn": "",
+            "pages": "119-126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "On the spread of a disease with gamma distributed latent and infectious periods",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "Biometrika",
+            "volume": "67",
+            "issn": "",
+            "pages": "191-198",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Influenza in a boarding school",
+            "authors": [],
+            "year": 1978,
+            "venue": "BMJ",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Epidemiology and prevention of influenza",
+            "authors": [
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Steinhoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Infectious disease epidemiology: Theory and practice",
+            "volume": "",
+            "issn": "",
+            "pages": "477-494",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "The foot-and-mouth epidemic in Great Britain: Pattern of spread and impact of interventions",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "292",
+            "issn": "",
+            "pages": "1155-1160",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Emergency response to a smallpox attack: The case for mass vaccination",
+            "authors": [
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Kaplan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Craft",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Wein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "10935-10940",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Opposite patterns of synchrony in sympatric disease metapopulations",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rohani",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJD",
+                    "middle": [],
+                    "last": "Earn",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Science",
+            "volume": "286",
+            "issn": "",
+            "pages": "968-971",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Is it possible to predict the minimum size of the acquired immunodeficiency syndrome (AIDS) epidemic in the United Kingdom?",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Medley",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Blythe",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Lancet",
+            "volume": "1",
+            "issn": "",
+            "pages": "1073-1075",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "A composite likelihood approach to (co)variance components estimation",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lele",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Taper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Stat Plan Infer",
+            "volume": "103",
+            "issn": "",
+            "pages": "117-135",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Population time series: Process variability, observation errors, missing values, lags, and hidden states",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "ON",
+                    "middle": [],
+                    "last": "Bj\u00f8rnstad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Ecology",
+            "volume": "85",
+            "issn": "",
+            "pages": "3140-3150",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Using conservation of pattern to estimate spatial parameters from a single snapshot",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Brooks",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Gilligan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "101",
+            "issn": "",
+            "pages": "9155-9160",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Population cycles in the pine looper moth: Dynamical tests of mechanistic hypotheses",
+            "authors": [
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Kendall",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Ellner",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "McCauley",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Wood",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Briggs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Ecol Monogr",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Curtailing transmission of severe acute respiratory syndrome within a community and its hospital",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc R Soc Lond B Biol Sci",
+            "volume": "270",
+            "issn": "",
+            "pages": "1979-1989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Urban hospital and rural village smallpox in Bangladesh",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Koplan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Azizullah",
+                    "suffix": ""
+                },
+                {
+                    "first": "SO",
+                    "middle": [],
+                    "last": "Foster",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "Trop Geogr Med",
+            "volume": "30",
+            "issn": "",
+            "pages": "355-358",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

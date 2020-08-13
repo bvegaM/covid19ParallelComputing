@@ -1,0 +1,825 @@
+{
+    "paper_id": "PMC2857283",
+    "metadata": {
+        "title": "Frequent Travelers and Rate of Spread of Epidemics",
+        "authors": [
+            {
+                "first": "T.",
+                "middle": [
+                    "D\u00e9irdre"
+                ],
+                "last": "Hollingsworth",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Neil",
+                "middle": [
+                    "M."
+                ],
+                "last": "Ferguson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Roy",
+                "middle": [
+                    "M."
+                ],
+                "last": "Anderson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "To investigate the role of frequent travelers in the exportation of asymptomatic cases\n        during the early stages of an epidemic, we simulated outbreaks of both a SARS-like and an\n        influenza-like airborne respiratory infection in a population in which a small proportion of\n        the population make many more trips than the rest of the population. In the early stages of\n        an epidemic, chance events are important because the number of infected persons is small. We\n        simulated these early stages by using a stochastic model for which every simulation is\n        different. We present both the mean behavior of the simulations and the range of possible\n        outcomes across a large number of simulations. In a stochastic model, introduction of 1\n        infected person has a finite probability of resulting in the rapid extinction of an\n        infectious disease. To increase the probability of initiating an outbreak, we introduced 3\n        asymptomatic persons into the population. We simulated the outbreak in a large extended\n        metropolitan area with a population of 107 persons.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The structure of the model is illustrated schematically in Figure 1A. The population is divided into 2 subpopulations with different\n        frequencies of taking international flights. A small proportion of the population,\n        r, are high-frequency fliers. Most of the population, 1 \u2013\n          r, are low-frequency fliers. Frequent fliers have contact with other\n        frequent fliers and with the general population. Similarly, the general population has\n        contact with persons in the general population and with frequent fliers. Contacts are more\n        likely to be between persons within each group (frequent fliers or general population), but\n        the level of this assortativeness may vary (parameterized by \u03a6). Contacts may be\n        made completely randomly, with the likelihood of meeting a person from the frequent-flying\n        group or the general population being proportional to the number of persons in each\n        population (\u03a6 = 1). At the other extreme, persons may only\n        have contact with other persons in the same group (\u03a6 = 0). The true mixing\n        pattern is likely to lie between these 2 extremes.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 59,
+                    "end": 68,
+                    "mention": "Figure 1A",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The extent to which the high-frequency and low-frequency fliers mix will determine how\n        quickly a disease will spread from the general population to the frequent fliers and vice\n        versa. We simulated the model for a selection of mixing parameters, ranging from wholly\n        random (\u03a6 = 1) to moderate and high levels of assortativeness (\u03a6 =\n        0.5, 0.25, respectively). For comparison, we also simulated a homogeneous model in which the\n        entire population travels equally frequently.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The outbreak is modeled by dividing the population into those who are still susceptible to\n        the disease, those who have contracted the disease and are in the latent stage, those who\n        are infectious and symptomatic, and those who have recovered from the disease (Figure 1). This division is similar to the basic structure\n        used in several recent papers on the role of international travel in the spread of\n        infectious diseases (8,9,12). This model structure can be adapted to many airborne infections because it allows\n        for an asymptomatic period, which may or may not be infectious, followed by a potentially\n        symptomatic period during which transmission can also occur.",
+            "cite_spans": [
+                {
+                    "start": 455,
+                    "end": 456,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 457,
+                    "end": 458,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 459,
+                    "end": 461,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 276,
+                    "end": 284,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In our stochastic model, events (such as infection or a person leaving the source area)\n        occur by chance. For example, the time after symptom onset at which a person recovers from\n        infection with SARS is not a fixed quantity; rather, it is a randomly chosen time with a\n        mean of 10 days. Table 1 shows the average latent and\n        infectious periods used. The probability of leaving the country is constant for all persons\n          (Table 1). The probability of a susceptible person\n        becoming infected increases as a larger proportion of the population becomes infected and is\n        chosen so that the average number of new infections caused by each infected person in the\n        early stages of the epidemic is equal to the basic reproductive number\n        R0 (2.5 for SARS, 1.8 for influenza; Table 1). The epidemic is simulated by evaluating the probability that any\n        person is infected, becomes symptomatic, or recovers in any short time interval (we divide\n        time into sequential short intervals of one fiftieth of a day), and then testing whether\n        that event occurs. The simulation can be thought of as generating a random number between 0\n        and 1 for each person in each time step. If this random number is less than the probability\n        of a particular event occurring to that person, then the event occurs. Otherwise, the person\n        is left in his or her current state. The model does not store the details of every person\n        separately but keeps track of the number of persons who are susceptible\n        (S), latently infected (E), infectious\n        (I), and recovered (R) at any point in time. As events\n        occur, these variables change. For example, when a person becomes infected,\n        S decreases by 1 and E increases by 1. Because the events\n        occur by chance, the total number of persons who are in each state, including the number of\n        infected persons taking flights, varies stochastically.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 309,
+                    "end": 316,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 457,
+                    "end": 464,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 830,
+                    "end": 837,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In our model, we assume that those who are in the latent stage of the disease are not\n        infectious for SARS and influenza. This is generally accepted to be a good model for SARS\n        because isolation of symptomatic persons prevented onward transmission of SARS, which\n        indicated that the latent period has limited or no infectivity (15). We also assume that all infectious persons are symptomatic. This is a conservative\n        assumption, but serosurveillance studies for SARS have shown low prevalence of\n        seropositivity in persons who did not show symptoms of disease (16\u201321). Lastly, we assume that all symptomatic persons are prevented from traveling\n        because of symptom severity or effective screening. The model equations are shown in the\n          Technical Appendix.",
+            "cite_spans": [
+                {
+                    "start": 350,
+                    "end": 352,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 597,
+                    "end": 599,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 600,
+                    "end": 602,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The disease course of a possible future influenza pandemic is not known. However, studies\n        of previous pandemics and seasonal epidemics suggest a possible scenario in which the latent\n        period of influenza may be infectious and not all infected persons will show symptoms (14,22\u201324). This means that a larger proportion of cases could be allowed to travel on\n        international flights, even with 100% effective screening, because they are asymptomatically\n        infected (Figure 1, panel B). We have modeled a\n        conservative scenario, in which influenza has a disease life history similar to that of\n        SARS, but with shorter latent and infectious periods (Table\n          1). The inclusion of partially effective screening or, equivalently, the inclusion\n        of asymptomatic cases would lead to more cases being exported than is shown here.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 292,
+                    "end": 294,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 491,
+                    "end": 499,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 687,
+                    "end": 704,
+                    "mention": "Table\n          1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Little data are available across a population for the relative frequency of flying. The\n        mean probability of flying for the whole population can be approximated by the number of\n        airline passengers divided by the population of a country or city. This calculation gives\n        estimates of 0.005 for Hong Kong, 0.0005 for Beijing, and 0.0002 for Thailand (9). We modeled a population of 10 million persons with a 0.005 probability of flying\n        per day as an example of an outbreak in a well-connected city. A study on domestic flying in\n        Norway suggested that \u22482% of a survey population who take domestic flights in\n        Norway make >20 journeys a year (1). This survey did not include persons who do not take flights. Therefore, the\n        proportion of the total population who make this many journeys is likely to be lower. On the\n        basis of this data, we present results for a population in which 1% of the population travel\n        20\u00d7 more frequently than the rest of the population and discuss results for\n        different values of these parameters.",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 371,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 683,
+                    "end": 684,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We investigated the effect of the setting where the outbreak is initiated by using 2\n        scenarios. In the first scenario, the outbreak begins among the general, infrequently flying\n        population. Cases subsequently occur among high-frequency fliers as a result of contact\n        between the 2 subpopulations. The mean time until the first high-frequency flier becomes\n        infected is a function of incidence rate in the main population and level of mixing between\n        the 2 groups. In the second scenario, the outbreak begins among the high-frequency fliers.\n        The disease again spreads to the main population because of contacts between the groups,\n        with the mean time until this occurs being a function of the incidence rate in the main\n        population and the level of mixing between the 2 groups.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The mean cumulative number of cases exported (across 50,000 simulations) is presented for\n        both SARS-like and influenza-like parameters (Table\n        1), for initiation of the epidemic among the low-frequency and high-frequency fliers,\n        and for a range of mixing between the high-frequency and low- frequency travelers. We also\n        illustrate variability in simulated outcomes by presenting snapshots of the distributions of\n        the cumulative number of exported cases.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 144,
+                    "end": 159,
+                    "mention": "Table\n        1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "As an epidemic progresses, the cumulative number of cases increases, and therefore the\n        number of asymptomatic cases exported from a source area increases for all travel patterns\n          (Figure 2). If a SARS-like epidemic is seeded in the\n        group of frequent fliers, then the initial rate of international spread is accelerated\n        relative to the rate for the homogeneous case (Figure\n        2, panel A, open symbols). If the frequent travelers contract the infection early,\n        more exclusivity of mixing (smaller \u03a6) serves to speed international spread, and\n        this effect may last well into the epidemic (Figure 2,\n        panel A, open triangles). If the epidemic is initiated in the low-frequency fliers, the mean\n        number of exported cases is similar to results of the homogeneous model (Figure 2, panel A, closed symbols). Heterogeneities in\n        travel patterns increase the variability between simulated epidemics; higher variability\n        results from more assortative mixing (Table 2; Appendix Figure 1.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 197,
+                    "end": 205,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 399,
+                    "end": 415,
+                    "mention": "Figure\n        2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 639,
+                    "end": 647,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 831,
+                    "end": 839,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1029,
+                    "end": 1036,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In an outbreak in which the infection spreads rapidly, such as could potentially occur with\n        pandemic influenza A (Figure 2, panel B),\n        heterogeneities in travel patterns have less effect on the rate of exportation of cases\n        early in the epidemic than they would for SARS (Figure\n        2, panel A), particularly after the first weeks of the epidemic. The overall pattern\n        of the exportation of cases is similar for SARS and influenza, but the time scale for\n        influenza is much shorter because of the short doubling time (Table 1). For example, the number of exported cases is in the thousands\n        for influenza by day 50 (Figure 2, panel B), when it is\n        <20 for SARS (Figure 2, panel A).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 122,
+                    "end": 130,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 294,
+                    "end": 310,
+                    "mention": "Figure\n        2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 663,
+                    "end": 671,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 716,
+                    "end": 724,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 558,
+                    "end": 565,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Later in an epidemic, the mean number of exported cases is similar, regardless of where the\n        epidemic is seeded or the mixing patterns of the high-frequency fliers and low-frequency\n        fliers (Figure 2, panel B, inset for influenza, not\n        shown for SARS). The variability between simulated epidemics becomes large, with some\n        simulations resulting in hundreds of exported cases and many resulting in only a few\n        exported cases (Table 2; Appendix Figure 1, panel D).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 213,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 460,
+                    "end": 467,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Heterogeneities in travel patterns increase the number of exported cases to a greater\n        extent and for a longer period if the relative frequency of flying of the high-frequency\n        fliers, f, is higher or if the proportion of the population who are\n        high-frequency fliers, r, is smaller (Appendix Figure 2) because the probability that any frequent flier will fly per\n        day is higher (Table 2, \u03b5H). However, if r becomes small, the epidemic among this group\n        peaks and then decreases quickly because of the limited number in the group. In this case,\n        the period in which there are enough infected persons in this group who can contribute to an\n        increased rate of spread of exportation of cases is short (Appendix Figure 2, panel B).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The probability that an infected person will make an international flight while still\n        incubating infection and nonsymptomatic is higher for a high-frequency flier than for a\n        low-frequency flier (Table 1). In the early stages of\n        an epidemic in which most cases occur in high-frequency fliers, the expected number of cases\n        exported will therefore be higher than if the early cases occur in predominantly\n        low-frequency fliers (Figure 2). Heterogeneity in\n        flying patterns also increases the variability between simulated outbreaks (Table 2; Appendix\n          Figure 1).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 464,
+                    "end": 472,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 211,
+                    "end": 218,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 576,
+                    "end": 583,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Wherever the epidemic is initially concentrated, the disease will spread to all parts of\n        the population because of contacts between persons in both groups. The speed with which this\n        occurs will be a function of the level of mixing between the groups. If high-frequency\n        fliers mix almost exclusively among themselves, they are unlikely to acquire cases early in\n        an epidemic in which the first cases emerge in the general population. If, however, they\n        contract the infection early, this exclusivity serves to speed international spread and this\n        effect may last well into the epidemic (Figure 2, open\n        triangles). If mixing is less assortative, then the epidemic will spread to the general\n        population more rapidly. Because most of the population are low-frequency fliers, the number\n        of infected persons in the main population will quickly exceed those in the small group of\n        high-frequency fliers.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 631,
+                    "end": 639,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "When the number of cases becomes large, the expected number of exported cases indicates\n        that the expected number of exported cases (which may be approximated as the probability of\n        flying while asymptomatic multiplied by cumulative incidence [9]) will be large, even if the probability that any person travels is small. Once the\n        epidemic takes hold in the general population, the number of cases being exported from the\n        majority low-frequency flier population exceeds those being exported from the much smaller\n        group of high-frequency fliers. Regardless of where most initial cases occur, the\n        contribution of high-frequency fliers to international spread is eventually overwhelmed by\n        the large epidemic in the general population, despite their lower probability of flying per\n        day. Thus, the average behavior of epidemics is eventually similar, whether they start in\n        high-frequency fliers, or in groups with no heterogeneities in travel (Figure 2, panel B, inset), but the variability between simulations is\n        large (Table 2; Appendix Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 258,
+                    "end": 259,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1008,
+                    "end": 1016,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1093,
+                    "end": 1100,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The latent period for influenza is likely to be shorter than that for SARS, which reduces\n        the probability that any infected person will travel before exhibiting symptoms (Table 1). However, the doubling time for an influenza\n        pandemic is less than half that for SARS because of the much shorter generation time for\n        influenza (Table 1). Therefore, the number of cases\n        exported from a local influenza epidemic will increase far more rapidly than those from a\n        SARS epidemic (Figure 2, panel B). This rapid growth\n        means that any increased rate of export caused by early concentration of infection among the\n        high-frequency fliers will be quickly overcome by the number of cases being exported from\n        the general population (Figure 2, panel B), which\n        indicates that heterogeneities in travel have little effect.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 511,
+                    "end": 519,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 780,
+                    "end": 788,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 179,
+                    "end": 186,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 349,
+                    "end": 356,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "We have simulated an outbreak in a single population by using a relatively simple model.\n        Similar models have been used for the dynamics of single epidemics in a network of countries\n        or areas connected by a complex airline network (6,8,12), and more complex, person-based, within-country models have been used to simulate\n        epidemics within smaller groups of countries (10,14). Our results show that in the event of an influenza pandemic, interventions such as\n        travel restrictions will have to be implemented rapidly and effectively to have a\n        substantial effect (8\u201310,12). We have shown that high-frequency fliers have the potential to spread infection\n        even more rapidly than previously indicated by models that assume homogenous travel\n        behavior.",
+            "cite_spans": [
+                {
+                    "start": 247,
+                    "end": 248,
+                    "mention": "6",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 249,
+                    "end": 250,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 251,
+                    "end": 253,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 391,
+                    "end": 393,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 394,
+                    "end": 396,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 600,
+                    "end": 601,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 602,
+                    "end": 604,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 605,
+                    "end": 607,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our study and the relatively simple structure of the model were limited by the lack of\n        available data on the travel patterns of persons. Travel patterns may vary with age, sex,\n        occupation, and district or country of origin. To increase our knowledge of these patterns,\n        existing surveys of airline passengers at airports could be extended to ask additional\n        questions on number of journeys per year. However, these surveys would necessarily omit\n        those persons who do not take international flights, who are believed to make up a large\n        proportion of many populations. Any additional information could be valuable for assessing\n        the risk for international spread of diseases from affected areas.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SARS epidemic in Hong Kong satisfied the criteria we have identified for frequent\n        travelers, which accelerated international spread of an outbreak. The first case-patient\n        with SARS in Hong Kong had contact with other frequent travelers in a hotel and seeded the\n        epidemic in high-frequency travelers. However, SARS has long incubation and infectious\n        periods and only moderate transmissibility. For influenza A, which has much shorter\n        incubation and infectious periods, such heterogeneities have a limited effect on the rate of\n        exportation of cases. Because frequent travelers play a role mainly in the early stages of\n        an epidemic, targeting interventions to these persons is unlikely to be an effective control\n        strategy because such a plan would have to be in place almost immediately.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, estimates of the rate of international spread of respiratory infections that do\n        not consider heterogeneities in behavior may be misleading. If an outbreak begins in a rural\n        area, where persons have a low probability of traveling abroad and mixing with frequent\n        fliers, the time until cases are exported is longer than in outbreaks in which frequent\n        travelers contract infection early in the course of the outbreak. When combined with the\n        vagaries of chance early in the evolution of a new epidemic and the complexities of the\n        international airline network, this variability makes early prediction of the pattern and\n        speed of global spread difficult. This difficulty in predicting whether a particular country\n        is likely to import cases from a currently unknown source area highlights the need for\n        developing a strategy for controlling an outbreak caused by imported cases.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Schematic representation of the model structure. Black boxes represent infectious\n            stages and arrows indicate that persons in these populations are allowed to fly. A)\n            Severe acute respiratory syndrome. Persons with latent infections are not infectious,\n            and all infectious persons are symptomatic and prevented from traveling. B) Pandemic\n            influenza. Persons with latent infections are infectious, and a proportion (1\n            \u2013 s) of infectious persons are asymptomatic and allowed to\n            travel (indicated by the dotted arrows). The size of the arrows indicates that the\n            persons in the high-frequency flier group have a higher probability of flying per\n          day.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Mean number of cases exported from a single simulated source epidemic for severe acute\n            respiratory syndrome\u2013like parameters (A) and influenza-like parameters (B)\n            (50,000 runs; parameters are listed in Table 1).\n            Results are shown for a population in which everyone travels equally frequently\n            (homogeneous model, circles), for a population in which 1% travel 20 times more\n            frequently than the rest of the population, and for the 2 populations mixed randomly\n            (\u03a6 = 1, squares) for moderate levels of mixing between the groups\n            (\u03a6 = 0.5, diamonds) and for low levels of mixing in which most contacts are\n            assortative (\u03a6 = 0.25, triangles). The first cases are either in the majority\n            population of low-frequency fliers (solid symbols) or high-frequency fliers (open\n            symbols). Inset in B shows a greater range on the y-axis. Variability about these means\n            is shown in Table 2 and Appendix Figure 1.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Analysing air travel: a comparison of different survey\n            methods and data collection procedures.",
+            "authors": [],
+            "year": 2000,
+            "venue": "J Travel Res",
+            "volume": "39",
+            "issn": "",
+            "pages": "4-10",
+            "other_ids": {
+                "DOI": [
+                    "10.1177/004728750003900102"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Strategies for mitigating an influenza pandemic.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "442",
+            "issn": "",
+            "pages": "448-52",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04795"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Empirical evidence for the effect of airline travel on\n            inter-regional influenza spread in the United States.",
+            "authors": [],
+            "year": 2006,
+            "venue": "PLoS Med",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0030401"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Modeling the worldwide spread of pandemic influenza:\n            baseline case and containment interventions.",
+            "authors": [],
+            "year": 2007,
+            "venue": "PLoS Med",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0040013"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Epidemiological and genetic analysis of severe acute respiratory syndrome.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Lancet Infect Dis",
+            "volume": "4",
+            "issn": "",
+            "pages": "672-83",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(04)01173-9"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-14",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Epidemiology, transmission dynamics and control of SARS: the\n            2002\u20132003 epidemic.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Philos Trans R Soc Lond B Biol Sci",
+            "volume": "359",
+            "issn": "",
+            "pages": "1091-105",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rstb.2004.1490"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Evaluation of inapparent nosocomial severe acute respiratory syndrome\n            coronavirus infection in Vietnam by use of highly specific recombinant truncated\n            nucleocapsid protein-based enzyme-linked immunosorbent assay.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Clin Diagn Lab Immunol",
+            "volume": "12",
+            "issn": "",
+            "pages": "848-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Asymptomatic SARS coronavirus infection among healthcare\n            workers, Singapore.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Emerg Infect Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "1142-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Seroprevalence of IgG antibodies to SARS-coronavirus in asymptomatic or\n            subclinical population groups.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Epidemiol Infect",
+            "volume": "134",
+            "issn": "",
+            "pages": "211-21",
+            "other_ids": {
+                "DOI": [
+                    "10.1017/S0950268805004826"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "SARS-CoV antibody prevalence in all Hong Kong patient contacts.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "1653-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Risk-stratified seroprevalence of severe acute respiratory syndrome\n            coronavirus among children in Hong Kong.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Pediatrics",
+            "volume": "117",
+            "issn": "",
+            "pages": "e1156-62",
+            "other_ids": {
+                "DOI": [
+                    "10.1542/peds.2005-1476"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Prevalence of IgG antibody to SARS-associated\n            coronavirus in animal traders\u2014Guangdong Province, China, 2003.",
+            "authors": [],
+            "year": 2003,
+            "venue": "MMWR Morb Mortal Wkly Rep",
+            "volume": "52",
+            "issn": "",
+            "pages": "986-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Containing pandemic influenza at the source.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1083-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1115717"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Mitigation strategies for pandemic influenza in the United\n            States.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "5935-40",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0601266103"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Nonpharmaceutical interventions for pandemic influenza, international\n            measures.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "81-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "",
+            "authors": [],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Forecast and control of epidemics in a globalized world.",
+            "authors": [],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "101",
+            "issn": "",
+            "pages": "15124-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0308344101"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "The worldwide air transportation network: anomalous\n            centrality, community structure, and cities\u2019 global roles.",
+            "authors": [],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "",
+            "pages": "7794-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0407994102"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "The role of the airline transportation network in the\n            prediction and predictability of global epidemics.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "2015-20",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0510525103"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Entry screening for severe acute respiratory syndrome\n            (SARS) or influenza: policy evaluation.",
+            "authors": [],
+            "year": 2005,
+            "venue": "BMJ",
+            "volume": "331",
+            "issn": "",
+            "pages": "1242-3",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.38573.696100.3A"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Delaying the international spread of pandemic influenza.",
+            "authors": [],
+            "year": 2006,
+            "venue": "PLoS Med",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0030212"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Will travel restrictions control the international spread\n            of pandemic influenza?",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nat Med",
+            "volume": "12",
+            "issn": "",
+            "pages": "497-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm0506-497"
+                ]
+            }
+        }
+    }
+}

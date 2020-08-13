@@ -1,0 +1,2103 @@
+{
+    "paper_id": "PMC2386895",
+    "metadata": {
+        "title": "The effect of network mixing patterns on epidemic dynamics and the efficacy of disease contact tracing",
+        "authors": [
+            {
+                "first": "Istvan",
+                "middle": [
+                    "Z"
+                ],
+                "last": "Kiss",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Darren",
+                "middle": [
+                    "M"
+                ],
+                "last": "Green",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rowland",
+                "middle": [
+                    "R"
+                ],
+                "last": "Kao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "For a wide range of epidemic and epizootic diseases, individuals can be usefully modelled as nodes in a network, where the network links represent potentially infectious contacts between individuals. This network representation applies to many complex systems such as the Internet, the World Wide Web (Albert & Barab\u00e1si 2002), social and transportation networks (Liljeros et al. 2001; Jones & Handcock 2003; Hufnagel et al. 2004) and livestock movement networks (Kiss et al. 2006b; Robinson et al. 2007). Models that use explicit contact structures between individuals, households, cities, regions, countries or farms have been used to analyse the spread of human diseases, such as SARS (Hufnagel et al. 2004; Meyers et al. 2005) and pandemic influenza (Eubank et al. 2004; Ferguson et al. 2005), and animal diseases, such as foot-and-mouth disease (FMD; Green et al. 2006a; Kao et al. 2006; Kiss et al. 2006a) and avian influenza (Le Menach et al. 2006). Much attention is now focused on analysing network properties and the dynamic processes they support (for reviews, see Newman (2003b) and Keeling & Eames (2005)), as well as how to effectively control these processes.",
+            "cite_spans": [
+                {
+                    "start": 302,
+                    "end": 324,
+                    "mention": "Albert & Barab\u00e1si 2002",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 363,
+                    "end": 383,
+                    "mention": "Liljeros et al. 2001",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 385,
+                    "end": 406,
+                    "mention": "Jones & Handcock 2003",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 408,
+                    "end": 428,
+                    "mention": "Hufnagel et al. 2004",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 463,
+                    "end": 480,
+                    "mention": "Kiss et al. 2006b",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 482,
+                    "end": 502,
+                    "mention": "Robinson et al. 2007",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 688,
+                    "end": 708,
+                    "mention": "Hufnagel et al. 2004",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 710,
+                    "end": 728,
+                    "mention": "Meyers et al. 2005",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 754,
+                    "end": 772,
+                    "mention": "Eubank et al. 2004",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 774,
+                    "end": 794,
+                    "mention": "Ferguson et al. 2005",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 855,
+                    "end": 873,
+                    "mention": "Green et al. 2006a",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 875,
+                    "end": 890,
+                    "mention": "Kao et al. 2006",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 892,
+                    "end": 909,
+                    "mention": "Kiss et al. 2006a",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 932,
+                    "end": 953,
+                    "mention": "Le Menach et al. 2006",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1075,
+                    "end": 1089,
+                    "mention": "Newman (2003b)",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1094,
+                    "end": 1116,
+                    "mention": "Keeling & Eames (2005)",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Contact tracing is commonly used to identify individuals that have been in contact with infectious individuals, to reduce the number of potential onward infections from traced individuals. Contact tracing was successful in the 2003 SARS epidemic (Lipsitch et al. 2003), but unsuccessful in the 2001 FMD epidemic in the UK (Ferguson et al. 2001; Keeling et al. 2001; Kao 2003). For simple unstructured populations, contact tracing has been modelled using a combination of branching process analysis complemented by stochastic simulation models (M\u00fcller et al. 2000). However, in more highly structured contact networks, the properties of the network markedly influence the efficacy of contact tracing. For example, contact tracing is more effective on clustered networks than on random networks (Eames & Keeling 2003; Kiss et al. 2005), and on scale-free networks a higher tracing effort is needed to control an epidemic than on random Poisson networks (Kiss et al. 2006b).",
+            "cite_spans": [
+                {
+                    "start": 247,
+                    "end": 267,
+                    "mention": "Lipsitch et al. 2003",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 323,
+                    "end": 343,
+                    "mention": "Ferguson et al. 2001",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 345,
+                    "end": 364,
+                    "mention": "Keeling et al. 2001",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 366,
+                    "end": 374,
+                    "mention": "Kao 2003",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 544,
+                    "end": 562,
+                    "mention": "M\u00fcller et al. 2000",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 794,
+                    "end": 814,
+                    "mention": "Eames & Keeling 2003",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 816,
+                    "end": 832,
+                    "mention": "Kiss et al. 2005",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 952,
+                    "end": 969,
+                    "mention": "Kiss et al. 2006b",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we examine the impact of departure from the common assumption of proportionate (random) mixing upon the efficacy of contact tracing. Proportionate mixing assumes that the probability of any two nodes being connected is proportional to the product of their number of contacts. This is unlikely in many cases where \u2018like attaches to like, assortatively mixed\u2019 (e.g. STI transmission; Anderson et al. 1990; Catania et al. 1992) or where \u2018opposites attract, disassortatively mixed\u2019 (e.g. livestock trading among farms and markets in the UK (Kiss et al. 2006a); correlation properties of the Internet (Pastor-Satorras et al. 2001)). The empirical evidence and importance of connectivity correlations have led to numerous network- and differential equation-based models (Bogu\u00f1\u00e1 et al. 2003a; Newman 2003a; Barth\u00e9lemy et al. 2005). Many of these models focus on the effect of connectivity correlations on the epidemic threshold, initial growth rate and hierarchical spread. For example, it has been shown that epidemics on networks characterized by high node degree variance grow rapidly, and in the limiting case of infinite variance, instantaneously, independently of the mixing pattern (Bogu\u00f1\u00e1 et al. 2003b). The initial growth of the epidemic changes from exponential to power law if non-random mixing is combined with small-world properties, with the power-law exponent determined by the average node distance on the network (Vazquez 2006). While in the limit of infinite populations, the implications of preferential mixing for disease invasion are well known, here we focus on disease control and consider the efficacy of contact tracing for different mixing patterns. For networks that are poorly characterized, the efficacy of contact tracing is difficult to determine without exact knowledge of the underlying contact network, i.e. who is connected to whom? By analysing disease transmission on theoretical networks with different mixing patterns, we aim to identify the implications of non-random mixing for epidemic dynamics and control strategies.",
+            "cite_spans": [
+                {
+                    "start": 397,
+                    "end": 417,
+                    "mention": "Anderson et al. 1990",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 419,
+                    "end": 438,
+                    "mention": "Catania et al. 1992",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 551,
+                    "end": 570,
+                    "mention": "(Kiss et al. 2006a)",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 611,
+                    "end": 640,
+                    "mention": "(Pastor-Satorras et al. 2001)",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 780,
+                    "end": 799,
+                    "mention": "Bogu\u00f1\u00e1 et al. 2003a",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 801,
+                    "end": 813,
+                    "mention": "Newman 2003a",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 815,
+                    "end": 837,
+                    "mention": "Barth\u00e9lemy et al. 2005",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1198,
+                    "end": 1217,
+                    "mention": "Bogu\u00f1\u00e1 et al. 2003b",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1439,
+                    "end": 1451,
+                    "mention": "Vazquez 2006",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The network-based disease transmission and contact-tracing model is based on models considered by Huerta & Tsimring (2002), Eames & Keeling (2003) and Kiss et al. (2005, 2006a). Each node in the network is classified according to one of four states of disease progression: susceptible nodes (S); nodes at once infected and infectious (I); nodes \u2018triggering\u2019 contact tracing (T), which are identified as being infectious, are immediately isolated and initiate tracing; and, finally, removed nodes (R), which are no longer infectious and do not initiate tracing. The transitions between states are depicted in figure 1.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 122,
+                    "mention": "Huerta & Tsimring (2002)",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 124,
+                    "end": 146,
+                    "mention": "Eames & Keeling (2003)",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 164,
+                    "end": 168,
+                    "mention": "2005",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 170,
+                    "end": 175,
+                    "mention": "2006a",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": [
+                {
+                    "start": 608,
+                    "end": 616,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Infection S\u2192I. The epidemic is seeded with one or more infected nodes. Thereafter, infection progresses via a contact network; the probability of a node becoming infected depends on the state of the nodes directly linked to it. The probability p of a susceptible node with k infectious contacts becoming infected in a small time interval \u0394t is p=1\u2212exp(\u2212\u03c4k\u0394t). Here, \u03c4 is the rate of infection spreading through a single contact between an infectious and a susceptible node.",
+            "cite_spans": [],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Contact-independent identification of infectious nodes I\u2192T. Disease is detected at an infectious node (e.g. via clinical signs or screening) at rate \u03b1. This results in the isolation of the node and triggers the tracing of its contacts.",
+            "cite_spans": [],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The removal of triggering nodes T\u2192R. Triggering nodes are removed at rate \u03b4.",
+            "cite_spans": [],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Multi-step contact tracing I\u2192T. The infectious neighbours of triggering nodes (T) can themselves become triggering nodes through contact tracing if they are found to be infected, creating a multi-step contact-tracing chain that tracks the paths of disease transmission. Traced I nodes are not directly removed, but instead enter the T state at rate \u03c6. Unless otherwise stated, we consider multi-step tracing.",
+            "cite_spans": [],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Single-step contact tracing of infectious nodes I\u2192R. Diagnostic tests are often necessary to determine the status of traced nodes (individuals); these may be imprecise or slow and the isolation and observation of traced individuals may not be a viable option. In such cases, multiple-step contact tracing is less likely. In an alternative single-step contact-tracing model, the infectious neighbours of triggering nodes are traced at rate \u03c6 per contact. These are then directly removed and do not initiate further tracing. Control is always modelled through either multi-step or single-step tracing.",
+            "cite_spans": [],
+            "section": "2.1 Disease transmission ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Undirected networks with different mixing patterns (assortative and disassortative) are generated using a method proposed by Newman (2003a). The mixing pattern here is based on node degree (i.e. the number of links of each node). The level of mixing is given by the correlation coefficient of the \u2018excess\u2019 degrees (see below) calculated on all pairs of connected nodes. The generation of networks with different mixing properties is based on a Monte Carlo sampling scheme with repeated link switching at a probability determined by the values of the connectivity matrix E=eij. Here, eij is the probability that a randomly chosen link connects a node with i connections to a node with j connections where the link under consideration is itself not counted. Defining the distribution of the \u2018excess\u2019 degree (i.e. degree minus one) of vertices at the end of links as qk=\u2211jejk, the level of mixing by vertex degree is given by(2.1)r=\u2211jkjk(ejk\u2212qjqk)\u03c3q2,where \u03c3q2 is the variance of the distribution qk. For disassortatively mixed networks \u22121\u2264r<0, for random networks r\u22480 and for assortatively mixed networks 0<r\u22641.",
+            "cite_spans": [
+                {
+                    "start": 125,
+                    "end": 139,
+                    "mention": "Newman (2003a)",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "2.2 Individual-based network simulations ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Many real networks display a wide distribution of node degrees (Newman et al. 2001; Albert & Barab\u00e1si 2002). To reflect such systems, we consider networks that are generated according to an exponentially truncated power-law degree distribution(2.2)pk=k\u2212\u03b3e\u2212k/\u039aLi\u03b3(e\u22121/\u039a)fork\u22651.The function Lin(x) is the nth polylogarithm of x and acts as a normalizing constant. The exponential cut-off of the scale-free distribution is determined by K. Following Newman (2003a), a value of \u03b3=2.5 is used for the power-law exponent. The network analysis that illustrates the effect of preferential mixing is performed for K=100. For this value of K, the average number of connections per node in the networks is \u2329k\u232a\u22481.7. To explore a range of parameter values that support meaningful epidemics (i.e. where the epidemic is large enough to be of a significant public health concern), \u2329k\u232a must be sufficiently large to allow for a range of new infections in the first generation well above 1. Therefore, the networks are generated by only accepting nodes with k\u22653 (see Kiss et al. 2006b).",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 82,
+                    "mention": "Newman et al. 2001",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 84,
+                    "end": 106,
+                    "mention": "Albert & Barab\u00e1si 2002",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 447,
+                    "end": 461,
+                    "mention": "Newman (2003a)",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1049,
+                    "end": 1066,
+                    "mention": "Kiss et al. 2006b",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "2.2 Individual-based network simulations ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Moreno et al. (2003) proposed a numerical method for epidemic models that can account for connectivity correlations. While this method works without explicitly generating the network, it offers less flexibility when considering disassortatively mixed networks. Here, we use epidemic simulations on networks with N=10 000 nodes and consider values of r=\u22120.2, \u22120.10, \u22120.05 for disassortatively mixed networks and r=0.05, 0.10, 0.2 for assortatively mixed networks. The limits are chosen as the values over which the algorithm appears to be robust (M. E. J. Newman 2006, personal communication); this range of r values is sufficient to give marked differences in the epidemic threshold for the transmission rate, number of nodes traced, final epidemic size and to illustrate important trends in contact-tracing efficacy. A further check on the mixing pattern is illustrated in the electronic supplementary material by a plot of the average connectivity of a neighbour as a function of node connectivity for different values of r.",
+            "cite_spans": [
+                {
+                    "start": 0,
+                    "end": 20,
+                    "mention": "Moreno et al. (2003)",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "2.2 Individual-based network simulations ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All simulated epidemics were seeded with 10 index cases chosen at random, in order to avoid early stochastic extinction. Averages of 10 000 simulations are presented, consisting of 100 epidemic runs on each of 100 different network realizations. Proportions across all plots are relative to the total network size N=10 000. The simulation time step used is \u0394t=0.04. Smaller time steps produced effectively identical results (not shown). The s.e. values of the averages of simulation outputs are at least three to four orders of magnitude smaller than the measurement itself and therefore are not discussed further.",
+            "cite_spans": [],
+            "section": "2.2 Individual-based network simulations ::: 2. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The giant component (GC) is the largest subset of nodes such that any two nodes from this subset can be connected by a series of links. For undirected networks, the GC size represents the upper limit for the potential size of an epidemic. In figure 2, the structural differences of preferentially mixed networks are demonstrated by the size of the GC as a function of the cut-off parameter K for three different values of the assortativity coefficient r. As the cut-off parameter increases, the number of links in the network increases and the network becomes denser. A K-value exists where the GC size is equal on disassortatively and assortatively mixed networks. Consistent with previous results (Newman 2002, 2003a), below this value, GC size is larger on assortatively mixed networks and above it, the GC is larger on disassortatively mixed networks, with GC size generally intermediate on random networks.",
+            "cite_spans": [
+                {
+                    "start": 707,
+                    "end": 711,
+                    "mention": "2002",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 713,
+                    "end": 718,
+                    "mention": "2003a",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "3.1 Giant component size ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 242,
+                    "end": 250,
+                    "mention": "figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The two different regimes are a direct consequence of the mixing pattern. In assortatively mixed networks, nodes of high degree preferentially connect to each other and form a highly connected core group. Therefore, for low link density, a larger GC size is found than for either disassortatively mixed or random networks. Link density within the GC is higher than in the network as a whole. In contrast, in disassortatively mixed networks at low link density, the links are more dispersed, forming many isolated components of small size (figure 3). As link density increases, the probability that a link with one node in the GC will only connect to another node already in the GC also increases; this is a finite size effect that is exacerbated by assortative mixing since high-degree nodes are relatively few. Thus, at higher link densities, assortatively mixed networks have a smaller GC size compared with disassortatively mixed networks, as in the latter, added links are more likely to result in smaller components being absorbed into the GC (figure 2).",
+            "cite_spans": [],
+            "section": "3.1 Giant component size ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 539,
+                    "end": 547,
+                    "mention": "figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1049,
+                    "end": 1057,
+                    "mention": "figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The analysis of the GC growth and component distribution was performed on networks generated using \u03b3=2.5 and k\u22651. For K=100, the average number of connections per node is \u2329k\u232a\u22481.7. For random networks, the percolation transition occurs at \u2329k\u232a=1, above which the network will support large epidemics, i.e. epidemics that scale with total population size (e.g. Moore & Newman 2000; Kao et al. 2006). Thus, \u2329k\u232a\u22481.7 supports only a narrow range of epidemiological parameters over which large epidemics can occur. To circumvent this problem, the networks used below were generated using the same parameter values, but only nodes with k\u22653 were accepted during the network generation process (Kiss et al. 2006b), resulting in networks with \u2329k\u232a\u22486.",
+            "cite_spans": [
+                {
+                    "start": 358,
+                    "end": 377,
+                    "mention": "Moore & Newman 2000",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 379,
+                    "end": 394,
+                    "mention": "Kao et al. 2006",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 685,
+                    "end": 702,
+                    "mention": "Kiss et al. 2006b",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "3.2 Epidemic dynamics ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We define two variables Tp and \u03a6 for ease of reporting and comparing results. With per-contact transmission rate \u03c4 and detection rate \u03b1, the transmission probability per link over the period before the detection of the infectious node is given by Tp=\u03c4/(\u03c4+\u03b1) (Keeling & Grenfell 2000). Constant \u2329k\u232aTp provides a constant number of secondary infections caused by the introduction of infection at a node when the remainder of the network is susceptible (Keeling & Grenfell 2000), at the cost of having different epidemic dynamics as \u2329k\u232a varies (Green et al. 2006b). In a parallel manner, with per-contact-tracing rate \u03c6 and removal rate of triggering nodes \u03b4, the tracing probability per traceable link over the whole tracing triggering period is given by \u03a6=\u03c6/(\u03c6+\u03b4).",
+            "cite_spans": [
+                {
+                    "start": 259,
+                    "end": 282,
+                    "mention": "Keeling & Grenfell 2000",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 451,
+                    "end": 474,
+                    "mention": "Keeling & Grenfell 2000",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 542,
+                    "end": 560,
+                    "mention": "Green et al. 2006b",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "3.2 Epidemic dynamics ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In figure 4, in the absence of tracing, the final epidemic size R(\u221e) is plotted against the transmission probability for r\u2208{\u22120.2, \u22120.1, \u22120.05, 0, 0.05, 0.1, 0.2}. In this case, compartments T and R are equivalent and the current SITR model is equivalent to the well-known SIR model with an effective infectious period of 1/\u03b1. The relationship between R(\u221e) and Tp is qualitatively similar to the relationship between GC size and link density in figure 2. The epidemic threshold for assortatively mixed networks occurs at a lower transmission probability than for the other two mixing patterns. However, the final epidemic size approaches its asymptote, total network size, faster for disassortatively mixed networks. The two network types with r=\u22120.2 and 0.2 produce approximately equal epidemic sizes at \u03c4\u22480.0528 (transmission probability Tp\u22480.15), when R(\u221e)\u22480.225 on both types.",
+            "cite_spans": [],
+            "section": "3.2 Epidemic dynamics ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 3,
+                    "end": 11,
+                    "mention": "figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 444,
+                    "end": 452,
+                    "mention": "figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Epidemics on assortatively mixed networks have a faster initial growth rate and a shorter duration than those on disassortatively mixed networks (figure 5a). This is mainly due to the GC containing a \u2018core\u2019 group of high-degree nodes that are highly connected. The differences in the initial epidemic growth rate across the different network types are directly related to the basic reproduction number R0 (Anderson & May 1991). The value of R0 can be estimated as the lead eigenvalue of the next-generation matrix C=(cij) (Diekmann & Heesterbeek 2000), and, in this case, it can be approximated by the product of the contact matrix and the per-link probability of transmission cij=TpMij. A non-zero entry Mij=1 denotes that an infectious node j can transmit the infection to a susceptible node i; the magnitude of cij is given by the per-link transmission probability Tp. Estimates of R0 averaged over 100 generated networks of each type are as follows: R0=12.12Tp (s.e. 0.11) for disassortatively mixed networks; R0=15.0Tp (s.e. 0.11) for random networks; and R0=17.81Tp (s.e. 0.14) for assortatively mixed networks. As expected, the threshold for epidemic outbreaks occurs at lower infection probabilities for assortatively mixed networks than for either disassortatively mixed or random networks.",
+            "cite_spans": [
+                {
+                    "start": 406,
+                    "end": 425,
+                    "mention": "Anderson & May 1991",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 523,
+                    "end": 550,
+                    "mention": "Diekmann & Heesterbeek 2000",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "3.2 Epidemic dynamics ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 146,
+                    "end": 154,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The differences in the initial epidemic growth rate and epidemic duration are likely to have consequences for the efficacy of contact tracing on the different networks. For example, on assortatively mixed networks with fast epidemic turnover, efficient contact tracing has to be comparably fast. The prevalence of traced nodes (dashed line) for assortatively and disassortatively mixed networks is illustrated in figure 5a. The average degree of newly infected (Barth\u00e9lemy et al. 2004) and contact-traced nodes is plotted in figure 5b. While assortatively mixed networks sustain epidemics with fast turnover and quick initial growth rate, they also allow contact tracing to remove a larger number of highly connected nodes early on in the epidemic. In contrast, on disassortatively mixed networks, disease spread is slower, but contact tracing is also less efficient.",
+            "cite_spans": [
+                {
+                    "start": 462,
+                    "end": 484,
+                    "mention": "Barth\u00e9lemy et al. 2004",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "3.3 The efficacy of contact tracing ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 413,
+                    "end": 421,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 525,
+                    "end": 533,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Contact tracing can be viewed as an exploration of the local network structure (Cohen et al. 2003), and thus we would expect its efficacy to depend on the mixing patterns of the network. This is investigated by varying \u03c6, while keeping \u03b4 fixed. For comparison purposes, we contrast the cases where R(\u221e) is the same on both assortatively and disassortatively mixed networks, but possibly with differing transmission rates, later concentrating on the unique transmission rate that results in the same R(\u221e) on both networks.",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 97,
+                    "mention": "Cohen et al. 2003",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "3.3 The efficacy of contact tracing ::: 3. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The final epidemic size R(\u221e), the proportion of nodes that become triggering nodes via clinical signs or screening and the proportion of nodes that have been contact traced during the epidemic are plotted in figure 6 as a function of tracing probability \u03a6 for disassortatively (r=\u22120.2) and assortatively (r=0.2) mixed networks. First, transmission rates are chosen such that R(\u221e)\u22480.73 on both networks (\u03c4=0.125 and 0.175 on disassortatively and assortatively mixed networks, respectively; figure 6a) and, second, the transmission rates are the same (\u03c4=0.0528) with R(\u221e)\u22480.225 on both networks (figure 6b). For the first case, the effect of contact tracing is similar on both networks with comparable R(\u221e); however, we identify two distinct regimes above and below \u03a6=0.61, above which contact tracing becomes more effective on disassortatively mixed networks (figure 6a).",
+            "cite_spans": [],
+            "section": "3.3 The efficacy of contact tracing ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 208,
+                    "end": 216,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 489,
+                    "end": 497,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 594,
+                    "end": 602,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 859,
+                    "end": 867,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "In figure 6a, if \u03a6\u22640.61, R(\u221e) is smaller on assortatively mixed networks. Contact tracing on assortatively mixed networks removes nodes of higher degree (figure 5b) than on disassortatively mixed networks. For small \u03a6 values, the final epidemic size is still high and the population of highly connected nodes is depleted well before the epidemic ends, as shown by the crossover between the average degree of newly infected nodes on the two network types (figure 5b). Over the epidemic, susceptible nodes are on average of lower degree and are more difficult to reach. On disassortatively mixed networks, the depletion of highly connected nodes is less marked and epidemics persist, with disease spread alternating between highly and less well-connected nodes producing an average degree of newly infected nodes which is more even in time (figure 5b). In the latter stages of the epidemic, on disassortatively mixed networks, highly connected nodes are not completely depleted and can become infected. Thus, on the assortatively mixed networks, the epidemic ends earlier with a smaller final epidemic size. On assortatively mixed networks, when global depletion of susceptible nodes is important, contact tracing acts to enhance the early depletion of nodes of high degree (figure 5b).",
+            "cite_spans": [],
+            "section": "3.3 The efficacy of contact tracing ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 3,
+                    "end": 11,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 154,
+                    "end": 162,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 455,
+                    "end": 463,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 839,
+                    "end": 847,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1273,
+                    "end": 1281,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "At higher tracing probability, the proportion of nodes removed through contact tracing (figure 6a) decreases with increasing tracing probability. This is indicative of effective control with a limited proportion of nodes becoming infectious and, hence, fewer targets for tracing. In the regime of more effective control (\u03a6\u22650.61), the epidemics die out early on and susceptible depletion becomes less important. This is illustrated in figure 7, showing that the depletion of susceptibles is only found at low \u03a6 values. This is also reflected in the very rapid reduction of Rg (i.e. average reproduction ratio in generation g defined as the ratio between the number of nodes infected in consecutive generations) below 1 when \u03a6 is high. This is a more general effect corroborated by examining contact-tracing efficacy in a different parameter regime. In figure 6b, the scenario where \u03c4=0.0528 on both networks is considered. For this value of \u03c4 and in the absence of tracing, the final epidemic size is the same on both networks (R(\u221e)\u22480.225). Here, the final epidemic size is similar to the point at which contact tracing starts to perform better on disassortatively mixed networks in figure 6a. In this case, for all \u03a6 values, contact tracing always performs better on disassortatively mixed networks. The behaviour in this regime can be explained by interpreting contact tracing as a mechanism acting to reduce the effective transmission probability Tp past the first generation of infection. Contact tracing achieves this by shortening the average infectious period of traced nodes. In figure 4, lower transmission probabilities correspond to lower values of the transmission rate \u03c4. While we do not have exact analytic relationships between the implications of reducing the transmission probability through the different routes, the effect of contact tracing can be approximated by following the trend of the final epidemic size (figure 4) as the transmission probability decreases. The steeper curve of the final epidemic size on disassortatively mixed networks suggests that a small decrease in the transmission probability has a more marked effect on final epidemic size than on assortatively mixed networks. This effect is especially dominant since in the absence of tracing the same R(\u221e) is observed on both networks. This supports the higher contact-tracing efficacy observed on disassortatively mixed networks.",
+            "cite_spans": [],
+            "section": "3.3 The efficacy of contact tracing ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 88,
+                    "end": 96,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 434,
+                    "end": 442,
+                    "mention": "figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 851,
+                    "end": 859,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1182,
+                    "end": 1190,
+                    "mention": "figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1586,
+                    "end": 1594,
+                    "mention": "figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1931,
+                    "end": 1939,
+                    "mention": "figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Multiple-step contact tracing is not always logistically feasible. It is therefore important to determine the benefit provided by it. For both network types (figure 8), there are considerable differences between the final epidemic sizes for single- and multiple-step contact tracing at high tracing rates, particularly for assortatively mixed networks (figure 8b). In multiple-step tracing, a triggering node can generate other triggering nodes, potentially creating a cascade of triggering nodes throughout the infected portion of the network. This leads to tracing a higher number of infectious nodes and reducing the number of links that successfully transmit the disease. For high tracing rates, the epidemics are short-lived, and, on assortatively mixed networks, as a result of the faster initial epidemic growth rate, the extra proportion of untraced infectious nodes in the case of single-step tracing generates a higher number of infections and hence there is a marked difference between single- and multi-step tracing. In figure 8, the faster decrease in the proportion of traced nodes with increasing tracing probability indicates earlier and more effective control in the case of multiple-step contact tracing compared with the single-step case.",
+            "cite_spans": [],
+            "section": "3.4 Single-step versus multi-step tracing ::: 3. Results",
+            "ref_spans": [
+                {
+                    "start": 158,
+                    "end": 166,
+                    "mention": "figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 353,
+                    "end": 361,
+                    "mention": "figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1032,
+                    "end": 1040,
+                    "mention": "figure 8",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "Contact tracing performs comparably well on both assortatively and disassortatively mixed networks. This is mainly explained by a balance that is reached between the epidemic time scale (i.e. slow for disassortatively mixed and fast for assortatively mixed; figure 5a) and the hierarchy of spread (figure 5b) on assortatively mixed networks (and the lack of it on disassortatively mixed networks) on the one hand, and the contact-tracing mechanism. On assortatively mixed networks, the epidemic spread is faster and the disease typically spreads to nodes with high degree. This is counterbalanced by contact tracing that removes infectious nodes with high degree. On disassortatively mixed networks, the epidemic spread is slower; however, owing to the connectivity pattern, contact tracing also alternates between removing poorly and highly connected nodes and therefore is comparably less effective. The higher average degree of traced nodes is a reflection of the average degree of nodes becoming infected earlier on in the epidemic when highly connected nodes are more abundant. This combined with the depletion of highly connected nodes, accentuated by finite size effects, leads to producing a higher average degree of traced nodes when compared with the average degree of infected nodes.",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": [
+                {
+                    "start": 258,
+                    "end": 266,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 298,
+                    "end": 306,
+                    "mention": "figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "In the case of large epidemics and small values of the contact-tracing rate, contact tracing is more effective on assortatively mixed networks than on disassortative mixed networks, although the difference is small. Here, on the assortatively mixed networks, the early, global depletion of highly connected nodes results in a rapid increase in the proportion of susceptible nodes that are poorly connected nodes, and thus are less likely to become infected. For smaller values of the final epidemic size, the epidemics die out earlier and the depletion of susceptible nodes is less important. The efficacy of contact tracing in this case is determined by the more resilient nature of the assortatively mixed networks to the removal of potentially infectious links through tracing. In the case of single-step versus multi-step contact tracing, the differences are more marked for assortatively mixed networks and small epidemics.",
+            "cite_spans": [],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The algorithm used to generate networks with different mixing patterns is robust for mixing values in the range of \u22120.2 to 0.2. This range covers many of the values measured from networks based on real data (Newman 2002). For more marked differences in the mixing pattern, we expect similar qualitative conclusions with possibly more significant quantitative differences. For the models presented above, differences in contact-tracing efficacy were investigated for various parameter values in addition to those presented. The results agreed qualitatively across the range of parameter values studied. However, further investigation is needed to determine the relative contributions of the different determinants of contact-tracing efficacy. The model presented here does not incorporate time or resource constraints for contact tracing. The implementation of epidemic control strategies often involves qualified personnel and costly or time-consuming diagnostic tests. Although contact tracing performs comparably well on both network types, the faster time course of the epidemic on assortatively mixed networks is more likely to stretch resources in real situations, since it requires a greater and more timely concentration of resources.",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 219,
+                    "mention": "Newman 2002",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "As in previous studies investigating the effects of contact clustering (Kiss et al. 2005) and degree distribution (Kiss et al. 2006b) on contact tracing, we show that, unless contact tracing is very good, the mixing patterns have little effect on the course of the epidemic and the number of nodes removed. These results would suggest that it is difficult to exploit network structure to achieve better control via tracing. This may seem somewhat surprising, as previous studies have shown that control strategies such as acquaintance sampling (Cohen et al. 2003) that is based on the local exploration of the population contact structure provide an efficient epidemic control strategy, compared with random removal of nodes. However, such studies considered only networks that are randomly mixed and compare random removal with targeted removal (a form of contact tracing). Here, however, we compare targeted removal but where the networks themselves differ. Like the disease itself, contact tracing exploits the local network structure and, for assortatively mixed networks, identifies and removes early the highly connected nodes. This beneficial effect, however, is counterbalanced by the fast initial disease spread to such highly important nodes. Therefore, in the present case, the properties of the network can at the same time enhance disease spread and also increase control efficacy, highlighting the non-trivial interactions between the network structure and the dynamics on networks, showing that added attention is needed when evaluating the efficacy of epidemic control strategies.",
+            "cite_spans": [
+                {
+                    "start": 72,
+                    "end": 88,
+                    "mention": "Kiss et al. 2005",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 115,
+                    "end": 132,
+                    "mention": "Kiss et al. 2006b",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 545,
+                    "end": 562,
+                    "mention": "Cohen et al. 2003",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "4. Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Transitions among the four disease progression states. Contact tracing is represented by either the I\u2192T transition (multi-step, dashed) or the I\u2192R transition (single-step, dotted), both with rate \u03c6. Tracing occurs through either multi-step or single-step tracing.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: The size of the GC as a function of the cut-off parameter K for disassortatively mixed (circles, r=\u22120.15), random (squares, r=0) and assortatively mixed (diamonds, r=0.15) networks. The average number of connections per node \u2329k\u232a increases with increasing K. The parameter values used here are N=10 000 and \u03b3=2.5.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Component size distributions below (circles) and above (pluses) the percolation threshold for (a) assortatively mixed and (b) disassortatively mixed networks. In disassortatively mixed networks, above the percolation threshold, component sizes are larger than those of assortatively mixed networks. The parameter values used here are N=10 000, \u03b3=2.5 and K is varied to increase link density.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Final epidemic size R(\u221e) in the absence of contact tracing for disassortatively mixed networks (dashed line, r\u2248\u22120.2, \u22120.10, \u22120.05), random networks (solid line, r\u22480) and assortatively mixed networks (dot-dashed line, r\u22480.05, 0.10, 0.20) versus probability of transmission Tp=\u03c4/(\u03c4+\u03b1) for N=10 000, K=100, \u03b3=2.5, \u03b1=1/3.5 and \u03c6=0.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: (a) Prevalence of infectious (solid lines) and traced (dashed lines) nodes for assortatively mixed (black lines) and disassortatively mixed (grey lines) networks over time. (b) The average degree of new infectious (diamonds, crosses) and contact traced T (circles, pluses) nodes for disassortatively mixed (diamonds, circles) and assortatively mixed (crosses, pluses) networks over time. Averages are calculated over periods of one time unit. Parameter values are \u03c4=0.0528, \u03b1=1/3.5, \u03c6=0.08 and \u03b4=1/2.0 with the probability of tracing across a contact of \u03a6=\u03c6/(\u03c6+\u03b4)\u224c0.138.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Epidemic properties of disassortatively (solid lines) and assortatively (dashed lines) mixed networks. Final epidemic size (R(\u221e), thick black lines), the proportion of nodes that have become triggering nodes via clinical signs or screening (thin black lines) and the proportion of nodes that have been contact traced over the whole epidemic (grey lines) versus probability of tracing \u03a6=\u03c6/(\u03c6+\u03b4). In (a), \u03c4=0.125 and 0.175 are used on disassortatively and assortatively mixed networks, respectively. In (b), \u03c4=0.0528 is used for both network types. Throughout, \u03b1=1/3.5 and \u03b4=1/2.0.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: The average degree of new infectious I (diamonds, crosses) and contact traced T (circles, pluses) nodes for disassortatively (diamonds, circles) and assortatively (crosses, pluses) mixed networks. Averages are calculated over periods of one time unit. Here, \u03c4=0.125 and 0.175 are used on disassortatively and assortatively mixed networks, respectively. Throughout, \u03b1=1/3.5 and \u03b4=1/2.0. (a) \u03c6=0.02 (\u03a6\u224c0.04) and (b) \u03c6=2.00 (\u03a6=0.8). The insets show the ratios between the number of infected nodes in consecutive generations (i.e. the average reproduction ratio Rg in generation g) for assortatively (dashed lines) and disassortatively (solid lines) mixed networks.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: Properties for epidemics with multiple-step tracing (solid lines) and single-step tracing (dashed lines). Final epidemic size (R(\u221e), thick black lines), the proportion of nodes that have become triggering nodes via clinical signs or screening (thin black lines) and the proportion of nodes that have been contact traced during the epidemic (grey lines) versus probability of tracing \u03a6=\u03c6/(\u03c6+\u03b4). Here, \u03c4=0.125 and 0.175 are used on (a) disassortatively and (b) assortatively mixed networks, respectively. Throughout, \u03b1=1/3.5 and \u03b4=1/2.0.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Statistical mechanics of complex networks",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.L",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Rev. Mod. Phys",
+            "volume": "74",
+            "issn": "",
+            "pages": "47-97",
+            "other_ids": {
+                "DOI": [
+                    "10.1103/RevModPhys.74.47"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "The foot-and mouth epidemic in Great Britain: pattern of spread and impact of interventions",
+            "authors": [
+                {
+                    "first": "N.M",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.A",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "292",
+            "issn": "",
+            "pages": "1155-1160",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1061020"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Modelling the initial spread of foot-and-mouth disease through animal movements",
+            "authors": [
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Proc. R. Soc. B",
+            "volume": "273",
+            "issn": "",
+            "pages": "2729-2735",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2006.3648"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Parametrization of individual-based models: comparison with deterministic mean-field models",
+            "authors": [
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "J. Theor. Biol",
+            "volume": "239",
+            "issn": "",
+            "pages": "289-297",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2005.07.018"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Contact tracing and epidemics control in social networks",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Huerta",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.S",
+                    "middle": [],
+                    "last": "Tsimring",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Phys. Rev. E",
+            "volume": "66",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.66.056115"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Forecast and control of epidemics in a globalized world",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Hufnagel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Brockmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Geisel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "15\u200a124-15\u200a129",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0308344101"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "An assessment of preferential attachment as a mechanism for human sexual network formation",
+            "authors": [
+                {
+                    "first": "H.J",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S",
+                    "middle": [],
+                    "last": "Handcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. R. Soc. B",
+            "volume": "270",
+            "issn": "",
+            "pages": "1123-1128",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2003.2369"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "The impact of local heterogeneity on alternative control strategies for foot-and-mouth disease",
+            "authors": [
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. R. Soc. B",
+            "volume": "270",
+            "issn": "",
+            "pages": "2557-2564",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2003.2546"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Demographic structure and pathogen dynamics on the network of livestock movements in Great Britain",
+            "authors": [
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Danon",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc. R. Soc. B",
+            "volume": "273",
+            "issn": "",
+            "pages": "1999-2007",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2006.3505"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Individual-based perspectives on R0",
+            "authors": [
+                {
+                    "first": "M.J",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Theor. Biol",
+            "volume": "203",
+            "issn": "",
+            "pages": "51-61",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jtbi.1999.1064"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Networks and epidemic models",
+            "authors": [
+                {
+                    "first": "M.J",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.T.D",
+                    "middle": [],
+                    "last": "Eames",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. R. Soc. Interface",
+            "volume": "2",
+            "issn": "",
+            "pages": "295-307",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2005.0051"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Infectious diseases of humans: dynamics and control",
+            "authors": [
+                {
+                    "first": "R.M",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Dynamics of the 2001 UK foot and mouth epidemic: stochastic dispersal in a heterogeneous landscape",
+            "authors": [
+                {
+                    "first": "M.J",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "813-817",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1065973"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Disease contact tracing in random and clustered networks",
+            "authors": [
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. R. Soc. B",
+            "volume": "272",
+            "issn": "",
+            "pages": "1407-1414",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2005.3092"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "The network of sheep movements within Great Britain: network properties and their implications for infectious disease spread",
+            "authors": [
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "J. R. Soc. Interface",
+            "volume": "3",
+            "issn": "",
+            "pages": "669-677",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2006.0129"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Infectious disease control using contact tracing in random and scale-free networks",
+            "authors": [
+                {
+                    "first": "I.Z",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "J. R. Soc. Interface",
+            "volume": "3",
+            "issn": "",
+            "pages": "55-62",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2005.0079"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Key strategies for reducing spread of avian influenza among commercial poultry holdings: lessons for transmission to humans",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Le Menach",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vergu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.F",
+                    "middle": [],
+                    "last": "Grais",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.L",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Flahault",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc. R. Soc. B",
+            "volume": "273",
+            "issn": "",
+            "pages": "2467-2475",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2006.3609"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "The web of human sexual networks",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Liljeros",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.R",
+                    "middle": [],
+                    "last": "Edling",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.A.N",
+                    "middle": [],
+                    "last": "Amaral",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.E",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Aberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "411",
+            "issn": "",
+            "pages": "907-908",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35082140"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086616"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Network theory and SARS: predicting outbreak diversity",
+            "authors": [
+                {
+                    "first": "L.A",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pourbohloul",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.C",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Theor. Biol",
+            "volume": "232",
+            "issn": "",
+            "pages": "71-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2004.07.026"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Epidemics and percolation is small-world networks",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phys. Rev. E",
+            "volume": "61",
+            "issn": "",
+            "pages": "5678-5682",
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.61.5678"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Assortative mixing in networks",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Phys. Rev. E",
+            "volume": "89",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "The significance of sexual partner contact networks for the transmission of HIV",
+            "authors": [
+                {
+                    "first": "R.M",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J. AIDS",
+            "volume": "3",
+            "issn": "",
+            "pages": "417-429",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Mixing patterns in networks",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Phys. Rev. E",
+            "volume": "67",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.67.026126"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "The structure and function of complex networks",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "SIAM Rev",
+            "volume": "45",
+            "issn": "",
+            "pages": "167-256",
+            "other_ids": {
+                "DOI": [
+                    "10.1137/S003614450342480"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Random graphs with arbitrary degree distributions and their application",
+            "authors": [
+                {
+                    "first": "M.E.J",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H",
+                    "middle": [],
+                    "last": "Strogatz",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.J",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phys. Rev. E",
+            "volume": "64",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.64.026118"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Recent network evolution increases the potential for large epidemics in the British cattle population",
+            "authors": [
+                {
+                    "first": "S.E",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G",
+                    "middle": [],
+                    "last": "Everett",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.R",
+                    "middle": [],
+                    "last": "Christley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. R. Soc. Interface",
+            "volume": "4",
+            "issn": "",
+            "pages": "669-674",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2007.0214"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Absence of epidemic threshold in scale-free networks with degree-correlations",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bogu\u00f1\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Phys. Rev. Lett",
+            "volume": "90",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevLett.90.028701"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Epidemic incidence in correlated complex networks",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Moreno",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.B",
+                    "middle": [],
+                    "last": "G\u00f3mez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.F",
+                    "middle": [],
+                    "last": "Pacheco",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Phys. Rev. E",
+            "volume": "68",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.68.035103"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Dynamical patterns of epidemic outbreaks in complex heterogeneous networks",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pastoras-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Theor. Biol",
+            "volume": "235",
+            "issn": "",
+            "pages": "257-288",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2005.01.011"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Spreading dynamics on small-world networks with connectivity fluctuations and correlations",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vazquez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Phys. Rev. E",
+            "volume": "74",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevE.74.056101"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Velocity and hierarchical spread of epidemic outbreaks in scale-free networks",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pastoras-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Phys. Rev. Lett",
+            "volume": "92",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevLett.92.178701"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Dynamical and correlation properties of the internet",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vazquez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phys. Rev. Lett",
+            "volume": "87",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevLett.87.258701"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Condom use in multi-ethnic neighborhoods of San Francisco: the population-based AMEN (AIDS in Multi-Ethnic Neighborhoods) study",
+            "authors": [
+                {
+                    "first": "J.A",
+                    "middle": [],
+                    "last": "Catania",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.J",
+                    "middle": [],
+                    "last": "Coates",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kegels",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.T",
+                    "middle": [],
+                    "last": "Fullilove",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Am. J. Public Health",
+            "volume": "82",
+            "issn": "",
+            "pages": "284-287",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Contact tracing in stochastic and deterministic epidemic models",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mu\u00a8ller",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kretzschmar",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Math. Biosci",
+            "volume": "164",
+            "issn": "",
+            "pages": "39-64",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0025-5564(99)00061-9"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Efficient immunization strategies for computer networks and populations",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "ben-Avraham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Phys. Rev. Lett",
+            "volume": "91",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevLett.91.247901"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Mathematical epidemiology of infectious diseases: model building, analysis and interpretation",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.P",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Contact tracing and disease control",
+            "authors": [
+                {
+                    "first": "K.T.D",
+                    "middle": [],
+                    "last": "Eames",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. R. Soc. B",
+            "volume": "270",
+            "issn": "",
+            "pages": "2565-2571",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2003.2554"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Modelling disease outbreaks in realistic urban social networks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Eubank",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Guclu",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.S.A",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.V",
+                    "middle": [],
+                    "last": "Marathe",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Srinivasan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Toroczkai",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "429",
+            "issn": "",
+            "pages": "180-184",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02541"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Strategies for containing an emerging influenza pandemic in South East Asia",
+            "authors": [
+                {
+                    "first": "N.M",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.T",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meeyai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Iamsirithaworn",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.S",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        }
+    }
+}

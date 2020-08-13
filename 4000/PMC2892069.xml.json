@@ -1,0 +1,3118 @@
+{
+    "paper_id": "PMC2892069",
+    "metadata": {
+        "title": "On computational approaches for size-and-shape distributions from sedimentation velocity analytical ultracentrifugation",
+        "authors": [
+            {
+                "first": "Peter",
+                "middle": [],
+                "last": "Schuck",
+                "suffix": "",
+                "email": "schuckp@mail.nih.gov",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The use of sedimentation velocity analytical ultracentrifugation (SV) has significantly expanded in the last decade (Howlett et al. 2006; Scott and Schuck 2006; Cole et al. 2008), and new computational methods for SV analysis are being actively developed by several groups (Balbo et al. 2005; Philo 2006; Brown et al. 2007, 2009; Behlke and Ristau 2009; Brookes et al. 2009; Correia and Stafford 2009). In particular, diffusion-deconvoluted sedimentation coefficient distributions calculated from direct boundary modeling of experimental data (Schuck 2000; Schuck et al. 2002) have proven to be very useful tools in many biophysical applications (for a list of references see Schuck 2007). They can achieve relatively high hydrodynamic resolution of pauci- and polydisperse macromolecular mixtures, exhibit exquisite sensitivity for trace components (Berkowitz 2006; Liu et al. 2006; Brown et al. 2008a, b; Gabrielson et al. 2009), and can be related to sedimentation coefficient isotherms and Gilbert\u2013Jenkins theory for the analysis of slowly or rapidly interacting systems (Dam and Schuck 2005; Dam et al. 2005). The extension of sedimentation coefficient distributions to two-dimensional size-and-shape distributions was introduced (Schuck 2002; Brown and Schuck 2006) and applied in numerous studies (Markossian et al. 2006; Chang et al. 2007; Deng et al. 2007; Race et al. 2007; Broomell et al. 2008; Brown et al. 2008; Chebotareva et al. 2008; Iseli et al. 2008; Moncrieffe et al. 2008; Paz et al. 2008; Sivakolundu et al. 2008; Wang et al. 2008; Eronina et al. 2009; Mortuza et al. 2009). More recently, the Demeler laboratory has described the concept of a novel algorithm (\u201c2DSA\u201d) for determining size-and-shape distributions, as implemented in the software ULTRASCAN (Brookes et al. 2006, 2009; Demeler et al. 2009). In the present work, we critically compare the background of the different algorithms and assess their performance.",
+            "cite_spans": [
+                {
+                    "start": 132,
+                    "end": 136,
+                    "mention": "2006",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 155,
+                    "end": 159,
+                    "mention": "2006",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 173,
+                    "end": 177,
+                    "mention": "2008",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 287,
+                    "end": 291,
+                    "mention": "2005",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 299,
+                    "end": 303,
+                    "mention": "2006",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 318,
+                    "end": 322,
+                    "mention": "2007",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 324,
+                    "end": 328,
+                    "mention": "2009",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 348,
+                    "end": 352,
+                    "mention": "2009",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 369,
+                    "end": 373,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 396,
+                    "end": 400,
+                    "mention": "2009",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 551,
+                    "end": 555,
+                    "mention": "2000",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 571,
+                    "end": 575,
+                    "mention": "2002",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 683,
+                    "end": 687,
+                    "mention": "2007",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 861,
+                    "end": 865,
+                    "mention": "2006",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 878,
+                    "end": 882,
+                    "mention": "2006",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 897,
+                    "end": 902,
+                    "mention": "2008a",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 904,
+                    "end": 905,
+                    "mention": "b",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 925,
+                    "end": 929,
+                    "mention": "2009",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1091,
+                    "end": 1095,
+                    "mention": "2005",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1108,
+                    "end": 1112,
+                    "mention": "2005",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1243,
+                    "end": 1247,
+                    "mention": "2002",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1266,
+                    "end": 1270,
+                    "mention": "2006",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1323,
+                    "end": 1327,
+                    "mention": "2006",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1342,
+                    "end": 1346,
+                    "mention": "2007",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1360,
+                    "end": 1364,
+                    "mention": "2007",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1378,
+                    "end": 1382,
+                    "mention": "2007",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1400,
+                    "end": 1404,
+                    "mention": "2008",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 1406,
+                    "end": 1423,
+                    "mention": "Brown et al. 2008",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1444,
+                    "end": 1448,
+                    "mention": "2008",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1463,
+                    "end": 1467,
+                    "mention": "2008",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1487,
+                    "end": 1491,
+                    "mention": "2008",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1504,
+                    "end": 1508,
+                    "mention": "2008",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1529,
+                    "end": 1533,
+                    "mention": "2008",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1547,
+                    "end": 1551,
+                    "mention": "2008",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1568,
+                    "end": 1572,
+                    "mention": "2009",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1589,
+                    "end": 1593,
+                    "mention": "2009",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1793,
+                    "end": 1797,
+                    "mention": "2006",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 1799,
+                    "end": 1803,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 1820,
+                    "end": 1824,
+                    "mention": "2009",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The SV experiment was carried out with a Beckman-Coulter XL-I analytical ultracentrifuge, following standard protocols as described by Brown et al. (2008a, b). A monoclonal immunoglobulin G (IgG) preparation in phosphate-buffered saline (PBS) buffer was inserted in 12-mm Epon centerpieces, temperature equilibrated at 18\u00b0C, and then accelerated to 45,000 rpm and scanned with absorbance optics at 280 nm. Data analysis was performed with SEDFIT 11.8 using c(s) models as described by Schuck et al. (2002), the two-dimensional size-and-shape model c(s, fr) as described by Brown and Schuck (2006), and applying Bayesian prior knowledge as described in detail by Brown et al. (2007). The computer used for these analyses was a Dell Precision T5400 workstation, with dual 32-bit quadcore 3.16-MHz processors and Windows operating system.1",
+            "cite_spans": [
+                {
+                    "start": 149,
+                    "end": 154,
+                    "mention": "2008a",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 156,
+                    "end": 157,
+                    "mention": "b",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 500,
+                    "end": 504,
+                    "mention": "2002",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 591,
+                    "end": 595,
+                    "mention": "2006",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 676,
+                    "end": 680,
+                    "mention": "2007",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The size-and-shape distribution problem is a Fredholm integral equation of the form1\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ a(r,\\,t) = \\int\\limits_{{s_{\\min } }}^{{s_{\\max } }} {\\int\\limits_{{f_{r,\\,min } }}^{{f_{r,\\,max } }} {c(s,\\,f_{r} )\\,\\chi (s,\\,f_{r} ,\\,r,\\,t)\\text{d}s\\text{d}f_{r} } }, $$\\end{document}where the data a(r, t) are the measured evolution of the radial signal profiles, and c(s, fr) is a differential size-and-shape distribution, expressed most conveniently for the modeling of SV data in coordinates of sedimentation coefficient s and frictional ratio fr (Brown and Schuck 2006). \u03c7(s, fr, r, t) are normalized solutions of the Lamm equation (Lamm 1929)2\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\frac{\\partial \\chi }{\\partial t}} = {\\frac{1}{r}}{\\frac{\\partial }{\\partial r}}\\left[ {Dr{\\frac{\\partial \\chi }{\\partial r}} - s\\omega^{2} r^{2} \\chi } \\right], $$\\end{document}which predicts the evolution of the concentration profiles of an ideally sedimenting species with sedimentation coefficient s and diffusion coefficient D(s, fr) that is initially uniformly distributed between the meniscus and bottom of the solution column at loading concentration of 1.",
+            "cite_spans": [
+                {
+                    "start": 826,
+                    "end": 830,
+                    "mention": "2006",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 900,
+                    "end": 904,
+                    "mention": "1929",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Equation (1) can be discretized on a rectangular grid with (S \u00d7 F) size-and-shape values (si, fr,j) comprising all combinations of S equidistant sedimentation coefficient values from s1 = smin to sS = smax (with constant mesh size \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\Updelta s = (s_{S} - s_{1} )/(S - 1) = s_{i + 1} - s_{i} $$\\end{document}), and F frictional ratio values from fr,1 = fr,min to fr,F = fr,max (with constant mesh size \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\Updelta f_{r} = (f_{r,F} - f_{r,1} )/(F - 1) = f_{r,j + 1} - f_{r,j} $$\\end{document}). With the data being (N \u00d7 M) discrete signal values at radius rn and time tm, abbreviated as anm, (1) leads to the linear least-squares problem3\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\mathop {\\text{Min}}\\limits_{{c_{i,j} \\ge 0}} \\sum\\limits_{n,m} {\\left( {a_{nm} - \\sum\\limits_{i = 1}^{S} {\\sum\\limits_{j = 1}^{F} {c_{i,j} \\chi (s_{i} ,\\,f_{r,j} ,\\,r_{n} ,\\,t_{m} )} } - b(r_{n} ) - \\beta (t_{m} )} \\right)}^{2}. $$\\end{document}The ci,j provide an estimate of the size-and-shape distribution with \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ c(s,f_{r} ) \\approx {{c_{i,j} } \\mathord{\\left/ {\\vphantom {{c_{i,j} } {(\\Updelta s\\Updelta f_{r} )}}} \\right. \\kern-\\nulldelimiterspace} {(\\Updelta s\\Updelta f_{r} )}} $$\\end{document}. Signal offsets from systematic time-invariant [b(rn)] and radial-invariant [\u03b2(tm)] noise contributions are indicated in Eq. (3), but their simultaneous optimization with the method of separation of linear and nonlinear parameters (Ruhe and Wedin 1980) poses no significant further complications (Schuck and Demeler 1999) and therefore they will be dropped from further consideration in order to make the notation more transparent in the following.2",
+            "cite_spans": [
+                {
+                    "start": 2459,
+                    "end": 2463,
+                    "mention": "1980",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 2528,
+                    "end": 2532,
+                    "mention": "1999",
+                    "ref_id": "BIBREF58"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "We can introduce a new index l that lexicographically orders all data points (a total of L = N \u00d7 M), and a single index k that enumerates all size-and-shape grid points (si, fr,j) from 1 to K = S \u00d7 F, which allows us to write (3) as a simple sum4\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\mathop {\\text{Min}}\\limits_{{c_{k} \\ge 0}} \\sum\\limits_{l} {\\left( {a_{l} - \\sum\\limits_{k = 1}^{K} {c_{k} \\chi_{kl} } } \\right)}^{2} . $$\\end{document}",
+            "cite_spans": [],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "This highlights the nature of the problem being a standard nonnegative linear least-squares problem. The unconstrained problem can be solved with the method of normal equations (Lawson and Hanson 1974; Golub and VanLoan 1989)5\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\mathbf{P\\vec{c}}} = {\\vec{\\mathbf{d}}}, $$\\end{document}with the K \u00d7 K matrix P (sometimes referred to as the Gram matrix) with elements \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ P_{\\kappa \\lambda } = \\sum\\limits_{l} {\\chi_{\\kappa l} \\chi_{\\lambda l} } $$\\end{document}, the K \u00d7 1 vector \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{d}}} $$\\end{document} with elements \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ d_{k} = \\sum\\limits_{l} {a_{l} \\chi_{kl} } $$\\end{document}, and the K \u00d7 1 vector \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{c}}} $$\\end{document} representing the unknown distribution.",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 200,
+                    "mention": "1974",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 220,
+                    "end": 224,
+                    "mention": "1989",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "The unique best-fit solution with the nonnegativity constraint ck \u2265 0 can be found unambiguously with the algebraic algorithm NNLS, which was introduced and proven by Lawson and Hanson (1974). We first used the NNLS algorithm in the context of SV distribution analysis, in a form where we expressed all requisite quantities with elements of the normal equations (Schuck 2000). NNLS is an active set algorithm that divides the unknowns into sets with active (ck = 0) and inactive (ck > 0) inequalities, and iteratively establishes the active set producing the best-fit solution. For the inactive set, the problem takes the same form as (5), but with all matrix and vector elements from components with active constraints deleted (Gill et al. 1986).",
+            "cite_spans": [
+                {
+                    "start": 186,
+                    "end": 190,
+                    "mention": "1974",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 370,
+                    "end": 374,
+                    "mention": "2000",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 741,
+                    "end": 745,
+                    "mention": "1986",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Frequently the problem of fitting distributions of the form (1) is ill posed, meaning that many different solutions will fit the data statistically indistinguishably well (Louis 1989; Hansen 1998; Engl et al. 2000). For example, Provencher (1982) has illustrated this point via the Lemma of Riemann\u2013Lebesgue, showing that one should expect a large set of very different solutions to fit the data equally well within the experimental error. In practice, noise of the data can amplify to determine even the overall features of the best-fit solution \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{c}}}, $$\\end{document} and often the strictly best-fit solution consists of a series of spikes whose number, location, and height may not reflect the presence of such species in the physical experiment, but are governed by the details of the noise and other imperfections in the data.",
+            "cite_spans": [
+                {
+                    "start": 178,
+                    "end": 182,
+                    "mention": "1989",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 191,
+                    "end": 195,
+                    "mention": "1998",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 209,
+                    "end": 213,
+                    "mention": "2000",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 241,
+                    "end": 245,
+                    "mention": "1982",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "It is therefore desirable to suppress, among all possible solutions, those that contain a potentially misleading amount of detail arising from noise amplification. Towards this goal, regularization is a standard approach that determines the most parsimonious solution of all that fit the data statistically indistinguishably well. It minimizes a measure of the information content of the solution while optimizing the quality of fit. A well-known and widely applied strategy to suppress artificial spikes is Tikhonov\u2013Phillips regularization (Phillips 1962; Provencher 1982; Louis 1989; Hansen 1992; Press et al. 1992), which uses, for example, the square of the second-derivative matrix (Hk\u03ba) to stabilize the solution of (4):6\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\mathop {\\text{Min}}\\limits_{{c_{k} \\ge 0}} \\left[ {\\sum\\limits_{l} {\\left( {a_{l} - \\sum\\limits_{k = 1}^{K} {c_{k} \\chi_{kl} } } \\right)}^{2} + \\alpha \\sum\\limits_{k,\\kappa } {c_{k} H_{k\\kappa } c_{\\kappa } } } \\right] $$\\end{document}or, formulated with normal equations,7\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\left( {{\\mathbf{P}} + \\alpha {\\mathbf{H}}} \\right){\\vec{\\mathbf{c}}} = {\\vec{\\mathbf{d}}}, $$\\end{document}where \u03b1 is a parameter that scales the regularization constraint (Louis 1989; Press et al. 1992). Again, (7) has an unambiguous best-fit solution that can be determined algebraically with NNLS for any value of \u03b1, and the latter can be adjusted in a simple one-dimensional search such that the least-squares fit remains at a statistically indistinguishable quality compared with the initial best fit in the absence of regularization (Bevington and Robinson 1992). A Bayesian variation of this approach is possible that modulates the regularization matrix to enhance the information content of the solution in view of existing (or hypothesized) prior knowledge (Sivia 1996; Brown et al. 2007; Patel et al. 2008).",
+            "cite_spans": [
+                {
+                    "start": 551,
+                    "end": 555,
+                    "mention": "1962",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 568,
+                    "end": 572,
+                    "mention": "1982",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 580,
+                    "end": 584,
+                    "mention": "1989",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 593,
+                    "end": 597,
+                    "mention": "1992",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 612,
+                    "end": 616,
+                    "mention": "1992",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1721,
+                    "end": 1725,
+                    "mention": "1989",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1740,
+                    "end": 1744,
+                    "mention": "1992",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 2105,
+                    "end": 2109,
+                    "mention": "1992",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 2315,
+                    "end": 2319,
+                    "mention": "1996",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 2334,
+                    "end": 2338,
+                    "mention": "2007",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 2353,
+                    "end": 2357,
+                    "mention": "2008",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "We will refer to this approach as the \u201cstandard algorithm,\u201d because it is firmly rooted in textbook linear algebra and basic linear least-squares optimization, and utilized in many applications throughout the biophysical literature and physical sciences. We have introduced this approach previously into the SV analysis, and it underlies all size-distribution analyses in SEDFIT and SEDPHAT. If used without regularization, it provides exact solutions (within numerical precision) to the least-squares problem (3), and when used with regularization, the algorithms ensure that fits with statistically indistinguishable quality are obtained.",
+            "cite_spans": [],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "The 2DSA method by Demeler and colleagues aims to solve the same Eqs. (1), (3), and (4), respectively. This is described by Brookes et al. (2009), and with less mathematical detail by Demeler et al. (2009). The Demeler approach deviates in key aspects from the strategies described above. Apparently in order to circumvent perceived computational limitations, a novel multigrid scheme is conceived that would allow a sequence of fits with low-resolution 10 \u00d7 10 (S \u00d7 F) grids to approximate the solution of (1) and (3) with high-resolution S \u226b 10 and F \u226b 10. For achieving parsimonious results Monte Carlo iterations are applied (Brookes et al. 2009). Some of the key ideas will be discussed in the following.",
+            "cite_spans": [
+                {
+                    "start": 140,
+                    "end": 144,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 200,
+                    "end": 204,
+                    "mention": "2009",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 645,
+                    "end": 649,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Mathematical description of the problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "First, in order to assess the size of the problem and computational requirements, we need to clarify how fine the grid of s-values and fr-values needs to be in order to fully extract all information from a typical set of sedimentation velocity data. Let us consider as an example the experimental data from a preparation of IgG molecules sedimenting at 45,000 rpm, as shown in Fig. 1a. It is useful to start the analysis with a one-dimensional sedimentation coefficient distribution analysis c(s), since the sedimentation coefficients are the experimentally best determined quantities. c(s) eliminates the shape dimension by using hydrodynamic scaling laws such as the traditional s ~ M2/3 law for globular particles (Schuck 2000), theoretical models for wormlike chains (Yamakawa and Fujii 1973) or any user-defined exponential scaling laws for polymers (Pavlov et al. 2009). For the given data we can determine from the c(s) analysis (not shown) that s-values from 0.1 to 15 S will be sufficient to describe all sedimenting species. Equidistant discretizations with S = 100 or S = 200 lead to statistically indistinguishable quality of fit, as measured by F-statistics (Bevington and Robinson 1992; Straume and Johnson 1992), and therefore we preliminarily conclude that S = 100 will be a reasonable choice.",
+            "cite_spans": [
+                {
+                    "start": 725,
+                    "end": 729,
+                    "mention": "2000",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 791,
+                    "end": 795,
+                    "mention": "1973",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 870,
+                    "end": 874,
+                    "mention": "2009",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1195,
+                    "end": 1199,
+                    "mention": "1992",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1221,
+                    "end": 1225,
+                    "mention": "1992",
+                    "ref_id": "BIBREF63"
+                }
+            ],
+            "section": "Appropriate mesh sizes for the two-dimensional problem ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 382,
+                    "end": 383,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Typically, the resolution in the frictional ratio dimension cannot be expected to be very high, even in combination with data from SV experiments at a range of rotor speeds (Schuck 2002). Therefore, a discretization providing F = 10 values between 1.0 and 2.5 (ranging from extremely compact to very extended protein structures) should be a sufficiently flexible basis to describe the actual frictional ratio for each species (knowing that we have inserted folded proteins into the sample solution, and keeping in mind the average frictional ratio of 1.68 estimated from the c(s) analysis). The resulting 10 \u00d7 100 grid with a total of K = 1,000 species was fitted with the standard algorithm to the data in Fig. 1a, leading to virtually random distribution of residuals (1b), with a root-mean-square deviation (rmsd) of 0.00672, consistent with the noise in the data acquisition. The resulting distribution is shown with and without regularization in Fig. 1d and c, respectively. As expected, while the s-values of the species are well defined, the shape dimension is highly underdetermined, resulting in the typical series of peaks in 1c, and in a smooth relatively uniform distribution after regularization in 1d. (This justifies, in retrospect, the choice of F = 10 values as a sufficiently detailed discretization of the frictional ratio dimension.)",
+            "cite_spans": [
+                {
+                    "start": 181,
+                    "end": 185,
+                    "mention": "2002",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Appropriate mesh sizes for the two-dimensional problem ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 712,
+                    "end": 713,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 771,
+                    "end": 772,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 956,
+                    "end": 957,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1136,
+                    "end": 1137,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1212,
+                    "end": 1213,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We can compare the rmsd achieved with this 10 \u00d7 100 grid (0.00672) with a fit under otherwise identical conditions but different grids: a coarser 10 \u00d7 50 grid leads to an rmsd of 0.00678, which is barely statistically worse (on a one standard deviation confidence level), and a finer grid with 20 \u00d7 200 grid leads to an rmsd of 0.00670, which is statistically indistinguishable. Thus, a 10 \u00d7 100 grid is of sufficiently high resolution to extract the entire information content of the experimental data.",
+            "cite_spans": [],
+            "section": "Appropriate mesh sizes for the two-dimensional problem ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "After outlining the structure of the problem and the discretization parameters typically required for a size-and-shape analysis of SV data, it is possible to discuss the computational requirements. Demeler\u2019s 2DSA method was implemented with the goal of accessing a high-performance computing environment (TeraGrid) in order to avoid prohibitive memory limitations that Demeler and colleagues perceive to occur when using ubiquitous ordinary laboratory workstations. Specifically, the authors (Brookes et al. 2009) estimate the memory needs for modeling a set of M = 50\u2013100 sedimentation velocity scans with typically N = 500\u2013800 data points each by only a low-resolution 10 \u00d7 10 (S \u00d7 F) grid. They conclude that \u201cPerforming just a 10 \u00d7 10 grid search on such an array would require close to half a gigabyte of memory just for data storage of a single experiment.\u201d (Brookes et al. 2009). We will examine this estimate in more detail.",
+            "cite_spans": [
+                {
+                    "start": 508,
+                    "end": 512,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 880,
+                    "end": 884,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "In practice, when using the absorbance optics with the recommended and widely applied setting of 0.003 cm (Brown et al. 2008a, b) for the radial intervals, in order to diminish errors from sample migration during the scan (Brown et al. 2009), we obtain only on the order of ~200\u2013250 points per scan in a long-column SV experiment. In typical high-speed SV experiments with eight-hole rotors, we can acquire usually only 50 scans or fewer before depletion occurs and/or migration and backdiffusion approach steady state, even with small solutes. This is sufficient for a highly detailed analysis of multicomponent systems, as discussed by Balbo et al. (2005). Predicted values \u03c7(si, fr, j, rn, tm) need to be calculated for each species (si, fr, j) with arrays of the same size as the data a(rn, tm). Since the experimental data have a precision not better than four decimal places, their representation as a standard 32-bit floating-point data type with eight significant figures is already wasteful. Nevertheless, calculating conservatively with 32-bit floats we arrive at a memory requirement of only ~4.8 MB for storage of model data, rather than 0.5 GB [250 \u00d7 50 \u00d7 10 \u00d7 10 \u00d7 4 bytes \u00d7 (1,048,576 bytes/MB)\u22121 = 4.76 MB]. With interference optical (IF) data, the native radial density of points is higher (~1,500 per scan). Since the radial density of points of interference scans is not exploited experimentally, it could be safely reduced to the level of absorbance data by pre-averaging, which reduces the statistical noise approximately by a factor of 2. However, again calculating conservatively and using the native resolution of IF data, this would lead to ~28 MB storage space, or ~57 MB if 100 scans were used to represent the evolution in a SV experiment.",
+            "cite_spans": [
+                {
+                    "start": 120,
+                    "end": 125,
+                    "mention": "2008a",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 127,
+                    "end": 128,
+                    "mention": "b",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 236,
+                    "end": 240,
+                    "mention": "2009",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 652,
+                    "end": 656,
+                    "mention": "2005",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "We find that the ~5\u201350 MB actually required for calculating size-and-shape distributions with 10 \u00d7 10 grids is compatible with the available memory on many different platforms, ranging from >200,000 MB available on TeraGrid systems, to ~2,000\u20133,000 MB typically available on 32-bit Windows, and even the ~50\u201390 MB available on current smartphones.",
+            "cite_spans": [],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Consistent with this result, we and others (Markossian et al. 2006; Chang et al. 2007; Deng et al. 2007; Race et al. 2007; Broomell et al. 2008; Brown et al. 2008; Chebotareva et al. 2008; Iseli et al. 2008; Moncrieffe et al. 2008; Paz et al. 2008; Sivakolundu et al. 2008; Wang et al. 2008; Eronina et al. 2009; Mortuza et al. 2009) have regularly used full high-resolution grids (such as 10 \u00d7 50, 10 \u00d7 100, or higher) in SEDFIT on ordinary personal computers or laptops, an exercise that is a regular part of the Workshop on Hydrodynamic and Thermodynamic Analysis of Macromolecules with SEDFIT and SEDPHAT at the National Institutes of Health (Schuck 2009). This is possible due to the fact that the memory requirement for the high-resolution grid would be 48\u2013286 MB to store the model data (assuming 50 scans for data absorbance or native interference data modeled with a 10 \u00d7 100 grid). It is readily verified that, even for the complete high-resolution grid and when globally analyzing many experimental data sets, this is well below the memory limit of currently common 32-bit Windows operating systems.",
+            "cite_spans": [
+                {
+                    "start": 62,
+                    "end": 66,
+                    "mention": "2006",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 81,
+                    "end": 85,
+                    "mention": "2007",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 99,
+                    "end": 103,
+                    "mention": "2007",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 117,
+                    "end": 121,
+                    "mention": "2007",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 139,
+                    "end": 143,
+                    "mention": "2008",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 158,
+                    "end": 162,
+                    "mention": "2008",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 183,
+                    "end": 187,
+                    "mention": "2008",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 202,
+                    "end": 206,
+                    "mention": "2008",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 226,
+                    "end": 230,
+                    "mention": "2008",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 243,
+                    "end": 247,
+                    "mention": "2008",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 268,
+                    "end": 272,
+                    "mention": "2008",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 286,
+                    "end": 290,
+                    "mention": "2008",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 307,
+                    "end": 311,
+                    "mention": "2009",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 328,
+                    "end": 332,
+                    "mention": "2009",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 654,
+                    "end": 658,
+                    "mention": "2009",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Further, all computations can be condensed to the normal Eq. (5), requiring essentially only a matrix P of 1,000 \u00d7 1,000 numbers to be operated on, which even as double-precision data type requires less than 8 MB, trivial by current standards on any platform. Once condensed to the form of Eq. (5), our SV problem is far smaller (often several orders of magnitude) than common problems of analogous mathematical structure, for example, in astronomical image analysis (Narayan and Nityananda 1986). For the data shown in Fig. 1, in the implementation in SEDFIT (which does not optimize memory allocation), ~20 MB of RAM are used.",
+            "cite_spans": [
+                {
+                    "start": 491,
+                    "end": 495,
+                    "mention": "1986",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 525,
+                    "end": 526,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The necessary computational power will strongly depend on the implementation of the algorithms, of course. Parallelization can be readily achieved in the standard algorithm, which can in many places decrease the computation time by a factor virtually proportional to the number of threads. This is true, for example, for solving the Lamm equations, and for the most time-consuming step of building the normal equations matrix. The time for a complete calculation with a full high-resolution grid (10 \u00d7 100) for the data shown in Fig. 1, on a current dual-processor quadcore 3.16-MHz PC (Dell Precision T5400), is only 42 s.3 The time required for a 10 \u00d7 50 grid, which we have already seen leads to an adequate fit within the noise of data acquisition, is 10 s. Finally, it is ~15 min for a 20 \u00d7 200 grid. In the standard algorithm a Monte Carlo statistical analysis may be desired, for example, in order to examine the statistical accuracy of a particular species population as determined from the integration of the distribution in a certain range. In the standard algorithm, each iteration requires only updating the vector \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{d}}} $$\\end{document} of the normal Eq. (5) and solving these equations. For the data shown in Fig. 1, one iteration takes ~3 s on a single thread on our PC.",
+            "cite_spans": [],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 534,
+                    "end": 535,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1511,
+                    "end": 1512,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We conclude that ordinary current workstations do not pose a limitation for rigorously determining the size-and-shape distributions, neither with regard to available memory, nor with regard to processor capabilities.",
+            "cite_spans": [],
+            "section": "Memory requirements and computational platforms ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Modeling a distribution of species with different size and shape to the data depends critically on the accuracy of the Lamm equation solutions (2) that predict the sedimentation profiles for all species. For calculating Lamm equation solutions, Demeler and colleagues apply the ASTFEM algorithm that was recently introduced by Cao and Demeler (2005). In that work, the authors report two criteria for the performance of their ASTFEM algorithm in comparison with the reference (true) solution: (1) the overall rmsd (referred to by Cao and Demeler as \u201cL2 error,\u201d in a nonstandard definition), and (2) the maximum error in the evolution of concentration profiles.",
+            "cite_spans": [
+                {
+                    "start": 344,
+                    "end": 348,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "That the rmsd is small (compared with the noise of data acquisition) is a necessary but not sufficient condition for the algorithm to be useful in modeling experimental data. In fact, the majority of points of the predicted concentration profiles typically fall into the plateau regions, which are trivial to predict (those in the solvent plateau are constant zero) but have limited or no information about the sedimentation process. These plateau points can keep the overall rmsd error of the solution below the statistical errors of the data acquisition, even though the maximum errors in the sedimentation boundaries may be much larger.",
+            "cite_spans": [],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "The accuracy of the description of the shape of the sedimentation boundary (rather than the plateaus) is critical for modeling the size-and-shape distributions. Therefore, a sufficient condition is that the maximum error is smaller than the noise of the data acquisition. For example, in order to model experimental data with signal-to-noise ratio of up to ~1000:1, the maximum errors of the Lamm equation solutions at unit concentration should be less than 0.001.",
+            "cite_spans": [],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "For numerically solving the Lamm equation, an overriding question is the discretization of the radial coordinate. Solutions with fine radial mesh are generally more accurate but computationally more expensive, and conversely, coarsely discretized Lamm equation solutions are quicker to calculate. Even though it has not been explicitly mentioned in the SV literature until recently (Brown and Schuck 2008), it is easy to see that a fundamental limitation for any finite-element algorithm with linear elements is the obligate error that occurs when approximating a smooth, curved function with piecewise linear segments. This is illustrated in Fig. 2 for a system chosen by Cao and Demeler (2005) as a benchmark in the introduction of their ASTFEM algorithm. Figure 2 shows the deviations of the curved, accurate solution from a series of linear segments with a total of only 100 (red) or 200 (blue) radius values from meniscus to bottom.",
+            "cite_spans": [
+                {
+                    "start": 400,
+                    "end": 404,
+                    "mention": "2008",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 690,
+                    "end": 694,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 648,
+                    "end": 649,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 765,
+                    "end": 766,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "For the determination of suitable radial mesh sizes for calculating the Lamm equation solution, Cao and Demeler applied the L2 error criterion. This led to the recommendation of very coarse grids with ~100 points, and indeed the main benefit of the ASTFEM algorithm perceived by Cao and Demeler (2005) is numerical stability even for such very coarse radial grids.",
+            "cite_spans": [
+                {
+                    "start": 296,
+                    "end": 300,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Unfortunately, large maximum errors in the approximation of the sedimentation boundaries are an unavoidable consequence of coarse radial discretization. In fact, the errors in the sedimentation boundaries shown in Fig. 2 are similar in magnitude to those of Figs. 8b and 9b in Cao and Demeler (2005). Remarkably, none of the examples provided by Cao and Demeler (2005) led to maximum errors below 0.001, and in most cases it was a factor of 10 or more above this mark. Such errors can be expected to significantly impact the result of the size-and-shape distribution analysis.",
+            "cite_spans": [
+                {
+                    "start": 294,
+                    "end": 298,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 363,
+                    "end": 367,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 219,
+                    "end": 220,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We have recently derived a new finite-element algorithm (Brown and Schuck 2008) based on the recognition that the approximation of the concentration profiles as linear segments does not only generate an obligate error (independent of the algorithm), but that this also represents the dominant source of error in the finite-element approach as described by Claverie et al. (1975). Accordingly, we generate a set of nonequidistant radial grid points with optimal spacing to achieve Lamm equation solutions with constant, predetermined accuracy (as measured by the maximum error for the radial data range to be analyzed). To optimize the efficiency, all points in the solvent and solution plateaus are calculated with the trivial analytical expressions (Brown and Schuck 2008). We note that, for the 10 \u00d7 100 grid shown in Fig. 1, the calculation of the Lamm equation solutions for all 1,000 species with an accuracy of better than 0.001 (maximum error) requires a total of less than 2 s on our PC. Thus, computational expense for achieving high-accuracy Lamm equations should not be limiting the size-and-shape distribution analysis of SV data.",
+            "cite_spans": [
+                {
+                    "start": 74,
+                    "end": 78,
+                    "mention": "2008",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 373,
+                    "end": 377,
+                    "mention": "1975",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 768,
+                    "end": 772,
+                    "mention": "2008",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Lamm equation solutions ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 825,
+                    "end": 826,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The premise underlying (I) is that the results from independent application of different grids can be meaningfully combined. Following the idea of the Demeler laboratory that low-resolution subgrids can be \u201crefined into a grid of any desired resolution\u201d through their combination scheme, let us consider that putative final regular high-resolution grid, which would have mesh size \u0394s = \u03942s and \u0394fr = \u03942fr. As shown above, one can actually solve the size-and-shape distribution problem directly using the standard algorithm with this full-sized high-resolution grid with even mesh size, via the normal equation (5) with the K \u00d7 K matrix P and K \u00d7 1 vector \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{d}}} $$\\end{document}, where K is the total number of species of the two-dimensional grid. In our example of Fig. 1, K = 1,000 for the 10 \u00d7 100 grid that is of sufficient resolution to describe all aspects of the experiment. Now going backwards, one may consider our high-resolution grid to be represented by a total of \u0393 different equal-sized subgrids, each referenced with index \u03b3 (e.g., ten grids of 10 \u00d7 10 resolution), such that merging all grid points of the subgrids produces the high-resolution grid. For each subgrid, one can solve the distribution with the normal matrix method, and it is easy to show that the relevant matrix equations are \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\mathbf{P}}^{(\\gamma )} {\\vec{\\mathbf{c}}}^{(\\gamma )} = {\\vec{\\mathbf{d}}}^{(\\gamma )}, $$\\end{document} where \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\mathbf{P}}^{(\\gamma )} $$\\end{document} are square submatrices of P of size (K/\u0393) \u00d7 (K/\u0393) and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{d}}}^{(\\gamma )} $$\\end{document} are subvectors of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{d}}} $$\\end{document} of size 1 \u00d7 (K/\u0393). One can use a nomenclature for the elements of the high-resolution grid such that the points are ordered in sequence of the low-resolution subgrids.",
+            "cite_spans": [],
+            "section": "(I) Combination of subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 1053,
+                    "end": 1054,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In general, it is not true that the individual results \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{c}}}^{(\\gamma )} $$\\end{document} from the individual problems \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\mathbf{P}}^{(\\gamma )} {\\vec{\\mathbf{c}}}^{(\\gamma )} = {\\vec{\\mathbf{d}}}^{(\\gamma )} $$\\end{document} can be combined to a concatenated vector \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\left( {{\\vec{\\mathbf{c}}}^{(1)} , \\ldots ,{\\vec{\\mathbf{c}}}^{(\\Upgamma )} } \\right) $$\\end{document} that would represent the result \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\vec{\\mathbf{c}}} $$\\end{document} of the full solution (with or without nonnegativity). This would require the cross-correlation between points from the different grids to vanish, and the high-resolution K \u00d7 K matrix P to have a structure8\\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ {\\mathbf{P}} = \\left( {\\begin{array}{*{20}c} {{\\mathbf{P}}^{(1)} } & {} & {} & 0 \\\\ {} & {{\\mathbf{P}}^{(2)} } & {} & {} \\\\ {} & {} & \\ddots & {} \\\\ 0 & {} & {} & {{\\mathbf{P}}^{(\\Upgamma )} } \\\\ \\end{array} } \\right). $$\\end{document}This is not the case, as illustrated in Fig. 4 for our example data. As can be discerned clearly, the structure of P when sorted along subgrids (Fig. 4b) is different from merging the submatrices P(\u03b3) (Fig. 4c), which neglects very substantial features of the model. If we ignore this problem and calculate the distribution with the matrix of Fig. 4c (or, equivalently, if we simply merge all solutions from consecutively fitting the distribution data with all ten 10 \u00d7 10 grids and plot them at their appropriate points in the high-resolution grid), we arrive at a size-and-shape distribution as shown in Fig. 5b. This is very different from the known exact solution shown in Fig. 1, which is reproduced for convenience in Fig. 5a.",
+            "cite_spans": [],
+            "section": "(I) Combination of subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 2285,
+                    "end": 2286,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2390,
+                    "end": 2391,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2447,
+                    "end": 2448,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2588,
+                    "end": 2589,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2851,
+                    "end": 2852,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 2922,
+                    "end": 2923,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 2969,
+                    "end": 2970,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Apparently to address this problem, the 2DSA method takes from the concatenated solution of the subgrids only the pattern of active/inactive nonnegativity constraints. Demeler and colleagues construct from the points with nonzero concentration values in the concatenated partial solutions (or a subset thereof) a new grid, conceived to be equal in size to the original low-resolution grids, but now with uneven spacing of the grid points.",
+            "cite_spans": [],
+            "section": "(II) Formation of new, irregular coarse subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Again, we can analyze this approach best by comparison with the full, high-resolution grid with the full matrix P, where the unambiguous best-fit nonnegative solution is found exactly with the proven NNLS algorithm (Lawson and Hanson 1974). The ad hoc exclusion of grid points that did not produce positive concentration values in any of the subgrids is in direct conflict with NNLS. Nothing guarantees that the (s, fr)-values populated in the exact solution will be correctly recognized as populated species (be assigned nonzero values) in the fit with the low-resolution grid of which they are a part. The points populated in the exact solution may therefore simply not be part of the second-stage grid.",
+            "cite_spans": [
+                {
+                    "start": 234,
+                    "end": 238,
+                    "mention": "1974",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "(II) Formation of new, irregular coarse subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Illustrating this problem, the crosses in Fig. 5d represent all the grid points that made positive contributions in any of the preliminary sequence of low-resolution fits (which covers all grid points of the high-resolution grid, as described above). All the dots (red and blue) are the positive solution components of the exact high-resolution solution. They are colored blue if they coincide with a cross, i.e., have been correctly identified in the first stage as being part of the solution, and they are colored red if they were never part of any low-resolution fit and were therefore excluded from the second-stage grid. If the analysis proceeds with the second-stage grid (i.e., preconstraining the analysis to the values indicated by crosses in Fig. 5d), we arrive at the solution shown in Fig. 5c. This is very different from the true high-resolution solution shown in Fig. 5a. Thus, the second stage cannot correct for the errors that occur from a na\u00efve subdivision of grids in (I).",
+            "cite_spans": [],
+            "section": "(II) Formation of new, irregular coarse subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 47,
+                    "end": 48,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 757,
+                    "end": 758,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 802,
+                    "end": 803,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 882,
+                    "end": 883,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Brookes mentions multiple stages of the sequence (I) and (II) with different mesh sizes \u03942s and \u03942fr, and an \u201citerative refinement\u201d of the procedure that utilizes in stage (I) the coarse starting grids that have been extended with populated points from the results of stage (II) of the previous iteration (Brookes et al. 2009). The same fundamental concerns apply to this iteration. To the extent that the results from (II) may not contain the grid points of the exact solution, it is unclear how the inclusion of these additional grid points would aid in the recognition of the correct solution. Even if the added grid points in (I) do represent part of the correct solution, it is not certain that they would be correctly maintained as part of the solution after (II). Empirically, the Demeler laboratory reports convergence of this iteration series in the absence, but not in the presence, of systematic noise corrections to the data (Brookes et al. 2006). Even if the iteration does converge, it is unclear whether it is convergent to the correct solution.",
+            "cite_spans": [
+                {
+                    "start": 321,
+                    "end": 325,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 953,
+                    "end": 957,
+                    "mention": "2006",
+                    "ref_id": "BIBREF66"
+                }
+            ],
+            "section": "(II) Formation of new, irregular coarse subgrids ::: The 2DSA \u201cdivide-and-conquer\u201d algorithm by Brookes et\u00a0al. ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Since the 2DSA algorithm never actually applies a model with a full regularly spaced high-resolution grid, the traditional regularization methods, such as Tikhonov or maximum-entropy regularization described above, do not seem to be easily applicable. In fact, Brookes et al. (2009) express the view that the fit of c(s, fr) with a high-resolution grid in conjunction with regularization suffers from \u201clack of resolution,\u201d and \u201cproduces unnecessarily broad molecular weight distributions.\u201d We believe that, if prior knowledge about the sharpness of the expected c(s, fr) peaks is available, this can be inserted with a Bayesian refinement of the Tikhonov regularization as we have reported for SV analysis (Brown et al. 2007) and implemented in SEDFIT.",
+            "cite_spans": [
+                {
+                    "start": 277,
+                    "end": 281,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 720,
+                    "end": 724,
+                    "mention": "2007",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "In the absence of such prior knowledge, however, the resolution of the regularized solution is limited not by the analysis (assuming reasonable discretization), but rather by the information content of the experiment. It is important to recognize the nature of this limit, in order not to overinterpret the data. Of course, it also would be trivial, although usually misguided, to perform a distribution analysis simply not applying this regularization step at all, and to rely on the exact solution of the fit with the high-resolution model, which usually produces artifactual detail that is the result of noise amplification due to the ill-conditioned nature of the basic Eq. (3).",
+            "cite_spans": [],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "In our example, these aspects can be discerned when comparing the most parsimonious solution in Fig. 1d from Tikhonov regularization with the spiky exact solution in Fig. 1c, or with the incorrect solution in Fig. 5c from one iteration adapted from the Demeler scheme. Even though the spiky solutions suggest very few and discrete species to be in solution, the smooth Tikhonov solution fits the data indistinguishably well from the exact best-fit solution. Its nearly featureless appearance in the fr-dimension highlights simply the lack of sufficient information in the raw data in order to determine the fr-values well.",
+            "cite_spans": [],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 101,
+                    "end": 102,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 171,
+                    "end": 172,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 214,
+                    "end": 215,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "In order to address the impact of noise and error amplification on the results of the 2DSA algorithm, it was combined by Brookes et al. (2009) with a Monte Carlo analysis. Fifty iterations were performed by the Demeler laboratory in order to determine 95% confidence intervals. This seems to be an unusually low number of iterations, in particular since the high confidence limits require estimating the quantiles of rare events, in this case the 2.5 and 97.5 percentiles. With 50 iterations, they are determined by the extreme 1.25 occurrences of parameter values, which makes these estimates of the confidence intervals quite variable statistical quantities themselves. As is well known, usually the number of Monte Carlo iterations required to produce meaningful results is typically on the order of 1,000\u201310,000. However, it seems this would lead to excessive computational effort, several orders of magnitude more costly than the Tikhonov regularization in the standard approach with the full high-resolution grid, which requires for our standard example only a few seconds on our PC.",
+            "cite_spans": [
+                {
+                    "start": 137,
+                    "end": 141,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors report confidence intervals for molecular parameters of the identified solutes, but it is not clear whether these were determined (1) by statistical analysis of the results obtained in each Monte Carlo iteration after the integration of putative solute peaks, or (2) if these confidence intervals reflect the uncertainties of the putative solute peaks in a distribution that, as a whole, has gained error bars at each grid point from the statistics of the Monte Carlo iterations. For method (1), the problem arises of how to identify the group peaks representing a putative solute species. For method (2), the question arises of whether the Monte Carlo approach is effective in providing parsimonious \u201caverage\u201d distributions.",
+            "cite_spans": [],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": []
+        },
+        {
+            "text": "Generally, Monte Carlo simulations are not part of the diverse set of regularization methods explored in the standard literature (Louis 1989; Hansen 1992, 1998; Kress 1999; Engl et al. 2000), although Monte Carlo methods have been used for estimating the regularization parameters of standard regularization functionals (Ramani et al. 2008). The concept of a statistical distribution of parameter values should be confused neither with the real population distribution of coexisting species in the sample mixture nor the estimate of the latter in the form of a calculated size-and-shape distribution. Nevertheless, one could ask to what extent one can rely on the statistical nature of the noise in the data, in combination with noise amplification, to produce a parsimonious two-dimensional histogram of (s, fr)-species populations. As an example, we compare in Fig. 6 the standard analysis of our model data with the 10 \u00d7 100 grid and Tikhonov regularization (6a) with the histogram of all distributions from 50 Monte Carlo iterations (each based on an exact standard fit with the 10 \u00d7 100 grid; 6b). After 50 iterations the histogram clearly shows multimodal and spiky behavior suggesting the presence of multiple species, in contrast to the single broad peak representing the smoothest solution of all that fit the originally measured data. Thus, the 50 Monte Carlo iterations do not provide an effective means to correctly identify the information content of the data. If, on the other hand, we are independently knowledgeable about the monodisperse nature of the sample, we can use the Bayesian approach (Brown et al. 2007) to calculate the size-and-shape distribution that is closest to a single peak, and these results are shown, for comparison, in Fig. 6c.",
+            "cite_spans": [
+                {
+                    "start": 136,
+                    "end": 140,
+                    "mention": "1989",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 149,
+                    "end": 153,
+                    "mention": "1992",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 155,
+                    "end": 159,
+                    "mention": "1998",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 167,
+                    "end": 171,
+                    "mention": "1999",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 185,
+                    "end": 189,
+                    "mention": "2000",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 335,
+                    "end": 339,
+                    "mention": "2008",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1624,
+                    "end": 1628,
+                    "mention": "2007",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Parsimony: suppressing artificial detail ::: Outline of the algorithms",
+            "ref_spans": [
+                {
+                    "start": 868,
+                    "end": 869,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 962,
+                    "end": 963,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1098,
+                    "end": 1099,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1762,
+                    "end": 1763,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "In the present letter, we have examined the different algorithmic elements that were conceived and applied in the recently suggested \u201c2DSA\u201d size-and-shape distribution by Brookes et al. (2009). We have compared this with the standard approach that is well established for solving ill-posed integral equations problems in many fields, which rests on well-established linear algebra and related numerical tools of linear least-squares analysis. Contrary to the assertion of Brookes, Cao, and Demeler, the application of the standard approach to the size-and-shape distribution problem is quite feasible on ordinary laboratory computers within only a few minutes of computation time, even when using high-resolution grids suitable to fully extract the experimental information content. As implemented in SEDFIT, this approach is being applied in many laboratories (Markossian et al. 2006; Chang et al. 2007; Deng et al. 2007; Race et al. 2007; Broomell et al. 2008; Brown et al. 2008; Chebotareva et al. 2008; Iseli et al. 2008; Moncrieffe et al. 2008; Paz et al. 2008; Sivakolundu et al. 2008; Wang et al. 2008; Eronina et al. 2009; Mortuza et al. 2009). Since this can supply exact (up to numerical precision) best-fit solutions, we have applied it to a data analysis example to serve as a reference solution in a study of the performance of different computational strategies on which 2DSA relies. This illustrates the consequences of the deviations from the established mathematical reference frame that should be expected to arise in Demeler\u2019s 2DSA approach.",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 191,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 880,
+                    "end": 884,
+                    "mention": "2006",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 899,
+                    "end": 903,
+                    "mention": "2007",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 917,
+                    "end": 921,
+                    "mention": "2007",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 935,
+                    "end": 939,
+                    "mention": "2007",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 957,
+                    "end": 961,
+                    "mention": "2008",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 963,
+                    "end": 980,
+                    "mention": "Brown et al. 2008",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1001,
+                    "end": 1005,
+                    "mention": "2008",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1020,
+                    "end": 1024,
+                    "mention": "2008",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1044,
+                    "end": 1048,
+                    "mention": "2008",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1061,
+                    "end": 1065,
+                    "mention": "2008",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1086,
+                    "end": 1090,
+                    "mention": "2008",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1104,
+                    "end": 1108,
+                    "mention": "2008",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1125,
+                    "end": 1129,
+                    "mention": "2009",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1146,
+                    "end": 1150,
+                    "mention": "2009",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "First, there are concerns about the accuracy of the evaluated Lamm equation solutions serving as kernel to the size-and-shape distribution integral. This could likely be addressed by deviating from the discretization parameters advocated by Cao and Demeler (2005).",
+            "cite_spans": [
+                {
+                    "start": 258,
+                    "end": 262,
+                    "mention": "2005",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "Second, a more fundamental problem is the use of grids with extremely small number of points, far below the resolution required to describe the data. If, as illustrated in Fig. 3, the predicted concentration profiles from these coarse models do not even qualitatively follow the experimental data, we question whether there are any meaningful conclusions that can be drawn from these results. Brookes et al. (2009) distract from this problem by incorrectly stating that such grids were the basis of the implementation of c(s, fr) models in SEDFIT, which is well described in the literature to achieve excellent fits of the data to within their statistical noise. To the best of our knowledge the attempt to utilize coarse grids is without precedent prior to the Brookes et al. paper.",
+            "cite_spans": [
+                {
+                    "start": 409,
+                    "end": 413,
+                    "mention": "2009",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": [
+                {
+                    "start": 177,
+                    "end": 178,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Despite the inability of these grids to describe the data, Demeler and colleagues suggest that the combination of results from the application of a large number of different, but similarly coarse, grids (all with 10 \u00d7 10 or lower resolution; Demeler et al. 2009) can be used in some way to achieve an analysis equivalent to that of a high-resolution grid. In the simplest form, this argument would be incompatible with basic matrix algebra, because it neglects cross-correlation between points from different grids. Discarding the magnitude of species\u2019 populations in this concatenated distribution, and using only the pattern of nonnegativity constraints from such an analysis, is in conflict with the established Lawson and Hanson algorithm NNLS. The effect of the empirical extension to multiple stages is uncertain, and may not converge. Although one could construe cases where it will certainly work (such as distributions consisting of a single species), the Demeler scheme for generating nonequidistant small grids in multiple stages appears fundamentally flawed for the general case.",
+            "cite_spans": [
+                {
+                    "start": 257,
+                    "end": 261,
+                    "mention": "2009",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "The strategy of sequentially applying different, equally coarse, grids is in contrast to established multigrid methods for integral equations, which provide successfully finer parameter discretization (Kress 1999). The division of the full problem into separate subproblems to be solved in parallel, followed by merging their partial solutions, has been used successfully in some image restoration problems (Bevilacqua and Piccolomini 2000) where the image regions are known to be uncorrelated with each other due to a localized point-spread function. However, this condition is not fulfilled in the present case. In SV analysis, the cross-correlation of signals from different species can be very large. This is reflected by the fact that (1) is ill posed, and illustrated by the fact that the matrices in Fig. 4b and c are different. For a correct solution of the SV problem, the regular high-resolution grid should be considered fully and unbiased by any scheme of preselection of excluded parameter regions. The latter is quite feasible with standard algorithms and commonly available computational resources, and we note that the problem is fairly small compared with many image analysis problems of similar structure.",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 212,
+                    "mention": "1999",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 435,
+                    "end": 439,
+                    "mention": "2000",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": [
+                {
+                    "start": 812,
+                    "end": 813,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Finally, the application of the Monte Carlo approach to achieve greater parsimony of the results (i.e., simplicity of the distribution in the sense of suppressing artificial detail) is equally novel, but not very successful when we applied this idea to our example data analysis. An example of the lack of regularization in the 2DSA method resulting in artificial detail can be found in the data shown by Planken et al. (2008), where a standard c(s) analysis of SV data with maximum-entropy regularization exhibits only a single broad skewed distribution [Fig. 3c in Planken et al. (2008)], consistent with the expected continuous size distribution of the material studied, yet the 2DSA analysis of the same data suggests the presence of more than 14 discrete peaks (at different s-values and all at similar frictional ratio) [Fig. 4 in Planken et al. (2008)]. The Monte Carlo approach is certainly an extremely computationally costly step, in particular if one would carry it out with statistically meaningful iteration numbers. In contrast, application of the standard Tikhonov regularization to the full high-resolution problem, with or without Bayesian modulation, takes a small fraction of the computational effort of the original problem, i.e., on the order of seconds on a PC.",
+            "cite_spans": [
+                {
+                    "start": 421,
+                    "end": 425,
+                    "mention": "2008",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 583,
+                    "end": 587,
+                    "mention": "2008",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 853,
+                    "end": 857,
+                    "mention": "2008",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, we would regard the computational effort to be a secondary problem, and the choice of computational platform rather inconsequential, relative to the main concern arising from simple mathematical arguments that Demeler\u2019s algorithm may not give correct results. The authors do qualify their algorithm to be empirical, and that \u201cthe results are not generally in exact correspondence with the original problem\u201d (Brookes et al. 2006). They argue that \u201c[the results] can be made sufficiently close through careful use of the given heuristics\u201d (Brookes et al. 2006). We are uncertain of the process referred to here, and how closeness to the exact solution would possibly be assessed without explicitly calculating the exact best-fit solution. So far Demeler and colleagues have not brought forward any proof that the distributions returned by the 2DSA method are at least close in the major attributes to the correct solution. We believe that the question of correctness of the algorithm is critical, especially since the authors invite the general application of this method, as implemented in the ULTRASCAN software, to address data analysis problems in novel biophysical and biochemical studies, rather than simple model problems with known solutions.",
+            "cite_spans": [
+                {
+                    "start": 438,
+                    "end": 442,
+                    "mention": "2006",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 568,
+                    "end": 572,
+                    "mention": "2006",
+                    "ref_id": "BIBREF66"
+                }
+            ],
+            "section": "Summary and conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Fig.\u00a01: Illustration of the standard algorithm for size-and-shape distributions applied to the experimental data of an immunoglobulin G sample, sedimenting at 45,000 rpm. a Experimental data acquired with the absorbance optical system (solid lines). The color temperature indicates the temporal order of the scans, with blue for the early and red for the late scans. The dotted lines, virtually overlapping the experimental data, are the best-fit distribution from modeling with Eq. (3) for a grid of K = 10 \u00d7 100 (fr, s)-values ranging from fr-values of 1.0 to 2.5 in 10 equidistant steps, and from s-values of 0.1 to 15.0 S in 100 equidistant steps. b Residuals of the fit, presented as a bitmap (Dam and Schuck 2004) and as an overlay plot for all traces. The root-mean-square deviation is 0.00672 OD. c Raw size-and-shape distribution without regularization. As in (Brown and Schuck 2006), the 2D grid of (fr, s)-values is indicated by solid lines, combined with a color temperature contour map in the plane below. The solution is a series of spikes in fr-dimension, with a comparatively well-defined s-value of ~5.8 S for the main species. An observation familiar in the study of IgG (and many other protein) samples is the low-level population of dimeric species at ~9 S, as well as trimeric traces at ~11\u201312 S. d Tikhonov\u2013Phillips regularization applied to produce the most parsimonious size-and-shape distribution of all that fit the data statistically indistinguishably well at a P = 0.95 confidence level (i.e., that produce a rmsd value of 0.00677 OD or better)",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig.\u00a02: Accuracy of the solution of the Lamm equation. Whenever using linear elements for the finite-element solution, an obligatory error is the approximation of the true boundary shape by piecewise linear segments. This is illustrated here for a system chosen as model system by Cao and Demeler (2005, compare Fig. 8b), with s = 10 S and D = 2 \u00d7 10\u22127 cm2/s, for which very accurate Lamm equation solutions were calculated with a very fine discretization (black thin line). If the radial range from meniscus to bottom is divided evenly in a set of only 100 radial points and the boundary shape is approximated by piecewise linear segments (red line, residuals shown in enhanced scale in the graph below), very large deviations occur, even if at these points the correct Lamm equation solutions were calculated. For an even division with 200 radial points (blue) the obligatory errors are smaller but still approximately ten times the experimental noise. Grids with 100 radial points were proposed by Cao and Demeler (2005), leading for samples at unit concentration to maximum errors far exceeding the experimental noise. As shown by Brown and Schuck (2008), the minimum number of radial points that for this system allow for this obligate error to be <0.001 is ~300, based on an optimized nonequidistant spacing of radial points (using high density where boundaries are steep)",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig.\u00a03: Analysis of the same data shown in Fig. 1, using a coarse grid of only K = 10 \u00d7 10 (fr, s)-values as introduced by Brookes et al. a Experimental data, with the color temperature blue to red indicating the temporal evolution of the sedimentation, as in Fig. 1. Shown as black lines are the best-fit distributions with the 10 \u00d7 10 grid distribution model, ranging from fr-values of 1.0 to 2.5 in ten equidistant steps, and from s-values of 0.1 to 15.0 S in ten equidistant steps. b Residuals bitmap and overlay. The rmsd of the fit is 0.03088 OD. c Best-fit size-and-shape distribution with the 10 \u00d7 10 model, in the same presentation as the 10 \u00d7 100 model in Fig. 1c",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig.\u00a04: Magnitude of the elements of the normal matrix P calculated for the 10 \u00d7 100 model shown in Fig. 1. P is symmetrical and has 1,000 \u00d7 1,000 values, plotted here by row and column numbers as indicated in the abscissa and ordinate of the picture, and the values \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}$$ \\left| {{\\mathbf{P}}_{kl} } \\right| $$\\end{document} are plotted using the color scale. In principle, the nomenclature indexing the 10 \u00d7 100 grid points for the fr \u00d7 s grid to form the vector of 1,000 parameters is arbitrary. a Here, all grid points are sorted by increasing s-value, i.e., (s1, fr,1), (s1, fr,2),\u2026(s1, fr,10),(s2, fr,1),\u2026(s2, fr,10),\u2026(s100, fr,10). As can be discerned from the smooth appearance, the matrix elements are not strongly dependent on the fr-value. b The same matrix can be reordered to reflect subdivision along ten regular subgrids \u03b3, each of the form (s10(\u03b3\u22121)+1, fr,1), (s10(\u03b3\u22121)+1, fr,2),\u2026(s10(\u03b3\u22121)+1, fr,10), (s10(\u03b3\u22121)+2, fr,1), (s10(\u03b3\u22121)+2, fr,2),\u2026(s10(\u03b3\u22121)+2, fr,10),\u2026(s10(\u03b3\u22121)+10, fr,1), (s10(\u03b3\u22121)+10, fr,2),\u2026(s10(\u03b3\u22121)+10, fr,10) with \u03b3 = 1\u202610. Each of the subgrids represents an evenly spaced 10 \u00d7 10 grid with origin shifted by \u03942s = 0.1505 S. c The idea that one could determine a high-resolution size-and-shape distribution from merging the results obtained separately in fits with subgrids corresponds to the assumption that there be no correlation between points from the different grids, i.e., that P can be subdivided into the ten submatrices P(\u03b3). For the present data, this corresponds to the solution of the problem with a normal matrix as shown in c. Clearly, this is very different from the true matrix shown in b",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig.\u00a05: Contour plots of the size-and-shape distributions calculated with different models for the IgG data shown in Fig. 1. The color temperature (blue to red) indicates increasing height of the peaks. (a) For comparison, this panel shows the same distribution as shown in Fig. 1c, calculated with the high-resolution grid of 10 \u00d7 100 (fr, s)-values. b Distribution obtained in stage (I) by merging the distributions calculated sequentially and independently with different low-resolution grid of 10 \u00d7 10 (fr, s)-values, each translated by \u03942s =  0.1505 S. One example for the low-resolution grid analysis is shown in Fig. 3. All low-resolution grids are chosen such that they are evenly spaced subgrids of the high-resolution grid, and such that, by joining the grid points of (fr, s)-values of all the low-resolution grids, the high-resolution grid of a is obtained. c A new grid is defined in stage (II) by joining all grid points from the entire sequence of low-resolution grids that yielded positive contributions to the fit. This is the set of grid points for which b displays nonzero populations of the distribution. In a secondary analysis, a fit to this irregular grid is performed, and the results are shown as a contour plot. Although the smallest differences \u0394s and \u0394fr in this secondary grid are the same as those of the high-resolution grid, it considers only a small subset of the points from the high-resolution grid. This causes the deviations from the exact results in a and those in c. d Illustration of the grid points used in c, showing as black crosses all points that yielded positive contributions in any of the first-stage low-resolution fits. For comparison, solid circles are the grid points that make positive contributions in the exact direct high-resolution analysis of a. Blue circles indicate those that coincide with grid points in the Demeler scheme, and red circles indicate those that are populated in the exact solution but not found in the grid of the Demeler scheme",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig.\u00a06: Comparison of strategies to compute parsimonious distributions that display the information content of the IgG data shown in Fig. 1. a Contour plot of the size-and-shape distribution obtained with the high-resolution grid of 10 \u00d7 100 (fr, s)-values, after application of Tikhonov regularization, as shown in Fig. 1d. b The sum of 50 size-and-shape distributions calculated with the exact standard method using the same high-resolution grid, but each based on synthetic data sets generated from the best-fit distribution of Fig. 1 with added normally distributed noise at the same magnitude as exhibited by the experimental data. c Integration of the main 6 S peak of the size-and-shape distribution as calculated in Fig. 1 allows to determine the weighted-average s-value and fr-value, which can be used in the Bayesian framework to calculate the size-and-shape distribution c\u03b4(s, fr) (Brown et al. 2007) that is closest to that of a single species, within the limits imposed by the requirement to produce a fit of statistically indistinguishable quality to that shown in a. As can be discerned from the secondary peak at ~6 S with low frictional ratio, a strictly monodisperse interpretation of the main peak is contradicted by the experimental data. (Note the different scales on the color bar)",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "On the spectral decomposition of Hermitian matrices modified by low rank pertubationswith aplications",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Arbenz",
+                    "suffix": ""
+                },
+                {
+                    "first": "GH",
+                    "middle": [],
+                    "last": "Golub",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "SIAM J Matrix Anal Appl",
+            "volume": "9",
+            "issn": "",
+            "pages": "40-58",
+            "other_ids": {
+                "DOI": [
+                    "10.1137/0609004"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Macromolecular Size-And-Shape Distributions by Sedimentation Velocity Analytical Ultracentrifugation",
+            "authors": [
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biophys J",
+            "volume": "90",
+            "issn": "",
+            "pages": "4651-4661",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.106.081372"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "A new adaptive grid-size algorithm for the simulation of sedimentation velocity profiles in analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Comput Phys Commun",
+            "volume": "178",
+            "issn": "2",
+            "pages": "105-120",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cpc.2007.08.012"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Using prior knowledge in the determination of macromolecular size-distributions by analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Balbo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biomacromolecules",
+            "volume": "8",
+            "issn": "",
+            "pages": "2011-2024",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/bm070193j"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Structure and functional analysis of the IGF-II/IGF2R interaction",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Delaine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "EMBO J",
+            "volume": "27",
+            "issn": "1",
+            "pages": "265-276",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.emboj.7601938"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "A bayesian approach for quantifying trace amounts of antibody aggregates by sedimentation velocity analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Balbo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "AAPS J",
+            "volume": "10",
+            "issn": "3",
+            "pages": "481-493",
+            "other_ids": {
+                "DOI": [
+                    "10.1208/s12248-008-9058-z"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Modeling analytical ultracentrifugation experiments with an adaptive space\u2013time finite element solution of the lamm equation",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Demeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biophys J",
+            "volume": "89",
+            "issn": "3",
+            "pages": "1589-1602",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.105.061135"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Reversible unfolding of the severe acute respiratory syndrome coronavirus main protease in guanidinium chloride",
+            "authors": [
+                {
+                    "first": "HP",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biophys J",
+            "volume": "92",
+            "issn": "4",
+            "pages": "1374-1383",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.106.091736"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Cooperative self-association of phosphorylase kinase from rabbit skeletal muscle",
+            "authors": [
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Chebotareva",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Meremyanin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biophys Chem",
+            "volume": "133",
+            "issn": "1\u20133",
+            "pages": "45-53",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bpc.2007.12.001"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Studying multi-protein complexes by multi-signal sedimentation velocity analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Balbo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Minor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "81-86",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0408399102"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Sedimentation of generalized systems of interacting particles. I. Solution of systems of complete Lamm equations",
+            "authors": [
+                {
+                    "first": "J-M",
+                    "middle": [],
+                    "last": "Claverie",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dreux",
+                    "suffix": ""
+                }
+            ],
+            "year": 1975,
+            "venue": "Biopolymers",
+            "volume": "14",
+            "issn": "",
+            "pages": "1685-1700",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/bip.1975.360140811"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Analytical ultracentrifugation: sedimentation velocity and sedimentation equilibrium",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Lary",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Methods Cell Biol",
+            "volume": "84",
+            "issn": "",
+            "pages": "143-179",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0091-679X(07)84006-4"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Extracting equilibrium constants from kinetically limited reacting systems",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Correia",
+                    "suffix": ""
+                },
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "Stafford",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Methods Enzymol",
+            "volume": "455",
+            "issn": "",
+            "pages": "419-446",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0076-6879(08)04215-8"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Calculating sedimentation coefficient distributions by direct modeling of sedimentation velocity profiles",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dam",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Methods Enzymol",
+            "volume": "384",
+            "issn": "",
+            "pages": "185-212",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0076-6879(04)84012-6"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Sedimentation velocity analysis of protein\u2013protein interactions: Sedimentation coefficient distributions c(s) and asymptotic boundary profiles from Gilbert-Jenkins theory",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dam",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biophys J",
+            "volume": "89",
+            "issn": "",
+            "pages": "651-666",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.105.059584"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Sedimentation velocity analysis of protein\u2013protein interactions: Lamm equation modeling and sedimentation coefficient distributions c(s)",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dam",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Velikovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biophys J",
+            "volume": "89",
+            "issn": "",
+            "pages": "619-634",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.105.059568"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Analysis of heterogeneity in molecular weight and shape by analytical ultracentrifugation using parallel distributed computing",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Demeler",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Brookes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Methods Enzymol",
+            "volume": "454",
+            "issn": "",
+            "pages": "87-113",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0076-6879(08)03804-4"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Structural basis for the recognition of mutant self by a tumor-specific, MHC class II-restricted T cell receptor",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Immunol",
+            "volume": "8",
+            "issn": "4",
+            "pages": "398-408",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ni1447"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Engl",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hanke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Regularization of inverse problems",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Effect of proline on thermal inactivation, denaturation and aggregation of glycogen phosphorylase b from rabbit skeletal muscle",
+            "authors": [
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Eronina",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Chebotareva",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Biophys Chem",
+            "volume": "141",
+            "issn": "1",
+            "pages": "66-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bpc.2008.12.007"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Common excipients impair detection of protein aggregates during sedimentation velocity analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Gabrielson",
+                    "suffix": ""
+                },
+                {
+                    "first": "KK",
+                    "middle": [],
+                    "last": "Arthur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Pharm Sci",
+            "volume": "98",
+            "issn": "1",
+            "pages": "50-62",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jps.21403"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Gill",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Practical optimization",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "GH",
+                    "middle": [],
+                    "last": "Golub",
+                    "suffix": ""
+                },
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "VanLoan",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Matrix computations",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A divide-and-conquer algorithm for the bidiagonal SVD",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Eisenstat",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "SIAM J Matrix Anal Appl",
+            "volume": "16",
+            "issn": "1",
+            "pages": "79-92",
+            "other_ids": {
+                "DOI": [
+                    "10.1137/S0895479892242232"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Numerical tools for analysis and solution of Fredholm integral equations of the first kind",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Inverse Probl",
+            "volume": "8",
+            "issn": "",
+            "pages": "849-872",
+            "other_ids": {
+                "DOI": [
+                    "10.1088/0266-5611/8/6/005"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Rank-deficient and discrete ill-posed problems: numerical aspects of linear inversion",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Analytical ultracentrifugation for the study of protein association and assembly",
+            "authors": [
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Howlett",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Minton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Curr Opin Chem Biol",
+            "volume": "10",
+            "issn": "5",
+            "pages": "430-436",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cbpa.2006.08.017"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "AMP-activated protein kinase subunit interactions: beta1:gamma1 association requires beta1 Thr-263 and Tyr-267",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Iseli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Oakhill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Biol Chem",
+            "volume": "283",
+            "issn": "8",
+            "pages": "4799-4807",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M708298200"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kress",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Linear integral equations",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Die Differentialgleichung der Ultrazentrifugierung",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lamm",
+                    "suffix": ""
+                }
+            ],
+            "year": 1929,
+            "venue": "Ark Mat Astr Fys",
+            "volume": "21B",
+            "issn": "2",
+            "pages": "1-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Role of analytical ultracentrifugation in assessing the aggregation of protein biopharmaceuticals",
+            "authors": [
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Berkowitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "AAPS J",
+            "volume": "8",
+            "issn": "3",
+            "pages": "E590-E605",
+            "other_ids": {
+                "DOI": [
+                    "10.1208/aapsj080368"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Lawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Hanson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Solving least squares problems",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "A critical review of analytical ultracentrifugation and field flow fractionation methods for measuring protein aggregation",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Andya",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "AAPS J",
+            "volume": "8",
+            "issn": "3",
+            "pages": "E580-E589",
+            "other_ids": {
+                "DOI": [
+                    "10.1208/aapsj080367"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Louis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Inverse und schlecht gestellte Probleme",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Mechanism of thermal aggregation of rabbit muscle glyceraldehyde-3-phosphate dehydrogenase",
+            "authors": [
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Markossian",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Khanova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biochemistry",
+            "volume": "45",
+            "issn": "44",
+            "pages": "13375-13384",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/bi0610707"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Assembly of oligomeric death domain complexes during Toll receptor signaling",
+            "authors": [
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Moncrieffe",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Grossmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Biol Chem",
+            "volume": "283",
+            "issn": "48",
+            "pages": "33447-33454",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M805427200"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Structure of the capsid amino-terminal domain from the betaretrovirus, Jaagsiekte sheep retrovirus",
+            "authors": [
+                {
+                    "first": "GB",
+                    "middle": [],
+                    "last": "Mortuza",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Goldstone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Mol Biol",
+            "volume": "386",
+            "issn": "4",
+            "pages": "1179-1192",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jmb.2008.10.066"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Maximum entropy image restoration in astronomy",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Narayan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nityananda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Ann Rev Astron Astrophys",
+            "volume": "24",
+            "issn": "",
+            "pages": "127-170",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.aa.24.090186.001015"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "A conserved arginine-containing motif crucial for the assembly and enzymatic activity of the mixed lineage leukemia protein-1 core complex",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "VE",
+                    "middle": [],
+                    "last": "Vought",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Biol Chem",
+            "volume": "283",
+            "issn": "47",
+            "pages": "32162-32175",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M806317200"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Biophysical characterization of the unstructured cytoplasmic domain of the human neuronal adhesion protein neuroligin 3",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Paz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zeev-Ben-Mordehai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biophys J",
+            "volume": "95",
+            "issn": "4",
+            "pages": "1928-1944",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.107.126995"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Parallel image restoration on parallel and distributed computers",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bevilacqua",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Piccolomini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Parallel Comput",
+            "volume": "26",
+            "issn": "",
+            "pages": "495-506",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0167-8191(99)00115-5"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "A technique for the numerical solution of certain integral equations of the first kind",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Phillips",
+                    "suffix": ""
+                }
+            ],
+            "year": 1962,
+            "venue": "Assoc Comput Mach",
+            "volume": "9",
+            "issn": "",
+            "pages": "84-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Improved methods for fitting sedimentation coefficient distributions derived by time-derivative techniques",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Philo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Anal Biochem",
+            "volume": "354",
+            "issn": "2",
+            "pages": "238-246",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ab.2006.04.053"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Model independent determination of colloidal silica size distributions via analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Planken",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Kuipers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Anal Chem",
+            "volume": "80",
+            "issn": "23",
+            "pages": "8871-8879",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/ac801556t"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Press",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Teukolsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Numerical recipes in C",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "A constrained regularization method for inverting data represented by linear algebraic or integral equations",
+            "authors": [
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Provencher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1982,
+            "venue": "Comp Phys Commun",
+            "volume": "27",
+            "issn": "",
+            "pages": "213-227",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0010-4655(82)90173-4"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Conformation of the EPEC Tir protein in solution: investigating the impact of serine phosphorylation at positions 434/463",
+            "authors": [
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Race",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Solovyova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biophys J",
+            "volume": "93",
+            "issn": "2",
+            "pages": "586-596",
+            "other_ids": {
+                "DOI": [
+                    "10.1529/biophysj.106.101766"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "Monte-Carlo Sure: A black-box optimization of regularization parameters for general denoising algorithms",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ramani",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Blu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "IEEE Trans Image Process",
+            "volume": "17",
+            "issn": "",
+            "pages": "1540-1554",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/TIP.2008.2001404"
+                ]
+            }
+        },
+        "BIBREF52": {
+            "title": "Algorithms for separable nonlinear least squares problems",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ruhe",
+                    "suffix": ""
+                },
+                {
+                    "first": "P\u00c5",
+                    "middle": [],
+                    "last": "Wedin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "SIAM Rev",
+            "volume": "22",
+            "issn": "",
+            "pages": "318-337",
+            "other_ids": {
+                "DOI": [
+                    "10.1137/1022057"
+                ]
+            }
+        },
+        "BIBREF53": {
+            "title": "Size distribution analysis of macromolecules by sedimentation velocity ultracentrifugation and Lamm equation modeling",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Biophys J",
+            "volume": "78",
+            "issn": "",
+            "pages": "1606-1619",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0006-3495(00)76713-0"
+                ]
+            }
+        },
+        "BIBREF54": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Bevington",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Data reduction and error analysis for the physical sciences",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Direct sedimentation analysis of interference optical data in analytical ultracentrifugation",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Demeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Biophys J",
+            "volume": "76",
+            "issn": "",
+            "pages": "2288-2296",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0006-3495(99)77384-4"
+                ]
+            }
+        },
+        "BIBREF59": {
+            "title": "Size-distribution analysis of proteins by analytical ultracentrifugation: strategies and application to model systems",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Perugini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biophys J",
+            "volume": "82",
+            "issn": "2",
+            "pages": "1096-1111",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0006-3495(02)75469-6"
+                ]
+            }
+        },
+        "BIBREF60": {
+            "title": "A brief introduction to the analytical ultracentrifugation of proteins for beginners",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schuck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Modern analytical ultracentrifugation: techniques and methods",
+            "volume": "",
+            "issn": "",
+            "pages": "1-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Intrinsically unstructured domains of Arf and Hdm2 form bimolecular oligomeric structures in vitro and in vivo",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Sivakolundu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nourse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Mol Biol",
+            "volume": "384",
+            "issn": "1",
+            "pages": "240-254",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jmb.2008.09.019"
+                ]
+            }
+        },
+        "BIBREF62": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Sivia",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Data analysis. A bayesian tutorial",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Analysis of residuals: criteria for determining goodness-of-fit",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Straume",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Methods Enzymol",
+            "volume": "210",
+            "issn": "",
+            "pages": "87-105",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0076-6879(92)10007-Z"
+                ]
+            }
+        },
+        "BIBREF64": {
+            "title": "Peptidoglycan recognition protein-SD provides versatility of receptor formation in Drosophila immunity",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "105",
+            "issn": "33",
+            "pages": "11881-11886",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0710092105"
+                ]
+            }
+        },
+        "BIBREF65": {
+            "title": "A divide-and-conquer method for the Takagi factorization",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Qiao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "SIAM J Matrix Anal Appl",
+            "volume": "30",
+            "issn": "1",
+            "pages": "142-153",
+            "other_ids": {
+                "DOI": [
+                    "10.1137/050624558"
+                ]
+            }
+        },
+        "BIBREF66": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Translational friction coefficient of wormlike chains",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yamakawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fujii",
+                    "suffix": ""
+                }
+            ],
+            "year": 1973,
+            "venue": "Macromolecules",
+            "volume": "6",
+            "issn": "",
+            "pages": "407-415",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/ma60033a018"
+                ]
+            }
+        },
+        "BIBREF68": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Cutting edge structural protein from the jaws of Nereis virens",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Broomell",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Chase",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biomacromolecules",
+            "volume": "9",
+            "issn": "6",
+            "pages": "1669-1677",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/bm800200a"
+                ]
+            }
+        }
+    }
+}

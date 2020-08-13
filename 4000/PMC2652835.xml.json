@@ -1,0 +1,1642 @@
+{
+    "paper_id": "PMC2652835",
+    "metadata": {
+        "title": "Genetic Drift of HIV Populations in Culture",
+        "authors": [
+            {
+                "first": "Yegor",
+                "middle": [],
+                "last": "Voronin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sarah",
+                "middle": [],
+                "last": "Holte",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Julie",
+                "middle": [],
+                "last": "Overbaugh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [],
+                "last": "Emerman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gil",
+                "middle": [],
+                "last": "McVean",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Genetic drift is defined as stochastic fluctuations in frequencies of alleles in a population. Generally, large populations are less stochastic and undergo less genetic drift than smaller populations. While viruses exhibit very large population sizes, suggesting that the genetic processes in these populations are mostly deterministic, it has been recently appreciated that genetic drift is an important factor in virus evolution. For example, plant viruses undergo severe bottleneck events both when spreading from one plant to another and within an individual infected plant, which leads to frequent founder effects in their populations [1],[2],[3],[4],[5],[6]. Significant contribution of genetic drift has also been proposed for evolution of animal and human viruses, such as norovirus [7], measles [8], hepatitis B virus [9], coronavirus [10], Dengue virus [11], rabies virus [12], and hantavirus [13]. However, accurate determination of the role of genetic drift in evolution of animal viruses is complicated, because genetic drift, a stochastic process, is hard to discern from antigenic drift, which is a selection-driven process associated with individual differences in immune responses of infected hosts. Nevertheless, studies aimed at separating the role of the immune response still find a significant influence of genetic drift in evolution of some animal viruses [14],[15],[16].",
+            "cite_spans": [
+                {
+                    "start": 640,
+                    "end": 643,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 644,
+                    "end": 647,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 648,
+                    "end": 651,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 652,
+                    "end": 655,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 656,
+                    "end": 659,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 660,
+                    "end": 663,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 791,
+                    "end": 794,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 804,
+                    "end": 807,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 827,
+                    "end": 830,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 844,
+                    "end": 848,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 863,
+                    "end": 867,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 882,
+                    "end": 886,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 903,
+                    "end": 907,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1379,
+                    "end": 1383,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1384,
+                    "end": 1388,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1389,
+                    "end": 1393,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The processes that cause genetic drift in extremely large viral populations have not been thoroughly explored, but they include events that occur during both transmission of the virus from one organism to another and viral replication within a single organism (intra-host). Studies of wheat streak mosaic virus suggest that both mechanisms can contribute significantly to viral evolution [1],[2], but whether this conclusion applies to animal viruses is not clear. The majority of the work on genetic drift in animal viruses has focused on large scale viral populations, comparing viruses either in geographically isolated regions or in consecutive epidemics and, therefore, does not distinguish between the intra- and inter-host genetic drift.",
+            "cite_spans": [
+                {
+                    "start": 388,
+                    "end": 391,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 392,
+                    "end": 395,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The animal virus for which intra-host genetic drift has been extensively studied is human immunodeficiency virus type 1 (HIV-1). Multiple studies observed that genetic drift of HIV-1 within an infected individual is several orders of magnitude larger than would be predicted from the total number of infected cells in the body [17],[18],[19],[20],[21]. Several models have been proposed to explain the observed high genetic drift, including multiple selective sweeps [22], metapopulation structure [23],[24] and rare but severe population bottlenecks [25]. All of these models, however, implicitly assume that viral population replicating under homogenous well-mixed conditions should behave as an ideal population. Ideal populations are expected to undergo a certain amount of genetic drift, but real viral populations are also influenced by to the stochastic nature of the biological processes involved in viral replication. Therefore, real viral populations can be expected to have an excess of genetic drift, even under \u201cclose-to-ideal\u201d conditions. The degree to which viral replication process contributes to genetic drift in viral populations is the main interest of our study.",
+            "cite_spans": [
+                {
+                    "start": 327,
+                    "end": 331,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 332,
+                    "end": 336,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 337,
+                    "end": 341,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 342,
+                    "end": 346,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 347,
+                    "end": 351,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 467,
+                    "end": 471,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 498,
+                    "end": 502,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 503,
+                    "end": 507,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 551,
+                    "end": 555,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, we studied genetic drift in HIV populations replicating under the most basic conditions of cell culture. We developed a system that can be used to accurately measure genetic drift occurring in HIV populations. Using this system we show that genetic drift in HIV populations in culture is approximately tenfold higher than expected for an ideal population. Because the increase in HIV genetic drift observed in culture is due to replication process itself, it should also be present in vivo and, therefore, may partially explain the high genetic drift observed in HIV populations in infected people.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The measurement of genetic drift in HIV populations infecting C8166 cells as shown in Figure 2 was repeated a total of five times with different viral dilutions. The variance calculated from the combined data set was used as a baseline to which we compared the variance observed for other infection conditions. Additionally, statistical analysis was performed to calculate 95% confidence intervals for the estimated variance at each population size, which showed that for viral populations infecting C8166 cells, the estimated variance, to which we refer here as Vtotal, was significantly higher than Videal for all population sizes (Figure 3A).",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 86,
+                    "end": 94,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 634,
+                    "end": 643,
+                    "mention": "Figure 3A",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "We then tested whether properties of infected cells affected the magnitude of genetic drift in HIV populations. Thus, we measured genetic drift in viral populations infecting another cell line, CEMx174. These cells differ from C8166 cells morphologically, require the presence of DEAE-Dextran for robust HIV infection, and produce smaller amounts of virus after infection than C8166 cells (data not shown). The observed variance Vtotal of Vpr-FS-StuI frequency in HIV populations infecting CEMx174 cells was also significantly higher than Videal (Figure 3B), suggesting that higher than expected genetic drift is is a common property of the virus replication process.",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 547,
+                    "end": 556,
+                    "mention": "Figure 3B",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To test whether the variability in properties of target cells is important for genetic drift, we infected a 1\u22361 mixture of the two cell types, CEMx174 and C8166. The results, shown in Figure 3C, demonstrated that the amount of genetic drift under these conditions was similar to the amount observed in infections of cultures containing either C8166 or CEMx174 cells alone.",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 184,
+                    "end": 193,
+                    "mention": "Figure 3C",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Next we measured genetic drift in HIV populations infecting activated primary blood mononuclear cells (PBMCs). The results were similar to those obtained with immortalized cell lines and showed that genetic drift in HIV populations in primary cells was also higher than expected for an ideal population (Figure 3D), supporting our hypothesis that increased genetic drift is a consistent feature of the virus replication process, independent of target cells.",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 304,
+                    "end": 313,
+                    "mention": "Figure 3D",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Our analysis of data from different culture conditions shows that Vtotal under all tested conditions was approximately 10-fold higher than Videal and varied from 10.1-fold to 22.7-fold (Table 1). We compared Vtotal observed under different conditions to Vtotal in C8166 infection. Interestingly, infections of CEMx174 cells resulted in statistically higher genetic drift than infections of C8166 cells (95% confidence intervals do not include 1, see Materials and Methods for statistical analysis details). However, the estimate of variance for CEMx174 cells had large standard error and the variances for the two conditions differed by only 2-fold, showing that our general estimate of one order of magnitude difference between Videal and Vtotal applies to both target cells.",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 186,
+                    "end": 193,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Genetic drift in infections of 1\u22361 mixture of C8166 and CEMx174 cells was not statistically different from genetic drift in C8166 infections, suggesting that properties of C8166 cells (higher infectivity and higher virus production) dominated in the mixed population. Genetic drift in infections of PBMCs was similar to drift observed in C8166 cells (Table 1).",
+            "cite_spans": [],
+            "section": "Genetic drift under a variety of culture conditions ::: Measuring Genetic Drift in HIV Populations in Culture ::: Results",
+            "ref_spans": [
+                {
+                    "start": 351,
+                    "end": 358,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "All our experiments above were based on the assumption that the first cycle of viral replication determined the amount of genetic drift in the population due to exponential growth of viruses in culture. To determine experimentally whether or not multiple cycles of viral replication influenced the amount of observed genetic drift, we measured frequency of Vpr-FS-StuI in virions produced during a single cycle of viral replication. The infection was synchronized by washing off non-bound virus after one hour of incubation with C8166 target cells as described above to avoid the increase in genetic drift that happens due to non-synchronous infection. The continuing rounds of viral replication were blocked by addition of antiviral drug nevirapine to the final concentration of 5 uM at 18 hr post-infection. At 72 h post-infection, cell-free virus was collected for the GeneScan analysis and nevirapine-free media was added to cells to allow viral replication and TCID50 measurement. Genetic drift under these conditions was similar to genetic drift in synchronized cultures after multiple rounds of viral replication (Figure 4D and Table 1). Formal comparison of these two conditions did not find a statistically significant difference in observed variance (data not shown). These data are consistent with the idea that the majority of genetic drift in viral populations in culture occurs during the first cycle of replication.",
+            "cite_spans": [],
+            "section": "Genetic drift over one cycle of viral replication ::: Synchronization of Infection Reduces Genetic Drift ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1121,
+                    "end": 1130,
+                    "mention": "Figure 4D",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1135,
+                    "end": 1142,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In this study we have shown that genetic drift of HIV populations existing under relatively homogeneous conditions of cell culture exceeds genetic drift expected for an ideal population by an order of magnitude. A large portion of the observed drift is due to the non-synchronous nature of infection, where a small proportion of virions gains reproductive advantage by quickly infecting their target cells. When infection is synchronized, the observed genetic drift is reduced, but is still approximately 3-fold higher than drift expected for an ideal population.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Genetic drift depends on the size of the population in question. However, the definition of an individual and, therefore, of a population size, is somewhat complicated for viruses. Individual virions do not contribute to the next generation unless they infect a target cell. The number of infected cells, therefore, is a better measure of population size, and is quite common in HIV population genetics literature [17],[18],[22]. Yet the fact that a single cell can be infected by more than one virion adds some confusion. The latter problem was avoided in our study by starting experiments at low multiplicity of infection (<0.05), which makes double-infection unlikely. We defined the size of viral population as the total number of cells infected in the culture by the virus added at the beginning of the experiment.",
+            "cite_spans": [
+                {
+                    "start": 414,
+                    "end": 418,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 419,
+                    "end": 423,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 424,
+                    "end": 428,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The reasons for the increased genetic drift in HIV populations are not entirely clear. Our work provides strong evidence for the importance of synchronization of infection for reduction of genetic drift. While we have not measured kinetics of infection, it is logical to assume that some of the infections occurred within minutes of addition of virus to cells, while others occurred hours, or even days, later. Indeed, when input virus was washed off after 1 hr during synchronization experiments, viral titers were reduced 10\u2013100-fold as compared to non-synchronized infection (data not shown). As a result, in non-synchronized infections there exists an \u201cearly\u201d virus population, which has a temporal advantage over the \u201clate\u201d viral population. \u201cEarly\u201d population produces new virions faster and contributes to the next generation of infected cells more than the \u201clate\u201d population. Therefore, the small size of the \u201cearly\u201d population defines to a large degree the amount of genetic drift observed in the total population. The potential influence of such non-discrete generations on genetic drift is a well-described phenomenon in population genetics (for review see [28]). Indeed, we found that genetic drift can be significantly reduced when infections are synchronized. Synchronization removes the \u201clate\u201d viral population and, therefore, the total size of viral population becomes much closer to the size of the \u201cearly\u201d population. This results in a more synchronous production of virus particles in the second generation (the major contributor to genetic drift), which becomes discrete reducing the observed genetic drift.",
+            "cite_spans": [
+                {
+                    "start": 1168,
+                    "end": 1172,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Yet even in synchronized infections, genetic drift is higher in HIV populations than in an ideal population. We believe that the reasons for that lie in differences in metabolic state of target cells, their lifespan, or expression levels of positive and negative factors involved in viral replication. These and other individual differences between target cells can introduce stochastic events into the viral life cycle. For example, it has recently been proposed that positive feedback loops in transactivation of RNA synthesis by viral protein Tat lead to stochastic differences in levels of viral gene expression [29]. As a result, the viral population is randomly divided into actively replicating and latent subpopulations. In general, these and other factors may lead to a non-Poisson distribution in the number of progeny per parent and affect the amount of genetic drift in the population [30]. Interestingly, our data showed that genetic drift in a heterogeneous mixture of C8166 and CEMx174 cells was similar to genetic drift in a more homogeneous C8166 culture, which appears to contradict this prediction. However, it is possible that the differences between target cells in those experiments were not sufficient to result in an observable effect. Additional experiments are needed to establish the relevant biological differences of different target cells and the effect of those differences on genetic drift in viral populations.",
+            "cite_spans": [
+                {
+                    "start": 616,
+                    "end": 620,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 897,
+                    "end": 901,
+                    "mention": "[30]",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "All current models of HIV genetic drift implicitly assume that the process of viral replication itself is stochastic only to the degree of an ideal population of a given size [21],[22],[23],[25]. Our results show that this is not the case. Populations of HIV in cell culture undergo approximately tenfold more genetic drift than would be expected from their population sizes. This increase is not sufficient to explain the several orders of magnitude excess in genetic drift of HIV observed in patients [17],[19],[20],[21], but it provides experimental evidence for one source of genetic variation in HIV populations. Indeed, the factors that we proposed to explain the increased genetic drift of HIV in culture should play similar, or even larger, roles in HIV populations in patients. There, infections should be less synchronized than in culture and the individual differences between target cells should be larger than in cell lines or highly stimulated PBMCs that we used in our experiments. Our data suggest that the existing models which explain this excess of genetic drift through multiple selective sweeps [22], metapopulation structure [23],[24] or rare severe population bottlenecks [25] may overestimate the influence of those factors on HIV population genetics. We believe our findings will allow creation of better models describing forces acting on HIV population genetics in an infected person. Genetic drift is a powerful evolutionary force and understanding the factors contributing to it is crucial for our understanding of HIV evolution.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 179,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 180,
+                    "end": 184,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 185,
+                    "end": 189,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 190,
+                    "end": 194,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 503,
+                    "end": 507,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 508,
+                    "end": 512,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 513,
+                    "end": 517,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 518,
+                    "end": 522,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1116,
+                    "end": 1120,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1147,
+                    "end": 1151,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1152,
+                    "end": 1156,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1195,
+                    "end": 1199,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "C8166 and CEMx174 cells, expressing secreted alkaline phosphatase (SEAP), were a kind gift of Dr. R. Desrosiers [26]. Raji-DC-SIGN cells have been previously described as B-THP-1 cells [27]. All non-adherent cell lines were maintained in RPMI 1640 medium (Invitrogen) supplemented with 7% bovine growth serum, 2 mM L-glutamine, 100 U/ml penicillin and 100 \u00b5g/ml streptomycin. Human 293T cells (ATCC) were maintained in DMEM medium (Invitrogen) supplemented with 7% bovine growth serum and antibiotics. Human peripheral blood mononuclear cells (PBMCs) were isolated from healthy donors using Ficoll gradient and maintained in RPMI 1640 medium supplemented with 10% fetal bovine serum, 2 mM L-glutamine and antibiotics. PBMCs were activated prior to infection by phytohemeagglutinin A (10 ug/ml) and interleukin-2 (10 U/ml) for 3 days.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 116,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 185,
+                    "end": 189,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Cells and Viruses ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Variants of HIV-1 LAI clone, Vpr-FS and Vpr-FS-StuI, deficient in vpr protein were generated by inserting polylinkers of 16 (Vpr-FS-StuI) or 20 (Vpr-FS) nucleotides at position 980 of the gene (details are available upon request). To generate stocks of infectious virus, 293T cells were transiently transfected with each proviral clone using TransIT reagent (Mirus, Madison, WI) and the produced virus was filtered through 0.22 \u00b5m filter (Corning) to remove cell debris. To generate 1\u22361 mixture of Vpr-FS and Vpr-FS-StuI clones, small aliquots of the viruses were mixed in several ratios by volume and used to infect C8166 cells at multiplicity of infection (MOI) \u223c0.1. Cell-free virus was collected three days later and used to measure the ratio of Vpr-FS to Vpr-FS-StuI in each mix (described below). The results were used to mix the two viruses at a 1\u22361 infectivity ratio. The 50 \u00b5L aliquots of the mixture were stored at \u221280\u00b0C. Two independent mixtures were created and used for all of the experiments described here. Multiple measurements showed that Vpr-FS-StuI was found in the first and second mixture at 51.00% and 49.68% frequency, respectively. Both mixtures are referred to as \u201c1\u22361 mixture\u201d or \u201c50% mixture\u201d throughout the text, but the actual frequencies were used in calculations of the variance.",
+            "cite_spans": [],
+            "section": "Cells and Viruses ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Viral replication in cultures of C8166 and CEMx174 cells was monitored by an increase in SEAP activity in culture medium using PhosphaLight detection kit according to the manufacturer's instructions (Applied Biosystems, Foster City, CA). Viral replication in PBMCs was monitored by the amount of p24 antigen in cell-free media using a p24 detection kit (NCI-Frederick) and QuantaBlu Fluorogenic Peroxidase Substrate kit (Pierce) according to manufacturers' instructions.",
+            "cite_spans": [],
+            "section": "Cells and Viruses ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Tissue culture infectious dose of 50% (TCID50) was measured in every experiment by the standard approach of limiting virus dilutions and counting the number of infection-negative wells in each dilution. Rows of cultures that contained virus-negative wells were maintained for 21\u201328 days to ensure detection of all infected wells. To calculate the number of infected cells at each dilution, TCID50 units were converted into infectious particles per milliliter by multiplying TCID50 by 0.7 (to account for the fact that Poisson distribution predicts 50% negative outcomes at \u223c0.7 mean) and adjusting for the dilution factor.",
+            "cite_spans": [],
+            "section": "Viral Titers ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In some cases, an infectious center assay was used to measure the number of infected cells in a well after infection. Cells were washed to remove any non-bound virus, serially diluted and mixed with 4\u00d7105 non-infected cells in 6 replicates for each dilution. The total number of infected cells in the original cell population was calculated similar to TCID50 calculation.",
+            "cite_spans": [],
+            "section": "Viral Titers ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "RT-PCR-based GeneScan assay was used to measure the proportions of Vpr-FS and Vpr-FS-StuI clones in cultures as described previously [28], but with a different set of primers. The primers for PCR were designed to flank the region in the vpr gene containing insertions. The primers were 705-vpr-F1 (5\u2032-GCCACACAATGAATGGACACTAGAGC-3\u2032) and 710-vpr-R4 (5\u2032-6-FAM-ATTATGGCTTCCACTCCTGCCCAAGT-3\u2032). Briefly, virus-containing media was lysed by addition of 0.04% Triton X-100 and subjected to RT-PCR using OneStep RT-PCR kit (Qiagen, Valencia, CA). The RT step was performed at 50\u00b0C for 30 min followed by an RT-inactivation step (95\u00b0C for 15 minutes) and two-step PCR amplification (1 minute at 58\u00b0C and 15 seconds at 95\u00b0C) for 25 cycles. The PCR product was diluted with water 5\u2013100-fold to get the fluorescent signal into the linear range of the machine, ran on Applied Biosystems sequencing machines, and the data was analyzed with free PeakScanner 1.0 software (Applied Biosystems). Due to different insertion lengths, products from Vpr-FS and Vpr-FS-StuI have different length and appear as distinct peaks. The area of each peak is calculated by the PeakScanner and is proportional to the relative amount of each PCR product.",
+            "cite_spans": [
+                {
+                    "start": 133,
+                    "end": 137,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "GeneScan Assay ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In an ideal population, the expected variation in neutral allele frequency, V, for a single generation depends on the initial allele frequency p and the population size N:\n",
+            "cite_spans": [],
+            "section": "Using Allele Frequency Variance to Measure Genetic Drift ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In an ideal population that changes in size over time, the expected variance of a neutral allele frequency at generation n is:\n",
+            "cite_spans": [],
+            "section": "Using Allele Frequency Variance to Measure Genetic Drift ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Because HIV populations in culture are growing exponentially, N1\u226aN2\u226a\u2026\u226aNn. Therefore, the majority of the variance is contributed by the first generation and\n",
+            "cite_spans": [],
+            "section": "Using Allele Frequency Variance to Measure Genetic Drift ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To measure the actual variance in allele frequency we infected multiple (12 to 24) cultures of cells with 1\u22361 mixture of viruses Vpr-FS and Vpr-FS-StuI. The virus was allowed to spread through the culture for 5\u201312 days until a majority of the cells were infected. At that point, cell-free virus was collected and the proportion of Vpr-FS-StuI virus was determined by the GeneScan assay. The variance in Vpr-FS-StuI frequency was calculated as , where n is the number of cultures, p\n0 is the frequency of Vpr-FS-StuI in the original 1\u22361 virus mixture and pn is the frequency of Vpr-FS-StuI in culture n at the end of experiment.",
+            "cite_spans": [],
+            "section": "Using Allele Frequency Variance to Measure Genetic Drift ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Variability within GeneScan assay itself also contributed to the observed variance in the Vpr-FS-StuI frequency. To account for that, we measured the assay variation by performing multiple assay replicates on a single randomly chosen sample. Assay variance was calculated as , where pn is the frequency of Vpr-FS-StuI in replicate n and  is the average frequency in all replicates. This assay variance was subtracted from the total observed variance to obtain true experimental variance.",
+            "cite_spans": [],
+            "section": "Using Allele Frequency Variance to Measure Genetic Drift ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To evaluate differences in observed variation between different experimental conditions, variance functions in combination with generalized linear models were used to test for differences in fold-change between the variance of each experimental condition in relation to the variance of the C8166 experiment [29]. The use of variance functions and generalized linear models allowed us to analyze the data from all experiments simultaneously, and to adjust for contributions to the overall observed variance due to differential population sizes. In addition, any correlation within data from the same experimental replicate is accounted for. This analysis provides estimates and 95% confidence intervals for the fold-difference in variation, adjusted for different population sizes within each experimental condition in relation to the C8166 experimental condition. Any experimental condition where the confidence interval does not contain the value of one has statistically significantly different variance than the C8166 experimental condition. In addition, the same test was conducted comparing the variance from the synchronized experiment to the single cycle experiment.",
+            "cite_spans": [
+                {
+                    "start": 307,
+                    "end": 311,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Statistical Methods for Comparison of Variances ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: A. Difference in length of the insertion in vpr gene of Vpr-FS and Vpr-FS-StuI clones allows measurements of their relative abundance in mixtures. Fragments of genomes containing insertions are amplified in RT-PCR reactions using fluorescently labeled primers. Relative abundance of products of different length can be quantitated from fluorescence intensity of the corresponding bands in GeneScan assay. B. Scheme of the experimental approach used to correlate the number of infected cells to the amount of genetic drift. Viral variants Vpr-FS and Vpr-FS-StuI are mixed in 1\u22361 ratio. The mixture is serially diluted and used to infect multiple replicates of cell cultures (shown 6 replicates for each dilution). Cultures are scored as positive (black circles) or negative (white circles) for HIV infection. Cell-free virus is collected from virus-positive wells and the frequency of virions of each variant is measured by the GeneScan assay. The data is used to calculate the amount of genetic drift for each dilution. Dilutions containing positive and negative wells are used to calculate TCID50, which provides the measure of viral population size at the start of the experiment.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: A. The frequency of Vpr-FS in replicate cultures. Each point represents one of 12 independent cultures done for each dilution. B. Variance in frequency of Vpr-FS-StuI was calculated from data shown in panel A. Each point corresponds to average variance in frequency of Vpr-FS-StuI from initial 50%, adjusted for contribution from assay variability (see Materials and Methods). The expected variance for an ideal population is shown as straight dashed line.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: A. In C8166 cells. B. In CEMx174 cells. C. In 1\u22361 mixture of C8166 and CEMx174 cells. D. In PBMCs. Each point corresponds to average variance in frequency of Vpr-FS-StuI from initial 50% (see Materials and Methods). Error bars are 95% confidence intervals. Population size N is defined as the average number of infected cells in each culture at the beginning of the experiment. The expected variance for an ideal population is shown as straight dashed line.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: A. Virus mixture was first incubated with Raji-DC-SIGN cells. After one hour the cells were washed to remove unbound virus and mixed with C8166 target cells. B. Raji-DC-SIGN cells were mixed with the target C8166 cells and infected. C. Infections were synchronized. Virus mixture was incubated with target cells for 1 hour, after which the cells were washed to remove unbound virus and resuspended in fresh media. D. Infection was synchronized as in panel C. After 15 hours viral replication was blocked by addition of nevirapine. Cell-free virus was collected 48 hours later, cells were washed to remove nevirapine and resuspended in fresh media to allow viral replication and TCID50 measurement. Each point corresponds to average variance in frequency of Vpr-FS-StuI from initial 50%. Population size N is defined as the average number of infected cells in each culture at the beginning of the experiment. Error bars are 95% confidence intervals. The expected variance for an ideal population is shown as straight dashed line.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "A robust measure of HIV-1 population turnover within chronically infected individuals.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Achaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Palmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kearney",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Maldarelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Mellors",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Biol Evol",
+            "volume": "21",
+            "issn": "",
+            "pages": "1902-1912",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Analysis of genetic bottlenecks during horizontal transmission of Cucumber mosaic virus.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ali",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "8345-8350",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Evolutionary rate and genetic drift of hepatitis C virus are not correlated with the host immune response: studies of infected donor-recipient clusters.",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Allain",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Vandamme",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Moulton",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Salemi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Virol",
+            "volume": "74",
+            "issn": "",
+            "pages": "2541-2549",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Analysis of HIV-1 env gene sequences reveals evidence for a low effective number in the viral population.",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "94",
+            "issn": "",
+            "pages": "1862-1865",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Developments in the prediction of effective population size.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Caballero",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Heredity",
+            "volume": "73 (Pt 6)",
+            "issn": "",
+            "pages": "657-679",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Analysis of human coronavirus 229E spike and nucleoprotein genes demonstrates genetic drift between chronologically distinct strains.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Chibo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Birch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Gen Virol",
+            "volume": "87",
+            "issn": "",
+            "pages": "1203-1208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Subgenotype diversity of hepatitis B virus American genotype F in Amerindians from Venezuela and the general population of Colombia.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Devesa",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Loureiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Rivas",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Monsalve",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Cardona",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Med Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "20-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Genetic characterization of Puumala hantavirus strains from Belgium: evidence for a distinct phylogenetic lineage.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Escutenaire",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chalon",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Heyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Van der Auwera",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "van der Groen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Virus Res",
+            "volume": "74",
+            "issn": "",
+            "pages": "1-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Evolution of Wheat streak mosaic virus: dynamics of population growth within plants may explain limited variation.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "French",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Annu Rev Phytopathol",
+            "volume": "41",
+            "issn": "",
+            "pages": "199-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Population structure within lineages of Wheat streak mosaic virus derived from a common founding event exhibits stochastic variation inconsistent with the deterministic quasi-species model.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "French",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Stenger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virology",
+            "volume": "343",
+            "issn": "",
+            "pages": "179-189",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Genetic drift and within-host metapopulation dynamics of HIV-1 infection.",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Frost",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Dumaurier",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wain-Hobson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "6975-6980",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "DC-SIGN, a dendritic cell-specific HIV-1-binding protein that enhances trans-infection of T cells.",
+            "authors": [
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Geijtenbeek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Kwon",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Torensma",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "van Vliet",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "van Duijnhoven",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Cell",
+            "volume": "100",
+            "issn": "",
+            "pages": "587-597",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Selective constraint and genetic differentiation in geographically distant barley yellow dwarf virus populations.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Gen Virol",
+            "volume": "87",
+            "issn": "",
+            "pages": "3067-3075",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Genealogical analyses of rabies virus strains from Brazil based on N gene alleles.",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Heinemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Fernandes-Matioli",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Cortez",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Soares",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Sakamoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Epidemiol Infect",
+            "volume": "128",
+            "issn": "",
+            "pages": "503-511",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Evolutionary dynamics of genetic variation in Epstein-Barr virus isolates of diverse geographical origins: evidence for immune pressure-independent genetic drift.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Khanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Slade",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Poulsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Moss",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Burrows",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol",
+            "volume": "71",
+            "issn": "",
+            "pages": "8340-8346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The measurement of effective population number.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Crow",
+                    "suffix": ""
+                }
+            ],
+            "year": 1963,
+            "venue": "Evolution",
+            "volume": "17",
+            "issn": "",
+            "pages": "279-288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Stochastic or deterministic: what is the effective population size of HIV-1?",
+            "authors": [
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Kouyos",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Althaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bonhoeffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends Microbiol",
+            "volume": "14",
+            "issn": "",
+            "pages": "507-511",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Genetic bottlenecks reduce population variation in an experimental RNA virus population.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Roossinck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "10582-10587",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Selection dramatically reduces effective population size in HIV-1 infection.",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Mittler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Evol Biol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Stochastic processes are key determinants of short-term evolution in influenza a virus.",
+            "authors": [
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Pathog",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Stochastic processes strongly influence HIV-1 evolution during suboptimal protease-inhibitor therapy.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nijhuis",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Boucher",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schipper",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Leitner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schuurman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "95",
+            "issn": "",
+            "pages": "14441-14446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Genetic drift of norovirus genotype GII-4 in seven consecutive epidemic seasons in Hungary.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Reuter",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pankovics",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Szucs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Clin Virol",
+            "volume": "42",
+            "issn": "",
+            "pages": "135-140",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Evolution of the nucleoprotein and matrix genes of wild-type strains of measles virus isolated from recent epidemics.",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Bloom",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Vanchiere",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bellini",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Virology",
+            "volume": "198",
+            "issn": "",
+            "pages": "724-730",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Linkage disequilibrium test implies a large effective population number for HIV in vivo.",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Rouzine",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Coffin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "96",
+            "issn": "",
+            "pages": "10758-10763",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Estimation of population bottlenecks during systemic movement of tobacco mosaic virus in tobacco plants.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sacristan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Malpica",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fraile",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Garcia-Arenal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "9906-9911",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Influence of random genetic drift on human immunodeficiency virus type 1 env evolution during chronic infection.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Shriner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Shankarappa",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Nickle",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Mittler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genetics",
+            "volume": "166",
+            "issn": "",
+            "pages": "1155-1164",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Evolution of intrahost HIV-1 genetic diversity during chronic infection.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Shriner",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Nickle",
+                    "suffix": ""
+                },
+                {
+                    "first": "JI",
+                    "middle": [],
+                    "last": "Mullins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Evolution",
+            "volume": "60",
+            "issn": "",
+            "pages": "1165-1176",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Sequence diversity of the capsid gene and the nonstructural gene NS2B of dengue-3 virus in vivo.",
+            "authors": [
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Sung",
+                    "suffix": ""
+                },
+                {
+                    "first": "CN",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "TY",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Virology",
+            "volume": "303",
+            "issn": "",
+            "pages": "181-191",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Stochastic gene expression in a lentiviral positive-feedback loop: HIV-1 Tat fluctuations drive phenotypic diversity.",
+            "authors": [
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Weinberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Burnett",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Toettcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Arkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Schaffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "122",
+            "issn": "",
+            "pages": "169-182",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Raji B cells, misidentified as THP-1 cells, stimulate DC-SIGN-mediated HIV transmission.",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TD",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Carrington",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "KewalRamani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Virology",
+            "volume": "318",
+            "issn": "",
+            "pages": "17-23",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

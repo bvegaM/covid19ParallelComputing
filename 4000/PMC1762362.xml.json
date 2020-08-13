@@ -1,0 +1,1167 @@
+{
+    "paper_id": "PMC1762362",
+    "metadata": {
+        "title": "The Effectiveness of Contact Tracing in Emerging Epidemics",
+        "authors": [
+            {
+                "first": "Don",
+                "middle": [],
+                "last": "Klinkenberg",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christophe",
+                "middle": [],
+                "last": "Fraser",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hans",
+                "middle": [],
+                "last": "Heesterbeek",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Wayne",
+                "middle": [],
+                "last": "Getz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Control of epidemics of (emerging) infectious diseases, such as SARS, pandemic influenza, or foot-and-mouth disease, always faces the difficulty that some infectives are not yet observed. By concentrating control measures only on observed cases (treatment, isolation, culling), resources are used efficiently but control is often not effective enough. On the other hand, by directing control to the whole population (mass vaccination, prophylactic treatment, preventive culling), epidemics are most likely contained, but at high cost.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Contact tracing of symptomatic infecteds works on an intermediate level: treatment or quarantine of contactees (by contact we mean the possible transmission event, by contactee the individual that is contacted) may be effective because unidentified infecteds are most likely to be found among contactees, and efficient because the resources can be directed towards individuals at risk only. Tracing and quarantine has been successfully applied for smallpox control, where the term \u2018Leicester method\u2019 refers to exactly this strategy, with the establishment of specific smallpox hospitals [1]. It was also successful during the more recent SARS epidemic [2], but not during the British foot-and-mouth epidemic [3]. Here we wish to investigate how these differences can be accounted for by the tracing process, thereby distinguishing tracing and quarantine as having separate effects which can be explained as follows.",
+            "cite_spans": [
+                {
+                    "start": 587,
+                    "end": 590,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 652,
+                    "end": 655,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 708,
+                    "end": 711,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Symptoms and detection divide the reproduction ratio R (the average number of secondary infecteds per primary infected in a susceptible population) into a part before detection and isolation and a part after [4]:R = R0pre+c (R0\u2212R0pre),where c is the reduction factor due to isolation, R\n0 is the basic reproduction ratio, when no efforts are made to isolate, and R\n0\npre is that part of R\n0 occurring prior to detection. Contact tracing will lead to earlier prevention of transmission due to quarantine of traced infecteds, thereby reducing the uncontrolled transmission R\n0\npre to Rpre, and the reproduction ratio R to Rq:Rq = Rpre+c (R0\u2212Rpre).The effect of decreasing R\n0\npre to Rpre is distinct from the effect of isolation and quarantine which reduce c. For tracing to be effective, Rq should be smaller than 1, so Rpre should be smaller than (1\u2212c)/(1\u2212cR\n0), a threshold value determined by c and R\n0\n[4]\u2013[6]. For comparison of contact tracing in different situations, we will choose c = 0 (as in [6]\u2013[10]), because it is easy and as arbitrary as any other value. The value c = 0 is valid for foot-and-mouth disease where traced herds are culled.",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 211,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 905,
+                    "end": 908,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 909,
+                    "end": 912,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1001,
+                    "end": 1004,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1005,
+                    "end": 1009,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Several tracing studies have been published, some focussing on specific infections [10], [11] and some with the objective to obtain more general insight, e.g. in a general Markov-type SIR model [7], in a model incorporating symptom development [4], or in simulation models with specific network contact structures [8], [9]. Different assumptions were made with regard to the possibility of only tracing contacts of symptomatic infecteds (single-step tracing [4], [10], [11]), or of iteratively tracing the contacts of traced infecteds (iterative tracing [6]\u2013[9]). However, no general insight has yet been obtained in reducing Rpre in relation to time-related characteristics of the infection and the tracing process, such as the latent and infectious periods, the time of symptom-based detection, and delays in the tracing process.",
+            "cite_spans": [
+                {
+                    "start": 83,
+                    "end": 87,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 89,
+                    "end": 93,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 194,
+                    "end": 197,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 244,
+                    "end": 247,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 314,
+                    "end": 317,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 319,
+                    "end": 322,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 458,
+                    "end": 461,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 463,
+                    "end": 467,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 469,
+                    "end": 473,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 554,
+                    "end": 557,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 558,
+                    "end": 561,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper we consider detection and isolation as an autonomous process most likely governed by detection via clinical symptoms. This allows us to concentrate on contact tracing and quarantine, which are initiated by this autonomous process. Also we only regard transmission prior to control: we will consider tracing effective if Rpre<1.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We study an epidemic in its initial phase and use a branching process for its description, which means that the epidemic can be regarded as a growing tree. Each branch (contact) connects two nodes (contactees) with a hierarchical relation, the infector having infected the infectee. If one of the contactees is notified as being infected, by becoming symptomatic or by being traced via a secondary contact, the contact is traced with a probability pc (all parameters and functions of the model are given in Table 1). Each contact may be traced only once, either from infector to infectee (forwards tracing) or from infectee to infector (backwards tracing), so its traceability can be determined at the time of transmission. Thus, infection trees with traceable and untraceable contacts arise (Figure 1).",
+            "cite_spans": [],
+            "section": "The Model",
+            "ref_spans": [
+                {
+                    "start": 793,
+                    "end": 801,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 507,
+                    "end": 514,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "On these infection trees, two types of contact tracing are distinguished. The first type is single-step contact tracing, in which all traceable contactees of a symptomatic case are quarantined, but tracing only continues when an undiscovered infected, quarantined in this way, is detected itself (Figure 1A). The second type is iterative tracing, in which tracing of traceable contactees is continued, and a whole cluster of infecteds that is linked through traceable contacts is quarantined (Figure 1B). Such continuation would be possible if a test were available to determine the infection status of traced contactees.",
+            "cite_spans": [],
+            "section": "The Model",
+            "ref_spans": [
+                {
+                    "start": 297,
+                    "end": 306,
+                    "mention": "Figure 1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 493,
+                    "end": 502,
+                    "mention": "Figure 1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The underlying model for infection dynamics is based on the framework of [4]. In our model, \u03c4 measures time since infection of an individual, which starts with a latent period until \u03c4 = \u03c4lat without transmission of the pathogen. During the infectious period, lasting from \u03c4lat to \u03c4inf, infecteds give rise to \u03b2 new infecteds per unit of time, as long as they are not detected. As we are interested in the effectiveness of tracing only, we do not model possible transmission that might occur while being isolated, so transmission \u2018ceases\u2019 after detection of the infected. This leaves us with the basic reproduction ratio prior to detection, defined as the expected number of secondary infections per infected in a susceptible population before detection, R\n0\npre. Here we have adjusted the interpretation of the model in [4], where R\n0 is divided in an asymptomatic and a symptomatic part, by adding a detection delay after becoming symptomatic. The part R\n0\npre is determined by \u03c4lat, \u03c4inf, \u03b2, and the distribution of the detection time, a Gamma-distribution with mean 1 (so time is measured relative to the mean detection time) and shape parameter \u03b1. Throughout our analyses, \u03b2 will be scaled accordingly to achieve a desired value of R\n0\npre. This model construction allows a flexible way of exploring different assumptions about the time to detection, the infectious period, and their overlap, and it enables us to evaluate tracing effectiveness for most infections.",
+            "cite_spans": [
+                {
+                    "start": 73,
+                    "end": 76,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 820,
+                    "end": 823,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "The Model",
+            "ref_spans": []
+        },
+        {
+            "text": "For full understanding of contact tracing in our model, we analyzed four special cases regarding the infectious period and the detection time distribution. The infectious period was assumed to be either very short (all transmission occurs instantaneously, so \u03c4inf = \u03c4lat) or very long (of infinite duration, so \u03c4inf = \u221e). (In our model, infinite duration can be assumed because each infected will stop spreading the infection after detection. If some infecteds would never be detected, some large \u03c4inf<\u221e should be taken.) The detection time was assumed to be either fixed (\u03b1 = \u221e) or highly variable (\u03b1 = 1, i.e. exponentially distributed). As a control we analyzed intermediate cases (results not shown) and four examples of real infections (influenza, SARS, smallpox, and foot-and-mouth disease), of which the parameter values are listed in Table 2. These parameter values were obtained from literature [2], [3], [12]\u2013[14], assuming that the time to detection consists of the incubation period (time to symptom onset) plus a symptom-to-detection delay, which we assumed to be distributed as observed in the SARS epidemic (average 3.67 days, [2]).",
+            "cite_spans": [
+                {
+                    "start": 904,
+                    "end": 907,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 909,
+                    "end": 912,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 914,
+                    "end": 918,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 919,
+                    "end": 923,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1142,
+                    "end": 1145,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "The Model",
+            "ref_spans": [
+                {
+                    "start": 842,
+                    "end": 849,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In our analyses tracing effectiveness will be expressed as the critical tracing probability pc*, defined as the proportion of contacts that need to be traced to achieve Rpre = 1. If at least that many contacts are traced, epidemics will certainly die out if transmission during isolation or quarantine is prevented or limited to a small number of health-care workers that do not re-introduce the infection into the general community (see also [5]). If such re-introductions cannot be excluded, a lower Rpre may be aimed for. Because of this threshold of 1, the R\n0\npre values (without tracing) were assumed to have some value larger than 1 (otherwise tracing would not be needed at all) and less than published R\n0 values for the specific cases (Table 2). First we study pc* as a function of R\n0\npre and \u03c4lat (with tracing delay \u03b4 = 0), and second as a function of \u03c4lat and \u03b4 (with R\n0\npre = 1.5).",
+            "cite_spans": [
+                {
+                    "start": 443,
+                    "end": 446,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "The Model",
+            "ref_spans": [
+                {
+                    "start": 746,
+                    "end": 753,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In an epidemic where single-step tracing is applied, asymptomatic infecteds can spread the infection until they are detected and isolated. Detected infecteds are asked to name their contactees, and a proportion pc of all contactees will be reported and quarantined. Only when quarantined infecteds are detected themselves, tracing is continued (Figure 1A).",
+            "cite_spans": [],
+            "section": "Single-step tracing without delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 345,
+                    "end": 354,
+                    "mention": "Figure 1A",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We determined the critical tracing probability pc* as a function of the latent period for three values of R\n0\npre (1.5, 2, and 3). The results are shown in Figure 2. If the detection time is fixed (\u03b1 = \u221e), a too large latent period (larger than the detection time) results in a situation where every infected is detected before transmitting the infection, so tracing need not prevent any transmission; hence the maximum \u03c4lat of 1 in panels 2B and 2D. If we locate the approximate position of real infections (parameter values in Table 2) in Figure 2, we observe that the long infectious period will be the best approximation for most infections, because we only regard pre-detection transmission and infecteds will often still be infectious at the time of detection. This does not entirely hold for influenza, which therefore fits best between the short and long infectious period. Because of the detection period distributions, smallpox and FMD are best described by panel 2D, whereas SARS and influenza fit best into panel 2C (influenza also into 2A).",
+            "cite_spans": [],
+            "section": "Single-step tracing without delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 156,
+                    "end": 164,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 541,
+                    "end": 549,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 529,
+                    "end": 536,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In three special cases (panels 2A,B,D), with fixed incubation period and/or short infectious period, the proportion of contacts to be traced is at least 1\u22121/R\n0\npre. This lower limit 1\u22121/R\n0\npre is due to forwards tracing, when all infecteds that are traceable via their infector, are quarantined before the end of their latent period. Then, the effective reproduction ratio will be equal to the untraceable proportion of R\n0\npre, i.e. Rq = (1\u2212pc)R\n0\npre, resulting in pc* = 1\u22121/R\n0\npre. This is likely to be case with smallpox (panel 2D). However, if the latent period is short, as seen for influenza and possibly FMD, quarantine will occur too late to prevent all infections and more contacts need to be traced.",
+            "cite_spans": [],
+            "section": "Single-step tracing without delays ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In the fourth panel (2C), with variable detection time and long infectious period, effective contact tracing requires a proportion of contacts smaller than 1\u22121/R\n0\npre to be traced, if the latent period is large enough (like SARS). This can be explained as follows. If the detection time is variable and the latent and infectious periods are large, many infecteds will be detected before becoming infectious. If many infecteds are not infectious before being detected, the few that are should be very infectious (\u201csuperspreaders\u201d) to attain a given R\n0\npre (the average number of secondary infections before detection). Because many of the infectees of these superspreaders will be detected early (variable detection time), the superspreaders will be quarantined after backwards tracing, which adds to the effect of forwards tracing preventing infectees to reach their infectious period.",
+            "cite_spans": [],
+            "section": "Single-step tracing without delays ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Effectiveness may be very sensitive to the latent period, especially if there is little variation in the detection time. This is most apparent in the sharp transition in panel 2B, where tracing is only effective if all infectors are detected (at \u03c4 = 1\u2212\u03c4lat) before the infectious period (at \u03c4 = \u03c4lat), so \u03c4lat>0.5. The high sensitivity can be a problem for assessing the tracing effectiveness for a specific infection: the conclusion may largely depend on how correct the available estimates for the latent and incubation periods are, the incubation period determining the time to detection. Figure 2 indicates that this might be a problem for FMD.",
+            "cite_spans": [],
+            "section": "Single-step tracing without delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 592,
+                    "end": 600,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In the previous section tracing was an instantaneous process: detection and isolation of a given case were followed by quarantine of traceable contactees of that case without any delay. The effect of a delay of duration \u03b4 is that contactees of detected infecteds can continue transmitting the infection for an extra \u03b4 time units, unless they are detected themselves during this interval.",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The effect of a delay in each tracing step was studied by determining the critical tracing probability pc* for R\n0\npre = 1.5, as a function of the latent period and tracing delay. Figure 3 shows the resulting contour plots for the four special cases with single-step tracing, and it indicates the approximate positions of the four real infections. Along the \u03c4lat axis (\u03b4 = 0) lie the R\n0\npre = 1.5 curves of Figure 2.",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 180,
+                    "end": 188,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 408,
+                    "end": 416,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "It appears that the iso-pc* contours in Figure 3 are linear in three of the four special cases (panel 3A,B,D), and approximately linear in the fourth case, with long infectious period and variable incubation time (panel 3C: \u03c4inf = \u221e; \u03b1 = 1). The slopes of all (approximate) lines are always between 0.5 and 1.5. This means that the effect of tracing delays is comparable to the sensitivity to the latent period as observed in Figure 2, so plots of the critical tracing probability as a function of the delay will resemble the plots in Figure 2, only mirrored (as in Figure 4).",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 40,
+                    "end": 48,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 426,
+                    "end": 434,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 535,
+                    "end": 543,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 566,
+                    "end": 574,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In the contour plots in Figure 3, tracing is ineffective in the dark grey areas (small latent period or large delay), so smallpox and SARS control are predicted to be able to cope with some delays, whereas it might be more of a problem with FMD and influenza. If forwards tracing is maximally effective and not affected by the delay, pc* = 1\u22121/R\n0\npre = 0.33 as indicated by the light grey area (smallpox if \u03b4<0.5). If the detection time is variable, tracing may be effective even if a proportion less than 1\u22121/R\n0\npre is traced (SARS if \u03b4<0.4, panel 3C). Because backwards tracing is needed to attain this result, it is only possible when the tracing delay is shorter than the infectious period (not shown in the Figures).",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 24,
+                    "end": 32,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The contour plots show that for some combinations of latent period and delay, the sensitivity to small changes in the delay is large (contours lie close to one another). Then, small changes in the delay can have a major impact when the time of quarantine is shifted from just before to just after the end of the latent period, similar to the sensitivity to \u03c4lat as observed in Figure 2. This effect is most dramatic if there is little variation in the detection time (smallpox: \u03b4\u22480.7, and FMD: \u03b4\u22480.2).",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 377,
+                    "end": 385,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "\nFigure 4 shows the effectiveness of single-step tracing for SARS, smallpox, influenza, and FMD using the parameter values listed in Table 2. Panel 4A shows the relation between pc* and the relative tracing delay \u03b4, from which it appears that the general cases shown in Figures 2 and [3] are good predictors for assessing tracing effectiveness. Influenza can be placed somewhere between long and short infectious periods (panels 2A,C, and 3A,C): it is hardly effective without delay, and ineffective already if \u03b4 = 0.1. SARS control requires a tracing probability pc*<1\u22121/R\n0\npre which is relatively insensitive to delays. Smallpox requires pc* = 1\u22121/R\n0\npre, and is insensitive to delays up to some point (\u03b4\u22480.6) where tracing becomes quickly ineffective. Finally, FMD can be traced effectively only if \u03b4 is small, but it is sensitive to delays already if \u03b4 is small and requires a tracing probability pc*>1\u22121/R\n0\npre. Measured in real time (panel 4B), effectiveness of tracing appears to be highly dependent on the actual generation time of the infection. Influenza control is hardly possible, FMD control will be difficult, whereas tracing is likely to be successful for smallpox and SARS.",
+            "cite_spans": [],
+            "section": "Single-step tracing with delays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1,
+                    "end": 9,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 270,
+                    "end": 279,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 284,
+                    "end": 287,
+                    "mention": "[3]",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 133,
+                    "end": 140,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Suppose a test is available to determine the infection status of traced contactees. We can then continue tracing iteratively before infected contactees are detected due to symptoms, until no further infecteds are found (Figure 1B).",
+            "cite_spans": [],
+            "section": "Iterative tracing ::: Results",
+            "ref_spans": [
+                {
+                    "start": 220,
+                    "end": 229,
+                    "mention": "Figure 1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We evaluated iterative tracing with and without delays for the same cases as single-step tracing, resulting in Figures similar to Figures 2 and [3] (see Supporting Information). As expected, the universal effect of iterative tracing is to lower pc*, although the lower limits 1\u22121/R\n0\npre as observed in three of the four special cases remain intact. The largest difference between single-step and iterative tracing is observed when single-step tracing is on the brink of being effective, so that is the only situation where iterative tracing will make a difference (see also Figure 4). Without delays this difference is rather intuitive: single-step tracing is not effective if the latent period is small, but iterative tracing will always be effective, because if all contacts are traceable, the first detection is immediately followed by quarantine of every infected. This is the case with influenza, although the improvement will probably not be sufficient to making tracing effective for influenza control. On the other hand, when the latent period is large and single-step tracing is effective, iterative tracing only improves on this if there are significant delays, providing one or two more days to reach the required pc* (smallpox, SARS, and FMD).",
+            "cite_spans": [],
+            "section": "Iterative tracing ::: Results",
+            "ref_spans": [
+                {
+                    "start": 130,
+                    "end": 139,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 144,
+                    "end": 147,
+                    "mention": "[3]",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 575,
+                    "end": 583,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "We studied the effectiveness of contact tracing in a model for the start of an epidemic, that is flexible enough to use for most infections. Effectiveness of contact tracing was expressed as the minimum proportion of contacts that need to be traced to obtain a reproduction ratio prior to control of 1 (pc*). Other threshold values may be chosen if more is known about transmission of the infection to the general community while infectious individuals are being isolated or quarantined. For instance, if isolated infecteds still cause an average of 0.3 new cases in the general community after isolation or quarantine, pc* should be redefined such that Rpre = 0.7.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The first conclusion from our model is that, for a given R\n0\npre, the critical tracing probability can take any value depending on all infectious disease characteristics in the model: the latent period, the infectious period, and the detection time distribution. In contrast to some earlier publications on contact tracing [7], [9], there exists no general expression for pc* as there is for the proportion to vaccinate for effective control in a well-mixed population. For smallpox the relation pc* = 1\u22121/R\n0\npre holds reasonably well, but for SARS it is smaller, and for influenza and FMD it is larger.",
+            "cite_spans": [
+                {
+                    "start": 323,
+                    "end": 326,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 328,
+                    "end": 331,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The second conclusion is that a variable detection time improves tracing effectiveness, possibly even resulting in pc*<1\u22121/R\n0\npre. This does not mean, of course, that one should aim at late detection of some infecteds (which would increase R\n0\npre), but that apparent variability is an argument to use tracing. The reason is that the few infecteds that are detected late (or not at all, which is essentially the same) will be discovered by backwards tracing which is an additional effect to forwards tracing that in itself may already result in pc* = 1\u22121/R\n0\npre. It was earlier found that pc* can be smaller than 1\u22121/R\n0\npre\n[9], but by a different mechanism, namely the presence of shared contacts in a network.",
+            "cite_spans": [
+                {
+                    "start": 627,
+                    "end": 630,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The third conclusion is that the sensitivity of tracing effectiveness to the latent period and tracing delay may be large, especially in the case of single-step tracing. If this is the case already with a small delay (influenza and to a lesser extent FMD), reliability of parameter estimates will be crucial to establish whether tracing is advantageous. If it is only the case with larger delays (smallpox, SARS), tracing may be effective as long as it is done quick enough.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The fourth conclusion is that in most situations single-step and iterative tracing are almost equally effective. A considerable difference can only be expected if single-step tracing is not or hardly effective, which is also when the sensitivity to the latent period and tracing delay is largest (see above). Thus, influenza control will benefit from iterative tracing already without delays, whereas with the other infections one or two days may be gained (Figure 4C,D), thus having more time to achieve the required pc*. In the real world, the choice between single-step and iterative tracing will be based on what is possible. Capacity problems may reduce the effectiveness of iterative tracing if effort is directed towards secondary contactees prior to primary contactees; on the other hand, if not quarantine but vaccination is applied, it might be worthwhile to traced contactees of contactees even without diagnostic tests [6].",
+            "cite_spans": [
+                {
+                    "start": 931,
+                    "end": 934,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 458,
+                    "end": 469,
+                    "mention": "Figure 4C,D",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "For determining the cost-effectiveness of contact tracing, not only the critical tracing probability pc* is required, but also how easily that pc* can be achieved. A key aspect will be the possibility to distinguish relevant contacts: for control of sexually transmitted diseases relevant contacts are easily identified (that is, if people are willing to co-operate), but in case of respiratory pathogens like SARS or influenza the notion of relevant contacts is rather diffuse. Good insight will be obtained by not only regarding the sensitivity of tracing (pc), but also the positive predictive value: what proportion of traced individuals is actually infected, and if we put more effort into increasing pc, how will it decrease the positive predictive value?",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A relatively easy way to increase the proportion of traced contacts for respiratory pathogens like influenza might be quarantine of households. This can be effective if households are the prime location for spread of the infection; specific models taking into account the contact structures within and between households will be better-suited to study this strategy.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In our model we only regarded transmission of the infection before tracing or isolation, allowing us to focus on the characteristics of the contact tracing itself. Regarding the control of animal disease epidemics, e.g. foot-and-mouth disease or avian influenza, it is not unreasonable to assume that there will be no other transmission: all infected and suspected farms will be culled and they really will stop being infectious. However, with human infections it is very likely that isolation and quarantine will be less effective. This results in a complicated situation, because transmission will not only be reduced after detection, the contact structure will also change, with only a limited number of people (health-care workers) having contact with multiple isolated patients. For the case of SARS, a more detailed model on exactly this aspect was studied by Lloyd-Smith et al [5], who indeed concluded that minimizing within-hospital transmission might be crucial, especially if tracing and isolation occur rather slowly. Further studies are required for this complex problem. The present paper provides a good understanding of the principles of contact tracing, and how infectious disease characteristics determine the effectiveness.",
+            "cite_spans": [
+                {
+                    "start": 884,
+                    "end": 887,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The effect of single-step tracing can be measured by the effective reproduction ratio Rq, the average number of new infections per infected. Whereas the rate of being traced backwards at time \u03c4 since infection (due to detection of any infectee) is equal for all infecteds, the rate of being traced forwards (due to detection of the infector) depends on the generation-time distribution, which in turn depends on the number of traceable generations backwards in the transmission tree (traceable ancestors). Hence, infectives need to be typed according to the number of traceable ancestors j, and Rq is the largest eigenvalue of the next-generation matrix K with entries kij being the expected number of type-i infecteds (with i traceable ancestors) produced per type-j infected [15]. Because type-j infecteds only produce type-0 and type-j+1 infecteds, by untraceable and traceable contacts respectively, all entries other than k\n0j and kj\n+1,j are equal to 0.",
+            "cite_spans": [
+                {
+                    "start": 777,
+                    "end": 781,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Even though the matrix is infinitely large, we conjecture from all observed numerical calculations that the positive elements kj\n+1,j converge in the sense that |kj\n+1,j\u2212kj\n+2,j+1|\u21920 as j\u2192\u221e. Therefore, for numerical evaluation we \u2018closed\u2019 the matrix to an (n+1)2 matrix with knn = kn\n+1,n. For the four special cases, Rq could be calculated numerically in Mathematica\u00ae, but for other cases considered, the entries of the matrix had to be determined by numerical simulation. Analysis of single-step tracing with delay could be done by calculating R from the next-generation matrix, as for the model without delay (see Supporting Information for all details).",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "With iterative tracing, isolation of a single infected results in quarantine of a cluster of infecteds, all mutually linked by traceable contacts (Figure 1B). By recognizing these clusters of infectives, an epidemic of infected individuals can be regarded as an epidemic of traceable clusters. Each untraceable contact in the transmission tree results in infection of a new cluster index case, so the average number of untraceable contact infections caused by a single cluster, the cluster reproduction ratio Rc, determines the effectiveness of iterative contact tracing. If Y(pc) denotes the expected cumulative infectiousness of a cluster at the time of cluster quarantine, then1\n",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": [
+                {
+                    "start": 147,
+                    "end": 156,
+                    "mention": "Figure 1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "As with single-step tracing, effectiveness of iterative tracing is determined by considering the critical tracing probability (for achieving Rc = 1):2If pc = 0, then each infective will be a separate cluster, and Rc = Y(0) = R\n0\npre by definition. For pc>0 the cluster size will be larger than one, but cluster infectiousness need not be larger, as backwards tracing can reduce the infectious period of superspreaders with large detection time as it does in single-step tracing.",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For two of the four special cases (\u03b1 = \u221e), and for the case considered by M\u00fcller et al [7] (\u03b1 = 1, \u03c4inf = \u221e, \u03c4lat = 0), Y(pc) can be calculated numerically in Mathematica\u00ae. For all other cases, including the real infections, stochastic simulations were needed.",
+            "cite_spans": [
+                {
+                    "start": 87,
+                    "end": 90,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Incorporating delays into iterative tracing does not generally change the concept of Rc, but it makes the calculation of Y(pc) very complicated, because there is no longer a single time of cluster quarantine. Two complications arise: first, delays may cause contactees in the chain emanating from a symptomatic infected to become symptomatic themselves before the tracing process reaches them. They then initiate a new tracing process of their own within the same cluster. Second, if the infection process is faster than the tracing process, the cluster size grows infinitely large and iterative tracing becomes ineffective. We determined pc* by stochastic simulation of clusters until quarantine of the final infected (see Supporting Information for all details).",
+            "cite_spans": [],
+            "section": "Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Nodes are infecteds, lines are contacts, contactees that were not infected are not represented on the tree. Grey infecteds are asymptomatic, white infecteds are symptomatic, infecteds with a thick border are isolated or quarantined. Solid lines are traceable contacts, dotted lines are untraceable contacts. A. Single-step tracing. In A1a-c, a symptomatic infected is isolated and his traceable contactees are quarantined. In A2a-b (some time later), one of the quarantined infecteds got symptomatic and his traceable contactees are quarantined. B. Iterative tracing. In B1a-c, a symptomatic infected is isolated and all infecteds directly or indirectly linked to this infected by traceable contacts are quarantined. All quarantined infecteds form a traceable cluster.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Effectiveness is expressed as the minimum proportion of contacts that need to be traced for effective control (critical tracing probability pc*). The plots show pc* as a function of the latent period relative to the mean time to detection (\u03c4lat). There are four special cases: A. Short infectious period and variable time to detection; B. Short infectious period and fixed detection time; C. Long infectious period and variable time to detection; and D. Long infectious period and fixed detection time.  The three curves denote pc* for different values of the pre-isolation reproduction ratio R\n0\npre. Indicated by dashed lines are the average \u03c4lat for four infections, in the panels with closest correspondence to the actual parameter values (Table 2). Influenza appears in two panels with long and short infectious period, because it corresponds to both parameter sets equally.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Effectiveness is expressed as the minimum proportion of contacts that need to be traced for effective control (critical tracing probability pc*). The contour plots show pc* as a function of the tracing delay \u03b4 and the latent period \u03c4lat, measured relative to the mean detection time, for four special cases: A. Short infectious period and variable incubation period; B. Short infectious period and fixed incubation period; C. Long infectious period and variable incubation period; and D. Long infectious period and fixed incubation period. Dark grey shadows indicate areas where tracing is ineffective, light grey shadows indicate areas where pc* = 0.33. Indicated by dashed lines are the average \u03c4lat for four infections, in the panels with closest correspondence to the actual parameter values (Table 2). Influenza appears in two panels with long and short infectious period, because it corresponds to both parameter sets equally.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Effectiveness is expressed as the minimum proportion of contacts that need to be traced for effective control (critical tracing probability pc*); pc* is plotted as a function of the relative delay (\u03b4, proportion of the incubation period) or the absolute delay (days).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "An integral equation model for the control of a smallpox outbreak.",
+            "authors": [
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Aldis",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Math Biosci",
+            "volume": "195",
+            "issn": "",
+            "pages": "1-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Controlling emerging infectious diseases like SARS.",
+            "authors": [
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Aldis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Math Biosci",
+            "volume": "193",
+            "issn": "",
+            "pages": "205-221",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Mathematical epidemiology of infectious diseases.",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JAP",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Model building, analysis and interpretation.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Epidemiological determinants of spread of causal agent of severe acute respiratory syndrome in Hong Kong.",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1761-1766",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Contact tracing and disease control.",
+            "authors": [
+                {
+                    "first": "KTD",
+                    "middle": [],
+                    "last": "Eames",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc R Soc London B",
+            "volume": "270",
+            "issn": "",
+            "pages": "2565-2571",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Case isolation and contact tracing can prevent the spread of smallpox.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Am J Epidemiol",
+            "volume": "158",
+            "issn": "",
+            "pages": "118-128",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Fenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Arita",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Je\u017eek",
+                    "suffix": ""
+                },
+                {
+                    "first": "ID",
+                    "middle": [],
+                    "last": "Ladnyi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Smallpox and its eradication.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Transmission intensity and impact of control policies on the foot and mouth epidemic in Great Britain.",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "413",
+            "issn": "",
+            "pages": "542-548",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Strategies for containing an emerging influenza pandemic in southeast Asia.",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DAT",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Factors that make an infectious disease outbreak controllable.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "6146-6151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Nonpharmaceutical interventions for pandemic influenza, international measures.",
+            "authors": [],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "81-87",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Disease contact tracing in random and clustered networks.",
+            "authors": [
+                {
+                    "first": "IZ",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc R Soc London B",
+            "volume": "272",
+            "issn": "",
+            "pages": "1407-1414",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Curtailing transmission of severe acute respiratory syndrome within a community and its hospital.",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc R Soc London B",
+            "volume": "270",
+            "issn": "",
+            "pages": "1979-1989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Contact tracing in stochastic and deterministic epidemic models.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "M\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kretzschmar",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Math Biosci",
+            "volume": "164",
+            "issn": "",
+            "pages": "39-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Logistics of community smallpox control through contact tracing and ring vaccination: a stochastic network model.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Porco",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Holbrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fernyak",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Portnoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Reiter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "BMC Public Health",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

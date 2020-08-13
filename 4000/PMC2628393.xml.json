@@ -1,0 +1,3435 @@
+{
+    "paper_id": "PMC2628393",
+    "metadata": {
+        "title": "Sequence space coverage, entropy of genomes and the potential to detect non-human DNA in human samples",
+        "authors": [
+            {
+                "first": "Zhandong",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": "zhandong@mail.med.upenn.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Santosh",
+                "middle": [
+                    "S"
+                ],
+                "last": "Venkatesh",
+                "suffix": "",
+                "email": "venkatesh@ee.upenn.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Carlo",
+                "middle": [
+                    "C"
+                ],
+                "last": "Maley",
+                "suffix": "",
+                "email": "cmaley@alum.mit.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The discovery of the structure of DNA [1] was a fundamental event in biology because it illuminated the mechanism by which information can be encoded, passed on to future generations and even constructed by natural selection. With the sequencing of the human and other genomes [2,3], we are now able to compare the information encoded in the genomes of a wide variety of organisms and study the mechanisms that change genomes over time, including sequence mutations, recombination, duplication and deletion [4,5]. A great deal of research has focused on the coding and regulatory regions of genomes and regularly uses informational content measurements to analyze the structure of loci in the genome [6-8]. In addition, recent interest has turned to analyzing regions that do not encode proteins [9].",
+            "cite_spans": [
+                {
+                    "start": 39,
+                    "end": 40,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 278,
+                    "end": 279,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 280,
+                    "end": 281,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 508,
+                    "end": 509,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 510,
+                    "end": 511,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 701,
+                    "end": 702,
+                    "mention": "6",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 703,
+                    "end": 704,
+                    "mention": "8",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 797,
+                    "end": 798,
+                    "mention": "9",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Relatively little is known about the global informational properties of most genomes. The conditional entropy was measured for human chromosome 22 [10] along with the frequency distributions of 3- through 7-mers in chromosomes 21 and 22 [11]. Stanley et al. analyzed the distribution of 1- to 4-mers within a wide variety of organisms and found that some tend to cluster within genomes (usually in non-coding regions) and others tend to \"repel\" each other [12,13]. Entropy measures have been applied to yeast and C. elegans whole chromosomes [14]. Recently, McHardy et al. showed that the distribution of 5-mer and 6-mer oligonucleotides in a > 1 kb fragment of DNA is characteristic of an organism and can be used in metagenomic studies to classify and construct the potentially millions of genomes in an environmental sample [15]. We are only beginning to compare informational properties between human chromosomes and across species.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 238,
+                    "end": 240,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 457,
+                    "end": 459,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 460,
+                    "end": 462,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 543,
+                    "end": 545,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 828,
+                    "end": 830,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The set of all oligonucleotides (oligos) of length n defines an n-dimensional discrete space, Sn where each point is a possible n-mer and each dimension has only four states (A, C, G or T). Here we have measured the proportion of sequence space covered by oligos of length 1 \u2013 20 in H. sapien, M. musculus, D. melanogaster, C. elegans, A. thaliana, S. cerevisiae, and E. coli k12. We have also measured the frequency of unique n-mers in those species and the compactness of the human genome in n-mer space. We also have identified all 5- to 20-mers that appear in the human genome more than 30,000 times, as well as the set of 15-mers that do not appear in the human genome and are more than 1 nucleotide different from all 15-mers in the human genome. In addition, we have measured the information content of the human genome for different oligo lengths and compared the information content to the proportion of coding regions in each human chromosome. The results match empirical observations and give a global view of the informational properties across a wide variety of genomes. Finally, we profiled the 10-mer space coverage for a wide range of 433 microbial genomes and found that the extent of sequence space coverage is largely determined by genome size and GC content.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We randomly generated 5 sets of 100,000 probes for each oligo length n, and then determined the proportion of those n-mers present in the genomes of Homo sapiens, Mus musculus, Drosophila melanogaster, Caenorhabditis elegans, Arabidopsis thaliana, Saccharomyces cerevisiae, and Escherichia coli k12. The n-mer space coverage for each genome is plotted against oligo length n in Figure 1 (See additional file 1 for the data). The E. coli genome includes all 8-mers, and less than 0.21% of all 16-mers. In contrast, the human genome includes all 11-mers and less than 0.38% of all 20-mers. Of course, n-mer space coverage reflects genome size to some extent. For example, the human genome has a much higher coverage than the yeast genome for every oligo length. The 7 genomes that we investigated in this study differ the most in their coverage for 13-mer space, ranging from 11.4% coverage for E. coli to 96% coverage for human and mouse. For comparison, we also generated a random \"pseudo\" human genome with the same length and dinucleotide frequencies (see Appendix for a formal analysis of the expected number of n-mers in this pseudo-human genome). The fact that the true human genome has less coverage of n-mer space than the pseudo-human genome (Figure 1) shows that there are more repeated n-mers in the human genome than one would expect by chance.",
+            "cite_spans": [],
+            "section": "Sequence space coverage ::: Results",
+            "ref_spans": [
+                {
+                    "start": 385,
+                    "end": 386,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1258,
+                    "end": 1259,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The coverage analysis of genomes can be used to analyze the complexity of any fully sequenced genome. We applied this analysis to 433 fully sequenced microbial genomes (Figure 2, see additional file 2 for the species, coverage, GC content and genome sizes). A multivariate regression of log genome size and deviation of GC content from 0.5 frequency, on 10-mer sequence space coverage, shows that variation in coverage can almost entirely be explained by genome size and GC content (adjusted R2 = 0.92, p < 0.01). However, Anaeromyxobacter dehalogenans is an outlier with lower coverage than would be predicted by the model (actual coverage = 0.406, predicted coverage = 0.563, 99.9% predicted interval: 0.412\u20130.713). In addition, we confirmed the significant association between log genome size and GC content such that organisms with smaller genomes have lower GC content (Figure 2, linear regression p < 0.001) [16].",
+            "cite_spans": [
+                {
+                    "start": 915,
+                    "end": 917,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Sequence space coverage ::: Results",
+            "ref_spans": [
+                {
+                    "start": 176,
+                    "end": 177,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 882,
+                    "end": 883,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "To calculate the percentage of n-mers that appear only once in a genome, we implemented a program to estimate the unique hits among our stochastic search results (Figure 3). The human and mouse genome has only 5% unique hits among all the 13-mers they contain, while Drosophila, Arabidopsis, and yeast have only a single copy of more than 50% of their 13-mers. Figure 3 implies that, in order to have at least an 80% chance of hybridizing to a unique locus, a PCR primer for human and mouse genomes should be greater than 17 bp, while for Drosophila, C. elegans, and Arabidopsis, it should be greater than 15 bp.",
+            "cite_spans": [],
+            "section": "Frequency of unique n-mers ::: Results",
+            "ref_spans": [
+                {
+                    "start": 170,
+                    "end": 171,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 368,
+                    "end": 369,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To assess the accuracy of our stochastic estimates for coverage in longer n-mers, we compared the stochastic results with exhaustive search results of all possible n-mers (Table 1). Due to the limitations of computational power, we could only carry out exhaustive searches up to 15-mer space. The 95% confidence interval of our stochastic sampling is small and it contains the true coverage. The confidence intervals also show that accuracy decreases as the dimension of our sampling space increases. However, it is clear from Table 1 that our 100,000 probes are statistically powerful enough to estimate the percentage of coverage for oligos up to length 20.",
+            "cite_spans": [],
+            "section": "Accuracy of stochastic estimates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 178,
+                    "end": 179,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 533,
+                    "end": 534,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "One potential use of genome coverage data is to use the n-mers that do not appear in the human genome as probes to detect microbes or genetic alterations in human samples. In order to do this, we must choose an oligo length long enough that there are some n-mers that do not appear in the human genome (i.e., > 13-mers), and long enough that some non-human n-mers are likely to appear in non-human organisms, yet short enough that that a large fraction of the non-human n-mers could be probed in a human sample (i.e., < 16-mers). We focused on 15-mers because 38% (406.7 M) of all possible 15-mers do not appear in the human genome. However, 404.1 M of these differ from the reference human genome by a single nucleotide and so may appear as single nucleotide polymorphisms (SNPs) in human samples. An oligonucleotide array of the remaining panel of 2.6 M 15-mers, that are at least 2 SNPs different from human sequences, could be constructed using current technology (e.g. Roche NimbleGen arrays). We simulated an oligonucleotide array hybridization experiment using these 2.6 M non-human 15-mers to determine the likelihood of detecting any of the fully sequenced microbes. This hypothetical array would detect 75% (2314 of 3065) viruses with a median of 3 positive non-human 15-mers (range: 0 to 1,705) and 100% (of 433) bacterial species with a median of 3,873 positive non-human 15-mers (range: 1 in the obligate endosymbiont Candidatus Carsonella ruddii PV, up to 92,127 in Burkholderia 383). Of course, some of the fully sequenced microbes are closely related to each other and so these estimates are not based on completely independent samples.",
+            "cite_spans": [],
+            "section": "Detecting non-human organisms with non-human 15-mers ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Some n-mers appear at extremely high frequency in the human genome. Among this set are some recognizable functional motifs. For example, the TATA box (5'-TATAAA-3') is ranked in the top 2% of all the possible 6-mers and the E-box (5'-CACCTG-3') is ranked in the top 11% of all possible 6-mers. We identified all the 5- to 20-mers that appear more than 30,000 times in the human genome. The top 20 ultra-frequent n-mers are shown in Table 2. A full list of high frequency n-mers is available in additional file 3.",
+            "cite_spans": [],
+            "section": "Ultra-frequent n-mers ::: Results",
+            "ref_spans": [
+                {
+                    "start": 438,
+                    "end": 439,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Based on our simulation, the pseudo-human genome has much higher space coverage than the true human genome for every oligo length (Figure 1). This leads to the hypothesis that human genomes are much more compact in sequence space than would be expected by chance. To explore this hypothesis, we examined how many 1 bp variants of human n-mers are also in the human genome. For each of the n-mers found in the human genome, we generated its 3n different 1 bp variants and then scanned the human genome for the presence of these variants. We found that significantly more 1 bp variants of human oligos were also in the human genome compared to random n-mers (Figure 4). The same is true for 2\u20134 bp variants of human oligos (Figure 4). Thus, the human genome is more compact, or dense, in sequence space than a random genome. When we generated variants that were more distant from the original human n-mer (up to 10 bp variants), we found in some cases that distant oligos were less likely to be in the human genome than a random oligo (Figure 4).",
+            "cite_spans": [],
+            "section": "Density in sequence space ::: Results",
+            "ref_spans": [
+                {
+                    "start": 138,
+                    "end": 139,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 664,
+                    "end": 665,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 729,
+                    "end": 730,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1041,
+                    "end": 1042,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Previous studies have examined the entropy, or information content, within regions of a genome [6-8]. We calculated the information content of each human chromosome. This facilitates comparisons between chromosomes. We used the Lempel-Ziv 77 algorithm to estimate the entropy rate of both coding sequences and whole genomic sequences for the human genome [17]. Coding sequences have a higher entropy rate (information content) than genomic sequences (Figure 5). Note that the highly repetitive regions of telomeres and centromeres are generally coded as non-specific bases (\"N\") in the human genome and so are excluded from our calculations. Entropy was calculated from either the entire chromosome, for chromosomes < 130 Mb, or the first 130 Mb of longer chromosomes. This is sufficient to generate stable estimates of the entropy (Figure 5). Figure 6 shows both the entropy and the percent of the chromosome filled by coding regions for each human chromosome.",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 97,
+                    "mention": "6",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 98,
+                    "end": 99,
+                    "mention": "8",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Entropy rate ::: Results",
+            "ref_spans": [
+                {
+                    "start": 458,
+                    "end": 459,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 840,
+                    "end": 841,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 851,
+                    "end": 852,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "We have provided an overview and comparison of some of the informational properties of fully sequenced genomes. We found that virtually all oligomers of length less than 13 are represented in the human genome but only a vanishingly small proportion (< 1.53%) of oligos of length greater than 19. The mouse genome is the same in these respects. Similarly, very few oligos less than 13 bp are unique in the human genome, but the vast majority of oligos of length greater than 19, except repeat elements, are unique in the human genome. This is consistent with practical experience in the design of primers for PCR. Some of the most frequent n-mers in the human genome are microsatellites and ALU elements, as would be expected (Table 2). These ultra-frequent n-mers should be useful as high density markers in the genome and as primers for assays such as random amplified polymorphic DNA (RAPD) [18] in which a large number of regions of the genome may be amplified in a single PCR reaction. In fact, both microsatellites and ALU elements have been exploited for DNA fingerprinting [19-21]. The ultra-frequent n-mers we found are akin to the pyknons identified by Rigoutsos et al., except that pyknons need only appear 40+ times in the human genome, must be at least 16 bp long, and have the additional constraint that they appear in both protein coding and non-coding regions [22].",
+            "cite_spans": [
+                {
+                    "start": 894,
+                    "end": 896,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1081,
+                    "end": 1083,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1084,
+                    "end": 1086,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1376,
+                    "end": 1378,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 732,
+                    "end": 733,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Whiteford et al. have analyzed a measure of the frequency of unique oligos in a variety of genomes [23]. However, their measure is subtly different from ours. The Whiteford measure of uniqueness essentially shatters a genome into n-mers and asks what proportion of those n-mers only occur once in the genome. This is appropriate for analyzing high throughput, short sequencing reads, since high copy-number n-mers will represent a large portion of the reads. Our measure asks what proportion of distinct n-mers only occur once in a genome? Thus, increasing the copy number of an n-mer already present in the genome would not change our statistic but would decrease the Whiteford measure of the frequency of unique n-mers. Our analysis suggests that the 25+bp reads of current high throughput sequencers are unlikely to produce sequences that would appear by chance in a genome other than the genome being sequenced (Figure 1). These longer n-mers should only be shared between species due to descent from a common ancestor.",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 102,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 923,
+                    "end": 924,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The human genome is not spread evenly across sequence space but is rather compacted in closely related sequences (Figure 4). Compaction in sequence space may be the result of molecular evolution. Duplication events followed by divergence between the duplicated regions is thought to be a common mechanism for genome evolution [5] and would lead to such compaction. Similarly, transposons and other repeat elements lead to structure in the non-coding region of the genome that can be detected in the difference between the entropy of the coding regions versus the non-coding regions (Figure 5). Previous work has used Renyi entropy to address the problem of failure of convergence for entropy measures on short DNA sequences [24]. We have used the simpler and more traditional definition of entropy because convergence is not a problem for the analysis of whole human chromosomes (Figure 5).",
+            "cite_spans": [
+                {
+                    "start": 327,
+                    "end": 328,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 725,
+                    "end": 727,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 121,
+                    "end": 122,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 590,
+                    "end": 591,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 887,
+                    "end": 888,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The difference between the entropy of coding versus non-coding regions of the genome has long been known [14] and may help to explain why chromosomes 13, 18, 21 and the Y chromosome appear to have relatively low entropy compared to the rest of the genome (Figure 6). The correlation between nucleotides at varying distances (\"mutual information\") is also known to be higher in coding regions than non-coding regions [25]. However, there are a number of chromosomes for which the entropy does not track with the proportion of coding regions in chromosome. Chromosomes 1, 2, 9, 12, and 14 have relatively high proportions of coding regions without relatively high entropy while chromosome 20 has a relatively low proportion of coding regions without relatively low entropy (Figure 6). This may be a signal of functional, non-coding RNA on chromosome 20, for chromosome 20 does not have an unusually low frequency of repeats, an unusual G+C content, or an unusual density of CpG islands [2,3,26]. All of chromosome 20 is conserved as a single segment in the mouse chromosome 2 [2], suggesting it contains little junk DNA. However, the anomaly of non-protein coding information content on chromosome 20 cannot yet be explained by an over-abundance of miRNAs. Out of the 475 currently confirmed miRNAs in the human genome, 11 are located on chromosome 20 [27,28]. This is no more than would be expected by chance (Binomial probability of 11 or more miRNAs, p = 0.46).",
+            "cite_spans": [
+                {
+                    "start": 106,
+                    "end": 108,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 417,
+                    "end": 419,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 985,
+                    "end": 986,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 987,
+                    "end": 988,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 989,
+                    "end": 991,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1075,
+                    "end": 1076,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1351,
+                    "end": 1353,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1354,
+                    "end": 1356,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 263,
+                    "end": 264,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 779,
+                    "end": 780,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Gaps remain in most of the sequenced genomes, but these are unlikely to significantly affect most of our analyses. In the sequence files, missing nucleotides are coded as N's and are skipped over by our algorithms. Build 35 of the human genome was missing 225 Mbp of the human sequence (7% of the genome), 200 Mbp of which is made up of heterochromatin [29]. Heterochromatin is highly repetitive sequence, including telomeres and centromeres. Since the sequenced part of the genome often extends past the borders of heterochromatin [29], it is likely that most of the n-mers in the heterochromatin (for n < 20) would have been counted in our analyses of coverage and uniqueness. The remaining 25 Mbp of euchromatic gaps are often associated with segmental duplications and copy number variations between subjects used for the reference sequencing [30]. Again, many of the n-mers in those gaps are probably represented elsewhere in the sequenced genome. However, the absence from our analysis of the 7% of the human genome with highly repetitive heterochromatin means that our estimates of entropy in the human genome (Figure 6) are probably slightly higher than the true values.",
+            "cite_spans": [
+                {
+                    "start": 354,
+                    "end": 356,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 533,
+                    "end": 535,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 848,
+                    "end": 850,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1125,
+                    "end": 1126,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Coverage of sequence space is probably not subject to selection in and of itself, except in specialized cases of diversifying selection, such as occurs in the evolution of major histone compatibility complex (MHC) [31] and some testis genes [32]. However, coverage of sequence space may be a metric of evolvability because it represents the library of genetic sequences that may be duplicated, recombined and modified to generate new genes and functions. All things being equal (including genome size and mutation rates), we would predict that a population of organisms with greater coverage of sequence space should evolve more quickly to new environmental pressures than a population of organisms with fewer sub-sequences. This could be tested in evolvability experiments on bacteria with different degrees of sequence space coverage but similar mutation rates and genome sizes.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 242,
+                    "end": 244,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "When we performed the analysis of coverage versus genome size in 10-mer sequence space. Anaeromyxobacter dehalogenans stands out as having an exceptionally low sequence coverage for its genome size and GC content (outside of the 99.9% predicted range). A. dehalogenans is an anaerobic bacterium with a GC content of 75%. It is able to reduce a variety of metals including ferric iron and Uranium (VI) and has been studied for its potential role in bioremediation [33,34].",
+            "cite_spans": [
+                {
+                    "start": 464,
+                    "end": 466,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 467,
+                    "end": 469,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One potential use of our results would be to develop assays to detect non-human organisms and sequences in human tissue samples. We found that with a panel of 2.6 M 15-mers that are at least 2 SNPs different from human 15-mers, we could easily detect all bacterial genomes and 75% of fully sequenced viruses. This approach is inspired by the negative selection algorithm used by the immune system: generate random amino acid sequence (peptide) detectors and then remove those that match self. Patterns of positive probes on an array of non-human 15-mers are likely to be enough to identify known microbes. To identify an unknown microbe, any non-human probe that hybridized to DNA from a human sample could be used as a PCR primer to sequence in both directions from that probe and thereby generate longer sequences of the non-human DNA. This would be important both for identifying pathogens in the etiology of diseases as well as for identifying symbiotic microbes that have received little attention because they either do not cause disease or they only cause disease through their absence. Such an array could also identify non-human sequences generated through insertions, deletions and translocations in cancer where such lesions may be targeted for therapy [35,36]. A number of other approaches have been taken to identifying non-human organisms in human samples. Cellular organisms can be identified by sequencing the 16S rRNA genes in the sample [37-40], though this misses viruses. DeRisi and colleagues have developed an oligonucleotide array with 70-mers of highly conserved sequences within most fully sequenced virus families [41]. This was used to identify the SARS virus as a coronavirus[42,43], though the array may not identify novel viruses that are dissimilar from the known viral families. A brute force metagenomics approach involves sequencing all the DNA or RNA in the sample and removing any sequences that match the human genome [44-47]. Currently, efforts are proceeding to sequence all the microbes found in the human body [48].",
+            "cite_spans": [
+                {
+                    "start": 1265,
+                    "end": 1267,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1268,
+                    "end": 1270,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1456,
+                    "end": 1458,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1459,
+                    "end": 1461,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1641,
+                    "end": 1643,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1704,
+                    "end": 1706,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1707,
+                    "end": 1709,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1956,
+                    "end": 1958,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1959,
+                    "end": 1961,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 2052,
+                    "end": 2054,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We have focused on an elegant and relatively simple metric of genome complexity: sequence space coverage. It can be calculated exhaustively or, more efficiently, through sampling based on a set of randomly generated oligos. While sequence space coverage is clearly influenced by genome size and GC content, we have also shown that the human genome is more compact in sequence space than a random genome. This is probably the signature of molecular evolution. Our measurements of sequence space coverage and entropy allow for the comparison between genomes and between chromosomes within a genome. This has led to the detection of outliers that may help to reveal properties of organisms and chromosomes that are not currently understood. Coverage data can also be used in a negative selection algorithm to develop assays to detect novel microbes in tissue samples.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To find all the oligonucleotides of length n that are present in a genome is difficult for large n, due to computational memory constraints. We exhaustively searched the genomes for all possible 1- to 15-mers. The algorithm follows:",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Given oligo length n, create a boolean array of size 4n",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. For each chromosome and its reverse complement:",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "a. For each nucleotide location i in the chromosome:",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "i. Convert the n-mer at location i into an array index (coding it as a 2n bit number with each nucleotide represented by 2 bits).",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "ii. Set the Boolean array [index] = true",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. Divide the number array locations set to true by the size of the array (4n).",
+            "cite_spans": [],
+            "section": "Exhaustive search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The set of all oligonucleotides of length n has cardinality of 4n. The size of sequence space increases exponentially with respect to the oligo length. For example, if n = 18, the set contains 8G different oligos. For large n, it is impossible to save all the entries in the space to the memory of any 64-bit machine. Therefore, we choose to use stochastic sampling to estimate the sequence space coverage of the genomes as follows:",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Randomly generate 100,000 n-mers and save them into a hash table",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. For each n-mer in the hash table:",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "a. For each chromosome and its reverse complement:",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "i. Scan the chromosome and record the number of times the n-mer appears in the genome",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. Calculate the coverage by dividing the total number of n-mers that appeared at least once in the genome by 100,000.",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We found the stochastic sampling algorithm accurately estimates the true coverage of the genomes (Table 1).",
+            "cite_spans": [],
+            "section": "Stochastic sampling ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 104,
+                    "end": 105,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In order to identify all oligomers of length 10\u201320 bp that appear > 30,000 times in the human genome we:",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Identified all 10-mers that appeared in the human genome > 30,000 times by exhaustive search",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Let K = the number of n-mers previously identified as appearing > 30,000 times. We generated 4K (n+1)-mers by concatenating one of the four possible nucleotides (A, C, G or T) to the end of the K n-mers that appeared > 30,000 times in the human genome.",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. We counted the number of times the 4K (n+1)-mers appear in the human genome and discarded any that appear less than 30,000 times.",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "4. If n+1 < 20, we incremented n and looped to step 2 with the new list.",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "This algorithm is guaranteed to find all n-mers that appear at least 30,000 times in the human genome. If a 20-mer occurs > 30,000 times in the human genome, then all prefixes of that 20-mer must occur at least as many times as the 20-mer. So the 10-mer prefix must also occur > 30,000 times and so would have been identified in step 1. The 11- to 19-mer prefixes, as well as the final 20-mer, would then have been generated in step 2 and not discarded in step 3. Therefore, all 20-mers that appear > 30,000 times are identified by the algorithm. This algorithm can be extended to arbitrary length oligomers for any positive lower bound on the frequency of the oligomers. We chose this approach, rather than the brute force approach of counting the frequency of all n-mers in the human genome because the above algorithm need only maintain a small list of the ultra-frequent n-mers at any step and so is more computationally efficient.",
+            "cite_spans": [],
+            "section": "Identification of Ultra-Frequent Oligomers ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The Lempel-Ziv algorithm [49] is a computationally efficient scheme for universal data compression. The algorithm requires no a priori knowledge of source statistics (hence is \"universal\"), is particularly elegant, has a very low computational complexity, and produces very compact descriptions of large alphabets. These virtues have established the algorithm firmly as the standard data compression algorithm for the transmission and storage of large files over the Internet and on computers.",
+            "cite_spans": [
+                {
+                    "start": 26,
+                    "end": 28,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Given a sequence of letters from an alphabet, the algorithm parses the string sequentially to produce a dictionary of new phrases, in order of occurrence in the sequence. Specialized to the genome, the algorithm proceeds as follows.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The four phrases corresponding to the single nucleotides 'A', 'C', 'G' and 'T' form the first entries in the dictionary of phrases. The parsing procedure now proceeds recursively finding each new phrase in the sequence in turn.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The Lempel-Ziv parsing procedure:",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Search for the longest oligomer subsequence S that has appeared in the dictionary.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Add S concatenated with the next nucleotide in the genome as a new, previously unobserved, phrase into the dictionary.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "3. If the sequence is exhausted without discovering a new phrase, exit.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "4. Else, with the pointer set to the location following the last observed nucleotide, go back to step 1.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Let d(n) denote the number of dictionary items that have been generated after parsing n consecutive symbols in the genome string. Then, the number of bits needed to describe the dictionary up to this point provides a simple compression mechanism to describe the entire string up to this point. The pervasive utility of Lempel-Ziv rests upon the observation that such a description is compact and efficient. The theoretical basis for the Lempel-Ziv algorithm is discussed briefly in the Appendix.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All the Java code for implementing the above algorithms and calculating the statistics for the figures and tables is freely available from the authors.",
+            "cite_spans": [],
+            "section": "Lempel-Ziv estimators of entropy rate ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All statistical analyses were performed in R. For the analysis of 10-mer sequence space coverage, Figure 2 shows that the association with genome size is non-linear, so we log transformed genome size. In addition, the chance of evenly covering sequence space in a random genome decreases as the frequency of nucleotides is skewed from a uniform distribution. Thus, we transformed GC content by taking the absolute value of (0.5 \u2013 GC content). These transformed variables were used as predictors of coverage in a multivariate linear regression that included an interaction term between the predictors. Both variables and their interaction were significant at p < 0.01. We used Cook's distance to identify the top 1% of genomes that have the strongest influence on the regression analysis. We excluded those five genomes and refit the multivariate regression model. We then used that model to predict the coverage values of the five excluded genomes based on their log genome sizes and GC content deviation from 0.5. Only one of the five genomes had a 10-mer coverage value that fell outside the 99.9% prediction range and was therefore identified as an outlier in the model.",
+            "cite_spans": [],
+            "section": "Statistical methods ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 105,
+                    "end": 106,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "CCM conceived the study. ZL performed all the analyses. SSV carried out the theoretical entropy analysis. CCM, ZL and SSV wrote the paper. All authors approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "The Lempel-Ziv procedure forms a very competitive and computationally appealing entropy estimator for long, complex sequences like the human genome. The technical justification for the Lempel-Ziv algorithm in such contexts is provided by a fundamental convergence theorem: the superior limit of the ratio of the number of bits needed to describe the Lempel-Ziv dictionary of phrases to the length of the sequence almost surely bounds the entropy rate of any ergodic, stationary random sequence from below [50]. More formally, if the entropy rate of the source X is denoted by H(X), then",
+            "cite_spans": [
+                {
+                    "start": 506,
+                    "end": 508,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Theoretical basis for the Lempel-Ziv algorithm ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "lim\u2061sup\u2061n\u2192\u221ed(n)log\u20612(d(n))n\u2264H(X)",
+            "cite_spans": [],
+            "section": "Theoretical basis for the Lempel-Ziv algorithm ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "Theorems of this nature form at once the motivation and the ultimate justification of the procedure. The estimates obtained converge very quickly as seen in Figure 5.",
+            "cite_spans": [],
+            "section": "Theoretical basis for the Lempel-Ziv algorithm ::: Appendix",
+            "ref_spans": [
+                {
+                    "start": 164,
+                    "end": 165,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Clustering and repetitions of n-mers in the human genome over and beyond the chance fluctuations that govern a truly random sequence will manifest themselves in a lower coverage of sequences in n-mer space than can be accounted for by chance. It is informative to consider the n-mer coverage of a random pseudo-human genome of the same length as the human genome and with the nucleotides A, C, G, and T appearing with equal frequency in the genome. This model is equivalent to a sequence of dinucleotides chosen by independent sampling from the set of sixteen dinucleotides {AA, AC, ..., TG, TT}, each dinucleotide selected with equal probability. This permits a more refined comparison with the human genome in view of features such as the marked depletion of CG dinucleotides in mammalian genomes [51], which are not captured by single nucleotide frequencies alone. As we shall see, however, from an analytical perspective, a consideration of dinucleotide frequencies makes very little difference to the conclusions. The n-mer space coverage of the pseudo-human genome will bound from above the corresponding n-mer space coverage of the human genome (see Figure 1), the discrepancy between the two providing evidence of statistical clustering or bunching of n-mers in the human genome. Such discrepancies in coverage are manifested in the entropy rate: the pseudo-human genome has entropy rate equal to the maximal value log2 4 or 2 bits per symbol and bounds from above the entropy rate of the human genome (Figure 5).",
+            "cite_spans": [
+                {
+                    "start": 800,
+                    "end": 802,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": [
+                {
+                    "start": 1164,
+                    "end": 1165,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1518,
+                    "end": 1519,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Accordingly, consider the simplest model of a random pseudo-human genome as a sequence of nucleotides drawn by independent sampling from the alphabet {A, C, G, T}, with each nucleotide having equal probability of selection. The 4n possible n-mers each appear with equal probability in the nucleotide sequence. If one considers a random sequence of t n-mers (corresponding to a ''genome'' length of N = nt base pairs), the number of n-mers that are absent in the sequence follows the classical coupon collector's paradigm [52]. The probability that exactly m of the possible n-mers is absent in the random sequence is given by",
+            "cite_spans": [
+                {
+                    "start": 522,
+                    "end": 524,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "Pm=\u2211k=04n\u2212m(\u22121)k(m+kk)(4nm+k)(1\u2212m+k4n)t.",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "When t is large, say of the order of one billion as in the human genome, the probabilities Pm are approximated by a Poisson distribution. More precisely, if",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "n=1log\u20614[log\u2061(t)\u2212log\u2061log\u2061(t)+log\u2061log\u2061(t)log\u2061(t)\u2212clog\u2061(t)+O(log\u2061log\u2061(t)2log\u2061(t)2)]",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "where logarithms are to the Napier base e, c is any fixed real constant, and the order term represents a quantity that grows asymptotically no faster than the vanishing term log log(t)2/log(t)2 as t becomes large, then the number of excluded n-mers approaches a Poisson distribution with mean exp(-c) for large values of t. More specifically, the probability that exactly m n-mers are excluded in the random sequence is asymptotically given by",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "Pm\u2192e\u2212e\u2212c(e\u2212mcm!)",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "for large values of t. In particular, the probability that all the n-mers are present in the sequence is approximately given by",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "P0\u2248e\u2212e\u2212c",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "In view of the very rapid extinction of the double exponential for very small values of c, say, between -3 and +3 for typical genome sizes, a small positive c will result in a probability close to one that all n-mers are present while a small negative c will result in gaps in coverage with overwhelming probability. As the term involving c is sub-dominant in the expression for n in terms of t, a phase transition in n-mer coverage in the random pseudo-human genome occurs around the critical value of",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "n\u22481log\u2061(4)[log\u2061(t)\u2212log\u2061log\u2061(t)]",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "For instance, when t is one billion, of the order of the size of the human genome, the critical value for n is 13: with overwhelming probability all n-mers of length 13 or fewer will be found in the random pseudo-human genome with uniform nucleotide frequencies, while there is a breakdown in coverage for n-mers of length in excess of 14.",
+            "cite_spans": [],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": []
+        },
+        {
+            "text": "The results are not materially affected if the uniform nucleotide frequencies in the random pseudo-human genome are replaced by the actual observed nucleotide frequencies of 0.295, 0.204, 0.205, and 0.296 for the nucleotides A, C, G, and T in the human genome, or even, in a slightly more refined calculation, the pseudo-human genome is constructed by independent sampling from the set of sixteen dinucleotides with each dinucleotide appearing not with equal probability but in the same frequency as in the human genome (the CG dinucleotide, in particular, being markedly depleted [51]). The n-mer coverage for the actual distribution of nucleotide (or dinucleotide) frequencies is bounded below by the coverage of n-mer space by a uniform random sequence over an alphabet of size 5 as the probability 1/5 = 0.2 of selecting a given nucleotide (or probability 1/25 = 0.04 of selecting a given dinucleotide) from an alphabet of size 5 lies below the observed nucleotide (respectively, dinucleotide) frequencies in the human genome. We can get increasingly conservative bounds in this fashion by increasing the alphabet size as, under uniform selection, the nucleotide frequency decreases inversely proportional to alphabet size, while the dinucleotide frequency decreases inversely with the square of the alphabet size. The size of alphabet, however, makes little difference to the point where a phase transition in n-mer coverage is observed as the expression for the phase transition point for n is relatively insensitive to alphabet size (the expression for n depends only on the logarithm of the alphabet size). Consequently, random pseudo-human genomes with nucleotide and dinucleotide frequencies matching that of the human genome exhibit an essentially complete coverage of n-mers with n up to 13, with gaps in coverage occurring abruptly for n-mers of size 14 and beyond. For the analysis in Figure 1, we generated a random pseudo-human genome with the same dinucleotide frequencies as the human genome by using a first-order Markov process with transition probabilities that match the probabilities for each nucleotide following the previous nucleotide in the human genome. The substantial agreement of the stochastic simulation results for the pseudo-human genome in Figure 1 with the theoretical predictions serves to provide a validation of the sampling methodology.",
+            "cite_spans": [
+                {
+                    "start": 582,
+                    "end": 584,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Theoretical analysis of the random pseudo-human genome ::: Appendix",
+            "ref_spans": [
+                {
+                    "start": 1906,
+                    "end": 1907,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 2283,
+                    "end": 2284,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Estimates and exhaustive calculations of the human genome coverage of n-mer Space\n1100,000 n-mers were used to estimate coverage of the genome, repeated 5 times to estimate the 95% confidence interval. 2The set of all possible n-mers greater than 15 bp is too large to be exhaustively searched given our current computational resources.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Ultra-frequent n-mers in the human genome\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The percentage of all possible n-mers (coverage) that appear in H. sapien, M. musculus, D. melanogaster, C. elegans, A. thaliana, S. cerevisiae, E. coli k12, theoretical and pseudo-human genomes. Theo-human is the maximum coverage a human-length genome could achieve if every n-mer in its genome was unique. The pseudo-human (pseudo-hs) genome is a random genome generated with the same length and dinucleotide frequencies of the human genome. The space coverage of each genome listed above is plotted against the length of the oligomer analyzed, ranging from 1 to 20.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (a) Coverage of 10-mer sequence space as a function of genome size in 433 fully sequenced microbial genomes. The legend for the color-coding of GC content appears on the right. Smaller genomes have lower GC content. Anaeromyxobacter dehalogenans is an outlier with unusually low coverage for its genome size and GC content (outside of the 99.9% predicted interval). (b) A histogram for the proportion of the 10-mer sequence space covered by each of the 433 fully sequenced microbial genomes.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The percentage of n-mers that appeared exactly once (unique hits), out of all the n-mers detected in each genome. Slightly less than 50% of 16-mers detected in humans are unique. Whereas, for E. coli, a little more than 50% of 12-mers were unique.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: The density of the human genome in sequence space. For every randomly generated n-mer that was detected in the human genome, we generated all single basepair variants (3n variants for each n-mer) and tested them to see if they were also represented in the human genome (1nn). We also generated 3n of the 2 bp variants (2nn), 3n of the 3 bp variants, and so on up to variants that differed in 10 bp from the original human n-mer. The sequences that are only a few SNPs away from the original human n-mer are significantly more likely to be in the human genome compared to a random n-mer (black bars, \"random\"). This shows that the human genome is relatively compact in sequence space. The standard error for all points is < 0.003.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Entropy rate, using the Lempel-Ziv 77 algorithm, for the coding sequence (red) and the genomic sequence for chromosome 20 (green), as a function of the length of the sequence analyzed. The entropy calculation converges after 10 million bases.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: The entropy, or information content (solid line, left Y axis) and percent of the sequence coding for proteins (dashed line, right Y axis, log scale) for each human chromosome as well as the full set of coding regions (CCDS). Given the higher entropy rate of coding regions to non-coding regions, we expect a correlation between the two measurements. However, chromosomes 1, 2, 9, 12, and 14 have a lower information content than might be expected for the percent of those chromosomes occupied by protein coding regions. Chromosome 20 appears to have a higher entropy than would be expected given its gene poor content. This may be a signal of extensive non-protein coding, yet functional RNA on chromosome 20.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "The Double Helix: A Personal Account of the Discovery of the Structure of DNA",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "Penguin",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Statistical analysis of the DNA sequence of human chromosome 22",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Holste",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Grosse",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Herzel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phys Rev E Stat Nonlin Soft Matter Phys",
+            "volume": "64",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Statistical Properties of Nucleotides in Human Chromosomes 21 and 22",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Chaos, Solitons and Fractals",
+            "volume": "23",
+            "issn": "",
+            "pages": "1077-1085",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Clustering of identical oligomers in coding and noncoding DNA sequences",
+            "authors": [
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NV",
+                    "middle": [],
+                    "last": "Dokholyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Buldyrev",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Biomol Struct Dyn",
+            "volume": "17",
+            "issn": "",
+            "pages": "79-87",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Expansion of Tandem Repeats and Oligomer Clustering in Coding and Noncoding DNA sequences",
+            "authors": [
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Buldyrev",
+                    "suffix": ""
+                },
+                {
+                    "first": "NV",
+                    "middle": [],
+                    "last": "Dokholyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RHR",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Physica A",
+            "volume": "273",
+            "issn": "",
+            "pages": "19-32",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0378-4371(99)00338-6"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Systematic analysis of coding and noncoding DNA sequences using methods of statistical linguistics",
+            "authors": [
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Mantegna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Buldyrev",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Goldberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Simons",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Phys Rev E Stat Phys Plasmas Fluids Relat Interdiscip Topics",
+            "volume": "52",
+            "issn": "",
+            "pages": "2939-2950",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Accurate phylogenetic classification of variable-length DNA fragments",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "McHardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tsirigos",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hugenholtz",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Rigoutsos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Methods",
+            "volume": "4",
+            "issn": "",
+            "pages": "63-72",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nmeth976"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Genomic GC content prediction in prokaryotes from a sample of genes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zavala",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Naya",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Romero",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sabbia",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Piovani",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Musto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Gene",
+            "volume": "357",
+            "issn": "",
+            "pages": "137-143",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.gene.2005.06.030"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "A Technique for High-Performance Data Compression",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Welch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Computer",
+            "volume": "17",
+            "issn": "",
+            "pages": "8-19",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/MC.1984.1659158"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "The random amplified polymorphic DNA (RAPD) assay and related techniques applied to genotoxicity and carcinogenesis studies: a critical review",
+            "authors": [
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Atienzar",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Jha",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mutat Res",
+            "volume": "613",
+            "issn": "",
+            "pages": "76-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "The onset and extent of genomic instability in sporadic colorectal tumor progression",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Stoler",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Basik",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Kahlenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Rodriguez-Bigas",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Petrelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "96",
+            "issn": "",
+            "pages": "15121-15126",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.26.15121"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Initial sequencing and analysis of the human genome",
+            "authors": [
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Linton",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Birren",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Nusbaum",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Zody",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Baldwin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Devon",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dewar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "FitzHugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "409",
+            "issn": "",
+            "pages": "860-921",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35057062"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Inter-Alu polymerase chain reaction: advancements and applications",
+            "authors": [
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Kass",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Batzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Anal Biochem",
+            "volume": "228",
+            "issn": "",
+            "pages": "185-193",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/abio.1995.1338"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Increase of homozygosity in centenarians revealed by a new inter-Alu PCR technique",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bonafe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cardelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Marchegiani",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Cavallone",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Giovagnetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Olivieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lisa",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Franceschi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Exp Gerontol",
+            "volume": "36",
+            "issn": "",
+            "pages": "1063-1073",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0531-5565(01)00112-7"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Short blocks from the noncoding parts of the human genome have instances within nearly all known genes and relate to biological processes",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Rigoutsos",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Huynh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Miranda",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tsirigos",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McHardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "6605-6610",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0601688103"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "An analysis of the feasibility of short read sequencing",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Whiteford",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Haslam",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Prugel-Bennett",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Essex",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Roach",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bradley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Neylon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gni170"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Renyi continuous entropy of DNA sequences",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Vinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Almeida",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Theor Biol",
+            "volume": "231",
+            "issn": "",
+            "pages": "377-388",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2004.06.030"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Species independence of mutual information in coding and noncoding DNA",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Grosse",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Herzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Buldyrev",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phys Rev E Stat Phys Plasmas Fluids Relat Interdiscip Topics",
+            "volume": "61",
+            "issn": "",
+            "pages": "5624-5629",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "The DNA sequence and comparative analysis of human chromosome 20",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Deloukas",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ashurst",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Burton",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stavrides",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Almeida",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Babbage",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Bagguley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "414",
+            "issn": "",
+            "pages": "865-871",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/414865a"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "The microRNA Registry",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "",
+            "issn": "",
+            "pages": "D109-111",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh023"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "miRBase: microRNA sequences, targets and gene nomenclature",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Grocock",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van Dongen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bateman",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Enright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "",
+            "issn": "",
+            "pages": "D140-144",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkj112"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Finishing the euchromatic sequence of the human genome",
+            "authors": [],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "431",
+            "issn": "",
+            "pages": "931-945",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature03001"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "The sequence of the human genome",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Mural",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Sutton",
+                    "suffix": ""
+                },
+                {
+                    "first": "HO",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yandell",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Evans",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Holt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "291",
+            "issn": "",
+            "pages": "1304-1351",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1058040"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Closing gaps in the human genome with fosmid resources generated from multiple individuals",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bovee",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Haugen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Hayden",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gillett",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tuzun",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sampas",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Phelps",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Genet",
+            "volume": "40",
+            "issn": "",
+            "pages": "96-101",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng.2007.34"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "The nature of selection on the major histocompatibility complex",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Apanius",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Penn",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Slev",
+                    "suffix": ""
+                },
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Ruff",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Potts",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Crit Rev Immunol",
+            "volume": "17",
+            "issn": "",
+            "pages": "179-224",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Rapid evolution of cancer/testis genes on the X chromosome",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Stevenson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Iseli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Panji",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zahn-Zabal",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hide",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Old",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CV",
+                    "middle": [],
+                    "last": "Jongeneel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Genomics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-8-129"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Characterization and description of Anaeromyxobacter dehalogenans gen. nov., sp. nov., an aryl-halorespiring facultative anaerobic myxobacterium",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Sanford",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Tiedje",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Appl Environ Microbiol",
+            "volume": "68",
+            "issn": "",
+            "pages": "893-900",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.68.2.893-900.2002"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Uranium(VI) reduction by Anaeromyxobacter dehalogenans strain 2CP-C",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Sanford",
+                    "suffix": ""
+                },
+                {
+                    "first": "FE",
+                    "middle": [],
+                    "last": "Loffler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Appl Environ Microbiol",
+            "volume": "72",
+            "issn": "",
+            "pages": "3608-3614",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.72.5.3608-3614.2006"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Imatinib compared with interferon and low-dose cytarabine for newly diagnosed chronic-phase chronic myeloid leukemia",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "O'Brien",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Guilhot",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Larson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Gathmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Baccarani",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Cervantes",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Cornelissen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hochhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "994-1004",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa022457"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Identification of somatically acquired rearrangements in cancer using genome-wide massively parallel paired-end sequencing",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Stephens",
+                    "suffix": ""
+                },
+                {
+                    "first": "ED",
+                    "middle": [],
+                    "last": "Pleasance",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "O'Meara",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Santarius",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Stebbings",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Leroy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Edkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hardy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Genet",
+            "volume": "40",
+            "issn": "",
+            "pages": "722-729",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng.128"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Characterization of vaginal microbial communities in adult healthy women using cultivation-independent methods",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Bent",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Islam",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Forney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Microbiology",
+            "volume": "150",
+            "issn": "",
+            "pages": "2565-2573",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/mic.0.26905-0"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Quantification of bacterial groups within human fecal flora by oligonucleotide probe hybridization",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sghir",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gramet",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Suau",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Rochet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pochart",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Appl Environ Microbiol",
+            "volume": "66",
+            "issn": "",
+            "pages": "2263-2266",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AEM.66.5.2263-2266.2000"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Bacterial diversity in cases of lung infection in cystic fibrosis patients: 16S ribosomal DNA (rDNA) length heterogeneity PCR and 16S rDNA terminal restriction fragment length polymorphism profiling",
+            "authors": [
+                {
+                    "first": "GB",
+                    "middle": [],
+                    "last": "Rogers",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Hart",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mason",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Walshaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Bruce",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "3548-3558",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.8.3548-3558.2003"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Evolutionary analyses of the human genome",
+            "authors": [
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nekrutenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "409",
+            "issn": "",
+            "pages": "847-849",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35057039"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Bacterial diversity within the human subgingival crevice",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Kroes",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Lepp",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Relman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "96",
+            "issn": "",
+            "pages": "14547-14552",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.25.14547"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Microarray-based detection and genotyping of viral pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Coscoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zylberberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Avila",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Boushey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "15687-15692",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.242579699"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "A novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Goldsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Peret",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Emery",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Urbani",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Comer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1953-1966",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa030781"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Viral discovery and sequence recovery using DNA microarrays",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Urisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Springer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Mardis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hickenbotham",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Magrini",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eldred",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "PLoS Biol",
+            "volume": "1",
+            "issn": "",
+            "pages": "257-260",
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0000002"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Adding pathogens by genomic subtraction",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "MacConaill",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Meyerson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Genet",
+            "volume": "40",
+            "issn": "",
+            "pages": "380-382",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng0408-380"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Clonal integration of a polyomavirus in human Merkel cell carcinoma",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "319",
+            "issn": "",
+            "pages": "1096-1100",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1152586"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "A new arenavirus in a cluster of fatal transplant-associated diseases",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Palacios",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Druce",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Du",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Birch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Conlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Quan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "N Engl J Med",
+            "volume": "358",
+            "issn": "",
+            "pages": "991-998",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa073785"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Pathogen discovery from human tissue by sequence-based computational subtraction",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Stange-Thomann",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dodge",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "David",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Foley",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Beheshti",
+                    "suffix": ""
+                },
+                {
+                    "first": "NL",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Birren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genomics",
+            "volume": "81",
+            "issn": "",
+            "pages": "329-335",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0888-7543(02)00043-5"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "The human microbiome project",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Turnbaugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Ley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hamady",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fraser-Liggett",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Knight",
+                    "suffix": ""
+                },
+                {
+                    "first": "JI",
+                    "middle": [],
+                    "last": "Gordon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nature",
+            "volume": "449",
+            "issn": "",
+            "pages": "804-810",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature06244"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Compression of individual sequences by variable rate coding",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ziv",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lempel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "IEEE Transactions on Information Theory",
+            "volume": "IT-24",
+            "issn": "",
+            "pages": "530-536",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/TIT.1978.1055934"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Dynamics of mammalian chromosome evolution inferred from multispecies comparative maps",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Larkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Everts-van der Wind",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bourque",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Tesler",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Auvil",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Beever",
+                    "suffix": ""
+                },
+                {
+                    "first": "BP",
+                    "middle": [],
+                    "last": "Chowdhary",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Galibert",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gatzke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "613-617",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1111387"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Cover",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Elements of Information Theory",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Heterogeneity of genome and proteome content in bacteria, archaea, and eukaryotes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brocchieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Trent",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Blaisdell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mrazek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Theor Popul Biol",
+            "volume": "61",
+            "issn": "",
+            "pages": "367-390",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/tpbi.2002.1606"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Feller",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "An Introduction to Probability Theory and its Applications",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Automated splicing mutation analysis by information theory",
+            "authors": [
+                {
+                    "first": "VK",
+                    "middle": [],
+                    "last": "Nalla",
+                    "suffix": ""
+                },
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Rogan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Hum Mutat",
+            "volume": "25",
+            "issn": "",
+            "pages": "334-342",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/humu.20151"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Maximum entropy modeling of short sequence motifs with applications to RNA splicing signals",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Yeo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Burge",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Comput Biol",
+            "volume": "11",
+            "issn": "",
+            "pages": "377-394",
+            "other_ids": {
+                "DOI": [
+                    "10.1089/1066527041410418"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Finding borders between coding and noncoding DNA regions by an entropic segmentation method",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bernaola-Galvan",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Grosse",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Carpena",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Oliver",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Roman-Roldan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phys Rev Lett",
+            "volume": "85",
+            "issn": "",
+            "pages": "1342-1345",
+            "other_ids": {
+                "DOI": [
+                    "10.1103/PhysRevLett.85.1342"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "Identification and analysis of functional elements in 1% of the human genome by the ENCODE pilot project",
+            "authors": [],
+            "year": 2007,
+            "venue": "Nature",
+            "volume": "447",
+            "issn": "",
+            "pages": "799-816",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature05874"
+                ]
+            }
+        }
+    }
+}

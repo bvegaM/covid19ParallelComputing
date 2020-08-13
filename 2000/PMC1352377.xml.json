@@ -1,0 +1,1744 @@
+{
+    "paper_id": "PMC1352377",
+    "metadata": {
+        "title": "ZCURVE_V: a new self-training system for recognizing protein-coding genes in viral and phage genomes",
+        "authors": [
+            {
+                "first": "Feng-Biao",
+                "middle": [],
+                "last": "Guo",
+                "suffix": "",
+                "email": "guofengbiao@eyou.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Chun-Ting",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "email": "ctzhang@tju.edu.cn",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Developments of DNA sequencing technology have resulted in a rapid expansion of genome data. It becomes a challenging issue to explore the secrets of genomes and maximize the scientific knowledge gained from them. The first step in analyzing a completely or partially sequenced genome is to identify all its genes. Accurate gene recognition is relevant to many biological applications, for example, DNA microarray, knockout experiments and drug design. There exist some well-known computer systems for gene-finding in bacterial and archaeal genomes. These systems are either based on statistic analysis, such as GeneMarkS [1], Glimmer [2,3], and ZCURVE [4], or based on similarity alignment, such as CRITICA [5] and ORPHEUS [6]. Generally, satisfactory predicted results are obtained by using the above statistics-based software. On the contrary, genome annotation in newly sequenced viruses and phages is frequently based on similarity search methods such as BLAST [7]. Some species-specific genes are likely to be missed although high specificity is obtained by using similarity search methods. Evidence shows that an open reading frame (ORF) longer than a given length and not or slightly overlapping with any adjacent ORFs is likely to be a gene. However, simply assigning all such ORFs to genes usually generates over-predictions. Therefore, it is of necessity to use highly accurate and statistics-based systems for viral genome annotations. Unfortunately, currently there are very few satisfactory statistics-based viral gene-finding systems, except GeneMark gene-finding family [8,9]. However, GeneMark systems for gene-finding in virus and phage genomes suffer from some basic drawbacks. It is the aim of this paper to put forward an alternative approach for viral and phage gene-finding to improve the quality of annotations, particularly, for newly sequenced genomes.",
+            "cite_spans": [
+                {
+                    "start": 623,
+                    "end": 624,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 636,
+                    "end": 637,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 638,
+                    "end": 639,
+                    "mention": "3",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 654,
+                    "end": 655,
+                    "mention": "4",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 709,
+                    "end": 710,
+                    "mention": "5",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 725,
+                    "end": 726,
+                    "mention": "6",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 967,
+                    "end": 968,
+                    "mention": "7",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1587,
+                    "end": 1588,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1589,
+                    "end": 1590,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The ZCURVE system for finding protein-coding genes in bacterial and archaeal genomes developed by our group has been used in 40 laboratories or institutes all over the world [4]. In a recent paper, ZCURVE and the other two well-known bacterial gene-finding systems, Glimmer and CRITICA, are combined into a metatool named YACOP [10]. By adapting similar algorithm of ZCURVE, a new system specific to coronavirus genomes, ZCURVE_CoV, has been developed subsequently [11]. The ZCURVE_CoV system results in highly consistent results with GenBank annotations for coronavirus genomes, especially for SARS-CoV genomes [11]. However, the above software cannot be simply used to identify protein-coding genes in other viral or phage genomes. Here, a self-training system, ZCURVE_V is presented to address the problem. Similar to ZCURVE [4] and ZCURVE_CoV [11], the present ZCURVE_V system is also based on the Z curve representation of DNA sequences [12]. Compared with the most widely used viral gene-finding system, GeneMark family [8,9], the algorithm of ZCURVE_V is much simpler, because only 33 recognition variables are needed. Therefore, ZCURVE_V is conceptually different from GeneMark. Compared with GeneMark, ZCURVE_V resulted in better predicted results for smaller viral genomes (< 100 kb). In addition, the performance of ZCURVE_V is generally better than that of GeneMark for genomes with particular features, such as amsacta moorei entomopoxvirus, probably with the lowest genomic GC content among all the organisms sequenced so far. Moreover, it is also shown that joint applications of ZCURVE_V and GeneMark lead to better gene-finding results for viral and phage genomes.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 176,
+                    "mention": "4",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 466,
+                    "end": 468,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 613,
+                    "end": 615,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 829,
+                    "end": 830,
+                    "mention": "4",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 848,
+                    "end": 850,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 943,
+                    "end": 945,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1027,
+                    "end": 1028,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1029,
+                    "end": 1030,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The ZCURVE_V system has been run for 979 viral and 212 phage genome records, respectively. The default settings are adopted for all the options unless indicated otherwise. Evaluation of ZCURVE_V is based on the comparison between the gene-finding results and the RefSeq annotations for each genome. It should be noted that the RefSeq records are usually listed as provisional and have not themselves undergone extensive curation and literature cross-checking. However, to test and compare the performance of the presented algorithm we do need some criteria. Knowing that the RefSeq records are questionable, we chose to select those RefSeq data which possess the maximum reliability. For example, gene annotations in HIV, HBV and coronavirus are well known in the literature. Therefore, these three viruses are selected as samples to test and compare the algorithm. Other RefSeq records are selected similarly. Due to the inaccuracy of the RefSeq annotations currently available, the comparison between the performance of GeneMark and ZCURVE_V based on the RefSeq annotations should be deemed as preliminary. Future and more reliable comparison should be based on experimentally verified data, rather than RefSeq annotations. Two independent indices defined by formulas (1) and (2) are used to evaluate the performance of ZCURVE_V [13]",
+            "cite_spans": [
+                {
+                    "start": 1332,
+                    "end": 1334,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Indices to evaluate ZCURVE_V ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "Sn=TPTP+FN,     1\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGtbWudaWgaaWcbaGaemOBa4gabeaakiabg2da9maalaaabaGaemivaqLaemiuaafabaGaemivaqLaemiuaaLaey4kaSIaemOrayKaemOta4eaaiabcYcaSiaaxMaacaWLjaacbeGae8xmaedaaa@3B71@",
+            "cite_spans": [],
+            "section": "Indices to evaluate ZCURVE_V ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "Sp=TPTP+FP,     2\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGtbWudaWgaaWcbaGaemiCaahabeaakiabg2da9maalaaabaGaemivaqLaemiuaafabaGaemivaqLaemiuaaLaey4kaSIaemOrayKaemiuaafaaiabcYcaSiaaxMaacaWLjaacbeGae8Nmaidaaa@3B7B@",
+            "cite_spans": [],
+            "section": "Indices to evaluate ZCURVE_V ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "where TP, FP and FN are the positively true, false positive and false negative predictions, respectively.",
+            "cite_spans": [],
+            "section": "Indices to evaluate ZCURVE_V ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "GeneMark gene-finding web server provides two alternative approaches for viral genome annotation, i.e., the online prediction using a heuristic approach (or using GeneMarks program for viral genomes longer than 100 kb) and the VIOLIN database [1,8,9]. Generally speaking, the results obtained by the latter are more accurate than those obtained by the former. To strictly evaluate the performance of ZCURVE_V, the predicted results deposited in the GeneMark VIOLIN database are employed unless they are not available. A total of 30 viral genomes not annotated by GeneMark were used for the comparison, whose names are listed as follows: canarypox virus (abbreviation name: CNPV, RefSeq AC: NC_005309), fowlpox virus (FPV, NC_002188), tupaia herpesvirus (THV, NC_002794), african swine fever virus (ASFV, NC_001659), myxoma virus (MYXV, NC_001132), shope fibroma virus (SFV, NC_001266), yaba-like disease virus (YLDV, NC_002642), orf virus (ORFV, NC_005336), bovine papular stomatitis virus (BPSV, NC_005337), Autographa californica nucleopolyhedrovirus (AcNPV, NC_001623), Bombyx mori nucleopolyhedrovirus (BmNPV, NC_001962), Phthorimaea operculella granulovirus (PhoGV, NC_004062), Adoxophyes honmai nucleopolyhedrovirus (AdhoNPV, NC_004690), lymphocystis disease virus 1 (LCDV-1, NC_005902), Plutella xylostella granulovirus (PxGV, NC_002593), Adoxophyes orana granulovirus (AdorGV, NC_005038), Neodiprion lecontei nucleopolyhedrovirus (NeleNPV, NC_005906), fowl adenovirus D (FAdV-9, NC_000899), porcine adenovirus C (PAdV-5, NC_002702), avian infectious bronchitis virus (IBV, NC_001451), citrus tristeza virus (CTV, NC_001661), simian hemorrhagic fever virus (SHFV, NC_003092), beet yellows virus (BYV, NC_001598), fer-de-lance virus (FDLV, NC_005084), equine arteritis virus (EAV, NC_002532), semliki forest virus (SFV, NC_003215), bean common mosaic necrosis virus (BCMV, NC_004047), garlic latent virus (GLV, NC_003557), figwort mosaic virus (FMV, NC_003554), and southern cowpea mosaic virus (SCMV, NC_001625), respectively. The predicted results for the 30 viral genomes are listed in Table 1, where the genomes are listed in the order in which the chromosome sequence length is descending. For the 15 viral genomes with the chromosome sequence length larger than 100 kb in Table 1, the average Sn of ZCURVE_V and GeneMark is 95.9% and 92.5%, respectively, and the average Sp of ZCURVE_V and GeneMark is 92.8% and 94.0%, respectively. For the 15 viral genomes with the chromosome sequence length less than 100 kb listed in Table 1, the average Sn of ZCURVE_V and GeneMark is 95.6% and 80.0%, whereas the average Sp of ZCURVE_V and GeneMark is 93.2% and 91.1%, respectively. As can be seen, both the average Sn and Sp of ZCURVE_V for the small viral genomes are similar with those for the large viral genomes, whereas the average Sn of GeneMark for small viral genomes is much lower than that for large viral genomes. Note that viral and phage genomes shorter than 100 kb constitute the major part of viral and phage genomes sequenced so far. Over 90% of the 979 viral and 212 phage genomes analyzed here are shorter than 100 kb. If the average is performed over all the 30 genomes, Sn and Sp are 95.7% and 93.0% for ZCURVE_V, respectively, whereas Sp and Sp are 86.2% and 92.5% for GeneMark. In summary, Sp of both systems is well matched, but Sn of ZCURVE_V is much higher (about 9.5% higher) than that of GeneMark. Although Glimmer (2,3) were designed for gene-finding in bacterial genomes, for comparison, the gene-finding results by Glimmer 2.02 for all the 30 genomes are also listed in Table 1.",
+            "cite_spans": [
+                {
+                    "start": 244,
+                    "end": 245,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 246,
+                    "end": 247,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 248,
+                    "end": 249,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Comparisons with GeneMark (I): viral genomes with different chromosome lengths ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 2101,
+                    "end": 2102,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 2290,
+                    "end": 2291,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 2539,
+                    "end": 2540,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 3608,
+                    "end": 3609,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Among the viruses curated by NCBI staff, two satellite viruses have genomic sequences shorter than 1000 bp, which are the cereal yellow dwarf virus-RPV satellite RNA (CYDV-RPV satRNA, NC_003533) and panicum mosaic satellite virus (satPaMV, NC_003847). Satellite maize white line mosaic virus (SV-MWLMV, NC_003631) and strawberry latent ringspot virus satellite RNA (SLRSV, NC_003848) have the sequence length a little bit longer than 1000 bp. As can be seen from Table 2, the gene-finding results of ZCURVE_V are more consistent with the RefSeq annotations than those of GeneMark for the four very small viral genomes.",
+            "cite_spans": [],
+            "section": "Comparisons with GeneMark (II): viral genomes with particular genomic features ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 469,
+                    "end": 470,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The genome of Amsacta moorei entomopoxvirus (AmEPV, NC_002520) was sequenced in 2000 [14]. To our knowledge, it has the lowest genomic GC content among all the organisms completely sequenced so far, which is 17.78%. In the original annotation by the submitter of GenBank entries, all of the ORFs larger than 180 bp are predicted as possible protein-coding genes [14]. Such annotation method is very likely to generate over-annotation. The current RefSeq annotation curated by NCBI staff remains nearly the same compared with the original annotation, i.e., the genome contains 295 possible genes. After running ZCURVE_V, 245 out of the 295 annotated genes are found and the number of additionally predicted genes is 5. Among the 50 (295-245) genes not predicted by ZCURVE_V, only one gene has putative function and another two are similar to existing genes without functions in public databases, while the remaining 47 are only annotated as 'hypothetical proteins'. The result supports the notion that protein-coding genes are over-annotated in the amsacta moorei entomopoxvirus genome. The GeneMark VIOLIN database correctly predicts 239 annotated genes while the number of additionally predicted genes is as high as 323. It is obvious that most of these additional genes predicted by the GeneMark VIOLIN database are non-coding ORFs. Perhaps the severe over-prediction of the GeneMark VIOLIN database for the amsacta moorei entomopoxvirus genome is caused by its weak adaptability to genomes with particular features.",
+            "cite_spans": [
+                {
+                    "start": 86,
+                    "end": 88,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 363,
+                    "end": 365,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Comparisons with GeneMark (II): viral genomes with particular genomic features ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "According to the report \"AIDS Epidemic Update 2004\" launched by WHO and UNAIDS: the total number of people living with the human immunodeficiency virus (HIV) increased in 2004 to reach its highest level ever: an estimated 39.4 million people are living with the virus [15]. The global AIDS epidemic killed 3.1 million people in the past year. In the current GenBank annotation for HIV-1 (GenBank AC: AF033819), 9 protein-coding genes are contained, in which 7 genes are single-exon genes without any intron. Genes tat and rev have one intron, respectively. When using default settings, ZCURVE_V and the GeneMark VIOLIN database predict 7 and 6 genes for the genome, respectively. The predicted results are listed in Table 3. As can be seen, both ZCURVE_V and the GeneMark VIOLIN database predict the 5 annotated single-exon genes pol, gag, vpr, env and nef. The single-exon gene vif is correctly predicted by ZCURVE_V, whereas the GeneMark VIOLIN database misses it. The single-exon gene vpu is correctly predicted by the GeneMark VIOLIN database, whereas ZCURVE_V misses it. In addition, ZCURVE_V correctly predicts the 5' end for the intron-contained gene tat. After adjusting the default settings, i.e., using the 'Keep Overlapping Genes' option, the gene vpu and one additional gene located at positions 7602\u20137694 bp are predicted by ZCURVE_V.",
+            "cite_spans": [
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Applying ZCURVE_V to HIV-1, HBV and SARS-CoV genomes ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 722,
+                    "end": 723,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Hepatitis B virus is another virus that severely threatens human health. Currently, GenBank annotation contains 4 single-exon genes for HBV (GenBank AC: X04615). Among the 4 genes, gene P is jointly composed by two fragments. When using default settings, ZCURVE_V and the GeneMark VIOLIN database predict 3 and 2 genes for the genome, respectively. The predicted results are listed in Table 4. As can be seen, both ZCURVE_V and the GeneMark VIOLIN database predict gene P. Gene C is correctly predicted by ZCURVE_V, but the GeneMark VIOLIN database misses it. Gene X is correctly predicted by GeneMark, but ZCURVE_V misses it. In addition, ZCURVE_V predicts one additional gene that is embedded within gene P. After adjusting the default settings, i.e., using the 'Keep Overlapping Genes' option, gene S and X are also correctly predicted by ZCURVE_V.",
+            "cite_spans": [],
+            "section": "Applying ZCURVE_V to HIV-1, HBV and SARS-CoV genomes ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 391,
+                    "end": 392,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "SARS is a life-threatening disease that spread to may countries around the world in 2003 [16]. SARS is caused by a novel coronavirus, called SARS-coronavirus or SARS-CoV. SARS-CoVs belong to coronavirus and their genomes are single-stranded [17]. Among the 14 protein-coding genes annotated in SARS-CoV TOR2 genome (NC_004718), 12 genes are found by the ZCURVE_V system. The two genes missed by it are completely or nearly completely embedded within other genes and are very unlikely to encode proteins [11], while the GeneMark VIOLIN annotation misses 4 ones out of the 14 annotated genes [9].",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 92,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 242,
+                    "end": 244,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 504,
+                    "end": 506,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 591,
+                    "end": 592,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Applying ZCURVE_V to HIV-1, HBV and SARS-CoV genomes ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, the gene-finding performance of ZCURVE_V for the three well studied life-threatening viruses is generally better than that of GeneMark.",
+            "cite_spans": [],
+            "section": "Applying ZCURVE_V to HIV-1, HBV and SARS-CoV genomes ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "Gene-finding programs may be used to find new protein-coding genes that have been missed from the public databases. Using ZCURVE_V, we find some new genes missed from both the RefSeq annotations and GenBank annotations, which have significant similarities with other genes deposited in the public databases, as in the cases of the genomes of bacteriophage VT2-Sa (NC_000902), ectocarpus siliculosus virus (NC_002687) and pseudomonas phage D3 (NC_002484). The detailed predicted results of ZCURVE_V for the three genomes are listed in the Appendix, see [18]. Now let us inspect a new gene located at positions c4872\u2013c5093 of phage VT2-Sa genome coding for a putative protein with 72 amino acids. Using a BLASTP search against NR databases, a significant similarities (E-value for BLASTP = 6e-25, Identities = 100%) with gene (RefSeq AC: NP_308832) has been found, implying that the predicted gene codes for a C4-type zinc finger protein in Stx1 and Stx2 converting bacteriophage genomes. It should be noted that the GeneMark VIOLIN database also misses this gene. Another noticeable new gene is located at the positions 55,832 bp-56,248 bp in the direct strand of the pseudomonas phage D3 genome. The amino acid sequence of the protein encoded by this gene is found to have a significant similarity (E-value for BLASP = 8e-15, Identities = 58%) with the phage holin protein (RefSeq AC: NP_743718) found in the pseudomonas putida KT2440 genome. It also has a significant similarity (E-value = 4e-08, Identities = 52%) with the lysis protein (RefSeq AC: NP_892111) found in the genome of bacteriophage PY54. Because the two new genes have very significant similarities with function-known genes in public databases, they are likely to be functional genes missed in both GenBank and RefSeq annotations. According to our suggestions to NCBI staff, now they have been included in the current RefSeq annotations (RefSeq AC: YP_089649 and YP_138545, respectively).",
+            "cite_spans": [
+                {
+                    "start": 553,
+                    "end": 555,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "New genes missed by both RefSeq annotations and GenBank annotations ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "Compared with GeneMark, a more convenient feature of ZCURVE_V is that the coding potential scores VZ are provided for all of the predicted genes. The predicted genes with higher VZ scores have higher possibility to encode proteins. Bacteriophage P4 genome (NC_001609) is studied here as an example. As is shown in Table 5, all the predicted genes with VZ scores lower than 0.30 have no putative functions, in other words, all the function-known genes have the VZ scores higher than 0.30. On the other hand, it is possible that false positive predictions are generally associated with lower VZ scores. Therefore, the use of ZCURVE_V may reduce experimental expenses when studying functions of predicted genes by excising false positive predicted genes, based on the associated coding potential scores VZ.",
+            "cite_spans": [],
+            "section": "Relationship between functions of predicted genes and their VZ scores ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 320,
+                    "end": 321,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "All the GeneMark family, the heuristic approach and the VIOLIN database for viral and phage gene-finding have some limitations. Heuristic approach [8] is a self-training method and no human intervention is required during the running process. However, the performance of heuristic approach is generally worse than that of the GeneMark VIOLIN database [9]. The GeneMark VIOLIN database provides just an up-to-date analysis of newly sequenced viral genomes and is not able to be used to analyze anonymous viral genomes. Similar to the heuristic approach of GeneMark family, the ZCURVE_V is also a self-training method and enables analyzing any anonymous viral and phage genomes without any human intervention. Because the executable version of the program ZCURVE_V may be downloaded and run locally, it will be used more conveniently. More specific options when running ZCURVE_V strengthen its power. The prediction of ZCURVE_V is more accurate than that of GeneMark for viral or phage genomes shorter than 1000 bp. Therefore, it is suggested that ZCURVE_V may serve as a preferred gene-finding tool for viral and phage genomes, especially for anonymous viral and phage genomes newly sequenced. However, we should point out the limitations of ZCURVE_V when predicting genes for viruses that use alternative coding schemes. This includes RNA editing, splicing, polyprotein processing, etc. Generally, like GeneMark, ZCURVE_V cannot deal with the above special cases.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 149,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 352,
+                    "end": 353,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Preferred utilization of ZCURVE_V in the annotation of anonymous viral genomes ::: Results and Discussions",
+            "ref_spans": []
+        },
+        {
+            "text": "Both GeneMark and ZCURVE_V are based on statistical characteristics of coding (non-coding) sequences. However the former is Markov-chain-based and mainly considers the local characteristics of DNA sequence, whereas the latter is the Z-curve-based and lays stress on global characteristics. Due to the difference of inherent algorithm, the predictions of ZCURVE_V and GeneMark are different, although most of the predicted genes are identical. Higher accuracy may be obtained by combining them, in which genes predicted by either ZCURVE_V system or the GeneMark VIOLIN database are finally predicted as genes. Clover yellow mosaic virus (CLYMV, NC_001753), lymphocystis disease virus 1 (LCDV-1, NC_001824), ....transmissible gastroenteritis virus (TGEV, NC_002306) and yaba-like disease virus (YLDV, NC_002642) are chosen to demonstrate the effectiveness of joint applications of both systems. The results are listed in Table 6. As can be seen, the number of genes missed by the ZCURVE_V program decreases significantly although the number of additional predicted genes increases. Currently, it becomes a hotspot to develop an integrated genome annotation platform by joint applications of two or more systems based on different statistic analysis principles [10,19]. Similarly, joint applications of two or more viral gene-finding programs are also of necessity and feasibility. The programs of ZCURVE_V, GeneMark and others may all be jointed together to reach more accurate results. One referee of the manuscript points out that combining the use of prediction programs based on statistical measures such as ZCURVE_V with detection of functional motifs, sequence similarity, conservation of orthologs, presence of regulatory signals, etc., would be useful. Sequence similarity and conservation of orthologs methods may effectively reduce false positive predictions. Anyway, no one program can be used in isolation for making accurate predictions of the gene complement of any viral genome. Therefore use of multiple programs is always warranted. However, no concrete approach is provided to joint different information into a unified tool to reach the maximum accuracy. It seems that this is a topic of further study, not being included into the present paper.",
+            "cite_spans": [
+                {
+                    "start": 1259,
+                    "end": 1261,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1262,
+                    "end": 1264,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Joint applications of ZCURVE_V and GeneMark gene-finding family ::: Results and Discussions",
+            "ref_spans": [
+                {
+                    "start": 925,
+                    "end": 926,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "A new self-training system, ZCURVE_V, for finding genes in viral and phage genomes has been proposed. The new system ZCURVE_V has been run for 979 viral and 212 phage genomes, respectively, and satisfactory results are obtained. To have a fair comparison with the currently available software of similar function, GeneMark, a total of 30 viral genomes that have not been annotated by GeneMark are selected to be tested. Consequently, the average specificity of both systems is well matched, however, the average sensitivity of ZCURVE_V for smaller viral genomes (< 100 kb), which constitute the main parts of viral genomes sequenced so far, is higher than that of GeneMark. Additionally, for the genome of amsacta moorei entomopoxvirus, probably with the lowest genomic GC content among the sequenced organisms, the accuracy of ZCURVE_V is much better than that of GeneMark, because the later predicts hundreds of false-positive genes. ZCURVE_V is also used to analyze some well studied genomes, such as HIV-1, HBV and SARS-CoV. Accordingly, the performance of ZCURVE_V is generally better than that of GeneMark. Finally, GeneMark is not downloadable, whereas ZCURVE_V may be downloaded and run locally, particularly facilitating its utilization. Based on the above merits, it is suggested that ZCURVE_V may serve as a preferred gene-finding tool for viral and phage genomes newly sequenced. However, it is also shown that joint applications of both systems, ZCURVE_V and GeneMark, lead to better gene-finding results. The system ZCURVE_V is freely available at: .",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In the present algorithm, only one seed ORF is required for a viral genome. This seed ORF is selected using a simple approach. It is found that an ORF with the largest length among all others in a genome is very likely to be a protein-coding gene. This ORF is called the 'Maximum ORF' in this paper. After carefully investigating over 100 viral genomes that have annotated genes, the deduction that the 'Maximum ORF' is a gene is valid accurately. For the two very small viral genomes, cereal yellow dwarf virus -RPV satellite RNA (NC_003533) and arabis mosaic virus small satellite RNA (NC_001546), there are no genes at al, indicating that the seed ORF so obtained is meaningless for these two genomes. If the 'Maximum ORF' is larger than 400 bp, it is directly regarded as a seed ORF (gene). However, if the 'Maximum ORF' is less than 400 bp, it is regarded as a seed ORF only if the base composition at the second codon position meets the following equation: G2 < (A2 + C2 + T2)/3 + 0.1, where A2, C2, G2 and T2 are the occurrence frequencies of bases at the second position of an ORF. This equation approximately reflects the fact that bases at the second codon position lack guanine to some degree [23]. If a seed ORF is found, then it will be used as a training sample to calculate the related parameters. Otherwise, if there is no seed ORF found, it means that the analyzed viral genome contains no functional genes.",
+            "cite_spans": [
+                {
+                    "start": 1205,
+                    "end": 1207,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "(1) Extracting the seed ORF for the analyzed genome ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The methodology adopted here is based on the Z curve [12], which is another representation of DNA sequence. Here the algorithm is presented briefly as follows. The frequencies of bases A, C, G and T occurring in an ORF or a fragment of DNA sequence with bases at positions 1, 4, 7, ...; 2, 5, 8, ..., and 3, 6, 9, ..., are denoted by a1, c1, g1, t1, a2, c2, g2, t2, a3, c3, g3, t3 respectively. They are actually the frequencies of bases at the 1st, 2nd and 3rd codon positions. Based on the Z curve (12), ai, ci, gi, ti are mapped onto a point Pi in a 3-dimensinal space Vi, i = 1, 2, 3. The coordinates of Pi, denoted by xi, yi, zi, are determined by the Z-transform of DNA sequence [12].",
+            "cite_spans": [
+                {
+                    "start": 54,
+                    "end": 56,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 686,
+                    "end": 688,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "{xi=(ai+gi)\u2212(ci+ti),yi=(ai+ci)\u2212(gi+ti),xi,yi,zi\u2208[\u22121,1],zi=(ai+ti)\u2212(gi+ci).i=1,2,3.     3\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGabaqaauaabaqadqaaaaqaaiabdIha4naaBaaaleaacqWGPbqAaeqaaOGaeyypa0JaeiikaGIaemyyae2aaSbaaSqaaiabdMgaPbqabaGccqGHRaWkcqWGNbWzdaWgaaWcbaGaemyAaKgabeaakiabcMcaPiabgkHiTiabcIcaOiabdogaJnaaBaaaleaacqWGPbqAaeqaaOGaey4kaSIaemiDaq3aaSbaaSqaaiabdMgaPbqabaGccqGGPaqkcqGGSaalaeaaaeaaaeaaaeaacqWG5bqEdaWgaaWcbaGaemyAaKgabeaakiabg2da9iabcIcaOiabdggaHnaaBaaaleaacqWGPbqAaeqaaOGaey4kaSIaem4yam2aaSbaaSqaaiabdMgaPbqabaGccqGGPaqkcqGHsislcqGGOaakcqWGNbWzdaWgaaWcbaGaemyAaKgabeaakiabgUcaRiabdsha0naaBaaaleaacqWGPbqAaeqaaOGaeiykaKIaeiilaWcabaGaemiEaG3aaSbaaSqaaiabdMgaPbqabaGccqGGSaalcqWG5bqEdaWgaaWcbaGaemyAaKgabeaakiabcYcaSaqaaiabdQha6naaBaaaleaacqWGPbqAaeqaaOGaeyicI4Saei4waSLaeyOeI0IaeGymaeJaeiilaWIaeGymaeJaeiyxa0LaeiilaWcabaaabaGaemOEaO3aaSbaaSqaaiabdMgaPbqabaGccqGH9aqpcqGGOaakcqWGHbqydaWgaaWcbaGaemyAaKgabeaakiabgUcaRiabdsha0naaBaaaleaacqWGPbqAaeqaaOGaeiykaKIaeyOeI0IaeiikaGIaem4zaC2aaSbaaSqaaiabdMgaPbqabaGccqGHRaWkcqWGJbWydaWgaaWcbaGaemyAaKgabeaakiabcMcaPiabc6caUaqaaaqaaaqaaaaacqWGPbqAcqGH9aqpcqaIXaqmcqGGSaalcqaIYaGmcqGGSaalcqaIZaWmcqGGUaGlaiaawUhaaiaaxMaacaWLjaacbeGae83mamdaaa@8F74@",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The Z-transform of DNA sequence transforms the four frequencies of DNA bases into the coordinates of a point in a 3-dimensional space. In addition to the frequencies of codon-position-dependent single nucleotides, we need to consider the frequencies of phase-specific dinucleotides. Let the frequencies of the 16 dinucleotides AA, AC, ..., and TT occurring at the codon positions1-2 and 2\u20133 of an ORF or a fragment of DNA sequence be denoted by p12(AA), p12(AC), ...,p12(TT); p12(AA), p12(AC), ... and p12(TT) respectively. Using the Z-transform [12], we find",
+            "cite_spans": [
+                {
+                    "start": 547,
+                    "end": 549,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "{xkX=(pk(XA)+pk(XG))\u2212(pk(XC)+pk(XT)),ykX=(pk(XA)+pk(XC))\u2212(pk(XG)+pk(XT)),X=A,C,G,T,k=12,23,zkX=(pk(XA)+pk(XT))\u2212(pk(XG)+pk(XC)).     4\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGabaqaauaabaqadmaaaeaacqWG4baEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaOGaeyypa0JaeiikaGIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGbbqqcqGGPaqkcqGHRaWkcqWGWbaCdaWgaaWcbaGaem4AaSgabeaakiabcIcaOiabbIfayjabbEeahjabcMcaPiabcMcaPiabgkHiTiabcIcaOiabdchaWnaaBaaaleaacqWGRbWAaeqaaOGaeiikaGIaeeiwaGLaee4qamKaeiykaKIaey4kaSIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGubavcqGGPaqkcqGGPaqkcqGGSaalaeaaaeaaaeaacqWG5bqEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaOGaeyypa0JaeiikaGIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGbbqqcqGGPaqkcqGHRaWkcqWGWbaCdaWgaaWcbaGaem4AaSgabeaakiabcIcaOiabbIfayjabboeadjabcMcaPiabcMcaPiabgkHiTiabcIcaOiabdchaWnaaBaaaleaacqWGRbWAaeqaaOGaeiikaGIaeeiwaGLaee4raCKaeiykaKIaey4kaSIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGubavcqGGPaqkcqGGPaqkcqGGSaalaeaacqqGybawcqGH9aqpcqqGbbqqcqGGSaalcqqGdbWqcqGGSaalcqqGhbWrcqGGSaalcqqGubavcqGGSaalaeaacqWGRbWAcqGH9aqpcqaIXaqmcqaIYaGmcqGGSaalcqaIYaGmcqaIZaWmcqGGSaalaeaacqWG6bGEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaOGaeyypa0JaeiikaGIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGbbqqcqGGPaqkcqGHRaWkcqWGWbaCdaWgaaWcbaGaem4AaSgabeaakiabcIcaOiabbIfayjabbsfaujabcMcaPiabcMcaPiabgkHiTiabcIcaOiabdchaWnaaBaaaleaacqWGRbWAaeqaaOGaeiikaGIaeeiwaGLaee4raCKaeiykaKIaey4kaSIaemiCaa3aaSbaaSqaaiabdUgaRbqabaGccqGGOaakcqqGybawcqqGdbWqcqGGPaqkcqGGPaqkcqGGUaGlaeaaaeaaaaaacaGL7baacaWLjaGaaCzcaGqabiab=rda0aaa@BAD0@",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where xkX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG4baEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EA@, ykX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG5bqEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EC@ and zkX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG6bGEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EE@ are the coordinates, X = A, C, G, T and k = 12, 23. Let the 3-dimensional space VkX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaee4AaSgabaGaeeiwaGfaaaaa@30A0@ be spanned by xkX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG4baEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EA@, ykX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG5bqEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EC@ and zkX\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG6bGEdaqhaaWcbaGaem4AaSgabaGaemiwaGfaaaaa@30EE@. The direct-sum of the subspaces V1, V2, V3, V12A\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeymaeJaeeOmaidabaGaeeyqaeeaaaaa@30E9@, V12C\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeymaeJaeeOmaidabaGaee4qameaaaaa@30ED@, V12G\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeymaeJaeeOmaidabaGaee4raCeaaaaa@30F5@, V12T\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeymaeJaeeOmaidabaGaeeivaqfaaaaa@310F@, V23A\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeOmaiJaee4mamdabaGaeeyqaeeaaaaa@30ED@, V23C\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeOmaiJaee4mamdabaGaee4qameaaaaa@30F1@, V23G\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeOmaiJaee4mamdabaGaee4raCeaaaaa@30F9@ and V23T\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeOmaiJaee4mamdabaGaeeivaqfaaaaa@3113@ is denoted by a 33-dimensional space V, i.e., V = V1 \u2295 V2 \u2295 V3 \u2295 V12A\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeymaeJaeeOmaidabaGaeeyqaeeaaaaa@30E9@ \u2295 ..... \u2295 V23T\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvdaqhaaWcbaGaeeOmaiJaee4mamdabaGaeeivaqfaaaaa@3113@, where the symbol \u2295 denotes the direct-sum of two subspaces. The 33 components of the space V, i.e., u1, u2, ..., u33, are defined as follows",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "{u1=x1,u2=y1,u3=z1,u4=x2,u5=y2,u6=z2,u7=x3,u8=y3,u9=z3.     5\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGabaqaauaabaqadmaaaeaacqWG1bqDdaWgaaWcbaGaeGymaedabeaakiabg2da9iabdIha4naaBaaaleaacqaIXaqmaeqaaOGaeiilaWcabaGaemyDau3aaSbaaSqaaiabikdaYaqabaGccqGH9aqpcqWG5bqEdaWgaaWcbaGaeGymaedabeaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIZaWmaeqaaOGaeyypa0JaemOEaO3aaSbaaSqaaiabigdaXaqabaGccqGGSaalaeaacqWG1bqDdaWgaaWcbaGaeGinaqdabeaakiabg2da9iabdIha4naaBaaaleaacqaIYaGmaeqaaOGaeiilaWcabaGaemyDau3aaSbaaSqaaiabiwda1aqabaGccqGH9aqpcqWG5bqEdaWgaaWcbaGaeGOmaidabeaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaI2aGnaeqaaOGaeyypa0JaemOEaO3aaSbaaSqaaiabikdaYaqabaGccqGGSaalaeaacqWG1bqDdaWgaaWcbaGaeG4naCdabeaakiabg2da9iabdIha4naaBaaaleaacqaIZaWmaeqaaOGaeiilaWcabaGaemyDau3aaSbaaSqaaiabiIda4aqabaGccqGH9aqpcqWG5bqEdaWgaaWcbaGaeG4mamdabeaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaI5aqoaeqaaOGaeyypa0JaemOEaO3aaSbaaSqaaiabiodaZaqabaGccqGGUaGlaaaacaGL7baacaWLjaGaaCzcaGqabiab=vda1aaa@7097@",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "{u10=x12A,u11=y12A,u12=z12A,u13=x12C,u14=y12C,u15=z12C,u16=x12G,u17=y12G,u18=z12G,u19=x12T,u20=y12T,u21=z12T,     5'\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGabaqaauaabaqaemaaaaqaaiabdwha1naaBaaaleaacqaIXaqmcqaIWaamaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabigdaXiabikdaYaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaIXaqmaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabigdaXiabikdaYaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaIYaGmaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabigdaXiabikdaYaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaIZaWmaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabigdaXiabikdaYaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI0aanaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabigdaXiabikdaYaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI1aqnaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabigdaXiabikdaYaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI2aGnaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabigdaXiabikdaYaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI3aWnaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabigdaXiabikdaYaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI4aaoaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabigdaXiabikdaYaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIXaqmcqaI5aqoaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabigdaXiabikdaYaqaaiabdsfaubaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaIWaamaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabigdaXiabikdaYaqaaiabdsfaubaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaIXaqmaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabigdaXiabikdaYaqaaiabdsfaubaakiabcYcaSaaaaiaawUhaaiaaxMaacaWLjaacbeGae8xnauJae83jaCcaaa@AA82@",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "{u22=x23A,u23=y23A,u24=z23A,u25=x23C,u26=y23C,u27=z23C,u28=x23G,u29=y23G,u30=z23G,u31=x23T,u32=y23T,u33=z23T.     5''\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGabaqaauaabaqaemaaaaqaaiabdwha1naaBaaaleaacqaIYaGmcqaIYaGmaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabikdaYiabiodaZaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaIZaWmaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabikdaYiabiodaZaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI0aanaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabikdaYiabiodaZaqaaiabdgeabbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI1aqnaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabikdaYiabiodaZaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI2aGnaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabikdaYiabiodaZaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI3aWnaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabikdaYiabiodaZaqaaiabdoeadbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI4aaoaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabikdaYiabiodaZaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIYaGmcqaI5aqoaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabikdaYiabiodaZaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIZaWmcqaIWaamaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabikdaYiabiodaZaqaaiabdEeahbaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIZaWmcqaIXaqmaeqaaOGaeyypa0JaemiEaG3aa0baaSqaaiabikdaYiabiodaZaqaaiabdsfaubaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIZaWmcqaIYaGmaeqaaOGaeyypa0JaemyEaK3aa0baaSqaaiabikdaYiabiodaZaqaaiabdsfaubaakiabcYcaSaqaaiabdwha1naaBaaaleaacqaIZaWmcqaIZaWmaeqaaOGaeyypa0JaemOEaO3aa0baaSqaaiabikdaYiabiodaZaqaaiabdsfaubaakiabc6caUaaaaiaawUhaaiaaxMaacaWLjaacbeGae8xnauJae83jaCIae83jaCcaaa@ABAD@",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Therefore, an ORF or a fragment of DNA sequence can be represented by a point or a vector in the 33-dimensional space V. Note that ui \u220a [-1,+1], i = 1, 2, ..., 33. Therefore, the space V is a 33-dimensional super-cube with the side length of 2. A total of 33 parameters denoted by u1o\u2212u33o\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaieWacqWF1bqDdaWgaaWcbaGaeGymaeZaaSbaaWqaaiabb+gaVbqabaaaleqaaOGaeyOeI0Iae8xDau3aaSbaaSqaaiabiodaZiabiodaZmaaBaaameaacqqGVbWBaeqaaaWcbeaaaaa@36F7@ are calculated according to the equation (5) for the seed ORF, which corresponds to a point O in the 33-dimensional space. These 33 parameters will be used to differentiate coding/non-coding ORFs.",
+            "cite_spans": [],
+            "section": "(2) Training the parameter used to describe the coding potential ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All the ORFs longer than a given value, for example 90 bp, are extracted as candidates of genes. For each ORF, which is represented by a point in the 33-dimensional space, the Euclidean distance of this point to the point O is obtained",
+            "cite_spans": [],
+            "section": "(3) Seeking all ORFs and predicting possible protein-coding genes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "D(u)={\u2211i=133(ui\u2212uio)2}1/2.     6\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGebarcqGGOaakcqWG1bqDcqGGPaqkcqGH9aqpdaGadaqaamaaqahabaGaeiikaGIaemyDau3aaSbaaSqaaiabbMgaPbqabaGccqGHsislcqWG1bqDdaWgaaWcbaGaeeyAaKMaee4Ba8gabeaakiabcMcaPmaaCaaaleqabaGaeGOmaidaaaqaaiabdMgaPjabg2da9iabigdaXaqaaiabiodaZiabiodaZaqdcqGHris5aaGccaGL7bGaayzFaaWaaWbaaSqabeaacqaIXaqmcqGGVaWlcqaIYaGmaaGccqGGUaGlcaWLjaGaaCzcaGqabiab=zda2aaa@4CDC@",
+            "cite_spans": [],
+            "section": "(3) Seeking all ORFs and predicting possible protein-coding genes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A coding potential index VZ is defined as",
+            "cite_spans": [],
+            "section": "(3) Seeking all ORFs and predicting possible protein-coding genes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "VZ=\u230aD02\u2212D(u)2\u230b/(2\u00d7D02)     7\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGwbGvcqqGAbGwcqGH9aqpdaGbdaqaaiabdseaenaaDaaaleaacqaIWaamaeaacqaIYaGmaaGccqGHsislcqWGebarcqGGOaakcqWG1bqDcqGGPaqkdaahaaWcbeqaaiabikdaYaaaaOGaayj84laawUp+aiabc+caViabcIcaOiabikdaYiabgEna0kabdseaenaaDaaaleaacqaIWaamaeaacqaIYaGmaaGccqGGPaqkcaWLjaGaaCzcaGqabiab=Dda3aaa@49B6@",
+            "cite_spans": [],
+            "section": "(3) Seeking all ORFs and predicting possible protein-coding genes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where D0 is a constant called maximum Euclidean distance, whose default value is 6.90\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaGcaaqaaiabiAda2iabc6caUiabiMda5iabicdaWaWcbeaaaaa@3093@. All ORFs with VZ scores greater than 0 are regarded as possible protein-coding genes, whereas those with VZ scores less than 0 are regarded as non-coding.",
+            "cite_spans": [],
+            "section": "(3) Seeking all ORFs and predicting possible protein-coding genes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Among all the ORFs having VZ score larger than 0, some ORFs are falsely predicted as genes owing to their overlapping with coding ORFs. In the development of ZCURVE system, a strategy was proposed to deal with overlapping ORFs [11]. Later, this strategy was adopted again in the ZCURVE_CoV system [8]. Here the same strategy is employed once more, while the related parameters are adjusted because of the change of the definition of coding potential score. Briefly, if the VZ score of the longer ORF between the two overlapping ORFs minus a given value is still larger than that of the shorter one, it is recognized as gene, and the shorter is a non-coding one. Otherwise, both are kept as coding. For more detail, refer to [4].",
+            "cite_spans": [
+                {
+                    "start": 228,
+                    "end": 230,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 298,
+                    "end": 299,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 725,
+                    "end": 726,
+                    "mention": "4",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "(4) Dealing with overlapping ORFs ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "There are three main different features between the present viral gene-finding system ZCURVE_V and our previously reported bacterial gene-finding system ZCURVE. Firstly, two different methods are used to generate seed ORFs: one simply selecting the 'Maximum ORF' and another selecting those long and non-overlapping ORFs as seed ORFs. Secondly, no negative samples (non-coding sequences) are required in the training set of the algorithm for ZCURVE_V system. Thirdly, instead of Fisher linear discriminant algorithm, Euclidean distance discriminant method is used here. Due to the adaptation, the ZCURVE_V system is capable of recognizing protein-coding genes in any anonymous viral or phage genomes, even for those shorter than 1000 bp.",
+            "cite_spans": [],
+            "section": "(4) Dealing with overlapping ORFs ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A web interface of the ZCURVE_V system, has been constructed at the site: . When a user pastes a viral or phage genomic sequence into the input window of the homepage, the gene-finding results will be returned to the user immediately. When running ZCURVE_V, a total of 9 specific options are selectable. These options include 'the minimum gene length', 'the maximum Euclidean distance D0', 'the minimum coding potential score VZ', 'belonging to mycoplasma or not', 'being single-stranded DNA/RNA or not', 'the type of start codons', 'keeping overlapping genes or not', 'providing personal seed ORF sequence or not' and 'relocating translation start sites for predicted genes or not', respectively. Registered users may also download the executable version of the program ZCURVE_V, and run it on his (her) computer under the platforms of either Windows (95/98/NT/Me/2000 or higher), or Linux (Redhat 9.0 or higher), or SGI IRIX 6.5. The predicted results for 979 viral and 212 phage genomes are provided through the database named DOVGZ (Database Of Viral Genes predicted by ZCURVE_V), which is available online [24].",
+            "cite_spans": [
+                {
+                    "start": 1112,
+                    "end": 1114,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "CTZ guided the whole study and took part in writing the manuscript. FBG designed the algorithm and wrote the computer program. He also run the program for about 1000 genomes and took part in writing the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: The numbers of annotated and additional genes found by ZCURVE_V and GeneMark gene-finding family, respectively, for 30 viral genomes with different chromosome lengths a\na The names of the viruses are listed in the descending order of their chromosome sequence lengths. The abbreviation names of viruses are used. See the text for the detail. b For the genomes of canarypox virus (CNPV), orf virus (ORFV), bovine papular stomatitis virus (BPSV) and neodiprion lecontei nucleopolyhedrovirus (NeleNPV), genes were predicted directly by GeneMarks program, whereas for the other 26 viral genomes the data deposited in the GeneMark VIOLIN database are used. c The values are averaged over the upper 15, lower 15 and all the 30 viral genomes, respectively. d Glimmer 2.02 predicted no genes for simian hemorrhagic fever virus (SHFV) and semliki forest virus (SFV) genomes.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The numbers of annotated and additional genes found by ZCURVE_V and the GeneMark VIOLIN database, respectively, for the five genomes with particular features a\na Of the five viral genomes, cereal yellow dwarf virus-RPV satellite RNA (CYDV-RPV satRNA), panicum mosaic satellite virus (satPaMV), satellite maize white line mosaic virus (SV-MWLMV) and strawberry latent ringspot virus satellite RNA (SLRSV) are less than or slightly larger than 1000 bp in length, whereas amsacta moorei entomopoxvirus (AmEPV) has probably the lowest GC content among the sequenced organisms (17.78%). b Data deposited in the GeneMark VIOLIN database are used. c For this genome, we adjusted the default settings, i.e., using the 'single-stranded virus' option.",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Genes annotated and predicted by ZCURVE_V and the GeneMark VIOLIN database for human immunodeficiency virus 1 (HIV-1) a\na Bold denotes gene found by adapting the default settings of ZCURVE_V, i.e., keeping the overlapping genes. Bold and italic figures are associated with the gene, in which the 3' end is not consistent with annotated one, but is embedded within it.",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Genes annotated and predicted by ZCURVE_V and the GeneMark VIOLIN database for hepatitis B virus (HBV) a\na Bold denotes gene found by adapting the default settings of ZCURVE_V, i.e., keeping the overlapping genes. Bold and italic figures are associated with the gene that is embedded within the annotated gene.",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: The relationship between the values of VZ score and functions of predicted proteins for the bacteriophage P4\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Joint applications of ZCURVE_V and GeneMark for the four viral genomesa\na They are clover yellow mosaic virus (CLYMV), lymphocystis disease virus 1 (LCDV-1), ....transmissible gastroenteritis virus (TGEV) and yaba-like disease virus (YLDV) genomes, respectively.",
+            "type": "table"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "GeneMarkS: a self-training method for prediction of gene starts in microbial genomes. Implications for finding sequence motifs in regulatory regions",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Besemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lomsadze",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res",
+            "volume": "29",
+            "issn": "",
+            "pages": "2607-2618",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/29.12.2607"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "YACOP: Enhanced gene prediction obtained by a combination of existing methods",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tech",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Merkl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "In Silico Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": "441-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "ZCURVE_CoV: a new system to recognize protein coding genes in coronavirus genomes, and its applications in analyzing SARS-CoV genomes",
+            "authors": [
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Ou",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "307",
+            "issn": "",
+            "pages": "382-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0006-291X(03)01192-6"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Analysis of distribution of bases in the coding sequences by a diagrammatic technique",
+            "authors": [
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Nucleic Acids Res",
+            "volume": "19",
+            "issn": "",
+            "pages": "6313-6317",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Evaluation of gene structure prediction programs",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Burset",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Guig\u00f3",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Genomics",
+            "volume": "34",
+            "issn": "",
+            "pages": "353-357",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/geno.1996.0298"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Complete genomic sequence of the Amsacta moorei entomopoxvirus: analysis and comparison with other poxviruses",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Bawden",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Glassberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Diggans",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Farmerie",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Moyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virology",
+            "volume": "274",
+            "issn": "",
+            "pages": "120-39",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/viro.2000.0449"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Joint United Nations Programme on HIV/AIDS (UNAIDS) and the World Health Organization (WHO), AIDS Epidemic Update, December 2004",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Goldsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Peret",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Emery",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Urbani",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Comer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1953-66",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa030781"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "The Genome sequence of the SARS-associated coronavirus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Astell",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Holt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Brooks-Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Butterfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Khattra",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Asano",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Barber",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Cloutier",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Coughlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Freeman",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Girn",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Griffith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Leach",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "McDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Montgomery",
+                    "suffix": ""
+                },
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Pandoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Petrescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Schein",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Siddiqui",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Smailus",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Stott",
+                    "suffix": ""
+                },
+                {
+                    "first": "GS",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Plummer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Andonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Artsob",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bastien",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Bernard",
+                    "suffix": ""
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Booth",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bowness",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Czub",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Drebot",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Fernando",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Flick",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Garbutt",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gray",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Grolla",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Feldmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kabani",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Normand",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Stroher",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Tipples",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tyler",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Vogrig",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Krajden",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Petric",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Upton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Roper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1085953"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Supplementary materials",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Development of joint application strategies for two microbial gene finders",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "McHardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Goesmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Puhler",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": "1622-31",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/bth137"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Microbial gene identification using interpolated Markov models",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Delcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kasif",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nucleic Acids Res",
+            "volume": "26",
+            "issn": "",
+            "pages": "544-548",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/26.2.544"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "GenBank: update",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Karsch-Mizrachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "D23-D26",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh045"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "NCBI Reference Sequence project: update and current status",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maglott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids",
+            "volume": "31",
+            "issn": "",
+            "pages": "34-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg111"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "GeneMark VIOLIN",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Translation framing code and frame-monitoring mechanism as suggested by the analysis of mRNA and 16 S rRNA nucleotide sequences",
+            "authors": [
+                {
+                    "first": "EN",
+                    "middle": [],
+                    "last": "Trifonov",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Mol Biol",
+            "volume": "194",
+            "issn": "",
+            "pages": "643-52",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0022-2836(87)90241-5"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "DOVGZ (Database Of Viral Genes predicted by ZCURVE_V)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Improved microbial gene identification with GLIMMER",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Delcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Harmon",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kasif",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucleic Acids Res",
+            "volume": "27",
+            "issn": "",
+            "pages": "4636-4641",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/27.23.4636"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "ZCURVE: a new system for recognizing protein-coding genes in bacterial and archaeal genomes",
+            "authors": [
+                {
+                    "first": "FB",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Ou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "1780-1789",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg254"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "CRITICA: coding region identification tool invoking comparative analysis",
+            "authors": [
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Badger",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Olsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol Biol Evol",
+            "volume": "16",
+            "issn": "",
+            "pages": "512-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Combining diverse evidence for gene recognition in completely sequenced bacterial genomes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Frishman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mironov",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Mewes",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gelfand",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nucleic Acid Res",
+            "volume": "26",
+            "issn": "",
+            "pages": "2941-2947",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/26.12.2941"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Gapped BLAST and PSI-BLAST: A new generation of protein database search programs",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Altschul",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Schaffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res",
+            "volume": "25",
+            "issn": "",
+            "pages": "3389-3402",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/25.17.3389"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Heuristic approach to deriving models for gene finding",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Besemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucleic Acids Res",
+            "volume": "27",
+            "issn": "",
+            "pages": "3911-20",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/27.19.3911"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Improving gene annotation of complete viral genomes",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rozanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lomsadze",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "7041-55",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg878"
+                ]
+            }
+        }
+    }
+}

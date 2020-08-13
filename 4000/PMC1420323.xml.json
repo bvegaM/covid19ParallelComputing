@@ -1,0 +1,2884 @@
+{
+    "paper_id": "PMC1420323",
+    "metadata": {
+        "title": "Developing nucleic acid-based electrical detection systems",
+        "authors": [
+            {
+                "first": "Magdalena",
+                "middle": [],
+                "last": "Gabig-Ciminska",
+                "suffix": "",
+                "email": "gabig@biotech.kth.se",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Biological macromolecules, such as nucleic acids, both deoxyribonucleic acid (DNA) and ribonucleic acid (RNA), and their analysis had an essential role in the rapid development of molecular genomics, biotechnology and medical diagnostics. One of the fastest growing areas in DNA/RNA analysis was the development of nucleic acid-based chips. Since their first development in the late 80s, nucleic acid chips have evolved into an important tool providing complex informative data. During the last years, this field quickly branched out, however, in its methodology and application. Different names for the chips, such as DNA/RNA chips, Biochips, Genechips, Biosensors or DNA arrays appeared [1,2]. Generally, a biochip is known as plastic, glass or silicon wafer that may rapidly detect chemical agents from biological material [3]. In the detections used most routinely in the area of chip technology, the participation of reporter molecules is observed. This type of sensors assures the high sensitivities, although paying greater attention label-independent electrical detection systems are even more promising, especially for application where for instance the analysis duration is more critical than the detection limit, or where the direct real time monitoring is desired [4-8]. Also, by eliminating the labeling steps from the protocol, simplicity of readout and increase in speed is obtained. Even though the development of such chips is still in its infancy, the detection of very low level, i.e. few molecules is expected.",
+            "cite_spans": [
+                {
+                    "start": 690,
+                    "end": 691,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 692,
+                    "end": 693,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 827,
+                    "end": 828,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1277,
+                    "end": 1278,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1279,
+                    "end": 1280,
+                    "mention": "8",
+                    "ref_id": "BIBREF59"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "In this review, the progress in electric chip operation, for both indirect detection of labeled molecules and direct analysis of label-free nucleic acids, is discussed mostly in respect to pathogen detection, as nucleic acid chip technology is receiving much interest as a potent tool for pathogenic microorganism detection [9-13]. Most likely, the detection of pathogens is nowadays somehow more important than it has been in the past. One serious problem is the threat of bioweapon attacks by terrorist organizations with microorganisms like Bacillus anthracis (anthrax), but also appearance of rapidly evolving pathogens, causing severe diseases, like SARS (by Coronavirus) and bird flu epidemics (by Orthomyxovirus) as well as antibiotic-resistant microorganisms. Moreover, food contamination by pathogenic microorganisms has made the development of fast, reliable, and sensitive analytical methods for use in monitoring of pathogens very important [12,14,15]. Methods for routine identification of microorganisms take at least several hours, a day or even more. Typically they take between 24~48 hrs to yield results. They rely on time-consuming growth in culture media, followed by isolation, biochemical identification, and sometimes serological determination [16-18]. The culture-based tests have a relatively low sensitivity, about 30~50%. That means for example that the probability of identifying a particular bacterium from the sepsis patient is less than 50% [18]. That is where new analytical techniques offer significant benefits. The developments in bioinformatics have widened the basis for organism identification to include also nucleic acid analysis. As a result, new analytical instruments, monitoring devices and rapid test kits have been created to detect and quantify bacteria [10,19-21]. Among them, real-time PCR systems are playing an increasingly important role. Although, very sensitive and suitable for routine use in analytical laboratories, they remain however limited for in field applications because of their inherent complexity. In this respect, most promising breakthrough in the area of rapid bacterial detection turned into biochip technology. Automated nucleic acid sensing biochip systems became a great tool for detection of different toxic microorganisms [8,12]. Their potential to be quantitative, useful even for unculturable microorganisms and lack of technical barriers for their deployment in the field cannot be overlooked.",
+            "cite_spans": [
+                {
+                    "start": 325,
+                    "end": 326,
+                    "mention": "9",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 327,
+                    "end": 329,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 954,
+                    "end": 956,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 957,
+                    "end": 959,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 960,
+                    "end": 962,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1268,
+                    "end": 1270,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1271,
+                    "end": 1273,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1473,
+                    "end": 1475,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1802,
+                    "end": 1804,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1805,
+                    "end": 1807,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1808,
+                    "end": 1810,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 2299,
+                    "end": 2300,
+                    "mention": "8",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 2301,
+                    "end": 2303,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Chip structure creates various advantages [2]. Users of this unique platform for nucleic acid analysis realize significant profits compared to other available conventional detection techniques.",
+            "cite_spans": [
+                {
+                    "start": 43,
+                    "end": 44,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "From optical to electrical systems, and from label-dependent to label-free approaches ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Apart from the underlying technology, biochips can be discerned by their evaluation method, which may be optical or electric (Figure 1) [22]. Most of the biochips available on the market are based on external or internal optical detection (fluorescence or chemiluminescence) [23]. The optical biosensors are also the best studied, but the detection limits are expected to be better for the electrical sensors along with the most simple instrumentation [24,25]. Current optical-based techniques still require a relatively large amount of power, need a bulky chip reader (optics, lasers and cameras), and thus are less applicable to miniaturization [22,25]. In today's optical techniques that often rely on the detection of fluorescence, unknown gene sequences are loaded onto a biochip after first having been tagged with a fluorescent dye emitting light of a particular wavelength when irradiated. A specific optical filter charge-coupled-camera (CCD) or Photo Multiplier Tube (PMT) with high precision mechanical set-up reads the light patterns emitted. These light patterns explain the composition of the substance detected. It should be mentioned that fluorescent dyes used as the standard labels for this type of optical chips are unfortunately very expensive and they can rapidly photo-bleach (the dye is photochemically converted to a non-fluorescent compound). An alternative to the fluorescence detection used in many systems is chemiluminescence format, which overcomes the use of fluorescent dyes used in the first case [23,25,26]. Parallel, much effort and work is continually performed on instrumentation improvements to be incorporated in optical systems, making them more and more feasible.",
+            "cite_spans": [
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 276,
+                    "end": 278,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 453,
+                    "end": 455,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 456,
+                    "end": 458,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 648,
+                    "end": 650,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 651,
+                    "end": 653,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1531,
+                    "end": 1533,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1534,
+                    "end": 1536,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1537,
+                    "end": 1539,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "From optical to electrical systems, and from label-dependent to label-free approaches ::: Review",
+            "ref_spans": [
+                {
+                    "start": 133,
+                    "end": 134,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "However, despite the performance of new generation readers with lower cost and diminished foot-print [27], optical readers remain expensive and not portable. This limits their use as a routine tool and also for dispersed testing and typing in the field [22]. The invention here is a biochip system that electronically detects biomolecules. However, it has to be mentioned that the use of an electrical signal rather than the optical signal is over 40 years old with the first experiments in this area being presented by Palecek [28]. Nowadays attractive systems have been described to make the electrical readout more sensitive and functional (Figure 1) [6,29]. They use the flow of electric current as a basis of measurement and analysis. The system is based on two major parts. The first part is a disposable sensor chip, and the second is a device for measurement of the electrical signal [30]. Electrical-based methods are advantageous in that they are more amenable to miniaturization [31]. The intensity of the electrical current indicates not only the presents/absence of the analyte in the sample, as it is in the case of optical systems, but also concentration of the tested substance. However, it should to be mentioned that nowadays also the optical methods are becoming quantitative. Optical biosensors correlate changes in the concentration of applied standards to direct changes in the characteristics of light. Afterwards target analyte response is evaluated.",
+            "cite_spans": [
+                {
+                    "start": 102,
+                    "end": 104,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 254,
+                    "end": 256,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 529,
+                    "end": 531,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 655,
+                    "end": 656,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 657,
+                    "end": 659,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 893,
+                    "end": 895,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 991,
+                    "end": 993,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "From optical to electrical systems, and from label-dependent to label-free approaches ::: Review",
+            "ref_spans": [
+                {
+                    "start": 651,
+                    "end": 652,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Since nucleic acids do not have intrinsic properties that are functional in direct detection, many of the nucleic acid-based assays, especially optical setups, require a label in their detection method. No consensus exists on the choice of a label for nucleic acid detection. However, basic parameters such as label stability, sensitivity of detection and its convenience should dictate label choice. Electrical modes were developed for detection of both label-free and labeled objects [6,23]. With label-dependent electric chip analysis method, specific enzymes for instance are added to the samples to be detected. These enzymes catalyze the transformation of an inactive substance, which has been added in a separate step, into an electronically active component. This chemical procedure creates an electrical current in the pico- and nanoampere range at the sensor electrodes, which is measured with highly sensitive circuits. Contrary to indirect detection techniques, where labeling is a requirement to translate the hybridization event into a signal, in direct detection techniques, a target molecule or any other object from the system does not need to be labeled. Although label-dependent methods achieve the highest sensitivities, eliminating the labeling steps simplifies the readout, the speed and ease of nucleic acid assays [24,30,33]. In a label-free approach the immobilized probe recognizes a complementary sequence if the target is present in the sample. Next, the transducer converts the biological interaction into a measurable signal, proportional to the degree of hybridization that is to the amount of target molecule in the sample. Label-free strategies reduce analysis times and cost. They are also free from unfavorable effects from the labels, such as its instability and steric hindrances. Thus, in order to meet requirements of powerful nucleic acid-based readers, the label-independent detection mean, in which hybridization of nucleic acids on the chip can be directly related to an electrical signal, appears as the perfect candidate for this challenge. In fact, many efforts have been already made in this direction and different approaches to achieve an electrical readout for a label-free nucleic acid-based chip were presented. For instance, electrical sensor devices based on impedance/capacitance/field-effect measurements are now well established [32-36]. Using microfabricated silicon field-effect sensors, the changes in surface potential can be monitored when nucleic acid hybridizes on the sensor face. This sensor is similar in structure and behavior to a metal/oxide/semiconductor device, which essentially is a capacitor with variable capacitance, depending on the potential applied. With such detection systems, different targets like pathogen microorganisms can be effectively screened for their presence by the examination of specific genomic regions.",
+            "cite_spans": [
+                {
+                    "start": 487,
+                    "end": 488,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 489,
+                    "end": 491,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1339,
+                    "end": 1341,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1342,
+                    "end": 1344,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1345,
+                    "end": 1347,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 2387,
+                    "end": 2389,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 2390,
+                    "end": 2392,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "From optical to electrical systems, and from label-dependent to label-free approaches ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Although increased attention has been given recently to label-free chip detection systems causing significant progress in this area, many aspects crucial to specificity or detection limit remain unsolved. Thus, proper applications of these undoubtedly promising devices would still require a solid intellectual input.",
+            "cite_spans": [],
+            "section": "From optical to electrical systems, and from label-dependent to label-free approaches ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "These days the nucleic acid-based chip devices can be more and more often found in an array format. However, chip-based nucleic acid detection principles can still be effectively employed in many other formats than microarrays. For some applications, when an additional separation procedure or a continuous monitoring of analytes is needed, microarrays may not offer the best detection system for bioanalytics. In single detection format of biochips, the use of micro- or nanoparticles, like magnetic beads with a large surface area for biomolecule attachment, results in very sensible and practical target molecule identification [37,38]. Besides using optical properties of nanoparticles [39,40], electrical detection and quantification principles have been successfully adopted for biochip applications [41-43]. Such metal beads consisting of a superparamagnetic central part surrounded by a polymeric functional surface film suitable for attachment of possible sensing agents, present a versatile scaffold for biomolecular recognition and application in electrical biochip technology [11,29,44,45].",
+            "cite_spans": [
+                {
+                    "start": 632,
+                    "end": 634,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 691,
+                    "end": 693,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 694,
+                    "end": 696,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 807,
+                    "end": 809,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 810,
+                    "end": 812,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1089,
+                    "end": 1091,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1092,
+                    "end": 1094,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1095,
+                    "end": 1097,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1098,
+                    "end": 1100,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "From single to multi-analyte and array detection format ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "As mentioned above, in recent time array chip technology that adapted the multi-analyte approach has become an indispensable tool for different genomic studies. The construction of a multi-detection system on chip enabled capacious (i.e. high throughput analysis), and at the same time very compactable biosensing in an array format. The nucleic acid-based array can be defined as an ordered collection of spots, each containing single defined species of a target molecule. Large sets of nucleic acid probe sequences are immobilized in defined, addressable locations on the surface of a substrate, which is capable of accessing usually enormous amounts of genetic information from biological samples in a single hybridization assay. Each spot represents the equivalent of a conventional analysis performed in a test tube. High-density microarrays are used for analyzing many thousands of nucleic acid sequences simultaneously in a relatively short time, allowing a researcher to measure typically full genome gene expression with a single array, while medium- and low-density array chip demonstrate in most cases the use for clinical diagnoses and personalized medical care. They are particularly important in a typing of microorganisms, and especially in detection of pathogenic bacteria. Application of microarray chips for analysis of microbial pathogens, and especially for simultaneous typing of several harmful bacteria is an important element of public health these days [13,15,46,47]. Of the two approaches: optical and electrical detection platforms described above, the second one has larger impact for bacterial detection in recent times. As discussed before, the precise identification of optical signals implies the use of highly sophisticated and thus expensive devices. Also, the analysis of the results can be problematical and extensive training is required. In many cases, only specialized bioinformatics centers are equipped sufficiently well to analyze the data properly. In contrast, the development of electrical multi-position chip platforms for biological detection enables a parallel analysis of complex samples in an inexpensive and easy way, thus resulting in performance of devices certainly reachable by individual health care units such as hospitals or clinics. This is especially important when taking into account the increase in the number of cases of food poisoning, the spread of antibiotic resistance in health centers, and also the raise in bioterrorism events. Concluding, it is of high probability that the coming time will see much more high-speed detection of microorganisms, and electrical biosensors will most probably involved in it.",
+            "cite_spans": [
+                {
+                    "start": 1479,
+                    "end": 1481,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1482,
+                    "end": 1484,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1485,
+                    "end": 1487,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1488,
+                    "end": 1490,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "From single to multi-analyte and array detection format ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "The need for small analytical devices for nucleic acid-based electrical detection has resulted in the construction of microchips and microarrays that contributed to microfluidic systems [48,49]. The key factor in the successful introduction of the chip-based nucleic acid detection in on-side or point-of-care use is the miniaturization and automation of the system and procedures. It is very important to differentiate between passive biochips or microarrays, dominating today's market, and active biochip or microarray analytical systems with microfluidic capabilities. Typically, active devices are sensors that perform or assist signal transduction. The fluid can be transported inside the channel by applying an external force in the form of a pressure or potential difference. Also, electrokinetic or electroosmotic flow control realize the solution transport over a network of channels towards the chip surface, while in the case of passive chips this is done using a specific design of the geometry of the channel network. Compared with the passive form of biochips relatively popular nowadays, the active form of biochips has taken on the feature of high sensitivity, which shortens the time for sample analysis. This is undoubtedly an irresistible general trend. Up to now, only few active forms of biochips have come to light in the world. Most of the currently demonstrated microfluidic devices follow single or only a few functionalities. There is a notable lack of functional integration, intended as the possibility of combining the analytical steps required to perform a complete analytical protocol. Due to the difficulty of the sample preparation, most existing biochip systems still carry out this initial step off-chip using conventional bench-top methods. However, a biochip platform for fully integrated genetic assays for sample-to-answer nucleic acid analysis was reported by Liu and co-workers [48]. The biochip device consisting of microfluidic mixers, pumps, valves, tubes and microarray sensors, allows performance of all functions including sample preparation, mixing steps, chemical reaction and electrical detection. With the use of such fully integrated biochip device the researchers reported functional detection of pathogenic bacteria from blood samples. Also, Rudi and his co-workers developed methods in the field of nucleic acid-based microbial sensors that cover both the sample preparation and detection approaches [50]. Furthermore, a new generation of an automatic electric chip measuring system for the detection of biological agents was reported lately [49]. In the most recent instrumental version added microfluidics, i.e. a complex network of valves and tubes, permits users to move liquids on and off the chip allowing for performance of multi-step assays. These miniaturized amperometric devices, based on electrical biochips made in silicon-technology, have been constructed for field applications and point of care diagnoses. An advantage of the developed system is the use of a semiconductor technology that avoids any mechanical adjustments of sensing elements, as it is necessary for optical devices.",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1920,
+                    "end": 1922,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 2456,
+                    "end": 2458,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 2598,
+                    "end": 2600,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "To automation and miniaturization ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Nowadays, the advent of not only micro- but also nano-miniaturization presents new challenges for nucleic acid detection. The advantages of miniaturization in bioanalytics are mainly bound to parallelism, reduced reagent consumption, speed and functional integration. As a result of miniaturization, an ultrasensitivity of nano-devices in nucleic acid analysis is expected, or even requested for many reasons at the present time. This includes detection of genetic material from single cell and in many cases single copy gene analysis. Method to achieve single molecule detection limits (i.e., yoctomoles; 10-23 moles) is a new wave in this area. In this regard, recent nanoscale sensors based on nanowires (NWs), nanotubes (NTs), and other nanomaterials have received considerable attention. Both, silicon NW and NT electronic devices that function as ultrasensitive and selective detectors of biological molecules were reported [51-54]. Generally, NWs and NTs have the potential for very high sensitivity detection. The accumulation or depletion of charge carriers, which are caused by binding of a charged biological target macromolecules such as nucleic acids at the NW or NT device surface, can affect the electrical properties of these nanostructures. The changes in the electrical signal are evidence of the presence of specific molecule of interest in a sample solution.",
+            "cite_spans": [
+                {
+                    "start": 931,
+                    "end": 933,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 934,
+                    "end": 936,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "To automation and miniaturization ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "From another point of view, the trend in miniaturization seems to cope with the need of maintaining the statistical significance of the sample. For instance, when testing water supply it is clear that a drop of such sample would hardly have any cell of interest. Of course, possible solutions to these needs (i.e. related to analyte concentration) will appear and exciting developments for the detection systems will certainly be constructed in the future.",
+            "cite_spans": [],
+            "section": "To automation and miniaturization ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "The identification of pathogens with biochips is based on specific probes, in most cases on oligonucleotide probes that target nucleic acid sequences that are only present solely in the organism of interest to the investigator. To determine suitable sets of probes for nucleic acid-based detection intensive computational studies have to be performed. Each probe is designed using a proprietary oligonucleotide design program. Various factors, such as melting point, secondary structures, cytosine/guanine (C/G) content, and sequence specificity and selectivity need to be considered. Referred parameters should be contemplated in respect to potential merging variants for each gene since these factors have an effect on the specificity and sensitivity of hybridization [55]. In more detail, the strategy for the generation of oligonucleotide probe sets is as follows (Figure 1.): First, each sequence of interest is chosen. In most cases, they are obtained directly from varied databases. Sometimes the nucleic acid sequences are achieved through direct sequencing made by users. Second, suitable sequence regions are chosen from gene probe candidates. Additionally, a NCBI BLAST search tool is used for the analysis of the sequences of particular oligonucleotides. This helps to verify the oligonucleotides' design and to visualize their specificities. By alignment with nucleic acid sequences from other bacterial species, some sites of genes are omitted during probe design. It is assumed that checking for cross homologies may eliminate potential cross hybridizations during detection on the chip. In the next step, each gene-specific probe is designed by using the oligonucleotide design programs. A number of oligonucleotide design softwares that may help in probe selection and analysis is available. To avoid possible effects of degradation of the target nucleic acid when using two probes in the detection system (one capture and one detection), these probes should be located in close proximity to each other. In this way, the chosen probes may guarantee the helper effect to each other when approaching the selected target sequences.",
+            "cite_spans": [
+                {
+                    "start": 771,
+                    "end": 773,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": [
+                {
+                    "start": 876,
+                    "end": 877,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "A probe that has recently gained an increasing application is peptide nucleic acid (PNA) [8,56,57]. Probes made of peptide nucleic acid, which have very strong affinity for complementary DNA sequence, can further improve the specificity. Such probes can more effectively discriminate the pathogenic organisms at the level of single-base mismatches. Additionally, PNA/DNA hybrids are resistant to nuclease attack, due to inability of nucleases and proteases to recognize the peptide backbone, have higher thermal stability and their melting temperature is higher than the corresponding DNA/DNA duplex. They are relatively insensitive to ionic strength due to the neutral charge of PNA.",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 91,
+                    "mention": "8",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 92,
+                    "end": 94,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 95,
+                    "end": 97,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Once the appropriate oligonucleotide probes are chosen, the immobilization of target specific captures onto a solid substrate can be performed. The probes may be deposited either directly on the chip surface or on supporting materials such as microscopic beads. Several effects have to be taken into account with probe immobilization [58]. Thus, it is important that the immobilization chemistry is stable during subsequent assay steps and that the probes have to be functional after attachment. The probes must be immobilized with an appropriate orientation and configuration so that base pairing is not restrained. There should not exist steric impediments or lack of accessibility due to the dense packing of the immobilized probes. Finally, it is necessary to characterize the immobilization efficiency and immobilized probe functionality.",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 337,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "When applying nucleic acid-based detection system it is very important to select proper gene sequences as targets. Generally, DNA provides evidence for the presence/absence of microorganisms, rRNA is an indicator of cell activity or viability, and mRNA provides evidence for specific activity and expression of functions. In a cell, DNA is present only in very low amounts, usually just as a single copy per cell. Thus, one strategy to overcome the problem with sensitivity limits of the biochip when analyzing DNA it is to target ribosomal RNA that is present in bacteria cells at a high copy number (for E. coli around 20 000 per cell). The detection based on mRNA may also be considered.",
+            "cite_spans": [],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Various types of nucleic acid targets have been selected for detection of pathogens, however due to the sensitivity limitations in most cases their artificial analogs such as PCR products were used directly in the assays for biochip measurements. To date, only a handful of scientists worldwide have reported electrical detection of nucleic acids isolated from cells [[11,13,43,45], ]. They have demonstrated that electrochemistry can be used to detect nucleic acids directly from cell homogenates. For instance, in the absence of a PCR step it has been found that 106 B. cereus cells per reaction could be detected with no background noise [11]. Currently this technique is modifying to further improve the sensitivity and adapting it to detect other pathogenic microorganisms.",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 371,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 375,
+                    "end": 377,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 378,
+                    "end": 380,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 642,
+                    "end": 644,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "From another point of view, work with synthetic nucleic acid analogs is required when developing novel methods that allow to meet sensitivity and multiplexing needs. The main drawback of assays using PCR amplicons as targets is that they are not quantitative. Due to saturation of the amplification reaction, the amount of such targets provided for biochip analysis differs from the initial material level. The quantification may be improved by using a low cycle number PCR approach. By limiting the PCR cycle number only the exponential phase of amplification will be included. Thus, further development of electrical methods with focus on biochip techniques that can be coupled to low cycle number PCR, or even do not use PCR amplification at all is required.",
+            "cite_spans": [],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "As it is discussed above, the main limiting factor for the development of biochips can be the sensitivity. To achieve low detection limits reliably it is possible to increase the amount of target in the sample or to amplify the signal. Many of the detection systems do both at the same time. PCR, although with its several negative aspects such as being time consuming technique, is the most commonly used method to increase the amount of target in the sample. In order to minimize assay time, PCR has been integrated into a biochip system [48]. However, as alternative to the popular PCR and related amplification approaches, an additional trend is directed to nonamplification strategies such as multi-labeling, branched chain or dendrimer type assay.",
+            "cite_spans": [
+                {
+                    "start": 541,
+                    "end": 543,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "The sensitive and discriminating detection of the hybridization event is an important feature. Parameters of the hybridization protocol, like salt-concentration in the hybridization buffer, hybridization temperature, addition of a helper probe, or a fragmentation of the nucleic acid prior to the hybridization, that are known from literature to influence the result of a hybridization reaction should be optimized. It was reported that the problems caused by the higher-order structure of nucleic acid target could be solve by the addition of unlabeled helper oligonucleotides that bind in close proximity to the probes. In this respect, the helpers have a synergistic effect for the probe binding [59,60]. To overcome the problems caused by higher-ordered structures of nucleic acid targets [55], especially during RNA work, the fragmentation of the nucleic acid is recommended. Such structures became a significant concern in the design and application of biochips. Application of ultrasound to provide nucleic acid fragments suitable for detection by nucleic acid chips was presented [45]. By the generation of smaller sized nucleic acid molecules a fragmentation of the nucleic acid could antagonize negative effects on the hybridization efficiency caused by steric hindrances.",
+            "cite_spans": [
+                {
+                    "start": 700,
+                    "end": 702,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 703,
+                    "end": 705,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 794,
+                    "end": 796,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1089,
+                    "end": 1091,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "When applying biochip for nucleic acid-based detection ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Biosensors are making a great impact on the development of rapid and sensitive assays for the detection of pathogenic microorganisms. It is assumed that nucleic acid chip arrays, nowadays broadly used in the area of biomolecule typing, in the close future may become an extremely important tool for pathogen detection. Although the present systems provide many advantages, there are still other matters to be addressed if considering their commercialization for diagnostics. Absolute automation of the sample handling and integration with the system is important. This will minimize problems due to contamination and avoid human error. In addition, further reduction in the analyzing time as well as steps forward better sensitivity should be considered. The scale-down of nucleic acid chip from the micro-scale to nano-scale will benefit over current technologies.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In general, high sensitivity and high selectivity using a protocol that can be completed in a relatively short time are requirements for an ideal detector nowadays. Although the optical types of biosensors are the most commonly employed at the moment, the electrical ones can be expected to give the lowest detection limits along with the most simple instrumentation for on-site and point-of-care applications.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Directions and strategies in the field of nucleic acid-based chip detection.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "An introduction to DNA chips: principles, technology, applications and analysis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wegrzyn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Acta Biochim Pol",
+            "volume": "48",
+            "issn": "",
+            "pages": "615-622",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "New biochip technology for label-free detection of pathogens and their toxins",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Grow",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Wood",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Claycomb",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Thompon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Microbial Methods",
+            "volume": "53",
+            "issn": "",
+            "pages": "221-233",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Identification of pathogenic microbial cells and spores by electrochemical detection on a chip",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Andresen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Albers",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hintsche",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-O",
+                    "middle": [],
+                    "last": "Enfors",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Microbial Cell Factories",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Biosensors for detection of bacteria",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Deisingh",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Can J Microbiol",
+            "volume": "50",
+            "issn": "",
+            "pages": "69-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Electrochemical detection of the toxic dinoflagellate Alexandrium ostenfeldii with a DNA-biosensor",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Metfies",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Huljic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lange",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Medlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biosens Bioelectron",
+            "volume": "20",
+            "issn": "",
+            "pages": "1349-1357",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The use of NASBA for the detection of microbial pathogens in food and environmental samples",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Cook",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Microbial Methods",
+            "volume": "53",
+            "issn": "",
+            "pages": "165-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Multipathogen oligonucleotide microarray for environmental and biodefense applications",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sergeev",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Distler",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Courtney",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Al-Khaldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Volokhov",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chizhikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rasooly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biosens Bioelectron",
+            "volume": "20",
+            "issn": "",
+            "pages": "684-698",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Comparison of the Tecra VIA Kit, Oxoid BCET-REPLA kit and CHO cell culture assay for the detection of Bacillus cereus diarrhoeal enterotoxin",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Buchanan",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Schulttz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Lett Appl Microbiol",
+            "volume": "19",
+            "issn": "",
+            "pages": "353-356",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A comparison of ELISA and RPLA for detection of Bacillus cereus diarrhoeal enterotoxin",
+            "authors": [
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Tatani",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Notermans",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Bennnett",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Appl Bacteriol",
+            "volume": "77",
+            "issn": "",
+            "pages": "9-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Solitary blood cultures",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "David",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Novis",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Jane",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Ron",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Stephen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Molly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Arch Pathol Lab Med",
+            "volume": "125",
+            "issn": "",
+            "pages": "1290-1294",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Application of electrochemical biosensors for detection of food pathogenic bacteria",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ivnitski",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Abdel-Hamid",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Atanasov",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wilkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stricker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Electroanal",
+            "volume": "12",
+            "issn": "",
+            "pages": "317-325",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ciminski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Molecular Analysis and Genome Discovery: An Introduction to DNA Chips",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Development of a fluorogenic probe-based PCR assay for detection of Bacillus cereus in nonfat dry milk",
+            "authors": [
+                {
+                    "first": "YR",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Czajka",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Batt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Appl Environ Microbiol",
+            "volume": "66",
+            "issn": "",
+            "pages": "1453-1459",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Phage display for detection of biological threat agents",
+            "authors": [
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Petrenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "VJ",
+                    "middle": [],
+                    "last": "Vodyanoy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Microbiol Methods",
+            "volume": "53",
+            "issn": "",
+            "pages": "253-262",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Nanoparticle-based electrochemical DNA detection",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Anal Chim Acta",
+            "volume": "500",
+            "issn": "",
+            "pages": "247-257",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Electrical detection of DNA hybridization based on enzymatic accumulation confined in nanodroplets",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marchand",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Delattre",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Campagnolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pouteau",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ginot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Anal Chem",
+            "volume": "77",
+            "issn": "",
+            "pages": "5189-5195",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Capacitive biosensors",
+            "authors": [
+                {
+                    "first": "Ch",
+                    "middle": [],
+                    "last": "Berggren",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bjarnason",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Electroanal",
+            "volume": "13",
+            "issn": "",
+            "pages": "173-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Opto-electronic DNA chip: high performance chip reading with an all-electric interface",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Mallard",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marchand",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ginot",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Campagnolo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biosens Bioelectron",
+            "volume": "20",
+            "issn": "",
+            "pages": "1813-1820",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Chemiluminescent Detection of DNA in Low- and Medium-Density Arrays",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Akhavan-Taftia",
+                    "suffix": ""
+                },
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Reddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Siripurapu",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Schoenfelner",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Handley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Schaap",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Clin Chem",
+            "volume": "44",
+            "issn": "",
+            "pages": "2065-2066",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "A new generation of scanners for DNA chips",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Perraut",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lagrange",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pouteau",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Peysonneaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Puget",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Mc Gall",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Menou",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Labeye",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ginot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biosens Bioelectron",
+            "volume": "17",
+            "issn": "",
+            "pages": "803-813",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Oscillographic polarography of highly polymerized deoxyribonucleic acid",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Palecek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1960,
+            "venue": "Nature",
+            "volume": "188",
+            "issn": "",
+            "pages": "656-657",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Electrochemical detection of single A-G mismatch using biosensing surface based on gold nanoparticles",
+            "authors": [
+                {
+                    "first": "RY",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "XM",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Gong",
+                    "suffix": ""
+                },
+                {
+                    "first": "NY",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Geno Prot Bioinfo",
+            "volume": "3",
+            "issn": "",
+            "pages": "47-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "DNA chips: state-of-the-art",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ramsey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nat Biotechnol",
+            "volume": "16",
+            "issn": "",
+            "pages": "40-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "A feasibility study of a capacitive biosensor for direct detection of DNA hybridization",
+            "authors": [
+                {
+                    "first": "Ch",
+                    "middle": [],
+                    "last": "Berggren",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "St\u00e5lhandske",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Brundell",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Electroanal",
+            "volume": "11",
+            "issn": "",
+            "pages": "156-160",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A MEMS based amperometric detector for E. coli bacteria using self-assembled monolayers",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Gau",
+                    "suffix": ""
+                },
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Lan",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "ChM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "JCS",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biosens Bioelectron",
+            "volume": "16",
+            "issn": "",
+            "pages": "745-755",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Label-free detection of DNA hybridization with Au/SiO2/Si diodes and Poly-Si TFTs",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Estrela",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Stewart",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Migliorato",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Maeda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Technical Digest of 2004 IEDM \u2013 International Electron Devices Meeting, IEEE",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Electrical Detection of Biomolecular Interactions with Metal-Insulator- Semiconductor Diodes",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Estrela",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Migliorato",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Takiguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Fukushima",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nebashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biosens Bioelectron",
+            "volume": "20",
+            "issn": "",
+            "pages": "1580-1586",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Recent advances in biologically sensitive field-effect transistors (BioFETs)",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Sch\u00f6ning",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Poghossia",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Analyst",
+            "volume": "127",
+            "issn": "",
+            "pages": "1137-1151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Impedance-based detection of DNA sequences using a silicon transducer with PNA as the probe layer",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Macanovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Marquette",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Polychronakos",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Lawrence",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "DNA detection by integrable electronics",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Guiducci",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Stagni",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zuccheri",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bogliolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Benini",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Samor\u00ec",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Ricc\u00f2",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biosens Bioelectron",
+            "volume": "19",
+            "issn": "",
+            "pages": "781-787",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Optimizing the immobilization of single-stranded DNA onto glass beads",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Walsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Weimer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biochem Bioph Meth",
+            "volume": "47",
+            "issn": "",
+            "pages": "221-231",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Beads and chips: new recipes for analysis",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Verpoorte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lab Chip",
+            "volume": "3",
+            "issn": "",
+            "pages": "60-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Two-Color Labeling of Oligonucleotide Arrays via Size-Selective Scattering of Nanoparticle Probes",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Taton",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Mirkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Am Chem Soc",
+            "volume": "123",
+            "issn": "",
+            "pages": "5164-5165",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "High Sensitive Ion-Channel Sensors for Detection of Oligonucleotides Using PNA Modified Gold Electrodes",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Aoki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Umezawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Electroanal",
+            "volume": "14",
+            "issn": "",
+            "pages": "1405-1410",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Detection of DNA hybridization by gold nanoparticle enhanced transmission surface plasmon resonance spectroscopy",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hutter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Pileni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Phys Chem B",
+            "volume": "107",
+            "issn": "",
+            "pages": "6497-6499",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Array-based electrical detection of DNA with nanoparticle probes",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Taton",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Mirkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "295",
+            "issn": "",
+            "pages": "1503-1506",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Electrochemical coding of single-nucleotide polymorphisms by monobase-modified gold nanoparticles",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kerman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Morita",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Takamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ozsoz",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tamiya",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Anal Chem",
+            "volume": "76",
+            "issn": "",
+            "pages": "1877-1884",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Electric chips for rapid detection and quantification of nucleic acids",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Holmgren",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Andresen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Barken",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "W\u00fcmpelmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Albers",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hintsche",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Breitenstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Neubauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Los",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Czyz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wegrzyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Silfversparre",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "J\u00fcrgen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Schweder",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-O",
+                    "middle": [],
+                    "last": "Enfors",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biosens Bioelectron",
+            "volume": "19",
+            "issn": "",
+            "pages": "537-546",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Detection of bacteriophage infection and prophage induction in bacterial cultures by means of electric DNA chips",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Los",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Holmgren",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Albers",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Czyz",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hintsche",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wegrzyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-O",
+                    "middle": [],
+                    "last": "Enfors",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Anal Biochem",
+            "volume": "324",
+            "issn": "",
+            "pages": "84-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Gene-based identification of bacterial colonies with an electric chip",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-O",
+                    "middle": [],
+                    "last": "Enfors",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Anal Biochem",
+            "volume": "345",
+            "issn": "",
+            "pages": "270-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Multiplex PCR detection of clinical and environmental strains of Vibrio vulnificus in shellfish",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Panicker",
+                    "suffix": ""
+                },
+                {
+                    "first": "MCL",
+                    "middle": [],
+                    "last": "Vickery",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Bej",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Can J Microbiol",
+            "volume": "50",
+            "issn": "",
+            "pages": "911-922",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Suspension microarray with dendrimer signal amplification allows direct and high-throughput subtyping of Listeria monocytogenes from genomic DNA",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Borucki",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Reynolds",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Call",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Page",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kadushin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Clin Microbiol",
+            "volume": "43",
+            "issn": "",
+            "pages": "3255-3259",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Self-contained, fully integrated biochip for sample preparation, polymerase chain reaction amplification, and DNA microarray detection",
+            "authors": [
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lenigk",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bonanno",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Grodzinski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Anal Chem",
+            "volume": "76",
+            "issn": "",
+            "pages": "1824-1831",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "eBiochip Systems GmbH, Germany",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Electronic detection of DNA by its intrinsic molecular charge",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Fritz",
+                    "suffix": ""
+                },
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gaudet",
+                    "suffix": ""
+                },
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Sorger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Manalis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci",
+            "volume": "99",
+            "issn": "",
+            "pages": "14142-14146",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Development and application of new nucleic acid-based technologies for microbial community analyses in foods",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Rudi",
+                    "suffix": ""
+                },
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Nogva",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Moen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nissen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bredholt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Moretro",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Naterstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Holck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Int J Food Microbiol",
+            "volume": "78",
+            "issn": "",
+            "pages": "171-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Carbon nanotubes with DNA recognition",
+            "authors": [
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "PTM",
+                    "middle": [],
+                    "last": "Veenhuizen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "G de la Torre",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Eritja",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dekker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "420",
+            "issn": "",
+            "pages": "761-761",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "DNA-templated carbon nanotube field-effect transistor",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Keren",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Buchstab",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Sivan",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Braun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": "1380-1381",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Direct ultrasensitive electrical detection of DNA and DNA sequence variations using nanowire nanosensors",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hahm",
+                    "suffix": ""
+                },
+                {
+                    "first": "ChM",
+                    "middle": [],
+                    "last": "Lieber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nano Letters",
+            "volume": "4",
+            "issn": "",
+            "pages": "51-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Nanowire nanosensors",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Potolsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "ChM",
+                    "middle": [],
+                    "last": "Lieber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Matrials to study",
+            "volume": "",
+            "issn": "",
+            "pages": "20-28",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Amplicon secondary structure prevents target hybridization to oligonucleotide microarrays",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lane",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Evermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Loge",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Call",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biosens Bioelectron",
+            "volume": "20",
+            "issn": "",
+            "pages": "728-735",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Trace analysis of an oligonucleotide with a specific sequence using PNA-based ion-channel sensors",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Aoki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Umezawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Analyst",
+            "volume": "128",
+            "issn": "",
+            "pages": "681-685",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "The peptide nucleic acids, efficient tools for molecular diagnosis",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Pellestor",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Paulasova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "International Journal of Molecular Medicine",
+            "volume": "13",
+            "issn": "",
+            "pages": "521-525",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Immobilization of nucleic acids at solid surface: effect of oligonucleotide length on layer assembly",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Steel",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Levicky",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Herne",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Tarlov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Biophysical Journal",
+            "volume": "79",
+            "issn": "",
+            "pages": "975-981",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Unlabeled helper oligonucleotides increase the in situ accessibility to 16S rRNA of fluorescently labeled oligonucleotide probes",
+            "authors": [
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Fuchs",
+                    "suffix": ""
+                },
+                {
+                    "first": "FO",
+                    "middle": [],
+                    "last": "Gl\u00f6ckner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wulf",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Amann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Appl Environ Microbiol",
+            "volume": "66",
+            "issn": "",
+            "pages": "3603-3607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Electrochemical DNA sensors",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Drummond",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Barton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat Biotechnol",
+            "volume": "21",
+            "issn": "",
+            "pages": "1192-1199",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Effect of unlabeled helper probes on detection of an RNA target by bead-based sandwich hybrodozation",
+            "authors": [
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Barken",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gabig-Ciminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Holmgren",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Molin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biotechniques",
+            "volume": "36",
+            "issn": "",
+            "pages": "124-132",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "GST-PRIME: a genome-wide primer design software for the generation of gene sequence tags",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Varotto",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Richly",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Salamini",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Leister",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res",
+            "volume": "29",
+            "issn": "",
+            "pages": "4373-4377",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Recent trends in electrochemical DNA biosensor technology",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kerman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tamiya",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Meas Sci Technol",
+            "volume": "15",
+            "issn": "",
+            "pages": "1-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Carbon and gold electrodes as electrochemical transducers for DNA hybridisation sensors",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lucarelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marrazza",
+                    "suffix": ""
+                },
+                {
+                    "first": "APF",
+                    "middle": [],
+                    "last": "Turner",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mascini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biosens Bioelectron",
+            "volume": "19",
+            "issn": "",
+            "pages": "515-530",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Biosensor for the specific detection of a single viable B. anthracis spore",
+            "authors": [
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Hartley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Baeumner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Anal Bioanal Chem",
+            "volume": "376",
+            "issn": "",
+            "pages": "319-327",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,816 @@
+{
+    "paper_id": "PMC2964379",
+    "metadata": {
+        "title": "Cell\u2010Based Hepatitis C Virus Infection Fluorescence Resonance Energy Transfer (FRET) Assay for Antiviral Compound Screening",
+        "authors": [
+            {
+                "first": "Xuemei",
+                "middle": [],
+                "last": "Yu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Susan",
+                "middle": [
+                    "L."
+                ],
+                "last": "Uprichard",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Hepatitis C virus (HCV) is a hepatotropic pathogen that causes liver disease, including fibrosis, cirrhosis, steatosis, insulin resistance, iron overload, and hepatocellular carcinoma. With an estimated 130 million people chronically infected, HCV is a major cause of liver disease worldwide and represents a global healthcare concern. Unfortunately, there is no preventative vaccine to protect against HCV infection, and the available IFN\u2010based standard of care therapy (pegylated IFN\u2010\u03b1 plus ribavirin) is costly, poorly tolerated, associated with significant side effects, and only effective in a fraction of chronically infected individuals. Therefore, as with the other pathogens discussed within this chapter, the need to develop new\u2010generation HCV \u201cantiinfectives\u201d is a healthcare imperative. Although several small molecules that target HCV replication are in the clinical pipeline, the emergence of viral escape mutants indicates that a combination of anti\u2010HCV drugs targeting multiple aspects of infection will likely be required to successfully treat the majority of patients. Thus, this unit aims to facilitate the discovery of HCV antivirals by describing methods to test and evaluate promising antiviral compounds in vitro.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The ability to screen for HCV antivirals that inhibit any aspect of infection was made possible with the 2005 development of the first robust in vitro HCV infection models (Lindenbach et al., 2005; Wakita et al., 2005; Zhong et al., 2005), which recapitulate the entire viral life cycle and allow for HCV propagation in cell culture. This unit focuses on procedures for high\u2010throughput anti\u2010HCV compound screening. Basic Protocol 1 describes the screening of compounds for anti\u2010HCV activity in microtiter plate format using nondividing, synchronized hepatoma cells which allow for reproducible HCV infection in vitro using a low multiplicity of infection approach. Basic Protocol 2 describes a simple mix\u2010and\u2010read FRET\u2010based HCV NS3 protease assay which can be used to assess HCV infection and determine compound efficacy. Because stocks of infectious HCV are required for these basic screening protocols, support protocols detailing the preparation of the necessary HCV stocks are also provided. Support Protocol 1 explains how to generate infectious HCV from in vitro\u2013transcribed HCV RNA, while Support Protocol 2 describes the further amplification of that original HCV stock, and Support Protocol 3 lists methods assessing the infectivity titer of the HCV stocks produced. Together, these protocols encompass several new approaches to compound screening and HCV antiviral drug discovery.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\nCAUTION: HCV is a Biosafety Level 2 (BSL\u20102) pathogen. Follow all appropriate guidelines and regulations for the use and handling of pathogenic microorganisms. See unit\nmc01a01 and other pertinent resources (appendix\nmca01b) for more information.\n",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\nNOTE: All solutions and equipment coming into contact with living cells must be sterile, and aseptic techniques should be used accordingly.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\nNOTE: All culture incubations should be performed in a humidified 37\u00b0C, 5% CO2 incubator unless otherwise specified.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHuh7 cells (Japan Health Science Research Resources Bank, cat. no. JCRB0403; http://www.jhsf.or.jp)Huh7 cell maintenance medium (see recipe)Huh7 cell maintenance medium with 1% (v/v) dimethyl sulfoxide (DMSO; tissue culture grade)Compound libraryHCVcc (stock titer \u22653.25 \u00d7 104; see Support Protocol 1 and 2)FRET lysis buffer (see recipe), prechilled to 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "Materials ::: Screening of Anti\u2010HCV Compounds in Hepatoma Cells",
+            "ref_spans": []
+        },
+        {
+            "text": "\n75\u2010cm2 or larger tissue culture flasks96\u2010well clear flat\u2010bottom black microtiter BioCoat tissue culture plates (BD Biosciences)96\u2010well U\u2010bottom microtiter platesPlate seals\n",
+            "cite_spans": [],
+            "section": "Materials ::: Screening of Anti\u2010HCV Compounds in Hepatoma Cells",
+            "ref_spans": []
+        },
+        {
+            "text": "\nAdditional reagents and equipment for growing mammalian cells (Phelan, 2007)\n",
+            "cite_spans": [],
+            "section": "Materials ::: Screening of Anti\u2010HCV Compounds in Hepatoma Cells",
+            "ref_spans": []
+        },
+        {
+            "text": "\nSample plate (Basic Protocol 1)5\u2010FAM/QXL 520 NS3 FRET peptide substrate (AnaSpec; resuspend and distribute into single\u2010use aliquots upon receipt)2\u00d7 FRET assay buffer (AnaSpec)1 M dithiothreitol (DTT; appendix\nmca02a)\n",
+            "cite_spans": [],
+            "section": "Materials ::: Quantification of HCV Infection Using a Cell\u2010Based NS3 Protease Assay",
+            "ref_spans": []
+        },
+        {
+            "text": "\nFluorescent microplate reader with 490\u2010nm excitation and 520\u2010nm emission filtersShaking platformCentrifuge with microtiter plate carrier\n",
+            "cite_spans": [],
+            "section": "Materials ::: Quantification of HCV Infection Using a Cell\u2010Based NS3 Protease Assay",
+            "ref_spans": []
+        },
+        {
+            "text": "\npJFH\u20101 (HCV JFH\u20101 encoding plasmid; Kato et al., 2001)\nXbaI restriction endonuclease and compatible 10\u00d7 bufferBuffered phenol, pH 7 to 8 (appendix\nmca02a)Molecular\u2010biology\u2010grade nuclease\u2010free distilled H2O25:24:1 phenol/chloroform/isoamyl alcohol (see\nappendix\nmca02a)Chloroform3 M sodium acetate, pH 7.0 (see\nappendix\nmca02a)Isopropanol75% (v/v) ethanol100% (v/v) ethanolHigh\u2010yield in vitro RNA transcription reagents (e.g., Ambion MEGAscript) including:10\u00d7 RNA transcription reaction buffer (also see recipe and Lindenbach et al., 2005)dATP, dGTP, dCTP, and dUTP stock solutions (also see appendix\nmca02a)T7 RNA polymeraseNuclease\u2010free water2 U/\u00b5l DNase (also see\nappendix\nmca02a)Gel electrophoresis apparatus and reagents including:Molecular\u2010biology\u2010grade agaroseTE buffer (appendix\nmca02a)1% (w/v) ethidium bromide (appendix\nmca02a)10\u00d7 sample loading buffer containing bromphenol blue (appendix\nmca02a)DNA size ladderHuh7 cells (Japan Health Science Research Resources Bank, cat. no. JCRB0403; http://www.jhsf.or.jp)Huh7 cell maintenance medium (see recipe)Dulbecco's phosphate buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)0.25% trypsin (tissue culture grade) with 2.21 mM EDTA in HBSS (see appendix\nmca02a for HBSS)Serum\u2010free DMEM and/or Opti\u2010MEM (both available from Invitrogen), prechilled to 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "Materials ::: Generation of HCVcc from In Vitro\u2013Transcribed RNA",
+            "ref_spans": []
+        },
+        {
+            "text": "\n75\u2010cm2 (T\u201075) or 150\u2010cm2 (T\u2010150) tissue culture flasks50\u2010 and 15\u2010ml conical centrifuge tubesInverted light microscopeRefrigerated centrifuge, 4\u00b0C0.4\u2010cm electroporation cuvettesElectroporator0.2\u2010\u00b5m cellulose acetate filters for sterilization\n",
+            "cite_spans": [],
+            "section": "Materials ::: Generation of HCVcc from In Vitro\u2013Transcribed RNA",
+            "ref_spans": []
+        },
+        {
+            "text": "\nAdditional reagents and equipment for determining DNA and RNA concentration (Gallagher and Desjardins, 2006), RNA purification by purification kit (Phenol\u2010Free Total RNA Purification Kit or Ribozol Plus RNA Purification Kit; AMRESCO Inc., http://www.amresco-inc.com/), lithium chloride precipitation (Diaz\u2010Ruiz and Kaper, 1978), spin\u2010column chromatography, or phenol:chloroform extraction and isopropanol precipitation (Chomczynski and Sacchi, 1987; Kingston et al., 1996), and determination of HCVcc infectivity titer (Support Protocol 3)\n",
+            "cite_spans": [],
+            "section": "Materials ::: Generation of HCVcc from In Vitro\u2013Transcribed RNA",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHuh7 cells (Japan Health Science Research Resources Bank, cat. no. JCRB0403; http://www.jhsf.or.jp)Huh7 cell maintenance medium (see recipe)Post\u2010transfection generated JFH\u20101 HCVcc (Support Protocol 1)Dulbecco's phosphate buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)0.25% trypsin (tissue culture grade) with 2.21 mM EDTA in HBSS (see appendix\nmca02a for HBSS)\n",
+            "cite_spans": [],
+            "section": "Materials ::: Generation of HCVcc from Infectious Virus",
+            "ref_spans": []
+        },
+        {
+            "text": "\n75\u2010cm2 and 150\u2010cm2 tissue culture flasks50\u2010ml conical centrifuge tubes (BD Falcon)Refrigerated centrifuge0.2\u2010\u00b5m cellulose acetate filter for sterilization\n",
+            "cite_spans": [],
+            "section": "Materials ::: Generation of HCVcc from Infectious Virus",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHuh7 cells (Japan Health Science Research Resources Bank, cat. no. JCRB0403)Huh7 cell maintenance medium (see recipe)HCVcc test samples (see protocols above)Huh7 cell maintenance medium with 0.25% (w/v) methylcellulose (see recipe)4% PFA fixation buffer (see recipe)Dulbecco's phosphate buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)DPBS (without Ca2+ and Mg2+) containing 0.3% hydrogen peroxide (prepare immediately before use)Blocking buffer (see recipe)HCV\u2010specific primary antibody (Ab), e.g.:AR3A, human anti\u2010HCV E2 antibody (Law et al., 2008)E910, mouse anti\u2010HCV NS5A antibody (Lindenbach et al., 2005)C750, mouse anti\u2010HCV Core (Affinity Bioreagents)Binding buffer (see recipe)Appropriate HRP\u2010conjugated secondary antibody (Ab) such as:DAKOCytomation EnVision+ System\u2010HRP labeled ready\u2010to\u2010use anti\u2010mouse antibody (for primary Ab raised in mouse)Goat anti\u2010human HRP\u2010conjugated antibody (Pierce; for primary Ab raised in human)AEC (3\u2010amino\u20109\u2010ethylcarbazole) peroxidase substrate solution (BD Biosciences)50% (v/v) glycerol in H2O\n",
+            "cite_spans": [],
+            "section": "Materials ::: HCVcc Infectivity Titer Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "\n96\u2010well flat\u2010bottom tissue culture plates96\u2010well U\u2010bottom microtiter platesInverted light microscope\n",
+            "cite_spans": [],
+            "section": "Materials ::: HCVcc Infectivity Titer Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "\n400 ml Dulbecco's phosphate\u2010buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)15 g bovine serum albumin, Fraction V2.5 ml 10% (v/v) Triton X\u2010100Bring to 500 ml total volume with DPBS (without CaCl2 and MgCl2)Filter sterilize using a 0.2\u2010\u00b5m cellulose acetate filterStore up to 1 year at 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "Binding buffer ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "Final composition: 1\u00d7 DPBS/3% BSA/0.5% Triton X\u2010100.",
+            "cite_spans": [],
+            "section": "Binding buffer ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n400 ml Dulbecco's phosphate\u2010buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)15 g bovine serum albumin, Fraction V2.5 ml 10% (v/v) Triton X\u201010050 ml fetal bovine serum (FBS; 10% final), heat\u2010inactivated (56\u00b0C for 30 min)Bring to 500 ml total volume with DPBS (without CaCl2 and MgCl2)Filter sterilize using a 0.2\u2010\u00b5m cellulose acetate filterStore up to 1 year at 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "Blocking buffer ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "Final composition: 1\u00d7 DPBS/3% BSA/0.5% Triton X\u2010100/10% FBS.",
+            "cite_spans": [],
+            "section": "Blocking buffer ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n1.25% (v/v) Triton X\u201010050 mM Tris\u22c5Cl, pH 7.5 (appendix\nmca02a)150 mM NaCl2 mM EDTAStore up to 1 year at 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "FRET lysis buffer ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n500 ml Dulbecco's high\u2010glucose minimal essential medium (DMEM)5 ml 200 mM glutamine5 ml nonessential amino acids5 ml 1 M HEPES buffer50 ml fetal bovine serum (FBS; 10% final), heat\u2010inactivated (56\u00b0C for 30 min)5 ml pen/strep (10,000 U/ml penicillin G sodium and 10,000 \u00b5g/ml streptomycin sulfate)Store up to 1 month at 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "Huh7 cell maintenance medium ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n2% methylcellulose stock solution: Add 10 g of methylcellulose (Methocel MC, Fluka Bio\u2010Chemika, cat. no. 64625) to 500 ml water in a sterile 1\u2010liter bottle containing a stir bar. Stir at 4\u00b0C until methylcellulose partially goes into solution (\u223c4 hr). Do not heat; methylcellulose will only dissolve in cold solutions. Sterilize by autoclaving. Allow solution to return to room temperature (methylcellulose will solidify), shake vigorously to break up clumps, and transfer to 4\u00b0C overnight. It will not be possible to stir the methylcellulose, but it will gradually go into solution.",
+            "cite_spans": [],
+            "section": "Methylcellulose overlay, 0.25% in Huh7 cell maintenance medium ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n0.25% methylcellulose overlay: Add 1 part 2% methylcellulose stock solution to 7 parts Huh7 cell maintenance medium. Mix well and store at 4\u00b0C in the dark.",
+            "cite_spans": [],
+            "section": "Methylcellulose overlay, 0.25% in Huh7 cell maintenance medium ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n20 g paraformaldehyde (PFA)400 ml Dulbecco's phosphate\u2010buffered saline (DPBS) without calcium and magnesium (see recipe in appendix\nmca02a; prepare with tissue\u2010culture\u2010grade H2O and omit Ca2+ and Mg2+)Adjust pH to 7.4 with 10 N NaOH (PFA will not go into solution until pH is 7.4)Aid dissolution by heating solution in fume hood (do not let solution rise above 65\u00b0C)Bring to 500 ml total volume with DPBS (without CaCl2 and MgCl2)Filter sterilize, wrap in aluminum foil, and store up to 1 year at 4\u00b0C\n",
+            "cite_spans": [],
+            "section": "PFA fixation buffer, 4% ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "\n20 mM Tris\u22c5Cl, pH 7.5 (appendix\nmca02a)5 mM sodium chloride9 mM magnesium chlorideAliquot and store up to 1 year at \u221220\u00b0C\n",
+            "cite_spans": [],
+            "section": "RNA transcription reaction buffer, 10\u00d7 ::: Reagents and Solutions",
+            "ref_spans": []
+        },
+        {
+            "text": "Hepatitis C virus (HCV) is a hepatotropic enveloped positive\u2010strand RNA virus and a primary causative agent of liver disease worldwide. Currently, HCV affects \u223c170 million individuals globally, causing significant liver disease, including cirrhosis and hepatocellular carcinoma (HCC) in chronically infected individuals (Alter and Seeff, 2000). In fact, in the United States, HCV\u2010related HCC accounts for over 50% of HCC cases and over 30% of liver transplants performed annually.",
+            "cite_spans": [],
+            "section": "Background Information ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "HCV is classified in the family Flaviviridae based on conservation of the viral RNA\u2010dependent RNA polymerase and genome organization (Lindenbach and Rice, 2005). The \u223c9.6 kb RNA genome, flanked by highly structured 5\u2032 and 3\u2032 untranslated regions, encodes a single open reading frame, which is translated via a viral internal ribosome entry site into an \u223c3010\u2010amino\u2010acid viral polyprotein. The viral polyprotein is co\u2010 and post\u2010translationally cleaved into structural and nonstructural (NS) proteins by both host and viral proteases. The NS viral proteins assemble on cellular membranes of the endoplasmic reticulum and mediate the formation of the viral RNA replication complex (also known as the membranous web) where negative strand RNA synthesis occurs (Gosert et al., 2003). The negative\u2010strand RNA then provides the template for \u223c10\u2010fold amplification of positive\u2010strand genomic RNA, which is subsequently encapsidated by the viral nucleocapsid protein (i.e., Core), and directed into the cellular lipoprotein secretory pathway, where progeny virions further mature and become lipidated prior to exiting the cell (Lindenbach and Rice, 2005).",
+            "cite_spans": [],
+            "section": "Background Information ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "Since its discovery in 1989, the only effective treatment option for HCV has been interferon \u03b1 (IFN\u2010\u03b1) treatment in combination with ribavirin (Glue et al., 2000). Unfortunately, this therapy has a wide spectrum of toxic side effects and is only effective in a subset of patients. With the number of HCV patients requiring treatment expected to significantly increase over the next decade (Williams, 2006), there is an obvious and immediate need for new and more effective HCV antivirals. As a result, high\u2010throughput\u2010screening (HTS) assays utilizing the recently developed infectious HCV cell culture system (Lindenbach et al., 2005; Wakita et al., 2005; Zhong et al., 2005) as a means to identify new anti\u2010HCV compounds that target all steps of the HCV life cycle are needed. This unit describes a unique HCV HTS cell\u2010based Fluorescence Resonance Energy Transfer (FRET) assay for antiviral compound screening (Yu et al., 2009), which combines the use of infectious HCVcc and non\u2010dividing hepatoma cell cultures (Sainz and Chisari, 2006; Choi et al., 2009) with a sensitive FRET\u2010based readout for the endogenous, virally\u2010encoded NS3 protease.",
+            "cite_spans": [],
+            "section": "Background Information ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "This assay offers several distinct advantages over conventional HCV antiviral compound screening assays. First, while traditional viral HTS assays typically aim to achieve a synchronized single\u2010cycle round of viral replication using a high multiplicity of infection (MOI) approach, this results in biased selection of inhibitors that target viral entry and replication over those compounds that inhibit later viral infection processes such as maturation, egress, and any subsequent cell\u2010to\u2010cell spread. To avoid this predisposition and to identify inhibitors of all aspects of the viral life cycle, the HCV HTS assay described herein is based on a low\u2010MOI 6\u2010day infection during which multiple rounds of HCV infection, and spreading of the virus throughout the culture, occur. As such, inhibitors that target any step of the viral life cycle can be successfully identified. Secondly, to accommodate this long, 6\u2010day infection, this HCV HTS assay makes use of nondividing, synchronized hepatoma cell cultures, which allow for highly reproducible, robust HCVcc infection over an extended period of time, virtually eliminating the well\u2010to\u2010well cell culture\u2013related variability that often plagues cell\u2010based HTS strategies. Additionally, these ready\u2010for\u2010use cultures are easily maintained in and have an inherent tolerability to the common compound library diluent dimethylsulfoxide (DMSO). For the average researcher, it is also advantageous that the described HCV FRET assay can be performed with any standard infectious HCV clone (i.e., no special reporters need to be engineered into the viral genome) and makes use of a sensitive commercially available internally quenched NS3 peptide substrate.",
+            "cite_spans": [],
+            "section": "Background Information ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nCell culture. As with all HCV\u2010related cell culture, the use of low\u2010passage Huh7 cells (or at least usage of cells within a defined HCV\u2010permissive cell passage window) is recommended. Additionally, it is imperative that cells be mycoplasma free and greater than 90% viable before use, as HCV infection can be affected by all these variables. Culturing of Huh7 cells in 1% DMSO to induce cell growth arrest involves some additional considerations. First, while this method has proven successful with numerous distinct Huh7 cell lines, it is recommended that each cell line be tested individually to ensure cells behave as expected (e.g., cell growth cessation and liver\u2010specific gene expression enhancement occurring at approximately day 6 post DMSO treatment). One potential problem with DMSO treatment is excess DMSO, which can result in Huh7 cell death and cytotoxicity. When preparing Huh7 cell maintenance medium with 1% (v/v) DMSO, accurately measure all volumes to ensure a final DMSO concentration of 1%. The use of tissue\u2010culture\u2010grade DMSO (Sigma) is recommended. Another potential problem is the overgrowth of Huh7 cells in the presence of 1% DMSO. This can happen when the Huh7 cell maintenance medium with 1% DMSO is initially added to cultures too late, when the cells are already confluent or over\u2010confluent rather than 85% to 90% confluent. The judgement regarding when to add the 1% DMSO\u2013containing medium is subjective, and this should be determined empirically before beginning large\u2010scale experiments with DMSO\u2010treated cultures. Lastly, during the 20\u2010day incubation period, medium must be changed every 2 to 3 days, as Huh7 cells incubated in the presence of 1% DMSO are extremely metabolically active, and thus utilize nutrients at rates significantly faster than their actively dividing counterparts. As such, medium pH quickly becomes acidic, and nutrients are rapidly exhausted, particularly after 6 days of DMSO treatment; medium changes every 2 days are therefore necessary.",
+            "cite_spans": [],
+            "section": "Anti\u2010HCV compound screening protocol ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHCV infection. To ensure reproducibility throughout a single library screening effort, an HCVcc stock sufficient to complete the entire screen should be produced, and detailed 6\u2010day infection kinetics should be established prior to screening. Subsequent virus storage and handling techniques should also be standardized.",
+            "cite_spans": [],
+            "section": "Anti\u2010HCV compound screening protocol ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nCompound screening. In this unit, we describe an approach that accommodates unstable compounds that must be kept frozen with minimum freeze/thaw cycles; however, handling of different compound libraries should be determined according to the stability and properties of the compounds being tested (e.g., it may be possible to use a deep\u2010well microtiter plate to predilute drugs in sufficient medium for all medium changes, and store this at 4\u00b0C during the 6\u2010day infection).",
+            "cite_spans": [],
+            "section": "Anti\u2010HCV compound screening protocol ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "When performing the screen itself, standard positive and negative controls must be included on each individual screening plate as internal controls, so that results can be compared between plates. Positive controls could be known potent HCV inhibitors, such as IFN. Negative controls should include diluent only treatments.",
+            "cite_spans": [],
+            "section": "Anti\u2010HCV compound screening protocol ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "The HCV FRET assay is a simple mix\u2010and\u2010read fluorescence\u2010based assay that measures HCV infectivity as a function of NS3 protease activity in a cell\u2010based system. Like all HTS assays, however, it is critical to carefully consider parameters such as lysis reagents, substrate activity, statistical validation of the assay, and data interpretation.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nLysis buffer. Complete lysis of cells is needed for proper quantification of NS3 protease activity. While standard growing Huh7 monolayers are efficiently lysed by traditional lysis buffers, including those provided by the manufacturer of the NS3 substrate (AnaSpec), lysis of DMSO\u2010Huh7 cultures requires more stringent conditions due to their tightly packed morphology. As such, individual lysis buffers were empirically tested, and it was determined that the FRET lysis buffer described in this unit (see Reagents and Solutions) allows for sufficient DMSO\u2010Huh7 cell culture lysis without reducing NS3 protease activity (Yu et al., 2009). In addition, it is recommended that each screening plate be frozen before FRET analysis, so that DMSO\u2010Huh7 cells undergo one freeze\u2010thaw cycle in the FRET lysis buffer.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nSubstrate. The 5\u2010FAM/QXL 520 NS3 FRET peptide substrate (AnaSpec) was chosen for its high sensitivity; however, any FRET peptide substrate containing the appropriate HCV NS3 cleavage site would be suitable as long as the final signal\u2010to\u2010noise ratio is acceptable, which is of particular importance when developing fluorescence\u2010based assays, as these typically have lower signal\u2010to\u2010background ratios than other commonly HTS assays (Zhang et al., 1999). Thus, if an alternate substrate is utilized, it is advisable to optimize signal\u2010to\u2010background ratios and to test multiple lysis buffers and read\u2010out parameters against an appropriate panel of positive and negative controls prior to performing a compound screening campaign.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "Important for any fluorescently tagged peptide substrate is its proper storage and handling. Because fluorescently tagged peptide substrates are light and temperature sensitive, care should be taken to reduce exposure of the substrate to light and to avoid repeat freeze\u2010thaw cycles. To avoid these issues and control for lot\u2010to\u2010lot substrate variability, it is recommended, when feasible, to obtain bulk quantities of a particular peptide substrate lot and immediately aliquot it on ice into individual single\u2010use tubes, which can be kept at \u221280\u00b0C for long\u2010term storage. 60 \u00b5l of the 5\u2010FAM/QXL 520 NS3 FRET peptide substrate (AnaSpec) is sufficient to test an entire 96\u2010well microtiter sample plate, but aliquot volumes should be adjusted based on individual compound screening needs.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nStatistical validation of HCV FRET assay. Critical to any HTS is reproducibility and consistent assay performance. The Z\u2032 factor is a value that measures the quality of an assay by assessing its dynamic range as well as the variation within the assay by measuring the distance between the standard deviations for the positive (signal) and negative (noise) controls. This value also assesses well\u2010to\u2010well variability and the noise/error associated with the assay. For a HTS to be considered accurate, a Z\u2032 value of greater than 0.5 is necessary. Following the procedures outlined in this unit, the HCV FRET described routinely exhibits a Z\u2032 factor greater than 0.6 (Yu et al., 2009); however, this should be empirically determined for each user/laboratory.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nData interpretation. The success of any compound screening assay lies in the ability of the assay to distinguish hits from non\u2010hits. Thus, it is important to calculate an assay hit ratio to determine an appropriate hit window for identifying candidate anti\u2010HCV compounds, as described in Zhang et al. (1999). From a biological perspective, it is advisable to follow up with compounds that reproducibly inhibit HCV \u22655\u2010fold, relating to a 20% hit zone. If a 20% hit zone identifies an unmanageable number of hits, a more stringent hit window (e.g., 10%) can be established. Likewise, if too few compounds are identified using a 20% hit zone, the hit window can be increased (e.g., up to 30%) to accept more test compounds as potential inhibitors of HCVcc.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nIn vitro\u2013transcribed RNA quality. The ability to efficiently produce infectious HCVcc after transfection of in vitro\u2013transcribed HCV RNA is dependent on the presence of sufficient quantities of full\u2010length HCV RNA genomes. The pJFH\u20101 expression vector contains a T7 promoter, suitable for in vitro RNA transcription of the \u223c9.6 kb RNA genome, but optimization may be necessary for optimal synthesis of the large HCV RNA transcript, even when using commercially available transcription kits according to the manufacturer's recommendations. It is highly recommended that in vitro\u2013transcribed RNA be visualized by gel electrophoresis to assess RNA quality, as described (Brown et al., 2004). The presence of a predominant smear of RNAs of different sizes rather than a predominant single band (with slight smear of incomplete products) can indicate incomplete transcription or degradation, which can negatively impact intracellular HCV RNA replication following transfection. The addition of an RNase inhibitor and optimization of transcription reaction incubation period can help ensure that the RNA stock contains a high percent of intact HCV RNA genomes. If RNAs longer than genome length are observed, it may indicate that you have not completely linearized your template DNA and are thus getting continual RNA synthesis around an intact plasmid. This can be resolved by either redigesting the template or by incorporating a step in which the linearized template DNA is separated on an agarose gel before purification. Finally, because contaminants such as proteins or residual phenol, chloroform, or ethanol may reduce transfection efficiency, A\n260/A\n280 spectrophotometric analysis of the in vitro transcribed RNA is recommended to confirm RNA purity. Further purification including an optional proteinase K treatment step can be performed, if necessary, to obtain better RNA purity.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nTransfection. The original reports describing generation of HCVcc from in vitro transcribed RNA utilized electroporation to transfect Huh7 cells (Lindenbach et al., 2005; Wakita et al., 2005; Zhong et al., 2005). While different Huh7 cell lines may respond optimally to slightly different electroporation conditions, the parameters described here should represent a reasonable starting point for optimization. Additionally, the choice of transfection method theoretically is not limited to electroporation, as other methodologies such as cationic lipid\u2013mediated transfection using Lipofectamine 2000 (Invitrogen) have also been used with comparable efficacy (Zhong et al., 2005). Thus, any RNase\u2010free transfection protocol should be suitable as long as intact RNAs are delivered effectively to the target cells with efficiencies of at least 60%. In any case, it is advisable to first ensure (or at least determine in parallel) that your transfection protocol is effective by using plasmid vectors encoding a reporter gene, such as GFP.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHCV replication. Failure to produce detectable levels of infectious HCVcc may also be due to inadequate intracellular replication of transfected in vitro\u2013transcribed HCV RNA. Although the majority of Huh7 cells are permissive for HCVcc infection and support robust HCV JFH\u20101 replicon RNA replication (Sainz et al., 2009), specific laboratory cell lines may not support initiation of HCV RNA replication as efficiently. To assess intracellular HCV RNA replication following transfection, quantitation of HCV RNA by quantitative real\u2010time polymerase chain reaction (qRT\u2010PCR) can be performed as described (Sainz et al., 2009). Likewise, HCV protein levels (indicative of efficient RNA replication) can be determined by immunostaining, as described in Support Protocol 3.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nHuh7 cells. Of major importance in the generation of high\u2010titer HCVcc stocks is the state of the cells during propagation. Under optimal cellular conditions, JFH\u20101 HCVcc should grow to titers of 105 ffu/ml; however, over\u2010confluency, mycoplasma contamination, and other changes in the state of the host cell can negatively impact HCV RNA replication and de novo virus production (Pietschmann et al., 2001; Windisch et al., 2005; Nelson and Tang, 2006; Sainz and Chisari, 2006). Thus, it is critical to use Huh7 cells that have been maintained in a healthy growth state and that have not been allowed to become over\u2010confluent at the time of transfection, infection, or at any point thereafter. Moreover, during long\u2010term passaging, Huh7 cell permissiveness for HCVcc infection can fluctuate (Corcoran et al., unpub. observ.). Hence, particularly to ensure reproducibility throughout large\u2010scale HCV screening efforts, it is recommended that Huh7 cell passage be monitored such that cells are only cultured for a limited number of passages (i.e., \u223c15 splits). At this time, cells should be discarded and an equivalent frozen aliquot thawed for continued use. Obviously, this requires that cells to be used be initially expanded and that large numbers of parallel aliquots be frozen for future use. Lastly, mycoplasma contamination should be avoided and cell lines treated if determined to be mycoplasma positive (see appendix\nmca03b).",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nSuboptimal viral titers. Although HCV is considered a noncytolytic virus, HCVcc infection in Huh7 cells does result in detectable cytopathic effect (CPE) characterized by a slowing of cell growth and the appearance of rounded, sometimes floating cells. The degree of CPE observed varies among different Huh7 cell lines (Sainz et al., 2009), but the onset of CPE usually coincides with maximal titer production. As such, harvesting virus during the initial onset of HCV\u2010induced CPE is recommended.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "If titers achieved by the methods described in this unit are suboptimal for specific downstream purposes, higher titers can be obtained by concentrating viral stocks using centrifugal concentrators, such as Amicon Ultra\u20104 Centrifugal Filter Units (Millipore). If harvested in serum\u2010free medium, virus can be concentrated at least 100\u2010fold without loss of infectivity.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nCell culture\u2010adapted mutations. As mentioned in Support Protocol 2, when propagating RNA viruses, mutations are incorporated into the viral genome every time it is replicated, due to intrinsic error rate and lack of proofreading function of the viral RNA\u2013dependent RNA polymerase. Hence, during continuous passage in cell culture, selection for specific \u201ccell\u2010culture adapted\u201d mutants can occur (Zhong et al., 2006). While mutations that confer an advantage for viral growth in cell culture can randomly occur any time during infection, a significant shift in the virus population as a whole usually requires several weeks of continuous virus selection to occur. Thus, the HCVcc propagation methods described in Support Protocols 1 and 2 should not typically result in the emergence/selection of specific cell\u2010culture mutations. Bulk sequencing of the virus present in medium collected 18 days post transfection and 10 days post subsequent P1 infection has indicated no detectable selection of cell culture mutations in past virus stock preparations; however, only bulk sequencing can empirically confirm in a conclusive way whether an adaptive mutation has been selected within a specific virus stock.",
+            "cite_spans": [],
+            "section": "Propagation of HCVcc ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "The HCV infectivity titer assay described in Support Protocol 3 is based on standard titering protocols successfully utilized for numerous viruses (Condit, 2007); however, some HCV\u2010specific parameters should be noted.",
+            "cite_spans": [],
+            "section": "Infectivity titer assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nAbnormal and/or difficult to count HCV foci. Although noncytolytic, HCV does form discrete foci on Huh7 monolayers. Ideally, by 72 hr post\u2010infection, when cells are fixed and stained, HCV protein positive foci consist of 5 to 10 grouped cells. However, sometimes individual foci are not readily distinguishable, due to the unexpected differences in the size or shape of the foci. Although foci size does vary depending on the specific Huh7 cell line used for titering (Sainz et al., 2009), it is more often the case that simple adjustments can be made to optimize foci formation. First, it can be very helpful to include a simple overlay to minimize secondary spread, which can give rise to satellite foci. Thus, the addition of 0.25% (w/v) methylcellulose is recommended to ensure the formation of countable discrete HCV foci. Additionally, if foci are too large at 72 hr post\u2010infection, cells can be fixed and stained earlier (e.g., at 48 hr post\u2010infection). In contrast, if foci are too small to reliably count, this may be the result of the cells being over\u2010confluent at the time of infection, suboptimal media conditions, use of high\u2010passage Huh7 cells, contamination with mycoplasma, or incubator CO2 levels exceeding 5%.",
+            "cite_spans": [],
+            "section": "Infectivity titer assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "\nInconsistent or suboptimal staining. As with all immunostaining methodologies, issues such as antibody specificity, cell permeability, and background may arise. The protocol described herein using the antibodies listed provided in Table 1 has been designed to ensure maximum staining and visualization of HCV foci. If inconsistent or suboptimal staining is encountered, all reagents should first be checked. Alternatively, standard changes in antibody dilutions, incubation periods, and incubation temperatures can be tested. Lastly, an additional permeabilization step consisting of a single 10\u2010min wash with ice\u2010cold 50% acetone/50% methanol (v/v) can be incorporated before Support Protocol 3, step 10.",
+            "cite_spans": [],
+            "section": "Infectivity titer assay ::: Critical Parameters and Troubleshooting ::: Commentary",
+            "ref_spans": [
+                {
+                    "start": 238,
+                    "end": 239,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The HCVcc FRET assay described herein is a useful and effective procedure for testing the efficacy of potential HCV antivirals against all aspects of the viral life cycle.",
+            "cite_spans": [],
+            "section": "Anticipated Results ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "The use of non\u2010growing cell cultures provides a unique cell culture environment in which to test the efficacy of test compounds on HCV, and imparts the advantage of virtually eliminating the well\u2010to\u2010well variability routinely encountered in cell\u2010based compound screening assays that use actively dividing cell cultures. As early as 6 days post incubation in 1% DMSO, Huh7 cell should enter growth arrest, and, soon thereafter, form tightly packed monolayers of mono\u2010 and binucleated cells displaying the typical pavement\u2010like cytological features of primary hepatocytes. As previously described (Yu et al., 2009), these cells support robust HCVcc infection; therefore, following 6 days of infection, HCV NS3 protease activity as measured by FRET fluorescence should yield maximal RFU values if untreated, with a noise\u2010to\u2010background ratio of \u223c6 to 8. Samples treated with compounds that inhibit HCV at any step in the viral life cycle (e.g., entry, uncoating, translation, replication, assembly, maturation, and egress) should yield RFU values significantly below those of the untreated HCV\u2010infected control wells. For example, interferon\u2010\u03b2, a potent inhibitor of HCV infection, reduces NS3 FRET RFU values by 90% to 95% as compared to untreated HCV\u2010infected control samples. It will not be uncommon to see variations in RFU values from experiment to experiment when working with different substrate lots (see Critical Parameters, \u201cSubstrate\u201d); however, if inhibition is appropriately calculated relative to the proper controls, the percent reductions should be comparable from experiment to experiment.",
+            "cite_spans": [],
+            "section": "Anticipated Results ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "Generation of HCVcc in Huh7 cells by either transfection of in vitro\u2013transcribed HCV JFH\u20101 RNA (Support Protocol 1) or by infection of Huh7 cells with HCVcc (Support Protocol 2) should yield titers between 104 and 106 ffu/ml. However, due to the variation inherent in HCVcc infection observed, due in part to the cell lines/clone utilized, the time post transfection or post infection that will yield maximal titers will vary. Nonetheless, following the protocols described within this unit, maximal JFH\u20101 titers in Huh7 cells should be achieved by day 18 post transfection or day 12 post infection. Once HCVcc has been generated, the HCV infectivity titer assay (Support Protocol 3) can be used to determine viral titer expressed as ffu/ml. The assay should yield discrete HCV foci consisting of 5 to 10 HCV protein\u2010positive cells.",
+            "cite_spans": [],
+            "section": "Anticipated Results ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "The FRET assay described in this unit (Basic Protocols 1 and 2) can take several weeks to complete; however, the assay can be divided into manageable sub\u2010procedures, with stopping points along the way, which afford efficient execution of the entire assays from start to finish. As with any compound library screening endeavor, proper planning prior to beginning the assay is advised to ensure that needed reagents/compounds are available and appropriately diluted at the correct times, and that mandatory steps, such as preparation of cells and infections, occur at appropriate intervals throughout the assays. To this end, designing a strategic plan in advance of initiating the assay will prevent unanticipated errors and delays. The FRET assay has been divided into two basic protocols that require a total of \u223c27 days (Basic Protocol 1) and 4 hr (Basic Protocol 2) to complete.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Time Considerations ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "Therefore, all procedures can be completed either in tandem or can be alternated. For example, step 24 at the end of Basic Protocol 1 represents a stopping point where sample plates can be stored indefinitely. Thus, the authors advise that Basic Protocol 2 be performed once a sufficient number of sample plates for FRET analysis have been accumulated. This will ensure more consistent FRET results between assay plates, as all fluorescence\u2010related procedures will be performed together and over the course of a few days rather than staggered across several weeks.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Time Considerations ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, it is advised that preparation of cell culture plates be staggered such that a manageable number of plates are handled at one time. Since cells must incubate for 3 weeks (i.e., 20 days) in the presence of 1% DMSO, batches of plates can be seeded weekly, thus reducing the number of plates to be treated and infected at one time. The aforementioned suggestions, however, are dependent on the number of compounds to be tested and liquid handling equipment available.",
+            "cite_spans": [],
+            "section": "FRET assay ::: Time Considerations ::: Commentary",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to the FRET assay described in Basic Protocols 1 and 2, Support Protocols 1 through 3 detail procedures for generating HCVcc and determining infectivity titer. Generation of HCVcc can be accomplished by transfection of Huh7 cells with in vitro\u2013transcribed HCV JFH\u20101 RNA (Support Protocol 1), or by infection of cells with HCVcc (Support Protocol 2), requiring 7 to 21 days or 10 days, respectively. Once HCVcc has been generated, infectivity titer analysis can be performed (Support Protocol 3) within 4 days, with foci\u2010counting and titer\u2010analysis time varying depending on the method of detection (HRP versus immunofluorescence) and the number of wells to be counted.",
+            "cite_spans": [],
+            "section": "Propagation and titering of HCVcc ::: Time Considerations ::: Commentary",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: HCVcc Infectivity Titer Assay: Antibodies and Dilutions\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Time Requirements for Procedures Related to the Cell\u2010Based FRET Assay for HCV\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Sample plate layout for HTS anti\u2010HCV compound screening. This illustrates a standard plate layout in which two columns have been reserved for controls. However, compound libraries are often provided with only one empty column for the addition of controls. The layout chosen for individual screening campaigns will need to be adapted to accommodate these restrictions, and, if necessary, to avoid areas prone to \u201cedge effect.\u201d",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: NS3 FRET peptide substrate. (A) The 5\u2010FAM/QXL 520 NS3 FRET substrate is an internally quenched peptide with a fluorescent donor (5\u2010FAM) and acceptor (QXL) on opposing sides of the NS3 protease cleavage site. (B) FRET protease assay. The donor absorbs energy at 490 nm and emits energy (i.e., fluorescence) at 520 nm. However, when in close contact on an intact peptide, the acceptor absorbs the 520\u2010nM energy emitted by the donor, preventing fluorescence. Cleavage of the peptide increases the distance between the fluorophores, resulting in proportional 5\u2010FAM fluorescence. Diagram and figure adapted from AnaSpec product information (http://www.anaspec.com/products/product.asp?id=30173&productid=13982).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Sample plate layout for virus titration. 24 viral serial dilutions can be conveniently performed in each U\u2010bottom 96\u2010well microtiter plate. In this example, the wells in rows 1 and 5 are filled with the individual virus samples to be analyzed while the wells in rows 2 to 4 and 6 to 8 are each filled with 180 \u00b5l of Huh7 cell maintenance medium. Using a multichannel pipettor, three 1:10 dilutions can be made by transferring 20 \u00b5l between wells down each column, beginning with the undiluted virus row and moving on to the 1:10 row, the 1:100 row, and the 1:1000 row. It is important to thoroughly mix the virus dilution by pipetting up and down after each transfer, and to change pipet tips between each transfer.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Recovery, persistence, and sequelae in hepatitis C virus infection: A perspective on long\u2010term outcome",
+            "authors": [],
+            "year": 2000,
+            "venue": "Semin. Liver Dis.",
+            "volume": "20",
+            "issn": "",
+            "pages": "17-35",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Synthetic depsipeptide substrates for the assay of human hepatitis C virus protease",
+            "authors": [],
+            "year": 1996,
+            "venue": "Anal. Biochem.",
+            "volume": "237",
+            "issn": "",
+            "pages": "239-244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Analysis of RNA by northern and slot blot hybridization",
+            "authors": [],
+            "year": 2004,
+            "venue": "Curr. Protoc. Mol. Biol.",
+            "volume": "67",
+            "issn": "",
+            "pages": "4.9.1-4.9.19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Characterization of increased drug metabolism activity in dimethyl sulfoxide (DMSO)\u2010treated Huh7 hepatoma cells",
+            "authors": [],
+            "year": 2009,
+            "venue": "Xenobiotica",
+            "volume": "39",
+            "issn": "",
+            "pages": "205-217",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Single\u2010step method of RNA isolation by acid guanidinium thiocyanate\u2010phenol\u2010chloroform extraction",
+            "authors": [],
+            "year": 1987,
+            "venue": "AnalBiochem",
+            "volume": "162",
+            "issn": "",
+            "pages": "156-159",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Field's Virology",
+            "volume": "",
+            "issn": "",
+            "pages": "25-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": 1967,
+            "venue": "Methods in Virology",
+            "volume": "",
+            "issn": "",
+            "pages": "243-311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Isolation of viral double\u2010stranded RNAs using a LiCl fractionation procedure",
+            "authors": [],
+            "year": 1978,
+            "venue": "Prep. Biochem.",
+            "volume": "8",
+            "issn": "",
+            "pages": "1-17",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Quantitation of DNA and RNA by absorption and fluorescence spectroscopy",
+            "authors": [],
+            "year": 2006,
+            "venue": "Curr. Protoc. Mol. Biol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "A.3D.1-A.3D.21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Pegylated interferon\u2010alpha2b: Pharmacokinetics, pharmacodynamics, safety, and preliminary efficacy data. Hepatitis C Intervention Therapy Group",
+            "authors": [],
+            "year": 2000,
+            "venue": "Clin. Pharmacol. Ther.",
+            "volume": "68",
+            "issn": "",
+            "pages": "556-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Identification of the hepatitis C virus RNA replication complex in Huh\u20107 cells harboring subgenomic replicons",
+            "authors": [],
+            "year": 2003,
+            "venue": "J. Virol.",
+            "volume": "77",
+            "issn": "",
+            "pages": "5487-5492",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A high throughput assay of the hepatitis C virus nonstructural protein 3 serine proteinase",
+            "authors": [],
+            "year": 1999,
+            "venue": "J. Virol. Methods",
+            "volume": "80",
+            "issn": "",
+            "pages": "77-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Sequence analysis of hepatitis C virus isolated from a fulminant hepatitis patient",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Med. Virol.",
+            "volume": "64",
+            "issn": "",
+            "pages": "334-339",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Efficient replication of the genotype 2a hepatitis C virus subgenomic replicon",
+            "authors": [],
+            "year": 2003,
+            "venue": "Gastroenterology",
+            "volume": "125",
+            "issn": "",
+            "pages": "1808-1817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Guanidine methods for total RNA preparation",
+            "authors": [],
+            "year": 1996,
+            "venue": "Curr. Protoc. Mol. Biol.",
+            "volume": "36",
+            "issn": "",
+            "pages": "4.2.1-4.2.9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Broadly neutralizing antibodies protect against hepatitis C virus quasispecies challenge",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nat. Med.",
+            "volume": "14",
+            "issn": "",
+            "pages": "25-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Unravelling hepatitis C virus replication from genome to function",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "436",
+            "issn": "",
+            "pages": "933-938",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Complete replication of hepatitis C virus in cell culture",
+            "authors": [],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "623-626",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Growth of human hepatoma cells lines with differentiated functions in chemically defined medium",
+            "authors": [],
+            "year": 1982,
+            "venue": "Cancer Res.",
+            "volume": "42",
+            "issn": "",
+            "pages": "3858-3863",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Effect of cell growth on hepatitis C virus (HCV) replication and a mechanism of cell confluence\u2010based inhibition of HCV RNA and protein expression",
+            "authors": [],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "1181-1190",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Development of a cell\u2010based high\u2010throughput specificity screen using a hepatitis C virus\u2010bovine viral diarrhea virus dual replicon assay",
+            "authors": [],
+            "year": 2005,
+            "venue": "Antimicrob. Agents Chemother.",
+            "volume": "49",
+            "issn": "",
+            "pages": "1346-1353",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Basic techniques in mammalian cell culture",
+            "authors": [],
+            "year": 2007,
+            "venue": "Curr. Protoc. Cell Biol.",
+            "volume": "36",
+            "issn": "",
+            "pages": "1.1.1-1.1.18",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Characterization of cell lines carrying self\u2010replicating hepatitis C virus RNAs",
+            "authors": [],
+            "year": 2001,
+            "venue": "J. Virol.",
+            "volume": "75",
+            "issn": "",
+            "pages": "1252-1264",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "A simple method of estimating fifty percent endpoints",
+            "authors": [],
+            "year": 1938,
+            "venue": "Am. J. Hyg.",
+            "volume": "27",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Production of infectious hepatitis C virus by well\u2010differentiated, growth\u2010arrested human hepatoma\u2010derived cells",
+            "authors": [],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "10253-10257",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Hepatitis C virus infection in phenotypically distinct Huh7 cell lines",
+            "authors": [],
+            "year": 2009,
+            "venue": "PLoS ONE",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A continuous assay of hepatitis C virus protease based on resonance energy transfer depsipeptide substrates",
+            "authors": [],
+            "year": 1996,
+            "venue": "Anal. Biochem.",
+            "volume": "240",
+            "issn": "",
+            "pages": "60-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Production of infectious hepatitis C virus in tissue culture from a cloned viral genome",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nat. Med.",
+            "volume": "11",
+            "issn": "",
+            "pages": "791-796",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Global challenges in liver disease",
+            "authors": [],
+            "year": 2006,
+            "venue": "Hepatology",
+            "volume": "44",
+            "issn": "",
+            "pages": "521-526",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Dissecting the interferon\u2010induced inhibition of hepatitis C virus replication by using a novel host cell line",
+            "authors": [],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "13778-13793",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Development of a cell\u2010based hepatitis C virus infection fluorescent resonance energy transfer assay for high\u2010throughput antiviral compound screening",
+            "authors": [],
+            "year": 2009,
+            "venue": "Antimicrob. Agents Chemother.",
+            "volume": "53",
+            "issn": "",
+            "pages": "4311-4319",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A simple statistical parameter for use in evaluation and validation of high throughput screening assays",
+            "authors": [],
+            "year": 1999,
+            "venue": "J. Biomol. Screen.",
+            "volume": "4",
+            "issn": "",
+            "pages": "67-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Robust hepatitis C virus infection in vitro",
+            "authors": [],
+            "year": 2005,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "102",
+            "issn": "",
+            "pages": "9294-9299",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Persistent hepatitis C virus infection in vitro: coevolution of virus and host",
+            "authors": [],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "11082-11093",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

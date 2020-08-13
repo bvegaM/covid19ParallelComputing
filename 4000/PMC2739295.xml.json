@@ -1,0 +1,4513 @@
+{
+    "paper_id": "PMC2739295",
+    "metadata": {
+        "title": "Gene Expression Profiling in Cells with Enhanced \u03b3-Secretase Activity",
+        "authors": [
+            {
+                "first": "Alexandra",
+                "middle": [
+                    "I."
+                ],
+                "last": "Magold",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Matthias",
+                "middle": [],
+                "last": "Cacquevel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Patrick",
+                "middle": [
+                    "C."
+                ],
+                "last": "Fraering",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ashley",
+                "middle": [
+                    "I."
+                ],
+                "last": "Bush",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "\u03b3-Secretase is an unconventional aspartyl protease (composed of PS1, NCT, Aph-1 and Pen2) with an intramembranous catalytic site that is typical of the class of intramembrane-cleaving proteases (I-CliPs) (for review, see [1], [2]). Via the processing of its substrates and freeing of their intracellular domains (ICDs), \u03b3-secretase regulates a multitude of signaling pathways and biological processes by influencing gene transcription. This is exemplified by the processing of the Notch receptor and the Notch signaling pathway (for a review, see [3]). After specific ectodomain shedding via tumor necrosis factor \u03b1 converting enzyme (TACE) (Fig. 1, step 1), Notch is further cleaved intramembraneously by \u03b3-secretase (Fig. 1, step 2). The intracellular domain of Notch (NICD) is freed to enter the nucleus, where it interacts with the transcription factor CSL (Fig. 1, step 3). With help from the coactivator Mastermind, CSL is converted from a transcriptional repressor to a transcriptional activator. CSL as an activator leads to the expression of Notch target genes (Fig. 1, step 4), like the Hes or Hey family. Hes1, a transcriptional repressor, inhibits the transcription of NC3C1 (Fig. 1, step 5). Enhanced \u03b3-secretase activity, through its cleavage of Notch, leads to increased transcription of specific genes (Fig. 1, step 4) that repress the expression of other genes (Fig. 1, step 6) to influence a multitude of biological processes. For example, the processing of Notch by \u03b3-secretase is crucial for hepatoblast differentiation [4], epidermis and hair follicle differentiation [5], alveolar differentiation in mammary glands [6], maintenance of skin appendages [7], intestinal stem cell specification [8], induction of satellite cells after injury and maintenance [9] and neural specification of embryonic stem cells [10].",
+            "cite_spans": [
+                {
+                    "start": 221,
+                    "end": 224,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 226,
+                    "end": 229,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 547,
+                    "end": 550,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1540,
+                    "end": 1543,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 1589,
+                    "end": 1592,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 1637,
+                    "end": 1640,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1673,
+                    "end": 1676,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1713,
+                    "end": 1716,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 1776,
+                    "end": 1779,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1829,
+                    "end": 1833,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 642,
+                    "end": 648,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 719,
+                    "end": 725,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 862,
+                    "end": 868,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1071,
+                    "end": 1077,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1188,
+                    "end": 1194,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1319,
+                    "end": 1325,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1379,
+                    "end": 1385,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The directions in which \u03b3-secretase activity can up- and down-regulate gene transcription following its cleavage of a variety of substrates is further exemplified by the processing of Amyloid-\u03b2 (A\u03b2) precursor protein (APP), one of the better-known \u03b3-secretase substrates. The successive processing of APP by BACE1 and \u03b3-secretase indeed leads to the production of A\u03b2 peptides (a causative agent in the pathogenesis of Alzheimer's disease (AD)), and APP-intracellular domains (AICDs) which, following association with the adaptor protein Fe65 and nuclear translocation, are able to suppress the expression of the major Apolipoprotein \u03b5 (ApoE)/lipoprotein receptor LRP1 by binding directly to its promoter [11]. Thus, APP processing is also involved in the regulation of brain ApoE and cholesterol metabolism through LRP1 [11]. As ApoE4 is the major known genetic risk factor for late onset Alzheimer's disease (LOAD) and since AICD production depends on \u03b3-secretase, the latter is implicated in the sporadic form as well. In contrast to LOAD, which correlates directly with age, early onset familial Alzheimer's disease (FAD) is genetic and is mainly caused by mutations in presenilin1 or presenilin2 (PSEN1 or PSEN2), leading to loss of physiological or gain of toxic functions. Murine specific loss of Psen1 in the forebrain has been shown to affect certain aspects of memory [12], [13]. However, it remains difficult to correlate the loss of four murine PSEN alleles with the mild single PSEN allele mutations in FAD [14], [15]. \u03b3-Secretase is thus directly or indirectly implicated in the pathogenesis of both FAD and LOAD, making this protease an attractive therapeutic target for the prevention and/or treatment of AD. \u03b3-Secretase inhibitors/modulators have indeed reached clinical phase III trials [16].",
+            "cite_spans": [
+                {
+                    "start": 704,
+                    "end": 708,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 820,
+                    "end": 824,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1377,
+                    "end": 1381,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1383,
+                    "end": 1387,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 1519,
+                    "end": 1523,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1525,
+                    "end": 1529,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 1804,
+                    "end": 1808,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "With an increasing number of reports about new \u03b3-secretase substrates and the transcriptional effects of their ICDs being potentially implicated in the pathogenesis of AD or several types of cancer, we see a need for a basic overview of genes and molecular functions that are transcriptionally affected by \u03b3-secretase activity.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In an effort to identify specific alterations of gene transcription as a result of \u03b3-secretase activity, the transcriptomes of two CHO cell lines (biological triplicates were used in each case) with enhanced and inhibited \u03b3-secretase activity were analyzed and compared (strategy depicted in Fig. 1\u2013exemplified by Notch processing). The S-1 cell line overexpresses the four components of \u03b3-secretase (NCT, Aph1a, PS1 and Pen2) and was characterized by a marked increase in the level of PS1 heterodimers and an associated 8-fold increase in \u03b3-secretase activity compared to untransfected controls [17]. The other cell line consisted of the original parental wild type CHO cells incubated with DAPT, a well-known \u03b3-secretase inhibitor. We strategically chose those two conditions, overexpression of \u03b3-secretase and inhibition of its activity, to amplify the activity-dependent effects on gene transcription levels (i.e., amplification of the signal from the cDNA microarray). To reduce potential effects due to changes in the protein levels of the \u03b3-secretase subunits as opposed to changes in its activity that we are interested in, we used chemical inhibition (DAPT) of \u03b3-secretase activity instead of gene silencing, which ultimately leads to changes in protein levels [18]. Biological functions have indeed been reported mainly for the \u03b3-secretase subunit PS1, independently to the \u03b3-secretase activity. However, because treatment of CHO cells with DAPT has been recently reported to exacerbate the secretion of exosomes [19], we cannot exclude at this stage that some detected genes may be exosome-related in response to the DAPT treatment. The gene transcription levels of the two cell lines were analyzed using a mouse cDNA microarray (Fig. 1 and Material and Methods) [20] because of the absence of a readily available DNA microarray based upon hamster gene sequences or cDNA clones. This lack has been noticed, and cross-species reactivity of a mouse microarray hybridized with CHO-derived samples has been investigated recently by De Leon Gatti et al. [21]. This group generated an EST-based CHO microarray and compared it with results from a mouse microarray and vice versa. They state that cross-species hybridization yielded 89.6% overlap in their arrays, non-contradicting results and led only to a decrease in sensitivity resulting in detection of fewer differentially expressed genes. Accordingly, we probably have not detected all differentially expressed genes, but we have detected a significant amount, including clusters of functional relevance. For example, Neprilysin, an A\u03b2-degrading enzyme of functional relevance to AD that has been previously shown to be transcriptionally downregulated in PSEN1/PSEN2 double knock out fibroblasts and to exhibit reduced activity under chemical (DAPT) inhibition of \u03b3-secretase in mouse neurons [22], was not detected in the current study. Collectively, this supports the use of CHO cells with a mouse microarray. The microarray data set discussed in this publication has been deposited in the NCBI Gene Expression Omnibus (GEO, http://www.ncbi.nlm.nih.gov/geo/) and is accessible through GEO Series accession number GSE16379.",
+            "cite_spans": [
+                {
+                    "start": 596,
+                    "end": 600,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1270,
+                    "end": 1274,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 1523,
+                    "end": 1527,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 1774,
+                    "end": 1778,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF88"
+                },
+                {
+                    "start": 2060,
+                    "end": 2064,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 2853,
+                    "end": 2857,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "cDNA microarray analysis of genes differentially transcribed in cells with enhanced \u03b3-secretase activity ::: Results",
+            "ref_spans": [
+                {
+                    "start": 292,
+                    "end": 298,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1741,
+                    "end": 1747,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The mouse microarray consistently detected the four human \u03b3-secretase subunits overexpressed in the S-1 cell line (Table 1). By applying a cut-off based on the false discovery rate (FDR, i.e., the probability to wrongly accept a difference between the two conditions) with a p value of 0.005, we found 2658 EST clones (1981 genes) to be differentially expressed, with 1241 EST clones of increased and 1417 EST clones of decreased transcription upon enhanced \u03b3-secretase activity (Supplemental Material, Dataset S1 and Dataset S2).",
+            "cite_spans": [],
+            "section": "cDNA microarray analysis of genes differentially transcribed in cells with enhanced \u03b3-secretase activity ::: Results",
+            "ref_spans": [
+                {
+                    "start": 115,
+                    "end": 122,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Mapping clusters of genes of GO functions transcriptionally susceptible to \u03b3-secretase activity levels resulted in a GO hierarchy-dependent tree that will provide further orientation for \u03b3-secretase research. Functional clustering of 2658 differentially expressed sequences (1981 genes, Supplemental Material, Dataset S3) was performed using the FatiGo tool [23]. Comparing the representation of functional groups of genes throughout the entire mouse genome with their representation within the group of differentially transcribed genes allowed us to see whether clusters of genes of a specific functional group were enriched in the differentially expressed set. Clusters of over- and underrepresented genes were detected (Fig. 2). The gene functions \u201ctranscription regulator activity\u201d, \u201ckinase regulator activity\u201d, \u201ccatalytic activity\u201d and \u201cbinding \u201d were found to be overrepresented among the 2658 sequences (1981 genes) that were differentially transcribed. The cluster of \u201cmolecular transducer activity\u201d, through its subclusters in the GO hierarchy: \u201creceptor activity\u201d GO0004872, \u201ctransmembrane receptor activity\u201d GO 0004888 and \u201cneurotransmitter receptor activity\u201d GO0030594, as well as the cluster of \u201ctransporter activity\u201d, via its subcluster of \u201cion transporter activity\u201d GO0015075, were underrepresented (Fig. 2, blue boxes). This is significant since neurotransmitter activity and transmembrane receptors are well within the focus of current AD research [24].",
+            "cite_spans": [
+                {
+                    "start": 358,
+                    "end": 362,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1465,
+                    "end": 1469,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Functional clustering of genes differentially transcribed in cells with enhanced \u03b3-secretase ::: Results",
+            "ref_spans": [
+                {
+                    "start": 723,
+                    "end": 729,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1315,
+                    "end": 1321,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Supporting our hypothesis that \u03b3-secretase has a role in multiple transcriptional regulatory activities, the GO cluster of \u201ctranscription regulator activity\u201d is overrepresented through both its subclusters \u201ctranscriptional activator activity\u201d GO0016563 and \u201ctranscriptional repressor activity\u201d GO 0016564 (Fig. 2, red boxes. Single member genes of each cluster are annotated in Supplemental Material Dataset S3). A well-described gene within the activator cluster is \u03b2-catenin (CTNNB1, FC = 3, p = 0.001), whereas an example of a gene in the cluster of \u201ctranscriptional repressor activity\u201d is HES1. Hes1 (FC = 5.4, p = 7.69E-04) is a transcription factor that has previously been reported as a downstream target of the Notch signaling pathway [25] (Fig. 1). Like the examples above, 56 other transcription-related genes were found to be differentially transcribed with enhanced \u03b3-secretase activity (Supplemental Material, Dataset S4). Consistent with these findings, several known substrates of the enzyme were detected on the microarray as well (Table 2). This suggests a possible feedback mechanism by which the augmented processing of these substrates by \u03b3-secretase might lead to their altered transcription. The overrepresentation of genes in the clusters of enzymatic activity, such as \u201ckinase regulator activity\u201d GO0019207 and \u201ccatalytic activity\u201d, through four distinct GO subclusters (\u201cisomerase activity\u201d GO 0016853, \u201cligase activity\u201d GO0016874, \u201chydrolase activity\u201d GO0016787 and \u201ctransferase activity\u201d GO 00167740\u2013Fig. 2, red boxes), is broad in terms of the type of enzymatic activity and further shows the diversification of the downstream effects of enhanced \u03b3-secretase activity.",
+            "cite_spans": [
+                {
+                    "start": 743,
+                    "end": 747,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Functional clustering of genes differentially transcribed in cells with enhanced \u03b3-secretase ::: Results",
+            "ref_spans": [
+                {
+                    "start": 306,
+                    "end": 312,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 749,
+                    "end": 755,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1527,
+                    "end": 1533,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1048,
+                    "end": 1055,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The most complex cluster of molecular function that is overrepresented among the differentially transcribed genes identified in our microarray analysis is the GO function termed \u201cBinding\u201d. This cluster is overrepresented through six subclusters and several subclusters of these (Fig. 2, lower part). Consistent with transcription regulation, the binding subclusters of \u201cnucleic acid binding\u201d GO0003676 and \u201cnucleotide binding\u201d GO0000166 are overrepresented. The cluster of \u201cion binding\u201d GO0043167 is overrepresented as well as the cluster of \u201cprotein binding\u201d GO0005515. A consistently overrepresented subcluster of the latter is \u201ccytoskeletal protein binding\u201d GO0008092 (Fig. 2). Cytoskeletal proteins have long been known to play a role in AD and Tauopathies. They are targets of the cell polarity Wnt pathway, and their dynamics have recently been shown to be affected by AICD [26].",
+            "cite_spans": [
+                {
+                    "start": 880,
+                    "end": 884,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Functional clustering of genes differentially transcribed in cells with enhanced \u03b3-secretase ::: Results",
+            "ref_spans": [
+                {
+                    "start": 279,
+                    "end": 285,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 672,
+                    "end": 678,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "\u201cReceptor binding\u201d GO0005102 also includes the Notch ligand and known \u03b3-secretase substrate Jagged 2 [27], [28], as well as the \u03b1-secretase ADAM 10 [29], four members of the Wnt family (Wnt6, 7a, 9b and 10a) and, the aforementioned \u03b2-catenin. Indeed, the translocation of \u03b2-catenin is mediated by ADAM 10, which is of the same functional cluster [30].",
+            "cite_spans": [
+                {
+                    "start": 101,
+                    "end": 105,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 107,
+                    "end": 111,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 148,
+                    "end": 152,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 346,
+                    "end": 350,
+                    "mention": "[30]",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Functional clustering of genes differentially transcribed in cells with enhanced \u03b3-secretase ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "By clustering transcriptionally affected genes, we demonstrate that neurotransmitter, transcription regulator and enzymatic activities, transmembrane receptor and cytoskeletal proteins functional groups are affected by \u03b3-secretase activity in their mRNA copy numbers.",
+            "cite_spans": [],
+            "section": "Functional clustering of genes differentially transcribed in cells with enhanced \u03b3-secretase ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For specific analysis of single genes, the fifty most prominently transcriptionally altered genes were evaluated by real time PCR. Mouse code based primers worked reproducibly and specifically for 35 genes. Among them, 21 genes were found to be differentially transcribed with enhanced \u03b3-secretase activity (Fig. 3 upper panel, annotations lower panel). The highest increase in transcription levels was detected for UPP1, a gene encoding an enzyme (Uridine phosphorylase, UPase) directly implicated in the processing of uridine. UPP1 was confirmed by real time PCR to have a 39.2-fold increase in transcription levels (Fig. 3 upper panel). Uridine is a strong sleep-promoter and is crucial for RNA, DNA and membrane biosynthesis [31]. Because of the latter, a lack of uridine (caused by increased UPase) would thus first damage cells with a large membrane to cytoplasm ratio, one of the most extreme ratios being found in neurons due to their axon and dendrite structure [32]. Interestingly oral administration of uridine has improved AD phenotypes [33], [34]. The protein Upp1 also interacts with Vimentin [35], the distribution of which is characteristically altered in FAD fibroblasts [36].",
+            "cite_spans": [
+                {
+                    "start": 729,
+                    "end": 733,
+                    "mention": "[31]",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 971,
+                    "end": 975,
+                    "mention": "[32]",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 1049,
+                    "end": 1053,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1055,
+                    "end": 1059,
+                    "mention": "[34]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1107,
+                    "end": 1111,
+                    "mention": "[35]",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1188,
+                    "end": 1192,
+                    "mention": "[36]",
+                    "ref_id": "BIBREF79"
+                }
+            ],
+            "section": "Validation of differential gene transcription by quantitative real-time PCR ::: Results",
+            "ref_spans": [
+                {
+                    "start": 308,
+                    "end": 314,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 619,
+                    "end": 625,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The Notch-dependent transcriptional repressor Hes1 was also confirmed by real time PCR with a 7-fold increase in mRNA levels under enhanced \u03b3-secretase activity (Fig. 3).",
+            "cite_spans": [],
+            "section": "Validation of differential gene transcription by quantitative real-time PCR ::: Results",
+            "ref_spans": [
+                {
+                    "start": 162,
+                    "end": 168,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Importantly, we found several key players of the three Wnt pathways to be transcriptionally altered in response to enhanced \u03b3-secretase. We confirmed one of these, Wnt3a, to be increased by 2.8-fold in S-1 cells (Fig. 3). Aoyama et al. have reported that Wnt3a can influence Notch protein levels and increase Notch1 activation [37], which increases the effect of enhanced \u03b3-secretase even further through substrate enhancement. Thus, enhanced \u03b3-secretase activity may lead to increased WNT3A transcription, which in turn can increase the protein levels of the NICD-carrying \u03b3-secretase substrate. This proposed enhancement of the canonical Wnt pathway is further supported by the recent observation that \u03b2-catenin (the central protein that also ties PS1 to the pathway) modulates the level and transcriptional activity of Notch1/NICD through their direct interaction [38]. Several proteins, including Frizzled and Disheveled (Dvl), relay the Wnt signal along the canonical pathway between Wnt and \u03b2-catenin. We found that they both show increased gene transcription in our microarray analysis. DVL3 was confirmed by qPCR to increase in mRNA copy numbers by 3-fold (Fig. 3). Taken together with the microarray data showing differential transcription of PROC, DKK, LRP5/6, GBP, AXIN, \u03b2-catenin, C-JUN and CYC D (all part of the canonical Wnt pathway\u2013for further details see \u2018Discussion\u2019), our data suggest a strong transcriptional effect on this pathway by \u03b3-secretase activity and resulting alterations in gene expression. CYC D has also been reported to be downregulated by Protein tyrosine phosphatase receptor type G (PTPRG) [39]. We confirmed by real time PCR that PTPRG transcript level is reduced by 515-fold (Fig. 3). AMN1 (levels down 978-fold) has also been connected with cell cycle regulation in yeast, but its role in mammals is not well known. TERA, a gene of unknown function (levels down 24-fold), has also been associated with Wnt antagonism (see Fig. 3 and results of human cortex analysis). \u03b2-actin served as housekeeping gene.",
+            "cite_spans": [
+                {
+                    "start": 327,
+                    "end": 331,
+                    "mention": "[37]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 867,
+                    "end": 871,
+                    "mention": "[38]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1627,
+                    "end": 1631,
+                    "mention": "[39]",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Validation of differential gene transcription by quantitative real-time PCR ::: Results",
+            "ref_spans": [
+                {
+                    "start": 213,
+                    "end": 219,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1165,
+                    "end": 1171,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1715,
+                    "end": 1721,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1962,
+                    "end": 1968,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In order to see whether \u03b3-secretase affects the transcription of genes encoding interacting proteins, an interaction map of encoded proteins was generated with the string 8.0 data bank exclusively relying on evidence-based data. Clusters of protein interactions suggest the Wnt signaling pathways as a major focus of \u03b3-secretase-affected candidates (Fig. 4, highlighted in grey). Indeed, we found several members of the canonical Wnt pathway, but also some interactors of the planar cell polarity (PCP) pathway and the Wnt/Ca2+ pathway, to have \u03b3-secretase activity susceptible gene transcription (Fig. 4). Some of these genes have been confirmed by real time PCR as well as DIGE experiments (Egger et al., unpublished). The largest decrease in gene transcription occurred for the gene encoding the protein Ptprg. This single-pass type I membrane protein dephosphorylates protein tyrosine phosphate and was recently suggested as a candidate tumor suppressor gene in nasopharyngeal carcinoma [39]. The same group reported functional evidence for a critical interaction of Ptprg with the extracellular matrix, which induces cell arrest, changes in cell cycle status and downregulation of cyclin D1 [39]. The latter is strongly affected by the canonical Wnt pathway. Ptprzeta and beta, structurally similar to Ptprg, interact with Psd95 [40], which directly interacts with Wnt3a [41]. We could confirm that WNT3A transcripts show an increase of 2.8-fold (Fig. 3). Further, Wnt3a has also been reported to interact directly with LRP1 (Fig. 4, lower right), a stimulator of the Wnt5a signaling pathway [42] and a known \u03b3-secretase substrate tying \u03b3-secretase to a major AD risk factor, ApoE [43]. Porcn, another protein that interacts with Wnt3a [44], shows a three-fold increase in transcript level by the microarray experiment. Porcn also interacts with Wnt 6 (4-fold increase in microarray) as reported by the same group and is the first player of the canonical Wnt pathway as displayed by the Kegg database (mmu04310, http://www.genome.jp/dbget-bin/show_pathway?mmu04310). Wnt3a interacts with Frizzled 1 [45], which showed a 5-fold increase in mRNA levels by our microarray. Following the canonical Wnt pathway, the first intracellular protein of the Wnt signaling cascade is \u201cDisheveled\u201d. As confirmed by real time PCR, DVL3 mRNA is increased by 3-fold with enhanced \u03b3-secretase activity. Next, with the help of Gbp (microarray reports a 4-fold increase of Gbp2), Gsk-3\u03b2 is inhibited, which in turn inhibits \u03b2-catenin. As made apparent by the graphical overview of interacting proteins encoded by genes we found to be transcriptionally susceptible to \u03b3-secretase activity, \u03b2-catenin plays a central role, linking different proteins involved in different Wnt pathways (Fig. 4). Furthermore, \u03b2-catenin has been found to function as a major node connecting PS1 and several proteins that are encoded by genes that we found to be differentially transcribed (Fig. 4). \u03b2-catenin transcription was shown by the microarray to be 3-fold decreased. It interacts directly with cdh15 (which showed a 2.4-fold increase in transcript levels as confirmed by real time PCR, Fig. 3), with Cdh1 (a known \u03b3-secretase substrate [46]), with PS1 (the \u03b3-secretase catalytic subunit) and other proteins encoded by candidate genes reported by the microarray. In the context of the canonical Wnt pathway, \u03b2-catenin affects c-myc (CMYBP 3-fold increased on the microarray), c-jun (3-fold decreased on the microarray) and cyclin D (4-fold decreased on the microarray) - the latter, as mentioned, is also downregulated by Ptprg. Dvl3 however also interacts with other proteins encoded by candidate genes, among which Nkd1 is of special interest since it links the canonical with the planar cell polarity pathway where it has a different effect on Dvl. The Planar cell polarity pathway through several players, among them Rac (3-fold decreased on the microarray) affects gene transcription, as we hypothesize for \u03b3-secretase activity changes. Through a chain of different mediators, the planar cell polarity Wnt pathway affects the cytoskeleton. Our microarray has reported some of these mediators to be differentially transcribed as \u03b3-secretase activity is enhanced; RhoA transcript levels for example are 3-fold decreased. Rock, which is known to directly interact with the \u03b3-secretase substrate CD44 (CD44/Rho Family GTPase/ROCK2) [47], [48], is transcriptionally affected too. Our top candidate UPP1 has only one interaction partner that was also reported to be differentially expressed by the microarray, the cytoskeleton protein vimentin (Vim) [35]. Vimentin itself is not new to AD research, as altered Vim distribution patterns were observed in FAD fibroblasts [36]. Also, UPP1 transcription is regulated by the transcription factor Oct3/4, as is the transcription of another candidate, called SPP1 [49]. Spp1 is a direct interaction partner of the aforementioned \u03b3-secretase substrate CD44 and strongly affects Ca2+ levels [50]. It directly interacts with several proteins encoded by candidate genes, including PKCA, which itself directly interacts with Aplp2, a well-known \u03b3-secretase substrate, and Csnk2b, which directly interacts with \u03b2-catenin, thus closing the circle. Csnk2b also directly interacts with Shmt1, which has enhanced transcription of 3.5-fold (Fig. 3), and has been further confirmed in DIGE experiments (Egger et al., unpublished). The third Wnt pathway mentioned is the Wnt/Ca2+ pathway which includes, among others, Plc (Plcb1 5-fold increase on the microarray), CaMKII (4-fold decrease on the microarray) and Calpain (3-fold decrease on the microarray).",
+            "cite_spans": [
+                {
+                    "start": 991,
+                    "end": 995,
+                    "mention": "[39]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1196,
+                    "end": 1200,
+                    "mention": "[39]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1334,
+                    "end": 1338,
+                    "mention": "[40]",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1376,
+                    "end": 1380,
+                    "mention": "[41]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1597,
+                    "end": 1601,
+                    "mention": "[42]",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 1686,
+                    "end": 1690,
+                    "mention": "[43]",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 1741,
+                    "end": 1745,
+                    "mention": "[44]",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 2104,
+                    "end": 2108,
+                    "mention": "[45]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 3208,
+                    "end": 3212,
+                    "mention": "[46]",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 4404,
+                    "end": 4408,
+                    "mention": "[47]",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 4410,
+                    "end": 4414,
+                    "mention": "[48]",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 4620,
+                    "end": 4624,
+                    "mention": "[35]",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 4739,
+                    "end": 4743,
+                    "mention": "[36]",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 4877,
+                    "end": 4881,
+                    "mention": "[49]",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 5002,
+                    "end": 5006,
+                    "mention": "[50]",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Protein interaction data suggest Wnt pathways as a major target of \u03b3-secretase susceptible gene transcription ::: Results",
+            "ref_spans": [
+                {
+                    "start": 350,
+                    "end": 356,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 598,
+                    "end": 604,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1452,
+                    "end": 1458,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1531,
+                    "end": 1537,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2769,
+                    "end": 2775,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2954,
+                    "end": 2960,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 3158,
+                    "end": 3164,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 5343,
+                    "end": 5349,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Our mapping of genes differentially transcribed with \u03b3-secretase activity shows that they encode proteins that directly interact with each other, with many of them being members of Wnt pathways.",
+            "cite_spans": [],
+            "section": "Protein interaction data suggest Wnt pathways as a major target of \u03b3-secretase susceptible gene transcription ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Our modeling of extreme levels of \u03b3-secretase activity in CHO cells has revealed \u03b3-secretase-dependent differences in transcript levels of specific genes. One of the major known risk factors for developing Alzheimer's disease is carrying the ApoE4 allele. Recently it was shown that ApoE through LRP1 regulation is connected with \u03b3-secretase [43], which supports the hypothesis of a potential role of \u03b3-secretase in sporadic AD. \u03b3-Secretase is also directly implicated in the inheritable familial early onset forms of AD (FAD), as most cases are caused by mutations in PSEN1, the gene encoding for PS1, the catalytic center of this enzyme.",
+            "cite_spans": [
+                {
+                    "start": 342,
+                    "end": 346,
+                    "mention": "[43]",
+                    "ref_id": "BIBREF91"
+                }
+            ],
+            "section": "TERA gene transcription is significantly altered in Alzheimer's disease cortices ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To investigate whether changes in gene transcription that coincide with alterations of \u03b3-secretase activity levels also differ between sporadic Alzheimer's and healthy human brain tissue, we evaluated our top scoring \u03b3-secretase affected genes in human AD and healthy cortices. Based on \u03b2-actin as housekeeping gene, we found one \u03b3-secretase affected gene, TERA, to be significantly differentially transcribed in the AD brain relative to the normal brain. Real-time PCR results showed an average two-fold increased TERA transcript levels (P2 = 0.04) in human AD cortices compared to healthy controls (Fig. 5).",
+            "cite_spans": [],
+            "section": "TERA gene transcription is significantly altered in Alzheimer's disease cortices ::: Results",
+            "ref_spans": [
+                {
+                    "start": 601,
+                    "end": 607,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Altogether, the Wnt antagonism gene TERA represents a new candidate for differential expression with \u03b3-secretase activity as well as in AD brain cortex tissue. Whether it is implicated in the pathogenesis of AD requires further investigation.",
+            "cite_spans": [],
+            "section": "TERA gene transcription is significantly altered in Alzheimer's disease cortices ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Since the discovery of the roles for NICDs and AICDs in gene transcription, the notion of \u03b3-secretase as a major player in pathologically altered gene transcription patterns has been steadily gaining ground with new substrates and their transcriptionally active ICDs being identified regularly. To investigate the impact of \u03b3-secretase activity on gene transcription, we compared two starkly contrasting situations: genetically engineered enhanced human \u03b3-secretase activity and pharmacologically inhibited \u03b3-secretase activity in CHO cell lines. By investigating the effects of enhanced \u03b3-secretase activity on gene transcription using cDNA microarray analysis, we could show that the canonical, the planar cell polarity (PCP) and the Ca2+/Wnt pathways are transcriptionally affected through more than a dozen of Wnt signaling players (summarized in Fig. 6). From Proc and Wnt outside the membrane, through Frizzled and Dvl, to \u03b2-catenin and down to cell cycle regulating genes, the canonical Wnt pathway is the most affected of Wnt pathways. Several genes of the PCP Wnt pathway as well as Ca2+/Wnt pathways were found to be differentially expressed too (Fig. 6). One of the cell cycle regulating genes is CYC-D, which itself is regulated by one of the most \u03b3-secretase-dependently altered genes reported by us, PTPRG.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 851,
+                    "end": 857,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1157,
+                    "end": 1163,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Functional clustering of the microarray data revealed the overrepresentation of the \u201creceptor binding\u201d cluster, which includes four different Wnt signaling molecules and \u03b2-catenin. \u03b2-Catenin also finds itself in the center of interactions of proteins encoded by strongly differentially expressed genes. Components downstream of the canonical Wnt pathway, like c-myc, c-jun and cycD, influence the cell cycle, the latter as mentioned is downregulated by protein tyrosine phosphatase receptor type \u03b3 (Ptprg). Interestingly, we found PTPRG transcription to be strongly decreased in cells with enhanced \u03b3-secretase. Barnea et al. [51] identified a subfamily of PTPRs, defined by the carbonic anhydrase-like domain in the extracellular region of PTPRG, and described its expression during hippocampal formation, and in septal and midline thalamic nuclei in the cortex of newborn rats (in contrast to the expression pattern in adult rats, which is reduced to the hippocampal formation). Several groups have shown a connection between alterations in receptor tyrosine phosphatases' expression levels and \u03b3-secretase [52], [53]. However, we report here for the first time, to our knowledge, the transcriptional connection between the receptor tyrosine phosphatase type gamma and \u03b3-secretase.",
+            "cite_spans": [
+                {
+                    "start": 626,
+                    "end": 630,
+                    "mention": "[51]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1109,
+                    "end": 1113,
+                    "mention": "[52]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1115,
+                    "end": 1119,
+                    "mention": "[53]",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "TERA, a gene that we found to be decreased in transcription (down by 23.5-fold), has been connected to brain development and Wnt antagonism as well. TERA is decreased to minimal transcript levels with enhanced \u03b3-secretase activity (Fig. 3). This gene, encoding a phosphoprotein of unknown function, is upregulated in squamous cell carcinoma (SCC), adenocarcinoma (AC), and colon, ovary, rectum and stomach tumors [54] (suggesting associations with Notch?). It has also been reported that TERA gene expression is increased in day 13 embryonic (E13) and decreased in E17 cortex and maintains low, but consistent expression levels in the subventricular zone (SVZ) [55]. The expression pattern in earlier rather than later stages of brain development and in the location of neuronal stem cell niches, like the SVZ, suggest possible roles for Tera in regenerative processes and raise questions about its function if the gene is being shut down in degenerative disorders like AD [55]. Tera expression has further been found to be maintained in neural progenitors and downregulated during non-neural differentiation, and was shown to have appreciable expression in embryonic stem cells in a screen for functional genes in ES cells that implicated Wnt antagonism in neural differentiation [56].",
+            "cite_spans": [
+                {
+                    "start": 413,
+                    "end": 417,
+                    "mention": "[54]",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 661,
+                    "end": 665,
+                    "mention": "[55]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 973,
+                    "end": 977,
+                    "mention": "[55]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1281,
+                    "end": 1285,
+                    "mention": "[56]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 232,
+                    "end": 238,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "TERA and the anti-mitotic exit network antagonist 1 (AMN1) map to chromosome 12p11, which is interesting when considering the fact that chromosome 12 has been discussed to contain an unknown LOAD locus for over a decade, and in a recent study including 492 LOAD cases [57]\u2013[59]. In our study, AMN1 transcription is decreased by 978-fold with enhanced \u03b3-secretase activity. The function of AMN1 is not known. However, several expression pattern based studies suggest it functions as a cilia gene in sensory neurons [60]. Another typical cilia gene is intraflagellar transport protein 81 (IFT81) which, among a dozen of known cilia genes, was also shown by the microarray to be differentially expressed with altered \u03b3-secretase activity (see also Fig. 3). More and more evidence has been emerging over the last years that primary cilia, in parallel to their well-established functions in sight, smell and mechanosensation, are key participants in intercellular signaling [61]. The importance of monocilia for the regeneration of olfactory neurons has only been better understood recently [62]. Subventricular zone (SVZ) astrocytes, providing glia as well as neurons for the mammalian olfactory bulb, have primary cilia [63]. They give rise to type C cells, which in turn generate neuroblasts [64] that migrate in the adult brain from the SVZ to the olfactory bulb along the cerebrospinal fluid (CSF) flow. The CSF flow depends on the beating of the ependymal cilia [65]. Cilia genes are not only relevant to the maintenance of adult regeneration in the brain since they uphold the constant flow of the CSF, but also because they are directly implicated in cell cycle control. Polycystins, for example, control the cell cycle through three major pathways with one depending directly on \u03b2-catenin [66]. A study of inversin has further shown that flow shear stress as sensed through cilia may regulate the Wnt signaling pathway through \u03b2-catenin [67], [68]. Given that fluid flow is crucial for the transport of neuroblasts in the SVZ, one could expect that \u03b2-catenin and the Wnt signaling pathway that connects our candidates are also functionally relevant to the cilia genes found in this study. We found both genes of unknown function TERA and AMN1 to be decreased in transcription with enhanced \u03b3-secretase activity. TERA and AMN1 can be connected to neural stem cells through several types of cancer, neural differentiation (in the case of TERA) and through the role of monocilia for neurogenesis (in the case of AMN1). All in all, we have demonstrated that AMN1 and TERA are genes of basically unknown function that are worthy of further investigation to understand their roles in neurogenesis, cancer and \u03b3-secretase biology.",
+            "cite_spans": [
+                {
+                    "start": 268,
+                    "end": 272,
+                    "mention": "[57]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 273,
+                    "end": 277,
+                    "mention": "[59]",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 514,
+                    "end": 518,
+                    "mention": "[60]",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 969,
+                    "end": 973,
+                    "mention": "[61]",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 1086,
+                    "end": 1090,
+                    "mention": "[62]",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1217,
+                    "end": 1221,
+                    "mention": "[63]",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 1290,
+                    "end": 1294,
+                    "mention": "[64]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1463,
+                    "end": 1467,
+                    "mention": "[65]",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 1793,
+                    "end": 1797,
+                    "mention": "[66]",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 1941,
+                    "end": 1945,
+                    "mention": "[67]",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1947,
+                    "end": 1951,
+                    "mention": "[68]",
+                    "ref_id": "BIBREF75"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 745,
+                    "end": 751,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "We further report here that UPP1 transcript levels are increased with enhanced \u03b3-secretase activity (by 39.2-fold). UPP1 encodes for uridine phosphorylase (UPase), an enzyme that catalyzes the reversible phosphorylytic cleavage of uridine and deoxyuridine to uracil and ribose- or deoxyribose-1-phosphate [69]. UPP1 expression has been extensively connected to cancer, stem cells and inflammation such as multiple sclerosis [70]\u2013[77]. UPase is induced by vitamin D3 and a mixture of inflammatory cytokines, Interferon gamma, TNF-alpha and IL-1, with the latter two being upregulators of Ptprg [78]. Increased UPP1 transcript levels, associated with enhanced UPase activity cleaving uridine, would potentially have inhibitory effects on several pathways downstream of uridine, like RNA/DNA and membrane synthesis, as well as protein glycosylation, which would in turn trigger long-term neurodegeneration. Particularly, decreased membrane synthesis, in the case of synaptic membranes, would also reduce synaptic activity and plasticity. In support of that, TNF-\u03b1 and IL-1, inducers of UPP1, alter lipid metabolism and stimulate production of eicosanoids, ceramide and reactive oxygen species that potentiate CNS injuries and certain neurological disorders [33]. Interestingly, this hypothesis offers an explanation for the multitude of beneficial effects of orally administered DHA and uridine on memory, neuronal health, regeneration and membrane synthesis in traumatic and chronic neuropathological conditions [33], [34].",
+            "cite_spans": [
+                {
+                    "start": 305,
+                    "end": 309,
+                    "mention": "[69]",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 424,
+                    "end": 428,
+                    "mention": "[70]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 429,
+                    "end": 433,
+                    "mention": "[77]",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 593,
+                    "end": 597,
+                    "mention": "[78]",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 1254,
+                    "end": 1258,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1510,
+                    "end": 1514,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1516,
+                    "end": 1520,
+                    "mention": "[34]",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The presented work demonstrates that \u03b3-secretase is capable of influencing single gene transcription. However strong the impact will prove to be on the protein level of each single gene, we have further observed transcriptional effects spanning several genes throughout clearly defined pathways. This puts forth the possibility of much stronger effects on the target functions of these pathways than the small impact on the individual genes transcriptional or translational levels might indicate. In support of this hypothesis, we have observed that the proteins encoded by those genes interact with each other and are part of the Wnt pathways. Evaluation of the impact of these pathway-specific accumulative effects needs further investigation. This should include physiological and pathological in vivo experiments on both the transcript as well as protein levels. For \u03b3-secretase to serve as a therapeutic target, it is indeed crucial to sharpen our view of its role and influence over gene transcription and biological functions.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The S-1 cell line overexpressing Flag-Pen2, Aph1-a2-HA, PS1 and NCT-GST [17], [79] was derived from the Chinese Hamster Ovary (CHO) \u03b3-30 cell line [80] generated from the parental untransfected CHO cell line used in this study. All CHO cells were cultured in 10 cm dishes as biological triplicates in Dulbecco's modified Eagle's medium (DMEM) containing 10% Fetal Bovine Serum (FBS) and Penicillin/Streptomycin. The parental CHO cell line was treated with 10 \u00b5M of N-[(3,5-Difluorophenyl)acetyl]-L-alanyl-2-phenyl]glycine -1,1-dimethylethyl ester (DAPT) for 24 hrs. The S-1 cell line was supplemented with 200 \u00b5g/ml G418, 25 \u00b5g/ml puromycin, 250 \u00b5g/ml zeocin, 250 \u00b5g/ml hygromycin and 10 \u00b5g/mL blasticidin.",
+            "cite_spans": [
+                {
+                    "start": 72,
+                    "end": 76,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 78,
+                    "end": 82,
+                    "mention": "[79]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 147,
+                    "end": 151,
+                    "mention": "[80]",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Cell culture ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "CHO parental cell line triplicates were exposed for 24 hrs to the \u03b3-secretase inhibitor DAPT (10 \u00b5M) in DMSO (0.05%), and S-1 cells were treated for the same time with DMSO (0.05%). Cells were next washed twice with PBS and total RNA was extracted, amplified, reversely-transcribed, labeled and hybridized to a 17 k mouse cDNA microarray chip produced by the DNA array facility of Lausanne (DAFL, see below).",
+            "cite_spans": [],
+            "section": "RNA amplification and microarray analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nTotal RNA extraction: was performed using the RNeasy Mini Kit (Qiagen, Basel, Switzerland), in the absence of DNAse treatment. RNA quality was assessed using the RNA 6000 Nanochip assay (Agilent Technologies, Meno Park, USA) and RNA concentration was determined using the ND-1000 spectrophotometer (Nanodrop Technologies, Wilmington, USA). Three independent experiments were performed.",
+            "cite_spans": [],
+            "section": "RNA amplification and microarray analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nRNA amplification: a single round of amplification was performed with 3 \u00b5g of total RNA using the MessageAmp RNA Amplification Kit (Ambion, Austin, USA) and following the protocol provided with the kit. Next, 5 \u00b5g of amplified RNA was mixed with 9 \u00b5g random primers (Cat. No. 4819001; Invitrogen, Carlsbad, USA) in 19 \u00b5l of water, heated for 5 minutes at 70\u00b0C and then immediately transferred to ice.",
+            "cite_spans": [],
+            "section": "RNA amplification and microarray analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nReversed transcription and labeling: was performed for 2 hrs at 42\u00b0C in a final reaction volume of 40 \u00b5l containing 1X SuperScript II buffer (Invitrogen), 40 units RNasin (Promega, Madison, USA), 10 mM DTT, 0.5 mM dATP, dGTP, dTTP, 0.2 mM dCTP, 0.1 mM of either Cy3-dCTP or Cy5-dCTP (GE Healthcare, Uppsala, Sweden) and 400 units of SuperScript II reverse transcriptase (Invitrogen). The RNA strand was hydrolyzed by adding 2 \u00b5l 500 mM EDTA and 4.5 \u00b5l 1 M NaOH and heating at 65\u00b0C for 15 minutes; the solution was then neutralized by adding 2.5 \u00b5l 1 M Tris (pH 6.8) and 4.5 \u00b5l 1 M HCl. The labeled cDNA was purified using the Qiagen MiniElute PCR Purification Kit (Cologne, Germany), eluting in 50 \u00b5l of EB buffer according to the manufacturer's instructions. The Cy3 and Cy5 labeled targets were combined and mixed with 400 \u00b5l of TE, 20 \u00b5g Cot 1 DNA (Invitrogen), 10 \u00b5g polyadenylic acid (Sigma, St. Louis, USA) and 10 \u00b5g yeast tRNA (Sigma). This mixture was concentrated to a final volume of 19.4 \u00b5l using a Microcon YM-30 filter (Millipore, Billerica, USA) according to the manufacturer's instructions. 20X SSC and 10% SDS were added to final concentrations of 3X and 0.4%, respectively, in a final volume of 24 \u00b5l. This mixture was heated for 2 minutes at 98\u00b0C, pipetted immediately onto the cDNA microarray and, after covering with a glass cover slip (Erie Scientific, Portsmouth, USA), placed in a humidified chamber (Telechem, Sunnyvale, USA) and allowed to hybridize at 64\u00b0C for 20 hrs. Slides were then washed at room temperature twice for 5 minutes in 2X SSC, 0.1% SDS, twice for 1 minute in 0.2X SSC, once for 1 minute in 0.1X SSC and once for 5 minutes in 0.1X SSC, 0.1% Triton X-100. After drying, slides were scanned on a microarray scanner (Agilent Technologies) and the resulting TIFF images were analyzed using the GenePix Pro 6.0 software (Molecular Devices, Sunnyvale, USA). The mouse cDNA microarrays used in this study consisted of approximately 17,000 PCR products generated from cDNA clones and control DNAs spotted onto Nexterion AL slides (Schott, Mainz, Germany). A complete description of the slides and their content can be obtained from the Lausanne DNA Array Facility (http://www.unil.ch/dafl). The microarray data set discussed in this publication has been deposited in the NCBI Gene Expression Omnibus (GEO, http://www.ncbi.nlm.nih.gov/geo/) and is accessible through GEO Series accession number GSE16379. Note that Hamster genomic sequence information is not yet sufficiently available to the research community. Consequently no commercial hamster-specific microarrays were available at the time of the experiment. However, the strategy to use a microarray from a closely related species is not new and has proven successful before [81].",
+            "cite_spans": [
+                {
+                    "start": 2766,
+                    "end": 2770,
+                    "mention": "[81]",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "RNA amplification and microarray analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The analysis was performed with open source R software packages (http://www.r-project.org/ and http://www.BioConductor.org/). Gene expression was quantified with the array package using print tip group lowess normalization without background subtraction. The resulting measures of expression for each array are the log2 ratios (M values) and the average log2 intensities (A value) of Cy3 and Cy5 signals. Statistics of differential expression between the different groups of samples were calculated with a linear model fitted by the limma package.",
+            "cite_spans": [],
+            "section": "Statistical analysis of microarray results ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Total RNA was isolated with the RNeasy mini kit following the manufacturer's protocol for adherent cells in the case of CHO cell cultures. For the isolation of total RNA from brain tissue, the TRIzol reagent was used as described in the human samples section. RNA was dissolved in water, which was followed by ND-1000 spectrophotometer (Nanodrop Technologies, Wilmington, USA) quantification and pico chip quality control analysis (6000 Nanochip assay Agilent Technologies, Meno Park, USA).",
+            "cite_spans": [],
+            "section": "RNA isolation for evaluation of microarray results ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Total RNA was reverse transcribed with our standard laboratory protocol. 1 \u00b5g of total RNA was dissolved in 4 \u00b5l of RNase-free water (Ultrapure DNase/RNase free water, Invitrogen Carlsbad, USA)) and premixed with 0.5 \u00b5g of oligo dT primer (synthesized by Eurogentec Seraing, Belgium) dissolved in 1 \u00b5l RNase-free water. The RNA/oligo dT premix was heated to 70\u00b0C for 5 minutes in a standard PCR machine (TProfessional Basic Gradient, Whatman Biometra Goettingen, Germany). The machine was paused to add 4 \u00b5l of 5X Buffer (ImProm-II M28A, Promega Madison USA), 4 \u00b5l of MgCl2 (25 mM) (Promega Madison USA), 1 \u00b5l dNTP Mix (10 mM U151B, Promega Madison USA), 1 \u00b5l RNase inhibitor (RNasin Plus N261A 40 u/ul Promega Madison USA), 1 \u00b5l of ImProm-II Reverse Transcriptase (Promega Madison, USA) and 4 \u00b5l RNase-free water. The PCR machine program was continued after pausing at 25\u00b0C for completion of reaction mixes with 60 min at 42\u00b0C and 15 min at 70\u00b0C. cDNA was kept at 4\u00b0C on wet ice for short-term or at \u221280\u00b0C for long-term storage.",
+            "cite_spans": [],
+            "section": "Reverse Transcription ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Reverse transcription products were used without purification for real time PCR at equivalent of 0.5 ng/\u00b5l RNA in 384 well plates. Samples were used as biological triplicates and each one was additionally pipetted as a triplicate. Reaction volumes were 10 \u00b5l consisting of 5.02 \u00b5l SYBR Green (Power SYBR Green Master Mix #4367660 Applied Biosystems, Cheshire UK), 1.49 \u00b5l RT-PCR product at 0.5 ng/\u00b5l input RNA equivalent (0.75 ng/rxn) and 3.49 \u00b5l of 3 \u00b5M Forward and Reverse primer mix. 384 well plates were prepared with a liquid handling robot (Freedom EVOware Tecan Trading AG, Switzerland) and read for relative quantification with Applied Biosystems 7900HT Real-Time PCR System (Applied Biosystems, Cheshire UK). Primers (synthesized by Eurogentec Seraing, Belgium) for CHO cDNA were based on mouse code, which was aligned with rat and human code, preference was given to aligning sequences (Table 3). Sequence specificity was determined via nBlast. \u03b2-actin was used as housekeeping gene [82]\u2013[89] for CHO as well as human cortex templates with the forward sequence: CCTTCAACACCCCAGCCATGTACG and the reverse sequence: CCTTCAACACCCCAGCCATGTACG.",
+            "cite_spans": [
+                {
+                    "start": 993,
+                    "end": 997,
+                    "mention": "[82]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 998,
+                    "end": 1002,
+                    "mention": "[89]",
+                    "ref_id": "BIBREF78"
+                }
+            ],
+            "section": "Real time PCR ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 897,
+                    "end": 904,
+                    "mention": "Table 3",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "\nResults were analyzed by the \u0394\u0394Ct method [90] and significance was calculated via students t-test. \u03b2-actin was used a normalizer to determine \u0394Cts. \u0394\u0394Cts were calculated against the mean of DAPT treated WT-CHO \u0394Cts or the mean of healthy human brain cortex \u0394Cts. Results were expressed as relative quantification by 2\u0302-(\u0394\u0394Ct) [90].",
+            "cite_spans": [
+                {
+                    "start": 42,
+                    "end": 46,
+                    "mention": "[90]",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 327,
+                    "end": 331,
+                    "mention": "[90]",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Statistical analysis of real time PCR results ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Human brain tissue was kindly provided by the Joseph and Kathleen Bryan Alzheimer's Disease Research Center, Duke University Medical Center. The Autopsy and Brain Donation procedures have been approved by the Duke University Institutional Review Board (IRB) and cortical brain tissue was obtained as described by [91]. 12 AD post-mortem confirmed cortical samples as well as 12 healthy cortical samples were obtained in dry ice. Cortical samples were of both genders, different ages, ApoE stati and Brack stages.",
+            "cite_spans": [
+                {
+                    "start": 313,
+                    "end": 317,
+                    "mention": "[91]",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Human samples ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Isolation of total RNA: \u223c50 ug of total cortex tissue were scraped off on dry ice three times for biological triplicates of each sample. TRIzol reagent (Invitrogen Carlsbad, USA) was used according to manufacturer's protocol for total RNA isolation. RNA was dissolved in water, which was followed by ND-1000 spectrophotometer (Nanodrop Technologies, Wilmington, USA) quantification and pico chip quality control analysis (6000 Nanochip assay Agilent Technologies, Meno Park, USA).",
+            "cite_spans": [],
+            "section": "Human samples ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: To identify genes whose transcription is affected by \u03b3-secretase activity, two starkly contrasting conditions were analyzed by cDNA microarray: genetically engineered enhanced \u03b3-secretase (left panel) and pharmacologically inhibited \u03b3-secretase (right panel) in CHO cell lines. For a schematic depiction of the strategy, the Notch-1 receptor signaling pathway is used as an example. After processing by the Furin protease and when activated by binding to its ligands Notch-1 is cleaved at the S2 position by the TACE protease, generating a substrate for \u03b3-secretase (1, 7). Under enhanced (left panel) or inhibited (right panel) \u03b3-secretase activity, the cleavage of the substrate controls the release of the Notch intracellular domain (NICD) (2, 8). With enhanced \u03b3-secretase, increased numbers of NICDs enter the nucleus and interact with CSL (3), leading to the transcription of target genes like Hes1 and Hey (4). The Hes1 transcription repressor inhibits transcription of target genes like NC3C1 (5), with the final consequence being reduced production of NC3C1 mRNA (6). Thus, enhancing \u03b3-secretase leads simultaneously to gene-dependent increase (in the case of Hes/Hey) or decrease (in the case of NC3C1) of mRNA copy numbers. With inhibited \u03b3-secretase, reduced numbers of NICDs (9) lead to the transcription of less Hes1/Hey (10), to reduced inhibition of target genes like NC3C1 (11) and consequently to increased production of NC3C1 mRNA (12). Inhibiting \u03b3-secretase thus leads to gene-dependent decrease (in the case of Hes/Hey genes) or increase (in the case of NC3C1) of mRNA copy numbers. Following mouse cDNA microarray analysis of both transcriptomes, top scoring candidates were evaluated and validated by real time PCR and further analyzed for changes of transcript levels between healthy and AD human brain cortices.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Categories within the Molecular Function GO hierarchy that were over- and under- represented among the genes that were differentially transcribed in cells with enhanced \u03b3-secretase activity. Red boxes display GO terms that were overrepresented; blue boxes indicate GO terms that were under-represented. Black boxes represent main molecular functional clusters and arrows point toward according subclusters. The clustering of 1981 differentially transcribed genes was performed with DAVID and the FatiGo tool [23].",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Fifty of the top scoring genes identified by microarray analysis to be differentially transcribed with enhanced \u03b3-secretase activity were analyzed by real time PCR with primers based on mouse gene sequences. These primers showed specific and reproducible amplification for 35 genes and a total of 21 genes were validated to be differentially transcribed with enhanced \u03b3-secretase activity. Relative quantification is expressed as fold change of transcript levels compared to inhibited \u03b3-secretase conditions. Fold difference is displayed on the Y-axis and in table below X-axis. Error bars reflect standard deviations of biological triplicates.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: All interaction partners as reported by experiment based evidence in the string 8.0 database are shown in black and indicated by two headed arrows. Proteins encoded by PCR-validated genes are represented in circles (blue circles for genes of decreased transcription, red circles for genes of increased transcription). Interaction partners encoded by genes identified in our microarray, but having not yet been validated are displayed in quadrangles (blue quadrangles for genes of decreased transcription, red quadrangles for genes of increased transcription). Proteins with blue background are known \u03b3-secretase substrates. The central grey box indicates \u03b3-secretase subunits. Proteins acting directly or indirectly on, or interacting with Wnt pathways are highlighted by a light purple background figure.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Real time PCR validated genes differentially transcribed in cells with enhanced \u03b3-secretase activity were selected and their gene transcript levels analyzed in ten to twelve AD and healthy human cortical brain tissue samples. Only the transcript levels of TERA, a gene of unknown function, is significantly altered with a two-fold increase in AD cortices. Note that TERA transcript levels were significantly reduced in cells with enhanced \u03b3-secretase activity (Fig. 3). Relative quantification of gene transcription in CHO cells as well as in brain tissue used \u03b2-actin as housekeeping gene. Healthy control levels are displayed on the left part of each diagram, AD transcript levels on the right. Dashed lines indicate mean values for healthy controls (green) and AD cases (red). Double-headed arrows indicate tendencies of differences between groups. P2 values obtained from t-test are indicated in black boxes of the upper part of each diagram.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Several key players of the canonical Wnt pathway (green panel) were reported by our microarray to increase (red quadrangles) or decrease (blue quadrangles) in transcript levels under conditions of enhanced \u03b3-secretase activity compared to inhibited activity. \u03b2-Catenin is a central node connecting Wnt\u2013Frizzled\u2013Dishevelled to a downstream effect influencing the cell cycle (see also Fig. 4 and interactions of encoded proteins). For better understanding, selected genes that were not detected by the microarray are displayed as well (dashed lines black quadrangles). CycD was reported to be regulated by PTPRG, one of the top scoring candidates for \u03b3-secretase affected gene transcription. Nkd, which we found to be increased in transcript levels, connects the canonical Wnt pathway with the planar cell polarity pathway (blue panel). CD44, a well-known \u03b3-secretase substrate, interacts with SPP1. SPP1 and UPP1, two strong candidates are both under the control of the same transcription factor Oct3/4, as has been suggested for TERA [92]. UPP1 directly interacts with Vimentin (see also Fig. 4), a known player in AD and a cytoskeletal protein. Crucial genes of the Wnt/Ca2+ pathway (grey panel) were also found to be differentially expressed in our array. All together, \u03b3-secretase activity influences the transcript levels of genes of the canonical, the planar cell polarity and Ca2+ Wnt pathways.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Identification of 2,3,7,8-tetrachlorodibenzo-p-dioxin (TCDD)-inducible genes in human amniotic epithelial cells.",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sinozaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Takagi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Minegishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kokame",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Reprod Biol Endocrinol",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Stage-specific changes in gene expression in acutely isolated mouse CNS progenitor cells.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Abramova",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Charniga",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Goderie",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Temple",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Dev Biol",
+            "volume": "283",
+            "issn": "",
+            "pages": "269-281",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Altered lipid metabolism in brain injury and disorders.",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Adibhatla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Hatcher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Subcell Biochem",
+            "volume": "49",
+            "issn": "",
+            "pages": "241-268",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "FatiGO: a web tool for finding significant associations of Gene Ontology terms with groups of genes.",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Al-Shahrour",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Diaz-Uriarte",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dopazo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": "578-580",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A unified hypothesis on the lineage of neural stem cells.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Alvarez-Buylla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Garcia-Verdugo",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Tramontin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Rev Neurosci",
+            "volume": "2",
+            "issn": "",
+            "pages": "287-293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Expression and localization of lactotransferrin messenger RNA in the cortex of Alzheimer's disease.",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "An",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sato",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Konishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Beach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Neurosci Lett",
+            "volume": "452",
+            "issn": "",
+            "pages": "277-280",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Furin-, ADAM 10-, and gamma-secretase-mediated cleavage of a receptor tyrosine phosphatase and regulation of beta-catenin's transcriptional activity.",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Anders",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Mertins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lammich",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Murgia",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hartmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Cell Biol",
+            "volume": "26",
+            "issn": "",
+            "pages": "3917-3934",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The interaction of the Wnt and Notch pathways modulates natural killer versus T cell differentiation.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Aoyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Delaney",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Varnum-Finney",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Kohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Stem Cells",
+            "volume": "25",
+            "issn": "",
+            "pages": "2488-2497",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Putative function of ADAM9, ADAM10, and ADAM17 as APP alpha-secretase.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Asai",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hattori",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Szabo",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sasagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Maruyama",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "301",
+            "issn": "",
+            "pages": "231-235",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Functional gene screening in embryonic stem cells implicates Wnt antagonism in neural differentiation.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Aubert",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dunstan",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Biotechnol",
+            "volume": "20",
+            "issn": "",
+            "pages": "1240-1245",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Microarray analysis in B cells among siblings with/without MS - role for transcription factor TCF2.",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Avasarala",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Chittur",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Tine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Med Genomics",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Identification of a carbonic anhydrase-like domain in the extracellular region of RPTP gamma defines a new subfamily of receptor tyrosine phosphatases.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Barnea",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Silvennoinen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Shaanan",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Honegger",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Canoll",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Mol Cell Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "1497-1506",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Genome-wide association study implicates a chromosome 12 risk locus for late-onset Alzheimer disease.",
+            "authors": [
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Beecham",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "YJ",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Slifer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Am J Hum Genet",
+            "volume": "84",
+            "issn": "",
+            "pages": "35-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Substrate specificity of gamma-secretase and other intramembrane proteases.",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Beel",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Sanders",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Cell Mol Life Sci",
+            "volume": "65",
+            "issn": "",
+            "pages": "1311-1334",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Molecular markers in patients with chronic wounds to guide surgical debridement.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Brem",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Stojadinovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Diegelmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Entero",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol Med",
+            "volume": "13",
+            "issn": "",
+            "pages": "30-39",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Rapid purification of active gamma-secretase, an intramembrane protease implicated in Alzheimer's disease.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cacquevel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aeschbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Osenkowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Neurochem",
+            "volume": "104",
+            "issn": "",
+            "pages": "210-220",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Oral administration of circulating precursors for membrane phosphatides can promote the synthesis of new brain synapses.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cansev",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Wurtman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sakamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "IH",
+                    "middle": [],
+                    "last": "Ulus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Alzheimers Dement",
+            "volume": "4",
+            "issn": "",
+            "pages": "S153-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "High-resolution quantification of specific mRNA levels in human brain autopsies and biopsies.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Castensson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Emilsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Preece",
+                    "suffix": ""
+                },
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Jazin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Genome Res",
+            "volume": "10",
+            "issn": "",
+            "pages": "1219-1229",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Activity-dependent synaptic Wnt release regulates hippocampal long term potentiation.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Biol Chem",
+            "volume": "281",
+            "issn": "",
+            "pages": "11910-11916",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Functional analysis of a cell cycle-associated, tumor-suppressive gene, protein tyrosine phosphatase receptor type G, in nasopharyngeal carcinoma.",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Lung",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Hung",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Cancer Res",
+            "volume": "68",
+            "issn": "",
+            "pages": "8137-8145",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Comparative transcriptional analysis of mouse hybridoma and recombinant Chinese hamster ovary cells undergoing butyrate treatment.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "De Leon Gatti",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "Wlaschin",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Nissom",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yap",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Biosci Bioeng",
+            "volume": "103",
+            "issn": "",
+            "pages": "82-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Loss-of-function presenilin mutations in Alzheimer disease. Talking Point on the role of presenilin mutations in Alzheimer disease.",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "De Strooper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "EMBO Rep",
+            "volume": "8",
+            "issn": "",
+            "pages": "141-146",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Evaluation of a genomics platform for cross-species transcriptome analysis of recombinant CHO cells.",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ernst",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Trummer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mead",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bessant",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Strelec",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biotechnol J",
+            "volume": "1",
+            "issn": "",
+            "pages": "639-650",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Deficient neurogenesis in forebrain-specific presenilin-1 knockout mice is associated with reduced clearance of hippocampal memory traces.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rampon",
+                    "suffix": ""
+                },
+                {
+                    "first": "YP",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Shrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Neuron",
+            "volume": "32",
+            "issn": "",
+            "pages": "911-926",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Gamma-secretase-mediated proteolysis in cell-surface-receptor signalling.",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Fortini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Rev Mol Cell Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": "673-684",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Structural and Functional Determinants of gamma-Secretase, an Intramembrane Protease Implicated in Alzheimer's Disease.",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Fraering",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Curr Genomics",
+            "volume": "8",
+            "issn": "",
+            "pages": "531-549",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Detergent-dependent dissociation of active gamma-secretase reveals an interaction between Pen-2 and PS1-NTF and offers a model for subunit organization within the complex.",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Fraering",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "LaVoie",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Ostaszewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "WT",
+                    "middle": [],
+                    "last": "Kimberly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochemistry",
+            "volume": "43",
+            "issn": "",
+            "pages": "323-333",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Neurotransmitter Changes in Alzheimer's Disease: Relationships to Symptoms and Neuropathology.",
+            "authors": [
+                {
+                    "first": "Paul",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Francis EKP",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Principles and Practice of Geriatric Psychiatry (Second Edition)",
+            "volume": "",
+            "issn": "",
+            "pages": "229-232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Cleavage of E-cadherin: a mechanism for disruption of the intestinal epithelial barrier by Candida albicans.",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Frank",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Hostetter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Transl Res",
+            "volume": "149",
+            "issn": "",
+            "pages": "211-222",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Dietary vitamin E, brain redox status and expression of Alzheimer's disease-relevant genes in rats.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gaedicke",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Huebbe",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Boesch-Saadatmandi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Br J Nutr",
+            "volume": "",
+            "issn": "",
+            "pages": "1-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Human frizzled 1 interacts with transforming Wnts to transduce a TCF dependent transcriptional response.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gazit",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yaniv",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bafico",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pramila",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Igarashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Oncogene",
+            "volume": "18",
+            "issn": "",
+            "pages": "5959-5966",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Presenilin/gamma-secretase-mediated cleavage regulates association of leukocyte-common antigen-related (LAR) receptor tyrosine phosphatase with beta-catenin.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Haapasalo",
+                    "suffix": ""
+                },
+                {
+                    "first": "DY",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Carey",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Turunen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Pettingell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Biol Chem",
+            "volume": "282",
+            "issn": "",
+            "pages": "9063-9072",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Cilia put a brake on Wnt signalling.",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Cell Biol",
+            "volume": "10",
+            "issn": "",
+            "pages": "11-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Rapid brain autopsy. The Joseph and Kathleen Bryan Alzheimer's Disease Research Center experience.",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Hulette",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Welsh-Bohmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Crain",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Szymanski",
+                    "suffix": ""
+                },
+                {
+                    "first": "NO",
+                    "middle": [],
+                    "last": "Sinclaire",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Arch Pathol Lab Med",
+            "volume": "121",
+            "issn": "",
+            "pages": "615-618",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "The Notch ligands, Delta1 and Jagged2, are substrates for presenilin-dependent \u201cgamma-secretase\u201d cleavage.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ikeuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Sisodia",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biol Chem",
+            "volume": "278",
+            "issn": "",
+            "pages": "7751-7754",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Beta-catenin modulates the level and transcriptional activity of Notch1/NICD through its direct interaction.",
+            "authors": [
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ki",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1793",
+            "issn": "",
+            "pages": "290-299",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Decrease of dynamin 2 levels in late-onset Alzheimer's disease alters Abeta metabolism.",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kamagata",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kudo",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tanimukai",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Morihara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "379",
+            "issn": "",
+            "pages": "691-695",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Protein tyrosine phosphatase zeta/RPTPbeta interacts with PSD-95/SAP90 family.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kawachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Watakabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Shintani",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Maeda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Brain Res Mol Brain Res",
+            "volume": "72",
+            "issn": "",
+            "pages": "47-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Gamma-secretase is a membrane protein complex comprised of presenilin, nicastrin, Aph-1, and Pen-2.",
+            "authors": [
+                {
+                    "first": "WT",
+                    "middle": [],
+                    "last": "Kimberly",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "LaVoie",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Ostaszewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Wolfe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "",
+            "pages": "6382-6387",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Presenilin-dependent intramembrane proteolysis of CD44 leads to the liberation of its intracellular domain and the secretion of an Abeta-like peptide.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lammich",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Okochi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Takeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kaether",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Capell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Biol Chem",
+            "volume": "277",
+            "issn": "",
+            "pages": "44754-44759",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Osteopontin promotes integrin activation through outside-in and inside-out mechanisms: OPN-CD44V interaction enhances survival in gastrointestinal cancer cells.",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Sudhir",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Chi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Cancer Res",
+            "volume": "67",
+            "issn": "",
+            "pages": "2089-2097",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Amyloid precursor protein regulates brain apolipoprotein E and cholesterol metabolism through lipoprotein receptor LRP1.",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CV",
+                    "middle": [],
+                    "last": "Zerbinatti",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Hoe",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Neuron",
+            "volume": "56",
+            "issn": "",
+            "pages": "66-78",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Analysis of relative gene expression data using real-time quantitative PCR and the 2(-Delta Delta C(T)) Method.",
+            "authors": [
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Livak",
+                    "suffix": ""
+                },
+                {
+                    "first": "TD",
+                    "middle": [],
+                    "last": "Schmittgen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Methods",
+            "volume": "25",
+            "issn": "",
+            "pages": "402-408",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Notch promotes neural lineage entry by pluripotent embryonic stem cells.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Benchoua",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Heavey",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Biol",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Subventricular zone-mediated ependyma repair in the adult mammalian brain.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Shook",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Daniels",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Conover",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Neurosci",
+            "volume": "28",
+            "issn": "",
+            "pages": "3804-3813",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "ADAM10 mediates E-cadherin shedding and regulates epithelial cell-cell adhesion, migration, and beta-catenin translocation.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Maretzky",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Reiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ludwig",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Buchholz",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Scholz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "",
+            "pages": "9182-9187",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Dissecting Oct3/4-regulated gene networks in embryonic stem cells by expression profiling.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Matoba",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Niwa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Masui",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ohtsuka",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Carter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS ONE",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Tissue expression patterns identify mouse cilia genes.",
+            "authors": [
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "McClintock",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Glasser",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Bose",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Bergman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Physiol Genomics",
+            "volume": "32",
+            "issn": "",
+            "pages": "198-206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Stem cells and niches: mechanisms that promote stem cell maintenance throughout life.",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Morrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Spradling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Cell",
+            "volume": "132",
+            "issn": "",
+            "pages": "598-611",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Secretory PLA2-IIA: a new inflammatory factor for Alzheimer's disease.",
+            "authors": [
+                {
+                    "first": "GS",
+                    "middle": [],
+                    "last": "Moses",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "Lue",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Neuroinflammation",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Modulation of gene expression and cytoskeletal dynamics by the amyloid precursor protein intracellular domain (AICD).",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Concannon",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Walsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Tirniceriu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol Biol Cell",
+            "volume": "18",
+            "issn": "",
+            "pages": "201-210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Pathway Interaction Database.",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nature publishing",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Multipotent Drosophila intestinal stem cells specify daughter cell fates by differential notch signaling.",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Ohlstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Spradling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Science",
+            "volume": "315",
+            "issn": "",
+            "pages": "988-992",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Hes1 and Hes5 as notch effectors in mammalian neuronal differentiation.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ohtsuka",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ishibashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gradwohl",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nakanishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Guillemot",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Embo J",
+            "volume": "18",
+            "issn": "",
+            "pages": "2196-2207",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Mixed results for disease-modification strategies for Alzheimer's disease.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Opar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "7",
+            "issn": "",
+            "pages": "717-718",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "gamma-secretase functions through Notch signaling to maintain skin appendages but is not required for their patterning or initial morphogenesis.",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gridley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Dev Cell",
+            "volume": "7",
+            "issn": "",
+            "pages": "731-743",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Presenilin-dependent transcriptional control of the Abeta-degrading enzyme neprilysin by intracellular domains of betaAPP and APLP.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pardossi-Piquard",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Petit",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kawarai",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sunyach",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Alves da Costa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Neuron",
+            "volume": "46",
+            "issn": "",
+            "pages": "541-554",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Absolute requirement of GDNF for adult catecholaminergic neuron survival.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pascual",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hidalgo-Figueroa",
+                    "suffix": ""
+                },
+                {
+                    "first": "JI",
+                    "middle": [],
+                    "last": "Piruat",
+                    "suffix": ""
+                },
+                {
+                    "first": "CO",
+                    "middle": [],
+                    "last": "Pintado",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gomez-Diaz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Neurosci",
+            "volume": "11",
+            "issn": "",
+            "pages": "755-761",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Suppression subtractive hybridization and expression profiling identifies a unique set of genes overexpressed in non-small-cell lung cancer.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Petroziello",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yamane",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Westendorf",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "McDonagh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Oncogene",
+            "volume": "23",
+            "issn": "",
+            "pages": "7734-7745",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Plasma membrane expansion: a neuron's Herculean task.",
+            "authors": [
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Pfenninger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat Rev Neurosci",
+            "volume": "10",
+            "issn": "",
+            "pages": "251-261",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Homeostatic control of uridine and the role of uridine phosphorylase: a biological and clinical update.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pizzorno",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Leffert",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1587",
+            "issn": "",
+            "pages": "133-144",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Notch in mammary gland development and breast cancer.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Politi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Feirt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kitajewski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Semin Cancer Biol",
+            "volume": "14",
+            "issn": "",
+            "pages": "341-347",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Global gene expression analyses of hematopoietic stem cell-like cell lines with inducible Lhx2 expression.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Richter",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Wirta",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Dahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bruce",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lundeberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Genomics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Evidence for an Alzheimer disease susceptibility locus on chromosome 12 and for further locus heterogeneity.",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rogaeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Premkumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sorbi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Brindle",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "JAMA",
+            "volume": "280",
+            "issn": "",
+            "pages": "614-618",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Uridine phosphorylase association with vimentin. Intracellular distribution and localization.",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Handschumacher",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pizzorno",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biol Chem",
+            "volume": "276",
+            "issn": "",
+            "pages": "13302-13307",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "RPL38, FOSL1, and UPP1 are predominantly expressed in the pancreatic ductal epithelium.",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sahin",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Qiu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Wilentz",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Iacobuzio-Donahue",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Grosmark",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Pancreas",
+            "volume": "30",
+            "issn": "",
+            "pages": "158-167",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Identification of putative downstream genes of Oct-3, a pluripotent cell-specific transcription factor.",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Saijoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Fujii",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Meno",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sato",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hirota",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Genes Cells",
+            "volume": "1",
+            "issn": "",
+            "pages": "239-252",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Loss of presenilin function causes impairments of memory and synaptic plasticity followed by age-dependent neurodegeneration.",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Saura",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Beglopoulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Malkani",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Neuron",
+            "volume": "42",
+            "issn": "",
+            "pages": "23-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "New neurons follow the flow of cerebrospinal fluid in the adult brain.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sawamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wichterle",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Gonzalez-Perez",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Cholfin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yamada",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "311",
+            "issn": "",
+            "pages": "629-632",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "A presenilin dimer at the core of the gamma-secretase enzyme: insights from parallel analysis of Notch 1 and APP proteolysis.",
+            "authors": [
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Schroeter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MX",
+                    "middle": [],
+                    "last": "Ilagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Brunkan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hecimovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "YM",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "",
+            "pages": "13075-13080",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Cytokine-induced transcription of protein-tyrosine-phosphatases in human astrocytoma cells.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Schumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Fiebich",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Menzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hull",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Butcher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Brain Res Mol Brain Res",
+            "volume": "62",
+            "issn": "",
+            "pages": "56-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Fine mapping of the chromosome 12 late-onset Alzheimer disease locus: potential genetic and phenotypic heterogeneity.",
+            "authors": [
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Grubber",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Conneally",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Small",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Hulette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Am J Hum Genet",
+            "volume": "66",
+            "issn": "",
+            "pages": "922-932",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Identification of Pou5f1, Sox2, and Nanog downstream target genes with statistical confidence by applying a novel algorithm to time course microarray and genome-wide chromatin immunoprecipitation data.",
+            "authors": [
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Sharov",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Masui",
+                    "suffix": ""
+                },
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Sharova",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Piao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Aiba",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Genomics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Inhibition of gamma-secretase causes increased secretion of amyloid precursor protein C-terminal fragments in association with exosomes.",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Sharples",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Vella",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Nisbet",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Naylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Perez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Faseb J",
+            "volume": "22",
+            "issn": "",
+            "pages": "1469-1478",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Identification of blood biomarkers of rheumatoid arthritis by transcript profiling of peripheral blood mononuclear cells from the rat collagen-induced arthritis model.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Shou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Bull",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Qian",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Arthritis Res Ther",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Inversin, the gene product mutated in nephronophthisis type II, functions as a molecular switch between Wnt signaling pathways.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Simons",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gloy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ganner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bullerkotte",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bashkurov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat Genet",
+            "volume": "37",
+            "issn": "",
+            "pages": "537-543",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "The primary cilium as the cell's antenna: signaling at a sensory organelle.",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Singla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Reiter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": "629-633",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Examination of stress-related genes in human temporal versus occipital cortex in the course of neurodegeneration: involvement of 14-3-3 zeta in this dynamic process.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Soulie",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nicole",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Delacourte",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ceballos-Picot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Neurosci Lett",
+            "volume": "365",
+            "issn": "",
+            "pages": "1-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Increased BACE1 maturation contributes to the pathogenesis of Alzheimer's disease in Down syndrome.",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Qing",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Faseb J",
+            "volume": "20",
+            "issn": "",
+            "pages": "1361-1368",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Changes in adhesion efficiency and vimentin distribution of fibroblasts from familial Alzheimer's disease patients.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Takeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kudo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tada",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Acta Neurol Scand",
+            "volume": "82",
+            "issn": "",
+            "pages": "238-244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "The evolutionarily conserved porcupine gene family is involved in the processing of the Wnt family.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Okabayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Asashima",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Perrimon",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kadowaki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Eur J Biochem",
+            "volume": "267",
+            "issn": "",
+            "pages": "4300-4311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Comparative host gene transcription by microarray analysis early after infection of the Huh7 cell line by severe acute respiratory syndrome coronavirus and human coronavirus 229E.",
+            "authors": [
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "VC",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "6180-6193",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Notch signaling controls hepatoblast differentiation by altering the expression of liver-enriched transcription factors.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Tanimizu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Miyajima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Cell Sci",
+            "volume": "117",
+            "issn": "",
+            "pages": "3165-3174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "LRP1 controls intracellular cholesterol storage and fatty acid synthesis through modulation of Wnt signaling.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Terrand",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Bruban",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "El Asmar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Biol Chem",
+            "volume": "284",
+            "issn": "",
+            "pages": "381-388",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Presenilins: members of the gamma-secretase quartets, but part-time soloists too.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Wakabayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "De Strooper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Physiology (Bethesda)",
+            "volume": "23",
+            "issn": "",
+            "pages": "194-204",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "Cloning and expression of human uridine phosphorylase.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Uchida",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "216",
+            "issn": "",
+            "pages": "265-272",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "The neuronal primary cilium\u2013an extrasynaptic signaling device.",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Whitfield",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Cell Signal",
+            "volume": "16",
+            "issn": "",
+            "pages": "763-767",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Notch/RBP-J signaling regulates epidermis/hair fate determination of hair follicular stem cells.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Yamamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tanigaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hiai",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Honjo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Curr Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "333-338",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "Quality assessment of cross-species hybridization of CHO transcriptome on a mouse DNA oligo microarray.",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Yee",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "Wlaschin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Chuah",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Nissom",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biotechnol Bioeng",
+            "volume": "101",
+            "issn": "",
+            "pages": "1359-1365",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "APP processing and synaptic plasticity in presenilin-1 conditional knockout mice.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Saura",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Neuron",
+            "volume": "31",
+            "issn": "",
+            "pages": "713-726",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "Polycystins and Primary Cilia: Primers for Cell Cycle Progression.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Annual Review of Physiology",
+            "volume": "71",
+            "issn": "",
+            "pages": "83-113",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "Gamma-secretase limits the inflammatory response through the processing of LRP1.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Zurhove",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Nakajima",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Herz",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bock",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Sci Signal",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

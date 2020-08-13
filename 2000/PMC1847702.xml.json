@@ -1,0 +1,2747 @@
+{
+    "paper_id": "PMC1847702",
+    "metadata": {
+        "title": "ElaD, a Deubiquitinating Protease Expressed by E. coli\n",
+        "authors": [
+            {
+                "first": "Andr\u00e9",
+                "middle": [],
+                "last": "Catic",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Shahram",
+                "middle": [],
+                "last": "Misaghi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gregory",
+                "middle": [
+                    "A."
+                ],
+                "last": "Korbel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hidde",
+                "middle": [
+                    "L."
+                ],
+                "last": "Ploegh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jean",
+                "middle": [],
+                "last": "Carr",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Ubiquitin, as well as Ubls such as Nedd8 and SUMO, are proteins (almost) exclusively expressed by eukaryotes [1]. Ubiquitination controls many cellular processes, including degradation of proteins by the proteasome and intracellular trafficking. Nedd8 is a ubiquitin-like modifier that regulates the rate or extent of ubiquitination, whereas SUMO1 is involved mostly in regulation of transcription factors and in nuclear import. The attachment of ubiquitin or ubiquitin-like modifiers to substrate proteins is covalent, yet reversible [2]. A large family of eukaryotic cysteine proteases is involved not only in generation of ubiquitin(-like) proteins from their precursors, but also in their removal from modified substrates [3], [4]. Pathogens can tamper with the ubiquitin-proteasome system to cripple the cell's defenses [5]. For instance, ubiquitination and proteasomal degradation of p53, initiated by a Human Papillomavirus protein [6], or stabilization of I\u03bab-\u03b1 by Yersinia deubiquitinases [7] have been described. The continuing discovery of new deubiquitinating proteases in viruses broadly hints at how important it is for these pathogens to seize control of posttranslational modifications in host cells [8]\u2013[10]. Here, we focus on cysteine proteases of the CE clan [11], as defined by the MEROPS database [12]. CE peptidases are expressed by viruses, bacteria and eukaryotes. In eukaryotes, this clan represents the family of Ubl-specific proteases (ULP/SENP), which remove SUMO or Nedd8 from substrate proteins [13], [14]. Viral homologs of ULP/SENPs can act as deubiquitinases, but they also cleave unrelated proteins, as long as a glycine motif is present at the C-terminus of the substrate [15], [16]. Examples of bacterial deubiquitinases include YopJ and ChlaDUBs. First, YopJ is a protease that is secreted into host cells by Y. pestis\n[17], and homologs to this peptidase can be found in other bacteria, too [18], [19]. Injection of YopJ eventually suppresses the inflammatory response in affected cells. The precise molecular mechanism of YopJ family peptidases has not yet been solved, as they lack a hallmark tryptophan following the active-site histidine [20]. Yet, in vitro and in vivo data strongly suggest that these proteins are indeed proteases with specificity for ubiquitin or SUMO [7], [18], [19], although their effectiveness as virulence factors might depend on additional functions such as acetylation [21], [22]. A second example of bacterial CE peptidases can be found in pathogenic Chlamydiae. We have shown that pathogenic Chlamydiae, but not a non-pathogenic environmental strain, express proteases that specifically recognize ubiquitin and Nedd8. They do so presumably to remove both modifiers from target proteins of the host cell, as Chlamydiae\u2013like most other bacteria-possess neither a ubiquitin nor a Nedd8 homolog [23].",
+            "cite_spans": [
+                {
+                    "start": 109,
+                    "end": 112,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 535,
+                    "end": 538,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 726,
+                    "end": 729,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 731,
+                    "end": 734,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 825,
+                    "end": 828,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 939,
+                    "end": 942,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 998,
+                    "end": 1001,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1216,
+                    "end": 1219,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1220,
+                    "end": 1224,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1278,
+                    "end": 1282,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1318,
+                    "end": 1322,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1525,
+                    "end": 1529,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1531,
+                    "end": 1535,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1707,
+                    "end": 1711,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1713,
+                    "end": 1717,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1856,
+                    "end": 1860,
+                    "mention": "[17]",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1929,
+                    "end": 1933,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1935,
+                    "end": 1939,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 2180,
+                    "end": 2184,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 2314,
+                    "end": 2317,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 2319,
+                    "end": 2323,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 2325,
+                    "end": 2329,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 2438,
+                    "end": 2442,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 2444,
+                    "end": 2448,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 2862,
+                    "end": 2866,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Intrigued by the finding of CE peptidases in bacteria and considering their functional similarity to eukaryotic ULP/SENP proteases, we explored whether additional bacterial homologs with deubiquitinating activity might exist.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "To search the sequenced genomes of bacteria for new members of the CE protease clan, we employed PHI-BLAST [24] to find proteins with the typical catalytic triad of histidine, aspartate (or glutamate or asparagine), and the active-site cysteine [25]. Candidate proteins were subjected to a second round of analysis, in which we excluded proteins without the hallmark oxyanion-stabilizing group, consisting of at least one glutamine (or asparagine) close to the active-site cysteine. Lastly, the predicted secondary structure of candidate proteases was compared to the solved structure of eukaryotic CE clan homologs [26], [27]. Apart from YopJ and the ULP/SENP homologs in Chlamydiae, we found potential CE peptidases in Alpha-, Beta-, and Gammaproteobacteria (Figure 1), but not in bacteria from other branches. We also found a peptidase homolog in the giant Acanthamoeba Polyphaga Mimivirus [28] and in African Swine Fever Virus, the first virus in which a ubiquitin conjugating enzyme was discovered and for which deubiquitinating activity has been suggested [29]\u2013[32]. The bacteria we identified share a close (symbiotic or pathogenic) relationship with eukaryotes, and all viruses with CE proteases possess a dsDNA genome. The sequence variations among these peptidases are too extensive to allow for significant bootstrap values and it is therefore not possible to faithfully infer phylogeny from this dataset. Yet, this is also true for the eukaryotic ULP/SENPs, which fall into three functional classes, specific for either SUMO (ULP1 and ULP2 group) or Nedd8 (SENP8 group). While best reciprocal BLAST hits and consensus phylogram trees tend to correctly predict to which functional class a particular ULP/SENP homolog belongs, bootstrap support is generally not significant [33].",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 111,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 245,
+                    "end": 249,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 616,
+                    "end": 620,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 622,
+                    "end": 626,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 893,
+                    "end": 897,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1062,
+                    "end": 1066,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1067,
+                    "end": 1071,
+                    "mention": "[32]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1784,
+                    "end": 1788,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 761,
+                    "end": 769,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We were especially interested in the protein elaD (belonging to \u201cgroup II\u201d, see Figure 1), expressed by E. coli and with orthologs in Legionella pneumophila and in all currently sequenced strains of Salmonella (Figure 2). E. coli is an abundant commensal in the human gut and also a relevant pathogen. Nonetheless, little is known about genes that define pathogenicity of various E. coli strains, apart from those that encode obvious toxins [34]\u2013[36]. We furthermore chose elaD, because it represents one of the more distantly related hits in our bioinformatics screen and we aimed to test the robustness of our prediction by examining this protein's function.",
+            "cite_spans": [
+                {
+                    "start": 441,
+                    "end": 445,
+                    "mention": "[34]",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 446,
+                    "end": 450,
+                    "mention": "[36]",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 80,
+                    "end": 88,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 211,
+                    "end": 219,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The goal of our first experiment was to confirm protease activity and to determine the substrate specificity of elaD. Because of its relationship to ULP/SENPs, we hypothesized that elaD might recognize Ubls or ubiquitin. We expressed elaD by in vitro transcription/translation in rabbit reticulocyte lysate and incubated the metabolically labeled polypeptide with electrophilic probes, in which a Michael acceptor was added to the C-terminus of ubiquitin or the Ubls SUMO1, Nedd8, and ISG15 [14]. As shown in Figure 3, elaD readily forms a covalent adduct with the ubiquitin probe and to a much lesser extent also with the Nedd8 probe, but not detectably with SUMO1 or ISG15. Moreover, when mutating the putative active-site cysteine at position 313 to serine, covalent binding to the electrophile is abolished. This indicates that the cysteine residue in elaD is essential for catalytic activity, as has been observed for YopJ [7], for the Chlamydia protease CT868 [23] and for the eukaryotic ULP/SENPs [2]. To date, specific labeling of putative proteases with activity-based probes has shown excellent correlation with enzymatic activity [14], [37], [38].",
+            "cite_spans": [
+                {
+                    "start": 491,
+                    "end": 495,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 928,
+                    "end": 931,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 966,
+                    "end": 970,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1004,
+                    "end": 1007,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1141,
+                    "end": 1145,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1147,
+                    "end": 1151,
+                    "mention": "[37]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1153,
+                    "end": 1157,
+                    "mention": "[38]",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 509,
+                    "end": 517,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Next, we assessed enzyme kinetics by measuring hydrolysis of fluorogenic substrates derived from ubiquitin, SUMO1 and Nedd8. For these experiments, we expressed elaD in E. coli. The growth rate of the bacteria was unaffected when overexpressing elaD, but we only recovered about 50% of the wildtype protein when compared to the amounts of C313S mutant (Figure 4A). As demonstrated by release of the fluorophore 7-amino-4-methylcoumarin (AMC), elaD cleaves ubiquitin-AMC, but not SUMO1-AMC or Nedd8-AMC, and the C313S mutant of elaD fails to cleave either substrate (Figure 4B and data not shown). The initial rate of hydrolysis with 100 nM ubiquitin-AMC and 50 nM elaD is in the order of 0.3\u20130.6 per minute, defining elaD as a moderately active deubiquitinase, compared to the rapid Isopeptidase T with a rate of ca. 8 per minute [39] or to the much slower ubiquitin-protease USP14 with a rate of<0.01 per minute (data not shown). It should be noted that we could not assess Vmax, because the enzymatic rate increased linearly with substrate concentration (we tested up to 20 \u00b5M ubiquitin-AMC; 50 nM elaD then hydrolyzed ubiquitin-AMC at an initial rate of 5 per minute). Similar observations have been made with the SARS virus deubiquitinase [8]. Overall, our functional analyses confirm the prediction of our bioinformatics screen and define elaD as a deubiquitinating protease.",
+            "cite_spans": [
+                {
+                    "start": 830,
+                    "end": 834,
+                    "mention": "[39]",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1243,
+                    "end": 1246,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 353,
+                    "end": 362,
+                    "mention": "Figure 4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 566,
+                    "end": 575,
+                    "mention": "Figure 4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Why do eukaryotic CE peptidases show specificity distinct from their prokaryotic counterparts? Could this indicate a profound discrepancy, hinting towards a separate origin of these two protease groups? We set out to challenge the presently held notion that ULP/SENP proteases do not exhibit ubiquitin-specific activity [13], while most tested bacterial homologs apparently do. To this end, we chose to biochemically define CE clan members of a more deeply branched class of eukaryotes. Pezizomycotina, a subgroup of fungi that includes A. fumigatus, A. nidulans, M. grisea, N. crassa, and G. zeae encode putative SENP8 proteases that are related in amino acid sequence to a group of yet uncharacterized bacterial C48 homologs (Figure 1). In our phylogram, the common node between the respective prokaryote C48 group and SENP8 homologs of Pezizomycotina replicates with a bootstrap support of>60%. We cloned, expressed and tested the putative SENP8 protease of G. zeae, as a representative of Pezizomycotina. Unlike mammalian SENP8, the G. zeae ortholog displays dual activity towards Nedd8 and ubiquitin, similar to the previously defined CE clan protease CT868 of the prokaryote C. trachomatis (Figure 5) [23]. This result indicates that ubiquitin-specificity is not restricted to bacterial or viral CE peptidases, but also exists in some ancient eukaryotic members of this protease clan.",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 324,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1207,
+                    "end": 1211,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 728,
+                    "end": 736,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1197,
+                    "end": 1205,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "We have found previously undescribed CE peptidase homologs in several bacterial and in one viral species (Figure 1). We have furthermore proven that one of the more distantly related homologs\u2013the protein elaD in E. coli\u2013can act as a deubiquitinating enzyme in vitro. Earlier, we had shown that related Chlamydia proteases also have deubiquitinating activity and similar observations had been made regarding the YopJ protease family. This suggests that the yet undefined bacterial CE peptidases could also display ubiquitin-or Ubl-specificity, especially considering their even closer sequence relationship to eukaryotic ULP/SENP proteases. These findings raise two important questions. First, are these proteases really specific for ubiquitin in vivo, or are we simply measuring an off-target artifact, with the true substrates merely resembling ubiquitin? Second, why are these proteases-which are present in every eukaryote-so widely distributed in bacteria and viruses as well, and what can we learn about their genetic origin?",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 106,
+                    "end": 114,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "One might argue that the bacterial CE clan peptidases have distinct specificity for bacterial substrates. For instance, it has been proposed that the origin of the ubiquitin system predates the split between eukaryotes and prokaryotes [40], [41]. Factors that distantly resemble Ubls and their conjugating and deconjugating enzymes can be found in bacteria. In this manner, the cleavage of ubiquitin by elaD could just be an artificial byproduct of our assays, while the true substrate is of bacterial origin. Similarly, the Adenovirus CE protease has relaxed specificity for a consensus site that is present in ubiquitin, but also in certain viral substrates [15], [16]. However, we have extended our analysis of elaD's specificity to the ubiquitin homologs Nedd8 and ISG15. Both share significant sequence similarity to ubiquitin, and ISG15 is even identical at the critical C-terminal region. We observed no reactivity between elaD and ISG15-vinylsulfone, and the binding of elaD to Nedd8-vinylsulfone was significantly weaker than to the ubiquitin probe. Furthermore, we detected hydrolysis of the C-terminal peptide bond in ubiquitin-AMC, but not in Nedd8-AMC. These features clearly distinguish elaD from the more promiscuous viral CE peptidases. Given the similarity of primary, secondary and tertiary structure among these Ubls, we conclude that hydrolysis of ubiquitin by elaD reflects a highly specific interaction. With the exception of A. avenae, no bacterial strain in our dataset encodes a homolog of ubiquitin, making it likely that the substrate of elaD is indeed eukaryotic ubiquitin. Moreover, the ortholog of elaD in Salmonella\u2013sseL-has recently been shown to be a virulence factor and to display deubiquitinating activity in vitro and in vivo\n[42]. This enzyme is encoded by all currently sequenced Salmonellae, but only present as a pseudogene in Shigellae [43]. Likewise, elaD is not essential for E. coli under laboratory conditions [44]. A comparison of the genomes of all 16 sequenced E. coli strains reveals that elaD is present in the commensal E. coli strain K12, and in all intestinal pathogenic strains (EAEC, EHEC, EIEC, EPEC, ETEC), but absent from all ExPEC strains (APEC, NMEC, UPEC) (Table 1).",
+            "cite_spans": [
+                {
+                    "start": 235,
+                    "end": 239,
+                    "mention": "[40]",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 241,
+                    "end": 245,
+                    "mention": "[41]",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 660,
+                    "end": 664,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 666,
+                    "end": 670,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1763,
+                    "end": 1767,
+                    "mention": "[42]",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1878,
+                    "end": 1882,
+                    "mention": "[43]",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1956,
+                    "end": 1960,
+                    "mention": "[44]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 2219,
+                    "end": 2226,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "To answer the second question raised above, the fact that all CE proteases show the same signature motifs at the catalytic domain and that they have substrate specificity for ubiquitin, Ubls, or related products, suggests a common genetic and functional origin of these proteases. The viral and bacterial organisms that express these CE proteases all share an intimate relationship with eukaryotes, either as commensals, symbionts or as pathogens. Additionally, lateral gene transfer has been proposed between eukaryotes and dsDNA viruses [28], as well as between eukaryotes and bacteria such as Chlamydiae, Rickettsiae, and L. pneumophila\n[45], [46]. The notion of a dynamic horizontal gene transfer involving deubiquitinases is further underscored by the distribution of ubiquitin-specific proteases in Chlamydiae: all pathogenic strains express CE peptidases, except for C. pneumoniae, which instead encodes a homolog of the eukaryotic otubain-type deubiquitinating enzymes [47]. Also, one group of bacterial C48 peptidases in particular clusters close to the SENP8 homologs of Pezizomycotina (Figure 1). The sequence relationship and the shared habitat of these organisms-plant symbionts and phytopathogens vs. environmental fungi-raises the possibility of gene transfer between them [48]. From a functional perspective, we could show that a homolog of SENP8 in Pezizomycotina does exert ubiquitin-specific hydrolase activity, like previously characterized bacterial CE proteases (Figure 5). The dual specificity of SENP8 from the fungus G. zeae towards ubiquitin and Nedd8 is not trivial. Although Nedd8 is arguably the closest relative to ubiquitin, there are sequence differences that require distinct conjugating machineries and deconjugating proteases [27], [49]. In particular position 72\u2013an arginine in ubiquitin, and an alanine in Nedd8\u2013can act as a compatibility switch and a single replacement at this side chain can cause ubiquitin to mimic Nedd8 and vice versa [50], [51]. In this respect, the recognition of both ubiquitin and Nedd8 by the SENP8 homolog of G. zeae is in contrast to what has been observed in mammalian SENP8 [27].",
+            "cite_spans": [
+                {
+                    "start": 539,
+                    "end": 543,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 640,
+                    "end": 644,
+                    "mention": "[45]",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 646,
+                    "end": 650,
+                    "mention": "[46]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 977,
+                    "end": 981,
+                    "mention": "[47]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1288,
+                    "end": 1292,
+                    "mention": "[48]",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1761,
+                    "end": 1765,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1767,
+                    "end": 1771,
+                    "mention": "[49]",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1977,
+                    "end": 1981,
+                    "mention": "[50]",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1983,
+                    "end": 1987,
+                    "mention": "[51]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 2142,
+                    "end": 2146,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1097,
+                    "end": 1105,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1485,
+                    "end": 1493,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "One possible explanation for these observations is that CE proteases originally derived from a deubiquitinase, a protease specific for this most conserved eukaryotic protein. As CE peptidases in eukaryotes structurally diversified to accommodate the evolving family of Ubls, protease counterparts in bacteria, viruses, and some deeply branched eukaryotes retained their specificity for the \u201cur-substrate\u201d ubiquitin.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Together with the published literature, our data supports the notion that the clan of CE proteases was acquired by bacteria and viruses via horizontal gene transfer from eukaryotes. Why this family of enzymes forms such a particularly attractive substrate for genetic exchange is an intriguing question. The distribution of CE proteases in symbiotic and pathogenic prokaryotes and viruses is suggestive of a general role in host-microbe interactions, as exemplified by the Salmonella protease sseL [42].",
+            "cite_spans": [
+                {
+                    "start": 498,
+                    "end": 502,
+                    "mention": "[42]",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Protein and DNA sequence data were obtained from the National Center for Biotechnology Information (www.ncbi.nlm.nih.gov), the Institute for Genomic Research (www.tigr.org), and the University of Wisconsin E. coli Genome Project (www.genome.wisc.edu). Protein sequence identifiers are listed in Table 2. Sequences containing and surrounding the catalytic core of the proteases were aligned with the ClustalX algorithm (default parameters) (bips.u-strasbg.fr/fr/Documentation/ClustalX) [52], manually edited with Genedoc (www.psc.edu/biomed/genedoc/) (by K.B. Nicholas&HB Nicholas Jr), using the active-site amino acids as anchor, and visualized with JalView (http://www.jalview.org) [53]. Secondary structures were predicted with JPred (www.compbio.dundee.ac.uk/\u223cwww-jpred/) [54]. Phylograms were constructed with the MEGA software package [55], using the Neighbor-Joining Method with Poisson correction (all substitutions, homogeneous pattern, \u03b3-distribution 2.0) and pairwise deletion of gaps. Figure 1 shows a consensus tree based on 100 bootstrap replications.",
+            "cite_spans": [
+                {
+                    "start": 485,
+                    "end": 489,
+                    "mention": "[52]",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 683,
+                    "end": 687,
+                    "mention": "[53]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 775,
+                    "end": 779,
+                    "mention": "[54]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 840,
+                    "end": 844,
+                    "mention": "[55]",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Phylogenetic Analysis ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 996,
+                    "end": 1004,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 295,
+                    "end": 302,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The full-length elaD gene (NCBI protein sequence identifier GI: 16130204) was amplified by PCR from the K12 strain BL21 (Novagen) and cloned into pET28a (Novagen). PCR was performed with the Platinum Supermix (Invitrogen), following the manufacturer's instructions (Ta 55\u00b0C, 32 cycles) and with these primers for NdeI/XhoI insertion into pET28a: Forward: 5\u2032 GGGAATTCCATATGATGATGGTTACAGTTGTC AGCAATT 3\u2032; Reverse: 5\u2032 CCGCTCGAGTTAACTCACTCTTTTGCCGGATGC 3\u2032. The elaDC313S mutant was generated with the Phusion Site-Directed Mutagenesis kit (New England Biolabs), according to the manufacturer's suggested protocol with the following 5\u2032 phosphorylated and PAGE-purified primers: Forward: 5\u2032 AGCGGTGCAT\nTTGTGTGCATGGCAGCC 3\u2032; Reverse: 5\u2032 ACTTTGGCTTAAGTATTGCTGAAG 3\u2032. The cDNA library of nitrogen starved Gibberella zeae was obtained from the Fungal Genetics Stock Center (University of Missouri) [56]. The catalytic core region of the G. zeae SENP8 homolog (protein sequence identifier GI: 46121295), spanning from residues 1-228, was cloned via PCR and EcoRI/SalI insertion into pET28a, using Platinum Supermix (Ta 65\u00b0C, 36 cycles) and these primers: Fwd.: 5\u2032 GGCCGGGAA TTCATGCCGTTTCGTCAGAGGATGG 3\u2032; Rev.: 5\u2032 GGCCGGGTCGACTCAGCG\nTGTTTGGATCACCTTG 3\u2032. The final cloning products were fully sequence confirmed with primers for the T7 promoter and terminator site of pET28a (Novagen primers 69348-3 and 69337-3). All three proteins were expressed in E. coli BL21(DE3) (Novagen) after induction with 1 mM IPTG for 3\u20134 hours at 37\u00b0C, and isolated with Nickel NTA-Agarose under native conditions (see \u201cThe QIAexpressionist\u201d handbook; http://www1.qiagen.com/HB/QIAexpressionist). The initial purity was 5\u201310% (elaD and elaDC313S) and 70% (G. zeae SENP8), respectively and improved after size exclusion chromatography (Superdex75-prep, Amersham) to a final purity of 30\u201340% (elaD and elaDC313S) and>90% (G. zeae SENP8), as assessed by Coomassie staining. Importantly, the quality of the final preparations was identical for elaD and elaDC313S. For the specificity screen, the proteases were expressed by in vitro transcription/translation in reticulocyte lysate (TNT T7 Quick coupled IVT kit, Promega) in the presence of 35S-methionine (PerkinElmer NEG709A), and then diluted 3\u20134\u00d7with a buffer containing Tris (50 mM, pH 7.5), NaCl (150 mM) and DTT (2 mM or 5 mM N-ethylmaleimide for the negative control), before 0.1 \u00b5g of the electrophilic probes were added for 20\u201340 min at room temperature. The AMC hydrolysis screen was conducted in the same dilution buffer as described above, with an additional 1 mg/ml bovine serum albumin. 100 nM to 20 \u00b5M of ubiquitin-AMC, SUMO1-AMC, and Nedd8-AMC (Boston Biochem) were incubated with various concentrations of bacterially expressed elaD or elaDC313S at 27\u00b0C for the indicated time points. The G. zeae SENP8 experiments were conducted as endpoint measurements (100 nM AMC substrates, 60 nM protease, and 16 hours reaction time). Fluorescence was analyzed with a Spectramax M2 multi-detection microplate reader (Molecular Devices).",
+            "cite_spans": [
+                {
+                    "start": 888,
+                    "end": 892,
+                    "mention": "[56]",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Cloning, expression, and biochemical analysis of elaD and G. zeae SENP8 ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Eukaryotic peptidases (in blue) belong to the C48 subfamily and can be separated into three groups: ULP1 (including the mammalian proteases SENP1, 2, 3, and 5), ULP2 (including SENP6 and 7), and the SENP8 group with proposed specificity for SUMO (ULP1 and ULP2 group) and Nedd8 (SENP8 group), respectively. Bacterial proteins are indicated with a preceding \u201cB\u201d, viral proteins with a \u201cV\u201d. We have further divided microbial protease homologs by color: green for biochemically tested proteases, red indicating the absence of published data on the function of these putative proteases, and yellow for the group representing elaD and its orthologs. The C5 family contains Adenovirus proteases with deubiquitinating activity, C55 comprises the bacterial YopJ homologs, and C57 the Vacciniavirus I7 peptidases. Based on sequence similarity, two bacterial C48 family groups can be distinguished: a group of Proteobacteria (located at one o'clock) which appear to be closely related to fungal SENP8 homologs (common node indicated with a circle, bootstrap support>60%), and Chlamydiae, for which we had previously shown the presence of deubiquitinating and deneddylating activity. Three additional groups have not yet been assigned to specific CE clan subfamilies in the MEROPS database, including Mimivirus (\u201cgroup I\u201d), Gammaproteobacteria (\u201cgroup II\u201d), and Rickettsiae (\u201cgroup III\u201d). The African Swine Fever Virus protease and the I7 Vacciniavirus protease have not been tested for deubiquitinating or Ubl-specific activity, but they both require a glycine-based motif at the C-terminus of the substrate, as found in ubiquitin or Ubls. The unrelated CD clan peptidase Clostripain is used as outgroup in this phylogram. For clarity, this tree does not contain all orthologs and paralogs of the different groups or families. Sequence information is provided in Table 2.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Multiple sequence alignment of the catalytic core region of human SENP8 (NCBI protein sequence identifier GI: 33942066, shown are residues 100\u2013165) with the homologs in C. trachomatis (CT868, GI: 76789615, residues 199\u2013284) [23], E. coli (elaD, GI: 15832411, residues 228\u2013319), L. pneumophila (GI: 52843101, residues 189\u2013265), and S. typhi (sseL, GI: 29141091, residues 197\u2013264) [42]. The arrows indicate active-site histidine, aspartate (or asparagine), the catalytic cysteine, and the oxyanion-stabilizing group. Predicted secondary structures are shown at the bottom and have been confirmed with the solved structure of SENP8 [27].",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: \n35S-methionine-labeled in vitro translated wildtype elaD forms covalent adducts with suicide inhibitors based on ubiquitin (ubiquitin-vinylmethylester, VME) and Nedd8 (Nedd8-vinylsulfone, VS), but not with probes based on SUMO1 and ISG15. All probes were tested for activity with bona fide substrates (not shown) [14]. Mutation of the active-site cysteine at position 313 to serine abolishes adduct formation of elaD to electrophilic probes. Samples were resolved by reducing SDS-PAGE and visualized by fluorography. Indicated at the right is the molecular mass in kDa.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Coomassie staining of a 10% SDS-PAGE, showing the relatively higher expression levels of elaDC313S , compared to wildtype elaD. The purity of elaD was increased to 30\u201340% after a second round of size exclusion chromatography (not shown). Similar to in vitro translated elaD, the bacterially expressed protein also reacts with ubiquitin-VME. Molecular mass indicated at the left (in kDa). B. Biochemical assay for hydrolytic activity of elaD. His-tagged elaD was expressed in and purified from E. coli and incubated with fluorogenic substrates based on ubiquitin, SUMO1 and Nedd8. No hydrolytic activity of elaD was observed on SUMO1-AMC and Nedd8-AMC (data not shown). In contrast, the C-terminal peptide bond of ubiquitin-AMC is efficiently cleaved by elaD, leading to release and dequenching of the fluorophore AMC. Depicted is a representative experiment in which variable concentrations of purified elaD were incubated with 500 nM ubiquitin-AMC for 40 min. The C313S mutant of elaD has no proteolytic activity and wildtype elaD can be inhibited by alkylation of its active-site cysteine with 5 mM N-ethylmaleimide (data not shown). The y-axis shows relative fluorescence units, the x-axis represents the time scale with measurements every 2 minutes.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Like the chlamydial deubiquitinase/deneddylase CT868 [23], GZ8 reacts with the electrophilic traps ubiquitin-vinylmethylester and Nedd8-vinylsulfone, but not with SUMO1-vinylsulfone or ISG15-vinylsulfone. Shown is SDS-PAGE and fluorography of 35S-Methionine-labeled in vitro translated GZ8. The cysteine-alkylating agent N-ethylmaleimide (NEM) abrogates activity of the cysteine protease GZ8. Molecular weight markers are indicated at the left (in kDa). B. Biochemical assay for hydrolytic activity of GZ8. Like CT868, but unlike human SENP8, GZ8 exerts hydrolytic activity on ubiquitin-and Nedd8-AMC conjugates. Fluorescence measurement was assayed 16 hours after incubation of human SENP8, GZ8, and chlamydial CT868 (values defined as 100%) with ubiquitin-AMC and Nedd8-AMC. GZ8 and CT868 hydrolyze both substrates, whereas human SENP8 only cleaves Nedd8-AMC. Hydrolysis is sensitive to NEM treatment (not shown). The y-axis depicts relative fluorescence. Shown are the mean values of a representative experiment with triplicate measurements+/\u2212standard deviations.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Mechanism and function of deubiquitinating enzymes.",
+            "authors": [
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Amerik",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hochstrasser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1695",
+            "issn": "",
+            "pages": "189-207",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "African swine fever virus protease, a new viral member of the SUMO-1-specific protease family.",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Andres",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Alejo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Simon-Mateo",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Salas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biol Chem",
+            "volume": "276",
+            "issn": "",
+            "pages": "780-787",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Exploitation of eukaryotic ubiquitin signaling pathways by effectors translocated by bacterial type III and type IV secretion systems.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Angot",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vergunst",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Genin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Peeters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Pathog",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Construction of Escherichia coli K-12 in-frame, single-gene knockout mutants: the Keio collection.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Baba",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ara",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hasegawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Takai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Okumura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Syst Biol",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Deubiquitinating function of adenovirus proteinase.",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Balakirev",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jaquinod",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Haas",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chroboczek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "6323-6331",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Evolutionary lines of cysteine peptidases.",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Rawlings",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biol Chem",
+            "volume": "382",
+            "issn": "",
+            "pages": "727-733",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The MEROPS database as a protease information system.",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Rawlings",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "O'Brien",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Struct Biol",
+            "volume": "134",
+            "issn": "",
+            "pages": "95-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The complete genome sequence of Escherichia coli K-12.",
+            "authors": [
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Plunkett",
+                    "suffix": "3rd"
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Bloch",
+                    "suffix": ""
+                },
+                {
+                    "first": "NT",
+                    "middle": [],
+                    "last": "Perna",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Burland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "277",
+            "issn": "",
+            "pages": "1453-1474",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Conservation in the mechanism of Nedd8 activation by the human AppBp1-Uba3 heterodimer.",
+            "authors": [
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Bohnsack",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Haas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biol Chem",
+            "volume": "278",
+            "issn": "",
+            "pages": "26823-26830",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Chemistry-based functional proteomics reveals novel members of the deubiquitinating enzyme family.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ovaa",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kolli",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gan-Erdene",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Wilkinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Chem Biol",
+            "volume": "9",
+            "issn": "",
+            "pages": "1149-1159",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "How to become a uropathogen: comparative genomic analysis of extraintestinal pathogenic Escherichia coli strains.",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Brzuszkiewicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bruggemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liesegang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Emmerth",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Olschlager",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "12879-12884",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Evidence in the Legionella pneumophila genome for exploitation of host cell functions and high genome plasticity.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cazalet",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rusniok",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bruggemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Zidane",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Magnier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Genet",
+            "volume": "36",
+            "issn": "",
+            "pages": "1165-1173",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The Jalview Java alignment editor.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Clamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cuff",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Searle",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Barton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": "426-427",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "JPred: a consensus secondary structure prediction server.",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Cuff",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Clamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Siddiqui",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Finlay",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Barton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Bioinformatics",
+            "volume": "14",
+            "issn": "",
+            "pages": "892-893",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Identification and characterization of DEN1, a deneddylase of the ULP family.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gan-Erdene",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nagamalleswari",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZQ",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biol Chem",
+            "volume": "278",
+            "issn": "",
+            "pages": "28892-28900",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Characterization of the cysteine protease domain of Semliki Forest virus replicase protein nsP2 by in vitro mutagenesis.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Golubtsov",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaariainen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Caldentey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "FEBS Lett",
+            "volume": "580",
+            "issn": "",
+            "pages": "1502-1508",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Type III effector proteins from the plant pathogen Xanthomonas and their role in the interaction with the host plant.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gurlebeck",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Thieme",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Bonas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Plant Physiol",
+            "volume": "163",
+            "issn": "",
+            "pages": "233-255",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Specific and covalent targeting of conjugating and deconjugating enzymes of ubiquitin-like proteins.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hemelaar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Kessler",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Reverter",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cook",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Cell Biol",
+            "volume": "24",
+            "issn": "",
+            "pages": "84-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Chemistry-based functional proteomics: mechanism-based activity-profiling tools for ubiquitin and ubiquitin-like specific proteases.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hemelaar",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Galardy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Borodovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Kessler",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ploegh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Proteome Res",
+            "volume": "3",
+            "issn": "",
+            "pages": "268-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "A ubiquitin conjugating enzyme encoded by African swine fever virus.",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Hingamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Mayer",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Dixon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Embo J",
+            "volume": "11",
+            "issn": "",
+            "pages": "361-366",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Cloning and expression of the cDNA for E6-AP, a protein that mediates the interaction of the human papillomavirus E6 oncoprotein with p53.",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Huibregtse",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Scheffner",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Howley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Mol Cell Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "775-784",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "The prokaryotic antecedents of the ubiquitin-signaling system and the early evolution of ubiquitin-like beta-grasp domains.",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Iyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Burroughs",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Modification of proteins by ubiquitin and ubiquitin-like proteins.",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Kerscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Felberbaum",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hochstrasser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Annu Rev Cell Dev Biol",
+            "volume": "22",
+            "issn": "",
+            "pages": "159-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "MEGA3: Integrated software for Molecular Evolutionary Genetics Analysis and sequence alignment.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Brief Bioinform",
+            "volume": "5",
+            "issn": "",
+            "pages": "150-163",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The papain-like protease from the severe acute respiratory syndrome coronavirus is a deubiquitinating enzyme.",
+            "authors": [
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Lindner",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Fotouhi-Ardakani",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lytvyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lachance",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sulea",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "15199-15208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Gly-Gly-X, a novel consensus sequence for the proteolytic processing of viral and cellular proteins.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lopez-Otin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Simon-Mateo",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Martinez",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vinuela",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "J Biol Chem",
+            "volume": "264",
+            "issn": "",
+            "pages": "9107-9110",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A novel superfamily of predicted cysteine proteases from eukaryotes, viruses and Chlamydia pneumoniae.",
+            "authors": [
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Makarova",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Trends Biochem Sci",
+            "volume": "25",
+            "issn": "",
+            "pages": "50-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "The Fungal Genetics Stock Center: from molds to molecules.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "McCluskey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Adv Appl Microbiol",
+            "volume": "52",
+            "issn": "",
+            "pages": "245-262",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Chlamydia trachomatis-derived deubiquitinating enzymes in mammalian cells during infection.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Misaghi",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZR",
+                    "middle": [],
+                    "last": "Balsara",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Catic",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Spooner",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ploegh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Microbiol",
+            "volume": "61",
+            "issn": "",
+            "pages": "142-150",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Acetylation of MEK2 and IkappaB kinase (IKK) activation loop residues by YopJ inhibits signaling.",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mittal",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Peak-Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "McMahon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "18574-18579",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Yersinia YopJ acetylates and inhibits kinase activation by blocking phosphorylation.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mukherjee",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Keitany",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "312",
+            "issn": "",
+            "pages": "1211-1214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "SUSP1 antagonizes formation of highly SUMO2/3-conjugated species.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mukhopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ayaydin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kolli",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Anan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Cell Biol",
+            "volume": "174",
+            "issn": "",
+            "pages": "939-949",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "A genomic and functional inventory of deubiquitinating enzymes.",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Nijman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Luna-Vargas",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Velds",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Brummelkamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Dirac",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "123",
+            "issn": "",
+            "pages": "773-786",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Function of the Yersinia effector YopJ.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Orth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Curr Opin Microbiol",
+            "volume": "5",
+            "issn": "",
+            "pages": "38-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Cloning and enzymatic analysis of 22 novel human ubiquitin-specific proteases.",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Quesada",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Diaz-Perales",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gutierrez-Fernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Garabaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "314",
+            "issn": "",
+            "pages": "54-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "The 1.2-megabase genome sequence of Mimivirus.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Raoult",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Audic",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Robert",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Abergel",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Renesto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "306",
+            "issn": "",
+            "pages": "1344-1350",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Structural basis for SENP2 protease interactions with SUMO precursors and conjugated substrates.",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Reverter",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Lima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat Struct Mol Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "1060-1068",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Characterization of the Xanthomonas AvrXv4 effector, a SUMO protease translocated into plant cells.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Roden",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Eardley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hotson",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Mudgett",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Plant Microbe Interact",
+            "volume": "17",
+            "issn": "",
+            "pages": "633-643",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Genes homologous to ubiquitin-conjugating proteins and eukaryotic transcription factor SII in African swine fever virus.",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Rodriguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Salas",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vinuela",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Virology",
+            "volume": "186",
+            "issn": "",
+            "pages": "40-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Substrate specificity of adenovirus protease.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ruzindana-Umunyana",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Imbeault",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Virus Res",
+            "volume": "89",
+            "issn": "",
+            "pages": "41-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "SseL, a Salmonella deubiquitinase required for macrophage killing and virulence.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rytkonen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Poh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Garmendia",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Boyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "104",
+            "issn": "",
+            "pages": "3502-3507",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "A deubiquitinating activity is conserved in the large tegument protein of the herpesviridae.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Schlieker",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Korbel",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Kattenhorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Ploegh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "15582-15585",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Structural basis of NEDD8 ubiquitin discrimination by the deNEDDylating enzyme NEDP1.",
+            "authors": [
+                {
+                    "first": "LN",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Xirodimas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Naismith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Embo J",
+            "volume": "24",
+            "issn": "",
+            "pages": "1341-1351",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Saccharomyces cerevisiae SMT4 encodes an evolutionarily conserved protease with a role in chromosome condensation regulation.",
+            "authors": [
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Strunnikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genetics",
+            "volume": "158",
+            "issn": "",
+            "pages": "95-107",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Structural aspects of recently discovered viral deubiquitinating activities.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sulea",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Lindner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Menard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biol Chem",
+            "volume": "387",
+            "issn": "",
+            "pages": "853-862",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "The CLUSTAL_X windows interface: flexible strategies for multiple sequence alignment aided by quality analysis tools.",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Plewniak",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Jeanmougin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Higgins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res",
+            "volume": "25",
+            "issn": "",
+            "pages": "4876-4882",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "An extensive repertoire of type III secretion effectors in Escherichia coli O157 and the role of lambdoid phages in their dissemination.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tobe",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Beatson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Taniguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Abe",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "14941-14946",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "The structure of the APPBP1-UBA3-NEDD8-ATP complex reveals the basis for selective ubiquitin-like protein activation by an E1.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Walden",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Podgorski",
+                    "suffix": ""
+                },
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Howard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol Cell",
+            "volume": "12",
+            "issn": "",
+            "pages": "1427-1437",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Complete genome sequence and comparative genomics of Shigella flexneri serotype 2a strain 2457T.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Goldberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Burland",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Venkatesan",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Infect Immun",
+            "volume": "71",
+            "issn": "",
+            "pages": "2775-2786",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "A functional screen identifies lateral transfer of beta-glucuronidase (gus) from bacteria to fungi.",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wenzl",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kwang-won",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Jefferson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol Biol Evol",
+            "volume": "22",
+            "issn": "",
+            "pages": "308-316",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Crystal structure of the human ubiquitin-like protein NEDD8 and interactions with ubiquitin pathway enzymes.",
+            "authors": [
+                {
+                    "first": "FG",
+                    "middle": [],
+                    "last": "Whitby",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Xia",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Pickart",
+                    "suffix": ""
+                },
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Biol Chem",
+            "volume": "273",
+            "issn": "",
+            "pages": "34983-34991",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Metabolism of the polyubiquitin degradation signal: structure, mechanism, and role of isopeptidase T.",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Wilkinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "VL",
+                    "middle": [],
+                    "last": "Tashayev",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "O'Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "CN",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kasperek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Biochemistry",
+            "volume": "34",
+            "issn": "",
+            "pages": "14535-14546",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Rickettsiae and Chlamydiae: evidence of horizontal gene transfer and gene exchange.",
+            "authors": [
+                {
+                    "first": "YI",
+                    "middle": [],
+                    "last": "Wolf",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Trends Genet",
+            "volume": "15",
+            "issn": "",
+            "pages": "173-175",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Solution structure of Urm1 and its implications for the origin of protein modifiers.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "11625-11630",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Protein sequence similarity searches using patterns as seeds.",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Schaffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nucleic Acids Res",
+            "volume": "26",
+            "issn": "",
+            "pages": "3986-3990",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Yersinia virulence factor YopJ acts as a deubiquitinase to inhibit NF-kappa B activation.",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Monack",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kayagaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Wertz",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Exp Med",
+            "volume": "202",
+            "issn": "",
+            "pages": "1327-1332",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

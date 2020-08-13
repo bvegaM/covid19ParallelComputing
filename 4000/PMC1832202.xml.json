@@ -1,0 +1,2840 @@
+{
+    "paper_id": "PMC1832202",
+    "metadata": {
+        "title": "The influenza pandemic preparedness planning tool InfluSim",
+        "authors": [
+            {
+                "first": "Martin",
+                "middle": [],
+                "last": "Eichner",
+                "suffix": "",
+                "email": "martin.eichner@uni-tuebingen.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Markus",
+                "middle": [],
+                "last": "Schwehm",
+                "suffix": "",
+                "email": "markus.schwehm@uni-tuebingen.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Hans-Peter",
+                "middle": [],
+                "last": "Duerr",
+                "suffix": "",
+                "email": "hans-peter.duerr@uni-tuebingen.de",
+                "affiliation": {}
+            },
+            {
+                "first": "Stefan",
+                "middle": [
+                    "O"
+                ],
+                "last": "Brockmann",
+                "suffix": "",
+                "email": "stefan.brockmann@rps.bwl.de",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Preparedness against pandemic influenza has become a high priority public health issue and many countries that have pandemic preparedness plans [1]. For the design of such plans, mathematical models and computer simulations play an essential role because they allow to predict and compare the effects of different intervention strategies [2]. The outstanding significance of the tools for purposes of intervention optimization is limited by the fact that they cannot maximize realism, generality and precision at the same time [3]. Public health planners, on the other hand, wish to have an optimal combination of these properties, because they need to formulate intervention strategies which can be generalized into recommendations, but are sufficiently realistic and precise to satisfy public health requirements.",
+            "cite_spans": [
+                {
+                    "start": 145,
+                    "end": 146,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 339,
+                    "end": 340,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 528,
+                    "end": 529,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Published influenza models which came into application, are represented by two extremes: generalized but over-simplified models without dynamic structure which are publicly available (e.g. [4]), and complex computer simulations which are specifically adjusted to real conditions and/or are not publicly available (e.g. [5,6]). The complexity of the latter simulations, however, is not necessary for a reliable description of infection dynamics in large populations [7]. A minimum requirement for a pandemic influenza planning tool is a dynamic modelling structure which allows investigation of time-dependent variables like incidence, height of the epidemic peak, antiviral availability etc. The tool should, on the other hand, be adjustable to local conditions to adequately support the pandemic preparedness plans of different countries which involve considerably different assumptions (Table 1).",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 191,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 320,
+                    "end": 321,
+                    "mention": "5",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 322,
+                    "end": 323,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 466,
+                    "end": 467,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": [
+                {
+                    "start": 895,
+                    "end": 896,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Here we describe a publicly available influenza pandemic preparedness planning tool [8] which is designed to meet the requirements in preparedness planning. It is based on an explicitly formulated dynamic system which allows addressing time-dependent factors. It is sufficiently flexible to evaluate the impact of most candidate interventions and to consider local conditions like demographic and economic factors, contact patterns or constraints within the public health system. In subsequent papers we will also provide examples and applications of this model for various interventions, like antiviral treatment and social distancing measures.",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 86,
+                    "mention": "8",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The model is based on a system of 1,081 differential equations which extend the classic SEIR model. Demographic parameters reflect the situation in Germany in 2005, but can be adjusted to other countries. Epidemiologic and clinic values were taken from the literature (see Tables 1, 2, 3, 4, 5, 6 and the sources quoted there). Pre-set values can be varied by sliders and input fields to make different assumptions on the transmissibility and clinical severity of a new pandemic strain, to change the costs connected to medical treatment or work loss, or to simply apply the simulation to different demographic settings. Model properties can be summarized as follows. The mathematical formulation of this model is presented in detail in the online supporting material. The corresponding source code, programmed in Java, and further information can be downloaded from [8].",
+            "cite_spans": [
+                {
+                    "start": 868,
+                    "end": 869,
+                    "mention": "8",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Implementation",
+            "ref_spans": [
+                {
+                    "start": 280,
+                    "end": 281,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 283,
+                    "end": 284,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 286,
+                    "end": 287,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 289,
+                    "end": 290,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 292,
+                    "end": 293,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 295,
+                    "end": 296,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "According to the German National Pandemic Preparedness Plan [9], the total population is divided in age classes, each of which is subdivided into individuals of low and high risk (Table 2). Transmission between these age classes is based on a contact matrix (Table 3) which is scaled such that the model with standard parameter values yields a given basic reproduction number R0. Values for the R0 associated with an influenza strain with pandemic potential are suggested to lie between 2 and 3 [10]. This value is higher than the effective reproduction number which has been estimated to be slightly lower than 2 [11,12]. As a standard parameter, we use R0 = 2.5 which means that cases infect on average 2.5 individuals if everybody is susceptible and if no interventions are performed.",
+            "cite_spans": [
+                {
+                    "start": 61,
+                    "end": 62,
+                    "mention": "9",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 496,
+                    "end": 498,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 615,
+                    "end": 617,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 618,
+                    "end": 620,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Implementation",
+            "ref_spans": [
+                {
+                    "start": 186,
+                    "end": 187,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 265,
+                    "end": 266,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Susceptible individuals who become infected, incubate the infection, then become fully contagious and finally develop protective immunity (Table 4). A fraction of cases remains asymptomatic; others become moderately sick or clinically ill (i.e. they need medical help). Depending on the combination of age and risk group, a fraction of the clinically ill cases needs to be hospitalized, and an age-dependent fraction of hospitalized cases may die from the disease (Table 5). This partitioning of the cases into four categories allows combining the realistic description of the transmission dynamics with an easy calculation of the resources consumed during an outbreak. The degree and duration of contagiousness of a patient depend on the course of the disease; the latter furthermore depends on the age of the patient (Table 5). Passing through the incubation and contagious period is modelled in several stages which allows for realistic distributions of the sojourn times (Table 4). The last two stages of the incubation period are used as early infectious period during which the patient can already spread the disease. Infectiousness is highest after onset of symptoms and thereafter declines geometrically (Table 6). Clinically ill patients seek medical help on average one day after onset of symptoms. Very sick patients are advised to withdraw to their home until their disease is over, whereas extremely sick patients need to be hospitalized and may die from the disease (Table 4). After the end of their contagious period, clinically ill patients go through a convalescent period before they can resume their ordinary life and go back to work (Table 4).",
+            "cite_spans": [],
+            "section": "Implementation",
+            "ref_spans": [
+                {
+                    "start": 145,
+                    "end": 146,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 471,
+                    "end": 472,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 826,
+                    "end": 827,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 982,
+                    "end": 983,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 1219,
+                    "end": 1220,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 1487,
+                    "end": 1488,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 1660,
+                    "end": 1661,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "We provide some examples of model output of InfluSim [8], version 2.0, by means of four sensitivity analyses; further investigations will be presented elsewhere. Figure 1 shows the graphical user interface of the software which is divided into input and output windows. The user may set new values in the input fields or move sliders to almost simultaneously obtain new results for the course of an epidemic in a given population. Figures 2A and 2B show pandemic waves which result from varying the basic reproduction number from 1.5 to 4.0. Using the standard parameter values as given in Tables 2, 3, 4, 5, 6 and omitting all interventions in a town of 100,000 inhabitants results in a pandemic wave which lasts for about ten weeks (Figure 2A, with R0 = 2.5). The peak of the pandemic wave is reached after six to seven weeks, with a daily incidence of up to 2,340 influenza patients seeking medical help, with up to 280 hospital beds occupied by influenza cases and with up to 14,000 out of 60,000 working adults unable to go to work because of illness or convalescence. These results depend on the assumptions concerning the yet unknown contagiousness and pathogenicity of the virus. Figures 2C and 2D show how the shape of the curves depends on the course of contagiousness: the pandemic wave proceeds relative slowly if the contagiousness does not change during the infectious period (x50 = 50%), but proceeds quickly if the contagiousness is highest after onset of symptoms and decreases thereafter (x50 > 50%).",
+            "cite_spans": [
+                {
+                    "start": 54,
+                    "end": 55,
+                    "mention": "8",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 169,
+                    "end": 170,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 439,
+                    "end": 441,
+                    "mention": "2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 446,
+                    "end": 448,
+                    "mention": "2B",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 742,
+                    "end": 744,
+                    "mention": "2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1196,
+                    "end": 1198,
+                    "mention": "2C",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1203,
+                    "end": 1205,
+                    "mention": "2D",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 597,
+                    "end": 598,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 600,
+                    "end": 601,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 603,
+                    "end": 604,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 606,
+                    "end": 607,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 609,
+                    "end": 610,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "The influenza pandemic preparedness planning tool InfluSim stands between simple spreadsheet models and sophisticated stochastic computer simulations. It describes a pandemic wave within a homogeneously mixing population like a town or city, but surprisingly produces the same dynamics as individual-based simulations which explicitly consider geographic spread through the US (cf. [6] and [5] with Figure 2 using R0 = 2). Similar observations were made with a simple deterministic compartmental model [7]. Stochastic models are known to behave quasi-deterministically when the simulated population becomes very large.",
+            "cite_spans": [
+                {
+                    "start": 383,
+                    "end": 384,
+                    "mention": "6",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 391,
+                    "end": 392,
+                    "mention": "5",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 503,
+                    "end": 504,
+                    "mention": "7",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Discussion and Conclusion",
+            "ref_spans": [
+                {
+                    "start": 406,
+                    "end": 407,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "A further reason for the congruence of complex stochastic and simple deterministic models must lie in the incredibly quick way in which pandemic influenza spreads geographically. Unless being controlled at the place of origin [12,13], a pandemic starting in a far-off country will lead to multiple introductions [14] into the large industrialized nations where it can be expected to quickly spread to neighbouring towns and to rural areas. The large populations which have to be considered susceptible to a pandemic virus and the quick geographic spread tend to diminish the differences between the results of sophisticated individual-based and simple deterministic models.",
+            "cite_spans": [
+                {
+                    "start": 227,
+                    "end": 229,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 230,
+                    "end": 232,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Discussion and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "However, a deterministic model like InfluSim cannot reliably represent effects originating from stochasticity, from effects in small populations, or from heterogeneities. Examples are: (i) a geographically limited spread and fairly effective control measures can imply that the epidemic affects only a small population and thus, may be strongly influenced by stochastic events [15-17]; (ii) transmission which predominantly occurs in households or hospitals, or which is driven by other substantial features of the contact network is not in agreement with the assumption of homogeneous mixing in the deterministic model cannot reliably predict the spread of infection [18-23]. In particular, (iii) super-spreading events can substantially change the course of an epidemic compared to the deterministic prediction [24-27]. Apart from such factors, the predictability of intervention success is generally subject to uncertainties in the choice of parameter values, demanding additional efforts like Bayesian approaches [28] to evaluate the reliability of predictions [29].",
+            "cite_spans": [
+                {
+                    "start": 378,
+                    "end": 380,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 381,
+                    "end": 383,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 669,
+                    "end": 671,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 672,
+                    "end": 674,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 814,
+                    "end": 816,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 817,
+                    "end": 819,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1018,
+                    "end": 1020,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1066,
+                    "end": 1068,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Discussion and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Pandemic preparedness plans must consider constraints and capacities of locally operating public health systems. The time-dependent solutions of InfluSim allow assessing peak values of the relevant variables, such as outpatients, hospitalizations and deaths. Various interventions may be combined to find optimal ways to reduce the total number of cases, to lower the peak values or to delay the peak, hoping that at least part of the population may benefit from a newly developed vaccine.",
+            "cite_spans": [],
+            "section": "Discussion and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Special care was taken when implementing a variety of pharmaceutical and non-pharmaceutical interventions which will be discussed in subsequent papers. Despite its comprehensible structure, the model does not suffer from over-simplifications common to usual compartment models. Instead of implicitly using exponentially distributed sojourn times, we have implemented realistically distributed delays. For example, the model considers that individuals may transmit infection before onset of symptoms, and that some cases may remain asymptomatic, but still infecting others. Such features have serious implications for the success of targeted control measures.",
+            "cite_spans": [],
+            "section": "Discussion and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "InfluSim is freely accessible, runs on a regular desktop computer and produces results within a second after changing parameter values. The user-friendly interface and the ease at which results can be generated make this program a useful public health planning tool. Although we have taken care of providing a bug-free program, including the source code, the user is encouraged to treat results with due caution, to test it, and to participate in bug-reports and discussions on the open-source platform [30] which also provides regular updates of InfluSim.",
+            "cite_spans": [
+                {
+                    "start": 504,
+                    "end": 506,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Project name: InfluSim version 2.0",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Project home page: ",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Sourceforge: ",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Operating systems: Platform independent",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Programming language: Java",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Other requirements: e.g. Java 1.5 or higher",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "License: CPL",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "Any restrictions to use by non-academics: none",
+            "cite_spans": [],
+            "section": "Availability and requirements",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "ME developed the model, MS designed the software, HPD wrote the manuscript and SOB formulated the public health requirements of the software. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "Susceptible individuals",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "S\u02d9a,r=\u2212\u03bba(t)Sa,r\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWGtbWugaGaamaaBaaaleaacqWGHbqycqGGSaalcqWGYbGCaeqaaOGaeyypa0JaeyOeI0ccciGae83UdW2aaSbaaSqaaiabdggaHbqabaGccqGGOaakcqWG0baDcqGGPaqkcqWGtbWudaWgaaWcbaGaemyyaeMaeiilaWIaemOCaihabeaaaaa@3EF7@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Infected individuals who incubate the infection",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "E\u02d91,a,r=\u03bba(t)Sa,r\u2212\u03b4E1,a,rE\u02d9k,a,r=\u03b4(Ek\u22121,a,r\u2212Ek,a,r)for k=2,...,n\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGfbqrgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGYbGCaeqaaOGaeyypa0dcciGae83UdW2aaSbaaSqaaiabdggaHbqabaGccqGGOaakcqWG0baDcqGGPaqkcqWGtbWudaWgaaWcbaGaemyyaeMaeiilaWIaemOCaihabeaakiabgkHiTiab=r7aKjabdweafnaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGYbGCaeqaaaGcbaGafmyrauKbaiaadaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaakiabg2da9iab=r7aKnaabmaabaGaemyrau0aaSbaaSqaaiabdUgaRjabgkHiTiabigdaXiabcYcaSiabdggaHjabcYcaSiabdkhaYbqabaGccqGHsislcqWGfbqrdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaaaOGaayjkaiaawMcaaaaabaGaeeOzayMaee4Ba8MaeeOCaiNaeeiiaaIaem4AaSMaeyypa0JaeGOmaiJaeiilaWIaeiOla4IaeiOla4IaeiOla4IaeiilaWIaemOBa4gaaaaa@738E@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Asymptomatic infectious individuals",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "A\u02d91,a=\u03b4ca,r(A)En,a,r\u2212\u03b3A,aA1,aA\u02d9k,a=\u03b3A,a(Ak\u22121,a\u2212Ak,a)for k=2,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGbbqqgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyypa0dcciGae8hTdqMaem4yam2aaSbaaSqaaiabdggaHjabcYcaSiabdkhaYbqabaGccqGGOaakcqWGbbqqcqGGPaqkcqWGfbqrdaWgaaWcbaGaemOBa4MaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaakiabgkHiTiab=n7aNnaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqyaeqaaOGaemyqae0aaSbaaSqaaiabigdaXiabcYcaSiabdggaHbqabaaakeaaieGacuGFbbqqgaGaamaaBaaaleaacqGFRbWAcqGFSaalcqGFHbqyaeqaaOGaeyypa0Jae83SdC2aaSbaaSqaaiabdgeabjabcYcaSiabdggaHbqabaGcdaqadaqaaiabdgeabnaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyOeI0Iaemyqae0aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaaakiaawIcacaGLPaaaaaqaaiabbAgaMjabb+gaVjabbkhaYjabbccaGiabdUgaRjabg2da9iabikdaYiabcYcaSiabc6caUiabc6caUiabc6caUiabcYcaSiabd2gaTbaaaaa@7407@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Moderately sick individuals",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "M\u02d91,a=\u03b4ca,r(M)En,a,r\u2212\u03b3M,aM1,aM\u02d9k,a=\u03b3M,a(Mk\u22121,a\u2212Mk,a)for k=2,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGnbqtgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyypa0dcciGae8hTdqMaem4yam2aaSbaaSqaaiabdggaHjabcYcaSiabdkhaYbqabaGccqGGOaakcqWGnbqtcqGGPaqkcqWGfbqrdaWgaaWcbaGaemOBa4MaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaakiabgkHiTiab=n7aNnaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqyaeqaaOGaemyta00aaSbaaSqaaiabigdaXiabcYcaSiabdggaHbqabaaakeaaieGacuGFnbqtgaGaamaaBaaaleaacqGFRbWAcqGFSaalcqGFHbqyaeqaaOGaeyypa0Jae83SdC2aaSbaaSqaaiabd2eanjabcYcaSiabdggaHbqabaGcdaqadaqaaiabd2eannaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyOeI0Iaemyta00aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaaakiaawIcacaGLPaaaaaqaaiabbAgaMjabb+gaVjabbkhaYjabbccaGiabdUgaRjabg2da9iabikdaYiabcYcaSiabc6caUiabc6caUiabc6caUiabcYcaSiabd2gaTbaaaaa@74C7@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Very sick individuals who have not yet visited a doctor",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "V\u02d91,a=\u03b4ca,r(V)En,a,r\u2212(\u03b3V,a,U+\u03b1)V1,aV\u02d9k,a=\u03b3V,a,U(Vk\u22121,a\u2212Vk,a)\u2212\u03b1Vk,afor k=2,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGwbGvgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyypa0dcciGae8hTdqMaem4yam2aaSbaaSqaaiabdggaHjabcYcaSiabdkhaYbqabaGccqGGOaakcqWGwbGvcqGGPaqkcqWGfbqrdaWgaaWcbaGaemOBa4MaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaakiabgkHiTmaabmaabaGae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGccqGHRaWkcqWFXoqyaiaawIcacaGLPaaacqWGwbGvdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaaaOqaaiqbdAfawzaacaWaaSbaaSqaaGqaciab+TgaRjab+XcaSiab+fgaHbqabaGccqGH9aqpcqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakmaabmaabaGaemOvay1aaSbaaSqaaiabdUgaRjabgkHiTiabigdaXiabcYcaSiabdggaHbqabaGccqGHsislcqWGwbGvdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaegabeaaaOGaayjkaiaawMcaaiabgkHiTiab=f7aHjabdAfawnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaaaakeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqaIYaGmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGTbqBaaaaaa@8503@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Treated very sick individuals",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "W\u02d91,a,T=\u03b1(fV(t)V1,a+fX(t)fHX1,a)\u2212\u03b3V,a,TW1,a,TW\u02d9k,a,T=\u03b1(fV(t)Vk,a+fX(t)fHXk,a)+\u03b3V,a,T(Wk\u22121,a,T\u2212Wk,a,T)for k=2,...,ma,TW\u02d9k,a,T=\u03b3V,a,T(Wk\u22121,a,T\u2212Wk,a,T)for k=ma,T+1,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqaaeWacaaabaGafm4vaCLbaiaadaWgaaWcbaGaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakiabg2da9GGaciab=f7aHnaabmaabaGaemOzay2aaSbaaSqaaiabdAfawbqabaGccqGGOaakcqWG0baDcqGGPaqkcqWGwbGvdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaakiabgUcaRiabdAgaMnaaBaaaleaacqWGybawaeqaaOGaeiikaGIaemiDaqNaeiykaKIaemOzay2aaSbaaSqaaiabdIeaibqabaGccqWGybawdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaaaOGaayjkaiaawMcaaiabgkHiTiab=n7aNnaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqycqGGSaalcqWGubavaeqaaOGaem4vaC1aaSbaaSqaaiabigdaXiabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakeaaaeaacuWGxbWvgaGaamaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGubavaeqaaOGaeyypa0Jae8xSde2aaeWaaeaacqWGMbGzdaWgaaWcbaGaemOvayfabeaakiabcIcaOiabdsha0jabcMcaPiabdAfawnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaey4kaSIaemOzay2aaSbaaSqaaiabdIfaybqabaGccqGGOaakcqWG0baDcqGGPaqkcqWGMbGzdaWgaaWcbaGaemisaGeabeaakiabdIfaynaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaaGccaGLOaGaayzkaaGaey4kaSIae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGcdaqadaqaaiabdEfaxnaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGubavaeqaaOGaeyOeI0Iaem4vaC1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakiaawIcacaGLPaaaaeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqaIYaGmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGTbqBdaWgaaWcbaGaemyyaeMaeiilaWIaemivaqfabeaaaOqaaiqbdEfaxzaacaWaaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGccqGH9aqpcqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakmaabmaabaGaem4vaC1aaSbaaSqaaiabdUgaRjabgkHiTiabigdaXiabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGccqGHsislcqWGxbWvdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaaaOGaayjkaiaawMcaaaqaaiabbAgaMjabb+gaVjabbkhaYjabbccaGiabdUgaRjabg2da9iabd2gaTnaaBaaaleaacqWGHbqycqGGSaalcqWGubavaeqaaOGaey4kaSIaeGymaeJaeiilaWIaeiOla4IaeiOla4IaeiOla4IaeiilaWIaemyBa0gaaaaa@E514@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Untreated very sick individuals",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "W\u02d91,a,U=\u03b1(1\u2212fV(t))V1,a\u2212\u03b3V,a,UW1,a,UW\u02d9k,a,U=\u03b1(1\u2212fV(t))Vk,a+\u03b3V,a,U(Wk\u22121,a,U\u2212Wk,a,U)for k=2,...,ma,TW\u02d9k,a,U=\u03b1Vk,a+\u03b3V,a,U(Wk\u22121,a,U\u2212Wk,a,U)for k=ma,T+1,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqaaeWacaaabaGafm4vaCLbaiaadaWgaaWcbaGaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabg2da9GGaciab=f7aHnaabmaabaGaeGymaeJaeyOeI0IaemOzay2aaSbaaSqaaiabdAfawbqabaGccqGGOaakcqWG0baDcqGGPaqkaiaawIcacaGLPaaacqWGwbGvdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaakiabgkHiTiab=n7aNnaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOGaem4vaC1aaSbaaSqaaiabigdaXiabcYcaSiabdggaHjabcYcaSiabdwfavbqabaaakeaaaeaacuWGxbWvgaGaamaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOGaeyypa0Jae8xSde2aaeWaaeaacqaIXaqmcqGHsislcqWGMbGzdaWgaaWcbaGaemOvayfabeaakiabcIcaOiabdsha0jabcMcaPaGaayjkaiaawMcaaiabdAfawnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaey4kaSIae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGcdaqadaqaaiabdEfaxnaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOGaeyOeI0Iaem4vaC1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaaakiaawIcacaGLPaaaaeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqaIYaGmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGTbqBdaWgaaWcbaGaemyyaeMaeiilaWIaemivaqfabeaaaOqaaiqbdEfaxzaacaWaaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGccqGH9aqpcqWFXoqyieGacqGFwbGvdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaegabeaakiabgUcaRiab=n7aNnaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOWaaeWaaeaacqWGxbWvdaWgaaWcbaGaem4AaSMaeyOeI0IaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabgkHiTiabdEfaxnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGccaGLOaGaayzkaaaabaGaeeOzayMaee4Ba8MaeeOCaiNaeeiiaaIaem4AaSMaeyypa0JaemyBa02aaSbaaSqaaiabdggaHjabcYcaSiabdsfaubqabaGccqGHRaWkcqaIXaqmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGTbqBaaaaaa@D3FE@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Extremely sick individuals who have not yet visited a doctor",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "X\u02d91,a=\u03b4ca,r(X)En,a,r\u2212(\u03b3V,a+\u03b1+\u03c4a)X1,aX\u02d9k,a=\u03b3V,a(Xk\u22121,a\u2212Xk,a)\u2212(\u03b1+\u03c4a)Xk,afor k=2,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGybawgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyypa0dcciGae8hTdqMaem4yam2aaSbaaSqaaiabdggaHjabcYcaSiabdkhaYbqabaGcdaqadaqaaiabdIfaybGaayjkaiaawMcaaiabdweafnaaBaaaleaacqWGUbGBcqGGSaalcqWGHbqycqGGSaalcqWGYbGCaeqaaOGaeyOeI0YaaeWaaeaacqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaegabeaakiabgUcaRiab=f7aHjabgUcaRiab=r8a0naaBaaaleaacqWGHbqyaeqaaaGccaGLOaGaayzkaaGaemiwaG1aaSbaaSqaaiabigdaXiabcYcaSiabdggaHbqabaaakeaacuWGybawgaGaamaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaeyypa0Jae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHbqabaGcdaqadaqaaiabdIfaynaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyOeI0IaemiwaG1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaaakiaawIcacaGLPaaacqGHsisldaqadaqaaiab=f7aHjabgUcaRiab=r8a0naaBaaaleaacqWGHbqyaeqaaaGccaGLOaGaayzkaaGaemiwaG1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaaaaOqaaiabbAgaMjabb+gaVjabbkhaYjabbccaGiabdUgaRjabg2da9iabikdaYiabcYcaSiabc6caUiabc6caUiabc6caUiabcYcaSiabd2gaTbaaaaa@8AA2@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Hospitalized and treated cases",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "H\u02d91,a,T=\u03b1fX(t)(1\u2212fH)X1,a\u2212(\u03b3V,a,T+\u03c4a)H1,a,TH\u02d9k,a,T=\u03b1fX(t)(1\u2212fH)Xk,a+\u03b3V,a,T(Hk\u22121,a,T\u2212Hk,a,T)\u2212\u03c4aHk,a,Tfor k=2,...ma,TH\u02d9k,a,T=\u03b3V,a,T(Hk\u22121,a,T\u2212Hk,a,T)\u2212\u03c4aHk,a,Tfor k=ma,T+1,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqaaeWacaaabaGafmisaGKbaiaadaWgaaWcbaGaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakiabg2da9GGaciab=f7aHjabdAgaMnaaBaaaleaacqWGybawaeqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGMbGzdaWgaaWcbaGaemisaGeabeaaaOGaayjkaiaawMcaaiabdIfaynaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyOeI0YaaeWaaeaacqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakiabgUcaRiab=r8a0naaBaaaleaacqWGHbqyaeqaaaGccaGLOaGaayzkaaGaemisaG0aaSbaaSqaaiabigdaXiabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakeaaaeaacuWGibasgaGaamaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGubavaeqaaOGaeyypa0Jae8xSdeMaemOzay2aaSbaaSqaaiabdIfaybqabaGccqGGOaakcqWG0baDcqGGPaqkdaqadaqaaiabigdaXiabgkHiTiabdAgaMnaaBaaaleaacqWGibasaeqaaaGccaGLOaGaayzkaaGaemiwaG1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaGccqGHRaWkcqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakmaabmaabaGaemisaG0aaSbaaSqaaiabdUgaRjabgkHiTiabigdaXiabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGccqGHsislcqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaaaOGaayjkaiaawMcaaiabgkHiTiab=r8a0naaBaaaleaacqWGHbqyaeqaaOGaemisaG0aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqaIYaGmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqWGTbqBdaWgaaWcbaGaemyyaeMaeiilaWIaemivaqfabeaaaOqaaiqbdIeaizaacaWaaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGccqGH9aqpcqWFZoWzdaWgaaWcbaGaemOvayLaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaakmaabmaabaGaemisaG0aaSbaaSqaaiabdUgaRjabgkHiTiabigdaXiabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGccqGHsislcqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaaaOGaayjkaiaawMcaaiabgkHiTiab=r8a0naaBaaaleaacqWGHbqyaeqaaOGaemisaG0aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqWGTbqBdaWgaaWcbaGaemyyaeMaeiilaWIaemivaqfabeaakiabgUcaRiabigdaXiabcYcaSiabc6caUiabc6caUiabc6caUiabcYcaSiabd2gaTbaaaaa@EBD5@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Hospitalized, but untreated cases",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "H\u02d91,a,U=\u03b1(1\u2212fX(t))X1,a\u2212(\u03b3V,a,U+\u03c4a)H1,a,UH\u02d9k,a,U=\u03b1(1\u2212fX(t))Xk,a+\u03b3V,a,U(Hk\u22121,a,U\u2212Hk,a,U)\u2212\u03c4aHk,a,Ufor k=2,...,ma,TH\u02d9k,a,U=\u03b1Xk,a+\u03b3V,a,U(Hk\u22121,a,U\u2212Hk,a,U)\u2212\u03c4aHk,a,Ufor k=ma,T+1,...,m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqaaeWacaaabaGafmisaGKbaiaadaWgaaWcbaGaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabg2da9GGaciab=f7aHnaabmaabaGaeGymaeJaeyOeI0IaemOzay2aaSbaaSqaaiabdIfaybqabaGccqGGOaakcqWG0baDcqGGPaqkaiaawIcacaGLPaaacqWGybawdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaakiabgkHiTmaabmaabaGae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGccqGHRaWkcqWFepaDdaWgaaWcbaGaemyyaegabeaaaOGaayjkaiaawMcaaiabdIeainaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGcbaaabaGafmisaGKbaiaadaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabg2da9iab=f7aHnaabmaabaGaeGymaeJaeyOeI0IaemOzay2aaSbaaSqaaiabdIfaybqabaGccqGGOaakcqWG0baDcqGGPaqkaiaawIcacaGLPaaacqWGybawdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaegabeaakiabgUcaRiab=n7aNnaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOWaaeWaaeaacqWGibasdaWgaaWcbaGaem4AaSMaeyOeI0IaeGymaeJaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabgkHiTiabdIeainaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGccaGLOaGaayzkaaGaeyOeI0Iae8hXdq3aaSbaaSqaaiabdggaHbqabaGccqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaaaOqaaiabbAgaMjabb+gaVjabbkhaYjabbccaGiabdUgaRjabg2da9iabikdaYiabcYcaSiabc6caUiabc6caUiabc6caUiabcYcaSiabd2gaTnaaBaaaleaacqWGHbqycqGGSaalcqWGubavaeqaaaGcbaGafmisaGKbaiaadaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaakiabg2da9iab=f7aHjabdIfaynaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaey4kaSIae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGcdaqadaqaaiabdIeainaaBaaaleaacqWGRbWAcqGHsislcqaIXaqmcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaOGaeyOeI0IaemisaG0aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaaakiaawIcacaGLPaaacqGHsislcqWFepaDdaWgaaWcbaGaemyyaegabeaakiabdIeainaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGcbaGaeeOzayMaee4Ba8MaeeOCaiNaeeiiaaIaem4AaSMaeyypa0JaemyBa02aaSbaaSqaaiabdggaHjabcYcaSiabdsfaubqabaGccqGHRaWkcqaIXaqmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGTbqBaaaaaa@EEFC@",
+            "cite_spans": [],
+            "section": "Differential equation model describing the transmission dynamics ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "For the mixing of the age classes, we employ a who-acquires-infection-from whom matrix M=(mas,ai)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWHnbqtcqGH9aqpcqGGOaakcqWHTbqBdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGPaqkaaa@38D8@ which gives the relative frequency of contacts of infective individuals of age ai with other people of age as. In this paper, we assume bi-directional contacts (e.g. children have the same total number of contacts with adults as adults with children). Multiplication of this matrix with an appropriate constant scaling factor \u03ba (see below) results in the matrix of crude contact rates \u03b2as,ai=\u03ba mas,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGH9aqpcqWF6oWAcqqGGaaicqWHTbqBdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@40F7@.",
+            "cite_spans": [],
+            "section": "Contact matrix ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "In the absence of interventions, we have to multiply these contact rates with the contagiousness factors bL, bA, bM and bV to obtain the effective contact rates:",
+            "cite_spans": [],
+            "section": "Contagiousness of the different types of disease ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2L,as,ai=bL\u03b2as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemitaWKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGH9aqpcqWGIbGydaWgaaWcbaGaemitaWeabeaakiab=j7aInaaBaaaleaacqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@435D@   during the early infectious period,",
+            "cite_spans": [],
+            "section": "Contagiousness of the different types of disease ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2A,as,ai=bA\u03b2as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyqaeKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGH9aqpcqWGIbGydaWgaaWcbaGaemyqaeeabeaakiab=j7aInaaBaaaleaacqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4331@   of asymptomatic cases,",
+            "cite_spans": [],
+            "section": "Contagiousness of the different types of disease ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2M,as,ai=bM\u03b2as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGH9aqpcqWGIbGydaWgaaWcbaGaemyta0eabeaakiab=j7aInaaBaaaleaacqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4361@   of moderately sick cases,",
+            "cite_spans": [],
+            "section": "Contagiousness of the different types of disease ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2V,as,ai=bV\u03b2as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemOvayLaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGH9aqpcqWGIbGydaWgaaWcbaGaemOvayfabeaakiab=j7aInaaBaaaleaacqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4385@   of (untreated) very sick cases.",
+            "cite_spans": [],
+            "section": "Contagiousness of the different types of disease ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "To assess the effect of day care centre and school closing on the transmission of an infectious disease, we have to first make an assumption on what fraction rsch of the contacts among healthy children who are in the same age class occurs in day care centres and schools. The contact rates between very sick or hospitalized children (who do not attend day care centre or school) and other children need, therefore, be reduced to \u03b2\u2032V,as,ai(t)=(1\u2212rsch)\u03b2V,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaqbamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iabcIcaOiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGZbWCcqWGJbWycqWGObaAaeqaaOGaeiykaKIae8NSdi2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaaa@4F5A@ (contact rate between healthy and very sick children in the same age class, i.e. ai = as).",
+            "cite_spans": [],
+            "section": "Day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "As very sick children have to be taken care of by adults at home or in hospital, their contact rate to adults increases by a factor \u03b2\u2032V,as,ai(t)=\u03b2V,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaqbamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4611@FHC (contact rate between very sick children of age ai and adults of age as).",
+            "cite_spans": [],
+            "section": "Day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Contacts between very sick children and other children in a higher or lower age class remain unchanged: \u03b2\u2032V,as,ai(t)=\u03b2V,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaqbamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4611@ (contact rate between healthy children of age as and very sick children of a different age ai).",
+            "cite_spans": [],
+            "section": "Day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Closing day care centres and schools at time t will not necessarily prevent all the contacts that would have happened with other children. During the closing of schools and day care centres, the contact rates between susceptible children of age as and infected children of age ai who are in their late incubation period (\u03b2L,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemitaWKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@3731@), who are asymptomatic (\u03b2A,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyqaeKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@371B@), or who are moderately sick (\u03b2M,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@3733@) are reduced by the factor rsch if the children are in the same age class:",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2032L,as,ai(t)={\u03b2L,as,ai(1\u2212rsch)1sch(t)if as=ai\u03b2L,as,aiif as\u2260ai,\u03b2\u2032A,as,ai(t)={\u03b2A,as,ai(1\u2212rsch)1sch(t)if as=ai\u03b2A,as,aiif as\u2260ai,\u03b2\u2032M,as,ai(t)={\u03b2M,as,ai(1\u2212rsch)1sch(t)if as=ai\u03b2M,as,aiif as\u2260ai.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakqaabeqaaGGaciqb=j7aIzaafaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0ZaaiqabeaafaqaaeGacaaabaGae8NSdi2aaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaeGymaeJaeyOeI0IaemOCai3aaSbaaSqaaiabdohaZjabdogaJjabdIgaObqabaGccqGGPaqkdaahaaWcbeqaaiabhgdaXmaaBaaameaacqWGZbWCcqWGJbWycqWGObaAaeqaaSGaeiikaGIaemiDaqNaeiykaKcaaaGcbaGaemyAaKMaemOzayMaeeiiaaIaemyyae2aaSbaaSqaaiabdohaZbqabaGccqGH9aqpcqWGHbqydaWgaaWcbaGaemyAaKgabeaaaOqaaiab=j7aInaaBaaaleaacqWGmbatcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaOqaaiabdMgaPjabdAgaMjabbccaGiabdggaHnaaBaaaleaacqWGZbWCaeqaaOGaeyiyIKRaemyyae2aaSbaaSqaaiabdMgaPbqabaGccqGGSaalaaaacaGL7baaaeaacuWFYoGygaqbamaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceqabaqbaeaabiGaaaqaaiab=j7aInaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGZbWCcqWGJbWycqWGObaAaeqaaOGaeiykaKYaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaem4CamNaem4yamMaemiAaGgabeaaliabcIcaOiabdsha0jabcMcaPaaaaOqaaiabdMgaPjabdAgaMjabbccaGiabdggaHnaaBaaaleaacqWGZbWCaeqaaOGaeyypa0Jaemyyae2aaSbaaSqaaiabdMgaPbqabaaakeaacqWFYoGydaWgaaWcbaGaemyqaeKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaakeaacqWGPbqAcqWGMbGzcqqGGaaicqWGHbqydaWgaaWcbaGaem4CamhabeaakiabgcMi5kabdggaHnaaBaaaleaacqWGPbqAaeqaaOGaeiilaWcaaaGaay5EaaaabaGaf8NSdiMbauaadaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqWG0baDcqGGPaqkcqGH9aqpdaGabeqaauaabaqaciaaaeaacqWFYoGydaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaem4CamNaem4yamMaemiAaGgabeaakiabcMcaPmaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdohaZjabdogaJjabdIgaObqabaWccqGGOaakcqWG0baDcqGGPaqkaaaakeaacqWGPbqAcqWGMbGzcqqGGaaicqWGHbqydaWgaaWcbaGaem4Camhabeaakiabg2da9iabdggaHnaaBaaaleaacqWGPbqAaeqaaaGcbaGae8NSdi2aaSbaaSqaaiabd2eanjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaGcbaGaemyAaKMaemOzayMaeeiiaaIaemyyae2aaSbaaSqaaiabdohaZbqabaGccqGHGjsUcqWGHbqydaWgaaWcbaGaemyAaKgabeaakiabc6caUaaaaiaawUhaaaaaaa@137C@",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "where 1sch (t) is a function which indicates when schools and day care centres are opened or closed:",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "1sch(t)={1\u2944\u2944\u2944while day care centres and schools are closed0\u2944\u2944\u2944while day care centres and schools are opened.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWHXaqmdaWgaaWcbaGaem4CamNaem4yamMaemiAaGgabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceaaeaqabeaacqaIXaqmcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGKbazcqqGHbqycqqG5bqEcqqGGaaicqqGJbWycqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGJbWycqqGLbqzcqqGUbGBcqqG0baDcqqGYbGCcqqGLbqzcqqGZbWCcqqGGaaicqqGHbqycqqGUbGBcqqGKbazcqqGGaaicqqGZbWCcqqGJbWycqqGObaAcqqGVbWBcqqGVbWBcqqGSbaBcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGJbWycqqGSbaBcqqGVbWBcqqGZbWCcqqGLbqzcqqGKbazaeaacqaIWaamcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGKbazcqqGHbqycqqG5bqEcqqGGaaicqqGJbWycqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGJbWycqqGLbqzcqqGUbGBcqqG0baDcqqGYbGCcqqGLbqzcqqGZbWCcqqGGaaicqqGHbqycqqGUbGBcqqGKbazcqqGGaaicqqGZbWCcqqGJbWycqqGObaAcqqGVbWBcqqGVbWBcqqGSbaBcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGVbWBcqqGWbaCcqqGLbqzcqqGUbGBcqqGLbqzcqqGKbazcqqGUaGlaaGaay5Eaaaaaa@B52D@",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "While day care centres and schools are closed, children (age ai) need adult supervision at home. Their contact with susceptible adults (age as) increases by the \"child care factor\" FCC:",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2032L,as,ai(t)=\u03b2L,as,ai(FCC)1sch(t),\u03b2\u2032A,as,ai(t)=\u03b2A,as,ai(FCC)1sch(t),\u03b2\u2032M,as,ai(t)=\u03b2M,as,ai(FCC)1sch(t),\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakqaabeqaaGGaciqb=j7aIzaafaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0Jae8NSdi2aaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOWaaeWaaeaacqWGgbGrdaWgaaWcbaGaem4qamKaem4qameabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdohaZjabdogaJjabdIgaObqabaWccqGGOaakcqWG0baDcqGGPaqkaaGccqGGSaalaeaacuWFYoGygaqbamaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakmaabmaabaGaemOray0aaSbaaSqaaiabdoeadjabdoeadbqabaaakiaawIcacaGLPaaadaahaaWcbeqaaiabhgdaXmaaBaaameaacqWGZbWCcqWGJbWycqWGObaAaeqaaSGaeiikaGIaemiDaqNaeiykaKcaaOGaeiilaWcabaGaf8NSdiMbauaadaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqWG0baDcqGGPaqkcqGH9aqpcqWFYoGydaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGcdaqadaqaaiabdAeagnaaBaaaleaacqWGdbWqcqWGdbWqaeqaaaGccaGLOaGaayzkaaWaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaem4CamNaem4yamMaemiAaGgabeaaliabcIcaOiabdsha0jabcMcaPaaakiabcYcaSaaaaa@A387@",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Child care at home also increases the exposure of healthy children (age as) to contagious adults (age ai):",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2032L,as,ai(t)=\u03b2L,as,ai(FCC)1sch(t),\u03b2\u2032A,as,ai(t)=\u03b2A,as,ai(FCC)1sch(t),\u03b2\u2032M,as,ai(t)=\u03b2M,as,ai(FCC)1sch(t),\u03b2\u2032V,as,ai(t)=\u03b2V,as,ai(FCC)1sch(t).\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakqaabeqaaGGaciqb=j7aIzaafaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0Jae8NSdi2aaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOWaaeWaaeaacqWGgbGrdaWgaaWcbaGaem4qamKaem4qameabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdohaZjabdogaJjabdIgaObqabaWccqGGOaakcqWG0baDcqGGPaqkaaGccqGGSaalaeaacuWFYoGygaqbamaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakmaabmaabaGaemOray0aaSbaaSqaaiabdoeadjabdoeadbqabaaakiaawIcacaGLPaaadaahaaWcbeqaaiabhgdaXmaaBaaameaacqWGZbWCcqWGJbWycqWGObaAaeqaaSGaeiikaGIaemiDaqNaeiykaKcaaOGaeiilaWcabaGaf8NSdiMbauaadaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqWG0baDcqGGPaqkcqGH9aqpcqWFYoGydaWgaaWcbaGaemyta0KaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGcdaqadaqaaiabdAeagnaaBaaaleaacqWGdbWqcqWGdbWqaeqaaaGccaGLOaGaayzkaaWaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaem4CamNaem4yamMaemiAaGgabeaaliabcIcaOiabdsha0jabcMcaPaaakiabcYcaSaqaaiqb=j7aIzaafaWaaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0Jae8NSdi2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOWaaeWaaeaacqWGgbGrdaWgaaWcbaGaem4qamKaem4qameabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdohaZjabdogaJjabdIgaObqabaWccqGGOaakcqWG0baDcqGGPaqkaaGccqGGUaGlaaaa@CB59@",
+            "cite_spans": [],
+            "section": "Closing of day care centres and schools ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Cancelling mass gathering events effects only the contacts of adults who are healthy enough to attend such events. Assuming that such an intervention at time t reduces contacts by a fraction rmass, we get for all contacts between susceptible adults of age as and infectious adults of age ai the following contact rates:",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2032L,as,ai(t)=\u03b2L,as,ai(1\u2212rmass)1mass(t),\u03b2\u2032A,as,ai(t)=\u03b2A,as,ai(1\u2212rmass)1mass(t),\u03b2\u2032M,as,ai(t)=\u03b2M,as,ai(1\u2212rmass)1mass(t).\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakqaabeqaaGGaciqb=j7aIzaafaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0Jae8NSdi2aaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaeGymaeJaeyOeI0IaemOCai3aaSbaaSqaaiabd2gaTjabdggaHjabdohaZjabdohaZbqabaGccqGGPaqkdaahaaWcbeqaaiabhgdaXmaaBaaameaacqWGTbqBcqWGHbqycqWGZbWCcqWGZbWCaeqaaSGaeiikaGIaemiDaqNaeiykaKcaaOGaeiilaWcabaGaf8NSdiMbauaadaWgaaWcbaGaemyqaeKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqWG0baDcqGGPaqkcqGH9aqpcqWFYoGydaWgaaWcbaGaemyqaeKaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaemyBa0MaemyyaeMaem4CamNaem4CamhabeaakiabcMcaPmaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabd2gaTjabdggaHjabdohaZjabdohaZbqabaWccqGGOaakcqWG0baDcqGGPaqkaaGccqGGSaalaeaacuWFYoGygaqbamaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGTbqBcqWGHbqycqWGZbWCcqWGZbWCaeqaaOGaeiykaKYaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaemyBa0MaemyyaeMaem4CamNaem4CamhabeaaliabcIcaOiabdsha0jabcMcaPaaakiabc6caUaaaaa@B94E@",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "where 1mass (t) is a function which indicates when mass gathering events are possible or when they are closed:",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "1mass(t)={1\u2944\u2944\u2944while mass gathering events are forbidden0\u2944\u2944\u2944while mass gathering events are allowed.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWHXaqmdaWgaaWcbaGaemyBa0MaemyyaeMaem4CamNaem4CamhabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceaaeaqabeaacqaIXaqmcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGTbqBcqqGHbqycqqGZbWCcqqGZbWCcqqGGaaicqqGNbWzcqqGHbqycqqG0baDcqqGObaAcqqGLbqzcqqGYbGCcqqGPbqAcqqGUbGBcqqGNbWzcqqGGaaicqqGLbqzcqqG2bGDcqqGLbqzcqqGUbGBcqqG0baDcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGMbGzcqqGVbWBcqqGYbGCcqqGIbGycqqGPbqAcqqGKbazcqqGKbazcqqGLbqzcqqGUbGBaeaacqaIWaamcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGTbqBcqqGHbqycqqGZbWCcqqGZbWCcqqGGaaicqqGNbWzcqqGHbqycqqG0baDcqqGObaAcqqGLbqzcqqGYbGCcqqGPbqAcqqGUbGBcqqGNbWzcqqGGaaicqqGLbqzcqqG2bGDcqqGLbqzcqqGUbGBcqqG0baDcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGHbqycqqGSbaBcqqGSbaBcqqGVbWBcqqG3bWDcqqGLbqzcqqGKbazcqqGUaGlaaGaay5Eaaaaaa@ABB8@",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "As contacts with adults who are too sick to attend such mass gathering events cannot be prevented by this measure it is",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2032V,as,ai(t)=\u03b2V,as,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaqbamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iab=j7aInaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaaa@4611@.",
+            "cite_spans": [],
+            "section": "Cancelling of mass gathering events ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "During some time in the epidemic, the general population may effectively reduce contacts which can be a result of wearing facial masks, increasing \"social distance\", adopting improved measures of \"respiratory hygiene\" or simply of a general change in behaviour. This will be implemented in the program by reducing the contacts of susceptible individuals at that time t by factor rgen (t). The adjusted contact rates are:",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2033L,as,ai(t)=\u03b2\u2032L,as,ai(t)(1\u2212rgen)1gen(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGbamaaBaaaleaacqWGmbatcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaafaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaem4zaCMaemyzauMaemOBa4gabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdEgaNjabdwgaLjabd6gaUbqabaWccqGGOaakcqWG0baDcqGGPaqkaaaaaa@5AC1@   for cases in the late incubation period,",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2033A,as,ai(t)=\u03b2\u2032A.as,ai(t)(1\u2212rgen)1gen(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGbamaaBaaaleaacqWGbbqqcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaafaWaaSbaaSqaaiabdgeabjabc6caUiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaem4zaCMaemyzauMaemOBa4gabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdEgaNjabdwgaLjabd6gaUbqabaWccqGGOaakcqWG0baDcqGGPaqkaaaaaa@5A99@   for asymptomatic cases,",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2033M,as,ai(t)=\u03b2\u2032M.as,ai(t)(1\u2212rgen)1gen(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGbamaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaafaWaaSbaaSqaaiabd2eanjabc6caUiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaem4zaCMaemyzauMaemOBa4gabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdEgaNjabdwgaLjabd6gaUbqabaWccqGGOaakcqWG0baDcqGGPaqkaaaaaa@5AC9@   for moderately sick cases,",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2033V,as,ai(t)=\u03b2\u2032V,as,ai(t)(1\u2212rgen)1gen(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGbamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaafaWaaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaem4zaCMaemyzauMaemOBa4gabeaaaOGaayjkaiaawMcaamaaCaaaleqabaGaeCymaeZaaSbaaWqaaiabdEgaNjabdwgaLjabd6gaUbqabaWccqGGOaakcqWG0baDcqGGPaqkaaaaaa@5AE9@   for very sick cases,",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "where 1gen (t) is a function which indicates when the population reduces their contacts:",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "1gen(t)={1\u2944\u2944\u2944while the population reduces their contacts0\u2944\u2944\u2944while the population behaves as usual.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWHXaqmdaWgaaWcbaGaem4zaCMaemyzauMaemOBa4gabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceaaeaqabeaacqaIXaqmcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqG0baDcqqGObaAcqqGLbqzcqqGGaaicqqGWbaCcqqGVbWBcqqGWbaCcqqG1bqDcqqGSbaBcqqGHbqycqqG0baDcqqGPbqAcqqGVbWBcqqGUbGBcqqGGaaicqqGYbGCcqqGLbqzcqqGKbazcqqG1bqDcqqGJbWycqqGLbqzcqqGZbWCcqqGGaaicqqG0baDcqqGObaAcqqGLbqzcqqGPbqAcqqGYbGCcqqGGaaicqqGJbWycqqGVbWBcqqGUbGBcqqG0baDcqqGHbqycqqGJbWycqqG0baDcqqGZbWCaeaacqaIWaamcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqG0baDcqqGObaAcqqGLbqzcqqGGaaicqqGWbaCcqqGVbWBcqqGWbaCcqqG1bqDcqqGSbaBcqqGHbqycqqG0baDcqqGPbqAcqqGVbWBcqqGUbGBcqqGGaaicqqGIbGycqqGLbqzcqqGObaAcqqGHbqycqqG2bGDcqqGLbqzcqqGZbWCcqqGGaaicqqGHbqycqqGZbWCcqqGGaaicqqG1bqDcqqGZbWCcqqG1bqDcqqGHbqycqqGSbaBcqqGUaGlaaGaay5Eaaaaaa@AADD@",
+            "cite_spans": [],
+            "section": "General reduction of contacts ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "If cases are (partly) isolated, their contact rates are reduced by factors (1\u2212risoM)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaqadaqaaiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGPbqAcqWGZbWCcqWGVbWBdaWgaaadbaGaemyta0eabeaaaSqabaaakiaawIcacaGLPaaaaaa@3741@, (1\u2212risoV)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaqadaqaaiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGPbqAcqWGZbWCcqWGVbWBdaWgaaadbaGaemOvayfabeaaaSqabaaakiaawIcacaGLPaaaaaa@3753@ and (1\u2212risoH)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaqadaqaaiabigdaXiabgkHiTiabdkhaYnaaBaaaleaacqWGPbqAcqWGZbWCcqWGVbWBdaWgaaadbaGaemisaGeabeaaaSqabaaakiaawIcacaGLPaaaaaa@3737@, respectively, resulting in contact rates",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2034M,as,ai(t)=\u03b2\u2033M,as,ai(t)(1\u2212risoM)1iso(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGeamaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaagaWaaSbaaSqaaiabd2eanjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabd2eanbqabaaaleqaaaGccaGLOaGaayzkaaWaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaemyAaKMaem4CamNaem4Ba8gabeaaliabcIcaOiabdsha0jabcMcaPaaaaaa@5C71@   for moderately sick cases,",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2034V,as,ai(t)=\u03b2\u2033V,as,ai(t)(1\u2212risoV)1iso(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGeamaaBaaaleaacqWGwbGvcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaagaWaaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabdAfawbqabaaaleqaaaGccaGLOaGaayzkaaWaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaemyAaKMaem4CamNaem4Ba8gabeaaliabcIcaOiabdsha0jabcMcaPaaaaaa@5CA7@   for very sick cases at home,",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2034H,as,ai(t)=\u03b2\u2033V,as,ai(t)(1\u2212risoH)1iso(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGeamaaBaaaleaacqWGibascqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaagaWaaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqaIXaqmcqGHsislcqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabdIeaibqabaaaleqaaaGccaGLOaGaayzkaaWaaWbaaSqabeaacqWHXaqmdaWgaaadbaGaemyAaKMaem4CamNaem4Ba8gabeaaliabcIcaOiabdsha0jabcMcaPaaaaaa@5C6F@   for hospitalized very sick cases,",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "where 1iso (t) is a function which indicates when mass gathering events are possible or when they are closed:",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "1iso(t)={1\u2944\u2944\u2944while isolation measures are performed0\u2944\u2944\u2944while no isolation measures are performed.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWHXaqmdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba8gabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceaaeaqabeaacqaIXaqmcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGPbqAcqqGZbWCcqqGVbWBcqqGSbaBcqqGHbqycqqG0baDcqqGPbqAcqqGVbWBcqqGUbGBcqqGGaaicqqGTbqBcqqGLbqzcqqGHbqycqqGZbWCcqqG1bqDcqqGYbGCcqqGLbqzcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGWbaCcqqGLbqzcqqGYbGCcqqGMbGzcqqGVbWBcqqGYbGCcqqGTbqBcqqGLbqzcqqGKbazaeaacqaIWaamcaaMcSUaaGPaRlaaykW6cqqG3bWDcqqGObaAcqqGPbqAcqqGSbaBcqqGLbqzcqqGGaaicqqGUbGBcqqGVbWBcqqGGaaicqqGPbqAcqqGZbWCcqqGVbWBcqqGSbaBcqqGHbqycqqG0baDcqqGPbqAcqqGVbWBcqqGUbGBcqqGGaaicqqGTbqBcqqGLbqzcqqGHbqycqqGZbWCcqqG1bqDcqqGYbGCcqqGLbqzcqqGZbWCcqqGGaaicqqGHbqycqqGYbGCcqqGLbqzcqqGGaaicqqGWbaCcqqGLbqzcqqGYbGCcqqGMbGzcqqGVbWBcqqGYbGCcqqGTbqBcqqGLbqzcqqGKbazcqqGUaGlaaGaay5Eaaaaaa@AA0A@",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "The contact rates of cases in the late incubation period and that of asymptomatic cases remain unchanged:",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2034L,as,ai(t)=\u03b2\u2033L,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGeamaaBaaaleaacqWGmbatcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaagaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKcaaa@4930@   for infected individuals in the late incubation period,",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2\u2034M,as,ai(t)=\u03b2\u2033A,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFYoGygaGeamaaBaaaleaacqWGnbqtcqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaagaWaaSbaaSqaaiabdgeabjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKcaaa@491C@   for asymptomatic cases.",
+            "cite_spans": [],
+            "section": "Partial isolation of cases ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "To allow for a contagiousness which changes over the course of disease, we multiply each contact rate with a weighting factor pk=xk\u22121/\u2211i=0m\u22121xi\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGWbaCdaWgaaWcbaGaem4AaSgabeaakiabg2da9maalyaabaGaemiEaG3aaWbaaSqabeaacqWGRbWAcqGHsislcqaIXaqmaaaakeaadaaeWbqaaiabdIha4naaCaaaleqabaGaemyAaKgaaaqaaiabdMgaPjabg2da9iabicdaWaqaaiabd2gaTjabgkHiTiabigdaXaqdcqGHris5aaaaaaa@4179@ whereby k is the stage of contagiousness. This leads to the following contact rates:",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2Ak,as,ai(t)=\u03b2\u2034A,as,ai(t)pk\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyqae0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaasaWaaSbaaSqaaiabdgeabjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaemiCaa3aaSbaaSqaaiabdUgaRbqabaaaaa@4D82@   for asymptomatic cases in stage k,",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2Mk,as,ai(t)=\u03b2\u2034M,as,ai(t)pk\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyta00aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaasaWaaSbaaSqaaiabd2eanjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaemiCaa3aaSbaaSqaaiabdUgaRbqabaaaaa@4DB2@   for moderately sick cases in stage k,",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2Vk,as,ai(t)=\u03b2\u2034V,as,ai(t)pk\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemOvay1aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaasaWaaSbaaSqaaiabdAfawjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaemiCaa3aaSbaaSqaaiabdUgaRbqabaaaaa@4DD6@   for very sick cases in stage k,",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2Hk,as,ai(t)=\u03b2\u2034H,as,ai(t)pk\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemisaG0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaasaWaaSbaaSqaaiabdIeaijabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaemiCaa3aaSbaaSqaaiabdUgaRbqabaaaaa@4D9E@   for hospitalized cases in stage k.",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "For x = 1, contagiousness is equally high in all stages; for x = 0, only the first stage is contagious; for 0 <x < 1, the contagiousness decreases in a geometric procession. We make the simplifying assumption that contagiousness does not change during the late incubation period",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b2Lk,as,ai(t)=\u03b2\u2034L,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemitaW0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabg2da9iqb=j7aIzaasaWaaSbaaSqaaiabdYeamjabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKcaaa@4ABA@ for cases in stage k = n - l,..,n of the incubation period.",
+            "cite_spans": [],
+            "section": "Course of contagiousness ::: Contact rates and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "To calculate the force of infection \u03bbas\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWF7oaBdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaaaleqaaaaa@3185@ to which susceptible individuals of age as are exposed at time t, we have to first calculate the product of the number of contagious individuals with the corresponding contact rates and then to sum up these products over all ages ai, all risk categories r, all courses of the disease and all stages. Assuming that the contagiousness of cases who have received antiviral treatment is reduced by the factor (1 - fC), the force of infection is given by",
+            "cite_spans": [],
+            "section": "Force of infection ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03bbas(t)=\u2211ai(\u2211r\u2211k=n\u2212l+1n\u03b2Lk,as,ai(t)Ek,ai,r+\u2211k=1m(\u03b2Ak,as,ai(t)Ak,ai+\u03b2Mk,as,ai(t)\u2944Mk,ai+\u03b2Vk,as,ai(t)(Vk,ai+Wk,ai,U+(1\u2212fI)Wk,ai,T+Xk,ai)+\u03b2Hk,as,ai(t)(Hk,ai,U+(1\u2212fI)Hk,ai,T)))\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWF7oaBdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKIaeyypa0ZaaabuaeaadaqadaqaamaaqafabaWaaabCaeaacqWFYoGydaWgaaWcbaGaemitaW0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabdweafnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaliabcYcaSiabdkhaYbqabaaabaGaem4AaSMaeyypa0JaemOBa4MaeyOeI0IaemiBaWMaey4kaSIaeGymaedabaGaemOBa4ganiabggHiLdaaleaacqWGYbGCaeqaniabggHiLdGccqGHRaWkdaaeWbqaamaabmaaeaqabeaacqWFYoGydaWgaaWcbaGaemyqae0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiabdgeabnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGHRaWkcqWFYoGydaWgaaWcbaGaemyta00aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPiaaykW6cqWGnbqtdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaGcbaGaey4kaSIae8NSdi2aaSbaaSqaaiabdAfawnaaBaaameaacqWGRbWAaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGGOaakcqWG0baDcqGGPaqkdaqadaqaaiabdAfawnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaGccqGHRaWkcqWGxbWvdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaWccqGGSaalcqWGvbqvaeqaaOGaey4kaSIaeiikaGIaeGymaeJaeyOeI0IaemOzay2aaSbaaSqaaiabdMeajbqabaGccqGGPaqkcqWGxbWvdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaWccqGGSaalcqWGubavaeqaaOGaey4kaSIaemiwaG1aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaaaOGaayjkaiaawMcaaaqaaiabgUcaRiab=j7aInaaBaaaleaacqWGibasdaWgaaadbaGaem4AaSgabeaaliabcYcaSiabdggaHnaaBaaameaacqWGZbWCaeqaaSGaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaOGaeiikaGIaemiDaqNaeiykaKYaaeWaaeaacqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaWccqGGSaalcqWGvbqvaeqaaOGaey4kaSIaeiikaGIaeGymaeJaeyOeI0IaemOzay2aaSbaaSqaaiabdMeajbqabaGccqGGPaqkcqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdMgaPbqabaWccqGGSaalcqWGubavaeqaaaGccaGLOaGaayzkaaaaaiaawIcacaGLPaaaaSqaaiabdUgaRjabg2da9iabigdaXaqaaiabd2gaTbqdcqGHris5aaGccaGLOaGaayzkaaaaleaacqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqab0GaeyyeIuoaaaa@FCF8@",
+            "cite_spans": [],
+            "section": "Force of infection ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Cumulative number of deaths",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "D\u02d9=\u2211a\u2211k=1m(\u03c4a,U(Xa+Hk,a,U)+\u03c4aHk,a,T)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWGebargaGaaiabg2da9maaqafabaWaaabCaeaadaqadaqaaGGaciab=r8a0naaBaaaleaacqWGHbqycqGGSaalcqWGvbqvaeqaaOWaaeWaaeaacqWGybawdaWgaaWcbaGaemyyaegabeaakiabgUcaRiabdIeainaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGccaGLOaGaayzkaaGaey4kaSIae8hXdq3aaSbaaSqaaiabdggaHbqabaGccqWGibasdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemivaqfabeaaaOGaayjkaiaawMcaaaWcbaGaem4AaSMaeyypa0JaeGymaedabaGaemyBa0ganiabggHiLdaaleaacqWGHbqyaeqaniabggHiLdaaaa@573B@",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Convalescent (but non-contagious) cases",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "C\u02d91,a=\u03b3V,a,U(Vm,a+Wm,a,U+Xm,a+Hm,a,U)+\u03b3V,a,T(Vm,a,T+Hm,a,T)\u2212\u03c1C1,aC\u02d9k,a=\u03c1(Ck\u22121,a+Ck,a)for k=2,...,j\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeqacaaaeaqabeaacuWGdbWqgaGaamaaBaaaleaacqaIXaqmcqGGSaalcqWGHbqyaeqaaOGaeyypa0dcciGae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGcdaqadaqaaiabdAfawnaaBaaaleaacqWGTbqBcqGGSaalcqWGHbqyaeqaaOGaey4kaSIaem4vaC1aaSbaaSqaaiabd2gaTjabcYcaSiabdggaHjabcYcaSiabdwfavbqabaGccqGHRaWkcqWGybawdaWgaaWcbaGaemyBa0MaeiilaWIaemyyaegabeaakiabgUcaRiabdIeainaaBaaaleaacqWGTbqBcqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaGccaGLOaGaayzkaaGaey4kaSIae83SdC2aaSbaaSqaaiabdAfawjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaGcdaqadaqaaiabdAfawnaaBaaaleaacqWGTbqBcqGGSaalcqWGHbqycqGGSaalcqWGubavaeqaaOGaey4kaSIaemisaG0aaSbaaSqaaiabd2gaTjabcYcaSiabdggaHjabcYcaSiabdsfaubqabaaakiaawIcacaGLPaaacqGHsislcqWFbpGCcqWGdbWqdaWgaaWcbaGaeGymaeJaeiilaWIaemyyaegabeaaaOqaaiqbdoeadzaacaWaaSbaaSqaaiabdUgaRjabcYcaSiabdggaHbqabaGccqGH9aqpcqWFbpGCcqGGOaakcqWGdbWqdaWgaaWcbaGaem4AaSMaeyOeI0IaeGymaeJaeiilaWIaemyyaegabeaakiabgUcaRiabdoeadnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaeiykaKcaaeaacqqGMbGzcqqGVbWBcqqGYbGCcqqGGaaicqWGRbWAcqGH9aqpcqaIYaGmcqGGSaalcqGGUaGlcqGGUaGlcqGGUaGlcqGGSaalcqWGQbGAaaaaaa@98F1@",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Immune and fully recovered individuals",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "I\u02d9=\u2211a(\u03c1Cj,a+\u03b3AAm,a+\u03b3MMm,a)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWGjbqsgaGaaiabg2da9maaqafabaWaaeWaaeaaiiGacqWFbpGCcqWGdbWqdaWgaaWcbaGaemOAaOMaeiilaWIaemyyaegabeaakiabgUcaRiab=n7aNnaaBaaaleaacqWGbbqqaeqaaOGaemyqae0aaSbaaSqaaiabd2gaTjabcYcaSiabdggaHbqabaGccqGHRaWkcqWFZoWzdaWgaaWcbaGaemyta0eabeaakiabd2eannaaBaaaleaacqWGTbqBcqGGSaalcqWGHbqyaeqaaaGccaGLOaGaayzkaaaaleaacqWGHbqyaeqaniabggHiLdaaaa@4BB9@",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Number of people who are unable to work because of influenza",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "U\u02d9=\u2211aW(\u2211r\u03b4En,aW,r(caW,r(V)+caW,r(X))\u2212\u03c4aW\u2211k=1m(Xk,aW+Hk,aW,U+Hk,aW,T)\u2212\u03c1Cj,aW)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWGvbqvgaGaaiabg2da9maaqafabaWaaeWaaeaadaaeqbqaaGGaciab=r7aKjabdweafnaaBaaaleaacqWGUbGBcqGGSaalcqWGHbqydaWgaaadbaGaem4vaCfabeaaliabcYcaSiabdkhaYbqabaGccqGGOaakcqWGJbWydaWgaaWcbaGaemyyae2aaSbaaWqaaiabdEfaxbqabaWccqGGSaalcqWGYbGCaeqaaOGaeiikaGIaemOvayLaeiykaKIaey4kaSIaem4yam2aaSbaaSqaaiabdggaHnaaBaaameaacqWGxbWvaeqaaSGaeiilaWIaemOCaihabeaakiabcIcaOiabdIfayjabcMcaPiabcMcaPaWcbaGaemOCaihabeqdcqGHris5aOGaeyOeI0Iae8hXdq3aaSbaaSqaaiabdggaHnaaBaaameaacqWGxbWvaeqaaaWcbeaakmaaqahabaWaaeWaaeaacqWGybawdaWgaaWcbaGaem4AaSMaeiilaWIaemyyae2aaSbaaWqaaiabdEfaxbqabaaaleqaaOGaey4kaSIaemisaG0aaSbaaSqaaiabdUgaRjabcYcaSiabdggaHnaaBaaameaacqWGxbWvaeqaaSGaeiilaWIaemyvaufabeaakiabgUcaRiabdIeainaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqydaWgaaadbaGaem4vaCfabeaaliabcYcaSiabdsfaubqabaaakiaawIcacaGLPaaaaSqaaiabdUgaRjabg2da9iabigdaXaqaaiabd2gaTbqdcqGHris5aOGaeyOeI0Iae8xWdiNaem4qam0aaSbaaSqaaiabdQgaQjabcYcaSiabdggaHnaaBaaameaacqWGxbWvaeqaaaWcbeaaaOGaayjkaiaawMcaaaWcbaGaemyyae2aaSbaaWqaaiabdEfaxbqabaaaleqaniabggHiLdaaaa@889B@",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "where aW denote all age classes of working adults (to avoid infinite contributions to the work loss, the decision was made that cases who die from influenza do not contribute any further to the total work loss).",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Cumulative doses of antiviral treatment",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "T\u02d9=\u03b1\u2211k=1ma,T\u2211a(fV(t)Vk,a+fX(t)Xk,a)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWGubavgaGaaiabg2da9GGaciab=f7aHnaaqahabaWaaabuaeaacqGGOaakcqWGMbGzdaWgaaWcbaGaemOvayfabeaakiabcIcaOiabdsha0jabcMcaPiabdAfawnaaBaaaleaacqWGRbWAcqGGSaalcqWGHbqyaeqaaOGaey4kaSIaemOzay2aaSbaaSqaaiabdIfaybqabaGccqGGOaakcqWG0baDcqGGPaqkcqWGybawdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaegabeaakiabcMcaPaWcbaGaemyyaegabeqdcqGHris5aaWcbaGaem4AaSMaeyypa0JaeGymaedabaGaemyBa02aaSbaaWqaaiabdggaHjabcYcaSiabdsfaubqabaaaniabggHiLdaaaa@56CF@",
+            "cite_spans": [],
+            "section": "Differential equations for various model output ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the user-specified numbers of people Na in the age classes and the fractions Fa of people under high risk within each age class (Table 2), we obtain the initial population sizes according to age and risk class: Na,r1\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGobGtdaWgaaWcbaGaemyyaeMaeiilaWIaemOCai3aaSbaaWqaaiabigdaXaqabaaaleqaaaaa@32BD@ (0) = Na (1 - Fa) and Na,r2\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGobGtdaWgaaWcbaGaemyyaeMaeiilaWIaemOCai3aaSbaaWqaaiabikdaYaqabaaaleqaaaaa@32BF@ (0) = NaFa. The total population is, therefore, given by N(0)=\u2211a\u2211rNa,r(0)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGobGtcqGGOaakcqaIWaamcqGGPaqkcqGH9aqpdaaeqbqaamaaqafabaGaemOta40aaSbaaSqaaiabdggaHjabcYcaSiabdkhaYbqabaGccqGGOaakcqaIWaamcqGGPaqkaSqaaiabdkhaYbqab0GaeyyeIuoaaSqaaiabdggaHbqab0GaeyyeIuoaaaa@4008@.",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": [
+                {
+                    "start": 141,
+                    "end": 142,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "At time t = 0, one infection is introduced into an otherwise fully susceptible population. To avoid biasing the simulation one way or the other, the initial infection is distributed over all classes, weighted by the probability that an individual in one class acquires the infection (i.e. by the component of the eigenvector e\u2192=(ea)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWHLbqzgaWcaiabg2da9iabcIcaOiabhwgaLnaaBaaaleaacqWGHbqyaeqaaOGaeiykaKcaaa@33A5@ of the next generation matrix):",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Sa,r(0)=Na,r(0)\u2212{(1\u2212Fr)ea/\u2211aieaiif r=r1 (low risk group)Frea/\u2211aieaiif r=r2 (high risk group)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGtbWudaWgaaWcbaGaemyyaeMaeiilaWIaemOCaihabeaakiabcIcaOiabicdaWiabcMcaPiabg2da9iabd6eaonaaBaaaleaacqWGHbqycqGGSaalcqWGYbGCaeqaaOGaeiikaGIaeGimaaJaeiykaKIaeyOeI0YaaiqabeaafaqaaeGacaaabaWaaSGbaeaacqGGOaakcqaIXaqmcqGHsislcqWGgbGrdaWgaaWcbaGaemOCaihabeaakiabcMcaPiabbwgaLnaaBaaaleaacqWGHbqyaeqaaaGcbaWaaabuaeaacqqGLbqzdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaqaaiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeqdcqGHris5aaaaaOqaaiabbMgaPjabbAgaMjabbccaGiabdkhaYjabg2da9iabdkhaYnaaBaaaleaacqaIXaqmaeqaaOGaeeiiaaIaeeikaGIaeeiBaWMaee4Ba8Maee4DaCNaeeiiaaIaeeOCaiNaeeyAaKMaee4CamNaee4AaSMaeeiiaaIaee4zaCMaeeOCaiNaee4Ba8MaeeyDauNaeeiCaaNaeeykaKcabaWaaSGbaeaacqWGgbGrdaWgaaWcbaGaemOCaihabeaakiabbwgaLnaaBaaaleaacqWGHbqyaeqaaaGcbaWaaabuaeaacqqGLbqzdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaqaaiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeqdcqGHris5aaaaaOqaaiabbMgaPjabbAgaMjabbccaGiabdkhaYjabg2da9iabdkhaYnaaBaaaleaacqaIYaGmaeqaaOGaeeiiaaIaeeikaGIaeeiAaGMaeeyAaKMaee4zaCMaeeiAaGMaeeiiaaIaeeOCaiNaeeyAaKMaee4CamNaee4AaSMaeeiiaaIaee4zaCMaeeOCaiNaee4Ba8MaeeyDauNaeeiCaaNaeeykaKcaaaGaay5Eaaaaaa@9C27@",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Ek,a,r(0)={(1\u2212Fr)Frea/\u2211aieaiif r=r1 (low risk group) and k=1Frea/\u2211aieaiif r=r2 (high risk group) and k=10if k>1\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGfbqrdaWgaaWcbaGaem4AaSMaeiilaWIaemyyaeMaeiilaWIaemOCaihabeaakiabcIcaOiabicdaWiabcMcaPiabg2da9maaceqabaqbaeaabmGaaaqaamaalyaabaGaeiikaGIaeGymaeJaeyOeI0IaemOray0aaSbaaSqaaiabdkhaYbqabaGccqGGPaqkcqWGgbGrdaWgaaWcbaGaemOCaihabeaakiabbwgaLnaaBaaaleaacqWGHbqyaeqaaaGcbaWaaabuaeaacqqGLbqzdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaqaaiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeqdcqGHris5aaaaaOqaaiabbMgaPjabbAgaMjabbccaGiabdkhaYjabg2da9iabdkhaYnaaBaaaleaacqaIXaqmaeqaaOGaeeiiaaIaeeikaGIaeeiBaWMaee4Ba8Maee4DaCNaeeiiaaIaeeOCaiNaeeyAaKMaee4CamNaee4AaSMaeeiiaaIaee4zaCMaeeOCaiNaee4Ba8MaeeyDauNaeeiCaaNaeeykaKIaeeiiaaIaeeyyaeMaeeOBa4MaeeizaqMaeeiiaaIaem4AaSMaeyypa0JaeGymaedabaWaaSGbaeaacqWGgbGrdaWgaaWcbaGaemOCaihabeaakiabbwgaLnaaBaaaleaacqWGHbqyaeqaaaGcbaWaaabuaeaacqqGLbqzdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdMgaPbqabaaaleqaaaqaaiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeqdcqGHris5aaaaaOqaaiabbMgaPjabbAgaMjabbccaGiabdkhaYjabg2da9iabdkhaYnaaBaaaleaacqaIYaGmaeqaaOGaeeiiaaIaeeikaGIaeeiAaGMaeeyAaKMaee4zaCMaeeiAaGMaeeiiaaIaeeOCaiNaeeyAaKMaee4CamNaee4AaSMaeeiiaaIaee4zaCMaeeOCaiNaee4Ba8MaeeyDauNaeeiCaaNaeeykaKIaeeiiaaIaeeyyaeMaeeOBa4MaeeizaqMaeeiiaaIaem4AaSMaeyypa0JaeGymaedabaGaeGimaadabaGaeeyAaKMaeeOzayMaeeiiaaIaem4AaSMaeyOpa4JaeGymaedaaaGaay5Eaaaaaa@B1F9@",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u2200k=1m\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqGHaiIidaqhaaWcbaGaem4AaSMaeyypa0JaeGymaedabaGaemyBa0gaaaaa@3261@Ak, a (0) = Mk, a (0) = Vk, a (0) = Wk, a, U (0) = Wk, a, T (0) = Xk, a (0) = Hk, a, U (0) = Hk, a, T (0) = 0",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "\u2200k=1j\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqGHaiIidaqhaaWcbaGaem4AaSMaeyypa0JaeGymaedabaGaemOAaOgaaaaa@325B@Ck, a (0) = 0, D (0) = I (0) = U (0) = T (0) = 0.",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Using these initial values, the set of differential equations is solved numerically with a Runge-Kutta method with step-size control.",
+            "cite_spans": [],
+            "section": "Initial values ::: Next generation matrix and basic reproduction number ::: Appendix: Description of the transmission dynamics of InfluSim version 2.0",
+            "ref_spans": []
+        },
+        {
+            "text": "Sa, r number of susceptible individuals",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Ek, a, r number of incubating individuals (stage k); the last two stages are contagious",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Ak, a number of asymptomatic individuals (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Mk, a number of moderately sick individuals (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Vk, a number of very sick individuals who have not yet seen a doctor (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Wk, a, T number of treated very sick individuals (withdrawn to home; stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Wk, a, U number of untreated very sick individuals (withdrawn to home; stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Xk, a number of extremely sick individuals who have not seen a doctor (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Hk, a, T number of hospitalized and treated individuals (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Hk, a, U number of hospitalized but untreated individuals (stage k)",
+            "cite_spans": [],
+            "section": "Transmission variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Ck, a number of convalescent (non-contagious) cases (stage k)",
+            "cite_spans": [],
+            "section": "Output variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "I number of fully recovered and immune cases",
+            "cite_spans": [],
+            "section": "Output variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "D number of people who die of influenza",
+            "cite_spans": [],
+            "section": "Output variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "U number of people who are unable to work because of influenza",
+            "cite_spans": [],
+            "section": "Output variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "T cumulative number of antiviral treatment doses used",
+            "cite_spans": [],
+            "section": "Output variables ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Na total population size by age class a, whereby a = a1 denotes children, a = a2 denotes adults of working age and a = a2 denotes elderly, respectively.",
+            "cite_spans": [],
+            "section": "Parameters concerning the demography ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Fa fraction of the population in age class a which is under high risk from this, Na, r is calculated such that Na, r = Fara",
+            "cite_spans": [],
+            "section": "Parameters concerning the demography ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Kas,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGlbWsdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@34A7@ the contact matrix gives the weekly number of contacts between an individual of age class ai with individuals of age class as. From this, the contact rates \u03b2Lk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemitaW0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BF5@, \u03b2Ak,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyqae0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BDF@, \u03b2Mk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyta00aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BF7@ and \u03b2Vk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemOvay1aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3C09@ are calculated as explained above",
+            "cite_spans": [],
+            "section": "Parameters concerning the demography ::: Model variables ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "n number of stages used to model the latent period",
+            "cite_spans": [],
+            "section": "Number of stages ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "l number of stages used to model the early infectious period",
+            "cite_spans": [],
+            "section": "Number of stages ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "m number of stages used to model the (symptomatic) infectious period",
+            "cite_spans": [],
+            "section": "Number of stages ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "j number of stages used to model convalescence",
+            "cite_spans": [],
+            "section": "Number of stages ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DE average duration of the incubation period;",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b4 is calculated such that \u03b4 = n/DE",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "the last l stages are used as early infectious period",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "(average duration: DL = DEl/n)",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DD average time after onset when a severe case seeks medical help;",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b1 is calculated such that \u03b1 = 1/DD",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DA, a average infectious duration for asymptomatic cases",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b3A, a is calculated such that \u03b3A, a = m/DA, a",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DM, a average infectious duration of moderately sick cases",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b3M, a is calculated such that \u03b3M, a = m/DM, a",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DV, a average duration of infectivity of untreated very or extremely sick cases;",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03b3V, a, U is calculated such that \u03b3V, a, U = m/DV, a",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DC average duration of convalescence;",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03c1 is calculated such that \u03c1 = j/DC",
+            "cite_spans": [],
+            "section": "Sojourn times ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "ca, r (A) fraction of asymptomatic infections (given age a and risk r)",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "sa, r fraction of severe cases among symptomatic ones",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "ha, r fraction of severe cases who need hospitalization (unless treated) the fraction of infected cases who",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "- develops moderate disease is ca, r (M) = (1 - sa, r)(1 - ca, r (M))",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "- becomes bed-ridden at home is ca, r (V) = sa, r (1 - ha, r)(1 - ca, r (M))",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "- become extremely severe cases is ca, r (X) = sa, rha, r (1 - ca, r (M))",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "da fraction of untreated extremely severe cases who die;",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "from this, \u03c4a is chosen such that da=\u03c4a\u03c4a+\u03b3S,a,U\u2211k=0m\u22121(\u03c4a\u03c4a+\u03b3S,a,U)k\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGKbazdaWgaaWcbaGaemyyaegabeaakiabg2da9maalaaabaacciGae8hXdq3aaSbaaSqaaiabdggaHbqabaaakeaacqWFepaDdaWgaaWcbaGaemyyaegabeaakiabgUcaRiab=n7aNnaaBaaaleaacqWGtbWucqGGSaalcqWGHbqycqGGSaalcqWGvbqvaeqaaaaakmaaqahabaWaaeWaaeaadaWcaaqaaiab=r8a0naaBaaaleaacqWGHbqyaeqaaaGcbaGae8hXdq3aaSbaaSqaaiabdggaHbqabaGccqGHRaWkcqaHZoWzdaWgaaWcbaGaem4uamLaeiilaWIaemyyaeMaeiilaWIaemyvaufabeaaaaaakiaawIcacaGLPaaadaahaaWcbeqaaiabdUgaRbaaaeaacqWGRbWAcqGH9aqpcqaIWaamaeaacqWGTbqBcqGHsislcqaIXaqma0GaeyyeIuoaaaa@59E6@",
+            "cite_spans": [],
+            "section": "Course of disease ::: Parameters concerning the natural history of the disease ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "bL relative contagiousness of cases in the late incubation period",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "bA relative contagiousness of asymptomatic cases",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "bM relative contagiousness of moderately sick cases",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "bV relative contagiousness of severely sick cases",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "x50 parameter regulating the course of contagiousness",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "x50 = 1 only the first stage after onset of disease is contagious",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "0.5 <x50 < 1 contagiousness decreases after onset of disease",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "x50 = 0.5 equal contagiousness during the whole course of disease",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "0 <x50 < 0.5 contagiousness increases after onset of disease",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "from this, x is calculated such that x50=\u2211i=0m/2xi\u22121/\u2211i=0mxi\u22121\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG4baEdaWgaaWcbaGaeGynauJaeGimaadabeaakiabg2da9maalyaabaWaaabCaeaacqWG4baEdaahaaWcbeqaaiabdMgaPjabgkHiTiabigdaXaaaaeaacqWGPbqAcqGH9aqpcqaIWaamaeaacqWGTbqBcqGGVaWlcqaIYaGma0GaeyyeIuoaaOqaamaaqahabaGaemiEaG3aaWbaaSqabeaacqWGPbqAcqGHsislcqaIXaqmaaaabaGaemyAaKMaeyypa0JaeGimaadabaGaemyBa0ganiabggHiLdaaaaaa@4ACD@ if m is an even number or x50=(\u2211i=0(m\u22121)/2xi\u22121+x(m\u22121)/2+12)/\u2211i=0mxi\u22121\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG4baEdaWgaaWcbaGaeGynauJaeGimaadabeaakiabg2da9maalyaabaWaaeWaaeaadaaeWbqaaiabdIha4naaCaaaleqabaGaemyAaKMaeyOeI0IaeGymaedaaaqaaiabdMgaPjabg2da9iabicdaWaqaaiabcIcaOiabd2gaTjabgkHiTiabigdaXiabcMcaPiabc+caViabikdaYaqdcqGHris5aOGaey4kaSYaaSaaaeaacqWG4baEdaahaaWcbeqaamaabmaabaGaemyBa0MaeyOeI0IaeGymaedacaGLOaGaayzkaaGaei4la8IaeGOmaiJaey4kaSIaeGymaedaaaGcbaGaeGOmaidaaaGaayjkaiaawMcaaaqaamaaqahabaGaemiEaG3aaWbaaSqabeaacqWGPbqAcqGHsislcqaIXaqmaaaabaGaemyAaKMaeyypa0JaeGimaadabaGaemyBa0ganiabggHiLdaaaaaa@5BEC@ if m is an odd number, respectively",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "R0 basic reproduction number; the contact rates \u03b2Lk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemitaW0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BF5@, \u03b2Ak,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyqae0aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BDF@, \u03b2Mk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemyta00aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3BF7@ and \u03b2Vk,as,ai(t)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacqWFYoGydaWgaaWcbaGaemOvay1aaSbaaWqaaiabdUgaRbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaem4CamhabeaaliabcYcaSiabdggaHnaaBaaameaacqWGPbqAaeqaaaWcbeaakiabcIcaOiabdsha0jabcMcaPaaa@3C09@ are calculated from R0 and from the contagiousness factors as explained above",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03bba (t) force of infection for susceptible individuals of age a at time t (see calculation above)",
+            "cite_spans": [],
+            "section": "Parameters concerning the contagiousness of the infection ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "risoM\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabd2eanbqabaaaleqaaaaa@33D1@ fraction of contacts of moderately sick patients that are prevented by partial isolation",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "risoV\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabdAfawbqabaaaleqaaaaa@33E3@ fraction of contacts of very sick patients that are prevented by partial isolation",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "risoH\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGYbGCdaWgaaWcbaGaemyAaKMaem4CamNaem4Ba82aaSbaaWqaaiabdIeaibqabaaaleqaaaaa@33C7@ fraction of contacts of hospitalized patients that are prevented by partial isolation",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "rgen general fraction of contacts that are prevented at time t",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "rmass fraction of contacts among (healthy) adults that are prevented by cancelling events of mass gatherings at time t",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "rsch fraction of contacts among (healthy) children of the same age class that occurs in day care centres or schools",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "FHC factor by which the contacts between adults and severely sick children increase because of child health care",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "FCC factor by which the contacts between adults and children increase when children are taken care off at home because schools are closed",
+            "cite_spans": [],
+            "section": "Parameters concerning contact reduction ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "Tmax available number of antiviral treatment doses",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "DT time after onset until when antiviral treatment can still be given; the latest infectious stage ma, T during which treatment can be given, is chosen such that ma, T/\u03b3V, a, U \u2264 DT \u2264 (ma, T + 1)/\u03b3V, a, U",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fV fraction of severe cases eligible to receive antiviral treatment; treatment will be given only in the user-specified time window and only as long as supplies last:",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fV(t)={fVif T(t)<Tmax\u2061 and t in treatment window0otherwise\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGMbGzdaWgaaWcbaGaemOvayfabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceqabaqbaeaabiGaaaqaaiabdAgaMnaaBaaaleaacqWGwbGvaeqaaaGcbaGaeeyAaKMaeeOzayMaeeiiaaIaemivaqLaeiikaGIaemiDaqNaeiykaKIaeyipaWJaemivaq1aaSbaaSqaaiGbc2gaTjabcggaHjabcIha4bqabaGccqqGGaaicqqGHbqycqqGUbGBcqqGKbazcqqGGaaicqWG0baDcqqGGaaicqqGPbqAcqqGUbGBcqqGGaaicqqG0baDcqqGYbGCcqqGLbqzcqqGHbqycqqG0baDcqqGTbqBcqqGLbqzcqqGUbGBcqqG0baDcqqGGaaicqqG3bWDcqqGPbqAcqqGUbGBcqqGKbazcqqGVbWBcqqG3bWDaeaacqaIWaamaeaacqqGVbWBcqqG0baDcqqGObaAcqqGLbqzcqqGYbGCcqqG3bWDcqqGPbqAcqqGZbWCcqqGLbqzaaaacaGL7baaaaa@7404@",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fX fraction of extremely severe cases eligible to receive antiviral treatment; treatment will be given only in the user-specified time window and only as long as supplies last:",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fX(t)={fXif T(t)<Tmax\u2061 and t in treatment window0otherwise\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGMbGzdaWgaaWcbaGaemiwaGfabeaakiabcIcaOiabdsha0jabcMcaPiabg2da9maaceqabaqbaeaabiGaaaqaaiabdAgaMnaaBaaaleaacqWGybawaeqaaaGcbaGaeeyAaKMaeeOzayMaeeiiaaIaemivaqLaeiikaGIaemiDaqNaeiykaKIaeyipaWJaemivaq1aaSbaaSqaaiGbc2gaTjabcggaHjabcIha4bqabaGccqqGGaaicqqGHbqycqqGUbGBcqqGKbazcqqGGaaicqWG0baDcqqGGaaicqqGPbqAcqqGUbGBcqqGGaaicqqG0baDcqqGYbGCcqqGLbqzcqqGHbqycqqG0baDcqqGTbqBcqqGLbqzcqqGUbGBcqqG0baDcqqGGaaicqqG3bWDcqqGPbqAcqqGUbGBcqqGKbazcqqGVbWBcqqG3bWDaeaacqaIWaamaeaacqqGVbWBcqqG0baDcqqGObaAcqqGLbqzcqqGYbGCcqqG3bWDcqqGPbqAcqqGZbWCcqqGLbqzaaaacaGL7baaaaa@740C@",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fD fraction by which the duration of infectiousness is reduced by antivirals; \u03b3V, a, T is calculated from this such that \u03b3V, a, T = m/((1 - fD)DV, a)",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fI fraction by which the infectiousness of treated cases is reduced by antivirals",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "fH fraction of hospitalizations prevented by antiviral treatment",
+            "cite_spans": [],
+            "section": "Parameters concerning antiviral treatment ::: Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The pre-publication history for this paper can be accessed here:",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Pre-publication history",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Pandemic preparedness plans of some countries\nAssumed scenarios and outcomes of pandemic preparedness plans. * Gross attack rate (i.e. clinically ill and moderately ill cases).",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Age distribution and risk categories\nA population of N = 100,000 inhabitants of Germany is subdivided according to age a and risk category r. We assume that all age groups are fully susceptible at begin of the outbreak. A fraction of Fa = 6% of all children (age < 20 years) are regarded as being under high risk (r = r1) after an influenza infection whereby the remaining 94% are under low risk (r = r2). The high risk fractions of working adults (ages 20\u201359) and elderly (ages 60+) are Fa = 14% and Fa = 47%, respectively. Source: [9]",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: WAIFW matrix\nThe who-acquires-infection-from-whom matrix Kas,ai\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGlbWsdaWgaaWcbaGaemyyae2aaSbaaWqaaiabdohaZbqabaWccqGGSaalcqWGHbqydaWgaaadbaGaemyAaKgabeaaaSqabaaaaa@34A7@ shows the frequency of contacts (per week per person) between different age classes. Source: [38].",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Sojourn times\nDistribution of sojourn times (the last two stages of the latent period are used as early infectious period with an average duration of DL = 0.5 days). Sources:A [11], B [39, 40], C assumed, D [41]",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Clinical course\nIndependent of age a and risk group r, a fraction ca, r (A) = 33% of infections result in asymptomatic cases, a fraction ca, r (M) = 33.5% become moderately sick and the remaining fraction develops severe disease. An age- and risk-dependent fraction ha, r of untreated patients with severe disease needs hospitalization. An age-dependent fraction da of hospitalized cases dies. Sources: fraction of asymptomatic cases: [11]; 50% of symptomatic cases see a doctor: [9]; hospitalizations per severe case: [9]; case fatality of hospitalized, but untreated patients calculated from [4].",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Contagiousness\nSources: Contagiousness of asymptomatic cases: [11]; degree of contagiousness during the early infectious period and equality of the contagiousness of moderately and severely sick cases: assumed.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: InfluSim user interface. Graphical user interface of InfluSim. Parameter values can be varied within different tabs (left hand side), divided into General settings (demography by age and risk group, contact matrix, economics), Disease (sojourn times, symptoms, hospitalizations, case fatality), Contagiousness (R0, infectivity over time and by disease severity), Treatment (therapeutic window, treatment schedules, antiviral properties), Social distancing (isolation schedules, general contact reduction, closing day care centres and schools, cancelling mass gatherings) and Costs (work loss, hospitalization, treatment). Time-dependent model output (right hand side) visualizes Infection prevalence (susceptible, exposed, asymptomatic, moderately sick, severely sick, dead, immune), Resource use (work loss, outpatients, hospital beds, antivirals), Cumulative numbers of the latter, and Costs.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: InfluSim output. Examples of InfluSim output for a population of 100,000 citizens. A: Number of hospital beds required during an influenza pandemic for values of R0 \u2208 {1.5, 1.75, 2, 2.5, 3, 4}. B: Cumulative number of deaths for values of R0 as in A. C: Number of hospital beds for values of x50 \u2208 {50, 60, 70, 80, 90, 95%} (e.g. x50 = 95% means that 95% of the cumulative contagiousness is concentrated during the first half of the contagious period, see Table 6). D: Cumulative number of deaths for values of x50 as in C. All other parameters as listed in Tables 2-6.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "How prepared is Europe for pandemic influenza? Analysis of national plans",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mounier-Jack",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Coker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Lancet",
+            "volume": "367",
+            "issn": "",
+            "pages": "1405-1411",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(06)68511-5"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Comparative estimation of the reproduction number for pandemic influenza from daily case notification data",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Bettencourt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J R Soc Interface",
+            "volume": "4",
+            "issn": "",
+            "pages": "155-166",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2006.0161"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Containing pandemic influenza with antiviral agents",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nizam",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Epidemiol",
+            "volume": "159",
+            "issn": "",
+            "pages": "623-633",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwh092"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meeyai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Iamsirithaworn",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Containing pandemic influenza at the source",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nizam",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ungchusak",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hanshaoworakul",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1083-1087",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1115717"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Pandemic Influenza: Risk of Multiple Introductions and the Need to Prepare for Them",
+            "authors": [
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Bergstrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Understanding the spatial diffusion process of severe acute respiratory syndrome in Beijing",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Meng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Public Health",
+            "volume": "119",
+            "issn": "",
+            "pages": "1080-1087",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.puhe.2005.02.003"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Infection dynamics on scale-free networks",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phys Rev E Stat Nonlin Soft Matter Phys",
+            "volume": "64",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A model for the spread and control of pandemic influenza in an isolated geographical region",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Jennings",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Sertsou",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of the Royal Society Interface",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A general model for stochastic SIR epidemics with two levels of mixing",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Neal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Math Biosci",
+            "volume": "180",
+            "issn": "",
+            "pages": "73-102",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0025-5564(02)00125-6"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "The effect of household distribution on transmission and control of highly infectious diseases",
+            "authors": [
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Math Biosci",
+            "volume": "127",
+            "issn": "",
+            "pages": "207-219",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0025-5564(94)00055-5"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Predictability and preparedness in influenza control",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "312",
+            "issn": "",
+            "pages": "392-394",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1122665"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "The impact of contact structure on infectious disease control: influenza and antiviral agents",
+            "authors": [
+                {
+                    "first": "HP",
+                    "middle": [],
+                    "last": "Duerr",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schwehm",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Leary",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "De Vlas",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "",
+            "issn": "",
+            "pages": "1-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The spread of infectious disease on complex networks with household-structure",
+            "authors": [
+                {
+                    "first": "JZ",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZR",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Physica A Physica A",
+            "volume": "341",
+            "issn": "",
+            "pages": "273-280",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "The impacts of network topology on disease spread",
+            "authors": [
+                {
+                    "first": "MDF",
+                    "middle": [],
+                    "last": "Shirley",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Rushton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Ecological Complexity",
+            "volume": "2",
+            "issn": "",
+            "pages": "287-299",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ecocom.2005.04.005"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Reducing the impact of the next influenza pandemic using household-based public health interventions",
+            "authors": [
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Med",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.0030361"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "An event-based model of superspreading in epidemics",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Pitchford",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Plank",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc Biol Sci",
+            "volume": "274",
+            "issn": "",
+            "pages": "741-747",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2006.0219"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Superspreading and the effect of individual variation on disease emergence",
+            "authors": [
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "355-359",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04153"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Epidemiology: dimensions of superspreading",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "293-295",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/438293a"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Network theory and SARS: predicting outbreak diversity",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pourbohloul",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Theor Biol",
+            "volume": "232",
+            "issn": "",
+            "pages": "71-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2004.07.026"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Optimal intervention for an epidemic model under parameter uncertainty",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Clancy",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Math Biosci",
+            "volume": "205",
+            "issn": "",
+            "pages": "297-314",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mbs.2006.08.023"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The Modeling of Global Epidemics: Stochastic Dynamics and Predictability",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barthelemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bulletin of Mathematical Biology",
+            "volume": "68",
+            "issn": "",
+            "pages": "1893-1921",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s11538-006-9077-9"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "The strategy of model building in population biology",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Levins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "American Scientist",
+            "volume": "54",
+            "issn": "",
+            "pages": "421-431",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "http://sourceforge.net/projects/influsim",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schwehm",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "U.S. Department of Health & Human Services Pandemic Influenza Plan.",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "UK Health Department's UK influenza pandemic contingency plan.",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Influenza pandemic preparedness in France: modelling the impact of interventions",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Bonmarin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Levy-Bruhl",
+                    "suffix": ""
+                },
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Strat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Desenclos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Epidemiol Community Health",
+            "volume": "60",
+            "issn": "",
+            "pages": "399-404",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/jech.2005.034082"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "The expected number of hospitalisations and beds needed due to pandemic influenza on a regional level in the Netherlands",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "van Genugten",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Heijnen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Virus Res",
+            "volume": "103",
+            "issn": "",
+            "pages": "17-23",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.virusres.2004.02.007"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Pandemic influenza and healthcare demand in the Netherlands: scenario analysis",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "van Genugten",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Heijnen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Jager",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Emerg Infect Dis",
+            "volume": "9",
+            "issn": "",
+            "pages": "531-538",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Ministry of Health, Labour and Welfare, Japan. Action plan of countermeasures against pandemic influenza (Shin-gata influenza taisaku koudou keikaku). Tokyo, Ministry of Health, Labour and Welfare, Japan, 2005 (in Japanese).",
+            "authors": [],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Public Health Agency of Canada. Canadian Pandemic Influenza Plan.",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Using social contact data to estimate age-specific transmission parameters for infectious respiratory spread agents",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wallinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Teunis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kretzschmar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "American Journal of Epidemiology",
+            "volume": "164",
+            "issn": "",
+            "pages": "936-944",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwj317"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Non-pharmaceutical interventions for pandemic influenza, national and community measures",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Bell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "88-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "The economic impact of pandemic influenza in the United States: priorities for intervention",
+            "authors": [
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Meltzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Fukuda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Emerg Infect Dis",
+            "volume": "5",
+            "issn": "",
+            "pages": "659-671",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Non-pharmaceutical interventions for pandemic influenza, international measures",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Bell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg Infect Dis",
+            "volume": "12",
+            "issn": "",
+            "pages": "81-87",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "The Economic Impact of Influenza in Switzerland - Interpandemic Situation",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Piercy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Miles",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Mitigation strategies for pandemic influenza in the United States",
+            "authors": [
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Germann",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kadau",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Macken",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "5935-5940",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0601266103"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Strategies for mitigating an influenza pandemic",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Cajka",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Cooley",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "442",
+            "issn": "",
+            "pages": "448-452",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04795"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Simple models for containment of a pandemic",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Brauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of the Royal Society Interface",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2006.0112"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "InfluSim",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schwehm",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Influenzapandemieplanung: Nationaler Influenzapandemieplan",
+            "authors": [],
+            "year": 2005,
+            "venue": "Bundesgesundheitsblatt - Gesundheitsforschung - Gesundheitsschutz",
+            "volume": "48",
+            "issn": "",
+            "pages": "356-390",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00103-005-1006-9"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,2364 @@
+{
+    "paper_id": "PMC1523220",
+    "metadata": {
+        "title": "Design of microarray probes for virus identification and detection of emerging viruses at the genus level",
+        "authors": [
+            {
+                "first": "Cheng-Chung",
+                "middle": [],
+                "last": "Chou",
+                "suffix": "",
+                "email": "ccchou_2005@xuite.net",
+                "affiliation": {}
+            },
+            {
+                "first": "Te-Tsui",
+                "middle": [],
+                "last": "Lee",
+                "suffix": "",
+                "email": "brightli@ibms.sinica.edu.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Chun-Houh",
+                "middle": [],
+                "last": "Chen",
+                "suffix": "",
+                "email": "cchen@stat.sinica.edu.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Hsiang-Yun",
+                "middle": [],
+                "last": "Hsiao",
+                "suffix": "",
+                "email": "hsiaohy0512@yahoo.com.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Yi-Ling",
+                "middle": [],
+                "last": "Lin",
+                "suffix": "",
+                "email": "yll@ibms.sinica.edu.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Mei-Shang",
+                "middle": [],
+                "last": "Ho",
+                "suffix": "",
+                "email": "homs@ibms.sinica.edu.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Pan-Chyr",
+                "middle": [],
+                "last": "Yang",
+                "suffix": "",
+                "email": "pcyang@ha.mc.ntu.edu.tw",
+                "affiliation": {}
+            },
+            {
+                "first": "Konan",
+                "middle": [],
+                "last": "Peck",
+                "suffix": "",
+                "email": "konan@ibms.sinica.edu.tw",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "New human viral pathogens, such as the etiologic agent causing severe acute respiratory syndrome (SARS) and avian influenza, continue to emerge and have become major health problems worldwide. Traditional viral detection techniques such as in vitro viral cultures, immunologic assays, and the PCR method [1] can identify only one or just a few specific viral targets in a single test. When presented with patients having symptoms of unknown etiology, multiple diagnostic assays are often performed in parallel, which is a time-consuming and labor-intensive process.",
+            "cite_spans": [
+                {
+                    "start": 305,
+                    "end": 306,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Oligonucleotide microarrays have been used for monitoring and analyzing viral pathogens [2-5]. There are currently two types of DNA microarrays used for virus identification: (i) those based on using short oligonucleotide probes that are sensitive to single-base mismatches, which are used to detect or identify subtypes of known viruses; and (ii) those based on using long oligonucleotide probes to uncover the identity of the virus present in a sample. For the former application, the entire set of probes on the microarray is designed to detect the mutations in the viral genome to allow one specific viral species and its subtypes to be discerned. An example of this application is the virus microarrays for discriminating different subtypes of influenza viruses [4,5]. For the latter application, long oligonucleotide probes (60- or 70-mers) that tolerate sequence mismatches are used for broad detection specificity to a large number of viruses. This study focuses on the latter application: uncovering the identity of viruses present in a sample rather than detecting the mutations of a specific known virus.",
+            "cite_spans": [
+                {
+                    "start": 89,
+                    "end": 90,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 91,
+                    "end": 92,
+                    "mention": "5",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 768,
+                    "end": 769,
+                    "mention": "4",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 770,
+                    "end": 771,
+                    "mention": "5",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Previously reported studies [2,3] have employed the tiling approach (70-nt segments with 25-nt offsets) to design microarray probes for uncovering the identities of viruses in a sample, using the BLASTN sequence alignment program to select the most similar sequences in the respective viral family of each sequenced viral genome. The unknown or unsequenced members of existing viral families can be detected by hybridization to the microarray elements with sequence similarity. Conserved sequences were selected based only on the unidirectional relationship between one genome and the others in the same viral family. A substantial percentage of sequence redundancy exists among these family probes, and a family probe set usually contains a large number of redundant conserved probes. For virus identification, microarray data have been categorized into individual viral families and converted to a linear visualization scale (a bar-coded linear pattern) [2] or an alignment of the probe sequences giving hybridization signal intensities has been employed to determine the true identity of specific viruses [3].",
+            "cite_spans": [
+                {
+                    "start": 29,
+                    "end": 30,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 31,
+                    "end": 32,
+                    "mention": "3",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 957,
+                    "end": 958,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1109,
+                    "end": 1110,
+                    "mention": "3",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on the experiences of identifying novel viruses, such as the SARS coronavirus (SARS-CoV) or the Nipah virus, a virus can exhibit considerable sequence identity with other viruses in the same genus [6,7]. Although long probes possess a high hybridization efficiency, they often exhibit poor discrimination of specific viruses. Therefore, significant cross-hybridization of a viral genome to the highly similar noncognate long probes is expected. Thus, identifying viral species using the previously reported viral microarray probe design strategy requires additional intensive computation to analyze the complex hybridization patterns. A software program for implementing such a virus identification strategy has been developed [8]. The program determines the identity of specific virus(es) in a test sample by comparing observed patterns of microarray hybridization intensities with a set of theoretical hybridization energy profiles as computed from the alignments of microarray oligonucleotides against all completely sequenced reference viral genomes available in the GenBank database.",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 205,
+                    "mention": "6",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 206,
+                    "end": 207,
+                    "mention": "7",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 734,
+                    "end": 735,
+                    "mention": "8",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to design a virus microarray capable of identifying a larger number of viruses with high accuracy but with fewer probes than previously reported, we have developed a new method for designing probes for the precise and direct identification of viruses at the genus, species, and strain levels. Our method narrows down the computation of conserved sequences to the genus level and eliminates sequence redundancy within a viral genus probe set by considering the mutual sequence similarity among all the viral genomes in the same genus. Compared with the tiling approach, our approach greatly reduces the redundancy and number of conserved probes for a given viral genus. The method involves two separate sets of probes: (i) the conserved sequence probes for genus identification; and (ii) specific probes for viral species or stain identification. The probe set for each genus contains a panel of 70-mer oligonucleotides that not only covers all the sequenced known viruses of the genus but also maximizes the likelihood of detecting emerging or unsequenced viruses. Long 70-mer probes help to alleviate sequence-dependent hybridization variation, improve hybridization efficiency, and enhance the capability of identifying unknown viruses. To compensate for the poor discrimination capability of long probes, additional species- or subtype-specific probes were designed for each fully sequenced virus to enhance the specificity of virus identification. The identity of a virus is determined based on a simple arithmetic algorithm that calculates the average signal intensity of the multiple probes for a virus, in contrast to the intensive computation needed for pattern comparisons. The use of separate genus and species probe sets facilitates a cross-examination strategy to increase the identification accuracy. The identity of a virus is established by the concordant results for both the genus- and cognate-species-specific probes.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "More than 19,600 full-length viral genomes covering 53 viral families and 214 genera were obtained from ~ 340,000 viral sequences archived in the GenBank viral database (Release 152). The genome segments of the viruses with segmented or multipartite genomes were treated as individual viral sequences. Additional partially sequenced viral genomes were included for computing the conserved genus probes for genera with \u2264 5 fully sequenced members and viruses with segmented or multipartite genomes, which made up a total number of 27,610 viral genome sequences for the computation. Viral genome sequences with more than 99.5% similarity were treated as redundant, and only the longest sequences were retained; the resulting 5,749 nonredundant viral genome sequences were used in the analysis.",
+            "cite_spans": [],
+            "section": "Viral sequences for computation ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The probe design strategy employs two separate probe sets: species-specific probes and conserved genus probes. Genera with insufficient viral sequences for identifying conserved probe sequences are marked in the virus probe database and extra species-specific probes are designed for each viral species of each such genus. The species-specific probes were designed using the algorithm described by Chang and Peck [9], and the conserved genus probes for each viral genus were designed according to the following guidelines:",
+            "cite_spans": [
+                {
+                    "start": 414,
+                    "end": 415,
+                    "mention": "9",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "1. A viral genus G = {vi| i = 1,..., n} is a collection of n viruses, in which each virus vi (i = 1,..., n) is associated with a subset of G, where subset G(i) \u2261 G-{vi}.",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Given a virus vi \u2208G, the BLASTN result for the comparison of this virus with another virus in the same genus, vj \u2208G(i), can be expressed as an indicator function Iji:",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n\n\nI\n\nj\ni\n\n\n\n(\nx\n)\n\n=\n\n{\n\n\n\n\n\n1\n,\nx\n\u2208\nsimilarity sequence segments of \n\nv\nj\n\n and \n\nv\ni\n\n\n\n\n\n\n\n0\n,\notherwise\n\n\n\n\n\n\n,\n\n\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGjbqsdaWgaaWcbaGaemOAaOMaemyAaKgabeaakmaabmaabaGaemiEaGhacaGLOaGaayzkaaGaeyypa0ZaaiqaaeaafaqaaeGabaaabaGaeGymaeJaeiilaWIaemiEaGNaeyicI4Saee4CamNaeeyAaKMaeeyBa0MaeeyAaKMaeeiBaWMaeeyyaeMaeeOCaiNaeeyAaKMaeeiDaqNaeeyEaKNaeeiiaaIaee4CamNaeeyzauMaeeyCaeNaeeyDauNaeeyzauMaeeOBa4Maee4yamMaeeyzauMaeeiiaaIaee4CamNaeeyzauMaee4zaCMaeeyBa0MaeeyzauMaeeOBa4MaeeiDaqNaee4CamNaeeiiaaIaee4Ba8MaeeOzayMaeeiiaaIaemODay3aaSbaaSqaaiabdQgaQbqabaGccqqGGaaicqqGHbqycqqGUbGBcqqGKbazcqqGGaaicqWG2bGDdaWgaaWcbaGaemyAaKgabeaaaOqaaiabicdaWiabcYcaSiabb+gaVjabbsha0jabbIgaOjabbwgaLjabbkhaYjabbEha3jabbMgaPjabbohaZjabbwgaLbaaaiaawUhaaiabcYcaSaaa@7EFE@\n\n",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where x is any sequence segment within the genome of vi, and the similarity sequence segment is any segment of virus vi having either (i) more than 75% local sequence similarity in a 50-bp window with any virus vj \u2208G(i), as determined using the identity percentage calculation in the BLASTN program (equivalent to BLASTN sequence identity matches of 38-bp); or (ii) >15 consecutive bases pairing with vj [10].",
+            "cite_spans": [
+                {
+                    "start": 405,
+                    "end": 407,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "3. The sequence segments of virus vi similar to other viruses in G(i) are then defined as the summation of all these indicator functions,Si(x) = \u2211j\u2260i Iji(x), which is a step contour function from 0 to n-1.",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "4. The conserved sequences of vi are defined as the regions with the maximum number of similarity hits in Si(x): Ci = {x| Si(x) = max\u2061x\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWfqaqaaiGbc2gaTjabcggaHjabcIha4bWcbaGaemiEaGhabeaaaaa@3284@ (Si(x))}.",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "5. The conserved sequence set of G is the union of all Ci's: C'(G) = \u222ai=1nCi\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWeWbqaaiabdoeadnaaBaaaleaacqWGPbqAaeqaaaqaaiabdMgaPjabg2da9iabigdaXaqaaiabd6gaUbqdcqWIQisvaaaa@35C0@. To eliminate sequence redundancy, the longest sequence segment CL (the query sequence) in C'(G) is selected first and aligned against the other sequences in it using the BLASTN program. Any sequences in C'(G)-{CL} having \u2265 80% similarity with CL are grouped together with CL to form C'1(G), the first subgroup of C'(G). CL is then renamed as C(1) to represent the first subgroup. The first subgroup,C'1(G), is then excluded from C'(G). This procedure is repeated for the remaining sequence segments in C'(G) until k such longest sequence segments {C(1),..., C(k) and k subgroups {C'1(G),..., C'k(G)} are identified, with every sequence in C'(G) assigned to one subgroup. The union of all the longest sequences, \u222ai=1kC(i)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWeWbqaaiabdoeadnaaBaaaleaadaqadaqaaiabdMgaPbGaayjkaiaawMcaaaqabaaabaGaemyAaKMaeyypa0JaeGymaedabaGaem4AaSganiablQIivbaaaa@3743@, represents the nonredundant conserved sequence set of G. A simplified illustration delineating the above procedures is provided in Additional File 1.",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "6. To prevent significant cross-hybridization to noncognate viral genus sequences, a 70-mer conserved probe set P = {pj| j = 1,..., m is selected from each nonredundant sequence in \u222ai=1kC(i)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWeWbqaaiabdoeadnaaBaaaleaadaqadaqaaiabdMgaPbGaayjkaiaawMcaaaqabaaabaGaemyAaKMaeyypa0JaeGymaedabaGaem4AaSganiablQIivbaaaa@3743@ based on the following criteria: (i) GC content between 40% and 60%, (ii) <5 continuous mononucleotide repeats, (iii) <25-bp BLASTN sequence identity matches, and (iv) \u2264 15 consecutive bases pairing with other viral sequences in the noncognate viral genus. The probes exhibiting sequence overlap are further screened using the Mfold program [11] to pick the one that has the maximal Gibbs free energy of the secondary structure, such that there is no sequence overlap among P.",
+            "cite_spans": [
+                {
+                    "start": 903,
+                    "end": 905,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "7. To search for a subset of P with the minimum number of probes that can collectively yield similarity hits with all the virus members of G, each pj \u2208P is aligned against vi \u2208G using the BLASTN program. The BLASTN result between pj and vi can be expressed as an array,Aj \u00d7 i:",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\n\n\nA\n\nj\n\u00d7\ni\n\n\n=\n\n{\n\n\n\n\n\nhit, \n\na\n\nj\ni\n\n\n\u2208\n\np\nj\n\n having\n>\n38\n\u2212\nbp BLASTN identify matches to \n\nv\ni\n\n\n\n\n\n\n\nno hit, otherwise\n\n\n\n\n\n\n.\n\n\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGbbqqdaWgaaWcbaGaemOAaOMaey41aqRaemyAaKgabeaakiabg2da9maaceaabaqbaeaabiqaaaqaaiabbIgaOjabbMgaPjabbsha0jabbYcaSiabbccaGiabdggaHnaaBaaaleaacqWGQbGAcqWGPbqAaeqaaOGaeyicI4SaemiCaa3aaSbaaSqaaiabdQgaQbqabaGccqqGGaaicqqGObaAcqqGHbqycqqG2bGDcqqGPbqAcqqGUbGBcqqGNbWzcqGH+aGpcqaIZaWmcqaI4aaocqGHsislcqqGIbGycqqGWbaCcqqGGaaicqqGcbGqcqqGmbatcqqGbbqqcqqGtbWucqqGubavcqqGobGtcqqGGaaicqqGPbqAcqqGKbazcqqGLbqzcqqGUbGBcqqG0baDcqqGPbqAcqqGMbGzcqqG5bqEcqqGGaaicqqGTbqBcqqGHbqycqqG0baDcqqGJbWycqqGObaAcqqGLbqzcqqGZbWCcqqGGaaicqqG0baDcqqGVbWBcqqGGaaicqWG2bGDdaWgaaWcbaGaemyAaKgabeaaaOqaaiabb6gaUjabb+gaVjabbccaGiabbIgaOjabbMgaPjabbsha0jabbYcaSiabbccaGiabb+gaVjabbsha0jabbIgaOjabbwgaLjabbkhaYjabbEha3jabbMgaPjabbohaZjabbwgaLbaaaiaawUhaaiabc6caUaaa@8E6F@\n\n",
+            "cite_spans": [],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Thus, the 70-mer conserved probe set can be redefined as P = {pj| j = 1,..., m}, pj \u2286G', and G' = {v'i| i = 1,..., m, where v' i represents similarity hit(s) with vi by pj(s) \u2208P. Let Card(pj) be the cardinality of probe pj (i.e., the number of similarity hits with probe pj) in array Aj \u00d7 i. We first search for a minimum coverage set Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ \u2286 P such that Card(Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@) = min Card(PS ) for all subsets of P (PS \u2286 P) satisfying the following sequential criteria: (i) (\u222a\u2200pj\u2208Ps*pj)=G\u2032\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaqadaqaamaatafabaGaemiCaa3aaSbaaSqaaiabdQgaQbqabaaabaGaeyiaIiIaemiCaa3aaSbaaWqaaiabdQgaQbqabaWccqGHiiIZcqWGqbaudaqhaaadbaGaem4CamhabaGaeiOkaOcaaaWcbeqdcqWIQisvaaGccaGLOaGaayzkaaGaeyypa0Jafm4raCKbauaaaaa@3E02@[12,13], (ii) max  if more than one set of Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ having Card(Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@) = min Card(PS), and (iii) randomly pick one of those Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ with the same max  if more than one set of Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ satisfy condition (ii). We then keep searching for other subsets of P-Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ with the same criteria until the probe set finally has a twofold coverage of G.",
+            "cite_spans": [
+                {
+                    "start": 1510,
+                    "end": 1512,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1513,
+                    "end": 1515,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Algorithm for designing the conserved probe ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To demonstrate the conserved sequence design method, a simplified example of the procedure is shown in Figure 1A. Assuming that there are six (n) viruses in a viral genus (G), the similarity sequence segments for a given virus vi compared to the other five (n-1) viral genomes (G(i)) are designated Iji (j = 1,..., 5) (Fig. 1A). These similarity segments are then ranked by the number of similarity hits with other viral genomes (Si) and plotted along the vi genome. The highest-ranking (max(Si)) similarity sequences should be the most-conserved sequences (Ci) for virus vi and the other five viral genomes (red segments in Fig. 1B).",
+            "cite_spans": [],
+            "section": "Illustration of the conserved sequence design method ::: Results",
+            "ref_spans": [
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 630,
+                    "end": 632,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The above procedures are repeated until a panel of conserved segments derived from all of the viral genomes in G is obtained. Assuming that nine 70-mer candidate conserved probes (P = {pj| j = 1,..., 9}) are selected by steps 5 and 6 in the probe design algorithm, Table 1 (Figure 2) demonstrates how to search for the minimal number of 70-mer genus probes that give similarity hits with all six viral members (vi| i = 1,..., 6) of G. Each \"\u00d7\" in Table 1 (Figure 2) indicates that pj has a similarity hit with vi. Based on the similarity-hit array (A9 \u00d7 6), at least two probes (Card(Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@)) are required for the full detection of all the viruses in G. Among the eight two-element probe sets (Ps*\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGqbaudaqhaaWcbaGaem4CamhabaGaeiOkaOcaaaaa@304D@ \u2261 {(p1, p3), (p1, p4), (p1, p5), (p1, p6), (p1, p7), (p1, p9), (p2, p4), (p3, p4)}) that can collectively yield similarity hits with all the virus members of G ((\u222a\u2200pj\u2208Ps*pj)=G\u2032\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaqadaqaamaatafabaGaemiCaa3aaSbaaSqaaiabdQgaQbqabaaabaGaeyiaIiIaemiCaa3aaSbaaWqaaiabdQgaQbqabaWccqGHiiIZcqWGqbaudaqhaaadbaGaem4CamhabaGaeiOkaOcaaaWcbeqdcqWIQisvaaGccaGLOaGaayzkaaGaeyypa0Jafm4raCKbauaaaaa@3E02@), probe set (p1, p4) is the best selection since the two probes together maximize the similarity hits (max  = 10) with G and therefore increase the likelihood of detecting a virus. Subsequently, probe set (p2, p5, p8) is randomly selected for second-round coverage of G among the three probe sets (p2, p5, p8), (p2, p7, p9), and (p2, p8, p9) because all of them produce the same eight similarity hits with all the virus members of G.",
+            "cite_spans": [],
+            "section": "Illustration of the conserved sequence design method ::: Results",
+            "ref_spans": [
+                {
+                    "start": 281,
+                    "end": 282,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 463,
+                    "end": 464,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We subsequently used the coronavirus genus to test the procedure for finding similar viral sequence segments. The SARS-CoV genome (vSARS-CoV) was aligned with the other 10 genomes G(SARS-CoV) of the coronavirus genus using the BLASTN program (Fig. 1C). In the figure, each viral genome of the coronavirus genus is represented by a color-coded block, where the height of each pile of blocks along the SARS-CoV genome sequence represents the number of similarity hits (SSARS-CoV) with the other 10 genomes of the same genus for that particular sequence location (i.e., segment). The two viral segments showing the highest number of similarity hits with the other genomes (CSARS-CoV) were extracted for microarray probe design.",
+            "cite_spans": [],
+            "section": "Illustration of the conserved sequence design method ::: Results",
+            "ref_spans": [
+                {
+                    "start": 248,
+                    "end": 250,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To validate the method in silico, the SARS-CoV genome was removed from the coronavirus genus and treated as a test genome. The remaining 10 coronavirus viral genomes were used as the calibration set for computing the conserved sequences by the aforementioned procedures. To obtain high similarity genus probes, we used a high stringency criterion for hybrid formation in the conserved sequence detection method: 38-bp BLASTN sequence identity matches or >15 consecutive base pairing nucleotides [10]. Figure 3A shows the computed conserved sequence segment pool with redundancy (i.e., C'(Coronavirus(SARS-CoV)) in step 5 of the above probe design algorithm). These segments can be further sorted into five nonredundant groups by the BLASTN alignment program. The five longest sequences (underlined sequences in Fig. 3A) in each of the groups represent the nonredundant conserved sequence set of the coronavirus genus without SARS-CoV. A BLASTN sequence alignment between the SARS-CoV genome and the five nonredundant conserved sequences shows that the longest conserved sequence in group 1 had 80% (79/98) sequence similarity with the SARS-CoV genome at nucleotide positions from 15732 to 15829 (Fig. 3B) but no significant similarity with any genome in the other viral genera (data not shown).",
+            "cite_spans": [
+                {
+                    "start": 496,
+                    "end": 498,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "In silico validation of the conserved sequence detection method ::: Results",
+            "ref_spans": [
+                {
+                    "start": 508,
+                    "end": 510,
+                    "mention": "3A",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 816,
+                    "end": 818,
+                    "mention": "3A",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1201,
+                    "end": 1203,
+                    "mention": "3B",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To provide a more comprehensive in silico validation, we also performed leave-one-out cross-validation to the other viral members of the coronavirus genus and 13 other viral genera. In total, 14 viral genera and 333 nonredundant viral genome sequences were included in the large-scale cross-validation to verify the probe design algorithm (Fig. 3C). Based on a recent report that BLASTN sequence identity matches as short as 25-bp are sufficient to form a DNA hybrid [3], a lower hybrid formation criterion (25-bp vs. 38-bp BLASTN identity) was used to determine whether a test viral genome can be detected by a set of conserved sequences computed from the calibration genome set for a given genus. In Figure 3C, the column entitled \"sequenced genomes\" lists the number of viruses included for the computation in each genus, and the column entitled \"detection by cross-validation\" contains the number of viruses detected using the in silico method for each genus. The rightmost column is the positive detection rate for the in silico method for each genus. The computation results showed that most of the computed genus probes \u2013 especially for those genera having a larger number of sequenced viral genomes \u2013 displayed a good capability of detecting novel viruses, except for the genus of lentivirus, which yielded a worse prediction outcome. This result indicates that both the number of sequenced genomes and the extent of sequence conservation of viral members in a genus are useful factors for assessing the predictive power of the computed conserved sequences. Nevertheless, the in silico cross-validation results produced an average successful detection rate of 92%, which demonstrates the feasibility of the probe design method.",
+            "cite_spans": [
+                {
+                    "start": 468,
+                    "end": 469,
+                    "mention": "3",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "In silico validation of the conserved sequence detection method ::: Results",
+            "ref_spans": [
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 709,
+                    "end": 711,
+                    "mention": "3C",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To experimentally verify the probe design method, we constructed a test virus chip with 72 70-mer oligonucleotides, which included genus probes covering 3 viral genera (7 conserved probes for coronavirus, 12 probes for flavivirus, and 7 probes for enterovirus) and specific probes covering 26 species of viruses in the coronavirus (7 species) and flavivirus (19 species) genera (see Additional File 2). A blank control (A549 lung adenocarcinoma cells) and seven viral samples [Japanese encephalitis virus (JEV), dengue virus types 2 (DEN-2), 3 (DEN-3), and 4 (DEN-4), SARS-CoV, enterovirus 71 (EV71), and a mixture of EV71 and SARS-CoV (EV71+SARS-CoV)], all of which are pathogens found in nasopharyngeal swabs, were used for the experiments.",
+            "cite_spans": [],
+            "section": "Experimental verification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The identity test results for the seven test samples are shown in Figure 4. The virus genus and species identification methods are described in the Methods section. In Figure 4A, the Z-axis represents the genus signal strengths of the three genus probe sets (Y-axis) hybridized to the seven test viral samples (X-axis). The possible genus identity (or identities) of a test viral sample can be determined from the magnitude of the genus signal. Figure 4B demonstrates the determination of the identity of a specific virus. The Z-axis is the specific signal strengths of 26 virus probe sets (Y-axis) hybridized to the 7 test viral samples (X-axis). The specific identity of the test virus can be read directly from the extent of the specific signal strength in the chart. Verifying the results for the genus-specific (Fig.4A) and cognate-species-specific (Fig. 4B) probes with virus taxonomy (i.e., the correct hierarchical genus and species association) results in the identities of all the test viruses being determined accurately and unambiguously. Figure 4 also demonstrates the use of this method for detecting emerging and unsequenced viruses. We intentionally left out EV71 sequence information in the conserved probe design process and made no EV71 species-specific probes on the test chip. However, the hybridization of EV71 to the chip resulted in a high signal intensity for the enterovirus genus probes, which clearly indicated that the virus belonged to this genus (Fig. 4A). Moreover, as shown by the hybridization result of the mixed viral sample EV71+SARS-CoV (Fig. 4A), the probe design method also allows two viruses of different genera to be accurately identified simultaneously. Although JEV cross-hybridized to three noncognate virus probes [Fig. 4B for Murray Valley encephalitis virus (MEV), West Nile virus (WNV), and Louping ill virus (LIV)] that are of the same genus as flavivirus, the signal strength resulting from the specific hybridization of JEV to its probe was 5-, 30-, and 33-fold higher than that of the probes for the three other viruses, respectively. Therefore, the virus was correctly identified as JEV. All the experiments were performed at least twice. In some cases, the signal intensity of the probes varied in different experiments for the same viral sample. However, our strategy for determining identities exhibits high signal-to-background ratios (as shown in Figure 4) and is both accurate and reproducible. Taken together, these results demonstrate the high specificity of the virus chip design.",
+            "cite_spans": [],
+            "section": "Experimental verification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 73,
+                    "end": 74,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 452,
+                    "end": 454,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 821,
+                    "end": 823,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 860,
+                    "end": 862,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1058,
+                    "end": 1059,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1483,
+                    "end": 1485,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1581,
+                    "end": 1583,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1767,
+                    "end": 1769,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2414,
+                    "end": 2415,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The two conserved sequence fragments are highly similar to all of the coronavirus viral genomes archived in GenBank (Fig. 1C). This is not true in all cases: in general, most of the conserved sequences have significant similarity hits only with a fraction of the viral genomes in a genus. As demonstrated in Table 1 (Figure 2), the design method selects a panel of conserved genus probes, each one similar to several (but not all) of the viral genomes of a genus. The use of the whole panel of probes covers all the viral genomes of a genus. To enhance the capability of detecting emerging or unsequenced viruses, we created multiple probes sufficient for twofold coverage of the entire virus members in a genus.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 122,
+                    "end": 124,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 324,
+                    "end": 325,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The robustness of the computed genus probes is determined mainly by two parameters: (i) the number of existing fully sequenced viral genomes in a genus, and (ii) the degree of genome structure diversity for the viral members of the same genus. A larger number of available sequenced viral genomes in a genus makes it easier to identify the conserved sequences of the genus, and greatly enhances the probability of detecting unknown or unsequenced members of the genus. In addition, traditional virus taxonomy is not based on viral genome sequences. Thus, in some cases, the viral genomes are highly divergent among the members of a genus, such that each computed genus probe is only similar to a small fraction of the genus members, or may even be unique. The genus of lentivirus is one example, for which a poor detection rate (55.6%) based on in-silico cross-validation of the conserved genus sequences is shown in Figure 3C.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 924,
+                    "end": 926,
+                    "mention": "3C",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The principle behind the conserved probe design is to search for high similarity sequences that could hybridize to all the virus members of a given genus but not to the viruses of other genera. Therefore, accurate prediction of cross-hybridization is a prerequisite for the feasibility of the probe design method. In general, 70\u201380% global sequence similarity or a high local sequence similarity between two sequences could cause substantial cross-hybridization [10,14-16]. Significant cross-hybridization was reported for a nontarget 70-mer probe that had a (short) 25-bp BLASTN identity match [3]. To obtain as many reliable genus probes as possible, we used a 38-bp BLASTN sequence identity match criterion [10] in the genus probe design. This criterion was chosen to take into account both the global and the local sequence similarities in hybrid formation. Our experimental results show that the criterion reduces false-positive and -negative predictions of hybrid formation. Additionally, the number of genus probes sufficient for twofold coverage of all virus members in a genus ensures high detection accuracy in cases where the hybrid formation criterion may not apply. The experimental results shown in Figure 4 indicate that the hybrid formation criteria used in the genus probe design are sufficient to yield detectable genus probe signals to the target viruses but not to viruses of non-target genera.",
+            "cite_spans": [
+                {
+                    "start": 463,
+                    "end": 465,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 466,
+                    "end": 468,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 469,
+                    "end": 471,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 596,
+                    "end": 597,
+                    "mention": "3",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 711,
+                    "end": 713,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1220,
+                    "end": 1221,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The accurate detection of specific viruses by species-specific probes depends on avoiding nontarget cross-hybridization. Nevertheless, cross-hybridization to strains of viruses with extremely similar genome sequences or by confounding mechanisms may be inevitable. For example, to investigate the JEV cross-hybridization issue in Figure 4B, we performed BLASTN alignments for the cross-hybridizing virus probe sequences with the sequence of JEV, and found that none of the probe sequences had significant sequence similarity with JEV. Thus, the sequence complementarity guidelines do not explain why the JEV viral sample cross-hybridized to the other three non-target probes \u2013 this might instead be attributable to non-Watson-Crick base pairing [17-20].",
+            "cite_spans": [
+                {
+                    "start": 746,
+                    "end": 748,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 749,
+                    "end": 751,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 337,
+                    "end": 339,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In addition to the cross-hybridization issue, different probes for the same virus can yield very different signal intensities (e.g., the signal intensity for one probe was more than 100-fold lower than that for the other probe for the SARS-CoV virus, see Additional File 2). This may be attributed to the combination of the sequence-dependent effects of DNA hybridization [21,22] and the failure of random-primed PCR amplification to amplify the target regions of the probes.",
+            "cite_spans": [
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 376,
+                    "end": 378,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Collectively, nucleic acid hybridization involves complex mechanisms that cannot yet be predicted purely by computation. Cross-hybridization and sequence-dependent variation in hybridization efficiency may be unavoidable in hybridization reactions involving a large number of probes, such as in the microarray method, making it desirable to have multiple specific probes for each virus. Viruses can be identified on the basis of the specific signal strength derived from the average signal intensity of multiple probes, since the cross-hybridization signals are always lower for the nontarget sequences than for the target sequences (which are a perfect match) [10,14-16,21].",
+            "cite_spans": [
+                {
+                    "start": 662,
+                    "end": 664,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 665,
+                    "end": 667,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 668,
+                    "end": 670,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There are, however, limitations to the virus microarray approach described here. An obvious one is that the range of viruses detectable by the method is limited by the content of viral genera archived in the database. Therefore, if the emerging new virus belongs to a heretofore unknown genus, then none of the probes would reveal a detectable hybridization signal.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although our method ensures identification accuracy by verifying the results with the concordant taxonomical association of a genus and species, it is common for an assay sample to contain viruses of more than one genus or more than one species of viruses belonging to the same genus. As described in the Methods section, the viral genus is assigned using a scoring method based on signal strength; that is, Sum(Fe|G)/max\u2061G\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWfqaqaaiGbc2gaTjabcggaHjabcIha4bWcbaGaem4raCeabeaaaaa@3222@(Sum(Fe|G)). If more than one genus are present, there will be more than one non-zero Sum(Fe|G) values. One of the genera will be given 100% and the others will be given a percentage smaller than 100%. Whether the signals are true genus signals or cross-hybridization signals can be verified by the presence of hybridization signals from the cognate species-specific probes. Only concordant genus and species identification results are accepted for assigning virus identities, which is one of the advantages of having separate probe sets for genus and species identification.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Moreover, the situation is more difficult than the above multigenus determination if more than one species belonging to the same genus are present,. Accurate discrimination of true signals from cross-hybridization depends on setting the correct signal thresholds together with discretion based on epidemiology statistics. High threshold values for the signal strengths increase the virus identification accuracy. As shown in Figure 4B, the cross-hybridization signals are several-fold lower than the true signal of JEV. Comparison with the results shown in Figure 4B reveals that the MEV, WNV, and LIV signals are false not only based on the threshold setting but also from the epidemiology statistics that coinfection or coexistence of any of these viruses in one assay sample is highly unlikely.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 564,
+                    "end": 566,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In this study we gathered virus information from GenBank which contains viral sequences of varying lengths, qualities and redundancy. It is noted that the viral sequences in GenBank are not well moderated [23] and taxonomic discrepancies exist among the curated viral databases available to the public, e.g., NCBI Viral Reference Genome collection [24] and the Universal Virus Database of International Committee on Taxonomy of Viruses (ICTVdB) [25]. This report describes an algorithm for identifying conserved genus sequences from a viral sequence database. The algorithm can be applied to any publicly available viral sequence database. However, for the purpose of computing conserved viral genus sequences, a large number of available sequences are needed and GenBank provides the most comprehensive collection of viral sequences available to the public. The large volume of data in GenBank fully satisfies the purpose of the present study: to develop a universal and comprehensive chip for identifying viruses, regardless of whether their genomes have been completely sequenced. The proposed approach of employing genus- and species-specific probe sets makes it possible to minimize the number of probes and cover all known viruses, including animal- and plant-infecting viruses, on a single chip.",
+            "cite_spans": [
+                {
+                    "start": 206,
+                    "end": 208,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 349,
+                    "end": 351,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 446,
+                    "end": 448,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Most existing virus detection and identification methods are capable of identifying only a small number of known viruses in a single assay. Parallel screening for a broad spectrum of uncharacterized viruses using microarray technology overcomes this limitation and also provides a means of discovering emerging new viruses. Our probe design concept employs a panel of conserved sequence probes to directly classify emerging or unsequenced viruses at the genus level, and specific probes for known virus identification in a direct-readout manner. Moreover, using the two types of probes to determine the identity of a virus in a complementary way further assures detection accuracy. The ability to detect a large variety of viruses using the virus microarray approach has great potential in facilitating the discovery of emerging viruses and diagnosing diseases of unknown etiology or patients infected with unknown or multiple simultaneous viral pathogens.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, we have established a virus probe design method and virus identification process for viral classification and identification based on a microarray approach. Our new probe design strategy and virus detection method allow direct reading of virus identity, and differ significantly from the probe design and virus detection methods described in the literature [2,26]. The concept and feasibility have been demonstrated using several example viruses. The methods and protocols can be applied to the analysis of large-scale virus microarray data to determine the identities of detected viruses by direct readout of a computer program.",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 371,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, the genera and species-specific probes for more than 5,700 viruses are archived in a database that is available on the Internet . To our knowledge, this database is the most comprehensive virus probe database currently available to the public. The use of the new probe design algorithm, which does not involve tiling probes, reduces the number of probes on a virus microarray yet retains high identification accuracy. The new probe design method makes it feasible to construct a virus microarray with sufficient probes for identifying all the sequenced viruses that infect animals and plants.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "We developed the following identification procedure to compute the identity of a virus directly from the hybridization signals. First, to minimize nonspecific hybridization, any probe with a fluorescence signal intensity, F, satisfying the following two criteria is eligible to use in the subsequent viral identification procedure: (i) Fviral sample/Fblank \u2265 3 and (ii) Fviral sample \u2013 Fblank > 1500. To take both the number and signal intensity of probes satisfying the above criteria in a given genus probe set into consideration, the following genus signal strength (defined as a percentage) is used to determine the viral genus identity: Sum(Fe|G)/max\u2061G\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWfqaqaaiGbc2gaTjabcggaHjabcIha4bWcbaGaem4raCeabeaaaaa@3222@(Sum(Fe|G)), where Fe|G represents the hybridization intensity of any eligible genus probe in a genus G, Sum(Fe|G) is the sum of all the Fe|G in G, and max\u2061G\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWfqaqaaiGbc2gaTjabcggaHjabcIha4bWcbaGaem4raCeabeaaaaa@3222@(Sum(Fe|G)) represents the maximum value of Sum(Fe|G) among all the viral genera represented on a microarray. The viral genus identity in a test sample is assigned to the genus with the highest genus signal strength (i.e., 100%). The presence of multiple viruses of different genera in a sample will result in a nonzero genus signal strength. We then score and rank the possible virus identities in the specific probe region on the basis of the specific signal strength, defined as the average signal intensity of the multiple probes for a given virus divided by the maximum average signal intensity of the multiple probes for every virus represented on a microarray (expressed as a percentage). As for the genus determination method, the presence of multiple viruses in the sample will result in a nonzero signal strength. Finally, the identity of the virus is established by the concordant results for both the genus- and cognate-species-specific probes.",
+            "cite_spans": [],
+            "section": "Virus identity determination ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Oligonucleotides of 70 mers were synthesized and modified with 5' amino-linker moieties by standard phosphoramidite-synthesis chemistry on a homemade DNA synthesizer [27], and desalted by Sephadex (G50 DNA grade; Amersham, NJ). The 70-mer oligonucleotide probes were dissolved in Pronto! Epoxide spotting solution (Corning, NY) at a concentration of 40 \u03bcM and spotted on Corning Epoxide glass slides using a homemade arrayer. The slides were processed according to the manufacturer's instructions.",
+            "cite_spans": [
+                {
+                    "start": 167,
+                    "end": 169,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Array fabrication ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The JEV (RP-9 strain, GenBank accession number: AF014161) and DEN-2 (PL046 strain), DEN-3 (H87 strain), and DEN-4 (H241 strain) used in this study were propagated in C6/36 cells using RPMI 1640 medium containing 5% fetal bovine serum (FBS) (Invitrogen, CA). The EV71 (neu strain) stock was propagated in RD cells cultured in DMEM (Dulbecco's modified Eagle's medium) supplemented with 2% FBS, penicillin (100IU/ml), and streptomycin (100 IU/ml). SARS-CoV RNA was kindly provided by the Taiwan Center for Disease Control. The copy number of SARS-CoV genomes in a sample was measured using a commercially available quantitative RT-PCR kit (RealArt\u2122 HPA-Coronavirus LC RT PCR Reagents, ARTUS, Germany). The amount of viruses used in the study were as follows: (i) 1.75 \u00d7 104 pfu of DEN-2, (ii) 3.5 \u00d7 103 pfu of DEN-3, (iii) 1.75 \u00d7 103 pfu of DEN-4, (iv) 13 \u03bcg of total RNA derived from JEV-infected A549 lung adenocarcinoma cells, (v) 1.5 \u00d7 104 copy numbers of SARS-CoV, (vi) 2.33 \u00d7 103 pfu of EV7, and (vii) a mixture of 2.33 \u00d7 103 pfu of EV71 and 100 copy numbers of the SARS-CoV viral genome. The blank control was 11.2 \u03bcg of total RNA derived from A549 lung adenocarcinoma cells.",
+            "cite_spans": [],
+            "section": "Cell culture and viruses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The viral genomic sequences were randomly amplified as described previously [2,28]. The amplified PCR product was purified with the MiniElute PCR purification kit (Qiagen, CA). Cy3-dUTP was incorporated into the purified PCR product with random octamers using the Klenow fragment of DNA polymerase I. The hybridization of the Cy3-labeled DNA fragments to the Corning Epoxide slide was performed at 42\u00b0C for 16\u201318 hr in Pronto! microarray hybridization buffer (Corning) under an 18 \u00d7 18 mm coverslip in a sealed chamber. After hybridization, the arrays were washed three times with Pronto! washing reagents. After drying by centrifugation, the arrays were scanned with a GenePix 4000B scanner (Axon Instruments, CA). Array image acquisition and signal analysis were performed using GenePix Pro 4.0 software.",
+            "cite_spans": [
+                {
+                    "start": 77,
+                    "end": 78,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 79,
+                    "end": 81,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Sample amplification, labeling, hybridization, and data analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "This study was conceived by CCC, KP, and PCY. CCC devised the algorithm, performed the computer programming, and designed the experimental strategy, with guidance from KP and PCY. TTL also worked on the programming and constructed the virus database. CHC was responsible for the mathematical formulation and data analysis. YLL and MSH prepared virus cultures as well as viral genomic materials and drafted the parts of the text related to virology. HYH designed and performed the microarray experiments and data analysis. CCC drafted the manuscript and revisions were made by KP and PCY. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Algorithm for designing conserved probes. Schematic illustration of the conserved sequence design method. (A) The similarity sequence segments (I1i to I5i) of a given virus vi are aligned with the sequence segments of the other five viruses within the same viral genus by the BLASTN program to find the regions with high similarity hits. (B) Graph of the numbers of similarity hits, Si, obtained by the procedure illustrated in panel A. The largest number of hits as illustrated is max(Si), which equals 4. The two regions with the highest similarity hits are marked by vertical dotted lines. (C) A case study of locating the conserved sequence segments in coronavirus genus. The genus contains the following 11 fully sequenced viral genomes: NC_002645, human coronavirus 229E; NC_001451, avian infectious bronchitis virus; NC_003436, porcine epidemic diarrhea virus; AF201929, murine hepatitis virus strain 2; AF208067, murine hepatitis virus strain ML-10; AF208066, murine hepatitis virus strain Penn 97-1; NC_001846, murine hepatitis virus strain A59; NC_003045, bovine coronavirus; AF220295, bovine coronavirus strain Quebec; NC_002306, transmissible gastroenteritis virus; and SARS-CoV, SARS coronavirus.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Table 1 - Example searching the minimum number of probes that generate similarity hits with all the virus members within a viral genus.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: In silico validation of the conserved sequence design method. All of the fully sequenced viral genomes (except that of SARS-CoV) in the coronavirus genus were used to determine the conserved sequences. The design method was validated by testing if the computed conserved sequences could successfully detect the novel SARS-CoV. (A) The redundant conserved segments as computed by steps 1 to 4 of the probe design algorithm were reduced to five nonredundant sequence groups by the BLASTN sequence alignment in step 5 of the probe design algorithm. The longest sequence (underlined sequence) in each group was used to represent the group. (B) BLASTN results for the comparison of the group 1 conserved sequence with the SARS-CoV genome. The BLASTN alignment outputs are shown in the figure. The sequence alignment with the SARS-CoV genome shows that the group 1 conserved sequence is located between nucleotides 15732 and 15829 of the SARS-CoV genome. (C) Larger-scale cross-validation of 14 viral genera consisting of 333 nonredundant sets of viral genomes.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Viral genus classification and specific virus identification. Hybridization and identification results for seven test viral samples. The probes eligible for identity determination were prescreened using the hybridization intensity criteria described in the Methods section. (A) Viral genus determination for the seven viral samples, all of which belong to three viral genera. The genus signal strength is defined in the Methods section. (B) Determination of the identities of specific viruses. The numbers on the Y-axis are the ID numbers of the virus targets as listed in Additional File 2. Note that there are 46 species-specific probes for 26 viruses in the flavivirus and coronavirus genera, and that there are no enterovirus-specific probes.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Multiplex PCR: optimization and application in diagnostic virology",
+            "authors": [
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Elnifro",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Ashshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Klapper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Clin Microbiol Rev",
+            "volume": "13",
+            "issn": "",
+            "pages": "559-570",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.13.4.559-570.2000"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Assessment of the sensitivity and specificity of oligonucleotide (50 mer) microarrays",
+            "authors": [
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Kane",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Jatkoe",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Stumpf",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Madore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res",
+            "volume": "28",
+            "issn": "",
+            "pages": "4552-4557",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/28.22.4552"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Algorithms and Thermodynamics for RNA Secondary Structure Prediction: A Practical Guide",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zuker",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Mathews",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Tuner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "RNA Biochemistry and Biotechnology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Cormen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Leiserson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Rivest",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Stein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Introduction to algorithms",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Approximation algorithms for combinatorial problems",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "J Comput System Sci",
+            "volume": "9",
+            "issn": "",
+            "pages": "256-278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Hybridization cross-reactivity within homologous gene families on glass cDNA microarrays",
+            "authors": [
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Evertsz",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Au-Young",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Ruvolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Reynolds",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biotechniques",
+            "volume": "31",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Expression profiling using microarrays fabricated by an ink-jet oligonucleotide synthesizer",
+            "authors": [
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mao",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Burchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Marton",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Shannon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lefkowitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ziman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Schelter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dai",
+                    "suffix": ""
+                },
+                {
+                    "first": "YD",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Stephaniants",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cavet",
+                    "suffix": ""
+                },
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Coffey",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Shoemaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Stoughton",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Blanchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Friend",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Linsley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Biotechnol",
+            "volume": "19",
+            "issn": "",
+            "pages": "342-347",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/86730"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Microarray-based analysis of gene expression in very large gene families: the cytochrome P450 gene superfamily of Arabidopsis thaliana",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bak",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Decker",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Paquette",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Feyereisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Galbraith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Gene",
+            "volume": "272",
+            "issn": "",
+            "pages": "61-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0378-1119(01)00516-9"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Solution structure of a DNA double helix incorporating four consecutive non-Watson-Crick base-pairs",
+            "authors": [
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Mol Biol",
+            "volume": "312",
+            "issn": "",
+            "pages": "769-781",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jmbi.2001.4964"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Selecting signature oligonucleotides to identify organisms using DNA arrays",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaderali",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schliep",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Bioinformatics",
+            "volume": "18",
+            "issn": "",
+            "pages": "1340-1349",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/18.10.1340"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Non-Watson-Crick base pairs modulate homologous alignments in RecA pairing reactions",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Karthikeyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Wagle",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "FEBS Lett",
+            "volume": "425",
+            "issn": "",
+            "pages": "45-51",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0014-5793(98)00195-1"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Microarray-based detection and genotyping of viral pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Coscoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zylberberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Avila",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Boushey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "15687-15692",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.242579699"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "A non-Watson-Crick motif of base-pairing on surfaces for untethered oligonucleotides",
+            "authors": [
+                {
+                    "first": "K-Y",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vainrub",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Powdrill",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hogan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Pettitt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Simulation",
+            "volume": "30",
+            "issn": "",
+            "pages": "121-129",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/0892702031000152181"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Optimization of probe length and the number of probes per gene for optimal microarray analysis of gene expression",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "TT",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gnh099"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Options available\u2013from start to finish\u2013for obtaining data from DNA microarrays II",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "van Laar",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Tothill",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Bowtell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Genet",
+            "volume": "",
+            "issn": "",
+            "pages": "481-489",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng1030"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Powerful new database pins down emerging infections",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Check",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat Med",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm0206-155b"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "National center for biotechnology information viral genomes project",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Federhen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Leipe",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Resenchuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rozanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "7291-7298",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.14.7291-7298.2004"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Further progress in ICTVdB, a universal virus database",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Buchen-Osmond",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Arch Virol",
+            "volume": "142",
+            "issn": "",
+            "pages": "1734-1739",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "A virus discovery method incorporating DNase treatment and its application to the identification of two bovine parvovirus species",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Engle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bukh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "98",
+            "issn": "",
+            "pages": "11609-11614",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.211424698"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "High throughput parallel synthesis of oligonucleotides with 1536 channel synthesizer",
+            "authors": [
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Kao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nucleic Acids Res",
+            "volume": "30",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gnf092"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "A method for the rapid sequence-independent amplification of microdissected chromosomal material",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Bohlander",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Espinosa",
+                    "suffix": "3rd"
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Le Beau",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Rowley",
+                    "suffix": ""
+                },
+                {
+                    "first": "MO",
+                    "middle": [],
+                    "last": "Diaz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Genomics",
+            "volume": "13",
+            "issn": "",
+            "pages": "1322-1324",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0888-7543(92)90057-Y"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Viral discovery and sequence recovery using DNA microarrays",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Urisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Springer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Mardis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hickenbotham",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Magrini",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eldred",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Latreille",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "PLoS Biol",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0000002"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Molecular detection and identification of influenza viruses by oligonucleotide microarray hybridization",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sengupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Onodera",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Melcher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "4542-4550",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.10.4542-4550.2003"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Use of the DNA flow-thru chip, a three-dimensional biochip, for typing and subtyping of influenza viruses",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kessler",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ferraris",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Palmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Marsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Steel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Clin Microbiol",
+            "volume": "42",
+            "issn": "",
+            "pages": "2173-2185",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.5.2173-2185.2004"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Nipah virus: a recently emergent deadly paramyxovirus",
+            "authors": [
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bellini",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Harcourt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tamin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Rollin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Shieh",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Goldsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Gubler",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Roehrig",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Eaton",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Gould",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Field",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daniels",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Ling",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Mahy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "288",
+            "issn": "",
+            "pages": "1432-1435",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.288.5470.1432"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Characterization of a novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Oberste",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Monroe",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Nix",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Campagnoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Icenogle",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Penaranda",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bankamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Maher",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tamin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lowe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Frace",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Peret",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Burns",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Rollin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sanchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Liffick",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Limor",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "McCaustland",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Olsen-Rasmussen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gunther",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Pallansch",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bellini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1394-1399",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1085952"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "E-Predict: a computational strategy for species identification based on observed DNA microarray hybridization patterns",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Urisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Chiu",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Kistler",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Beck",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Genome Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/gb-2005-6-9-r78"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Design and assessment of a fast algorithm for identifying specific probes for human and mouse genes",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "",
+            "pages": "1311-1317",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btg162"
+                ]
+            }
+        }
+    }
+}

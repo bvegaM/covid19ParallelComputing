@@ -1,0 +1,2016 @@
+{
+    "paper_id": "PMC2722738",
+    "metadata": {
+        "title": "Estimating Sensitivity of Laboratory Testing for Influenza in Canada through Modelling",
+        "authors": [
+            {
+                "first": "Dena",
+                "middle": [
+                    "L."
+                ],
+                "last": "Schanzer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [
+                    "J."
+                ],
+                "last": "Garner",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Todd",
+                "middle": [
+                    "F."
+                ],
+                "last": "Hatchette",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Joanne",
+                "middle": [
+                    "M."
+                ],
+                "last": "Langley",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Samina",
+                "middle": [],
+                "last": "Aziz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Theresa",
+                "middle": [
+                    "W.",
+                    "S."
+                ],
+                "last": "Tam",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Lisa",
+                "middle": [
+                    "F.",
+                    "P."
+                ],
+                "last": "Ng",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Although influenza virus infection is associated with considerable morbidity and mortality[1]\u2013[3], laboratory confirmation of clinical illness is the exception rather than the rule. Clinicians do not routinely seek laboratory confirmation for several reasons: diagnosis will often not alter patient management, a paucity of real-time, accurate, inexpensive testing methods [4] and because influenza is not recognized as the etiology of the clinical presentation[5]. Accurate diagnosis of influenza-like illness, however, could improve clinical care through reduced use of antibiotics and ancillary testing, and more appropriate use of antiviral therapy [6]. Although rapid influenza tests such as point-of-care tests are purported to generate results in a timely fashion to influence clinical care, the performance characteristics of the currently available tests are sub-optimal [7]. New technologies with improved sensitivity such as reverse-transcriptase polymerase chain reaction (RT-PCR) [8] as well as the use of more effective collection systems such as the flocked nasopharyngeal swab compared to traditional rayon wound swabs, and the recommendation to collect more ideal specimens, such as nasopharyngeal swabs rather than throat swabs are likely to improve diagnostic sensitivity [9]\u2013[12]. The performance characteristics of currently available tests for influenza vary considerably and the overall sensitivities of these tests when used in routine practice are also dependent on the type of specimen collected, the age of the patient and point in their illness in which they are sampled [4], [9], [13]\u2013[15].",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 93,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 94,
+                    "end": 97,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 373,
+                    "end": 376,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 461,
+                    "end": 464,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 653,
+                    "end": 656,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 880,
+                    "end": 883,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 993,
+                    "end": 996,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1291,
+                    "end": 1294,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1295,
+                    "end": 1299,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1599,
+                    "end": 1602,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1604,
+                    "end": 1607,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1609,
+                    "end": 1613,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 1614,
+                    "end": 1618,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We sought to estimate the sensitivity of influenza testing based on results of a national respiratory virus surveillance system using a model-based method [1], [2], [16]\u2013[18].",
+            "cite_spans": [
+                {
+                    "start": 155,
+                    "end": 158,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 160,
+                    "end": 163,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 165,
+                    "end": 169,
+                    "mention": "[16]",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 170,
+                    "end": 174,
+                    "mention": "[18]",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Weekly respiratory virus identifications from September 1999 to August 2006 were obtained from the Respiratory Virus Detection Surveillance System (RVDSS), Public Health Agency of Canada [19], [20]. The RVDSS collects, collates, and reports weekly data from participating laboratories on the number of tests performed and the number of specimens confirmed positive for influenza, respiratory syncytial virus (RSV), para-influenza virus (PIV), and adenovirus. Specimens are generally submitted to laboratories by clinicians in the course of clinical care, and by clinicians participating in one of our national influenza surveillance programs, (FluWatch\n[20]). Indicators of influenza activity are reported year round on a weekly basis to the FluWatch program. The RVDSS is supplemented by case reports of influenza positive cases [19], [21]. From the case reports, influenza A was confirmed in all age groups and sporadic cases were confirmed in the off-season months of June through September. Infants and children under the age of 5 years accounted for 25% of the influenza A positive tests, and persons over the age 65 years another 35%. Unfortunately, FluWatch surveillance data does not provide the total number of tests by age. Testing practices are known to be varied [22], [23]. The predominant testing methods used for influenza detection varied considerably by province or laboratory and over time. For the 2005/06 season a survey of laboratory techniques in current use indicated that culture accounted for 44% of the diagnostic tests with RT-PCR, rapid antigen tests and direct fluorescent-antibody assay (DFA) accounting for 21%, 19%, and 16% respectively[23].",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 191,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 193,
+                    "end": 197,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 653,
+                    "end": 657,
+                    "mention": "[20]",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 830,
+                    "end": 834,
+                    "mention": "[19]",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 836,
+                    "end": 840,
+                    "mention": "[21]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1275,
+                    "end": 1279,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1281,
+                    "end": 1285,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1668,
+                    "end": 1672,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Sources of data ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The weekly number of tests negative for influenza was modelled, using Poisson regression, as a function of viral identifications for influenza, RSV, adenovirus and PIV as well as a baseline consisting of seasonality, trend and holiday variables. The estimated baseline implicitly accounts for influenza tests on specimens taken from patients with respiratory infections due to respiratory pathogens other than the four viruses captured in the RVDSS, as long as both the testing behaviour of clinicians and respiratory illnesses caused by other respiratory pathogens follow a consistent seasonal pattern as prescribed by the model (see below, parameters \u03b2\n1 to \u03b2\n4).",
+            "cite_spans": [],
+            "section": "Statistical Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The Poisson regression model with a linear link function was estimated using SAS [24] PROC GENMOD:where  is the predicted number of negative tests for influenza for week w; Monw,m an indicator variable for each month; FY\nw,y an indicator variable for the influenza season (year running from September to August); Holidays\nw and Xmas\nw variables indicating holidays; InflAw, InflBw, RSVpw, Adenopw, Parapw the weekly number of tests confirmed positive for influenza A and B, RSV, adenovirus and para-influenza virus respectively. A regression model approach facilitates the simultaneous estimation of the effects of influenza activity on the number of influenza-negative tests while controlling for other factors. The model was further stratified by influenza season by including separate parameters for each season (\u03b25y rather than \u03b25).",
+            "cite_spans": [
+                {
+                    "start": 81,
+                    "end": 85,
+                    "mention": "[24]",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Statistical Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Coefficients \u03b2\n5 to \u03b2\n9 are multipliers. The weekly number of influenza negative tests estimated to be falsely negative is given by \u03b2\n5\nInflA\nw+\u03b2\n6\nInflB\nw. The weekly number of influenza negative tests attributed to RSV is given by \u03b2\n7\nRSVp\nw., and similarly for adenovirus and PIV. For each positive influenza A test, an additional \u03b2\n5 tests above baseline were performed and found to be negative. By specifying a linear link, a value of 0.33, say, for coefficient \u03b2\n5, means that for every test for which influenza A was confirmed, 0.33 additional tests, on average, were performed on truly influenza A positive specimens and found to be negative \u2013 which corresponds to a sensitivity of 75%.",
+            "cite_spans": [],
+            "section": "Statistical Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Sensitivity was calculated as the number of influenza positive tests divided by the number of influenza positive tests plus the model-estimated number of false negative tests, or equivalently, the estimates of sensitivity for influenza A and B are given by 1/(1+\u03b2\n5) and 1/(1+\u03b2\n6) respectively. The false negative rate is 1 minus sensitivity. While the null value for \u03b2\n5 is zero, which indicates no statistical association between the number of influenza positive tests and the number of influenza negative tests, the corresponding null value for sensitivity is 1.",
+            "cite_spans": [],
+            "section": "Statistical Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each test confirmed positive for RSV, on average \u03b27 tests were performed for influenza and found to be negative for influenza. These \u03b27 tests are attributed to an RSV infection, however the number of influenza-negative tests that actually tested positive for RSV is unknown. If all specimens had been tested for the same viruses (panel tests), 1/\u03b2\n7 would correspond to the sensitivity for RSV testing, and the sensitivity for adenovirus and PIV given by 1/\u03b2\n8 and 1/\u03b2\n9 respectively. Some laboratories are known to test for viruses sequentially [22], and so 1/\u03b2\n7 - 1/\u03b2\n9 were not interpreted as estimates of the sensitivity for other viruses. Sequential testing may occur if a rapid test for influenza is negative and the laboratory then performs PCR or culture testing. Similarly in young children with a respiratory illness in the winter, rapid tests for RSV infection may be performed first, and only specimens with negative results submitted for subsequent testing for influenza or other respiratory viruses [25]. By contrast, many laboratories conduct panel tests for multiple viruses for ease of handling, decreased patient sampling, and recognition that co-infection can occur. Either form of sequential testing would not bias the estimate of sensitivity applicable to test results reported to RVDSS, though significant use of rapid antigen tests in the laboratories reporting to RVDSS would reduce the overall sensitivity. As a single specimen may undergo multiple tests, the false-negative rate applicable to a specimen that has undergone multiple tests would be expected to be much lower than the system average for individual tests. Parameters \u03b2\n1. to \u03b2\n4 account for trends and the seasonality of truly negative specimens (patients presenting with other acute respiratory infections).",
+            "cite_spans": [
+                {
+                    "start": 550,
+                    "end": 554,
+                    "mention": "[22]",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1018,
+                    "end": 1022,
+                    "mention": "[25]",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Statistical Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Over 50,000 tests for influenza were reported to the RVDSS each year, peaking in 2004/05 at 101,000. Overall 10% of the influenza tests were positive for influenza, ranging from 4% to 13% depending on the season. The proportion positive for RSV, parainfluenza and adenovirus averaged 9%, 3% and 2% respectively. As seen in Figure 1, no virus was identified in 75% of specimens submitted for testing (white area under the curve). Even for the winter months of December through April, one of these 4 viruses was identified on average in no more than 30% of the specimens. The strong and consistent synchronization of negative tests with influenza positive tests, as seen in Figure 1, is suggestive that false negative results contributed to the large number of negative tests during periods of influenza activity.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 323,
+                    "end": 331,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 672,
+                    "end": 680,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The sensitivity for influenza A testing averaged 33.7% (with model-estimated 95% confidence intervals of 33.3\u201334.1) for the 1999/2000\u20132005/06 period. Influenza B testing had a similar estimated sensitivity at 34.7 (95% CI 33.4\u201336.1). Estimated sensitivities varied somewhat from season to season, generally ranging from 30%\u201340% (Table 1), and provincial level estimates, as well, were within a similar range. Stratifying by province or season produced similar estimates for the sensitivity of influenza A testing: 32% (95% CI 30\u201334) and 36% (95% CI 33\u201341) respectively. Estimates of sensitivity based on test results reported to the RVDSS for individual laboratories with sufficient data to fit the model showed significant variation, with estimates of sensitivity ranging from 25\u201365%. As expected, laboratories using primarily rapid antigen tests had lower estimated sensitivities, and laboratories that used PCR methods had higher sensitivity estimates. However, information on testing procedures is limited primarily to the 2005/06 survey. As well, additional irregularities were noticed in the laboratory data and not all laboratories provided sufficient data to fit the model.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 329,
+                    "end": 336,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "\nFigure 2 illustrates a good model fit where the weekly number of influenza negative tests is well explained by the model covariates, with a few exceptions. Firstly, it is evident that additional specimens were tested during the SARS period, as indicated by the period where the number of weekly influenza negative tests exceeded the expected number, or equivalently, a period of successive positive residuals. Residuals typically capture random variation; hence represent tests that can not be allocated based on the specified model. In addition to the SARS period, testing appears to have been elevated for a number of weeks in January 2000 during the peak of the 1999/2000 A/Sydney/05/97 (H3N2) season in which respiratory admissions were unusually elevated [26], [27], and in December 2003, when an elevated risk of paediatric deaths associated with the A/Fujian/411/02 (H3N2) strain [28] was identified in the US. As these periods corresponded to a period of heightened public awareness due to severe influenza outbreaks, parameter estimation was repeated without these data points. Exclusion of these data points did not alter the sensitivity estimate for influenza.",
+            "cite_spans": [
+                {
+                    "start": 761,
+                    "end": 765,
+                    "mention": "[26]",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 767,
+                    "end": 771,
+                    "mention": "[27]",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 888,
+                    "end": 892,
+                    "mention": "[28]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 1,
+                    "end": 9,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The attribution of influenza negative test results to influenza and other viruses is illustrated in Figure 3. The baseline curve is the model estimate of the number of tests that were likely truly negative for all four viruses tested. A reduction in specimen collection and testing, primarily for viruses other than influenza, is also evident over the Christmas period (Figure 3).",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": [
+                {
+                    "start": 100,
+                    "end": 108,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 370,
+                    "end": 378,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The weekly proportion of tests confirmed positive for influenza peaked each season at 15 to 30%. Accounting for the model estimated false negative rate suggests that during periods of peak influenza activity, 40\u201390% of tests were performed on specimens taken from persons recently infected with influenza. Influenza was confirmed in only 14% of specimens sent for testing over the winter period, whereas the sensitivity estimate would imply that up to 40% of influenza tests could be attributed to an influenza infection. The corresponding figures for the whole year indicate that 10% of specimens were confirmed positive for influenza and 30% of influenza tests could be model-attributed to an influenza infection annually.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Despite a relatively large number of tests in the off-season, the number of influenza positive tests was almost negligible; suggesting that the false positive rate applicable to RVDSS influenza testing is minimal.",
+            "cite_spans": [],
+            "section": "Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The model estimated sensitivity based on influenza test results reported to the RVDSS of 30\u201340% is much lower than the standard assay sensitivities documented in the literature. Standard sensitivities for diagnostic procedures used by participating laboratories ranged from 64% for rapid antigen tests to 95% for RT-PCR tests, averaging 75% for the study period [23]. As performance characteristics of specific tests are generally based on high quality specimens, the difference of approximately 40% is likely linked to any one of many operational procedures that affects the quality of the specimen and its procurement. Unlike validation studies, our samples are taken from a variety of clinical settings and processed with a variety of procedures across the country. As well, variation in the indications for diagnostic testing may vary across the country.",
+            "cite_spans": [
+                {
+                    "start": 362,
+                    "end": 366,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "As there are many other respiratory pathogens that are not routinely tested for, or reported to the RVDSS, including human metapneumovirus (hMPV), coronaviruses, and rhinoviruses for which patients may seek medical care and present with influenza like illness [29]\u2013[32], a large proportion of negative test results was expected. The overall model fit, and the general consistency of the sensitivity estimates, suggests that these many respiratory viruses were reasonably accounted for by the seasonal baseline and that the strong association between the number of influenza positive and influenza negative tests on a weekly basis is indicative of a significant number of false negative results, rather than the activity of another virus or viruses exactly synchronous with influenza. The latter would bias the estimated sensitivity of the system downwards. However, to significantly and consistently bias the estimate, the degree of synchronization would have to be fairly strong, persist over the whole study period, and occur in all provinces. Synchronization was not observed among the RVDSS viruses (influenza A, influenza B, RSV, adenovirus and PIV), and elsewhere other viruses such as rhinovirus, coronavirus and hMPV accounted for only a small proportion of the viral identifications and were not found to be synchronized with influenza [33]. As well, patients may present for care due to a secondary bacterial infection. While any specimen would likely test negative as the virus, at this point, is likely not detectable, the model would statistically attribute a negative test in this case to the primary infection; one of the four RVDSS viruses or to the seasonal baseline that represents other respiratory infections, depending on the level of viral activity at the time of the test. This is not considered a source of bias.",
+            "cite_spans": [
+                {
+                    "start": 260,
+                    "end": 264,
+                    "mention": "[29]",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 265,
+                    "end": 269,
+                    "mention": "[32]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1345,
+                    "end": 1349,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The large variation in false negative rates estimated for individual laboratories reporting to the RVDSS suggests that standardization of sample procurement, testing and reporting procedures would likely reduce the overall false negative rate. The accuracy of diagnostic tests is known to be affected by the quality of the specimen [10], [11], its handling, the timing of collection after symptom onset, and the age of the patient [14], [15]. Even with the most sensitive molecular methodologies, yield was shown to be strongly related to the time since onset of symptoms [9], [14], with a 3-fold decline in proportion positive within 3 to 5 days after onset of symptoms for both RT-PCR and culture procedures. For most laboratory tests, specimen procurement within 72 hours of from the onset of symptoms is recommended [6], yet patients often present much later in the course of illness. Estimates of the median time since onset of symptoms suggest a delay of 3 and 5 days for outpatient and inpatients respectively [15], however these estimates are limited to patients with laboratory confirmed influenza. In addition, there are inherent differences in the performance characteristics of the currently used diagnostic tests [4], [6], [8], [34]\u2013[38]. Lack of standardization between diagnostic tests and algorithms used in different laboratories reporting to the RVDSS adds to this complexity. The routine use of RT-PCR testing has only recently become available in Canada (only 20% of tests used RT-PCR methods as of 2005/06 [23]), but increased use of this modality is expected to improve accuracy.",
+            "cite_spans": [
+                {
+                    "start": 332,
+                    "end": 336,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 338,
+                    "end": 342,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 431,
+                    "end": 435,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 437,
+                    "end": 441,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 572,
+                    "end": 575,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 577,
+                    "end": 581,
+                    "mention": "[14]",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 820,
+                    "end": 823,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1017,
+                    "end": 1021,
+                    "mention": "[15]",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1226,
+                    "end": 1229,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1231,
+                    "end": 1234,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1236,
+                    "end": 1239,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1241,
+                    "end": 1245,
+                    "mention": "[34]",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1246,
+                    "end": 1250,
+                    "mention": "[38]",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1527,
+                    "end": 1531,
+                    "mention": "[23]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Population or system level sensitivity estimates that include the effects of sample quality are limited. Grijalva and colleagues [39] estimated the diagnostic sensitivity in a capture recapture study of children hospitalized for respiratory complications at 69% for a RT-PCR based system and 39% for a clinical-laboratory based system (passive surveillance of tests performed during clinical practice, and using a variety of commercially available tests).",
+            "cite_spans": [
+                {
+                    "start": 129,
+                    "end": 133,
+                    "mention": "[39]",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Though the expected proportion of influenza tests that were due to influenza infections is unknown and variable, our model estimate of 30% appears plausible. Cooper and colleagues [33] attributed 22% of telephone health calls for cold/flu to influenza over two relatively mild years, and elsewhere 20% of admissions for acute respiratory infections (including influenza) in adults aged 20\u201364 years were attributed to influenza, and 42% for seniors [1].",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 184,
+                    "mention": "[33]",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 448,
+                    "end": 451,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While there are limitations with this approach, there are no other simple alternatives to assist in the interpretation of the RVDSS data. It would have been helpful to analyze data based on each specimen sent for testing. With only the number of weekly tests and number of positive results, we were unable to calculate the number of specimens that were actually found to be negative for all four viruses, or to estimate the extent of co-infection. Co-infection, which was not accounted for in our model, could result in an under-estimation of the number of falsely negative tests, as the attribution of an influenza negative test that was actually co-infected with influenza and another respiratory virus would have to be split between the viruses. With auxiliary information associated with each specimen, model estimates of false negative rates based on, for example, test type, time since onset of symptoms, age of the patient, or clinical presentation would have allowed us to explore the reasons for the high false negative rates. As the false negative rate appears to be laboratory dependant (data not shown), this estimated range is applicable only to the RVDSS for the study period. A significant reduction in the false negative rate is anticipated as methods become standardized and with the uptake of the new RT-PCR methods. As positive results, particularly for culture, are often obtained a week or more after the specimen was received, some positive results may have been reported in a different week than the test. Multiple test results for a single specimen may have also contributed to reporting irregularities. These irregularities would tend to bias the estimated parameter towards zero, and hence the estimated sensitivity towards 1. Considering the overall model fit and the relative severity of influenza [1], we conclude that our estimate of sensitivity may be slightly over-estimated (number of false negatives under-estimated).",
+            "cite_spans": [
+                {
+                    "start": 1826,
+                    "end": 1829,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Poor test sensitivity contributes to the chronic under-estimation of the burden of influenza in the general population. Since estimates of the burden of illness drive planning for preventive and therapeutic interventions, it is important to improve all aspects leading to improved diagnostic accuracy. We have illustrated a simple method that uses the surveillance data itself to estimate the system wide sensitivity associated with the weekly proportion of tests confirmed positive. Although our estimate of sensitivity is only applicable to the interpretation of the RVDSS data over the study period, similar estimates for specific cohorts or laboratory procedures may help guide further investigation into the reasons for the large number of false negative test results. The capacity for improved diagnostic accuracy will ultimately improve our understanding of the epidemiology of influenza.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Weekly number of specimens tested for influenza is shown with the number of tests confirmed positive for influenza (A and B), adenovirus, parainfluenza virus, and RSV. Data is presented ignoring co-infection and sequential testing, so the white area under the curve, which corresponds to 75% of tests, represents the minimum number of specimens that were negative for all 4 viruses.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: The weekly number of influenza tests not confirmed positive for influenza was modelled as a function of viral identifications for influenza, RSV, adenovirus and parainfluenza, seasonality, and trend using Poisson regression. Identified outliers, corresponding to periods with irregular testing were excluded from the model. The baseline accounts for routine tests in the hypothetical absence of influenza, RVS, adenovirus and parainfluenza activity.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The modelled attribution of the weekly number of specimens tested for influenza to influenza (A and B), and adenovirus, parainfluenza virus, and RSV combined is shown along with the numbers confirmed positive. The total is the number of weekly tests for influenza (most were likely panel tests). The baseline accounts for routine tests in the hypothetical absence of influenza, RVS, adenovirus and parainfluenza activity, and corresponds to the model estimate of the number of tests that were truly negative for all tested viruses. The blue area (light plus dark) corresponds to tests attributed to influenza, with the light blue area corresponding to tests confirmed positive for influenza. The purple area (light plus dark) corresponds to tests attributed to RSV, adenovirus or parainfluenza. The light purple area is the total number confirmed positive for these viruses.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Strategy for efficient detection of respiratory viruses in pediatric clinical specimens.",
+            "authors": [
+                {
+                    "first": "MQ",
+                    "middle": [],
+                    "last": "Arens",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Swierkosz",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Armstrong",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Rivetna",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Diagn Microbiol Infect Dis",
+            "volume": "5",
+            "issn": "",
+            "pages": "307-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Influenza in Canada: 2003\u20132004 season.",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Aziz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Macey",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Can Commun Dis Rep",
+            "volume": "31",
+            "issn": "",
+            "pages": "1-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Human metapneumovirus infection in the Canadian population.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bastien",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Van Caeseele",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Brandt",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "4642-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Influenza-associated deaths among children in the United States, 2003\u20132004.",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bhat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Broder",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Greenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "N Engl J Med",
+            "volume": "353",
+            "issn": "",
+            "pages": "2559-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The contribution of respiratory pathogens to the seasonality of NHS Direct calls.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Edmunds",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Joseph",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gerard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Infect",
+            "volume": "55",
+            "issn": "",
+            "pages": "240-248",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Comparison of Flocked and Rayon Swabs for Collection of Respiratory Epithelial Cells from Uninfected Volunteers and Symptomatic Patients.",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Castriciano",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chernesky",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Smieja",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Clin Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "2265-2267",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "GeneScan Reverse Transcription-PCR Assay for Detection of Six Common Respiratory Viruses in Young Children Hospitalized with Acute Respiratory Illness.",
+            "authors": [
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "4298-4303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Real-Time PCR in Clinical Microbiology: Applications for Routine Laboratory Testing.",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Espy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Uhl",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Sloan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Buckwalter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Clin Microbiol Rev",
+            "volume": "19",
+            "issn": "",
+            "pages": "165-256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Human metapneumovirus infection in adults.",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Falsey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Pediatr Infect Dis J",
+            "volume": "27",
+            "issn": "",
+            "pages": "S80-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Impact of Changing Laboratory Diagnostics on Influenza Surveillance.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Garner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Garner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Macey",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Aziz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Smieja",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Accuracy and Interpretation of Rapid Influenza Tests in Children.",
+            "authors": [
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Grijalva",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Poehling",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Staat",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Pediatrics",
+            "volume": "119",
+            "issn": "",
+            "pages": "e6-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Estimating the undetected burden of influenza hospitalizations in children.",
+            "authors": [
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Grijalva",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Bennett",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Staat",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Craig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "135",
+            "issn": "",
+            "pages": "951-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The limitations of point of care testing for pandemic influenza: what clinicians and public health professionals need to know.",
+            "authors": [
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Hatchette",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bastien",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Berry",
+                    "suffix": ""
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Booth",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chernesky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Can J Public Health",
+            "volume": "100",
+            "issn": "",
+            "pages": "204-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Nasal Swab versus Nasopharyngeal Aspirate for Isolation of Respiratory Viruses.",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Heikkinen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Marttila",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Salmi",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ruuskanen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "4337-4339",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Performance of six influenza rapid tests in detecting human influenza in clinical specimens.",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Hurt",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Alexander",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hibbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Deed",
+                    "suffix": ""
+                },
+                {
+                    "first": "IG",
+                    "middle": [],
+                    "last": "Barr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Clin Virol",
+            "volume": "39",
+            "issn": "",
+            "pages": "132-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Enhancing the predictive value of throat swabs in virological influenza surveillance.",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Leitmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Buchholz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kramer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Schweiger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Euro Surveill",
+            "volume": "7",
+            "issn": "",
+            "pages": "180-183",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Characterization of Viral Agents Causing Acute Respiratory Infection in a San Francisco University Medical Center Clinic during the Influenza Season.",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Louie",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Hacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gonzales",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mark",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Maselli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Clin Infect Dis",
+            "volume": "41",
+            "issn": "",
+            "pages": "822-828",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Antiviral Therapy and Outcomes of Influenza Requiring Hospitalization in Ontario, Canada.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McGeer",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Plevneshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Shigayeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Siddiqi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Clin Infect Dis",
+            "volume": "45",
+            "issn": "",
+            "pages": "1568-1575",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Role of the Laboratory in Diagnosis of Influenza during Seasonal Epidemics and Potential Pandemics.",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Petric",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Comanor",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Petti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Infect Dis",
+            "volume": "194",
+            "issn": "",
+            "pages": "S98-S110",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "FluWatch Reports.",
+            "authors": [],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Rachlis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Prescription for Excellence: How Innovation is Saving Canada's Health Care System",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Influenza in Canada: 2005\u20132006 season.",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Reyes",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Macey",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Aziz",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Watkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Can Commun Dis Rep",
+            "volume": "33",
+            "issn": "",
+            "pages": "21-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Use of Throat Swab or Saliva Specimens for Detection of Respiratory Viruses in Children.",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kothapalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Craig",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Fox",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Clin Infect Dis",
+            "volume": "46",
+            "issn": "",
+            "pages": "e61-e64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Comparison of the Directigen Flu A+B Test, the QuickVue Influenza Test, and Clinical Case Definition to Viral Culture and Reverse Transcription-PCR for Rapid Diagnosis of Influenza Virus Infection.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ruest",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Michaud",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Deslandes",
+                    "suffix": ""
+                },
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Frost",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "3487-3493",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "SAS/STAT\u00ae 9 User's Guide, Volumes 1, 2, 3",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Role of influenza and other respiratory viruses in admissions of adults to Canadian hospitals.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Schanzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "TWS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Influenza and Other Respiratory Viruses",
+            "volume": "2",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Co-morbidities associated with influenza-attributed mortality, 1994\u20132000, Canada.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Schanzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "TWS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Vaccine",
+            "volume": "26",
+            "issn": "",
+            "pages": "4697-703",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Influenza-attributable deaths: Canada 1990-1999.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Schanzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TWS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Winchester",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "135",
+            "issn": "",
+            "pages": "1109-16",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Hospitalization attributable to influenza and other viral respiratory illnesses in Canadian children.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Schanzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "TWS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Pediatr Infect Dis J",
+            "volume": "25",
+            "issn": "",
+            "pages": "795-800",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Influenza-attributed hospitalization rates among pregnant women, 1994\u20132000, Canada.",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Schanzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Langley",
+                    "suffix": ""
+                },
+                {
+                    "first": "TWS",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Obstet Gynaecol Can",
+            "volume": "29",
+            "issn": "",
+            "pages": "622-629",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Effectiveness of Reverse Transcription-PCR, Virus Isolation, and Enzyme-Linked Immunosorbent Assay for Diagnosis of Influenza A Virus Infection in Different Age Groups.",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Steininger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kundi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Aberle",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Aberle",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Popow-Kraupp",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Clin Microbiol",
+            "volume": "40",
+            "issn": "",
+            "pages": "2051-2056",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Influenza-associated hospitalizations in the United States.",
+            "authors": [
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Shay",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Weintraub",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Bridges",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "JAMA",
+            "volume": "292",
+            "issn": "",
+            "pages": "1333-1340",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Emergency department overcrowding: ambulance diversion and the legal duty to care.",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Upfold",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "CMAJ",
+            "volume": "166",
+            "issn": "",
+            "pages": "445-446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Virological surveillance of influenza-like illness in the community using PCR and serology.",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "JDM",
+                    "middle": [],
+                    "last": "Douglas",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "McIntyre",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Millar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Clin Virol",
+            "volume": "31",
+            "issn": "",
+            "pages": "40-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Human metapneumovirus infections in adults: another piece of the puzzle.",
+            "authors": [
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Walsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Falsey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Arch Intern Med",
+            "volume": "168",
+            "issn": "",
+            "pages": "2489-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Sensitivity of diagnostic tests for influenza varies with the circulating strains.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Mettenbrink",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "C-F",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Clin Virol",
+            "volume": "33",
+            "issn": "",
+            "pages": "172-175",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Superiority of reverse-transcription polymerase chain reaction to conventional viral culture in the diagnosis of acute respiratory tract infections in children.",
+            "authors": [
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Infect Dis",
+            "volume": "189",
+            "issn": "",
+            "pages": "706-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Evaluation of Three Immunoassay Kits for Rapid Detection of Influenza Virus A and B.",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Clin Diagn Lab Immunol",
+            "volume": "12",
+            "issn": "",
+            "pages": "367-370",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Increased Detection of Respiratory Syncytial Virus, Influenza Viruses, Parainfluenza Viruses, and Adenoviruses with Real-Time PCR in Samples from Patients with Respiratory Symptoms.",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "van de Pol",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "van Loon",
+                    "suffix": ""
+                },
+                {
+                    "first": "TFW",
+                    "middle": [],
+                    "last": "Wolfs",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJG",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nijhuis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Clin Microbiol",
+            "volume": "45",
+            "issn": "",
+            "pages": "2260-2262",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

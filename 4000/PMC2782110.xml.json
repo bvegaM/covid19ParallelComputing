@@ -1,0 +1,1390 @@
+{
+    "paper_id": "PMC2782110",
+    "metadata": {
+        "title": "Model-consistent estimation of the basic reproduction number from the incidence of an emerging infection",
+        "authors": [
+            {
+                "first": "M.",
+                "middle": [
+                    "G."
+                ],
+                "last": "Roberts",
+                "suffix": "",
+                "email": "m.g.roberts@massey.ac.nz",
+                "affiliation": {}
+            },
+            {
+                "first": "J.",
+                "middle": [
+                    "A.",
+                    "P."
+                ],
+                "last": "Heesterbeek",
+                "suffix": "",
+                "email": "j.a.p.heesterbeek@vet.uu.nl",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The basic reproduction number R\n0 of an infectious agent is defined as the expected number of secondary cases caused by one typical infected individual in a population consisting of susceptibles only [3,6,7]. When an outbreak has started and the approximation that the population is fully susceptible no longer holds, one generally refers to the effective reproduction number R. The value of R\n0 is, as a rule, different for different infectious agents and depends among other things on the characteristics of the population that the agent invades. Given this, it is not immediate that one can adopt previously determined values or size ranges for a new outbreak, unless many of the complicated characteristics of, for example, population composition and contact structure are comparable. For various reasons one can be interested in the value of R\n0 or R early in an outbreak and during the outbreak. Notably, under a homogeneous mixing assumption, the values give insight into the extent of the control problem and a means of calculating how much control effort is needed.",
+            "cite_spans": [
+                {
+                    "start": 201,
+                    "end": 202,
+                    "mention": "3",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 203,
+                    "end": 204,
+                    "mention": "6",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 205,
+                    "end": 206,
+                    "mention": "7",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "1 Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In recent years several new methods for estimating R\n0 from outbreak data have been published, either as a general tool or for specific applications [4,9,11,17,21,24]. Some, like Wallinga and Teunis [24] do not need much data, but require knowledge of the generation time distribution. Most of these methods, however, are data-hungry: they either need contact information, use the whole outbreak time series (so are effectively retrospective measures), or increase in accuracy as the time series becomes longer. While several methods are promising many problems remain, and for various reasons. For example, we do not observe infections we observe detections, i.e. individuals (people, animals, farms, plants) exhibiting symptoms. There is then a possibly unknown incubation period distribution that convolutes the infection process into the observed process. Detections are not necessarily in the order of infection. Moreover, R\n0 is a generation-based concept [12], but generations are not observed\u2014a daily number of new detections is observed from possibly mixed generations. Early in the outbreak stochastic influences play a large role. Also, heterogeneity between individual infectivity and susceptibility and in contact pattern may cause the distribution of which R\n0 is the mean to be highly skewed (e.g. [16]). To make matters worse, we almost never have data from an uncontrolled situation \u2014 some control measures, effective or not, often operate from the moment of detection of the index case.",
+            "cite_spans": [
+                {
+                    "start": 150,
+                    "end": 151,
+                    "mention": "4",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 152,
+                    "end": 153,
+                    "mention": "9",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 157,
+                    "end": 159,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 163,
+                    "end": 165,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 963,
+                    "end": 965,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1314,
+                    "end": 1316,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "1 Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Despite advances, but in light of the problems encountered, many publications in which R\n0 is estimated from outbreak data still depend on cumulative incidence and generation interval only (see for example [5,8,14,18,26]). As a rule, the cumulative incidence in outbreaks of an infectious disease is observed to initially grow approximately exponentially with time (and hence the incidence grows exponentially too). A frequently used approach is to fit an exponential function to the (cumulative) incidence and to use the approximate relationship \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${R_0} \\approx {e^{r{T_G}}}$$\n\\end{document} to estimate R\n0, where r is the exponential growth rate and T\nG is the observed mean generation interval of the epidemic. For rT\nG small the further approximation \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${R_0} \\approx 1 + r{T_G}$$\n\\end{document} is sometimes used. Many of the problems mentioned above apply to these estimates. For example, the \u2018real\u2019 value of r is not observed, not only because of control measures in operation but also due to the stochasticity in the early phase. In addition, the definition of the generation interval is not always consistently used and the method presupposes that the population is homogeneously mixing. Still, the method is easy and intuitive and one can wonder in which circumstances it would be a \u2018good\u2019 approximation, and how large discrepancies can be when these circumstances are not met. In this paper we investigate these questions.",
+            "cite_spans": [
+                {
+                    "start": 207,
+                    "end": 208,
+                    "mention": "5",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 209,
+                    "end": 210,
+                    "mention": "8",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 211,
+                    "end": 213,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 214,
+                    "end": 216,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 217,
+                    "end": 219,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "1 Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Given fixed latent and infectious periods, T\nE and T\nI respectively, and assuming f constant when non-zero, we have f(\u03c4) = 1/T\nI for T\nE < \u03c4 < T\nE+ T\nI and f(\u03c4) = 0 otherwise. For this distribution T\nG = T\nE + T\nI/2 and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${R_0} = R_0^{{\\rm{fix}}} = {{r\\left( {{T_G} - {T_E}} \\right)} \\over {\\sinh r\\left( {{T_G} - {T_E}} \\right)}}{e^{r{T_G}}}$$\n\\end{document}\nR\n0+ is useful as an estimator for R\n0fix when the latent period may be regarded as fixed and the infectious period is short relative to the timescale 1/r (rT\nI is small). As sinh x >\nx whenever x > 0, and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${\\lim _{x \\to 0}}{{\\sinh x} \\over x} = 1$$\n\\end{document} we have R\n0fix \u2264 R\n0+, and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${\\lim _{{T_E} \\to {T_G}}}R_0^{{\\rm{fix}}} = R_0^ + $$\n\\end{document}. Wallinga and Lipsitch [23] showed that R\n0+ is an upper bound on estimates of R\n0 for any distribution f(t).",
+            "cite_spans": [
+                {
+                    "start": 1552,
+                    "end": 1554,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "2.1 Fixed infectious period ::: 2 Model-consistent estimation of R&!start&0&!end&",
+            "ref_spans": []
+        },
+        {
+            "text": "Consider the kernel \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$f(\\tau ) = \\left\\{ {\\matrix{ {{1 \\over {{T_I}}}{{\\tau - {\\tau _a}} \\over {{\\tau _b} - {\\tau _a}}}} & : & {\\tau \\in \\left( {{\\tau _a},{\\tau _b}} \\right)} \\cr {{1 \\over {{T_I}}}} & : & {\\tau \\in \\left( {{\\tau _b},{\\tau _c}} \\right)} \\cr {{1 \\over {{T_I}}}{{{\\tau _d} - \\tau } \\over {{\\tau _d} - {\\tau _c}}}} & : & {\\tau \\in \\left( {{\\tau _a},{\\tau _b}} \\right)} \\cr 0 & : & {{\\rm{otherwise}}} \\cr } } \\right.$$\n\\end{document} This is a suitable approximation to an infectivity function where nobody is infectious before \u03c4\na time units or after \u03c4\nd time units post-exposure, maximum infectivity occurs between \u03c4\nb and \u03c4\nc time units after exposure, and contact rates are constant. The distribution is consistent with a mean latent period of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_E} = {{{\\tau _a} + {\\tau _b}} \\over 2}$$\n\\end{document}, a mean infectious period of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_I} = \\left( {{\\tau _d} + {\\tau _c} - {\\tau _b} - {\\tau _a}} \\right)/2$$\n\\end{document} and a mean generation interval of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {{{T_I}} \\over 2} + {{{{\\left( {{\\tau _d} - {\\tau _c}} \\right)}^2} - {{\\left( {{\\tau _b} - {\\tau _a}} \\right)}^2}} \\over {12\\left( {{\\tau _d} + {\\tau _c} - {\\tau _b} - {\\tau _a}} \\right)}}$$\n\\end{document} Hence, if the trapezium is symmetric \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {{{T_I}} \\over 2}$$\n\\end{document}, which is the same relationship as that for the fixed infectious period. The basic reproduction number solves R\n0trap\n\u00aff(r) = 1, where \u00aff(s) is the Laplace transform of f(t) (see Appendix 1)",
+            "cite_spans": [],
+            "section": "2.2 Trapezoidal infection kernel ::: 2 Model-consistent estimation of R&!start&0&!end&",
+            "ref_spans": []
+        },
+        {
+            "text": "In an extended SEIR differential equation model the population of size N is made up of S susceptibles, E that have been exposed to infection but are not yet infectious, I infectious and R that have been infected and recovered. If the epidemic processes have a much faster timescale than the demographic processes, we obtain the equations \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$\\eqalign{ & {{d{E_1}} \\over {dt}} = \\beta {S \\over N}\\sum\\limits_{j = 1}^n {{I_j} - mv{E_1}} \\cr & {\\rm{for }}i = 2,...,m{\\rm{ }}{{d{E_i}} \\over {dt}} = mv{E_{i - 1}} - mv{E_i} \\cr & {{d{I_1}} \\over {dt}} = mv{E_m} - n\\gamma {I_1} \\cr & {\\rm{for }}j = 2,...,n{\\rm{ }}{{d{I_j}} \\over {dt}} = n\\gamma {I_{j - 1}} - n\\gamma {I_j} \\cr & {{dR} \\over {dt}} = n\\gamma {I_n} \\cr} $$\n\\end{document} The exposed and infectious classes have been subdivided E = \u03a3i=1m\nE\ni and I = \u03a3j=1n\nI\nj, respectively. The times spent in the exposed and infectious classes are gamma distributed with means T\nE = 1/\u03bd and T\nI = 1/\u03b3, respectively, andR\n0 = \u03b2/\u03b3. The mean generation interval is \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {{n + 1} \\over {2n}}{T_I}$$\n\\end{document} (see Appendix 2). If the initial rate of exponential increase of the epidemic is r, then \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^{(m,n)} = {{{{2nr} \\over {n + 1}}\\left( {{T_G} - {T_E}} \\right){{\\left( {1 + {r \\over m}{T_E}} \\right)}^m}} \\over {1 - {{\\left( {1 + {{2r} \\over {n + 1}}\\left( {{T_G} - {T_E}} \\right)} \\right)}^{ - n}}}}$$\n\\end{document} This result is derived in Appendix 2, where it is also shown that given values of r, T\nE and T\nG, R\n0(m,n) is an increasing function of both m and n.",
+            "cite_spans": [],
+            "section": "2.3 SEIR differential equation models ::: 2 Model-consistent estimation of R&!start&0&!end&",
+            "ref_spans": []
+        },
+        {
+            "text": "The well-known SEIR differential equation model is the special case of Eqs. (6) with m = n = 1. For this model the times spent in the exposed and infectious classes are exponentially distributed with means T\nE = 1/\u03bd and T\nI = 1/\u03b3 respectively, and the appropriate kernel function in Eqs. (2, and 3) is \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$f(\\tau ) = {{\\gamma v} \\over {\\gamma - v}}\\left( {{e^{ - v\\tau }} - {e^{ - \\gamma \\tau }}} \\right)$$\n\\end{document} (see [6]). The mean generation interval is \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {T_I}$$\n\\end{document}, and given r we have \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^{\\exp } = R_0^{(1,1)} = 1 + r\\left( {{1 \\over v} + {1 \\over \\gamma }} \\right) + {{{r^2}} \\over {v\\gamma }} = 1 + r{T_G} + {r^2}{T_E}\\left( {{T_G} - {T_E}} \\right)$$\n\\end{document} The approximation \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ - = 1 + r{T_G} \\le R_0^{\\exp }$$\n\\end{document} is appropriate for the SIR model, for which \u03bd \u2192 \u221e, T\nE \u2192 0 and T\nG \u2192 T\nI = 1/\u03b3. Hence R\n0\u2212 performs best as an estimate when either the latent period T\nE or the infectious period T\nI is small compared to T\nG, and performs worst when they are equal.",
+            "cite_spans": [
+                {
+                    "start": 694,
+                    "end": 695,
+                    "mention": "6",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "2.4 Exponentially distributed infectious period ::: 2 Model-consistent estimation of R&!start&0&!end&",
+            "ref_spans": []
+        },
+        {
+            "text": "We assumed that we had estimated values of the initial rate of exponential increase of infection incidence, r, the mean latent period, T\nE, and the mean generation interval, T\nG. We then used Eqs. (4, and 7) to calculate model-based estimates of the basic reproduction number using the assumptions of a fixed or exponentially distributed infectious period, leading to R\n0fix and R\n0exp, respectively. We did this for values of the ratio of the latent period to the generation interval, T\nE/T\nG, in the range zero to 0.99. The values of R\n0fix and R\n0exp are plotted as functions of T\nE/T\nG for rT\nG = 0.5, 1.0, 1.5, 2.0 in Fig. 2, and compared with the values of the estimators \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ - = 1 + r{T_G}$$\n\\end{document} and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ + = {e^{r{T_G}}}$$\n\\end{document} in those cases. When rT\nG = 0.5, 1.0, 1.5 or 2.0 we have R\n0\u2212 = 1.5, 2.0, 2.5 or 3.0 and R\n0+ = 1.65, 2.72, 4.48 or 7.39, respectively.\n\n",
+            "cite_spans": [],
+            "section": "3 Method and results",
+            "ref_spans": [
+                {
+                    "start": 628,
+                    "end": 629,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The results shown in Fig. 2 illustrate that for fixed values of r, T\nE and T\nG, the values of R\n0\u2212 and R\n0+ are lower and upper bounds, respectively for both R\n0exp and R\n0fix. In Sects. (2.1 and 2.4) it was shown that R\n0fix \u2264 R\n0+ and R\n0\u2212 \u2264 R\n0exp, respectively. It is proved in Appendix 2 that R\n0(m,n) 0 is an increasing function of both m and n. Putting these results together we obtain the inequality \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ - \\le R_0^{\\exp } \\le R_0^{(m,n)} < R_0^{{\\rm{fix}}} \\le R_0^ + $$\n\\end{document} where m and n are any finite positive integers.",
+            "cite_spans": [],
+            "section": "3 Method and results",
+            "ref_spans": [
+                {
+                    "start": 26,
+                    "end": 27,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Table 1 was constructed to illustrate the results that may be obtained for some specific infections. Parameters were chosen from the literature to be representative of influenza [20], severe acute respiratory syndrome (SARS) [19], smallpox [1] and foot and mouth disease (FMD) [11]. For each infection a trapezium distribution was constructed for f(\u03c4), and used together with an estimate of R\n0 to calculate an estimate of the initial exponential increase, r. The function f(\u03c4) was also used to calculate values for the mean generation interval T\nG, the mean latent period T\nE and the mean infectious period T\nI. \n",
+            "cite_spans": [
+                {
+                    "start": 179,
+                    "end": 181,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 226,
+                    "end": 228,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 241,
+                    "end": 242,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 278,
+                    "end": 280,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "3 Method and results",
+            "ref_spans": [
+                {
+                    "start": 6,
+                    "end": 7,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "If these values of r, T\nG and T\nE had been estimated from data, and then R\n0 had been estimated by R\n0\u2212, R\n0+, R\n0fix, R\n0exp or R\n0trap, the estimates presented in Table 1 would have resulted. By construction, the estimated value of R\n0trap then corresponds to the assumed value of R\n0. Hence Table 1 must be regarded as a comparison of estimates that may be made; the relative values are important rather than the absolute values.",
+            "cite_spans": [],
+            "section": "3 Method and results",
+            "ref_spans": [
+                {
+                    "start": 171,
+                    "end": 172,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 300,
+                    "end": 301,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We have derived and discussed model-consistent methods for estimating the basic reproduction number (R\n0) for an infectious disease from the initial rate of exponential growth of incidence of infection (r) at the beginning of an epidemic. These methods can only be applied to incidence data from the period where it is reasonable to assume that the whole population may be regarded as susceptible (S(t) }~ N).",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Among the first pieces of information obtained for an emerging infection are observations of the latent and infectious periods. These may be used as estimates to construct a rectangular kernel for an integral equation model, or to derive rate parameters for a differential equation model. Examples of infectivity kernels with the same latent and infectious periods are shown in Fig. 1. These kernels appear to be quite different, with the exponential kernel allowing some transmission of infection from time zero, and exhibiting a long infection tail. These features can lead to disparities in the results from modelling exercises. The transmission at early times mitigates against the success of control methods based on contact tracing, or any other method with inherent delays. The tail can lead to transmission appearing to continue in the model long after control measures should have eliminated the infection. The trapezoidal kernels also shown in Fig. 1 allow for some variability in the fixed and latent periods to be incorporated in the model. For example, the kernel shown as suitable for modelling influenza (Fig. 1a) is consistent with a latent period uniformly distributed between 1.2 and 2.0 days, and an infectious period of 4.0 days. The kernel shown as suitable for modelling SARS (Fig. 1b) is consistent with nobody being infectious before 4 days, everybody infectious by 7 days, everybody still infectious at 11 days and nobody infectious after 14 days; with the proportion infectious at intermediate times determined by linear interpolation. As well as allowing for some variability, the trapezoidal kernel has the advantage over the rectangular one that it is a continuous function, and this avoids problems with numerical schemes that do not allow discontinuities. Of course, if further information is available, then other distributions may be more appropriate.",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": [
+                {
+                    "start": 383,
+                    "end": 384,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 959,
+                    "end": 960,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1125,
+                    "end": 1127,
+                    "mention": "1a",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1304,
+                    "end": 1306,
+                    "mention": "1b",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 2 compares estimates of the basic reproduction number based on fixed (Fig. 2a, 2b) and exponentially distributed (Fig. 2c, 2d) infectious periods, R\n0fix andR\n0exp, respectively, with the estimates based only on mean generation interval, \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ - = 1 + r{T_G}$$\n\\end{document} and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ + = {e^{r{T_G}}}$$\n\\end{document}. The estimate R\n0\u2212 is inaccurate whenever rT\nG is not small. Using the fixed infectious period model, R\n0+ approximates R\n0fix when T\nE/T\nG is near to one, that is when the infection has a long latent period and a short infectious period. The estimate R\n0\u2212 is an approximation to R\n0exp if either the latent period or infectious period are very short, but R\n0+ is never a good estimator for R\n0exp and it\u2019s use is therefore inconsistent with an SEIR model.",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": [
+                {
+                    "start": 7,
+                    "end": 8,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 82,
+                    "end": 84,
+                    "mention": "2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 86,
+                    "end": 88,
+                    "mention": "2b",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "2c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "2d",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The estimates of R\n0 derived in this paper have the ordering R\n0\u2212 \u2264 R\n0exp \u2264 R\n0(m,n) < R\n0fix \u2264 R\n0+. This inequality establishes that, given the same values of r, T\nE and T\nI, R\n0\u2212 provides a closer estimate for R\n0exp than for R\n0fix, and R\n0+ provides a closer estimate for R\n0fix than for R\n0exp. Even though results derived from the gamma distributed kernel, R\n0(m,n), are not displayed in Fig. 2, we have established that R\n0fix and R\n0exp are upper and lower bounds respectively for R\n0(m,n). Note that for the model with a fixed infectious period, \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {T_I}/2$$\n\\end{document}, but for the model with an exponentially distributed infectious period, \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$${T_G} = {T_E} + {T_I}$$\n\\end{document}. The inequality, and the results presented in Fig. 2 are derived on the assumption that T\nE and T\nG are the same in both models; T\nI is defined consistently with the model, and hence differs between models. This is in contrast to the distributions presented in Fig. 1, which have the same latent and infectious periods, T\nE and T\nI, and hence different mean generation intervals T\nG.",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": [
+                {
+                    "start": 401,
+                    "end": 402,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1300,
+                    "end": 1301,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1515,
+                    "end": 1516,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Table 1 shows results that could be obtained when estimating R\n0 for emerging infections, with parameters suitable for these infections. The parameter values indicated for each infection should be regarded as sensible values rather than exact estimates, and the results are presented to indicate the relevance of Fig. 2. For all four examples there is close agreement between R\n0fix and R\n0trap. This is not surprising for the influenza example where the trapezium kernel has steep sides (Fig. 1a), but also applies for examples such as SARS (Fig. 1b). The results in Table 1 confirm that if rT\nG is small, hence R\n0\u2212 is close to one, then R\n0\u2212 may be used as an estimator for R\n0exp when an exponential model is appropriate. If a model with a fixed infectious period is more appropriate then R\n0+ is a better estimate for R\n0fix, especially when T\nE /T\nG is closer to one: compare for example the relative values of R\n0+ and R\n0fix for smallpox where T\nE /T\nG = 0.73 and FMD where T\nE /T\nG = 0.33.",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": [
+                {
+                    "start": 318,
+                    "end": 319,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "1a",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 548,
+                    "end": 550,
+                    "mention": "1b",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 6,
+                    "end": 7,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 574,
+                    "end": 575,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Recently other estimation methods have been suggested as improvements on R\n0\u2212 and R\n0+. Wearing et al. [25] compared estimates based on R\n0exp with results obtained using gamma-distributed infection kernels. Lloyd [15] found similar results for models of within-host virus dynamics. Heffernan and Wahl [13] also examined the problem, and provided correction factors for estimates of R\n0 based on both the mean and variance of observed transition times. Wallinga and Lipsitch [23] used a similar approach to ours, and derived estimates of R\n0 for a selection of infectivity kernels f(t), including those derived from a gamma-distributed infectious period but only with T\nE = 0. They also considered the case where f(t) is a Normal distribution; if employed though this distribution should be truncated to avoid the possibility of negative generation intervals.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 303,
+                    "end": 305,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Even though we selected a number of particular kernels for our study, and these cover a reasonable range of first choices, our method is applicable to all biologically sensible kernels. When estimating kernels from data, one should be careful. Estimates made early in an epidemic are likely to be based on household studies, and may be truncated due to local saturation of contacts. In addition, it is unclear how valid such estimates are when extrapolated to the wider community with multiple levels of mixing.",
+            "cite_spans": [],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We must be careful in attempting to draw conclusions from our analysis. As a new infection emerges the appropriate model is speculative, and in any situation there is no such thing as the correct model. For example, in the context of pandemic influenza, Ferguson et al. [8] had T\nG = 2.6 and T\nE = 1.48 days, and estimated R\n0 \u2248 R\n0\u2212, obtaining values in the range 1 \u2013 2. Their model was more complex than those discussed here, but we have seen that for low values of rT\nG, R\n0\u2212 provides a reasonable estimate. Mills et al. [18] used an SEIR model, and estimated R from R\n0exp which is consistent with their model. Our approach is to advocate using an estimate of R\n0 that is consistent with the model used to evaluate control strategies.",
+            "cite_spans": [
+                {
+                    "start": 271,
+                    "end": 272,
+                    "mention": "8",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 525,
+                    "end": 527,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "4 Conclusions and discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Estimates of R\n0 that could be made for emerging infections\nThe initial rate of exponential increase (r day\u22121), mean generation interval (T\nG days), mean latent period (T\nE days) and mean infectious period (T\nI days) that could be observed for epidemics of influenza, SARS, smallpox; and for foot andmouth disease (FMD) spreading between farms; together with the corresponding estimates of the basic reproduction numbermade using the approximations R\n0\u2212 = 1+rT\nG and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ + = {e^{r{T_G}}}$$\n\\end{document}, or assuming a rectangular, exponential or trapeziodal distribution for the infectious period, leading to R\n0fix\nR\n0exp and R\n0trap, respectively",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1: A selection of kernels, f(\u03c4) that may be used to model emerging infections: kernels due to fixed and exponentially distributed latent and infectious periods are shown as dashed and dashed/dotted lines, respectively; and the trapezium kernel is shown as a solid line. All kernels are scaled to have integral one. a Kernels suitable for modelling influenza, with latent period T\nE = 1.6 days and infectious period T\nI = 4.0 days. b Kernels suitable for modelling SARS, with latent period T\nE = 5.5 days and infectious period T\nI = 7.0 days",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2: Estimates of the basic reproduction number R\n0 as a function of the ratio of the latent period to the mean generation interval, T\nE/T\nG. The solid plots are a,b fixed infectious period: R\n0fix with rT\nG = 0.5 (lower), rT\nG = 1.5 (upper); and rT\nG = 1.0 (lower), rT\nG = 2.0 (upper) respectively, and c,d exponentially distributed infectious period: R\n0exp with rT\nG = 0.5 (lower), rT\nG = 1.5 (upper); and rT\nG = 1.0 (lower), rT\nG = 2.0 (upper), respectively. The horizontal dotted and dashed lines indicate the corresponding values of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ - = 1 + r{T_G}$$\n\\end{document} and \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$R_0^ + = {e^{r{T_G}}}$$\n\\end{document}, respectively",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "An integral equation model for the control of a smallpox outbreak",
+            "authors": [
+                {
+                    "first": "G.K.",
+                    "middle": [],
+                    "last": "Aldis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Math. Biosci.",
+            "volume": "195",
+            "issn": "",
+            "pages": "1-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mbs.2005.01.006"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "The interval between successive cases of an infectious disease",
+            "authors": [
+                {
+                    "first": "P.E.M.",
+                    "middle": [],
+                    "last": "Fine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Am. J. Epidemiol.",
+            "volume": "158",
+            "issn": "",
+            "pages": "1039-1047",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwg251"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "The construction and analysis of epidemic trees with reference to the 2001 UK foot-and-mouth outbreak",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Haydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Chase-Topping",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.J.",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Friar",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wilesmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.J.",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. R. Soc. Lond B",
+            "volume": "270",
+            "issn": "",
+            "pages": "121-127",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2002.2191"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "A brief history of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$\n\\mathcal{R}_0 \n$$\n\\end{document} and a recipe for its calculation",
+            "authors": [
+                {
+                    "first": "J.A.P.",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Acta. Biotheor.",
+            "volume": "50",
+            "issn": "",
+            "pages": "189-204",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1016599411804"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Improving Estimates of the basic reproductive ratio: using both the mean and dispersal of transition times",
+            "authors": [
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Heffernan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.M.",
+                    "middle": [],
+                    "last": "Wahl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Theor. Popul. Biol.",
+            "volume": "70",
+            "issn": "",
+            "pages": "135-145",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tpb.2006.03.003"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Gopalakrishna",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.K.",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.H.",
+                    "middle": [],
+                    "last": "Samore",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086616"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "The dependence of viral parameter estimates on the assumed viral life cycle: limitations of studies of viral load data",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc. R. Soc. B",
+            "volume": "268",
+            "issn": "",
+            "pages": "847-854",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2000.1572"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Superspreading and the effects of individual variation on disease emergence",
+            "authors": [
+                {
+                    "first": "J.O.",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.E.",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.M.",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "438",
+            "issn": "",
+            "pages": "355-359",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04153"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Modeling and real-time prediction of classical swine fever epidemics",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Meester",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "de Koning",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.C.M.",
+                    "middle": [],
+                    "last": "de Jong",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biometrics",
+            "volume": "58",
+            "issn": "",
+            "pages": "178-184",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.0006-341X.2002.00178.x"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Transmissibility of 1918 pandemic influenza",
+            "authors": [
+                {
+                    "first": "C.E.",
+                    "middle": [],
+                    "last": "Mills",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "432",
+            "issn": "",
+            "pages": "904-906",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature03063"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Modelling strategies for minimizing the impact of an imported exotic infection",
+            "authors": [
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. R. Soc. B",
+            "volume": "271",
+            "issn": "",
+            "pages": "2411-2415",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2004.2865"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Abramowitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.A.",
+                    "middle": [],
+                    "last": "Stegun",
+                    "suffix": ""
+                }
+            ],
+            "year": 1964,
+            "venue": "Handbook of Mathematical Functions",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A model for the spread and control of pandemic influenza in an isolated geographical region",
+            "authors": [
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.C.",
+                    "middle": [],
+                    "last": "Jennings",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Sertsou",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. R. Soc. Interface",
+            "volume": "4",
+            "issn": "",
+            "pages": "325-330",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2006.0176"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Quantification of the transmission of classical swine fever virus between herds during the 1997\u2013998 epidemic in the Netherlands",
+            "authors": [
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Stegeman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.R.W.",
+                    "middle": [],
+                    "last": "Elbers",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Smak",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.C.M.",
+                    "middle": [],
+                    "last": "de Jong",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Prevent. Veterinary Med.",
+            "volume": "42",
+            "issn": "",
+            "pages": "219-234",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0167-5877(99)00077-X"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "A note on generation intervals in epidemic models",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Svensson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Math. Biosci.",
+            "volume": "208",
+            "issn": "",
+            "pages": "300-311",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mbs.2006.10.010"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "How generation intervals shape the relationship between growth rates and reproductive numbers",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wallinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. R. Soc. Ser. B",
+            "volume": "274",
+            "issn": "",
+            "pages": "599-604",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2006.3754"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Different epidemic curves for severe acute respiratory syndrome reveal similar impacts of control measures",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wallinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Teunis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am. J. Epidemiol.",
+            "volume": "160",
+            "issn": "",
+            "pages": "509-516",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwh255"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Appropriate models for the management of infectious diseases",
+            "authors": [
+                {
+                    "first": "H.J.",
+                    "middle": [],
+                    "last": "Wearing",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Rohani",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Med.",
+            "volume": "7",
+            "issn": "",
+            "pages": "621-627",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Severe acute respiratory syndrome epidemic in Asia",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1608-1610",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Infectious Diseases of Humans: Dynamics and Control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Real-time estimates in early detection of SARS",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.-Y.",
+                    "middle": [],
+                    "last": "Bo\u00eble",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.L.",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.M.",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Lueng",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.-J.",
+                    "middle": [],
+                    "last": "Valeron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "12",
+            "issn": "",
+            "pages": "110-113",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A simple approximate mathematical model to predict the number of severe acute respiratory syndrome cases and deaths",
+            "authors": [
+                {
+                    "first": "B.C.K.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.W.P.",
+                    "middle": [],
+                    "last": "Pak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Epidemiol. Commun. Health",
+            "volume": "57",
+            "issn": "",
+            "pages": "831-835",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/jech.57.10.831"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.P.",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mathematical Epidemiology of Infectious Diseases: Model Analysis and Interpretation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "On the definition and computation of the basic reproduction ratio R0 in models for infectious diseases in heterogeneous populations",
+            "authors": [
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.P.",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.J.",
+                    "middle": [],
+                    "last": "Metz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J. Math. Biol.",
+            "volume": "28",
+            "issn": "",
+            "pages": "365-382",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/BF00178324"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.T.",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Meeyai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Iamsirithaworn",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.S.",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Estimation and inference of \\documentclass[12pt]{minimal}\n\t\t\t\t\\usepackage{amsmath}\n\t\t\t\t\\usepackage{wasysym} \n\t\t\t\t\\usepackage{amsfonts} \n\t\t\t\t\\usepackage{amssymb} \n\t\t\t\t\\usepackage{amsbsy}\n\t\t\t\t\\usepackage{mathrsfs}\n\t\t\t\t\\usepackage{upgreek}\n\t\t\t\t\\setlength{\\oddsidemargin}{-69pt}\n\t\t\t\t\\begin{document}\n$$\n\\mathcal{R}_0 \n$$\n\\end{document}\nof an infectious pathogen by a removal method",
+            "authors": [
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Ferrari",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.N.",
+                    "middle": [],
+                    "last": "Bj\u00f8rnstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Dobson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Math. Biosci.",
+            "volume": "198",
+            "issn": "",
+            "pages": "14-26",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mbs.2005.08.002"
+                ]
+            }
+        }
+    }
+}

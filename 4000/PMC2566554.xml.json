@@ -1,0 +1,2288 @@
+{
+    "paper_id": "PMC2566554",
+    "metadata": {
+        "title": "Predicting the sensitivity and specificity of published real-time PCR assays",
+        "authors": [
+            {
+                "first": "Gordon",
+                "middle": [
+                    "H"
+                ],
+                "last": "Lemmon",
+                "suffix": "",
+                "email": "gordon.lemmon@vanderbilt.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Shea",
+                "middle": [
+                    "N"
+                ],
+                "last": "Gardner",
+                "suffix": "",
+                "email": "gardner26@LLNL.gov",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Real-time PCR assays are gaining popularity as a clinical tool for detecting and quantifying the presence of both viral and bacterial pathogens, as reviewed in [1]. Compared to traditional culturing methods used in identification, real-time PCR is fast and cost effective. In addition, it can be quantitative and sensitive, in some cases greatly exceeding the sensitivity for conventional testing methods. Commercially distributed kits are available for PCR-based pathogen diagnostics, and PCR is no longer thought of merely as confirmatory to culture. However real-time PCR assays are limited by the quality of the primers and probes chosen. These primers and probes must be sensitive enough to match all target organisms yet specific enough to exclude all others.",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 162,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "A common approach to developing a primer/probe combination is by using commercial software such as PrimerExpress\u00ae (Applied Biosystems, Foster City, CA, USA). This software asks the user to upload a DNA sequence file, and then finds possible primer/probe sets that meet the assay criteria. Generally a researcher will provide as input a gene region conserved throughout the taxa that the assay is being designed to detect. The software then provides possible primer/probe sets. The researcher chooses a representative signature. If there are single nucleotide polymorphisms (SNPs) within the chosen conserved region, a signature with consensus primers and probes is often chosen. Next a BLAST [2] search is performed to ensure that the primers are not hitting other targets. Finally the signature is verified in vitro with laboratory strains.",
+            "cite_spans": [
+                {
+                    "start": 693,
+                    "end": 694,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "While this design approach may work acceptably well in the research laboratory, the clinical laboratory calls for a more thorough analysis to ensure detection of novel, diverse, and uncommon strains. These may appear, for example, as a result of spread by foreign travel or migration. Whole genome based automated signature design [3] presents a great improvement to the common method. However, in addition to better design strategies, methods for automated signature evaluation are needed. As additional sequence data becomes available, it is necessary to regularly reassess the predicted efficacy of a given signature. This analysis must include the predicted false negative and false positive rates for the developed signatures, and consider all available public sequence data.",
+            "cite_spans": [
+                {
+                    "start": 332,
+                    "end": 333,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We have analyzed a number of real-time PCR assays found in the literature based on public sequence data. Herein we report how well these signatures performed, offer a revised approach to PCR assay design, and use this approach to produce new assays predicted to have higher sensitivity and specificity.",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The literature was combed for recently published articles reporting real-time PCR assays for the clinical detection of bacterial and viral taxa. The primer and probe sequences were accumulated, with a preference for TaqMan assays. However, 3 intercalating dye assays were also selected. Papers reporting nucleotide sequences that could not easily be copied from an online source were avoided. In total, 112 signatures from 32 papers were analyzed.",
+            "cite_spans": [],
+            "section": "Literature search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Local Oracle databases have been constructed from the complete genome sequence data available at NCBI Genbank, TIGR, EMBL, IMG (JGI), and Baylor HGSC. We used our \"all_virus\" and \"all_bacteria\" databases to find signature matches and predict false negatives and false positives. These databases were designed to contain only whole genomes and whole segments from segmented genomes. However, the heuristics used to separate whole genomes from partial sequences are not fail-proof due to inconsistency in sequence annotation within the public databases. Consequently many sequences in these databases may show up as false negatives when they are actually just a section or segment of a genome that is not expected to contain the signature, and we manually sorted these sequences into true or false negatives.",
+            "cite_spans": [],
+            "section": "Database construction ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A freely available real time PCR analysis tool called TaqSim [4] was used to find public sequences that would match the primer/probe assay in question. TaqSim uses BLAST searches to find sequences that match both forward and reverse primers and probe. To be reported as a \"hit\" the primers and probe must match in the required orientations relative to one another and the primers must be in sufficiently close proximity. The forward/reverse primers may fall on either the plus or minus strand, so long as the orientation relative to one another is appropriate. There may not be mismatches at the 3' end of either primer. For each hit TaqSim calculates the primer and probe melting temperatures as bound to the candidate hit sequence (accounting for mismatches) based on reaction conditions (reagent concentrations and hybridization temperature), and returns sequences predicted to be amplified. Instead of replicating the various exact reaction conditions reported in each paper, very lenient settings were applied in all cases, essentially removing the screen for primer/probe vs. candidate hit Tm by setting this threshold to 0\u00b0K, and instead checking for specificity by requiring that hits have fewer than 3 mismatches per primer or probe.",
+            "cite_spans": [
+                {
+                    "start": 62,
+                    "end": 63,
+                    "mention": "4",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "BLAST search ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "TaqSim's predicted sequence hits were compared with sequences listed under a given set of NCBI taxonomy tree nodes. For instance, if a signature was reported to detect Hepatitis B, then its set of TaqSim hits would be compared with the set of sequences under node 10407, corresponding to Hepatitis B virus. Sequences in both sets were considered true positives, sequences in the TaqSim output that were missing from the chosen taxonomy nodes were considered false positives, and sequences that were in the taxonomy tree but missing from the TaqSim output were considered false negatives. Test statistics such as specificity and sensitivity (power) were then calculated. In this paper we define sensitivity and specificity as follows:",
+            "cite_spans": [],
+            "section": "Signature/taxonomy comparison ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Sensitivity=1\u2212false negative rate=1\u2212false negativestrue positives+false negatives",
+            "cite_spans": [],
+            "section": "Signature/taxonomy comparison ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Specificity=1\u2212false positive rate=1\u2212false positivestrue negatives+false positives",
+            "cite_spans": [],
+            "section": "Signature/taxonomy comparison ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The primary research articles were read carefully to determine what the authors had designed their primers/probes to detect. NCBI Taxonomy nodes were chosen to represent these target organisms. This was not a trivial task, since many articles lack clarity as to which taxa, specifically, their assay should detect. For instance, the cytomegalovirus assay did not detect all sequences in the cytomegalovirus genus (taxonomy node 10358), but rather all sequences in the human herpesvirus 5 species (taxonomy node 10359). None of the articles specified a taxonomy node for their signatures.",
+            "cite_spans": [],
+            "section": "Taxonomy node selection ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Perl scripting [5] was used to help compare BLAST hits and taxonomy node sequences, and count false negative, false positive and true positive sequence matches. However some sequences required hand sorting due to the wide array of sequence types and annotations. These often represented segmented genomes, in which case many of the would-be false negative sequences simply represent a different segment than that on which the signature lands, so we manually tabulated them as true negatives. They may also represent plasmids. In these situations, a careful review of the Genbank entry, and sometimes of the primary article cited by Genbank, was necessary to determine if the sequence of interest was truly a false negative.",
+            "cite_spans": [
+                {
+                    "start": 16,
+                    "end": 17,
+                    "mention": "5",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Hand curating ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Although we attempt to include only complete genomes in our sequence database, because of inconsistencies in the annotation of sequence data some partial sequences nevertheless make it into our databases. Any of these partial CDS's documented as containing the target gene on which the signature was supposed to land were counted as false negatives, but those partial CDS's not documented to contain the target gene were eliminated from the false negative pool because it is possible the signature could land on the unsequenced section with the target gene. Our database also contains \"glued fragments\", which represent draft genomes \"glued\" together with hundreds of \"N\"s as a simple way to keep the separate contigs associated as part of the same genome. While we report false negatives from these draft genomes, it is possible that the signatures could land on gaps between the contigs, and that finished sequencing could result in re-classification as a true positive.",
+            "cite_spans": [],
+            "section": "Hand curating ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The two human corona virus strains, 229E and OC43 are a frequent cause of the common cold [6]. A Taqman assay for 229E was predicted to perform perfectly, while an assay for OC43 turned up a number of false positives, all of which were animal corona viruses. A coxsackie B3 virus assay [7] performed well, but a coxsackie B4 assay [8] hit many other human coxsackie, echo, and entero viruses. Four out of 5 false negatives for a Marburg virus assay [9] were of the Lake Victoria variety. False negatives associated with a yellow fever signature [10] included Trinidad, French neurotropic, French viscerotropic, and vaccine strains. The Filoviridae (Ebola/Marburg) assay [10] detected only Ebola viruses.",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 92,
+                    "mention": "6",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 287,
+                    "end": 288,
+                    "mention": "7",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 332,
+                    "end": 333,
+                    "mention": "8",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 450,
+                    "end": 451,
+                    "mention": "9",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 546,
+                    "end": 548,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Assorted viral signatures (table 1T1table) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Staphylococcus aureus [11] and Enterobacteriaceae assays [12] had low sensitivity. An Escherichia coli assay [12] hit Shigella and Vibrio sequences.",
+            "cite_spans": [
+                {
+                    "start": 23,
+                    "end": 25,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 58,
+                    "end": 60,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Assorted bacterial signatures (table 2T2table) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Many of these signatures [13] had high sensitivity. Combining several of them into a multiplex assay would probably improve sensitivity further.",
+            "cite_spans": [
+                {
+                    "start": 26,
+                    "end": 28,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Measles signature set (table 3T3table) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "These signatures were designed using a minimal set clustering approach [14]. While individual signatures have decent sensitivity, combining several signatures in one assay, as advocated in the publication greatly improved sensitivity. The signatures for Hepatitis A are currently undergoing laboratory screening by the FDA, and are performing well (G. Hartman, personal communication).",
+            "cite_spans": [
+                {
+                    "start": 72,
+                    "end": 74,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Hepatitis signature set (table 4T4table) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Several reported signatures produced no predicted hits. These include assays for several flaviviruses [10,15,16], and 16S rRNA assays [12] for several bacteria. Examination of BLAST output showed that in these cases either a primer or internal oligo (probe) did not have BLAST hits to target, there were too many mismatches per primer or probe sequence above the threshold specified in our analyses, or there were mismatches at the 3' end of a primer relative to target. It is possible that if the sequences of the samples used in the laboratory differ from available genomic data, or if the PCR reaction conditions are performed at low stringency (e.g. low annealing temperatures or high salt concentrations) these assays could in fact work in the laboratory. However, according to the genomic data available, a better match of primers and probes to target is possible and is usually desired for high sensitivity detection.",
+            "cite_spans": [
+                {
+                    "start": 103,
+                    "end": 105,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 106,
+                    "end": 108,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 109,
+                    "end": 111,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 135,
+                    "end": 137,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Signatures that had no hits (table 5T5table) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Targeting a number of the organisms for which currently published signatures were predicted to perform poorly, as well as some for which additional signatures may be desired (even though published signatures may perform well), we generated new signatures using Minimal Set Clustering (MSC) according to methods previously described [14,17]. MSC begins by removing non-unique regions from consideration as primers or probes from each of the target sequences relative to a database of non-target bacterial and viral sequences. The remaining unique regions of each target sequence are mined for all or many candidate signatures, without regard for conservation among other targets, yet satisfying user specifications for primer and probe length, Tm, GC%, avoidance of long homopolymer runs, and amplicon length. All candidate signatures are compared to all targets and clustered by the subset of targets they are predicted to detect. Signatures within a given cluster are equivalent, in that they are predicted to detect the same subset of targets, so by clustering we reduce the redundancy and size of the problem to finding a small set of signatures that detect all targets. Nevertheless, finding the optimal solution of the fewest clusters to detect all targets is an NP complete problem, so for large data sets we use a greedy algorithm to find a small number of clusters that together should pick up all targets. In cases where the target strains of a species are too diverse to be detected by a single signature that hits all target strains, the MSC software groups the targets into genetic clusters to enable signature generation per group. If there are single signatures that are sufficient to detect all targets, then each of those comprehensive signatures is reported. We have used this method to design signature sets for numerous viruses, including Influenza A HA serotypes, foot-and-mouth-disease virus, Norwalk, Crimean Congo hemorrhagic fever, Ebola, hepatitis A, and other divergent viruses. Many of these signatures have been tested by collaborators at Lawrence Livermore National Laboratory, US Centers for Disease Control (CDC), USDA, FDA, and elsewhere.",
+            "cite_spans": [
+                {
+                    "start": 333,
+                    "end": 335,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 336,
+                    "end": 338,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Improved signatures using minimal set clustering (additional file) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In the supplementary table, we often provide more than one alternative signature to detect a given equivalence group of genomes to serve as a backup should a signature perform poorly in laboratory testing. Some of the signatures may have mismatches to some of their intended targets, although these mismatches are not predicted to reduce the Tm of primer/probe hybridizing to target below typical TaqMan reaction conditions. None of these computationally predicted signatures have been screened in the laboratory, as this is beyond the scope of this paper.",
+            "cite_spans": [],
+            "section": "Improved signatures using minimal set clustering (additional file) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The supplementary table contains signatures for the following organisms: Viruses: Dengue 1\u20134, human adenovirus A-F, canine distemper, coxsackie B4, cytomegalovirus, human herpes 1\u20134, 6\u20137, Japanese encephalitis, mumps, newcastle disease, Sendai, St. Louis encephalitis, human papillomavirus type 16, 71, human parainfluenza 1\u20133, JC, BK, and WU polyomavirus, West Nile, yellow fever, rabies, human respiratory syncytial, influenza A-B, influenza A serotypes H1, H2, H3, and H5, and HIV-1; Bacteria: Haemophilus influenzae, Mycobacterium tuberculosis, Staphylococcus aureus, Ehrlichia (genus), E. chaffeensis, E. ruminantium, Chlamydia trachomatis, Pseudomonas aeruginosa, Escherichia coli, and Neisseria meningitidis.",
+            "cite_spans": [],
+            "section": "Improved signatures using minimal set clustering (additional file) ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "As expected we found that false negatives were much more common than false positives. Though signatures are generally based on conserved gene regions, they often fail to take into account all of the variation within a target set of organisms. This may be because the signatures were developed using sequence data from a handful of strains, rather than a thorough study of all strains publicly available.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "These false negatives may also represent sequences that have become available since the publication of the given signature. Since new sequence data is made available at an ever increasing rate, there is great benefit in re-evaluating clinically used DNA signatures regularly. When new sequence data leads to false negative predictions for a signature, one of two explanations can be given. The new sequences either represent recently recognized variation that has been around since the time the signature was published, or new variation, the result of mutation and natural selection. In either case, an improved or additional signature should be designed.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "High false positive or false negative rates do not necessarily indicate a \"bad\" DNA assay. The quality of an assay must be considered in light of the milieu in which the testing will take place. In the clinical laboratory, a signature with high sensitivity but perhaps low specificity may be preferred over a test with lower sensitivity in cases where the putative pathogen requires immediate treatment or may spread quickly. The case of antibiotic resistant bacteria probably falls in this category. On the other hand, the nation's BASIS and BioWatch programs insists on zero false positives, so as to avoid public disturbances due to false alarms, while still aiming for zero false negatives [18].",
+            "cite_spans": [
+                {
+                    "start": 695,
+                    "end": 697,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One must also consider the type of false negative and false positive results to determine their relevance. For instance, in this article an assay for human corona virus OC43 [6] was reported with a number of false positives to animal corona viruses. However, in the clinical lab in the US, need the clinician worry about the possibility of a false positive match to giraffe coronavirus in human sputum? What about such a match in a clinical lab in Africa? On the other hand, the echovirus sequences that the coxsackie B4 assay [8] can detect could produce misleading results in any clinical lab.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 176,
+                    "mention": "6",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 528,
+                    "end": 529,
+                    "mention": "8",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The false negative and false positive rates presented in this study may vary substantially from those seen empirically. This is because the strains available in a laboratory may differ significantly from the sequence data available, or because the empirical protocol is more or less stringent than the sequence-based requirements we imposed, which allowed no more than 2 mismatches per primer or probe for detection.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We believe that as more target sequences become available, our predicted false negative rates will tend to increase for a given published signature both as a result of better sampling of diversity and as a result of failure to detect newly evolved variants. It has been estimated that a minimum of 3\u20134 genomes are needed in order to computationally design TaqMan PCR signatures likely to detect most strains, with those isolates chosen for sequencing that have been selected to span gradients of geographic, phenotypic, and temporal variation [19]. Even more than 4 genomes are needed for particularly diverse organisms. Thus, older signatures may not perform as well as newly developed signatures from the most up-to-date sequence data. A future study of interest would be a longitudinal look at how these rates continue to change over time as additional sequences become available. This study could be performed retrospectively, since sequence submission dates are easily obtained from public databases.",
+            "cite_spans": [
+                {
+                    "start": 544,
+                    "end": 546,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We also hypothesized that the wider the intended scope of a signature, the lower its sensitivity would tend to be. The point is illustrated loosely in our data tables. Twenty-six of the 28 signatures with less than 10 publicly available target sequences had sensitivities of 1 (i.e. zero false negatives), while signatures with 10 or more targets had an average sensitivity of 0.710116. However this approach only considers scope in the context of sequence data available.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We tried to demonstrate the relationship between specificity and scope at a more fundamental level by grouping signatures by the taxonomic level of their target as shown in Figure 1. However the results are misleading. In virology, taxonomic level is not a good indicator of nucleotide diversity. For instance, there is more diversity in the influenza A species then there is in the entire Filoviridae family, which consists of only two known genera: Ebola-like viruses and Marburg viruses. A better approach might be to calculate nucleotide diversity as a function of phylogenetic branch length or shared k-mer clusters within a target taxonomy node.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 180,
+                    "end": 181,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Finally, we averaged the sensitivities of microbes by genome type as shown in Table 6. Note that the ssRNA-RT category includes only HIV-1. This chart demonstrates that creating signatures with high sensitivity becomes more difficult for target organisms with high mutation rates.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 84,
+                    "end": 85,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "Current real-time PCR assay design approaches produce signatures with sensitivities generally too low for clinical use. We suggest that a rigorous approach involving false positive and false negative analysis should be the standard by which an initial assessment of signature quality is made. Signatures must also regularly be reassessed as sequence data becomes available. For targets with wide nucleotide diversity, it becomes necessary to develop a set of signatures, for which we suggest a minimal set clustering approach that may also include signatures with degenerate/inosine bases.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "GL found real time PCR signatures in the literature, wrote Perl scripts, and performed the analysis of published signatures. SG conceived of the research, designed new signatures, and provided guidance throughout the study.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: viral signature analyses. \nAll but three are Taqman signatures. The three intercalating dye type assays are bolded.",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: assorted bacterial DNA signature analyses.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Analysis of measles virus assays from Hummel, 2006 [13].\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Analysis of hepatitis assays from Gardner et al, 2003 [14]. \nClustered signature results are bolded.",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Signatures predicted not to hit any target organisms\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: sensitivity by type.\nAverage sensitivities of bacteria and of single stranded (ss), and double stranded (ds) viruses, with and without reverse transcriptase (RT). Results are consistent with high mutation rates in groups for which signatures have lower sensitivity. ssRNA-RT has no standard deviation as it refers only to HIV.",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Sensitivity by taxonomy level. Each colored diamond represents a real-time PCR assay examined in this paper. Black bars indicate the mean, grey bars indicate the median. Top and bottom of each box indicates 75th and 25th percentiles, and grey lines at whisker ends denote min and max values. The wide ranging sensitivities demonstrate both inconsistency in genetic diversity at a given taxonomy level, and inconsistency in signature design approaches.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Real-time PCR in clinical microbiology: Applications for routine laboratory testing",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Espy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Uhl",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Sloan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Buckwalter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Vetter",
+                    "suffix": ""
+                },
+                {
+                    "first": "JDC",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "NL",
+                    "middle": [],
+                    "last": "Wengenack",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Rosenblatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "FR",
+                    "middle": [],
+                    "last": "Cockerill",
+                    "suffix": "III"
+                },
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Clinical Microbiology Reviews",
+            "volume": "19",
+            "issn": "",
+            "pages": "165-256",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.19.1.165-256.2006"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Rapid Detection and Quantification of RNA of Ebola and Marburg Viruses, Lassa Virus, Crimean-Congo Hemorrhagic Fever Virus, Rift Valley Fever Virus, Dengue Virus, and Yellow Fever Virus by Real-Time Reverse Transcription-PCR",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gottig",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schilling",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Asper",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Panning",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Schmitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gunther",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "40",
+            "issn": "",
+            "pages": "2323-2330",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.40.7.2323-2330.2002"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "A 5' Nuclease PCR (TaqMan) High-Throughput Assay for Detection of the mecA Gene in Staphylococci",
+            "authors": [
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Killgore",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "FC",
+                    "middle": [],
+                    "last": "Tenover",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "38",
+            "issn": "",
+            "pages": "2516-2519",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Algorithm for the identification of bacterial pathogens in positive blood cultures by real-time LightCycler polymerase chain reaction (PCR) with sequence-specific probes",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wellinghausen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wirths",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Franz",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Karolyi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Marre",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Reischl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Diagnostic Microbiology and Infectious Disease",
+            "volume": "48",
+            "issn": "",
+            "pages": "229-241",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.diagmicrobio.2003.11.005"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Development of quantitative gene-specific real-time RT-PCR assays for the detection of measles virus in clinical specimens",
+            "authors": [
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Hummel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lowe",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bellini",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of Virological Methods",
+            "volume": "132",
+            "issn": "",
+            "pages": "166-173",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jviromet.2005.10.006"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Limitations of TaqMan PCR for detecting divergent viral pathogens illustrated by hepatitis A, B, C, and E viruses and human immunodeficiency virus",
+            "authors": [
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Kuczmarski",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Vitalis",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Slezak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "",
+            "issn": "",
+            "pages": "2417-2427",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.6.2417-2427.2003"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Development of Mulitplex Real-Time Reverse Transcriptase PCR Assays for Detecting Eight Medically Important Flaviviruses in Mosquitoes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Chao",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "45",
+            "issn": "",
+            "pages": "584-589",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.00842-06"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Development of Real-Time Reverse Transcriptase PCR Assays To Detect and Serotype Dengue Viruses",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Chien",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Shu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Gubler",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "44",
+            "issn": "",
+            "pages": "1295-1304",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.44.4.1295-1304.2006"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Comparative genomics tools applied to bioterrorism defense",
+            "authors": [
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Slezak",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kuczmarski",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Torres",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Medeiros",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Truitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Mulakken",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vitalis",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zemla",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Briefings in Bioinformatics",
+            "volume": "",
+            "issn": "",
+            "pages": "133-149",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bib/4.2.133"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Rapid Development of Nucleic Acid Diagnostics",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Fitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Kuczmarski",
+                    "suffix": ""
+                },
+                {
+                    "first": "So",
+                    "middle": [],
+                    "last": "Kurtz",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Slezak",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Vitalis",
+                    "suffix": ""
+                },
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Zemla",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "McCready",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proceedings of the IEEE",
+            "volume": "90",
+            "issn": "",
+            "pages": "1708-1721",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/JPROC.2002.804680"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Sequencing needs for viral diagnostics",
+            "authors": [
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Mulakken",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Torres",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Slezak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "42",
+            "issn": "",
+            "pages": "5472-5476",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.12.5472-5476.2004"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Basic local alignment search tool",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Altschul",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gish",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J Mol Biol",
+            "volume": "215",
+            "issn": "",
+            "pages": "403-410",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Design and Validation of an H5 TaqMan Real-Time One-Step Reverse Transcription-PCR and Confirmatory Assays for Diagnosis and Verification of Influenza A Virus H5 Infections in Humans",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Braham",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lock",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Barlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Zambon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "45",
+            "issn": "",
+            "pages": "1535-1543",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.02007-06"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Real-Time Quantitative PCR Assays for Detection and Monitoring of Pathogenic Human Viruses in Immunosuppressed Pediatric Patients",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Watzinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Suda",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Preuner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Baumgartinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ebner",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Baskova",
+                    "suffix": ""
+                },
+                {
+                    "first": "HGM",
+                    "middle": [],
+                    "last": "Niesters",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lawitschka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lion",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "42",
+            "issn": "",
+            "pages": "5189-5198",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.11.5189-5198.2004"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Rapid reverse transcription-PCR detection of hepatitis C virus RNA in serum by using the TaqMan fluorogenic detection system",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gallagher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "34",
+            "issn": "",
+            "pages": "2933-2936",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Rapid Detection of West Nile Virus from Human Clinical Specimens, Field-Collected Mosquitoes, and Avian Samples by a TaqMan Reverse Transcriptase-PCR Assay",
+            "authors": [
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Lanciotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Kerst",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Nasci",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Godsey",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Savage",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Komar",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Panella",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Allen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Volpe",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Roehrig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "38",
+            "issn": "",
+            "pages": "4066-4071",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Development of a Quantitative Real-Time Detection Assay for Hepatitis B Virus DNA and Comparison with Two Commercial Assays",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Pas",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Fries",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "De Man",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Niesters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "38",
+            "issn": "",
+            "pages": "2897-2901",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Sensitive and accurate quantitation of hepatitis B virus DNA using a kinetic fluorescence detection system (TagMan PCR)",
+            "authors": [
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Weinberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wiedenmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bohm",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Jilg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Journal of Virological Methods",
+            "volume": "85",
+            "issn": "",
+            "pages": "75-82",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0166-0934(99)00154-8"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Comparison of two quantitative CMV PCR tests, Cobas Amplicor CMV Monitor and TaqMan assay, and pp65-antigenemia assay in the determination of viral loads from peripheral blood of organ transplant patients",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Piiparinen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hockerstedt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gronhagen-Riska",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Lautenschlager",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Virology",
+            "volume": "30",
+            "issn": "",
+            "pages": "258-266",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Differentiation of herpes simplex virus types 1 and 2 in clinical samples by a real-time taqman PCR assay",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Corey",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Selke",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wald",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Medical Virology",
+            "volume": "76",
+            "issn": "",
+            "pages": "350-355",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmv.20365"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Development of a flurogenic polymerase chain reaction assay (TaqMan) for the detection and quantitation of varicella zoster virus",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hawrami",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Breuer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Journal of Virological Methods",
+            "volume": "79",
+            "issn": "",
+            "pages": "33-40",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0166-0934(98)00176-1"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Rapid and sensitive detection of mumps virus RNA directly from clinical samples by real-time PCR",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Uchida",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shinohara",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shimada",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Segawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Doi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gotoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hondo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Medical Virology",
+            "volume": "75",
+            "issn": "",
+            "pages": "470-474",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jmv.20291"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Comprehensive DNA signature discovery and validation",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Phillipy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Mason",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ayanbule",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Sommer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Taviani",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Huq",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Colwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "IT",
+                    "middle": [],
+                    "last": "Knight",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Computational Biology",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pcbi.0030098"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Development of a Real-Time Reverse-Transcription PCR for Detection of Newcastle Disease Virus RNA in Clinical Samples",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Wise",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Suarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Seal",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Pedersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Senne",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Kapczynski",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Spackman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "42",
+            "issn": "",
+            "pages": "329-338",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.1.329-338.2004"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Transfer and Evaluation of an Automated, Low-Cost Real-Time Reverse Transcription-PCR Test for Diagnosis and Monitoring of Human Immunodeficiency Virus Type 1 Infection in a West African Resource-Limited Setting",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Rouet",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Ekouevi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chaix",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Burgard",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Inwoley",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "D'Aquin Tony",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Danel",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Anglaret",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Leroy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Msellati",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Dabis",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rouzioux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "43",
+            "issn": "",
+            "pages": "2709-2717",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.43.6.2709-2717.2005"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Rapid Detection of Enterovirus RNA in Cerebrospinal Fluid Specimens with a Novel Single-Tube Real-Time Reverse Transcription-PCR Assay",
+            "authors": [
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Verstrepen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Kockx",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [
+                        "Van",
+                        "De"
+                    ],
+                    "last": "Vyvere",
+                    "suffix": ""
+                },
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Mertens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "39",
+            "issn": "",
+            "pages": "4093-4096",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.39.11.4093-4096.2001"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Use of Applied Biosystems 7900HT Sequence Detection System and Taqman Assay for Detection of Quinolone-Resistant Neisseria gonorrhoeae",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Giles",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hardick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yuenger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Reich",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zenilman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "42",
+            "issn": "",
+            "pages": "3281-3283",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.42.7.3281-3283.2004"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Comparison of a New Quantitative ompA-Based Real-time PCR TaqMan Assay for Detection of Chlamydia pneumoniae DNA in Respiratory Specimens with Four Conventional PCR Assays",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Apfalter",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Barousch",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nehr",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Makristathis",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Willinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rotter",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Hirschl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Clinical Microbiology",
+            "volume": "41",
+            "issn": "",
+            "pages": "592-600",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.2.592-600.2003"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "A LightCycler TaqMan assay for detection of Borrelia burgdorferi sensu lato in clinical samples",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ivacic",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Reed",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ghebranious",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "ScienceDirect \u2013 Diagnostic Microbiology and Infectious Disease",
+            "volume": "57",
+            "issn": "",
+            "pages": "137-143",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.diagmicrobio.2006.08.005"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Detection of Medically Important Ehrlichia by Quantitative Multicolor TaqMan Real-Time Polymerase Chain Reaction of the dsb Gene",
+            "authors": [
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Labruna",
+                    "suffix": ""
+                },
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Breitschwerdt",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Corstvet",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Hegarty",
+                    "suffix": ""
+                },
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Bloch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "McBride",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Molecular Diagnostics",
+            "volume": "7",
+            "issn": "",
+            "pages": "504-514",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "TaqSim: TaqMan PCR Simulator",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "The Perl Directory",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Frequent Detection of Human Coronaviruses in Clinical Specimens from Patients with Respiratory Tract Infection by Use of a Novel Real-Time Reverse-Transcriptase Polymerase Chain Reaction",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van Elden",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "van Loon",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "van Alphen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hendriksen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hoepelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "van Kraaij",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Oosterheert",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Schipper",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schuurman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nijhuis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "The Journal of Infectious Diseases",
+            "volume": "189",
+            "issn": "",
+            "pages": "x652-657",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/381207"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "The Interferon Inducer Ampligen Markedly Protects Mice against Coxsackie B3 Virus-Induced Myocarditis",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Padalko",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Nuyens",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "De Palma",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Verbeken",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Aerts",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "De Clercq",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Carmeliet",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Neyts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Antimicrobial Agents and Chemotherapy",
+            "volume": "48",
+            "issn": "",
+            "pages": "267-274",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AAC.48.1.267-274.2004"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Coxsackievirus B4 Infection of Human Fetal Thymus Cells",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Brilot",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Geenen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hober",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Stoddart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Virology",
+            "volume": "78",
+            "issn": "",
+            "pages": "9854-9861",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.18.9854-9861.2004"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Rapid detection protocol for filoviruses",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Weidmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Muhlberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "FT",
+                    "middle": [],
+                    "last": "Hufert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Clinical Virology",
+            "volume": "30",
+            "issn": "",
+            "pages": "94-99",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jcv.2003.09.004"
+                ]
+            }
+        }
+    }
+}

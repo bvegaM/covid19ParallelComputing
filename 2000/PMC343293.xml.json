@@ -1,0 +1,1186 @@
+{
+    "paper_id": "PMC343293",
+    "metadata": {
+        "title": "Descriptive review of geographic mapping of severe acute respiratory syndrome (SARS) on the Internet",
+        "authors": [
+            {
+                "first": "Maged",
+                "middle": [
+                    "N",
+                    "Kamel"
+                ],
+                "last": "Boulos",
+                "suffix": "",
+                "email": "M.N.K.Boulos@bath.ac.uk",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Severe acute respiratory syndrome (SARS) is a highly infectious and potentially lethal atypical form of pneumonia that begins with deceiving common flu-like symptoms. On 16 November 2002, the first known case of SARS was discovered in Guangdong province in southern China. Since then the disease has spread rapidly along international air routes to other parts of the world. The number of reported SARS cases has increased exponentially, prompting the World Health Organisation (WHO) to issue a global alert on 12 March 2003 [1-4]. A novel coronavirus is the causative agent of SARS [5].",
+            "cite_spans": [
+                {
+                    "start": 526,
+                    "end": 527,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 528,
+                    "end": 529,
+                    "mention": "4",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 584,
+                    "end": 585,
+                    "mention": "5",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "SARS-the first major new infectious disease of the 21st century ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "All around the world during the peak of the outbreak in the first half of 2003, SARS was negatively affecting every aspect of daily life: economic, social, travel, work, at school and home, etc. [6,7]",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 197,
+                    "mention": "6",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 198,
+                    "end": 199,
+                    "mention": "7",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "SARS-the first major new infectious disease of the 21st century ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "On 24 June 2003, the WHO declared that it \"does not recommend the restriction of travel to any areas\", but before that date, it was recommending that persons planning to travel to risky destinations consider postponing their travel [8].",
+            "cite_spans": [
+                {
+                    "start": 233,
+                    "end": 234,
+                    "mention": "8",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "SARS-the first major new infectious disease of the 21st century ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Perhaps nothing is more inherently \"geographical\" than the study and control of epidemic spread at a variety of appropriate scales [9]. Geoinformatics is the science and technology of gathering, storing, visualising, analysing, interpreting, modelling, distributing and using spatially referenced (geographically referenced) information [10]. From geographic mapping to epidemiological modelling and location-based alerting services, geoinformatics plays an important role in the study and control of epidemics [11-14]. This also applies to the 2003 global outbreak of SARS.",
+            "cite_spans": [
+                {
+                    "start": 132,
+                    "end": 133,
+                    "mention": "9",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 512,
+                    "end": 514,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "The role of geoinformatics in epidemics ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Since the first maps used by Dr John Snow in 1854 to trace the origin of a cholera outbreak in London's Soho district, it has become evident that carefully planned and designed maps can be very powerful decision support and spatio-temporal analysis tools [10]. In the case of infectious disease epidemics, they allow public health decision makers, travellers and local populations at risk to visually monitor and appreciate at a glance changes, trends and patterns buried in large datasets that are continuously varying with time (like SARS datasets \u2013 see below). This kind of support is vital for making well-informed decisions when designing and following up epidemic control strategies or issuing and updating travel advisories.",
+            "cite_spans": [
+                {
+                    "start": 256,
+                    "end": 258,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "The role of geoinformatics in epidemics ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "As a matter of fact, during outbreak response, the WHO uses a custom-made geographic mapping technology, which forms part of its existing system for outbreak alert and response, to assist in the location of cases and rapid analysis of an epidemic's dynamics. The WHO also uses this epidemiological mapping technology to predict environmental and climatic conditions conducive for some outbreaks [15].",
+            "cite_spans": [
+                {
+                    "start": 396,
+                    "end": 398,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "The role of geoinformatics in epidemics ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Also worth mentioning in this context is the recent news that remote sensing satellite data (provided by the European Space Agency \u2013 ESA) and GIS (Geographic Information Systems) are currently being used to better understand, predict and help combat Ebola haemorrhagic fever outbreaks in central Africa .",
+            "cite_spans": [],
+            "section": "The role of geoinformatics in epidemics ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper we review several geographic mapping efforts of SARS that we have found on the Internet. The Internet is a unique source of reliable, up-to-date information on SARS compiled by the WHO and other official health bodies [16-18]. This includes the latest SARS case counts and lists of affected areas that form the basis of all mapping examples reviewed in this paper (Table 1).",
+            "cite_spans": [
+                {
+                    "start": 233,
+                    "end": 235,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Web-based SARS datasets and maps: availability and features ::: Introduction",
+            "ref_spans": [
+                {
+                    "start": 385,
+                    "end": 386,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Web-based maps like those presented in this review offer the following extra features not found in conventional paper-based maps: (1) interactivity (e.g., drill-down and zooming, map querying, measuring distances, and switching map layers on and off); (2) capacity for quick, frequent map updates based on the latest datasets; and (3) wider dissemination/availability to larger audiences.",
+            "cite_spans": [],
+            "section": "Web-based SARS datasets and maps: availability and features ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Early in the 2003 outbreak, the WHO started publishing a static, non-interactive daily world map of the \"cumulative number of reported probable cases\" on its SARS Web site . An example of these early daily maps is available from  (WHO's SARS map for 29 April 2003). On these maps, affected countries with no evidence of local SARS transmission were pink-coloured, while those where local SARS transmission was taking place were red-coloured. The size of the graduated blue circle over an affected country on these maps reflected the cumulative number of reported cases in that country (larger circles meaning more SARS cases).",
+            "cite_spans": [],
+            "section": "WHO ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Later on in May 2003, the WHO dropped the \"type of transmission\" from its daily world map of SARS and switched to a choropleth rendition (instead of graduated circles) to display the \"number of current probable cases\" (instead of the \"cumulative number of reported probable cases\", which does not reflect the current situation) \u2013 see for example .",
+            "cite_spans": [],
+            "section": "WHO ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "The maps were produced by the WHO's Public Health Mapping Team  and updated every 1\u20132 days. The WHO also published graphical epidemic curves of SARS (see ).",
+            "cite_spans": [],
+            "section": "WHO ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "On 13 June 2003, the WHO started publishing data and maps of current probable cases in China provided by the Chinese Ministry of Health (see for example  and ). The WHO travel recommendations for China were also updated accordingly on the same day (see  and ).",
+            "cite_spans": [],
+            "section": "WHO ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Corda Technologies, Inc. is a Utah (US) based developer of data visualisation solutions. Corda's SARS maps are not GIS-driven. They are Macromedia Flash maps generated by Corda's own interactive data visualisation engine (PopChart + OptiMap 5.0). The maps are available online as a free public service to help educate visitors about SARS situation on a global and national (US) level  and  \u2013 Figure 1).",
+            "cite_spans": [],
+            "section": "Corda Technologies ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 399,
+                    "end": 400,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Corda used to update the maps every day or so (during the 2003 SARS outbreak), based on the latest figures from the WHO and CDC (US Centres for Disease Control and Prevention). Cumulative numbers of SARS cases (including SARS recoveries and deaths since counts began) are mapped to individual countries, but not to actual regions/areas within affected countries, making the maps less useful to decision makers responsible for issuing travel advisories and travellers wanting to avoid risky areas. Countries/states with darker colour shades on Corda's maps have more SARS cases (i.e., a choropleth rendition).",
+            "cite_spans": [],
+            "section": "Corda Technologies ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Corda's world map of SARS could have been greatly improved by also mapping the number of current SARS cases and by including affected area information for other parts of the world (as second-level drill-down maps accessed by clicking respective countries on the main map; they only did this for US states). It is noteworthy that the WHO provides up-to-date SARS affected area information on its Web site .",
+            "cite_spans": [],
+            "section": "Corda Technologies ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Corda also provides a handy SARS worldwide infections/recoveries/deaths time line graph (Figure 2). The graph allows users to visually monitor and appreciate the epidemic's progress at a glance.",
+            "cite_spans": [],
+            "section": "Corda Technologies ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 96,
+                    "end": 97,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Also of interest is the news that the US National Cancer Institute (NCI) is currently using Corda PopChart and OptiMap to create its Section 508-compliant maps, charts and graphs of cancer mortality rates for the United States  and .",
+            "cite_spans": [],
+            "section": "Corda Technologies ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "During the 2003 SARS outbreak, MapAsia.com, a GIS company in Hong Kong, published SARS distribution maps for Hong Kong and China on their MapInfo Discovery server \u2013 a GIS-driven Internet map server . A number of SARS map themes were provided and regularly updated based on government's figures, including distribution of affected buildings and district comparisons (Hong Kong), and provincial distribution (China) \u2013 Figure 3 and Figure 4. The maps offered powerful zoom-in functionality (up to street/building level on many of the maps).",
+            "cite_spans": [],
+            "section": "MapAsia.com ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 423,
+                    "end": 424,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 436,
+                    "end": 437,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "According to MapAsia.com, citizens have the right to know SARS distribution where they live in order to take all necessary precautions to protect themselves. Some of MapAsia's Hong Kong maps also traced SARS spread within 250-metre coloured buffer zones (Figure 3); this might have been helpful in assessing the effectiveness of SARS control measures in and around affected buildings.",
+            "cite_spans": [],
+            "section": "MapAsia.com ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 262,
+                    "end": 263,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "MapAsia's provincial SARS distribution map of China shown in Figure 4 adopted a dichromatic (from light green to maroon) choropleth scheme with graduated provincial pie charts depicting the relative numbers of discharged/under treatment/dead cases in affected provinces.",
+            "cite_spans": [],
+            "section": "MapAsia.com ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 68,
+                    "end": 69,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "During the peak of the 2003 outbreak, ESRI China (Hong Kong) launched \"SARS GIS\", a new mapping Web site dedicated to SARS ( \u2013 Figure 5). ESRI China believes that GIS can be used to help raising the community's spatial awareness for combating the SARS virus. They have established \"SARS GIS\" in order to distribute timely information to the public regarding SARS cases and distribution around the world.",
+            "cite_spans": [],
+            "section": "ESRI China (Hong Kong) ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 134,
+                    "end": 135,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The interactive \"SARS GIS\" maps are regularly updated based on the latest figures from the WHO and Hong Kong Department of Health. There are three map sections providing very comprehensive information on SARS case distribution in the world, China and Hong Kong, including infected Hong Kong buildings' distribution and addresses. The Hong Kong maps also offer the following two functions for the visualisation of the proximity of individual buildings with infected residents to the home buildings of users: (1) measuring distance between any two buildings; and (2) showing 50 m and 100 m areas of a building with infected residents.",
+            "cite_spans": [],
+            "section": "ESRI China (Hong Kong) ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "The maps were created with ESRI ArcIMS, a GIS-driven Internet map server, and feature a handy toolbar that provides the sort of functionality found in the standard ArcView GIS desktop interface (e.g., zoom in, zoom out, pan, identify, measure, etc.).",
+            "cite_spans": [],
+            "section": "ESRI China (Hong Kong) ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Hong Kong Yellow Pages provide very detailed Hong Kong SARS distribution maps with powerful panning and zooming functionalities up to street/building level ( \u2013 Figure 6). A screen resolution of 1024 by 768 pixels or more is highly recommended to view these maps. The maps allow users to lookup Hong Kong district and building situation. Users can type a location (English or Chinese input) to find the nearest five infected buildings and locate them on the maps. The service can also show the locations of district hospitals on the maps and display their full addresses.",
+            "cite_spans": [],
+            "section": "Hong Kong Yellow Pages ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 167,
+                    "end": 168,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Thematic mapping, overlay analysis and point-in-polygon analysis are used to explore and highlight the relationship between various aspects of population distribution and infected buildings on the maps. The covered aspects of population distribution are population density, predominant housing type (Figure 6), areas with high proportion of elderly people aged 65+ (the age group with the highest SARS mortality rate) and areas with high proportion of students. Some handy charts and maps are also offered based on the latest SARS figures, including one that shows the progressional change of infected buildings in Hong Kong (Figure 7).",
+            "cite_spans": [],
+            "section": "Hong Kong Yellow Pages ::: Examples of geographic mapping of SARS",
+            "ref_spans": [
+                {
+                    "start": 307,
+                    "end": 308,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 633,
+                    "end": 634,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The interface also allows users to e-mail any of the maps to friends and colleagues (users can also send their own comments alongside the maps). The Hong Kong Yellow Pages SARS maps are generated on the fly based on the latest SARS data. The service is powered by ESRI's ArcIMS and ArcSDE (Spatial Database Engine) GIS technology.",
+            "cite_spans": [],
+            "section": "Hong Kong Yellow Pages ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "SarsNet  was inspired from WHO/FluNet  and developed in collaboration with the WHO centre for electronic surveillance of diseases and the Institute for Medical Research and Health (INSERM Unit 444), Paris, France. It provides comprehensive up-to-date SARS surveillance statistics from different countries and for different time periods. SarsNet interface allows users to specify the information they want to view (which data items/statistics, which geographic location, and time period covered) and the format to which SarsNet should render the selected information on the fly (there is a wide range of textual and graphical formats to choose from, including animated GIF maps).",
+            "cite_spans": [],
+            "section": "SarsNet database and geographic information system ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "SarsNet is unique in that it permits users to examine the temporal dimension of SARS spread by creating animated series (dynamic maps \u2013 see [19]) based on successive static maps of daily or weekly SARS occurrences. The animated series are built using Macromedia Flash or as animated GIFs. Maps included in an animated series must cover exactly the same geographic area, be of the same scale and use the same classifications (if any). SarsNet automatically takes cares of all these conditions.",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "SarsNet database and geographic information system ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Location-based services draw heavily on geoinformatics, blending information about a person's location with other useful content to provide relevant, timely and local information to consumers when and where they need it [14].",
+            "cite_spans": [
+                {
+                    "start": 221,
+                    "end": 223,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "A SARS mobile location-based service ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Sunday Communications Ltd , a Hong Kong mobile phone company, launched a new SMS service (Short Message Service) to notify subscribers when they are approaching risky SARS areas in Hong Kong. Subscribers can access SARS-related data in Chinese or English, including the names of buildings within one kilometre of the user's calling area where SARS cases are suspected or have been confirmed [20].",
+            "cite_spans": [
+                {
+                    "start": 392,
+                    "end": 394,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "A SARS mobile location-based service ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "SuperMap GIS Technologies, Inc., a software company affiliated to the Geographic Information Industrial Development Centre of the Chinese Academy of Sciences, has produced an online interactive SARS distribution map of China with a Chinese interface .",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "A group of volunteers who are related to the Department of Geography at the University of Hong Kong (HKU) has developed another GIS-based SARS map with English interface . The HKU map shows SARS infected areas in Hong Kong over a five-day period (each day is presented as a separate map layer).",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "It is noteworthy that during June and July 2003, the HKU Department of Geography offered full-day \"Mapping SARS Workshops\" to introduce GIS for SARS mapping, which is also applicable to disease mapping in general . Specific workshop highlights included methods to examine: (1) spatio-temporal disease progress; (2) disease diffusion within a vertical building (this could prove helpful when reviewing current buildings/building regulations to achieve healthier living conditions and minimise disease spread in case of infectious disease outbreaks); (3) possible disease correlation with demographic or environmental data; and (4) identification of clusters by infection sources or geographic proximity.",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "SpatialNews.com/GeoCommunity has published a series of static SARS distribution maps of the United States on its Web site (see for example ). The maps were generated using ESRI ArcView GIS and CDC data.",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "In the CDC's Morbidity and Mortality Weekly Report of 2 May 2003, another interesting map was published showing the locations of airports in the US that have arrivals from SARS hotspots like Southeast Asia and Toronto, Canada. States with numerous suspected SARS cases appeared to have facilities with flights arriving from both regions [21].",
+            "cite_spans": [
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "Other US SARS maps are available from .",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "An interactive Web-based map of the world showing the spread of SARS in different countries based on WHO data is also available from MapTell.com, the GIS division of Fast-Solutions.Net (an Indian company specialising in Web technologies \u2013 ).",
+            "cite_spans": [],
+            "section": "Other maps ::: Examples of geographic mapping of SARS",
+            "ref_spans": []
+        },
+        {
+            "text": "SARS is the first major new infectious disease of the 21st century and the Internet age, and took full advantage of the opportunities for rapid spread along international air routes. From geographic mapping to location-based alerting services, geoinformatics plays an important role in the study and control of global outbreaks like SARS. Carefully planned and designed maps are powerful decision support and spatio-temporal analysis tools. Web-based maps also allow for quick, frequent map updates based on the latest datasets, for interactivity to be incorporated into the maps (desktop GIS-like functionality, e.g., drill-down and zooming), and for wider and more rapid dissemination of information (compared to other publishing media). In this paper we have reviewed several geographic mapping efforts of SARS that we have found on the Internet. The maps described in this review employed a variety of techniques like choropleth rendering, graduated circles, graduated pie charts, buffering, thematic mapping, overlay analysis and animation to allow public health decision makers, travellers and local populations at risk to visually monitor and appreciate at a glance changes, trends and patterns buried in different online SARS datasets that were continuously varying with time during the 2003 outbreak. Some of the mapping services presented in this paper provided very detailed information down to individual street/building level (in Hong Kong). This kind of support is vital for improving global vigilance and awareness at all levels and for making well-informed decisions when designing and following up epidemic control strategies or issuing and updating travel advisories.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "However, according to Monmonier, it is not just easy but also essential to lie with maps. The cartographer's paradox is that to avoid hiding critical information in a fog of detail, the map must offer a selective, incomplete view of reality [22]. Map users always need to be alert for \"lies\" that can range from legitimate and appropriate suppression of some details selectively to help the user focus on what needs to be seen to more serious distortions in which the visual image suggests conclusions that would not be supported by careful epidemiological analysis. Sound epidemiological and statistical principles and methods should provide the foundation for all data analyses to be displayed on maps [23].",
+            "cite_spans": [
+                {
+                    "start": 242,
+                    "end": 244,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 705,
+                    "end": 707,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "In public health worldwide, any public identification of an individual's health status and address, regardless of contagion level or risk, is usually prohibited [24]. SARS mapping in Hong Kong using disaggregate case data at individual building level in near real time was a noticeable exception to this well-established public health confidentiality rule, and also a unique and rare GIS opportunity that resulted in some of the very comprehensive SARS Internet mapping services described in this paper.",
+            "cite_spans": [
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "Of all reviewed SARS mapping services, this author believes that SarsNet, Hong Kong Yellow Pages SARS maps, and ESRI's SARS GIS rank top. These three interactive mapping services have managed to provide the most usable, useful and up-to-date maps, charts and graphs among all reviewed services.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "With its unparalleled capacity for near-instant, wide-scale information sharing and dissemination, the Internet proved to be an indispensable and very effective tool in understanding, rapidly responding to and successfully controlling global outbreaks like SARS.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Examples of frequently updated SARS datasets on the Internet Examples of frequently updated SARS datasets on the Internet (WHO, CDC and Hong Kong Department of Health).\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Corda's world map of SARS. Web browser screenshot by this author of Corda's world map of SARS displaying data for each country affected by SARS as of 11 July 2003 . As the mouse moved over a country, a ToolTip appears with the cumulative number of reported cases. An accompanying graph shows SARS deaths by country. Users can also drill-down into the United States map to view how many cases have been reported in each state.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Corda's SARS worldwide infections/recoveries/deaths time line graph. Web browser screenshot by this author of Corda's SARS worldwide infections/recoveries/deaths time line graph as of 4 July 2003 .",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: One of MapAsia's SARS distribution maps for Hong Kong. Web browser screenshot by this author of one of MapAsia's SARS distribution maps for Hong Kong as of 24 April 2003. Legend: orange circle buffer: some other case(s) within 250 m; yellow circle buffer: no other case within 250 m; red triangle: infected case; purple triangle: de-listed case. The toolbar to the left of the map provided the sort of functionality found in a standard desktop GIS interface.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: One of MapAsia's provincial SARS distribution maps of China. Web browser screenshot of one of MapAsia's provincial SARS distribution maps of China as of 23 April 2003. Note the choropleth rendition and graduated pie charts, e.g., the small pie chart over Shanxi (162 cases) and the large one over Guangdong (1359 cases), each with colour-coded slices representing the relative numbers of discharged/under treatment/dead cases in the corresponding province.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: ESRI China's \"SARS GIS\" \u2013 SARS case distribution in Hong Kong. Web browser screenshot by this author of ESRI China's \"SARS GIS\" \u2013 SARS case distribution in Hong Kong as of 30 April 2003 . Note the list of affected building addresses (bottom left).",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: One of Hong Kong SARS distribution maps by Hong Kong Yellow Pages. Web browser screenshot by this author of one of Hong Kong SARS distribution maps by Hong Kong Yellow Pages as of 25 May 2003 . The map appearing in this screenshot highlights the relationship between the predominant housing type and infected buildings. The only infected building seen in this screenshot (Wing Shui House \u2013 red dot/black arrow) falls within a public housing area (yellow).",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Hong Kong Yellow Pages map showing the progressional change of SARS-infected buildings in Hong Kong. Web browser screenshot by this author of a map by Hong Kong Yellow Pages showing the progressional change of SARS-infected buildings in Hong Kong as of 25 May 2003 . One can clearly see at a glance that SARS situation in Hong Kong was already under control by that date. The green dots on this map represent \"cleared buildings\" and there are no red dots representing \"buildings infected within one day\".",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Severe Acute Respiratory Syndrome (SARS)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Health Geomatics: An Enabling Suite of Technologies in Health and Healthcare (Methodolical Review)",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Roudsari",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Carson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biomed Inform",
+            "volume": "34",
+            "issn": "",
+            "pages": "195-219",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/jbin.2001.1015"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "GIS: A Tool for Monitoring and Management of Epidemics",
+            "authors": [
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "In Proceedings of Map India 2001\u20134th Annual International Conference and Exhibition: 7\u20139 February 2001; New Delhi, India",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "GIS for communicable disease control: perspectives and pitfalls",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kistemann",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "In Proceedings of the First European Conference for Geographic Information Sciences in Public Health: 19\u201320 September 2001; Sheffield, UK",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Spatial Surveillance of Epidemiological Disease: A case study in Ayutthaya Province, Thailand",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Keola",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tokunaga",
+                    "suffix": ""
+                },
+                {
+                    "first": "NK",
+                    "middle": [],
+                    "last": "Tripathi",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "GIS @ development",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Location-based health information services: a new paradigm in personalised information delivery",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Kamel Boulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Int J Health Geogr",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1476-072X-2-2"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": 2003,
+            "venue": "Severe acute respiratory syndrome (SARS): Status of the outbreak and lessons for the immediate future (Prepared for the SARS technical briefing, 56th World Health Assembly: 20 May 2003; Geneva)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Reviews \u2013 Website of the week: Severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7395.937/a"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Information on Atypical Pneumonia",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Severe Acute Respiratory Syndrome (SARS)",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Visualization of the temporal dimension in multimedia presentations of spatial phenomena",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Midtb\u00f8",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "In Proceedings of ScanGIS'2001 \u2013 The 8th Scandinavian Research Conference on Geographical Information Science: 25\u201327 June 2001; \u00c5s, Norway",
+            "volume": "",
+            "issn": "",
+            "pages": "213-224",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Severe acute respiratory syndrome revisited",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zambon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": "831-2",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7394.831"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Cell phone firm offers SARS alerts",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lui",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Update: Severe Acute Respiratory Syndrome \u2013 United States, 2003",
+            "authors": [],
+            "year": 2003,
+            "venue": "Morbidity and Mortality Weekly Report",
+            "volume": "52",
+            "issn": "",
+            "pages": "388-390",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Monmonier",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "How to Lie with Maps",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Geographic information systems and public health: mapping the future",
+            "authors": [
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Richards",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Croner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rushton",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Fowler",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Public Health Rep",
+            "volume": "114",
+            "issn": "",
+            "pages": "359-73",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/phr/114.4.359"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Public health, GIS, and the Internet",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Croner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Annu Rev Public Health",
+            "volume": "24",
+            "issn": "",
+            "pages": "57-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Outbreak of severe acute respiratory syndrome in Hong Kong Special Administrative Region: case report",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chan-Yeung",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": "850-2",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7394.850"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Canada reports more than 300 suspected cases of SARS",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Spurgeon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7395.897/a"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "A Novel Coronavirus Associated with Severe Acute Respiratory Syndrome",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Goldsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Peret",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Emery",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Urbani",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Comer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Rollin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Dowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Ling",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Humphrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Shieh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Guarner",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Paddock",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Fields",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "LeDuc",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Bellini",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "N Engl J Med",
+            "volume": "348",
+            "issn": "",
+            "pages": "1953-1966",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa030781"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Fear of SARS thwarts medical education in Toronto",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7393.784/c"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The other war",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kirk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Br Med J",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.326.7395.937"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Severe Acute Respiratory Syndrome (SARS) Travel Advice",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Meade",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Earickson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Medical Geography",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

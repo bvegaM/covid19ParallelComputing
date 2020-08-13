@@ -1,0 +1,1207 @@
+{
+    "paper_id": "PMC2275240",
+    "metadata": {
+        "title": "Epigrass: a tool to study disease spread in complex networks",
+        "authors": [
+            {
+                "first": "Fl\u00e1vio",
+                "middle": [
+                    "C"
+                ],
+                "last": "Coelho",
+                "suffix": "",
+                "email": "fccoelho@fiocruz.br",
+                "affiliation": {}
+            },
+            {
+                "first": "Oswaldo",
+                "middle": [
+                    "G"
+                ],
+                "last": "Cruz",
+                "suffix": "",
+                "email": "oswaldo@fiocruz.br",
+                "affiliation": {}
+            },
+            {
+                "first": "Cl\u00e1udia",
+                "middle": [
+                    "T"
+                ],
+                "last": "Code\u00e7o",
+                "suffix": "",
+                "email": "codeco@fiocruz.br",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Epigrass is a platform for network epidemiological simulation and analysis. It enables researchers to perform comprehensive spatio-temporal simulations incorporating epidemiological data and models for disease transmission and control in order to create complex scenario analyses. Epigrass is designed towards facilitating the construction and simulation of large scale metapopulational models. Each component population of such a metapopulational model is assumed to be connected through a contact network which determines migration flows between populations. This connectivity model can be easily adapted to represent any type of adjacency structure.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Epigrass is entirely written in the Python language, which contributes greatly to the flexibility of the whole system due to the dynamical nature of the language. The geo-referenced networks over which epidemiological processes take place can be very straightforwardly represented in a object-oriented framework. Consequently, the nodes and edges of the geographical networks are objects with their own attributes and methods (figure 1).",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": [
+                {
+                    "start": 434,
+                    "end": 435,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Once the archetypal node and edge objects are defined with appropriate attributes and methods, then a code representation of the real system can be constructed, where nodes (representing people or localities) and contact routes are instances of node and edge objects, respectively. The whole network is also an object with its own set of attributes and methods. In fact, Epigrass also allows for multiple edge sets in order to represent multiple contact networks in a single model.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "These features leads to a compact and hierarchical computational model consisting of a network object containing a variable number of node and edge objects. It also does not pose limitations to encapsulation, potentially allowing for networks within networks, if desirable. This representation can also be easily distributed over a computational grid or cluster, if the dependency structure of the whole model does not prevent it (this feature is currently being implemented and will be available on a future release of Epigrass). For the end-user, this hierarchical, object-oriented representation is not an obstacle since it reflects the natural structure of the real system. Even after the model is converted into a code object, all of its component objects remain accessible to one another, facilitating the exchange of information between all levels of the model, a feature the user can easily include in his/her custom models.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Nodes and edges are dynamical objects in the sense that they can be modified at runtime altering their behavior in response to user defined events. In Epigrass it is very easy to simulate any dynamical system embedded in a network. However, it was designed with epidemiological models in mind. This goal led to the inclusion of a collection of built-in epidemic models which can be readily used for the intra-node dynamics (SIR model family). Epigrass users are not limited to basing their simulations on the built-in models. User-defined models can be developed in just a few lines of Python code. All simulations in Epigrass are done in discrete-time. However, custom models may implement finer dynamics within each time step, by implementing ODE models at the nodes, for instance.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The Epigrass system is driven by a graphical user interface(GUI), which handles several input files required for model definition and manages the simulation and output generation (figure 2).",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": [
+                {
+                    "start": 187,
+                    "end": 188,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "At the core of the system lies the simulator. It parses the model specification files, contained in a text file (.epg file), and builds the network from site and edge description files (comma separated values text files, CSV). The simulator then builds a code representation of the entire model, simulates it, and stores the results in the database or in a couple of CSV files. This output will contain the full time series of the variables in the model. Additionally, a map layer (in shapefile and KML format) is also generated with summary statitics for the model (figure 3).",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": [
+                {
+                    "start": 574,
+                    "end": 575,
+                    "mention": "3",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The results of an Epigrass simulation can be visualized in different ways. A map with an animation of the resulting timeseries is available directly through the GUI (figure 4). Other types of static visualizations can be generated through GIS software from the shapefiles generated. The KML file can also be viewed in Google Earth\u2122 or Google Maps\u2122 (figure 5).",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": [
+                {
+                    "start": 173,
+                    "end": 174,
+                    "mention": "4",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 356,
+                    "end": 357,
+                    "mention": "5",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Epigrass also includes a report generator module which is controlled through a parameter in the \".epg\" file.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Epigrass is capable of generating PDF reports with summary statistics from the simulation. This module requires a LATEX installation to work. Reports are most useful for general verification of expected model behavior and network structure. However, the LATEX source files generated by the module may serve as templates that the user can edit to generate a more complete document.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Building a model in Epigrass is very simple, especially if the user chooses to use one of the built-in models. Epigrass includes 20 different epidemic models ready to be used (See manual for built-in models description).",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "To run a network epidemic model in Epigrass, the user is required to provide three separate text files (Optionally, also a shapefile with the map layer):",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "1. Node-specification file: This file can be edited on a spreadsheet and saved as a csv file. Each row is a node and the columns are variables describing the node.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Edge-specification file: This is also a spreadsheet-like file with an edge per row. Columns contain flow variables.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "3. Model-specification file: Also referred to as the \".epg\" file. This file specifies the epidemiological model to be run at the nodes, its parameters, flow model for the edges, and general parameters of the simulation.",
+            "cite_spans": [],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The \".epg\" file is normally modified from templates included with Epigrass. Nodes and edges files on the other hand, have to be built from scratch for every new network. Details of how to construct these files, as well as examples, can be found in the documentation accompanying the software, which is available at at the project's website [10]",
+            "cite_spans": [
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Epigrass ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "In the example application, the spread of a respiratory disease through a network of cities connected by bus transportation routes is analyzed.",
+            "cite_spans": [],
+            "section": "Example model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The epidemiological scenario is one of the invasion of a new influenza-like virus. One may want to simulate the spread of this disease through the country by the transportation network to evaluate alternative intervention strategies (e.g. different vaccination strategies). In this problem, a network can be defined as a set of nodes and links where nodes represent cities and links represents transportation routes. Some examples of this kind of model are available in the literature [8,11].",
+            "cite_spans": [
+                {
+                    "start": 486,
+                    "end": 487,
+                    "mention": "8",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 488,
+                    "end": 490,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Example model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "One possible objective of this model is to understand how the spread of such a disease may be affected by the point-of-entry of the disease in the network. To that end, we may look at variables such as the speed of the epidemic, number of cases after a fixed amount of time, the distribution of cases in time and the path taken by the spread.",
+            "cite_spans": [],
+            "section": "Example model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The example network was built from 76 of largest cities of Brazil (>= 100 k habs). The bus routes between those cities formed the connections between the nodes of the networks. The number of edges in the network, derived from the bus routes, is 850. These bus routes are registered with the National Agency of Terrestrial Transportation (ANTT) which provided the data used to parameterize the edges of the network.",
+            "cite_spans": [],
+            "section": "Example model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The epidemiological model used consisted of a metapopulation system with a discrete-time SEIR model (Eq. 1). For each city, St is the number of susceptibles in the city at time t, Et is the number of infected but not yet infectious individuals, It is the number of infectious individuals resident in the locality, N is the population residing in the locality (assumed constant throughout the simulation), and nt is the number of individuals visiting the locality, \u0398t is the number of visitors who are infectious. The parameters used were taken from Lipsitch et al. (2003) [12] to represent a disease like SARS with an estimated basic reproduction number (R0) of 2.2 to 3.6 (Table 1).",
+            "cite_spans": [
+                {
+                    "start": 573,
+                    "end": 575,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "The model ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 680,
+                    "end": 681,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "St+1=St\u2212\u03b2St(It+\u0398)\u03b1Nt+ntEt+1=(1\u2212e)Et+\u03b2St(It+\u0398t)\u03b1Nt+ntIt+1=eEt+(1\u2212r)ItRt+1=Nt\u2212(St+1+It+1+Et+1)",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To simulate the spread of infection between cities, we used the concept of a \"forest fire\" model [13]. An infected individual, traveling to another city, acts as a spark that may trigger an epidemic in the new locality. This approach is based on the assumption that individuals commute between localities and contribute temporarily to the number of infected in the new locality, but not to its demography. Implications of this approach are discussed in Grenfell et al (2001) [13].",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 100,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The number of individuals arriving in a city (nt) is based on annual total number of passengers arriving trough all bus routes leading to that city as provided by the ANTT (Brazilian National Agency for Terrestrial Transportation). The annual number of passengers is used to derive an average daily number of passengers simply by dividing it by 365.",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Stochasticity is introduced in the model at two points: the number of new cases is draw from a Poisson distribution with intensity (It+\u0398t)\u03b1Nt+nt and the number of infected individuals visiting i is modelled as binomial process:",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\u0398t=\u2211k\u03b8k,t for all k neighbors\u03b8k,t~Binomial(n,Ik,t\u2212\u03b4Nk)",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where n is the total number of passengers arriving from a given neighboring city; Ik, t and Nk are the current number of infectious individuals and the total population size of city k, respectively. \u03b4 is the delay associated with the duration of each bus trip. The delay \u03b4 was calculated as the number of days (rounded down) that a bus, traveling at an average speed of 60 km/h, would take to complete a given trip. The lengths in kilometers of all bus routes were also obtained from the ANTT.",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaccination campaigns in specific (or all) cities can be easily attained in Epigrass, with individual coverages for each campaign on each city. We use this feature to explore Vaccination scenarios in this model (figures 6 and 7).",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 220,
+                    "end": 221,
+                    "mention": "6",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 226,
+                    "end": 227,
+                    "mention": "7",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "The files with this model's definition(the sites, edges and \".epg\" files) are available as part of the Additional files 1, 2 and 3 for this article.",
+            "cite_spans": [],
+            "section": "The model ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the importance of the point of entry in the outcome of the epidemic, the model was run 500 times, randomizing the point of entry of the virus. The seeding site was chosen with a probability proportional to the log10 of their population size. These replicates were run using Epigrass' built-in support for repeated runs with the option of randomizing seeding site. For every simulation, statistics about each site such as the time it got infected and time series of incidence were saved.",
+            "cite_spans": [],
+            "section": "Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The time required for the epidemic to infect 50% of the cities was chosen as a global index to network susceptibility to invasion. To compare the relative exposure of cities to disease invasion, we also calculated the inverse of time elapsed from the beginning of the epidemic until the city registered its first indigenous case as a local measure of exposure.",
+            "cite_spans": [],
+            "section": "Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Except for population size, all other epidemiological parameters were the same for all cities, that is, disease transmissibility and recovery rate. Some positional features of each node were also derived: Centrality, which is is a measure derived from the average distance of a given site to every other site in the network; Betweeness, which is the number of times a node figures in the the shortest path between any other pair of nodes; and Degree, which is the number of edges connected to a node.",
+            "cite_spans": [],
+            "section": "Analysis ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to analyze the path of the epidemic spread, we also recorded which cities provided the infectious cases which were responsible for the infection of each other city. If more than one source of infection exists, Epigrass selects the city which contributed with the largest number of infectious individuals at that time-step, as the most likely infector. At the end of the simulation Epigrass generates a file with the dispersion tree in graphML format, which can be read by a variety of graph plotting programs to generate the graphic seen on figure 8.",
+            "cite_spans": [],
+            "section": "Analysis ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 557,
+                    "end": 558,
+                    "mention": "8",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "The computational cost of running a single time step in an epigrass model, is mainly determined by the cost of calculating the epidemiological models on each site(node). Therefore, time required to run models based on larger networks should scale linearly with the size of the network (order of the graph), for simulations of the same duration. The model presented here, took 2.6 seconds for a 100 days run, on a 2.1 GHz cpu. A somewhat larger model with 343 sites and 8735 edges took 28 seconds for a 100 days simulation. Very large networks may be limited by the ammount of RAM available. The authors are working on adapting Epigrass to distribute processing among multiple cpus(in SMP systems), or multiple computers in a cluster system. The memory demands can also be addressed by keeping the simulation objects on an object-oriented database during the simulation. Steps in this direction are also being taken by the development team.",
+            "cite_spans": [],
+            "section": "Scalability of epigrass ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The model presented here served maily the purpose of illustrating the capabilities of Epigrass for simulating and analyzing reasonably complex epidemic scenarios. It should not be taken as a careful and complete analysis of a real epidemic. Despite that, some features of the simulated epidemic are worth discussing. For example: The spread speed of the epidemic, measured as the time taken to infect 50% of the cities, was found to be influenced by the centrality and degree of the entry node (figures 9 and 10). The dispersion tree corresponding to the epidemic, is greatly influenced by the degree of the point of entry of the disease in the network. Figure 8 shows the tree for the dispersion from the city of Salvador.",
+            "cite_spans": [],
+            "section": "Epidemiological analyses ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 503,
+                    "end": 504,
+                    "mention": "9",
+                    "ref_id": "FIGREF9"
+                },
+                {
+                    "start": 509,
+                    "end": 511,
+                    "mention": "10",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 661,
+                    "end": 662,
+                    "mention": "8",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "Vaccination strategies must take into consideration network topology. Figures 6 and 7 show cost benefit plots for three vaccination strategies investigated: Uniform vaccination, top-3 degree sites only and top-10 degree sites only. Vaccination of higher order sites offer cost/benefit advantages only in scenarios where the disease enter the network through one of these sites.",
+            "cite_spans": [],
+            "section": "Epidemiological analyses ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 78,
+                    "end": 79,
+                    "mention": "6",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 84,
+                    "end": 85,
+                    "mention": "7",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "Epigrass facilitates greatly the simulation and analysis of complex network models. The output of model results in standard GIS file formats facilitates the post-processing and analysis of results by means of sophisticated GIS software. The non-trivial task of specifying the network over which the model will be run, is left to the user. But epigrass allows this structure to be provided as a simple list of sites and edges on text files, which can easily be contructed by the user using a spreadsheet, with no need for special software tools.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Besides invasion, network epidemiological models can also be used to understand patterns of geographical spread of endemic diseases [14-17]. Many infectious diseases can only be maintained in a endemic state in cities with population size above a threshold, or under appropriate environmental conditions(climate, availability of a reservoir, vectors, etc). The variables and the magnitudes associated with endemicity threshold depends on the natural history of the disease [18]. Theses magnitudes may vary from place to place as it depends on the contact structure of the individuals. Predicting which cities are sources for the endemicity and understanding the path of recurrent traveling waves may help us to design optimal surveillance and control strategies.",
+            "cite_spans": [
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 136,
+                    "end": 138,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 474,
+                    "end": 476,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "FCC contributed with the software development, model definition and analysis as well as general manuscript conception and writing. CTC contributed with model definition and implementation, as well as with writing the manuscript. OGC, contributed with data analysis and writing the manuscript. All authors have read and approved the final version of the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Parameters used in the models and their meaning. Parameter n and \u03b8 have their values derived stochatically during the simularion, therefore their values are not given here.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Architecture of an Epigrass simulation model. A simulation object contains the whole model and all other objects representing the graph, sites and edges. Site object contaim model objects, which can be one of the built-in epidemiological models or a custom model written by the user.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 10: Effect of betweeness of entry node on the speed of the epidemic.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 2: Epigrass graphical user interface.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 3: Workflow for a typical Epigrass simulation. This diagram shows all inputs and outputs typical of an Epigrass simulation session.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 4: Epigrass animation output. Sites are color coded (from red to blue) according to infection times. Bright red is the seed site (on the NE).",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 5: Epigrass output visualized on Google-Earth.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 6: Cost in vaccines applied vs. benefit in cases avoided, for a simulated epidemic starting at the highest degree city (S\u00e3o Paulo).",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 7: Cost in vaccines applied vs. benefit in cases avoided, for a simulated epidemic starting at a relatively low degree city(Salvador).",
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Figure 8: Spread of the epidemic starting at the city of Salvador, a city with relatively small degree (that is, small number of neighbors). The number next to the boxes indicated the day when each city developed its first indigenous case.",
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "Figure 9: Effect of degree(a) and betweeness(b) of entry node to the speed of the epidemic.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Modelling vaccination strategies against foot-and-mouth disease",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Davies",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "421",
+            "issn": "",
+            "pages": "136-142",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature01343"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Epigrass website",
+            "authors": [
+                {
+                    "first": "FC",
+                    "middle": [],
+                    "last": "Coelho",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Containing pandemic influenza at the source",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nizam",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ungchusak",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hanshaoworakul",
+                    "suffix": ""
+                },
+                {
+                    "first": "DAT",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1083-1087",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1115717"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gopalakrishna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Samore",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1086616"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Travelling waves and spatial hierarchies in measles epidemics",
+            "authors": [
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                },
+                {
+                    "first": "ON",
+                    "middle": [],
+                    "last": "Bj\u00f8rnstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kappey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "414",
+            "issn": "",
+            "pages": "716-723",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/414716a"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Travelling waves in the occurrence of dengue haemorrhagic fever in Thailand",
+            "authors": [
+                {
+                    "first": "DAT",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Irizarry",
+                    "suffix": ""
+                },
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Endy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nisalak",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ungchusak",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "427",
+            "issn": "",
+            "pages": "344-347",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02225"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Modelling disease outbreaks in realistic urban social networks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Eubank",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Guclu",
+                    "suffix": ""
+                },
+                {
+                    "first": "VSA",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Marathe",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Srinivasan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Toroczkai",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "429",
+            "issn": "",
+            "pages": "180-184",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02541"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "On the dynamics of flying insects populations controlled by large scale information",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Raffy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Theor Popul Biol",
+            "volume": "68",
+            "issn": "",
+            "pages": "91-104",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tpb.2005.03.005"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Large-scale spatial-transmission models of infectious disease",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Science",
+            "volume": "316",
+            "issn": "",
+            "pages": "1298-1301",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1134695"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Disease extinction and community size: modeling the persistence of measles",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "275",
+            "issn": "",
+            "pages": "65-67",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.275.5296.65"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Optimal reactive vaccination strategies for a foot-and-mouth outbreak in the UK",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Tildesley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Savill",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Deardon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Brooks",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "83-86",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04324"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Strategy for distribution of influenza vaccine to high-risk groups and children",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Am J Epidemiol",
+            "volume": "161",
+            "issn": "",
+            "pages": "303-306",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwi053"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Containing pandemic influenza with antiviral agents",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nizam",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Epidemiol",
+            "volume": "159",
+            "issn": "",
+            "pages": "623-633",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwh092"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Space and contact networks: capturing the locality of disease transmission",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Parham",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J R Soc Interface",
+            "volume": "3",
+            "issn": "",
+            "pages": "483-493",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2005.0105"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Interval estimates for epidemic thresholds in two-sex network models",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Handcock",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Theor Popul Biol",
+            "volume": "70",
+            "issn": "",
+            "pages": "125-134",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tpb.2006.02.004"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Applying network theory to epidemics: control measures for Mycoplasma pneumoniae outbreaks",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "MEJ",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schrag",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Emerg Infect Dis",
+            "volume": "9",
+            "issn": "",
+            "pages": "204-210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Assessing the impact of airline travel on the geographic spread of pandemic influenza",
+            "authors": [
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Grais",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Eur J Epidemiol",
+            "volume": "18",
+            "issn": "",
+            "pages": "1065-1072",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1026140019146"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Modeling control strategies of respiratory pathogens",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pourbohloul",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Krajden",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Patrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Brunham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Emerg Infect Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "1249-1256",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

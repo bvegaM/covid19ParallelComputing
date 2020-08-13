@@ -1,0 +1,1775 @@
+{
+    "paper_id": "PMC2842971",
+    "metadata": {
+        "title": "SAROTUP: Scanner and Reporter of Target-Unrelated Peptides",
+        "authors": [
+            {
+                "first": "Jian",
+                "middle": [],
+                "last": "Huang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Beibei",
+                "middle": [],
+                "last": "Ru",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Shiyong",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hao",
+                "middle": [],
+                "last": "Lin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Feng-Biao",
+                "middle": [],
+                "last": "Guo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In 1985, Smith pioneered phage display technology, an in vitro methodology and system for presenting, selecting and evolving proteins and peptides displayed on the surface of phage virion [1]. Since then, phage display has developed rapidly and become an increasingly popular tool for both basic research such as the exploration of protein-protein interaction networks and sites [2\u20134], and applied research such as the development of new diagnostics, therapeutics, and vaccines [5\u201310]. Usually, the protein used to screen the phage display library is termed as target and the genuine partner binding to the target is called template. Peptide mimicking the binding site on the template and binding to the target is defined as mimotope, which was first introduced by Geysen et al. [11]. One type of the most frequently used targets is monoclonal antibody. In this situation, the template is the corresponding antigen inducing the antibody, and the mimotope is a mimic of the genuine epitope. In fact, the original definition of mimotope given by Geysen et al. goes \u201cA mimotope is defined as a molecule able to bind to the antigen combining site of an antibody molecule, not necessarily identical with the epitope inducing the antibody, but an acceptable mimic of the essential features of the epitope [11].\u201d Mimotopes and the corresponding epitope are considered to have similar physicochemical properties and spatial organization. The mimicry between mimotopes and genuine epitope makes mimotopes reasonable solutions to epitope mapping, network inferring, and new diagnostics, therapeutics, and vaccines developing. ",
+            "cite_spans": [
+                {
+                    "start": 189,
+                    "end": 190,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 380,
+                    "end": 381,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 382,
+                    "end": 383,
+                    "mention": "4",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 479,
+                    "end": 480,
+                    "mention": "5",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 481,
+                    "end": 483,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 780,
+                    "end": 782,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1300,
+                    "end": 1302,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Powered by phage display technology, mimotopes can be acquired in a relatively cheap, efficient and convenient way, that is, screening phage-displayed random peptides libraries with a given target. However, not all phages selected out are target-specific, because the target itself is only one component of the screening system [12]. From time to time, phages reacting with contaminants in the target sample or other components of the screening system such as the solid phase (e.g., plastic plates) and the capturing molecule (e.g., streptavidin, secondary antibody) rather than binding to the actual target are recovered with those target-specific binders (displaying mimotopes) during the rounds of panning. Peptides displayed on these phages are called target-unrelated peptides (TUP), a term coined recently by Menendez and Scott in a review [12]. ",
+            "cite_spans": [
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 847,
+                    "end": 849,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The results from phage display technology might be a mixture of target-unrelated peptides and mimotopes, and it can be difficult to discriminate TUP from mimotopes since the binding assays used to confirm the affinity of peptides for the target often employ the same components as the initial panning experiment [12]. Therefore, target-unrelated peptides might be taken into study as mimotopes if the researchers are not careful enough. Undoubtedly, this will make the conclusion of the study dubious. Several such examples have been discussed in references [12, 13]. Obviously, target-unrelated peptides are not appropriate candidates for the development of new diagnostics, therapeutics, and vaccines. For mimotope-based epitope mapping, target-unrelated peptides are main noise. If TUP is included in the mapping, the input data is improper and the result might be misleading [14]. There are now quite a few programs for mimotope based epitope mapping, none of them, however, has a procedure to scan, report and exclude target-unrelated peptides [15\u201323].",
+            "cite_spans": [
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 559,
+                    "end": 561,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 563,
+                    "end": 565,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 880,
+                    "end": 882,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1050,
+                    "end": 1052,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1053,
+                    "end": 1055,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we describe a web server named SAROTUP, which is an acronym for \u201cScanner And Reporter Of Target-Unrelated Peptides\u201d. SAROTUP was coded with Perl as a CGI program and can be freely accessed and used to scan peptides acquired from phage display technology. It is capable of finding, reporting, and precluding possible target-unrelated peptides, which is very helpful for the development of mimotope-based diagnostics, therapeutics, and vaccines. The power and efficiency of SAROTUP was also demonstrated by preliminary tests in the present study.",
+            "cite_spans": [],
+            "section": "1. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Recently, Menendez and Scott reviewed a collection of target-unrelated peptides recovered in the screening of phage-displayed random peptide libraries with antibodies [12]. They divided their collection into several categories according to the component of the screening system to which target-unrelated peptides bind. They also derived one or more TUP motifs for each category. Very recently, Brammer et al. reported a completely new type of target-unrelated peptides [13]. In the review of Menendez and Scott, target-unrelated selection is due to the binding to contaminants or components other than target; however, in the report of Brammer et al., target-unrelated selection is due to a coincident point mutation in the phage library [12, 13]. We compiled a set of 23 TUP motifs from the above two references [12, 13], including 12 motifs specific for the capturing agents, 5 motifs specific for the constant region of antibody, 3 motifs specific for the screening solid phase, 2 motifs specific for the contaminants in the target sample, and 1 motif for a mutation in phage library (Table 1). All motifs are presented in patterns according to Prosite format [24]. ",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 470,
+                    "end": 472,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 739,
+                    "end": 741,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 743,
+                    "end": 745,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 814,
+                    "end": 816,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 818,
+                    "end": 820,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1164,
+                    "end": 1166,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "2.1. Compilation of TUP Motifs ::: 2. Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 1088,
+                    "end": 1095,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The SAROTUP was implemented as a free online service, powered by Apache and Perl. Three pages are designed and integrated into a tabbed web interface with cascading style sheets codes. The core program of SAROTUP was sar.pl, a CGI script coded with Perl. In this script, the 23 TUP motifs were converted to regular expressions, which were then used to match each input peptide sequence.",
+            "cite_spans": [],
+            "section": "2.2. Implementation of SAROTUP ::: 2. Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We constructed two-test data sets from [12, 13, 15\u201323, 25, 26]. The first data set contains 8 cases; 6 of them are sourced from test cases used in extant programs for mimotope-based epitope mapping [15\u201323]; the left 2 are cases studies published recently [25, 26]. As shown in Table 2, the target of each case in the first data set is monoclonal antibody and the structure of corresponding antigen-antibody complex has been resolved, which is used to derive its structural epitope as the golden standard for evaluation. For each case, there is one or more sets of peptides recovered from phage display technology. These peptides have been used in mimotope-based epitope mapping by other researchers. We scanned each set of peptides with SAROTUP. If target-unrelated peptides were found, a new panel of peptides excluding TUP was produced. The old and the new panel of peptides were then used to predict epitope using Mapitope or PepSurf [15, 21, 22]. Finally, the results were compared to show if SAROTUP could improve the performance of mimotope-based epitope mapping. ",
+            "cite_spans": [
+                {
+                    "start": 40,
+                    "end": 42,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 44,
+                    "end": 46,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 48,
+                    "end": 50,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 51,
+                    "end": 53,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 55,
+                    "end": 57,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 59,
+                    "end": 61,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 199,
+                    "end": 201,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 202,
+                    "end": 204,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 256,
+                    "end": 258,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 260,
+                    "end": 262,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 938,
+                    "end": 940,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 942,
+                    "end": 944,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 946,
+                    "end": 948,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "2.3. Construction of Test Data Sets ::: 2. Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 277,
+                    "end": 284,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The second data set is composed of 100 peptides in raw sequence format. It has two groups. The first group has 77 sequences compiled from the first data set without any known TUP motifs; the second group has 23 sequences sourced from [12, 13] with various TUP motifs. The mixture of the two groups of sequences made the second data set, which was then used as the sample input and can be used to evaluate the efficiency of SAROTUP.",
+            "cite_spans": [
+                {
+                    "start": 235,
+                    "end": 237,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 239,
+                    "end": 241,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "2.3. Construction of Test Data Sets ::: 2. Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As a free online service, the web interface of SAROTUP has successfully been implemented as a tabbed web page. The left tab is the default page, providing a brief introduction to this web service. The right tab is a more detailed help page. Click the middle tab will display a web form. The upper section of the form is for basic input (Figure 1). The users can either paste a set of peptide sequences in the text box or upload a sequence file to the SAROTUP server for scanning. As shown in Figure 1, a panel of peptides in raw sequence format taken from the b12 test case was pasted in the text box. Besides the raw sequences, SAROTUP also supports peptides in FASTA format. However, only the standard IUPAC one-letter amino acid codes are accepted at present.",
+            "cite_spans": [],
+            "section": "3.1. Web Interface of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 337,
+                    "end": 345,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 492,
+                    "end": 500,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The lower section of the form has a series of options (Figure 2). It includes three drop lists for the screening target, screened library, and screening solid phase, respectively. It also has two groups of check boxes for the capturing reagents and contaminants in the target sample or screening system. By default, SAROTUP will scan each peptide against all the known 23 TUP motifs. However, the users can customize their scan according to their experiment at this section.",
+            "cite_spans": [],
+            "section": "3.1. Web Interface of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 55,
+                    "end": 63,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "After the users submit their request, the scanning results of SAROTUP will be displayed on the middle tabbed page. If any target-unrelated peptides are found, they will be reported in a table. At the same time, a new panel of peptides excluding target-unrelated peptides is produced and can be downloaded from the hyperlink created by the SAROTUP server (Figure 3). The file of the new panel of peptides will be stored on the server for a month and then automatically deleted.",
+            "cite_spans": [],
+            "section": "3.1. Web Interface of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 355,
+                    "end": 363,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "We have tested SAROTUP on the Internet Explorer (version 6.0), Mozilla Firefox (version 3.5.2), and Google Chrome (version 3.0). Although SAROTUP looks a little bit different among different browsers, it works normally on all browsers tested.",
+            "cite_spans": [],
+            "section": "3.1. Web Interface of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "As shown in Table 2, the first test data set has 11 panels of peptides acquired from phage display libraries screened with 8 targets. In the 11 panels of peptides SAROTUP scanned, there were target-unrelated peptides in 3 panels from cetuximab, 80R, and b12 test case, respectively (Table 3). This result suggested it was not rare that target-unrelated peptides sneaked into biopanning results and then were taken as mimotopes in study. In all, 7 target-unrelated peptides were found; 4 of them were due to binding to plastic; the left 3 were due to binding to the Fc fragment (Table 3).",
+            "cite_spans": [],
+            "section": "3.2. Power of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 283,
+                    "end": 290,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 578,
+                    "end": 585,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "For the above 3 cases, the genuine epitopes recognized by cetuximab, 80R, and b12 monoclonal antibodies are compiled according to the CED records [27] and PDBsum entries[28]. Mapitope or PepSurf [15, 21, 22] were used to perform mimotope-based epitope prediction with or without SAROTUP procedure. For Mapitope and PepSurf algorithm, the library type was set to \u201crandom\u201d; the stop codon modification was set to \u201cnone\u201d; and all other options were in default. The cluster with best score was taken as the predicted epitope. In the cetuximab case, PepSurf was used because there are only four or three peptides in the panel, statistically too few for Mapitope. In the case of 80R and b12, Mapitope was used because many peptides in the two cases exceeding the length limit of PepSurf, that is, 14 amino acids. If a predicted residue is identical with a residue in the true epitope, it is underlined (Table 4). ",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 196,
+                    "end": 198,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "3.2. Power of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 897,
+                    "end": 904,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Table 4, the number of true positives improved from zero to four in the cetuximab case with SAROTUP procedure. When it came to the b12 case, the number of true positives increased from one to eight. SAROTUP did not improve the number of true positives in the 80R case when the parameters are same to the cetuximab and b12 cases. However, when the distance parameter was adjusted from default (i.e., 9 \u00c5) to 10 \u00c5, SAROTUP did increase the number of true positive residues from eight to eleven. These results indicate: (1) epitope prediction based on mimotope will be interfered if target-unrelated peptides are taken as mimotopes; (2) SAROTUP can improve the performance of mimotope based epitope mapping through cleaning the input data.",
+            "cite_spans": [],
+            "section": "3.2. Power of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "We also scanned the second data set to evaluate the efficiency of SAROTUP. The second data set has 100 peptides, varying from 6 to 22 residues long. Suppose that matching each pattern to each peptide manually costs 10 seconds, then it would take a researcher more than 6 hours (23,000 seconds) to look through the second data set for target-unrelated peptides, even if he is as prompt during the whole period. However, it took only one second for SAROTUP to complete this work. Besides, a table of target-unrelated peptides and a new panel of peptides excluding TUP was produced at the same time by SAROTUP. It is true that some target-unrelated peptides can be identified through control and binding competition experiments. However, using SAROTUP first will certainly save a lot of labor, money, and time for researchers in this area.",
+            "cite_spans": [],
+            "section": "3.2. Power of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the target of all tests described previously were monoclonal antibodies, SAROTUP can be customized and used in scanning the results from phage display technology using other targets such as enzymes and receptors. This is because their screening systems are similar. For the same reason, we can also expect that SAROTUP will extend its use to other similar in vitro evolution techniques, such as ribosome display [29\u201331], yeast display [32], and bacterial display [33\u201335]. ",
+            "cite_spans": [
+                {
+                    "start": 422,
+                    "end": 424,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 425,
+                    "end": 427,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 445,
+                    "end": 447,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 473,
+                    "end": 475,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "3.3. Extending of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Furthermore, SAROTUP will not only benefit the mimotope-based epitope mapping, but also the development of new diagnostics, therapeutics, and vaccines. Target-unrelated peptides are not appropriate candidates for mimotope based diagnostics, therapeutics, and vaccines, since they are mimics to components or contaminants of the screening system rather than target. Therefore, it is reasonable to find and exclude possible target-unrelated peptides from the candidate list of new diagnostics, therapeutics, and vaccines. Take the cetuximab as an example. Riemer et al. screened a phage-displayed random peptides library with the cetuximab and got four different peptides, that is, QFDLSTRRLK, QYNLSSRALK, VWQRWQKSYV, and MWDRFSRWYK [36]. As described previously, we scanned the four \u201cmimotopes\u201d with SAROTUP and the result suggested that the peptide VWQRWQKSYV might be a TUP. Indeed, the dot blot analysis of Riemer et al. showed that QYNLSSRALK bound the cetuximab with high affinity but VWQRWQKSYV was less reactive with the cetuximab [36]. Trying to develop a mimotope vaccine, Riemer et al. synthesized two-vaccine constructs with the peptide QYNLSSRALK and VWQRWQKSYV, respectively. After immunization mice with these constructs, they found that either the cetuximab or the antibodies induced by the QYNLSSRALK vaccine construct inhibited the growth of A431 cancer cells significantly. The inhibition of the antibodies induced by the VWQRWQKSYV vaccine construct however, was not statistically significant when compared with the inhibition caused by the isotype control antibody [36].",
+            "cite_spans": [
+                {
+                    "start": 732,
+                    "end": 734,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1038,
+                    "end": 1040,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1585,
+                    "end": 1587,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "3.3. Extending of SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "SAROTUP must be used with caution since it is a tool only based on pattern matching at present. There are a lot of target-unrelated peptides bearing no known motifs [12]. As these TUPs are not embedded in SAROTUP at present, it is possible that a true TUP cannot be detected by SAROTUP. To reduce this kind of false negatives, we are constructing a database for target-unrelated peptides and mimotopes. Besides the motif-based search, the database-based search can find out the known TUP without known motifs.",
+            "cite_spans": [
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "3.4. Cautions in Using SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It is also possible that a SAROTUP predicted target unrelated peptide is actually target-specific. To decrease this kind of false positives, the users should customize the scan according to their experiment at the section of advance options. For example, the user should select \u201cantibody without Fc fragment\u201d as the target if Fab was used in biopanning; this will prevent SAROTUP from reporting peptides bearing the Fc-binding motifs as TUP. As described above, SAROTUP in future will also provide an exact match tool based on database search. In this way, a match might mean that different research groups have isolated the same peptide with a variety of targets. It is obvious that this peptide can hardly be a true target binder. Thus, the false positive rate of SAROTUP can be decreased further when its new feature become available.",
+            "cite_spans": [],
+            "section": "3.4. Cautions in Using SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "At last, we must point out that the controlled experiment is still the gold standard to distinguish TUPs from the specific mimotopes. The report of SAROTUP should be verified with experiment.",
+            "cite_spans": [],
+            "section": "3.4. Cautions in Using SAROTUP ::: 3. Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "SAROTUP, a web application for scanning, reporting and excluding target-unrelated peptides has been coded with Perl. It helps researchers to predict epitope more accurately based on mimotopes. It is also useful in the development of diagnostics, therapeutics, and vaccines. To our knowledge, SAROTUP is the first web tool for TUP detecting and data cleaning. It is very convenient for the community to access SAROTUP through http://immunet.cn/sarotup/.",
+            "cite_spans": [],
+            "section": "4. Conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Known patterns of target-unrelated peptides.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: A summary of the first test data set for SAROTUP.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Target-unrelated peptides in the first test data set.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Mimotope-based epitope prediction with or without SAROTUP procedure.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Snapshot of the upper section of SAROTUP.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Snapshot of the lower section of SAROTUP.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Snapshot of SAROTUP result page. Target-unrelated peptides in the b12 test case are reported in the table. The new panel of peptides excluding the target-unrelated peptides can be downloaded from the hyperlink.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Filamentous fusion phage: novel expression vectors that display cloned antigens on the virion surface",
+            "authors": [
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Science",
+            "volume": "228",
+            "issn": "4705",
+            "pages": "1315-1317",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Mimotope vaccination\u2014from allergy to cancer",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Knittelfelder",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Riemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jensen-Jarolim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Expert Opinion on Biological Therapy",
+            "volume": "9",
+            "issn": "4",
+            "pages": "493-506",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "A priori delineation of a peptide which mimics a discontinuous antigenic determinant",
+            "authors": [
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Geysen",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Rodda",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Mason",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Molecular Immunology",
+            "volume": "23",
+            "issn": "7",
+            "pages": "709-715",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The nature of target-unrelated peptides recovered in the screening of phage-displayed random peptide libraries with antibodies",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Menendez",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Analytical Biochemistry",
+            "volume": "336",
+            "issn": "2",
+            "pages": "145-157",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A target-unrelated peptide in an M13 phage display library traced to an advantageous mutation in the gene II ribosome-binding site",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Brammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bolduc",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Kass",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Felice",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Noren",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Analytical Biochemistry",
+            "volume": "373",
+            "issn": "1",
+            "pages": "88-98",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Information loss and noise inclusion risk in mimotope based epitope mapping",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Xia",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The mapping and reconstitution of a conformational discontinuous B-cell epitope of HIV-1",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Enshell-Seijffers",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Denisov",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Groisman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Molecular Biology",
+            "volume": "334",
+            "issn": "1",
+            "pages": "87-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A new method for mapping discontinuous antibody epitopes to reveal structural features of proteins",
+            "authors": [
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Mumey",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Kirkpatrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Jesaitis",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Angel",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Dratz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Computational Biology",
+            "volume": "10",
+            "issn": "3-4",
+            "pages": "555-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "SiteLight: binding-site prediction using phage display libraries",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Halperin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wolfson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nussinov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Protein Science",
+            "volume": "12",
+            "issn": "7",
+            "pages": "1344-1359",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "3D-Epitope-Explorer (3DEX): localization of conformational epitopes within three-dimensional structures of proteins",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schreiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Humbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Benz",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Dietrich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of Computational Chemistry",
+            "volume": "26",
+            "issn": "9",
+            "pages": "879-887",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Discontinuous epitope prediction based on mimotope analysis",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Moreau",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Granier",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Villard",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Laune",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Molina",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "9",
+            "pages": "1088-1095",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Searching for peptide ligands with an epitope library",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Science",
+            "volume": "249",
+            "issn": "4967",
+            "pages": "386-390",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "MIMOX: a web tool for phage display based epitope mapping",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gutteridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Honda",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7, article 451",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Epitope mapping using combinatorial phage-display libraries: a graph-based algorithm",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Mayrose",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Shlomi",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Rubinstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Research",
+            "volume": "35",
+            "issn": "1",
+            "pages": "69-78",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Pepitope: epitope mapping from affinity-selected peptides",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Mayrose",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Penn",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Erez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "23",
+            "issn": "23",
+            "pages": "3244-3246",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Pep-3D-search: a method for B-cell epitope prediction based on mimotope analysis",
+            "authors": [
+                {
+                    "first": "YX",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "YX",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Bioinformatics",
+            "volume": "9, article 538",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The 20 years of PROSITE",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hulo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Bulliard",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Cerutti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Research",
+            "volume": "36, database issue",
+            "issn": "",
+            "pages": "D245-D249",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Computational prediction of the cross-reactive neutralizing epitope corresponding to the monoclonal antibody b12 specific for HIV-1 gp120",
+            "authors": [
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Bublil",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yeger-Azuz",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Gershoni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "FASEB Journal",
+            "volume": "20",
+            "issn": "11",
+            "pages": "1762-1774",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Mapping a neutralizing epitope on the SARS coronavirus spike protein: computational prediction based on affinity-selected peptides",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Tarnovitski",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sui",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Gershoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Marasco",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of Molecular Biology",
+            "volume": "359",
+            "issn": "1",
+            "pages": "190-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "CED: a conformational epitope database",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Honda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Immunology",
+            "volume": "7, article 7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "PDBsum new things",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Laskowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Research",
+            "volume": "37, database issue",
+            "issn": "",
+            "pages": "D355-D359",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "RNA-peptide fusions for the in vitro selection of peptides and proteins",
+            "authors": [
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Szostak",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "94",
+            "issn": "23",
+            "pages": "12297-12302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A combined experimental and computational strategy to define protein interaction networks for peptide recognition modules",
+            "authors": [
+                {
+                    "first": "AHY",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Drees",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Nardelli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "295",
+            "issn": "5553",
+            "pages": "321-324",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "mRNA display: diversity matters during in vitro selection",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gold",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "98",
+            "issn": "9",
+            "pages": "4825-4826",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "In-vitro protein evolution by ribosome display and mRNA display",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lipovsek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pluckthun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Immunological Methods",
+            "volume": "290",
+            "issn": "1-2",
+            "pages": "51-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Yeast surface display for screening combinatorial polypeptide libraries",
+            "authors": [
+                {
+                    "first": "ET",
+                    "middle": [],
+                    "last": "Boder",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Wittrup",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature Biotechnology",
+            "volume": "15",
+            "issn": "6",
+            "pages": "553-557",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Bacterial surface display: trends and progress",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Uhlen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Trends in Biotechnology",
+            "volume": "15",
+            "issn": "5",
+            "pages": "185-192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Display of heterologous proteins on the surface of microorganisms: from the screening of combinatorial libraries to live recombinant vaccines",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Georgiern",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Stathopoulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Daugherty",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Nayak",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Iverson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Curtiss",
+                    "suffix": "III"
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature Biotechnology",
+            "volume": "15",
+            "issn": "1",
+            "pages": "29-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Display of proteins on bacteria",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Samuelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gunneriusson",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Nygren",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stahl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Journal of Biotechnology",
+            "volume": "96",
+            "issn": "2",
+            "pages": "129-154",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Vaccination with cetuximab mimotopes and biological properties of induced anti-epidermal growth factor receptor antibodies",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Riemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kurz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Klinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Scheiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Zielinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jensen-Jarolim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Journal of the National Cancer Institute",
+            "volume": "97",
+            "issn": "22",
+            "pages": "1663-1670",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Probing a protein-protein interaction by in vitro evolution",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Thom",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Cockroft",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Buchanan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+            "volume": "103",
+            "issn": "20",
+            "pages": "7619-7624",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Epitope identification and discovery using phage display libraries: applications in vaccine development and diagnostics",
+            "authors": [
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Current Drug Targets",
+            "volume": "5",
+            "issn": "1",
+            "pages": "1-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Mimotope vaccines: epitope mimics induce anti-cancer antibodies",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Riemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jensen-Jarolim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Immunology Letters",
+            "volume": "113",
+            "issn": "1",
+            "pages": "1-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Evolution of phage display: from bioactive peptides to bioselective nanomaterials",
+            "authors": [
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Petrenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Expert Opinion on Drug Delivery",
+            "volume": "5",
+            "issn": "8",
+            "pages": "825-836",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Overview of mimotopes and related strategies in tumor vaccine development",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Expert Review of Vaccines",
+            "volume": "7",
+            "issn": "10",
+            "pages": "1547-1555",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Phage display derived therapeutic antibodies",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Thie",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Schirrmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hust",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dubel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Current Pharmaceutical Biotechnology",
+            "volume": "9",
+            "issn": "6",
+            "pages": "439-446",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,3340 @@
+{
+    "paper_id": "PMC535339",
+    "metadata": {
+        "title": "Proteomics computational analyses suggest that the carboxyl terminal glycoproteins of Bunyaviruses are class II viral fusion protein (beta-penetrenes)",
+        "authors": [
+            {
+                "first": "Courtney",
+                "middle": [
+                    "E"
+                ],
+                "last": "Garry",
+                "suffix": "",
+                "email": "panda31287@yahoo.com",
+                "affiliation": {}
+            },
+            {
+                "first": "Robert",
+                "middle": [
+                    "F"
+                ],
+                "last": "Garry",
+                "suffix": "",
+                "email": "rfgarry@tulane.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Two classes of viral envelope proteins that mediate virion:cell fusion have been described. Class I and II fusion proteins (aka \u03b1-and \u03b2-penetrenes) are distinguished, in part, by the location of the \"fusion peptide,\" a cluster of hydrophobic and aromatic amino acids that appears critical for fusing viral and cell membranes. The fusion peptides of class I fusion proteins are located at or near the amino terminus, whereas fusion peptides of class II fusion proteins are internal. The overall structures of these two classes of viral fusions proteins are also distinct. Class I fusion proteins have a pair of extended \u03b1 helices that are separated by sequences variable in length, but usually containing one or more dicysteine linkages. Several otherwise disparate viruses, including orthomyxoviruses, paramyxoviruses, retroviruses, arenaviruses, filoviruses and coronaviruses encode class I fusion proteins [1-4]. Class II fusion proteins are comprised mostly of antiparallel \u03b2 sheets. The prototypic class II fusion protein is the E glycoprotein of tick-borne encephalitis virus (TBEV), a member of the genus flavivirus of the Flaviviridae family [5]. E possesses three \u03b2 sheet domains (I-III). In the slightly curved rod-like configuration of the E protein present in the virion, the fusion peptide is located at the tip of domain II, the furthest point distal from the C-terminal transmembrane anchor. The virion configuration of envelope glycoprotein E1, the fusion protein of the Alphavirus Semliki Forest virus (SFV), demonstrates a remarkable fit to the scaffold of TBEV E [6]. E of dengue virus (DEN) and West Nile virus, medically important flaviviruses, also can be fit to the class II structure [7,8]. Recent studies indicate that TBEV E, DEN E and SFV E1 undergo similar conformational changes upon exposure to low pH, as encountered during entry via endocytic vesicles, suggesting a common fusion mechanism [9-11]. Based on sequence similarities, it is likely that E1 of other Alphaviruses and E of other members of the flavivirus genus within the family Flaviviridae are also class II fusion proteins. Members of the two other genuses in the Flaviviridae, hepaciviruises and pestiviruses, appear on the basis of proteomics computational analyses to encode truncated class II fusion proteins [12].",
+            "cite_spans": [
+                {
+                    "start": 909,
+                    "end": 910,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 911,
+                    "end": 912,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1150,
+                    "end": 1151,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1582,
+                    "end": 1583,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1708,
+                    "end": 1709,
+                    "mention": "7",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 1710,
+                    "end": 1711,
+                    "mention": "8",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 1922,
+                    "end": 1923,
+                    "mention": "9",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 1924,
+                    "end": 1926,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 2307,
+                    "end": 2309,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The Bunyaviridae family of enveloped RNA viruses includes five disparate genuses. Orthobunyaviruses, phleboviruses, nairoviruses and tospoviruses are spread by insect vectors, whereas hantaviruses are spread by rodent vectors [13]. Members of each Bunyavirus genus include important human and animal pathogens, except the tospoviruses, whose members infect plants [14,15]. The Bunyavirus genome consists of three single-stranded RNA segments. The envelope glycoproteins are encoded by the middle-sized segment (M) [16,17]. Members of each genus encode two glycoproteins that are present on the virion surface, and designated Gn and Gc to refer to their location amino terminal or carboxyl terminal on the M encoded polyprotein. The M segments of orthobunyaviruses, phleboviruses, and tospoviruses have been shown to encode for \"nonstructural\" proteins (NSm). In the case of the orthobunyaviruses and phleboviruses, NSm is synthesized as part of the polyprotein, but in tospoviruses NSm is encoded via an ambisense strategy by a separate mRNA [18]. The identity and structure of Bunyavirus fusion protein(s) are unknown, though it is likely that Gn or Gc fulfills this role. Proteomics computational analyses suggest that Bunyavirus Gc, and similar proteins of Tenuiviruses and a group of Caenorhabditis elegans retroviruses, are class II viral fusion proteins (\u03b2-penetrenes).",
+            "cite_spans": [
+                {
+                    "start": 227,
+                    "end": 229,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 365,
+                    "end": 367,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 368,
+                    "end": 370,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 518,
+                    "end": 520,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1043,
+                    "end": 1045,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "For sequence and structural comparisons of Bunyavirus M encoded proteins representatives of the five genuses were used, including pleboviruses Sandfly fever virus, Sicilian strain (SAN, accession number: AAA75043) and Rift Valley fever virus (RVF, P03518), orthobunyavirus Bunyamwera virus (BUN, NP047212), hantavirus Hantaan virus, strain 76\u2013118 (HAN, P08668), nairovirus Crimean-Congo hemorrhagic fever virus, strain IbAr (CCHF, NP950235), and tospovirus tomato spotted wilt virus, ordinary strain (TSWV, NP049359). Additional phlebovirus M sequences compared included those of Uukuniemi virus (UUK, NP941979) and Punta Toro virus (PTV, VGVUPT). Bunyavirus M sequences were compared to sequences encoded in Alphavirus subgenomic RNA, including structural proteins of Sindbis virus (SIN, P03316), Semliki Forest virus (SFV, NP463458), Venezuelian equine encephalitis virus, strain TC-83 (VEE, P05674), Western equine encephalitis virus, strain McMillan (WEE, AAF60166), O'nyong-nyong virus, strain GULU (ONN, P22056), Mayaro virus, strain TRVL4675 (MAY, AA033335), Barmah Forest virus strain BH2193 (BFV, AA033347) and Ross River virus, strain NB5092 (RRV, NP740686). Comparisons were also made with proteins encoded by RNA2 of the HZ isolate of Rice stripe virus, a Tenuivirus (pvc2, AA031607), and with certain retroviruses of Caenorhabditis elegans, including Cer13 (hypothetical protein Y75D11A.5, NP508324). We also compared Bunyavirus M sequences to structural proteins of Flaviviruses, including members of the flavivirus genus tick-borne encephalitis virus, strain Neudoerfl (TBEV, P14336); Japanese encephalitis virus, strain JaOARS982 (JEV, P32886), yellow fever virus, strain 17D-204 (YFV, P19901), dengue virus type 2, strain PR-159/S1 (DEB, P12823), and West Nile virus, strain NY 2000-crow3356 (WNV, AF404756). The prototype hepaciviruses, strain H (subtype 1a) of hepatitis C virus (HCV, P27958), and several pestiviruses, including the Alfort 187 strain of classical swine fever virus, aka hog cholera virus (CSFV, CAA61161), bovine viral diarrhea virus genotype 1 aka pestivirus type 1, stain NADL (BVDV, CAB91847) and border disease virus, strain BD31 (BVD, AAB37578), were used in other comparisons.",
+            "cite_spans": [],
+            "section": "Sequences ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Methods to derive general models of surface glycoproteins have been described previously [2]. PRSS3, a program derived from rdf2 [19], which uses the Smith-Waterman sequence alignment algorithm [20], was used to determine the significance of protein alignments. PRSS3 is part of the FASTA package of sequence analysis programs available by anonymous ftp from ftp.virginia.edu. Default settings for PRSS3 were used, including the blosum50 scoring matrix, gap opening penalty of 12, and gap extension penalty of 2. MacMolly (Soft Gene GmbH, Berlin) was used to locate areas of limited sequence similarity and to perform Chou-Fasman and Robson-Garnier analyses [21,22]. PHDsec (Columbia University Bioinformatics Center, ) was the preferred method of secondary structure prediction [23]. PHDsec predicts secondary structure from multiple sequence alignments by a system of neural networks, and is rated at an expected average accuracy of 72% for three states, helix, strand and loop. Domains with significant propensity to form transmembrane helices were identified with TMpred (ExPASy, Swiss Institute of Bioinformatics, ). TMpred is based on a statistical analysis of TMbase, a database of naturally occurring transmembrane glycoproteins [24]. Sequences with a propensity to partition into the lipid bilayer were identified with Membrane Protein eXplorer version 2.2a from the Stephen White laboratory using default settings [25]. The NetOglyc server  was used to predict mucin type GalNAc O-glycosylation sites. RasMac (University of California Regents/Modular CHEM Consortium, ), developed by Roger Sayle, was used to render a 3D model of SFV E1, which was extrapolated to SIN E1 and SAN GC.",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 91,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 195,
+                    "end": 197,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 659,
+                    "end": 661,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 662,
+                    "end": 664,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 780,
+                    "end": 782,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1238,
+                    "end": 1240,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1425,
+                    "end": 1427,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Proteomics computational methods ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To provide support for the proposed alignment of SAN Gc and SIN E1, another proteomics computational tool was used to compare potential membrane interactive domains in the glycoproteins. Besides fusion peptides, a motif that can be important in virus:cell fusion and is present in many class I and class II viral fusion proteins is an aromatic aa rich domain proximal to the transmembrane anchor [35]. The pre-anchor domains are not highly hydrophobic according to the Kyte-Doolittle hydropathy prediction algorithm, but have a tendency to disrupt and partition into bilayer membranes as revealed by analyses using the Wimley-White interfacial hydrophobicity scale (WWIHS) [35,36]. SIN E1 contains a sequence prior to and overlapping the transmembrane anchor with a significant WWIHS score as determined by Membrane Protein eXplorer (MPeX) [25]. SAN Gc has two sequences with significant WWIHS scores in this region, the pre-anchor and the putative transmembrane domain. The fusion peptides of all class I and II viral fusion proteins examined to date overlap sequences with significant WWIHS scores (RFG, unpublished observation). The proposed fusion peptide in SAN Gc consists of a sequence with a significant WWIHS score, which further supports the assignment of this sequence as the fusion peptide. Additional sequences with significant WWIHS scores are located collinearly along SAN Gc and SIN E1. In total, six of the seven sequences in SAN GC with significant WWIHS scores overlap in the proposed alignment with sequences with significant WWIHS in SIN E1. Analysis of membrane interfacial potential in the primary sequences thus provides further support for the proposed alignment of SAN Gc and SIN E1.",
+            "cite_spans": [
+                {
+                    "start": 397,
+                    "end": 399,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 677,
+                    "end": 679,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 841,
+                    "end": 843,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Membrane interfacial domains in Bunyavirus glycoproteins ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Recently, Gibbons and coworkers determined the structure of a fragment of the SFV E1 ectodomain (lacking carboxyl terminal aa 392\u2013438) after exposure to low pH and liposomes [33]. Under these conditions, which mimic an endosomal environment, the SFV E1 ectodomain fragment changes from a soluble monomer to a trimer as it inserts into the liposomal membrane after exposure to low pH. A similar post-fusion structure was found in two other class II fusion proteins, E of DEN and TBEV [10,11]. These investigators proposed several possible fusion intermediates of SFV E1 and other class II viral fusion proteins after exposure to low pH. These intermediates are assumed to be similar to structural intermediates of SIN E1. To determine the plausibility of the proposed SAN Gc and SIN E1 alignment, a model of SAN Gc was scaffolded on a presumed structural intermediate of SIN E1 in which compared to the orientation in the virion at neutral pH, domain III is displaced closer to the fusion peptide (Fig. 2). The collinear sequence alignments between SAN Gc and SIN E1 suggest that both glycoproteins may have a similar domain structure. Similar sequences/structures are drawn in similar locations. In this possible fusion intermediate, the putative SAN Gc fusion peptide is assumed to be located at the end of the molecule furthest from the carboxyl terminal (C-terminal) transmembrane anchor domain. Like SIN E1 and other class II fusion proteins SAN Gc may be comprised mostly of antiparallel \u03b2 sheets, an expectation supported by several secondary structure prediction algorithms, including PHDsec [23], Chou-Fasman [21] and Robson-Garnier [22] analyses. The proposed SAN Gc structure conforms closely to the structural predictions of PHDsec, the most robust algorithm, but is also generally consistent with both Chou-Fasman and Robson-Garnier predictions. In some cases because of significant aa sequence similarity with SIN E1, ambiguous structures in SAN Gc are depicted as in SIN E1. Additional evidence for the proposed alignment is the location of cysteine residues of SAN Gc and SIN E1. The cysteine residues are usually the most conserved aa in within a protein family because disulfide linkages are a critical determinant of secondary structure. The dicysteines of SIN E1 (Fig. 2B) are arranged such that bonds are formed only between residues within the same putative domain. A similar arrangement is feasible for SAN Gc with C residues present in close proximity after scaffolding on the SIN E1 structure, and with possible linkages occurring within the three proposed domains. This model also locates the four SAN Gc glycosylation sites so they are surface accessible.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 484,
+                    "end": 486,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 487,
+                    "end": 489,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1600,
+                    "end": 1602,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1618,
+                    "end": 1620,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1642,
+                    "end": 1644,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "A model of phlebovirus Gc ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1002,
+                    "end": 1003,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 2288,
+                    "end": 2290,
+                    "mention": "2B",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "There are many possible alternatives to the cysteine linkages and secondary structures of SAN Gc drawn in Figure 2. Nevertheless, a plausible three-dimensional model of SAN Gc that conforms to the scaffold of the known structure of Alphavirus E1 can be constructed. This result coupled with predictions of a predominantly \u03b2 sheet secondary structure of SAN Gc provides further support its proposed alignment with SIN E1.",
+            "cite_spans": [],
+            "section": "A model of phlebovirus Gc ::: Results",
+            "ref_spans": [
+                {
+                    "start": 113,
+                    "end": 114,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "To provide additional evidence for the proposed SIN E1/SAN Gc alignment and the SAN Gc class II fusion protein model, we determined whether structural/sequential similarities with class II fusion proteins are conserved in envelope proteins encoded by other members of the Bunyavirus family. With the exception of tospoviruses, that use an ambisense strategy for synthesis of a nonstructural protein, Bunyavirus M segments are negative in polarity and the mRNA transcribed contains a long open reading frame [37]. The M segment mRNA is translated as a polyprotein, which is post-translationally processed [38]. There is considerable diversity in the number and sizes of the M segment encoded polyproteins produced in infected cells, but all Bunyaviruses encode at least two glycoproteins, Gn and Gc. Prior analyses have revealed similarities between Gc encoded by members of orthobunyaviruses and tospoviruses [18,39], but evidence that Gn and Gc serve analogous functions in each Bunyavirus genus has not been available previously. Comparisons among Gc of members of the five genuses of the Bunyaviridae using the PRSS3 algorithm revealed that the type members of each genuses display significant sequence similarities with certain Gc of viruses of other Bunyavirus genuses (Table 2). The most significant alignment detected among members of different genuses of the Bunyaviridae, was between RVF, type member of phleboviruses, and tomato spotted wilt virus (TSWV), type member of tospoviruses (p < 10-18). As noted previously [18,39], orthobunyavirus Gc also show a significant similarity to tospovirus Gc, with Bunyamwera virus (BUN) Gc displaying a significant similarity to TSWV Gc (p < 10-8). As with phlebovirus Gc, the prototype of the hantavirus genus, Hantaan virus (HAN), showed a modest sequence alignment (p < 0.05) with SIN E1, further supporting the proposed similarities between Bunyavirus Gc and Alphavirus E1. Significant alignments were not detected between Bunyavirus Gc or Alphavirus E1 and TBEV E or other flavivirus class II viral fusion proteins. Limited local similarities were observed between some Bunyavirus Gc and pestivirus E2. It is noteworthy that the significance of the overall sequence similarities between certain phlebovirus Gc and Alphavirus E1 is higher than some similarities among Gc of some prototypic members of the Bunyaviridae (compare Table 1 and 2). Collectively, these results suggest that Gc of Bunyaviruses share a limited number of similar sequences.",
+            "cite_spans": [
+                {
+                    "start": 508,
+                    "end": 510,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 605,
+                    "end": 607,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 910,
+                    "end": 912,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 913,
+                    "end": 915,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1528,
+                    "end": 1530,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1531,
+                    "end": 1533,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Sequence/structural features of Bunyavirus Gc suggest that a class II fusion protein structure is conserved in members of the Bunyaviridae ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1281,
+                    "end": 1282,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 2386,
+                    "end": 2387,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 2392,
+                    "end": 2393,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Available computational methods alone do not permit overall alignments of Bunyavirus Gc, however, through the use of PRSS3 and MacMolly alignment tools and by inspection certain common sequences can be identified. The most highly conserved sequences among type members of the five Bunyavirus genuses conform to a consensus class II fusion peptide (Fig. 3, red) and to a carboxyl terminal transmembrane domain (Fig. 3, violet). Certain cysteine clusters, which are likely to stabilize the secondary structures of the proteins, also are present in similar locations along the proteins, including the beginning of putative domain III (Fig. 3). Further support for the alignment of Bunyavirus Gc is obtained by the use of the WWIHS. Sequences with significant WWIHS scores are located in similar locations in Bunyavirus Gc (Fig. 3, olive). The proposed fusion peptides and transmembrane domains of each of the Bunyavirus Gc examined displayed significant WWIHS scores. In addition, most of the Gc examined had sequences with significant WWIHS scores in the putative IIa domains and either the putative Ic domain or the beginning of adjacent domain III. This alignment suggests that orthobunyaviruses and tospoviruses Gc have extended regions of approximately 400 and 50 amino acids at the amino terminus relative to phlebovirus, hantavirus and nairovirus Gc. These results also suggest that motifs involved in virion:cell fusion are conserved in Gc throughout the Bunyaviridae, and that Gc is the fusion protein encoded by members of each Bunyavirus genus.",
+            "cite_spans": [],
+            "section": "Sequence/structural features of Bunyavirus Gc suggest that a class II fusion protein structure is conserved in members of the Bunyaviridae ::: Results",
+            "ref_spans": [
+                {
+                    "start": 353,
+                    "end": 354,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 415,
+                    "end": 416,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 637,
+                    "end": 638,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 825,
+                    "end": 826,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "As previously reported, phlebovirus Gc have a significant similarity to surface protein pvc2 encoded by plant viruses of the Tenuiviridae [40]. The PRSS3 sequence alignment algorithm confirms this similarity (Table 2, p < 0.001). An envelope protein (Env) encoded by a group of retroviruses of the nematode C. elegans also demonstrate significant similarities to phlebovirus Gc [41,42]. There is a significant alignment detected by the PRSS3 algorithm between SAN Gc and the carboxyl terminal region of Env of Cer13, a potentially replication-competent member of this group (Table 2, p < 10-8). These results further validate the use of the PRSS3 algorithm to identify limited similarities amongst viral proteins. Alignment of the carboxyl terminal portion of the pvc2 protein of rice stripe virus (RiSV), a Tenuivirus, and the envelope protein encoded by Cer13 retrovirus with two phlebovirus Gc reveals a collinear arrangement of fusion peptide consensus sequences (Fig. 4, red) and potential carboxyl terminal transmembrane domains (Fig. 4, violet). These proteins also have several overlapping sequences with significant WWIHS scores (Fig. 4, olive). The retention of these features in proteins encoded by evolutionarily distant genomes, provides further evidence that these motifs are important for the function of Bunyavirus fusion proteins.",
+            "cite_spans": [
+                {
+                    "start": 139,
+                    "end": 141,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 379,
+                    "end": 381,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Sequence/structural features of Bunyavirus Gc are present in a Tenuivirus protein and in an Env encoded by a Caenorhabditis elegans retrovirus ::: Results",
+            "ref_spans": [
+                {
+                    "start": 973,
+                    "end": 974,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1041,
+                    "end": 1042,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1144,
+                    "end": 1145,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 215,
+                    "end": 216,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 581,
+                    "end": 582,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The longest open reading frames of M segments of all members of the Bunyaviridae are antisense to the virion RNA. mRNAs transcribed from Bunyavirus M segments are translated into large polyproteins that are subsequently cleaved by into functional proteins [38,43]. Gc of members of each of the five Bunyavirus genuses are the carboxyl terminal proteins of the polyprotein (Fig. 5). Because viral proteins with similar functions may have similar genome locations, we sought evidence for sequence similarities among other Bunyavirus proteins encoded by the M segment. Gn of type members of the five Bunyavirus genuses were compared to each other and each had a limited sequence similarity to at least one other Gn of a type member of a different genus (Table 3). The most significant alignment was between the Gn proteins of HAN, a hantavirus, and CCHF, a nairovirus (p < 10-4). HAN Gn also showed a significant alignment with Gn of RVF, a phlebovirus. Both HAN Gn and Gn of TSWV, a tospovirus, also showed significant alignments with envelope protein 2 (E2) of SIN. SIN E2 has been implicated as the virion protein responsible for binding to the cell surface receptor [44]. These results suggest that the Gn of Bunyaviruses have limited similarity, and may have a common role or roles in the virus replication cycle. The order (from amino to carboxyl terminus) of proteins in the polyproteins of SIN and other members of the Alphaviridae is Capsid-E2-E3-6K-E1. Receptor and fusion functions may reside in two different Bunyavirus proteins, Gn and Gc respectively, occurring in the same order as the envelope glycoproteins, E2 and E1, that carry out these functions in Alphaviruses (Fig. 5). The similarities in protein order and functions support the hypothesis that Gc is the fusion protein of Bunyaviruses. These results also support the suggested nomenclature of Gn and Gc for the Bunyavirus M segment encoded glycoproteins as a replacement for the current ambiguous nomenclature, which variously assigns the designation G1 or G2 to unrelated Bunyavirus glycoproteins. The presumptive protein encoded by the amino terminal region of the pvc2 protein of RiSV also showed limited similarity to SIN E2 (Table 3). Thus, the similarities between proteins encoded by a Tenuivirus extend to another glycoprotein of a virus with a class II fusion protein.",
+            "cite_spans": [
+                {
+                    "start": 257,
+                    "end": 259,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 260,
+                    "end": 262,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 1168,
+                    "end": 1170,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Protein order in polyproteins encoded by Bunyaviridae M segments ::: Results",
+            "ref_spans": [
+                {
+                    "start": 378,
+                    "end": 379,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1686,
+                    "end": 1687,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 757,
+                    "end": 758,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 2208,
+                    "end": 2209,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The simplest M polyprotein, encoding only Gn and Gc, is that of hantaviruses (Fig. 5). In addition to Gn and Gc, phlebovirus and orthobunyavirus encode nonstructural proteins (NSm) that have two or three potential transmembrane spanning domains as detected by TMpred (Fig. 5). Nairoviruses, such a Crimean-Congo hemorrhagic fever virus (CCHF), synthesize a similar protein [45,46], and we have designated this protein \"NSm.\" NSm of the RVF and BUN, type members of phlebovirus and orthobunyaviruses, as well as the \"NSm\" protein of CCHF have short regions of similarity with each other as revealed by the PRSS3 sequence alignment algorithm, although the overall alignments are not significant. There were also short regions of similarity between the NSm proteins of these three Bunyavirus genuses and the prM/M-like proteins of Flaviviruses (not shown). Immature virions of members of the flavivirus genus of the Flaviviridae contain a precursor prM to the small membrane protein M. prM is cleaved by furin or by a furin-like protease during virus release to produce the mature M protein localized on the surface of flavivirus virion [47,48]. Flavivirus PrM/M, contains two potential membrane spanning domains, and their functions may include shielding of internal cellular membranes from the fusion peptide of E [7,47]. It is possible that the phlebovirus, orthobunyavirus and nairovirus M segment encoded nonstructural proteins, all with multimembrane-spanning potential, serve the same function for Gc. NSm of TSWV, a tospovirus, showed no sequence similarity or structural similarity with any Bunyavirus protein examined. The functions of tospovirus NSm, which is encoded by the only positive polarity gene in any M segment, and the other Bunyavirus NSm proteins remain to be determined. Nairovirus M may encode two additional proteins, a mucin-like protein (MLP), which contains a variable region with a high concentration of potential O-glycosylation sites, and a protein designed here X, neither of which have obvious homologs encoded by members of the other Bunyavirus genuses [45,46]. The coding sequences of Bunyavirus M appear to have evolved in a manner preserving the order of the glycoproteins Gn and Gc, while allowing for insertion or deletion of sequences encoding additional proteins.",
+            "cite_spans": [
+                {
+                    "start": 374,
+                    "end": 376,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 377,
+                    "end": 379,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1135,
+                    "end": 1137,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1138,
+                    "end": 1140,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1314,
+                    "end": 1315,
+                    "mention": "7",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 1316,
+                    "end": 1318,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 2086,
+                    "end": 2088,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 2089,
+                    "end": 2091,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Protein order in polyproteins encoded by Bunyaviridae M segments ::: Results",
+            "ref_spans": [
+                {
+                    "start": 83,
+                    "end": 84,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 273,
+                    "end": 274,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Proteomics computational analyses suggest that Bunyavirus Gc proteins are class II viral fusion proteins (\u03b2-penetrenes), with a structure similar to the fusion proteins of Alphaviruses and Flaviviruses. Similar sequences or common structural/functional motifs are collinearly located in Bunyavirus Gc and Alphavirus E1. Features common to other class II fusion proteins, including an internal fusion peptide, a carboxyl terminal transmembrane domain and regions with a high propensity to interface with bilayer membranes, are conserved and in similar locations in Gc of viruses in each genus of the Bunyaviridae. These features are also present in glycoproteins encoded by nonenveloped Tenuiviruses of plants, and a group of C. elegans retroviruses previously shown to have remarkable sequence similarities to phlebovirus Gc. These results also indicate that Gallaher's \"Rosetta Stone\" strategy can be used to identify potential class II viral fusion proteins, as demonstrated previously for class I fusion proteins [1-3,49]. The common placement of proper names or \"cartouches\" allowed the ancient languages of the Rosetta Stone to be deciphered. As advanced by Gallaher, fusion peptides can serve a similar function to facilitate alignment of viral fusion proteins with limited sequence similarities.",
+            "cite_spans": [
+                {
+                    "start": 1017,
+                    "end": 1018,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1019,
+                    "end": 1020,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1021,
+                    "end": 1023,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Many viral fusion proteins fit neither class I or II and it is likely that other classes of viral fusion protein also exist. However, among major classes of enveloped RNA viruses, there are at least six, myxoviruses, retroviruses, paramyxoviruses, filoviruses, arenaviruses and coronaviruses, that encode class I viral fusion proteins [1-4]. Alphaviruses, members of the flavivirus genus of the Flaviviruses, and according to current analyses, Bunyaviruses, encode class II viral fusion proteins. Computational analyses suggest that members of the two other Flavivirus genuses, hepaciviruses and pestiviruses, encode variant class II fusion proteins [12]. The viruses encoding class II or II viral fusion proteins thus represent a substantial portion of enveloped RNA virus families known to infect vertebrates. It is significant that representative class I and II encoding viruses are also found in evolutionarily distinct plant viruses and viruses or virus-like genomic elements of nematodes and insects [41,42,50,51]. There may be constraints on the structures of viral proteins capable of effectively mediating virion:cell fusion, or a limited number of enveloped RNA virus lineages.",
+            "cite_spans": [
+                {
+                    "start": 336,
+                    "end": 337,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 338,
+                    "end": 339,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 651,
+                    "end": 653,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1007,
+                    "end": 1009,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1010,
+                    "end": 1012,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1013,
+                    "end": 1015,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1016,
+                    "end": 1018,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Alphaviruses appear to use separate envelope proteins for fusion (E1) and attachment (E2) [44]. Because Bunyavirus Gc display similarities to Alphavirus E1 and certain Bunyavirus Gn display limited sequence similarities to Alphavirus E2, Bunyaviruses may have adapted a similar strategy. Verification that Gc is the fusion protein of Bunyaviruses will require a combination of X-ray crystallographic structural studies and site-directed mutagenesis of key features such as the putative fusion peptide. Verification that Gn serves as the receptor binding protein for any Bunyavirus requires identification of its cell surface receptor. E, the class II fusion protein of TBEV, dengue virus, and other members of the flavivirus genus of the Flaviviridae, mediates both virion:cell fusion and receptor-binding [52,53]. Therefore, it is possible that Bunyavirus Gc serves both as the fusion protein and receptor binding protein.",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 807,
+                    "end": 809,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 810,
+                    "end": 812,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The remarkable similarities in both the pre- and post-fusion forms of the fusion proteins of SFV E1, an Alphavirus, and DEN and TBEV, members of the flavivirus genus of the Flaviviruses, in the absence of detectable sequence similarities, suggest that Alphavirus and Flavivirus class II fusion proteins may have diverged from a common progenitor. Alternatively, there may have been convergent evolution towards the common structure. Likewise, the sequence similarities detected between phlebovirus Gc and SIN E1 are consistent with divergent evolution from a common progenitor, but are insufficient to directly establish a phylogenic relationship. The results presented here suggest that Gc of members of the Bunyaviridae may have a common ancestor. Gn and Gc are in analogous locations in the polyproteins encoded by the five genuses of the Bunyaviridae. The simplest Bunyavirus M polyprotein, that of hantavirus members, encodes only Gn and Gc, whereas M of members of other Bunyavirus genuses encode several additional proteins. Therefore, divergence of Bunyavirus M segments may have occurred either through acquisition of sequences and/or lose of sequences in a cassette manner constrained in part by the locations of the major glycoproteins.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Comparisons of divergent viral fusion proteins with internal fusion peptides can reveal features essential for virion:cell fusion. Regions of high membrane interfacial propensity including the fusion peptide and the transmembrane anchor, appear in similar locations in Bunyaviruses, Alphaviruses and Flaviviruses. The presence of several additional sequences with the propensity to interact with bilayer membranes in class II viral fusion proteins has not been considered in previous virion:cell fusion models [9,11,54]. Cell entry of Alphaviruses and Flaviviruses is believed to occur via the endocytic route, and it is likely that this is the entry route of Bunyaviruses [55]. Following binding to the cellular receptor, a putative function of Bunyavirus Gn (Fig. 6A), the Bunyavirus virion may be taken up in an endocytic vesicle (Fig. 6B). Exposure to acidic pH in the endosome may trigger conformational changes in the envelope proteins and in the virion itself resulting in dissociation of Gn and Gc (Fig. 6C). Current models of fusion mediated by Alphavirus and Flavivirus class II viral fusion proteins suggest that the low pH of the endosome triggers trimerization and a bending of class II fusion proteins at a flexible \"hinge\" region between domains I and II elevating the fusion peptide so that it can insert into the host membrane [6,9,11,54]. Current models then suggest that a rearrangement of the stem (pre-anchor region), so that there are more extensive interactions with domains I-III, results in a deformation of the viral and target membranes and the formation of apposing membrane \"nipples\" (Fig. 6E). Subsequently, the nipples are brought closer together by continued interactions of the stem with domains I-III, which results in bilayer hemifusion (Fig. 6F). Complete fusion follows allowing entry of the ribonucleoproteins containing the viral genomic RNA (Fig. 6G). An analogous mechanism, involving deformation and nipple formation of the viral and cellular membranes caused by rearrangements of the viral fusion proteins (six helix bundle formation) has been proposed for class I viral fusion proteins [54].",
+            "cite_spans": [
+                {
+                    "start": 511,
+                    "end": 512,
+                    "mention": "9",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 513,
+                    "end": 515,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 516,
+                    "end": 518,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1345,
+                    "end": 1346,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1347,
+                    "end": 1348,
+                    "mention": "9",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 1349,
+                    "end": 1351,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1352,
+                    "end": 1354,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 2131,
+                    "end": 2133,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 766,
+                    "end": 768,
+                    "mention": "6A",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 839,
+                    "end": 841,
+                    "mention": "6B",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1012,
+                    "end": 1014,
+                    "mention": "6C",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1619,
+                    "end": 1621,
+                    "mention": "6E",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1778,
+                    "end": 1780,
+                    "mention": "6F",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1887,
+                    "end": 1889,
+                    "mention": "6G",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Current fusion models do not consider that the transmembrane domain and fusion peptide, while anchored into the viral and cellular membranes, would still be free to move laterally without distorting the membranes. More importantly, the virion is quite small compared to the cell, and would be freely mobile. Rearrangement of the fusion proteins may simply draw the virus closer to the cell without distorting either the viral or cellular membranes. An alternative to the models involving apposing membrane nipple formation is suggested by the observation that sequences of class II viral fusion proteins, including the fusion peptide, the transmembrane anchor and other sequences with high WWIHS scores, potentially form a nearly continuous track of membrane interactive regions that could channel the movement of lipids during virion:cell fusion (Fig. 2, black). Similar nearly contiguous sequences with significant WWIHS scores are present in the post-fusion intermediates of Alphaviruses SIN and SFV, DEN and other flaviviruses, and the proposed structures of hepaciviruses and pestiviruses [12]. An intermediate, with the track of sequences with high membrane interfacial propensity, may be the first intermediate formed after exposure to the low pH in liposomes (Fig. 6D'). Upon formation of higher multimers of trimers, the regions with high WWIHS scores, in conjunction with the fusion peptide and transmembrane could then form a \"pore\" in which the lipids of the cellular and viral bilayer membranes could mix directly (Fig. 6E'). With lipid mixing facilitated by these membrane interfacial sequences bilayer fusion may proceed without a hemifusion step, but still permitting entry of the genome-containing RNP (Fig. 6G).",
+            "cite_spans": [
+                {
+                    "start": 1095,
+                    "end": 1097,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 853,
+                    "end": 854,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1273,
+                    "end": 1276,
+                    "mention": "6D'",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1533,
+                    "end": 1536,
+                    "mention": "6E'",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1725,
+                    "end": 1727,
+                    "mention": "6G",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "In the absence of structural determinations by X-ray crystallography, models such as proposed here can provide useful hypotheses to guide experimental strategies for development of vaccines or drugs to prevent or treat infection by viruses with class II fusion proteins. Prior to the availability of X-ray structural data, several potent HIV-1 TM inhibitors were developed [56,57] based on the Gallaher HIV-1 TM fusion protein model [2]. Fuzeon\u2122 (DP178; T20 enfuvirtide), one of these peptides corresponding to a portion of an \u03b1 helices and the pre-anchor domain, has been shown to substantially reduce HIV-1 load in AIDS patients, and has been approved for use in the treatment of HIV infection in the United States and European Union [58,59]. Peptides targeted to membrane interactive motifs block virion:cell fusion mediated by DEN and West Nile virus, flaviviruses with class II fusion proteins (Hrobowski et al., submitted). Peptide inhibition strategies targeted to Gc may be broadly applicable to various members of the Bunyaviridae.",
+            "cite_spans": [
+                {
+                    "start": 374,
+                    "end": 376,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 377,
+                    "end": 379,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 434,
+                    "end": 435,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 737,
+                    "end": 739,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 740,
+                    "end": 742,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing Interests",
+            "ref_spans": []
+        },
+        {
+            "text": "CEG performed the sequence alignments and assisted in the preparation of figures. RFG supervised the work and wrote the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' Contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Comparison of phlebovirus Gc with Alphavirus E1 using the PRSS3 sequence algorithm.\n1Two-way comparisons were done between the full-length amino acid sequences of the indicated glycoproteins. Probabilities (p values) of a significant alignment are based on 1000 shuffles. SAN: Sandfly fever virus, RVF: Rift valley fever virus; PTV: Punta Toro virus; UUK: Uukuniemi virus; SIN: Sindbis virus; SFV: Semliki Forest virus; WEE: Western equine encephalitis virus; VEE: Venezuelan equine encephalitis virus; MAY: Mayaro virus; RRV: Ross River virus; BFV: Barmah Forest virus; ONN: O'nyong-nyong virus. 2p = 0.08 3p = 0.07",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Similarities among Bunyavirus Gc, Alphavirus E1 and related glycoproteins as determined with the PRSS3 sequence algorithm.\nTwo-way comparisons were done between the full-length amino acid sequences of the indicated glycoproteins. Probabilities (p values) of a significant alignment are based on 1000 shuffles. BUN: Bunyamwera virus; HAN: Hantavirus; CCFV: Crimean-Congo hemorrhagic fever virus; RVF: Rift valley fever virus; TSWV: Tomato spotted wilt virus; SIN: Sindbis virus; Cer13: Caenorhabditis elegans retrovirus 13; RiSV; rice stripe virus; TBEV: tick-borne encephalitis virus. 2C-terminal sequence.",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Similarities among Bunyavirus Gn, Alphavirus E2 and related glycoproteins as determined with the PRSS3 sequence algorithm.\n1Two-way comparisons were done between the full-length amino acid sequences of the indicated glycoproteins. Probabilities (p values) of a significant alignment are based on 1000 shuffles. BUN: Bunyamwera virus; HAN: Hantavirus; CCFV: Crimean-Congo hemorrhagic fever virus; RVF: Rift valley fever virus; TSWV: Tomato spotted wilt virus; SIN: Sindbis virus; Cer13: Caenorhabditis elegans retrovirus 13; RiSV; rice stripe virus; TBEV: tick-borne encephalitis virus. 2N-terminal sequence. 3p = 0.08",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Colinear arrangement of similarities in Sindbis virus E1 and Sandfly fever virus Gc. Alignments were constructed as detailed in the text. Panel A: Linear arrangement of the domain structure of SIN E1 and proposed domain structure of SAN Gc according to the convention for class II viral fusion proteins (\u03b2-penetrenes) originally described for TBEV E by Rey et al. [5]. Regions of significant sequence similarities in SIN E1 and SAN Gc determined by the PRSS3 sequence alignment program are indicated. Probabilities (p values) are based on 1000 shuffles. Panel B: Amino acids are numbered from the beginning of the Sindbis virus subgenonic mRNA encoded polyprotein and the beginning of the SAN M segment encoded polyprotein. (:) refers to identical amino acids. (.) refers to chemically similar amino acids. Plum amino acids: N-glycosylation sites. Hydrophobic transmembrane domains were predicted using TMpred. Sequences with significant WWIHS scores were identified by MPeX (olive). In SAN Gc, predicted \u03b1-helices are indicated by dashed boxes and predicted \u03b2-sheets are underlined with a dashed arrow.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Model of Sandfly fever virus Gc based on predicted structure of a Sindbis virus E1 fusion intermediate. Panel A: A structural intermediate of SFV E1 as determined by Gibbons et al. [33] was projected to SIN E1. Panel B: A model fitting SAN GC to the predicted structure of SIN E1. Structures predicted to be similar are color-coded the same way in SIN E1 and SAN Gc. Grey lines: dicysteine linkages. Black stick figures: N-glycosylation sites (sites with central proline are often not used). Regions with significant Wimley-White interfacial hdrophobicity scale scores were predicted with MpeX (black).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Alignment of Gc amino acid sequences of prototype members of the five genuses of the Bunyaviridae family. Alignments were constructed by identifying the fusion peptide (red) and the transmembrane anchor (violet) as described in the text. Additional local sequence similarities were identified by using the Complign feature of MacMolly, the PRSS3 alignment algorithm or by inspection. Sequences with significant WWIHS scores (olive) were identified by MPeX.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Alignment of phlebovirus Gc amino acid sequences with Tenuivirus surface protein pvc2 and the carboxyl terminal Env protein of a Caenorhabditis elegans retrovirus. Sequences are color-coded as in Figure 3.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Common order of proteins in Bunyavirus M segment polyproteins. Related glycoproteins Gn and Gc are in the same order in the polyproteins of prototypic members of the Bunyaviridae. Prior designations of the glycoproteins are indicated in parentheses. Hydrophobic domains were predicted using TMpred. The O-glycosylation rich (mucin-like) region in CCHF was delineated using NetOGlyc 3.1 as described previously by Sanchez and coworkers [46]. These authors also described the indicated potential cleavages of the CCHF polyprotein.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Hypothetical model of Bunyavirus:cell fusion. Steps in the entry process of Bunyaviruses can be extrapolated from current models of class II viral fusion protein-mediated virion cell fusion. Panel A. The Bunyavirus glycoproteins Gn and Gc are modeled according to SIN virion structure analyses by Zhang et al. [31]. Based on limited similarities with Alphavirus E2 proteins (Table 3), Gn is depicted as the receptor-binding protein of Bunyaviruses. Certain Bunyaviruses may encode other membrane-associated proteins that interact with the fusion peptide or other regions of Gc. Panel B: Receptor-binding triggers uptake of Bunyavirus virion by endocytosis. Panel C: Acidification of the endocytic vesicle occurs via the action of proton transporters and may initiate Gn and Gc dissociation. Panel D: bending at the flexible \"hinge\" region beween domains I and II permits Gc trimer formation and insertion of the fusion peptide into the endosomal vesicle membrane. Panel D' Alternatively, Gc trimer formation may involve the rotation of domain III and a rearrangement (twist) of domain II as shown for SFV E1, DEN E and TBEV E [11,33,54]. Panel E: As previously proposed [11,33,54] the formation of more extensive Gc contacts in the trimers and stem regions may release of energy for distortion of the endosomal and viral membranes resulting in formation of \"nipple-like\" projections. Panel E': Alternatively, aa sequences of Gc that form a track with the ability to interface with bilayer membranes (Fig. 2, black), may facilitate mixing of the endosomal and viral membranes. Panel F: Formation of further trimer contacts and hemifusion. Hemifusion may not occur in the D' and E' pathway. Panel G: Formation of the \"fusion pore\" and entry of the ribonucleoprotein (RNP) segments. Modified from models and concepts proposed in references 9-12.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Similar structural models of the transmembrane proteins of Ebola and avian sarcoma viruses",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Cell",
+            "volume": "85",
+            "issn": "",
+            "pages": "477-478",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0092-8674(00)81248-9"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Structure of a flavivirus envelope glycoprotein in its low-pH-induced membrane fusion conformation",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bressanelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Stiasny",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Allison",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Stura",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Duquerroy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Heinz",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Rey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Embo J",
+            "volume": "23",
+            "issn": "",
+            "pages": "728-738",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.emboj.7600064"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Structure of the dengue virus envelope protein after membrane fusion",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Modis",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ogata",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Clements",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "427",
+            "issn": "",
+            "pages": "313-319",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02165"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Proteomics computational analyses suggest that hepatitis C virus E1 and pestivirus E2 envelope glycoproteins are truncated class II fusion proteins",
+            "authors": [
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Garry",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dash",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Virology",
+            "volume": "307",
+            "issn": "",
+            "pages": "255-265",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0042-6822(02)00065-X"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Zoonoses and haemorrhagic fever",
+            "authors": [
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Mahy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Dev Biol Stand",
+            "volume": "93",
+            "issn": "",
+            "pages": "31-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Completion of the impatiens necrotic spot virus genome sequence and genetic comparison of the L proteins within the family Bunyaviridae",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "van Poelwijk",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Prins",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Goldbach",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Gen Virol",
+            "volume": "78 (Pt 3)",
+            "issn": "",
+            "pages": "543-546",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Cladistic analysis of Tospovirus using molecular characters",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Dewey",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Semorile",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Grau",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Crisci",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Mol Phylogenet Evol",
+            "volume": "8",
+            "issn": "",
+            "pages": "11-32",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/mpev.1996.0401"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "The complete sequence of the M RNA of snowshoe hare bunyavirus reveals the presence of internal hydrophobic domains in the viral glycoprotein",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Eshita",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Bishop",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Virology",
+            "volume": "137",
+            "issn": "",
+            "pages": "227-240",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0042-6822(84)90215-0"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Nucleotide sequence of the Bunyamwera virus M RNA segment: conservation of structural features in the Bunyavirus glycoprotein gene product",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Lees",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Pringle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Elliott",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Virology",
+            "volume": "148",
+            "issn": "",
+            "pages": "1-14",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0042-6822(86)90398-3"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "The nucleotide sequence of the M RNA segment of tomato spotted wilt virus, a bunyavirus with two ambisense RNA segments",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kormelink",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "de Haan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Meurs",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Goldbach",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J Gen Virol",
+            "volume": "73 (Pt 11)",
+            "issn": "",
+            "pages": "2795-2804",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Improved tools for biological sequence comparison",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Pearson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "85",
+            "issn": "",
+            "pages": "2444-2448",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A general model for the transmembrane proteins of HIV and other retroviruses",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Ball",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Garry",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Griffin",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Montelaro",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "AIDS Res Hum Retroviruses",
+            "volume": "5",
+            "issn": "",
+            "pages": "431-440",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Identification of common molecular subsequences",
+            "authors": [
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Waterman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "J Mol Biol",
+            "volume": "147",
+            "issn": "",
+            "pages": "195-197",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0022-2836(81)90087-5"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Prediction of protein conformation",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Fasman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Biochemistry",
+            "volume": "13",
+            "issn": "",
+            "pages": "222-245",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Secondary structure prediction: combination of three different methods",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Biou",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Gibrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Levin",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Robson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Garnier",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Protein Eng",
+            "volume": "2",
+            "issn": "",
+            "pages": "185-191",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The PredictProtein server",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rost",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "",
+            "pages": "3300-3304",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkg508"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "TMbase - a database of membrane-spanning segments",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hofmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Stoffel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Biol Chem Hoppe-Seyler",
+            "volume": "374",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Membrane Protein Explorer version 2.2a",
+            "authors": [
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Snider",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jaysinghe",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "http://blancobiomoluciedu/mpex/",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Structure of the haemagglutinin membrane glycoprotein of influenza virus at 3 A resolution",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Skehel",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wiley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Nature",
+            "volume": "289",
+            "issn": "",
+            "pages": "366-373",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/289366a0"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Crystal structure of the Ebola virus membrane fusion subunit, GP2, from the envelope glycoprotein ectodomain",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Weissenhorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Carfi",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Skehel",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wiley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Mol Cell",
+            "volume": "2",
+            "issn": "",
+            "pages": "605-616",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1097-2765(00)80159-8"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Atomic structure of the ectodomain from HIV-1 gp41",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Weissenhorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dessen",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Skehel",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wiley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "387",
+            "issn": "",
+            "pages": "426-430",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/387426a0"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Core structure of the envelope glycoprotein GP2 from Ebola virus at 1.9-A resolution",
+            "authors": [
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Malashkevich",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "McNally",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Milhollen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JX",
+                    "middle": [],
+                    "last": "Pang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "96",
+            "issn": "",
+            "pages": "2662-2667",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.96.6.2662"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "The viral transmembrane superfamily: possible divergence of Arenavirus and Filovirus glycoproteins from a common RNA virus ancestor",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "DiSimone",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Buchmeier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "BMC Microbiol",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2180-1-1"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Rapid and sensitive protein similarity searches",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Pearson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Science",
+            "volume": "227",
+            "issn": "",
+            "pages": "1435-1441",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Placement of the structural proteins in Sindbis virus",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mukhopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Pletnev",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Rossmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "11645-11658",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.22.11645-11658.2002"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Membrane fusion mutants of Semliki Forest virus",
+            "authors": [
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Kielian",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Keranen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaariainen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Helenius",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "J Cell Biol",
+            "volume": "98",
+            "issn": "",
+            "pages": "139-145",
+            "other_ids": {
+                "DOI": [
+                    "10.1083/jcb.98.1.139"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Multistep regulation of membrane insertion of the fusion peptide of Semliki Forest virus",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Gibbons",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Hammar",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kielian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "3312-3318",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.78.7.3312-3318.2004"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Structure of an HIV gp120 envelope glycoprotein in complex with the CD4 receptor and a neutralizing human antibody",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Wyatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Sweet",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sodroski",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Hendrickson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nature",
+            "volume": "393",
+            "issn": "",
+            "pages": "648-659",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/31405"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Membrane interface-interacting sequences within the ectodomain of the human immunodeficiency virus type 1 envelope glycoprotein: putative role during viral fusion",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Agirre",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Goni",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Nieva",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Virol",
+            "volume": "74",
+            "issn": "",
+            "pages": "8038-8047",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.74.17.8038-8047.2000"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Experimentally determined hydrophobicity scale for proteins at membrane interfaces",
+            "authors": [
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Wimley",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Nat Struct Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": "842-848",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nsb1096-842"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "The sequence of the M RNA of an isolate of La Crosse virus",
+            "authors": [
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Grady",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Sanders",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Gen Virol",
+            "volume": "68 (Pt 12)",
+            "issn": "",
+            "pages": "3057-3071",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Baculovirus expression of the M genome segment of Rift Valley fever virus and examination of antigenic and immunogenic properties of the expressed proteins",
+            "authors": [
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Schmaljohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Ennis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Dalrymple",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Collett",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Suzich",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Schmaljohn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Virology",
+            "volume": "170",
+            "issn": "",
+            "pages": "184-192",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0042-6822(89)90365-6"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Genetic organisation of Iris yellow spot virus M RNA: indications for functional homology between the G(C) glycoproteins of tospoviruses and animal-infecting bunyaviruses",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Cortez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Aires",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Pereira",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Goldbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kormelink",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Arch Virol",
+            "volume": "147",
+            "issn": "",
+            "pages": "2313-2325",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-002-0885-4"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Model of the pre-insertion region of the spike (S2) fusion glycoprotein of the human SARS coronavirus: Implications for antiviral therapeutics.",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Garry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "http://wwwvirologynet/Articles/sars/s2modelhtml",
+            "volume": "May 1, 2003.",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Maize stripe tenuivirus RNA2 transcripts in plant and insect hosts and analysis of pvc2, a protein similar to the Phlebovirus virion membrane glycoproteins",
+            "authors": [
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Estabrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Suyenaga",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Tsai",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Falk",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Virus Genes",
+            "volume": "12",
+            "issn": "",
+            "pages": "239-247",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/BF00284644"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "New BEL-like LTR-retrotransposons in Fugu rubripes, Caenorhabditis elegans, and Drosophila melanogaster",
+            "authors": [
+                {
+                    "first": "IG",
+                    "middle": [],
+                    "last": "Frame",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Cutfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Poulter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Gene",
+            "volume": "263",
+            "issn": "",
+            "pages": "219-230",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0378-1119(00)00567-9"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Poised for contagion: evolutionary origins of the infectious abilities of invertebrate retroviruses",
+            "authors": [
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Malik",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Eickbush",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Genome Res",
+            "volume": "10",
+            "issn": "",
+            "pages": "1307-1318",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.145000"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Rift Valley fever virus M segment: cell-free transcription and translation of virus-complementary RNA",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Suzich",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Collett",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Virology",
+            "volume": "164",
+            "issn": "",
+            "pages": "478-486",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0042-6822(88)90562-4"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Host-cell receptors for Sindbis virus",
+            "authors": [
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Schmaljohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "EG",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Arch Virol Suppl",
+            "volume": "9",
+            "issn": "",
+            "pages": "473-484",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Crimean-Congo hemorrhagic fever virus glycoprotein proteolytic processing by subtilase SKI-1",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Vincent",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Sanchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Erickson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Basak",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chretien",
+                    "suffix": ""
+                },
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Seidah",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Nichol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "8640-8649",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.77.16.8640-8649.2003"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Characterization of the glycoproteins of Crimean-Congo hemorrhagic fever virus",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Sanchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Vincent",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Nichol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol",
+            "volume": "76",
+            "issn": "",
+            "pages": "7263-7275",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.76.14.7263-7275.2002"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Structures of immature flavivirus particles",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Corver",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Chipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Pletnev",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sedlak",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Rossmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Embo J",
+            "volume": "22",
+            "issn": "",
+            "pages": "2604-2613",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/emboj/cdg270"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Proteolytic activation of tick-borne encephalitis virus by furin",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Stadler",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Allison",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Schalich",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Heinz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol",
+            "volume": "71",
+            "issn": "",
+            "pages": "8475-8481",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Detection of a fusion peptide sequence in the transmembrane protein of human immunodeficiency virus",
+            "authors": [
+                {
+                    "first": "WR",
+                    "middle": [],
+                    "last": "Gallaher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Cell",
+            "volume": "50",
+            "issn": "",
+            "pages": "327-328",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0092-8674(87)90485-5"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "The envelope glycoprotein from tick-borne encephalitis virus at 2 A resolution",
+            "authors": [
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Rey",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Heinz",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kunz",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Nature",
+            "volume": "375",
+            "issn": "",
+            "pages": "291-298",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/375291a0"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "Comparative sequence analysis and predictions for the envelope glycoproteins of insect endogenous retroviruses",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Misseri",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Labesse",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bucheton",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Terzian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Trends Microbiol",
+            "volume": "11",
+            "issn": "",
+            "pages": "253-256",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0966-842X(03)00119-7"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "About the origin of retroviruses and the co-evolution of the gypsy retrovirus with the Drosophila flamenco host gene",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pelisson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Teysset",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Chalvet",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Prud'homme",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Terzian",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bucheton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Genetica",
+            "volume": "100",
+            "issn": "",
+            "pages": "29-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1023/A:1018336303298"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Attenuation of tick-borne encephalitis virus by structure-based site-specific mutagenesis of a putative flavivirus receptor binding site",
+            "authors": [
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Mandl",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Allison",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Holzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Meixner",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Heinz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Virol",
+            "volume": "74",
+            "issn": "",
+            "pages": "9601-9609",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.74.20.9601-9609.2000"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "Monoclonal antibodies that bind to domain III of dengue virus E glycoprotein are the most efficient blockers of virus adsorption to Vero cells",
+            "authors": [
+                {
+                    "first": "WD",
+                    "middle": [],
+                    "last": "Crill",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Roehrig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol",
+            "volume": "75",
+            "issn": "",
+            "pages": "7769-7773",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.75.16.7769-7773.2001"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Virology: a class act",
+            "authors": [
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Jardetzky",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lamb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "427",
+            "issn": "",
+            "pages": "307-308",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/427307a"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Expression of the La Crosse M segment proteins in a recombinant vaccinia expression system mediates pH-dependent cellular fusion",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Jacoby",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cooke",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Prabakaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Boland",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nathanson",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gonzalez-Scarano",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Virology",
+            "volume": "193",
+            "issn": "",
+            "pages": "993-996",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/viro.1993.1213"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "A synthetic peptide from HIV-1 gp41 is a potent inhibitor of virus-mediated cell-cell fusion [letter]",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wild",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Greenwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "AIDS Res Hum Retroviruses",
+            "volume": "9",
+            "issn": "",
+            "pages": "1051-1053",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Characterization of a putative cellular receptor for HIV-1 transmembrane glycoprotein using synthetic peptides",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Qureshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Coy",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Garry",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Aids",
+            "volume": "4",
+            "issn": "",
+            "pages": "553-558",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "A controlled Phase II trial assessing three doses of enfuvirtide (T-20) in combination with abacavir, amprenavir, ritonavir and efavirenz in non-nucleoside reverse transcriptase inhibitor-naive HIV-infected adults",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Lalezari",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "DeJesus",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Northfelt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Richmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wolfe",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Haubrich",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Henry",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Powderly",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Valentine",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Carlson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riddler",
+                    "suffix": ""
+                },
+                {
+                    "first": "FF",
+                    "middle": [],
+                    "last": "Haas",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "DeMasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Sista",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Salgo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Delehanty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Antivir Ther",
+            "volume": "8",
+            "issn": "",
+            "pages": "279-287",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Population pharmacokinetics of enfuvirtide in pediatric patients with human immunodeficiency virus: searching for exposure-response relationships",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Soy",
+                    "suffix": ""
+                },
+                {
+                    "first": "FT",
+                    "middle": [],
+                    "last": "Aweeka",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Church",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Palumbo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Kosel",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Sheiner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Clin Pharmacol Ther",
+            "volume": "74",
+            "issn": "",
+            "pages": "569-580",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.clpt.2003.09.002"
+                ]
+            }
+        },
+        "BIBREF55": {
+            "title": "The Fusion glycoprotein shell of Semliki Forest virus: an icosahedral assembly primed for fusogenic activation at endosomal pH",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roussel",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Wien",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Navaza",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Fuller",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wengler",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Rey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Cell",
+            "volume": "105",
+            "issn": "",
+            "pages": "137-148",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0092-8674(01)00303-8"
+                ]
+            }
+        },
+        "BIBREF56": {
+            "title": "Structure of dengue virus: implications for flavivirus organization, maturation, and fusion",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Rossmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Pletnev",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Corver",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lenches",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mukhopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Chipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "EG",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Cell",
+            "volume": "108",
+            "issn": "",
+            "pages": "717-725",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0092-8674(02)00660-8"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "Structure of West Nile virus",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mukhopadhyay",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Chipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Rossmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1089316"
+                ]
+            }
+        },
+        "BIBREF58": {
+            "title": "Conformational change and protein-protein interactions of the fusion protein of Semliki Forest virus",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Gibbons",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Vaney",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roussel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vigouroux",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Reilly",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lepault",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kielian",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Rey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "427",
+            "issn": "",
+            "pages": "320-325",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature02239"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,4089 @@
+{
+    "paper_id": "PMC1796898",
+    "metadata": {
+        "title": "A perspective on microarrays: current applications, pitfalls, and potential uses",
+        "authors": [
+            {
+                "first": "Pratik",
+                "middle": [],
+                "last": "Jaluria",
+                "suffix": "",
+                "email": "pratikj@mail.nih.gov",
+                "affiliation": {}
+            },
+            {
+                "first": "Konstantinos",
+                "middle": [],
+                "last": "Konstantopoulos",
+                "suffix": "",
+                "email": "kkonsta1@jhu.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [],
+                "last": "Betenbaugh",
+                "suffix": "",
+                "email": "beten@jhu.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Joseph",
+                "middle": [],
+                "last": "Shiloach",
+                "suffix": "",
+                "email": "yossi@nih.gov",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Although, the principles behind microarray technology were conceived almost 20 years ago and developed from Southern blotting, they did not gain wide spread attention for nearly a decade when researchers were first able to utilize high quality slides with precision robotics resulting in reproducible results [1-3]. For instance, a quick pubmed search with the words, 'microarray and 1995' results in 13 total articles, 5 of which are review articles. Similar searches with the words, 'microarray and 2000' and 'microarray and 2005' result in 288 total articles (78 review articles) and 3906 total articles (1037 review articles), respectively. Despite this relative surge in microarray-related articles, few recent publications address core issues regarding design, implementation, and subsequent data analysis. In covering these and related issues, the present text aims to illustrate the strengths, weaknesses, and application of microarrays, especially to those unfamiliar with the technology.",
+            "cite_spans": [
+                {
+                    "start": 310,
+                    "end": 311,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 312,
+                    "end": 313,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Today's arrays are vastly superior to their predecessors in terms of quality, probe density, and structural layout [2,3]. Before dealing with these and other characteristics, it is important to discuss, at some length, what microarrays are as well as the fundamental concepts behind the technology. The term microarray is both descriptive and somewhat ambiguous as it is commonly used to describe a variety of platforms including protein microarrays and tissue microarrays [3,4]. A microarray is typically defined as a collection of microscopic spots arranged in an array or grid-like format and attached to a solid surface or membrane, hence the term [4,5]. These spots typically referred to as probes, are designed such that each probe binds a specific nucleic acid sequence corresponding to a particular gene through a process termed hybridization [3]. The sequence bound to a probe, often referred to as the target, is labeled with some kind of detectable molecule or dye such as a fluorophore [4]. The level of binding between a probe and its target is quantified by measuring the fluorescence or signal emitted by the labeling dye when scanned. This signal, in turn, provides a measure of the expression of the specific gene containing the target sequence [2,3].",
+            "cite_spans": [
+                {
+                    "start": 116,
+                    "end": 117,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 118,
+                    "end": 119,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 474,
+                    "end": 475,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 476,
+                    "end": 477,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 653,
+                    "end": 654,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 655,
+                    "end": 656,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 852,
+                    "end": 853,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 999,
+                    "end": 1000,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1263,
+                    "end": 1264,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1265,
+                    "end": 1266,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Although, there are several different types of DNA microarrays, for the purposes of this text only two will be considered; spotted microarrays and oligonucleotide microarrays [1]. Details regarding these two platforms are highlighted in Table 1. Spotted microarrays are often referred to as dual-channel or two-color microarrays because two samples, each labeled with a different fluorophore, are hybridized onto a single slide [3,6]. As a result of combining two samples onto a single slide, only relative expression levels can be determined using spotted arrays [1]. The probes in spotted arrays are oligonucleotides, complementary DNA (cDNA), or fragments of polymerase chain reaction (PCR) products; each type conferring different properties to the spotted array. Despite these differences, all spotted arrays are similar in terms of: array construction, target preparation, and data analysis [2,7]. In contrast, oligonucleotide microarrays also referred to as single-channel microarrays are hybridized with only one sample and therefore generate absolute expression levels. These arrays utilize probes designed to complement mRNA sequences and are produced using various methods including in situ synthesis, some type of deposition method, or photolithography [3,4].",
+            "cite_spans": [
+                {
+                    "start": 176,
+                    "end": 177,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 429,
+                    "end": 430,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 431,
+                    "end": 432,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 565,
+                    "end": 566,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 898,
+                    "end": 899,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 900,
+                    "end": 901,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1266,
+                    "end": 1267,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1268,
+                    "end": 1269,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": [
+                {
+                    "start": 243,
+                    "end": 244,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "As alluded to earlier, two important elements of microarray technology are target preparation and probe construction. Depending on the type of microarray being used, different cellular components can be used for target generation including: RNA, genomic DNA, cDNA, complementary RNA (cRNA), and PCR products [6,7]. Regardless of which of these are used, ensuring the quality, stability, and reproducibility of the generated targets is paramount for subsequent processing. Similarly, probes can consist of any of the following: cDNA, oligonucleotides, fragments of PCR products, restriction-enzyme digested fragments, oligomers, or expressed sequence tags (ESTs) [1,2,6]. Irrespective of the exact composition of the probes, they all serve the same basic function; binding very specific sequences. Although, probes are constructed in a variety of ways, depending on the type of array and the specific application, the same public databases are referenced for sequencing information [2,5,7]. Typically, arrays are fabricated with duplicates of each probe, enhancing the likelihood of observing hybridization for each gene.",
+            "cite_spans": [
+                {
+                    "start": 309,
+                    "end": 310,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 311,
+                    "end": 312,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 663,
+                    "end": 664,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 665,
+                    "end": 666,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 667,
+                    "end": 668,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 982,
+                    "end": 983,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 984,
+                    "end": 985,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 986,
+                    "end": 987,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "A simple schematic of the entire process for a spotted cDNA microarray experiment can be seen in Figure 1A[8]. Briefly, total RNA, once isolated from a sample, is reverse transcribed to produce cDNA, labeled with fluorescent dyes, and then hybridized onto the spotted array [5,8]. Hybridization is quantified using the intensities of the fluorescent dyes at particular wavelengths. By comparing fluorescence intensities, genes that are differentially expressed between the two samples can be identified, along with the direction of that difference (i.e. over-expression or under-expression relative to a control) [2,3]. For example, Figure 1B illustrates the significance of each color when the test sample is labeled with Cy5 and the control sample is labeled with Cy3. In this case, black represents no binding (i.e. no signal), green indicates greater binding of the control sample than of the test sample referred to as down-regulation, yellow indicates equal binding between the two samples, and red indicates greater binding of the test sample than of the control sample referred to as up-regulation. If the dyes are used in reverse (i.e. Cy5 is used to label the control sample and Cy3 is used to label the test sample) the colors would have the opposite representations [3,7].",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 108,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 275,
+                    "end": 276,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 277,
+                    "end": 278,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 614,
+                    "end": 615,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 616,
+                    "end": 617,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1279,
+                    "end": 1280,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1281,
+                    "end": 1282,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Introduction ::: Review",
+            "ref_spans": [
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 640,
+                    "end": 642,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Although a multitude of microarrays are commercially available, each designed for a specific species or general family of organisms; these arrays are limited by the information available in genomics databases [2,9]. Though, the genomes of only a few species have been entirely sequenced and made available to the public, microarrays for a large number of species are available [10,11]. For instance, checking the website for Affymetrix reveals genome-wide arrays are available for the following microbes: Bacillus subtilis, Escherichia coli, Pseudomonas aeruginosa, members of the genus Plasmodium, Staphylococcus aureus, and members of the genus Saccharomyces.",
+            "cite_spans": [
+                {
+                    "start": 210,
+                    "end": 211,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 212,
+                    "end": 213,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 378,
+                    "end": 380,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 381,
+                    "end": 383,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Biological Systems ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Small, custom arrays can be designed for many more species as long as genomic sequences are available for a particular organism or family of organisms [2,9,11]. Continued genome exploration has resulted in the need for frequent updating and re-organization of spotted arrays. With more information constantly coming online, microarrays are continually refined to enhance reproducibility and detection levels of weak signals by modifying the positioning and sequences of the ESTs spotted [2,10]. As previously mentioned, ESTs are essentially unique segments of cDNA identical to a portion of a gene, thereby acting as binding domain. In addition, valuable information can still be ascertained by hybridizing samples onto arrays designed for other species [12,13]. So, even without an entire genome being spotted onto commercially available arrays for a given species, microarray experiments can still yield important results.",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 153,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 154,
+                    "end": 155,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 488,
+                    "end": 489,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 755,
+                    "end": 757,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 758,
+                    "end": 760,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Biological Systems ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Any discussion regarding microarray technology would be incomplete without a detailed examination of the various limitations and complexities inherently present. Such a discussion is vital to properly conduct microarray experiments and analyze microarray data; overcoming technological limitations in the process. Before conducting microarray experiments, the following questions need to be addressed: what are the goals of the experiment, what biological comparisons are most relevant to these goals, how should the experiments be designed and performed taking into account the various sources of variability, which platform should be used, what controls need to be in place, and how can the results be verified [14,15]. In approaching these and other relevant questions, a great deal of information regarding microarray technology can be ascertained.",
+            "cite_spans": [
+                {
+                    "start": 714,
+                    "end": 716,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 717,
+                    "end": 719,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "To answer the first two questions regarding goals and relevant comparisons, a number of resources can be referenced. Several organizations such as the Microarray Gene Expression Data (MGED) Society and the European Bioinformatics Institute (EBI) have established guidelines to aid researchers in the design and implementation of microarray experiments [8,9,16]. In general, narrowing the objectives of a microarray study can provide insight into which biological samples should be compared. Clear and concise goals also help define the scope of the study, providing a framework within which subsequent experiments can be proposed and implemented. One of the most commonly sited proposals is the Minimum Information About a Microarray Experiment (MIAME) that includes a series of recommendations and standards on collecting and analyzing microarray data [16,17]. This document was designed to allow data generated by microarray experiments to be interpreted and reproduced with certainty. In addition, repositories such as the Gene Expression Omnibus (GEO) created by the National Center for Biotechnology Information (NCBI) and ArrayExpress created by the EBI have been established to store and share gene expression data [16,17].",
+            "cite_spans": [
+                {
+                    "start": 353,
+                    "end": 354,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 355,
+                    "end": 356,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 854,
+                    "end": 856,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 857,
+                    "end": 859,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1223,
+                    "end": 1225,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1226,
+                    "end": 1228,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Microarray experiments are typically constructed using one of several different design layouts including loop, reference, and saturated [17]. Each of these designs specifies the number of samples needed and the manner in which samples should be compared in order to obtain a desired level of accuracy and reproducibility. The loop design is relatively simple and involves minimizing the number of duplicates while retaining pertinent comparisons. This setup can be problematic because failure of a single array can greatly magnify error and statistical variance [17]. Another scheme is the reference design in which a common reference sample is used with each hybridized array. This system allows any array to be compared to any other array even extending to other experiments as long as the same reference sample is used [16,17]. However, this setup can become costly if the goals of the experiment require multiple comparisons to be made. In contrast, the saturated design involves making every possible comparison exactly once [17]. This approach is balanced and simple to establish, however, it is not applicable to all conditions and is not appropriate when a series of experiments are planned. Ultimately, the design selected must address the goals and requirements of the experiment being conducted. Without these and other considerations, errors in analysis including the identification of false positives can result, masking underlying patterns and incorrectly deciphering biological behavior.",
+            "cite_spans": [
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 563,
+                    "end": 565,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 823,
+                    "end": 825,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 826,
+                    "end": 828,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1031,
+                    "end": 1033,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "There are multiple sources of variability such as differences in: arrays, dye labeling, efficiency in reverse transcription, and hybridization [10,14]. Some of these issues relate back to the actual production of arrays and how probes are prepared; elements of quality control on the part of the manufacturer. The remaining issues are best overcome by: incorporating replicates to generate statistical significance (i.e. averages and variance), performing dye-swapping experiments, and pooling samples to minimize biological variation [6,7,14]. Both technical and biological replicates are commonly employed, each with a different purpose in mind. Technical replicates aim to quantify procedural variations such as sample preparation and handling [16]. In contrast, biological replicates aim to identify variation in the biological system being studied [16]. Similarly, dye swapping involves switching the dyes used for labeling in a manner that prevents one type of sample from being labeled by a single dye. This setup helps account for the dye effect; an important systematic error that stems from differences in the properties of the dyes. The pooling of samples also reduces inherent variation in biological samples while at the same time generating sufficient sample quantities for subsequent processing [17].",
+            "cite_spans": [
+                {
+                    "start": 144,
+                    "end": 146,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 536,
+                    "end": 537,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 538,
+                    "end": 539,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 540,
+                    "end": 542,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 748,
+                    "end": 750,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 854,
+                    "end": 856,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1311,
+                    "end": 1313,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "As discussed earlier, there are two main platforms to consider when designing microarray experiments; spotted microarrays and oligonucleotide microarrays. The advantages and disadvantages of each are outlined in Table 1 along with examples of when a particular platform is most beneficial [2,3]. For example, oligonucleotide microarrays are ideal for time-course experiments because each array is hybridized with only one sample, allowing any array to be compared to any other array. This translates into requiring a smaller number of total samples for the same number of duplicates while at the same time more accurately representing the control for a given condition. Similarly, for static conditions in which a basic comparison between treated and untreated cell populations is needed, dual-channel microarrays may be the best fit. Each application has its own set of criteria that should be carefully evaluated to determine the best platform to use [1,15]. For instance, if specific genes are to be investigated, it should be verified that the platform includes those particular genes with the desired number of replicates. A simple search online will reveal a multitude of companies that manufacture microarrays and allow customers to construct their own custom arrays using specialized software.",
+            "cite_spans": [
+                {
+                    "start": 290,
+                    "end": 291,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 292,
+                    "end": 293,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 954,
+                    "end": 955,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 956,
+                    "end": 958,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": [
+                {
+                    "start": 218,
+                    "end": 219,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In addressing the various sources of error, systematic or otherwise, proper controls need to be implemented. There are two types of controls, as they pertain to microarray technology; internal controls and external controls [1,18]. Internal controls check for the quality of the printed microarray whereas external controls account for performance in terms of sensitivity and robustness. The internal controls often used include: hybridization controls, poly-A controls, normalization control sets, and housekeeping genes [10,18]. Each type of control is commonly found in commercially available arrays and serves a distinct function relating to one specific aspect of microarray processing. In addition, samples can be spiked with particular agents to isolate or quantify detection limits, non-specific noise, and similar parameters [17].",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 226,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 227,
+                    "end": 229,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 523,
+                    "end": 525,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 835,
+                    "end": 837,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Similarly, a number of approaches can be taken to minimize external variables such as discrepancies in: growing and preparing biological samples, isolating and purifying RNA, cell synchronization, hybridization protocols, and target preparation [14,19]. In general, standardizing procedures can greatly reduce these errors introduced during the course of the experiment. Although, the preparation of control samples used in a microarray experiment is typically not critical, the samples must be stable throughout the experiment and be reproducible. To verify the quality of purified RNA and/or cDNA gel electrophoresis and/or spectrophotometry should be used. With regards to cell synchronization, whole-culture methods such as serum starvation (a method in which cells are deprived of animal serum, a commonly used media supplement, to direct cells towards quiescence) and DNA arrest (a general method of using chemical or pharmacological agents to prevent one or more phases of DNA replication, suspending cells in a particular stage of the cell cycle) are typically used [20,21]. However, selective methods such as mitotic shake-off, a method that involves shaking a flask or plate to remove cells undergoing mitosis because these cells are loosely attached, have also been used due to questions about the validity of whole-culture methods [20,21]. Whatever synchronization method is used should be applied to all of the biological samples to ensure a valid comparison is being made.",
+            "cite_spans": [
+                {
+                    "start": 246,
+                    "end": 248,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 249,
+                    "end": 251,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1075,
+                    "end": 1077,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1078,
+                    "end": 1080,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1344,
+                    "end": 1346,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1347,
+                    "end": 1349,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Typically to validate microarray results any one of a number of techniques such as RT-PCR, Northern blotting, Western blotting, and even the use of multiple microarray platforms can be employed [10,14,18]. Figure 2 illustrates which of these methods are relevant to which aspects of microarray analysis. As mentioned earlier, verification is critical in order to assign distinct expression patterns to specific genes with certainty (i.e. statistical significance) because of the inherent variability present in microarray data. Since a single microarray experiment evaluates the expression levels of tens of thousands of genes simultaneously, it would be extremely impractical to verify each and every gene using any of the methods listed above. Instead, what is typically done is that a number of key genes are verified depending on the purpose and scope of the experiment [2,5]. In addition, not every gene can be assayed using each verification method because the necessary components may not be available such as monoclonal antibodies necessary for Western blotting or labeled primers for RT-PCR. As a result, multiple methods are often used to verify the results of microarray experiments.",
+            "cite_spans": [
+                {
+                    "start": 195,
+                    "end": 197,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 198,
+                    "end": 200,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 201,
+                    "end": 203,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 875,
+                    "end": 876,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 877,
+                    "end": 878,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Limitations, Pitfalls, and Design Considerations ::: Review",
+            "ref_spans": [
+                {
+                    "start": 213,
+                    "end": 214,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "As described previously, expression levels for a given gene are determined using intensity values. One distinction between dual-channel microarrays and single-channel microarrays is that the former generates relative expression levels whereas the latter generates absolute expression levels [1,6]. This distinction stems from the fact that dual-channel microarrays are hybridized with two different samples; one considered the test sample and the other considered the control sample. As a result, the expression level determined for a specific spot or gene is dependent upon both samples and is a ratio of the form:",
+            "cite_spans": [
+                {
+                    "start": 292,
+                    "end": 293,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 294,
+                    "end": 295,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Expression level=test sample intensitycontrol sample intensity\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqqGfbqrcqqG4baEcqqGWbaCcqqGYbGCcqqGLbqzcqqGZbWCcqqGZbWCcqqGPbqAcqqGVbWBcqqGUbGBcqqGGaaicqqGSbaBcqqGLbqzcqqG2bGDcqqGLbqzcqqGSbaBcqGH9aqpdaWcaaqaaiabbsha0jabbwgaLjabbohaZjabbsha0jabbccaGiabbohaZjabbggaHjabb2gaTjabbchaWjabbYgaSjabbwgaLjabbccaGiabbMgaPjabb6gaUjabbsha0jabbwgaLjabb6gaUjabbohaZjabbMgaPjabbsha0jabbMha5bqaaiabbogaJjabb+gaVjabb6gaUjabbsha0jabbkhaYjabb+gaVjabbYgaSjabbccaGiabbohaZjabbggaHjabb2gaTjabbchaWjabbYgaSjabbwgaLjabbccaGiabbMgaPjabb6gaUjabbsha0jabbwgaLjabb6gaUjabbohaZjabbMgaPjabbsha0jabbMha5baaaaa@7EE3@",
+            "cite_spans": [],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Therefore, the expression level for a gene in a dual-channel microarray is relative, not absolute. In contrast, single-channel arrays are hybridized with only one sample and therefore the expression level for a given gene is absolute [2,4].",
+            "cite_spans": [
+                {
+                    "start": 235,
+                    "end": 236,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 237,
+                    "end": 238,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Once a scanned image for a hybridized microarray has been generated, visual inspection of the data can proceed, prior to normalization. This entails using imaging software to exclude specific spots with poor signaling and adjust the size/shape of grids that encompass the spots [10,22]. Next, normalization procedures can be applied to the data. Essentially, normalization accounts for differences in labeling efficiencies and detection levels for the fluorescent dyes as well as differences in the quantity/quality of RNA samples [4,10,23]. As such, normalization can be thought of as the first level of filtering applied to the data. Advanced statistical software packages offered by companies such as Partek and Acuity are commonly used. Private research institutes such as The Institute for Genomic Research (TIGR) and The Sanger Institute along with academic facilities around the world also provide free software for microarray analysis [22].",
+            "cite_spans": [
+                {
+                    "start": 279,
+                    "end": 281,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 282,
+                    "end": 284,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 532,
+                    "end": 533,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 534,
+                    "end": 536,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 537,
+                    "end": 539,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 944,
+                    "end": 946,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Although a number of normalization techniques can be applied to microarray data, the most commonly used are: total intensity, regression, and ratio statistics [18,23,24]. All three of these techniques assume that for some group of genes on the array, the average expression ratio is equal to one [10]. Total intensity normalization assumes both samples (test and control) are comprised of the same amount of RNA and the total amount of RNA hybridized from each sample is the same. Therefore, the total intensity calculated from all the spots on an array should be the same for both fluorescent dyes (channels) [5,10]. Conversely, normalization using regression presumes that a significant number of genes are expressed to the same extent in both samples; a reasonable assumption for samples that are fairly similar [22]. If the labeling and detection efficiencies for the two samples were equivalent, then the slope of the plot shown in Figure 3 would be one [10,22]. Figure 3 was constructed from unnormalized data obtained from a single, spotted cDNA array. Two different samples were hybridized onto the array, each labeled with a different dye. The graph illustrates inherent differences between the dyes in terms of labeling and detection efficiencies due to the characteristics of each dye such as stability. Using regression techniques, the best-fit slope is calculated and modified to be equal to one by adjusting gene intensities. Lastly, normalization using ratio statistics assumes that there exists some subset of genes with the same expression levels in both samples [10,23]. These housekeeping genes, as they are often referred to, are used to calculate probability densities which in turn allow the mean expression ratio to be adjusted to one. Each of these techniques calculates a normalization factor that is then used to scale the data, accounting for the variations previously mentioned [4,9,10].",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 163,
+                    "end": 165,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 611,
+                    "end": 612,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 613,
+                    "end": 615,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 816,
+                    "end": 818,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 960,
+                    "end": 962,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 963,
+                    "end": 965,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1581,
+                    "end": 1583,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1584,
+                    "end": 1586,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1907,
+                    "end": 1908,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1909,
+                    "end": 1910,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 1911,
+                    "end": 1913,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": [
+                {
+                    "start": 944,
+                    "end": 945,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 975,
+                    "end": 976,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Following normalization the data can be probed using a host of statistical techniques that evaluate and ultimately decipher microarray data. For the purposes of this text, only two types will be touched upon briefly; clustering and hypothesis testing [6]. In general, both types of statistical methods strive to categorize, shape, and illuminate underlying patterns and therefore can be very useful in analyzing microarray data [23,25]. However, both methods rely on different underlying principles and assumptions that directly influence their employment.",
+            "cite_spans": [
+                {
+                    "start": 252,
+                    "end": 253,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Clustering algorithms rely on calculating some kind of 'distance metric' to position gene expression levels into a matrix of sorts with a certain level of commonality [10]. Both differentially expressed genes and groups of genes with similar expression patterns can be highlighted using clustering techniques. The most widely used clustering algorithms include: hierarchical, self-organizing maps (SOMs), k-means, and principle component analysis (PCA) [8,10,18]. The mathematical formulations behind each of these methods are too complex and lengthy to be dealt with here, and so for the sake of brevity, very basic information will be covered in this text with a strong recommendation to consult specific references [10,18,23]. Typically, these and other algorithms are used to create a more accurate and meaningful interpretation of the data. Figure 4 illustrates how four different algorithms (when applied to the same data set) can generate vastly different groupings; each providing a different perspective on patterns present in the data. The data shown in Figure 4 was obtained by hybridizing human cell lines grown under varying conditions onto cDNA microarrays. By applying clustering algorithms in sequence, one after another, synergy is possible, lessening the shortcomings in each individual method. For example, it is common to apply PCA to data prior to analysis with either k-means clustering or SOMs in order to generate an estimate for the number of clusters to be formed [10].",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 454,
+                    "end": 455,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 456,
+                    "end": 458,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 459,
+                    "end": 461,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 719,
+                    "end": 721,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 725,
+                    "end": 727,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1491,
+                    "end": 1493,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": [
+                {
+                    "start": 853,
+                    "end": 854,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1071,
+                    "end": 1072,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Hierarchical clustering, quite possibly the most commonly used clustering algorithm, links every gene in an array to every other gene through a series of expanding brackets that collectively form a dendrogram [22]. Genes deemed to be closely associated, referring back to the concept of a distance metric which in fact can be computed using several different statistical frameworks, are connected by a node [18,23]. Each node links to other nodes of various sizes, in a repetitive process until every possible pair of genes are linked, as illustrated in Figure 4B. This type of clustering is popular due to its simplicity and ability to visualize the data. However, the statistical framework has several disadvantages including: not being able to account for multiple ways in which expression patterns can be similar, having difficulty assimilating large quantities of data, and forcing a hierarchical system upon a data set that does not truly exhibit a hierarchical lineage [10,23].",
+            "cite_spans": [
+                {
+                    "start": 210,
+                    "end": 212,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 408,
+                    "end": 410,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 411,
+                    "end": 413,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 977,
+                    "end": 979,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 980,
+                    "end": 982,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": [
+                {
+                    "start": 561,
+                    "end": 563,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Unlike hierarchical clustering, SOMs require initialization and are much less rigid in terms of structure while at the same time remaining robust and unique. Initialization involves defining a particular geometry, typically a grid or ring, with a specified number of groups or nodes [10,23]. These nodes are mapped into a high dimensional space and successive iterations, usually tens of thousands, look to reduce the number of dimensions [10]. The algorithm also makes use of weighted vectors to select and group similar data entries together, essentially training itself after each phase. The end result of this process is a self-organized network that can be visualized [4,6]. These and other features make SOMs a powerful tool in exploratory studies with an emphasis on visualization.",
+            "cite_spans": [
+                {
+                    "start": 284,
+                    "end": 286,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 287,
+                    "end": 289,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 440,
+                    "end": 442,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 674,
+                    "end": 675,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 676,
+                    "end": 677,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Similarly, k-means clustering aims to partition gene expression data into a specified number of disjoint clusters. Again, a distance metric is used in these calculations and can be specified by the user. Genes within a cluster are deemed similar to one another, but clusters are deemed dissimilar to one another producing a series of clusters that are not related or connected, opposite of the structure produced in hierarchical clustering [7,10]. Essentially, each gene is placed in one of the clusters initially specified and distances between clusters are calculated. Next, genes are moved from one cluster to another until a local stability is reached in which the distance between clusters is maximized while at the same time minimizing the distance between members of a given cluster [22,23]. This method is reliable and relatively simple and therefore is useful in analyzing data for which there is some prior knowledge such as classifying serotypes or strains. Ensuring that the partitions constructed using k-means clustering have some type of real or actual significance is where the difficulty lies [10].",
+            "cite_spans": [
+                {
+                    "start": 441,
+                    "end": 442,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 443,
+                    "end": 445,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 791,
+                    "end": 793,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 794,
+                    "end": 796,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1111,
+                    "end": 1113,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "PCA is an algorithm that relies on visually highlighting similarities in data in a manner that reduces the number of dimensions. It can be applied to any number of data sets from a small group of genes within a single array to groups of experiments each with a number of arrays [10,22,23]. As seen in Figure 4A, the plot generated from PCA allows patterns in data to be visualized by examining the proximity of clusters. The method implements a series of calculations to best separate the data and project that final analysis onto a 2 or 3 dimensional plot [22,23]. When combined with other clustering methods, PCA can be a very useful tool, as described earlier.",
+            "cite_spans": [
+                {
+                    "start": 279,
+                    "end": 281,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 282,
+                    "end": 284,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 285,
+                    "end": 287,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 558,
+                    "end": 560,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 561,
+                    "end": 563,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": [
+                {
+                    "start": 308,
+                    "end": 310,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Besides clustering algorithms another statistical approach typically used to analyze microarray data is hypothesis testing which aims to establish statistical significance associated with divergent findings. If a group of genes, perhaps genes that constitute a particular pathway, are differentially expressed between two samples, hypothesis testing can quantify the extent of those differences. Hypothesis testing is comprised of the following steps: specify the null hypothesis and the alternative hypothesis, select a significance level, calculate a statistic analogous to the parameter designated in the null hypothesis, calculate the probability value (p-value), compare the p-value with the significance level, and finally accept or reject the null hypothesis [7,26]. At the end of these steps, an observed outcome is associated with a statistical likelihood indicating whether or not the observed outcome is the result of chance and not some real difference or phenomenon [26]. Application of hypothesis testing is most useful when evaluating microarray data with specific genes or groups of genes in mind as opposed to discovery or exploration.",
+            "cite_spans": [
+                {
+                    "start": 767,
+                    "end": 768,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 769,
+                    "end": 771,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 980,
+                    "end": 982,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Normalization and Statistical Methods ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "A large number of microarray-related studies in the past have aimed to either characterize diseased cells in comparison to healthy cells or highlight the genes involved in a particular biological pathway [4,8]. Infrequently, studies were undertaken for other purposes such as gene discovery or examining distinct cellular properties [5,6]. However, in recent years, the number of studies utilizing microarrays in some capacity has increased greatly. More and more studies are relying on microarrays to provide insight into observed physiology, essentially using microarrays to further characterize biological systems [3,9]. In most of these cases, microarray analysis has generated interesting results, but also raised additional questions requiring further investigation, limiting its successful implementation.",
+            "cite_spans": [
+                {
+                    "start": 205,
+                    "end": 206,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 207,
+                    "end": 208,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 334,
+                    "end": 335,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 336,
+                    "end": 337,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 618,
+                    "end": 619,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 620,
+                    "end": 621,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "For instance, the application of bio-informatics tools such as microarrays to characterize microbial populations exposed to toxins and pollutants has been explored [27]. Being able to understand the catabolism of xenobiotics could enhance bioremediation processes with a direct impact on pollution control and environmental organization [27]. In addition, the exploration of previously uncharacterized microbes using microarrays could identify novel genes with relevant functionality [27]. In this context, a number of studies have focused on specific issues such as investigating how Candida albicans, a human fungal pathogen, is able to protect itself from the toxic effects of nitric oxide produced by the immune system [27,28]. Microarray analysis revealed a group of nine genes were over-expressed during exposure to nitric oxide. Of these nine genes yhb1, which produces a flavohemoglobin that detoxifies nitric oxide, was the most highly expressed [28].",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 485,
+                    "end": 487,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 724,
+                    "end": 726,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 727,
+                    "end": 729,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 956,
+                    "end": 958,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Evolutionary studies using microarrays have also gained prominence with the use of species-specific arrays in parallel. For example, researchers hybridized DNA from the progeny of two yeast strains, one with a particular evolved trait (i.e. mating discrimination) and the other without, onto oligonucleotide microarrays [29]. The arrays used in this study were designed to detect a multitude of polymorphisms between the two strains. Adaptive mutations were identified by linking polymorphisms to the evolved parental strain [29]. Investigators then mapped known genes and constructed a computer simulation capable of evaluating various parameters impacting mapping precision [29]. Finally, the researchers applied their method to yeast strains adapting to a changing glucose-galactose feed illustrating mutations in the same gene can lead to parallel adaptation [29]. Similarly, scientists compared community-acquired invasive Staphylococcus aureus strains to isolates from healthy people using microarray constructed from 7 previous sequencing projects [30]. Ten dominant lineages were identified; each with a distinct group of genes with potential functions related to virulence and resistence. Subsequent analysis suggested a common ancestor could be traced back for all of the strains studied, but evolutionary divergence must have occurred early on [30].",
+            "cite_spans": [
+                {
+                    "start": 321,
+                    "end": 323,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 677,
+                    "end": 679,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 864,
+                    "end": 866,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1056,
+                    "end": 1058,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1356,
+                    "end": 1358,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "The development of therapeutics has also benefited from the implementation of microarrays as evidenced by a number of recent publications. For example, scientists examined gene expression profiles from patients with chronic drug abuse, intending to better understand addiction and therefore formulate better treatments [31]. Analysis of the array data revealed very little overlap in the expression patterns for heroin and cocaine users [31]. These findings were contrary to widely held views regarding the shared effects of heroin and cocaine on dopamine, thus prompting reassessment of previous assumptions [31]. Another study, examined the mechanism behind acquired nisin resistance in bacteria [32]. Researchers found genes involved in the following pathways to be expressed differentially between resistant and non-resistant Lactococcus lactis strains: cell wall biosynthesis, energy metabolism, fatty acid and phospholipid metabolism, regulatory functions, and metal/peptide transport and binding [32]. Using this information, the researchers established mutant strains that either had genes knocked down or over-expressed and found these mutants had varying levels of nisin resistance as compared to the parental, wild-type strains [32].",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 322,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 438,
+                    "end": 440,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 610,
+                    "end": 612,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 699,
+                    "end": 701,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1004,
+                    "end": 1006,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1240,
+                    "end": 1242,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "In terms of disease characterization and detection, microarrays are also finding use. For instance, the pathogenicity of coxasackievirus B3 (CVB3) was examined; in humans this virus adversely affects the heart muscle [33]. Using cDNA microarrays, researchers compared murine hearts infected with the virus against non-infected murine hearts. In addition, oligonucleotide microarrays were used to compare infected HeLa cells over time [33]. Together, these experiments identified a number of differentially expressed genes, providing clues as to the precise sequence of events following infection. Similarly, the use of custom microarrays to characterize unknown samples from water treatment centers as part of a quality control measure was examined [34]. The microarray was constructed to target 16S ribosomal RNA (rRNA) from several groups of nitrifying bacteria and tested against reference samples with some success [34].",
+            "cite_spans": [
+                {
+                    "start": 218,
+                    "end": 220,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 435,
+                    "end": 437,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 750,
+                    "end": 752,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 920,
+                    "end": 922,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Using microarrays in the capacity of diagnostics has also become relatively popular especially in the context of outbreaks for which rapid diagnostic tools are needed to quickly evaluate pathogens and identify specific strains or serotypes [9,35,36]. For example, a microarray was constructed specifically to probe single nucleotide polymorphisms (SNPs) for foot and mouth disease virus (FMDV) [37]. The results were classified using statistical methods in order to develop a procedure to test for specificity with diagnostic application [37]. Similarly, a study combined the use of microarrays with reverse transcription-PCR to differentiate between two genetically similar enteroviruses; enterovirus 71 (EV71) and coxsackievirus A16 (CA16) [38]. This approach had a diagnostic accuracy of at least 92% for each of the two viruses as compared to reverse transcription-polymerase chain reaction (RT-PCR) and neutralization testing [38]. Currently, studies are being conducted to explore the feasibility and implementation of similar methods for other pathogens [38,39].",
+            "cite_spans": [
+                {
+                    "start": 241,
+                    "end": 242,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 243,
+                    "end": 245,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 246,
+                    "end": 248,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 395,
+                    "end": 397,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 539,
+                    "end": 541,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 743,
+                    "end": 745,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 932,
+                    "end": 934,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1062,
+                    "end": 1064,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1065,
+                    "end": 1067,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Current Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "With advancements in software and robotics technology, microarrays are becoming inexpensive, robust, and reliable [2,5]. The availability of custom arrays designed to probe a small subset of genes (usually several hundred) or specific pathways have also enhanced the potential utilization of microarray technology [1,2,9]. This section was designed to highlight the latest advances in the technology, speculate on novel applications of microarray technology, and outline areas of research that have just begun to use microarrays. Together these aspects portray the potential of microarrays in terms of applications as well as from a technical standpoint.",
+            "cite_spans": [
+                {
+                    "start": 115,
+                    "end": 116,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 117,
+                    "end": 118,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 315,
+                    "end": 316,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 317,
+                    "end": 318,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 319,
+                    "end": 320,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Breakthroughs in various aspects of the technology from fabrication to commercialization are continually influencing the kinds of microarrays and techniques researchers are using. Currently, microarray experiments are conducted in a series of steps with each step being distinct and in a particular order. However, newly developed chips equipped with electronic circuitry are circumventing a number of these steps particularly sample labeling [8,9]. In addition, a number of companies and research facilities now offer specialized arrays for detection, sequencing, and/or diagnostic purposes [3,6]. By commercializing such highly specific arrays, data gathering is being expedited for studies with explicit purposes. An integrated platform like the lab-on-a-chip (a system that combines multiple manipulations including sample mixing, labeling, and separation onto a single chip) is also influencing microarray technology. The miniaturization and automated techniques used to construct the lab-on-a-chip system are being applied to microarrays leading to arrays that can be readily used for high-throughput applications [7].",
+            "cite_spans": [
+                {
+                    "start": 444,
+                    "end": 445,
+                    "mention": "8",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 446,
+                    "end": 447,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 593,
+                    "end": 594,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 595,
+                    "end": 596,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1121,
+                    "end": 1122,
+                    "mention": "7",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "One of the most promising areas of research includes classification; particularly in the context of diseases and/or pathogens [40-43]. For instance, in 2002 researchers at the National Cancer Institute used microarrays to organize biopsy samples of diffuse large-B-cell lymphoma from more than 200 patients [44]. They identified 3 subgroups with varying expression of 17 distinct genes; constructing a model capable of predicting survival rates following chemotherapy [44]. In another study, researchers used microarrays to confirm previous classifications of nonpathogenic, low-pathogenic, and high-pathogenic types for 94 different Yersinia enterocolitica strains [45]. Researchers identified clusters of genes as being representative of each type (i.e. being present in one group, but not in another) with functional implications [45].",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 308,
+                    "end": 310,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 469,
+                    "end": 471,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 667,
+                    "end": 669,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 834,
+                    "end": 836,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Another arena in which microarrays may prove beneficial is discovery; primarily in the context of gene functions and the identification of novel organisms. For instance, in a recent study researchers analyzed an Escherichia coli strain, A49, with a mutation in the rnpA gene making it sensitive to temperature and therefore unable to grow at or above 43\u00b0C [46]. Under varying growth conditions, researchers found a number of genes differentially expressed. Careful review of these genes revealed RNase P, the mutated gene product, may have more functions than what had been proposed previously, especially in the context of handling precursor RNAs [46]. Researchers in 2003 constructed a custom array with highly conserved arrangements from every fully sequenced viral genome available in GenBank [39]. Next, they hybridized a viral isolate from a severe acute respiratory syndrome (SARS) patient onto the array and found a previously unidentified coronavirus [39]. Subsequent work involving viral sequencing verified these findings and showcased the potential of custom arrays to expedite the identification of pathogens; a virtual necessity in combating future outbreaks [39].",
+            "cite_spans": [
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 649,
+                    "end": 651,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 961,
+                    "end": 963,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1174,
+                    "end": 1176,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "In terms of biological products, particularly vaccines and therapeutic proteins, microarrays may also find use. As detailed in various governmental regulations, slight variations in a biological process may result in distinct final products; requiring further testing and validation [9]. Microarrays may very well provide a means of avoiding these procedures by establishing criteria (i.e. expression patterns for a small set of genes) that can be used to verify consistency and reproducibility. Extensive research would, however, be required to first establish the necessary criteria. In addition, it should be stressed that in this particular application, microarray results would have to be viewed in terms of patterns for a group of genes rather than the expression levels of individual genes [9,15]. This is because the variability associated with a single gene can exceed levels needed to verify or validate biological processes, whereas the variability in groups of genes where an overall pattern is decoded is much less [10].",
+            "cite_spans": [
+                {
+                    "start": 284,
+                    "end": 285,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 798,
+                    "end": 799,
+                    "mention": "9",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 800,
+                    "end": 802,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1029,
+                    "end": 1031,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Another area that has and continues to find microarray technology beneficial is pathway probing; illumination of biological pathways. Often, microarray data alone cannot decipher the sequential steps necessary for a particular mechanism to occur, however, it can provide insight into what genes or groups of genes should be investigated further [15,35]. For instance, a paper published in 2003 used microarrays together with other experimental techniques to decipher a pathway responsible for regulating the expression of cyclooxygenase-2 (COX-2), a pro-inflammatory protein associated with arthritis and pain [47]. A continuation of this work was published in 2005 further illuminating the pathway and possible feedback mechanisms with important therapeutic implications [48].",
+            "cite_spans": [
+                {
+                    "start": 346,
+                    "end": 348,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 349,
+                    "end": 351,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 611,
+                    "end": 613,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 773,
+                    "end": 775,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Perhaps the greatest potential lies in combining two fields within the scope of bio-informatics; genomics and proteomics. Genomics is the study of genes and their function whereas proteomics is the study of proteins and their functions [42,49]. By utilizing tools from each of these two disciplines, researchers may be able to construct more accurate and comprehensive models depicting specific biological processes. For example, in a recent study both two-dimensional gel electrophoresis and microarrays were used to identify genes involved in the acclimation of changing visible light in cyanobacteria [50]. Focusing on the organism Fremyella diplosiphon, researchers found approximately 80 proteins with different levels between cells grown in green light vs. red light as well as 17 genes not previously thought to be regulated by light [50]. Further exploration revealed a number of these genes had homologs in other organisms, though their functionality had not been fully deciphered [50]. In another study, both microarrays and proteomics were used to evaluate an Escherichia coli mutant secreting more \u03b1-hemolysin (HlyA) than the parent strain [51]. The researchers found decreased levels of tRNA-synthetases in the mutant as compared to the parent strain [51]. Based on this information, the researchers designed a modified hlyA gene to reduce the rate of translation by incorporating rare codons leading to the same amino acid sequence [51]. When the parent strain was transformed with this modified hlyA gene, it secreted even more HlyA than the mutant [51]. In other words, the study indicated it was possible to engineer cells using an approach that combined genomics and proteomics.",
+            "cite_spans": [
+                {
+                    "start": 237,
+                    "end": 239,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 240,
+                    "end": 242,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 605,
+                    "end": 607,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 842,
+                    "end": 844,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 991,
+                    "end": 993,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1153,
+                    "end": 1155,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1265,
+                    "end": 1267,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1447,
+                    "end": 1449,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1565,
+                    "end": 1567,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Potential Uses ::: Review",
+            "ref_spans": []
+        },
+        {
+            "text": "Microarrays are a powerful genomics tool, designed to illuminate differences in the expression of genes within cells. Despite being a relatively new technology, the scientific community has quickly adopted its use in a variety of fields including drug development, evolutionary biology, and disease characterization [1,52]. The strength of the technology rests on the several factors including: ease of use, availability of platforms and lower cost relative to other exploratory methods such as Northern blotting or Ribonuclease Protection Assay (RPA), implementation of statistical methods for detailed analysis, and most importantly a global view of a gene expression encompassing an entire genome.",
+            "cite_spans": [
+                {
+                    "start": 317,
+                    "end": 318,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 319,
+                    "end": 321,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "As previously eluded to, the technological limitations associated with microarrays manifest themselves in terms of variability typically seen as systematic errors. Improvements in robotics, array fabrications, and continued genome sequencing can certainly address these issues, but not entirely remove them. This places limits on what microarray technology can achieve, although a comprehensive understanding of microarrays can help establish meaningful and reproducible data. An effort to: properly design the experiment, establish quality control steps such as checking RNA purity, analyze the data, and verify the results can also combat technological challenges [10,14,53]. In addition, archiving databases and files is a consideration often overlooked, though quite important in being able to return to data with new leads and directions for subsequent research or simply cross-compare with new data.",
+            "cite_spans": [
+                {
+                    "start": 667,
+                    "end": 669,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 670,
+                    "end": 672,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 673,
+                    "end": 675,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "There are, of course, other limitations, inherently present that restrict the scope of microarray analysis just like any other tool. For example, microarrays only present a snapshot of the transcriptome which is continually changing and responding to cellular needs and signals. As such, microarrays only illuminate a part of what is going on inside a cell or a population of cells [3,6]. In addition, there does not necessarily have to be a tight correlation between the expression of a gene and the amount of translated protein. Therefore, differentially expressed genes may not translate into varying protein levels with functional implications [3]. Furthermore, the complexity of microarray analysis makes it exceedingly difficult to ascertain meaningful data with real biological significance without clearly defined goals or targets. An intricate aspect of genomic analysis is the interplay between genes or groups of genes (i.e. mechanisms) and that information is not easily deciphered using microarrays. And finally, the functionality of a gene cannot be determined solely using microarrays [2,3]. Indeed, other methods and experimental tools are needed to decipher the proteome, understand the varying interactions between genes and/or proteins, and develop a more complete picture of cellular behavior.",
+            "cite_spans": [
+                {
+                    "start": 383,
+                    "end": 384,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 385,
+                    "end": 386,
+                    "mention": "6",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 649,
+                    "end": 650,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1101,
+                    "end": 1102,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1103,
+                    "end": 1104,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Ultimately, microarrays will continue to be used in a variety of research areas as more options in the design of custom arrays become available along with an increase in the assortment of species-specific arrays. Technological advancements may help bring down the cost as well as enhance reproducibility and reliability promoting the applicaton of microarrays in new and diverse fields. In the end, the questions raised by microarray results are often just as vital as the answers they produce; a key to expanding the role of any scientific method to encompass new fields.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "cDNA \u2013 complementary DNA",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "PCR \u2013 polymerase chain reaction",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "cRNA \u2013 complementary RNA",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "ESTs \u2013 expressed sequence tags",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "MGED \u2013 Microarray Gene Expression Data",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "EBI \u2013 European Bioinformatics Institute",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "MIAME \u2013 Minimum Information About a Microarray Experiment",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "GEO \u2013 Gene Expression Omnibus",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "NCBI \u2013 National Center for Biotechnology Information",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "TIGR \u2013 The Institue for Genomic Research",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "SOMs \u2013 Self-organizing maps",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "PCA \u2013 Principle component analysis",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "rRNA \u2013 ribosomal RNA",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "SNPs \u2013 single nucleotide polymorphisms",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "RT-PCR \u2013 reverse transcription-polymerase chain reaction",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "RPA \u2013 Ribonuclease Protection Assay",
+            "cite_spans": [],
+            "section": "List of Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "PJ formulated the content, performed the literature search, and drafted much of the manuscript. KK contributed to revising the manuscript and adding content. MB contributed to formulating the content and layout. JS contributed to formulating the content, revising the manuscript, and drafting portions of the manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Comparison of cDNA and oligonucleotide microarrays\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: (A) Schematic highlighting the major steps in a cDNA microarray experiment [8]. Briefly, RNA from biological samples is isolated and checked for purity. Of the two RNA samples shown, one is considered the 'test' and the other the 'control'. Each sample is labeled with a different fluorescent dye, indicated by the green and red colors. The two samples are then mixed and hybridized onto a spotted microarray slide. Once the slide is washed, it is scanned at two different wavelengths, each corresponding to one of the dyes. (B) Image of scanned microarray wherein a number of distinct colors can be seen. Each color is representative of a certain amount of binding. For the image shown, the test sample was labeled with Cy5 and the control sample was labeled with Cy3.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Common steps employed to ensure quality and validity of microarray results. From a quality control standpoint, replicates should be performed using RNA samples prepared at the same time under the same conditions. Various features of the arrays being used should also be known, especially the controls. To verify the results generated from microarray experiments, a combinatorial approach is usually needed; checking the statistical significance associated with the expression levels of specific genes, reviewing the literature, and conducting additional experiments such as RT-PCR or Northern blotting.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Scatter plot of measured intensities for both fluorescent dyes on a log-log scale prior to normalization. The measured intensities are in arbitrary units. Each point in the graph represents a single spot on a hybridized microarray. In addition, the red line shown is the best-fit line calculated for the data with a slope that is close to unity.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Visualizations generated from the following clustering algorithms: (A) Principle component analysis (PCA), (B) Hierarchical, (C) K-means, (D) Self-organizing maps (SOMs). Each image depicts the results of a specific clustering algorithm applied to the same set of genes, approximately 700 genes. The data shown was generated from cDNA microarrays hybridized with human cells grown under varying conditions. Each algorithm segregates the data differently, based on specific parameters and conditions.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Exploring the new world of the genome with DNA microarrays",
+            "authors": [
+                {
+                    "first": "PO",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Botstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat Genet",
+            "volume": "21",
+            "issn": "",
+            "pages": "33-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/4462"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Computational analysis of microarray data",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Quackenbush",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Rev Genet",
+            "volume": "2",
+            "issn": "",
+            "pages": "418-427",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35076576"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Differential gene expression in recombinant Pichia pastoris analysed by heterologous DNA microarray hybridization",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Branduardi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Gasser",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Valli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Maurer",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Porro",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mattanovich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Microb Cell Fact",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2859-3-17"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "An analysis of the use of genomic DNA as a universal reference in two channel DNA microarrays",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gadgil",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lian",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gadgil",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kapur",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Genomics",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-6-66"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "A framework to analyze multiple time series data: a case study with Streptomyces coelicolor",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mehra",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lian",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Jayapal",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Charaniya",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Ind Microbiol Biotechnol",
+            "volume": "33",
+            "issn": "",
+            "pages": "159-172",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s10295-005-0034-7"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Design of studies using DNA microarrays",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Radmacher",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dobbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genet Epidemiol",
+            "volume": "23",
+            "issn": "",
+            "pages": "21-26",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/gepi.202"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Applications of microarrays in the pharmaceutical industry",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Crowther",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Curr Opin Pharmacol",
+            "volume": "2",
+            "issn": "",
+            "pages": "551-554",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1471-4892(02)00207-2"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Microarray Gene Expression Data Society",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "National Center for Biotechnology Information",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Methods and approaches in the analysis of gene expression data",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dopazo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Zanders",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Dragoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Amphlett",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Falciani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Immunol Methods",
+            "volume": "250",
+            "issn": "",
+            "pages": "93-112",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0022-1759(01)00307-6"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Uncovering evolutionary patterns of gene expression using microarrays",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Ranz",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Machado",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends Ecol Evol",
+            "volume": "21",
+            "issn": "",
+            "pages": "29-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tree.2005.09.002"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Recent Advances in DNA microarrays",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nakanishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Oka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Akagi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Acta Med Okayama",
+            "volume": "55",
+            "issn": "",
+            "pages": "319-328",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Microarray analysis of gene expression during the cell cycle",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Shedden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Cell Chromosome",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-9268-2-1"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Biological methods for cell-cycle synchronization of mammalian cells",
+            "authors": [
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Dowdy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biotechniques",
+            "volume": "30",
+            "issn": "",
+            "pages": "1322-1331",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "TM4: a free, open-source system for microarray data management and analysis",
+            "authors": [
+                {
+                    "first": "AI",
+                    "middle": [],
+                    "last": "Saeed",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sharov",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bhagabati",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Braisted",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Klapa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Currier",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thiagarajan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biotechniques",
+            "volume": "34",
+            "issn": "",
+            "pages": "374-378",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Comparisons and validation of statistical clustering techniques for microarray gene expression data",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Datta",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Datta",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "",
+            "pages": "459-466",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btg025"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Cluster analysis and display of genome-wide expression patterns",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Eisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PT",
+                    "middle": [],
+                    "last": "Spellman",
+                    "suffix": ""
+                },
+                {
+                    "first": "PO",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Botstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "95",
+            "issn": "",
+            "pages": "14863-14868",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.95.25.14863"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Systematic determination of genetic network architecture",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tavazoie",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Church",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat Genet",
+            "volume": "22",
+            "issn": "",
+            "pages": "281-285",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/10343"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rosner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Fundamentals of Biostatistics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Environmental genomics: exploring the unmined richness of microbes to degrade xenobiotics",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Eyers",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Schuler",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Stenuit",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Agathos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "El Fantroussi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Appl Microbiol Biotechnol",
+            "volume": "66",
+            "issn": "",
+            "pages": "123-130",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00253-004-1703-6"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Transcriptional response of Candida albicans to nitric oxide and the role of the YHB1 gene in nitrosative stress and virulence",
+            "authors": [
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Hromatka",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol Biol Cell",
+            "volume": "16",
+            "issn": "",
+            "pages": "4814-4826",
+            "other_ids": {
+                "DOI": [
+                    "10.1091/mbc.E05-05-0435"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "High-resolution mutation mapping reveals parallel experimental evolution in yeast",
+            "authors": [
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Segre",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Leu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Biol",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0040256"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "DNA microarrays: their use and misuse",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mohan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Baylink",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Microcirculation",
+            "volume": "9",
+            "issn": "",
+            "pages": "13-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.mn.7800118"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Microarrays reveal that each of the ten dominant lineages of Staphylococcus aureus has a unique combination of surface-associated and regulatory genes",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Lindsay",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Peacock",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Witney",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Stabler",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Husain",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Butcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hinds",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Bacteriol",
+            "volume": "188",
+            "issn": "",
+            "pages": "669-676",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.188.2.669-676.2006"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Distinctive profiles of gene expression in the human nucleus accumbens associated with cocaine and heroin abuse",
+            "authors": [
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Albertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kapatos",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Bannon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Neuropsychopharmacology",
+            "volume": "31",
+            "issn": "",
+            "pages": "2304-2312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Transcriptome analysis reveals mechanisms by which Lactococcus lactis acquires nisin resistence",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Kramer",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "van Hijum",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Knol",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kok",
+                    "suffix": ""
+                },
+                {
+                    "first": "OP",
+                    "middle": [],
+                    "last": "Kuipers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "50",
+            "issn": "",
+            "pages": "1753-1761",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/AAC.50.5.1753-1761.2006"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Genetic determinants of coxsackievirus B3 pathogenesis",
+            "authors": [
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "McManus",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Yanagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Rezai",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Buckley",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Triche",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Schreiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Ann N Y Acad Sci",
+            "volume": "975",
+            "issn": "",
+            "pages": "169-179",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "DNA microarray detection of nitrifying bacterial 16S rRNA in wastewater treatment plant sample",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Siripong",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McCormack",
+                    "suffix": ""
+                },
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Janus",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Urakawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "El Fantroussi",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Sappelsa",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Rittmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Stahl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Water Res",
+            "volume": "39",
+            "issn": "",
+            "pages": "3229-3238",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.watres.2005.05.044"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Oligonucleotide microarrays in microbial diagnostics",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bodrossy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sessitsch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Curr Opin Microbiol",
+            "volume": "7",
+            "issn": "",
+            "pages": "245-254",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mib.2004.04.005"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Gene expression studies using microarrays: principles, problems, and prospects",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Adv Physiol Educ",
+            "volume": "26",
+            "issn": "",
+            "pages": "256-270",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Microarray-based identification of antigenic variants of foot-and-mouth disease virus: a bioinformatics quality assessment",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Perales",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Abia",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Ortiz",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Domingo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Briones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Genomics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-7-117"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Combining multiplex reverse transcription-PCR and a diagnostic microarray to detect and differentiate enterovirus 71 and coxsackievirus A16",
+            "authors": [
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Hsiung",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Shih",
+                    "suffix": ""
+                },
+                {
+                    "first": "YK",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Juang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Clin Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "2212-2219",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.02393-05"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Viral discovery and sequence recovery using DNA microarrays",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Urisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Springer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Ksiazek",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Erdman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Mardis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hickenbotham",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Magrini",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eldred",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "PLoS Biol",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pbio.0000002"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "The use and analysis of microarray data",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Butte",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "1",
+            "issn": "",
+            "pages": "951-960",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrd961"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Mixed-genome microarrays reveal multiple serotype and lineage-specific differences among strains of Listeria monocytogenes",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Call",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Borucki",
+                    "suffix": ""
+                },
+                {
+                    "first": "TE",
+                    "middle": [],
+                    "last": "Besser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": "632-639",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.41.2.632-639.2003"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Diagnostic oligonucleotide microarray fingerprinting of Bacillus isolates",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Chandler",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Alferov",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Chernov",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Daly",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Golova",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Perov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Protic",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Robison",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schipma",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Willse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Clin Microbiol",
+            "volume": "44",
+            "issn": "",
+            "pages": "244-250",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.44.1.244-250.2006"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "The development of a DNA microarray-based assay for the characterization of commercially formulated microbial products",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Dubois",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "England",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Edge",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Masson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Trevors",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brousseau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Microbiol Methods",
+            "volume": "58",
+            "issn": "",
+            "pages": "251-262",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mimet.2004.04.011"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Potential use of microarray technology for rapid identification of central nervous system pathogens",
+            "authors": [
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Hanson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Niemeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Folio",
+                    "suffix": ""
+                },
+                {
+                    "first": "BK",
+                    "middle": [],
+                    "last": "Agan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Rowley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mil Med",
+            "volume": "169",
+            "issn": "",
+            "pages": "594-599",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "The use of molecular profiling to predict survival after chemotherapy for diffuse large-B-cell lymphoma",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rosenwald",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Connors",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Campo",
+                    "suffix": ""
+                },
+                {
+                    "first": "RI",
+                    "middle": [],
+                    "last": "Fisher",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Gascoyne",
+                    "suffix": ""
+                },
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Muller-Hermelink",
+                    "suffix": ""
+                },
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Smeland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Giltnane",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "N Engl J Med",
+            "volume": "346",
+            "issn": "",
+            "pages": "1937-1947",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa012914"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Application of comparative phylogenomics to study the evolution of Yersinia enterocolitica and to identify genetic differences relating to pathogenicity",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Howard",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Gaunt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hinds",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Witney",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Stabler",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Wren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Bacteriol",
+            "volume": "188",
+            "issn": "",
+            "pages": "3645-3653",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.188.10.3645-3653.2006"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "The effect of a single, temperature-sensitive mutation on global gene expression in Escherichia coli",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Altman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "518-532",
+            "other_ids": {
+                "DOI": [
+                    "10.1261/rna.2198203"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Shear-induced cyclooxygenase-2 via a JNK2/c-Jun-dependent pathway regulates prostaglandin receptor expression in chondrocytic cells",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Abulencia",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gaspard",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZR",
+                    "middle": [],
+                    "last": "Healy",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Gaarde",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Quackenbush",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Konstantopoulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Biol Chem",
+            "volume": "278",
+            "issn": "",
+            "pages": "28388-28394",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M301378200"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Divergent responses of chondrocytes and endothelial cells to shear stress: cross-talk among COX-2, the phase 2 response, and apoptosis",
+            "authors": [
+                {
+                    "first": "ZR",
+                    "middle": [],
+                    "last": "Healy",
+                    "suffix": ""
+                },
+                {
+                    "first": "NH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Goldring",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Talalay",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Kensler",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Konstantopoulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "14010-14015",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0506620102"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "DNA microarray technology for target identification and validation",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jayapal",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Melendez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Clin Exp Pharmacol Physiol",
+            "volume": "33",
+            "issn": "",
+            "pages": "496-503",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1440-1681.2006.04398.x"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Microarray expression profiling: capturing a genome-wide portrait of the transcriptome",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Conway",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Schoolnik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol Microbiol",
+            "volume": "47",
+            "issn": "",
+            "pages": "879-889",
+            "other_ids": {
+                "DOI": [
+                    "10.1046/j.1365-2958.2003.03338.x"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "Genomic DNA microarray analysis: identification of new genes regulated by light color in the cyanobacterium Fremyella diplosiphon",
+            "authors": [
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Stowe-Evans",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ford",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Kehoe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Bacteriol",
+            "volume": "186",
+            "issn": "",
+            "pages": "4338-4349",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.186.13.4338-4349.2004"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "Engineering HlyA hypersecretion in Escherichia coli based on proteomic and microarray analyses",
+            "authors": [
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biotechnol Bioeng",
+            "volume": "89",
+            "issn": "",
+            "pages": "195-205",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/bit.20342"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Genetic analysis and attribution of microbial forensics evidence",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Budowle",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Leighton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Murch",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chakraborty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Crit Rev Microbiol",
+            "volume": "31",
+            "issn": "",
+            "pages": "233-254",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/10408410500304082"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "Quantitative oligonucleotide microarray fingerprinting of Salmonella enterica isolates",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Willse",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Straub",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Wunschel",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Small",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Call",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Daly",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Chandler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "1848-1856",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh329"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Microarray expression profiling: analysis and applications",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Curr Opin Drug Discov Devel",
+            "volume": "6",
+            "issn": "",
+            "pages": "384-395",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "From patterns to pathways: gene expression data analysis comes of age",
+            "authors": [
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Slonim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat Genet",
+            "volume": "",
+            "issn": "",
+            "pages": "502-508",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ng1033"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "The Institute for Genomic Research",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Bioinformatics in microbial biotechnology \u2013 a mini review",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Bansal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Microb Cell Fact",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2859-4-19"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1694 @@
+{
+    "paper_id": "PMC2386448",
+    "metadata": {
+        "title": "A flexibly shaped space-time scan statistic for disease outbreak detection and monitoring",
+        "authors": [
+            {
+                "first": "Kunihiko",
+                "middle": [],
+                "last": "Takahashi",
+                "suffix": "",
+                "email": "kunihiko@niph.go.jp",
+                "affiliation": {}
+            },
+            {
+                "first": "Martin",
+                "middle": [],
+                "last": "Kulldorff",
+                "suffix": "",
+                "email": "martin_kulldorff@hms.harvard.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Toshiro",
+                "middle": [],
+                "last": "Tango",
+                "suffix": "",
+                "email": "tango@niph.go.jp",
+                "affiliation": {}
+            },
+            {
+                "first": "Katherine",
+                "middle": [],
+                "last": "Yih",
+                "suffix": "",
+                "email": "Katherine_Yih@harvardpilgrim.org",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Consider the situation where an entire study area is divided into m regions (for example, counties, ZIP codes, enumeration districts, etcetera), and each region is periodically reporting the number of cases of a disease or syndrome under study. We assume that, under the null hypothesis of no clustering, the number of cases Nid is a Poisson random variable with the observed value nid and the expected values \u03bcid in each region i(i = 1,...,m) at time d, where \u03bcid is proportional to its population size, or a covariate-adjusted population at risk. Since we are only interested in detecting clusters that are alive (active) at the current time tP, we only consider 'alive' clusters that are present in the following T time intervals:",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "[tP - T + 1, tP], [tP - T + 2, tP],..., [tP - 1,tP], [tP, tP]",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "where T is a pre-specified maximum temporal length of the cluster.",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "A time periodic geographical disease surveillance system based on a cylindrical space-time scan statistic has already been proposed by Kulldorff [10]. The cylindrical space-time scan statistic uses a cylindrical window in three dimensions where the base of the cylinder represents space and the height represents time. As with the purely spatial scan statistic, the cylindrical space-time scan statistic imposes a circular base Z on each centroid of regions for each of T time intervals. For each of centroids, the radius of the circle is varied from zero up to a pre-set maximum radius, for example, so that the window never includes more than 50% of the total population at risk [8]. In this paper, we use a pre-set maximum number of regions K to be included in the cluster as an upperbound of the radius. If the base contains the centroid of a region, then that whole region is included in the base. In total, a very large number of different but overlapping circular bases are created, each with a different set of neighboring regions and each being a possible candidate area containing a disease outbreak. Let Zik, k = 1,...,K, denote the base composed by the region i and the (k - 1)-nearest neighbors to i. Then, all the cylindrical windows to be scanned by the cylindrical scan statistic are the cylinders with the base in the set",
+            "cite_spans": [
+                {
+                    "start": 146,
+                    "end": 148,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 682,
+                    "end": 683,
+                    "mention": "8",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(1)Z1={Zik|1\u2264i\u2264m,1\u2264k\u2264K}",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "and the heights in the set",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(2)Y={[tP\u2212t+1,tP]|1\u2264t\u2264T},",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "On the other hand, a flexible space-time scan statistic which we propose in this paper imposes a three dimensional prismatic window with an arbitrarily shaped base Z. For any given region i, we create the set of arbitrarily shaped bases consisting of k connected regions (1 \u2264 k \u2264 K) including i. To avoid detecting a cluster of unlikely peculiar shape, the connected regions are restricted as the subset of the K-nearest neighbors to the region i, where K = 1 implies the region i itself. Let Zik(j), j = 1,...,jik denote the j-th window which is a set of k regions connected starting from the region i, where jik is the number of j satisfying Zik(j) \u2286 ZiK for k = 1,...,K. Then, all the windows to be scanned are the prisms whose base is included in the set",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(3)Z2={Zik(j)|1\u2264i\u2264m,1\u2264k\u2264K,1\u2264j\u2264jik}",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "with height in the set Y. In other words, for any given region i, the cylindrical scan statistic consider K concentric circles for the base, whereas the flexible scan statistic consider K concentric circles plus all the sets of connected regions including the single region i, whose centroids are located within the K-th largest concentric circle.",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Define L(W) as the likelihood under the alternative hypothesis that there is a cluster in the space-time window W(\u2208 W), where W=Z1\u00d7Y (or Z2\u00d7Y) and L0 the likelihood under the null hypothesis. Then, conditioning on the observed total number of cases, N, the definition of the space-time scan statistic S is the maximum likelihood ratio over all possible windows W,",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(4)S=max\u2061W\u2208W{L(W)}L0=max\u2061W\u2208W{L(W)L0}.",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Let nW be the number of cases in window W . For the Poisson model, let \u03bcW be the expected number in window W under the null hypothesis, so that \u03bcG = N for G, the entire study space in three dimensions. It can then be shown that",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(5)L(W)L0=(nW\u03bcW)nW(N\u2212nWN\u2212\u03bcW)N\u2212nW",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "if nW > \u03bcW, and L(W)/L0 = 1 otherwise. The window for which the likelihood ratio is maximized identifies the most likely cluster (MLC) [8]. To find the distribution of the log likelihood ratio (LLR) under the null hypothesis, Monte Carlo hypothesis testing [23] is required. p-value of the test is based upon the null distribution of LLR with large number B of Monte Carlo replications of data sets generated under the null hypothesis, i.e.,",
+            "cite_spans": [
+                {
+                    "start": 136,
+                    "end": 137,
+                    "mention": "8",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 258,
+                    "end": 260,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "p^1+\u2211v=1BI(LLRv\u2265LLR\u2217)B+1",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "where LLRv and LLR* is the value of the test statistic for the v-th Monte Carlo replicate and that for the observed data, respectively, and I(\u00b7) is the indicator function.",
+            "cite_spans": [],
+            "section": "The flexible space-time scan statistic ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "We applied the prospective flexible space-time scan statistic to daily syndromic surveillance data in eastern Massachusetts mimicking a real time surveillance system. The data came from an electronic medical record system used by Harvard Vanguard Medical Associates [3,24]. We used the rash and respiratory data during August 1\u201330, 2005. The data are geographically aggregated to ZIP codes. The number of ZIP codes used were different for each syndrome, for example cases of the rash were analyzed in 252 ZIP codes and respiratory in 385. Note that for the flexible space-time scan statistic, the ZIP code whose data does not exist, was treated like a ravine. For example, assume that ZIP codes i1 and i2, i2 and i3 are adjacent each other, respectively, but i1 and i3 are not adjacent. If the data of i2 does not exist under the situation, then it is assumed that i1 and i3 are not directly connected.",
+            "cite_spans": [
+                {
+                    "start": 267,
+                    "end": 268,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Syndromic surveillance in Massachusetts ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on the prior daily data for over a year in MA, the expected number of cases were calculated as the predicted means from a generalized linear mixed model (GLMM) as developed by Kleinman et al, adjusted for seasonal effect, day of week, etc, these are the same expectations used in the actual real time surveillance system [25]. We set K = 20 as the maximum length of the geographical window, and the maximum temporal length to be T = 7 days. The number of replications for the Monte Carlo procedure was set to B = 999. In disease outbreak detection, the recurrence interval (RI) is often used as an alternative to the p-value [14]. The measure reflects how often a cluster will be observed by chance, assuming that analyzes are repeated on a regular basis with a periodicity equal to the period of the study. For daily surveillance such as this analysis, the p-value of 0.001 corresponds to the RI of 1,000 days, i.e., 2.7 years, and an alpha level of 0.0027 corresponds to one expected false alarm every year.",
+            "cite_spans": [
+                {
+                    "start": 328,
+                    "end": 330,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 632,
+                    "end": 634,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Syndromic surveillance in Massachusetts ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The results of analysis during August 1\u201330 by the flexible and the cylindrical space-time scan statistics are given in Tables 1, 2 and Figure 1. The tables show results for the days with p < 0.0054, which corresponds to the RI of at least 6 months. When looking at rash outbreaks (Table 1), both tests detected the same cluster with a single ZIP code 01951 on August 7, with the same temporal length (6 days) and the same RI (2.7 years). Note that the clusters detected by both tests from August 8 to 10 are not signals of an outbreak because the number of cases on August 8 must be 0, and on August 9 and 10, the number of cases of the cluster was decreasing. For respiratory syndrome (Table 2), each test detected a different cluster with the same RI of 2.7 years on August 12. The cluster detected by the flexible scan statistic contained 12 ZIP codes, while that from the cylindrical scan statistic contained 18 ZIP codes, with 11 ZIP codes detected in common. On August 13 and 14, the flexible scan statistic detected significant clusters with larger RIs, 333 days and 250 days respectively, while the cylindrical scan statistic detected clusters with short RIs, 91 days and 30 days respectively. The flexible scan statistic also detected a cluster on August 15 (RI = 1.4 years) with a temporal length of 6 days, while the cylindrical scan statistic detected a cluster with a temporal length of 5 days (RI = 200 days). For the 6 days from August 12 to 17 (results on August 16 and 17 are not shown in Table 2 because of shorter RIs), the cylindrical scan statistic kept detecting the same cluster, while the flexible scan statistic detected a similar but slightly different cluster each day. However, we should acknowledge the similar lack of evidence in Table 2 for a continued outbreak on August 13 to 14, because the number of additional cases on those days is very close to the expected number of additional cases. On the other hand, there is some evidence for an excess of cases on August 15 (23 additional cases), although the estimated relative risk is substantially reduced.",
+            "cite_spans": [],
+            "section": "Syndromic surveillance in Massachusetts ::: Background",
+            "ref_spans": [
+                {
+                    "start": 142,
+                    "end": 143,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 126,
+                    "end": 127,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 129,
+                    "end": 130,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 287,
+                    "end": 288,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 693,
+                    "end": 694,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1512,
+                    "end": 1513,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1766,
+                    "end": 1767,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "In this section, we compare the flexible and cylindrical space-time scan statistics, using benchmark data from 176 New York City ZIP codes ([14,22]). This benchmark data has been described in detail elsewhere [22], and here we only give a brief overview. Based on 2002 numbers, the total population is 8,003,510. The benchmark data sets contain a number of randomly located of cases of a hypothetical disease or syndrome, generated either under the null model with no outbreaks or under one of eight different alternative models with an outbreak in one of four different locations and with either a high or modest excess risk. For each of the null and alternative models, three different sets of data sets were generated, with 31, 32, and 33 days, respectively. For each of the null models, 9,999 random data sets were generated. For each of the alternative models, 1,000 random data sets were generated.",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 144,
+                    "end": 146,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 210,
+                    "end": 212,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "For each data set, the total number of randomly allocated cases was 100 times the number of days (i.e., 3,100 cases in the data sets containing 31 days). The number 100 was chosen to reflect the occurrence rate of certain syndromes common to the NYC emergency department(ED)-based syndromic surveillance system. Under the null model, each person living in NYC is equally likely to contract the disease, and the time of each case is assigned with equal probability to any given day. Thus, each case was randomly assigned to ZIP code i and day d with probability proportional to \u03bcid = popi, where popi is the population of ZIP code i. For the alternative models, one or more ZIP codes were assigned an increased risk on Day 31 and, when applicable, on Days 32 and 33 as well. For these ZIP code and day combinations, \u03bcid was multiplied by an assigned relative risk. For all other ZIP code and day combinations, \u03bcid did not change. Each case was then randomly assigned with probability proportional to the new set of \u03bcid to generate data under the alternative models.",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Eight alternative models were evaluated, based on four different outbreak areas of length s* and total population pop* therein, with either high or medium relative risk (RR) [22] (Figure 2).",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": [
+                {
+                    "start": 187,
+                    "end": 188,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "1. Cluster A: a single ZIP code area in Brooklyn (circular area)",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "s* = 1, pop* = 85, 089, RR: high = 9.91, medium = 5.66",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "2. Cluster A5: the same ZIP code with 4 neighboring ZIP codes (non-circular area)",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "s* = 5, pop* = 318, 754, RR: high = 4.47, medium = 3.06",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "3. The Rockaways, 5 ZIP codes area (non-circular area)",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "s* = 5, pop* = 106, 738, RR: high = 8.48, medium = 5.01",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "4. Hudson River: 20 ZIP codes areas along the shore of the Hudson River (non-circular area)",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "s* = 20, pop* = 827, 382, RR: high = 2.97, medium = 2.24",
+            "cite_spans": [],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "A maximum length of the geographic window K = 20 was used for the flexible scan statistic, while the cylindrical scan statistic used a maximum of either K = 20 or a 50 % of the population at risk. A period of T = 3 days was used as the maximum temporal length of the cluster. We did not use the options to include purely temporal clusters (see details in [14]).",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Statistical power, sensitivity and positive predictive value ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "First of all, we estimated the standard statistical power, which is the probability that the null hypothesis is rejected at the \u03b1 = 0.05 significance level, without considering the overlap between the detected and real clusters. The random data sets generated under the null model were used to get the critical values of the scan statistics. For \u03b1 = 0.05, this is defined as the 500th highest log likelihood ratio when raning those value from all the 9,999 simulated data sets. The estimated power was then calculated is the proportion of the 1,000 random data sets that had a higher log likelihood ratio than the critical value obtained from the null data sets. The results are shown in Table 3. In general, the cylindrical space-time scan statistic has higher power for the three more compact clusters, while the flexible space-time scan statistic have higher power for the long and narrow the Hudson River cluster. On Day 33 of the high excess risk outbreaks, both methods have very high power.",
+            "cite_spans": [],
+            "section": "Standard statistical power ::: Background",
+            "ref_spans": [
+                {
+                    "start": 694,
+                    "end": 695,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "We can consider two types of spatial misclassifications when applying the cluster detection test (CDT). One is a false negative test result (FN) in which the CDT misses a region included in the true cluster. Sensitivity is 1 - FN rate. The other is a false positive test result (FP) in which the CDT incorrectly detects a region that is not present in the true cluster. The numbers of FNs and FPs for geographical detection are s* - s and l - s, respectively.",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "The extended power is based on the bivariate distribution P0(l, s | s*) and penalties introduced for the FPs and FNs of the geographical detection as",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(8)I(w\u2212,w+)=\u2211l\u22651\u2211s\u22650W(l,s;w\u2212,w+)P0(l,s|s\u2217)",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "where W(l, s; w-, w+) is a weight function such that",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(9)W(l,s;w\u2212,w+)={(1\u2212min\u2061{w\u2212(s\u2217\u2212s),1})(1\u2212min\u2061{w+(l\u2212s),1}),(s\u2264l;0\u2264s\u2264s\u2217,1\u2264l),0,(otherwise)",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "and w- and w+ are the predefined penalties for the FNs and FPs (per region), respectively. This power includes the following three special powers:",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "1. The standard power as I(0, 0).",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "2. The power to detect the geographical true cluster accurately as I(1, 1).",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "3. The power for which the MLC includes all the regions within the true cluster as I(1, 0).",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Takahashi and Tango [26] also proposed the profile of the extended power as",
+            "cite_spans": [
+                {
+                    "start": 21,
+                    "end": 23,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(10)Q(r | s*) = I(1/s*, r/s*),     (0 \u2264 r \u2264 1)",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "where r = w+/w- with w- = 1/s*, because it is difficult to set the value of w- and w+ in advance. Figure 3 shows the plots of the profile Q(r | s*) against r (0 \u2264 r \u2264 1) for flexible and cylindrical scan statistics applied to (a) the cluster A5 and (b) the Rockaways, both on Day 33 with high risk, based upon Tables 5 and 6. Figure 3(a) shows the flexible scan statistic has higher extended power when r = 0 i.e. penalties for the FP w+ = 0, I(1/5, 0) = 0.978 for the flexible and 0.954 for the cylindrical, while the extended power of cylindrical scan statistic is higher for large r, as I(1/5, 1/5) = 0.765 for the flexible and 0.862 for the cylindrical. On the other hand, Figure 3(b) shows the flexible scan statistic is more uniformly powerful than the cylindrical one for the Rockaways cluster, I(1/5, 0) = 0.958 and I(1/5, 1/5) = 0.913 for the flexible, and I(1/5, 0) = 0.885 and I(1/5, 1/5) = 0.872 for the cylindrical, respectively.",
+            "cite_spans": [],
+            "section": "The extended power ::: Space-time power distribution ::: Background",
+            "ref_spans": [
+                {
+                    "start": 105,
+                    "end": 106,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 333,
+                    "end": 337,
+                    "mention": "3(a)",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 684,
+                    "end": 688,
+                    "mention": "3(b)",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 317,
+                    "end": 318,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 323,
+                    "end": 324,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "As other measures of accuracy of cluster detection tests, we shall consider sensitivity and positive predictive value [27,28]. These measures can be defined in terms of either the number of regions or the population. First, we define sensitivity of cluster detection tests as the probability of detecting the regions that actually constitute the cluster, i.e, proportion of the number of regions correctly detected from the true cluster, s/s*. We shall present the expected value:",
+            "cite_spans": [
+                {
+                    "start": 119,
+                    "end": 121,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 122,
+                    "end": 124,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(11)TP1=E[Ss\u2217]=\u2211s=0s\u2217ss\u2217P0(+,s|s\u2217).",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Positive predictive value (PPV) of cluster detection tests is defined in a similar manner as the proportion of the number of true regions in the detected cluster, i.e, s/l under l > 0, and the expected value is presented:",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(12)PP1=E[SL|L>0]=\u2211l\u22651\u2211s\u22650slP0(l,s|s\u2217)P0(+,+|s\u2217)",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Based upon the population, we can define the following sensitivity TP2 and positive predictive value PP2:",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(13)TP2=E(Total population of the detected S true regions)Total population of the s\u2217 reigons of true cluster",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "(14)PP2=E(Total population of S true regionsTotal population of L detected regions|L>0)",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "All these summary measures are better the larger they are with 100 being the optimal.",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 7 shows the sensitivity and PPV of the flexible and cylindrical space-time scan statistics for each cluster with a high relative risk. For cluster A, the cylindrical scan statistic has higher PPV and higher sensitivity than the flexible one. For cluster A5 and the cylindrical has higher PPV on all days and higher sensitivity on day 31, but the flexible scan statistic has higher sensitivity on days 32 and 33. The same is true for the Rockaway cluster. For the Hudson River cluster, the flexible scan statistic has higher PPV than the cylindrical. The flexible scan has higher sensitivity than for the cylindrical with the same upper constant K = 20 on the number of regions in the detected cluster, but lower sensitivity compared to the cylindrical scan with a 50% upper limit on the cluster size. Note though, that this difference in sensitivity is less than the difference in PPV that goes the other way.",
+            "cite_spans": [],
+            "section": "Sensitivity and positive predictive value ::: Space-time power distribution ::: Background",
+            "ref_spans": [
+                {
+                    "start": 6,
+                    "end": 7,
+                    "mention": "7",
+                    "ref_id": "TABREF6"
+                }
+            ]
+        },
+        {
+            "text": "In this paper, we have proposed a flexible space-time scan statistic to detect arbitrarily shaped disease outbreaks. We have also presented a tri-variate power distribution which is useful for evaluating the performance of cluster detection tests, informing us about the spatial and temporal accuracy of the detected clusters in addition to the standard statistical power.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "For the benchmark data evaluated in this paper, the cylindrical scan statistic performs better for the small single zip-code cluster, although by the third day of the outbreak both methods are almost perfect. For the small irregular shaped clusters, A5 and Rockaways, the cylindrical performs better on the first day of the outbreak, but as more data accumulates, the flexible scan statistic has certain advantages in determining the precise size and shape of the outbreak. For the large and narrow Hudson River cluster, the flexible scan statistic performs better than the cylindrical one, with slightly higher standard power, much higher PPV and slightly higher or lower sensitivity depending on the type of cylindrical method used. Results may be different for other types of regular and irregularly shaped disease outbreaks, but the four examples used in this paper gives some sense of the proposed methods performance.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "For early detection, timeliness is much more important than geographical accuracy. When monitoring an occurring outbreak, on the other hand, geographical accuracy becomes critical and is then the key objective since we already know the outbreak is there. Our results suggest that we may use both the cylindrical and flexible scan statistic for disease outbreak detection, but for different purposes. Specifically, for detecting new outbreak that, one may want to use the cylindrical scan statistic. That is especially if we expect the outbreak to start locally, within a reasonably small and compact area containing only a few ZIP-codes. On the other hand, once the outbreak has spread to a larger area, and we want to monitor that spread, one may want to use the flexible scan statistic, with its ability to accuratly determine the precise geographical extent of irregular shaped outbreaks. This is especially true ones the outbreak has left its local area of origin.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "To evaluate the performance of space-time scan statistic, we applied the extended power for purely spatial cluster detection test (8), which is defined as the weighted sum of the bivariate power distribution wherein the weight is given by the geometric mean of (1-penalty for the false negatives) and (1-penalty for the false positives), including the standard power as a special case. Also we applied the profile Q(r | s*) proposed by Takahashi and Tango [26]. This plot gave us a detailed description regarding power of cluster detection tests. Needless to say, it is possible to extend it to space-time version if we could consider the penalties for temporal false negatives and false positives, but we leave this problem for future work. Also, for the profile of the extended power, we chose to use a fixed cost of w- = 1/s* for false negatives and a smaller or equal cost for false positives. For more general situations, we could plot the full bivariate extended power function on the unit square.",
+            "cite_spans": [
+                {
+                    "start": 457,
+                    "end": 459,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Similarly to the flexible spatial scan statistic in the purely spatial situation, the flexible space-time scan statistics proposed in this paper has a limitation of cluster size, because of the limitation of the speed of computation. The proposed scan statistic works well for small to moderate sized clusters. Although we set the maximum length of the geographical window to K = 20, this is not large enough to detect the 20 ZIP codes of the Hudson River cluster accurately because this cluster is too long to be the subset of the 20-th nearest neighbors of any region. Computation time depends on the size of the data set and K. Indeed, for the August 11 analysis of respiratory syndrome data in Massachusetts, with 385 ZIP codes, a maximum temporal length of T = 7 days, a maximum spatial size of K = 20, and with 999 Monte Carlo replications, the flexible space-time scan statistic took 87.7 minutes to run on a 3.06-GHz Pentium 4 computer, while the cylindrical space-time scan statistic took only 9.8 minutes.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "A limitation of length may also prevent the analysis to present large clusters of unlikely and very peculiar shapes. These undesirable properties produced by maximum likelihood ratio might suggest the use of different criterion for model selection, including some penalized likelihood [20,29]. Also, for larger cluster seizes, the method is not practically feasible and a more efficient algorithm is needed.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we considered the right cylinder or right prism of the cluster model, as an expansion of the cylindrical space-time scan statistic for a prospective disease surveillance by Kulldorff [10]. This does not allow the scanning window to adjust itself as the disease outbreak grows or shrinks geographically over time. Recently, Iyengar has suggested using a square pyramid shape window which can model either growth (or shrinkage) and movement of the disease cluster [30]. For the proposed flexible space-time scan statistic, if we could consider the flexibility in both space and time, that is, evaluating all connected subsets within a cylinder instead of W in (4), we can detect more arbitrarily shaped clusters in space-time. For such an expansion, an efficient computational algorithm will be needed for the scanning process, as well as a more sophisticated mechanism for the interpretation of such complicatedly shaped clusters. The implementation and importance of such methods for disease surveillance and monitoring, is an issue for future research.",
+            "cite_spans": [
+                {
+                    "start": 199,
+                    "end": 201,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 478,
+                    "end": 480,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "KT, MK and TT developed the statistical methodology and designed the study. KT, MK and KY analyzed and interpreted the syndromic surveillance data. KT programmed the methods, did the power calculations and wrote the first draft of the manuscript. All authors participated in the interpretation of the results, revised the manuscript, and approved the final version.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Detected outbreaks of Rash based on daily syndromic surveillance data in eastern Massachusetts during August 1\u201330, 2005.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Detected outbreaks of Respiratory based on daily syndromic surveillance data in eastern Massachusetts during August 1\u201330, 2005.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Standard power of the prospective space-time scan statistics \u2013 flexible and cylindrical \u2013 at different days of the outbreak\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Space-time power distribution P1(l, s, t | s*, t*) for the Cluster A (s* = 1) on Day 31 (t* = 1) with high risk (RR= 9. 91), where t is a temporal length of detected cluster. The mark \"*\" is the powers of accurate detection.\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Space-time power distribution P1(l, s, t | s*, t*) for the Cluster A5 (s* = 5) on Day 33 (t* = 3) with high risk (RR = 4. 47), where t is a temporal length of detected cluster, and the raw all cells of which have zero powers of both tests is not shown. The mark \"*\" is the powers of accurate detection.\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Space-time power distribution P1(l, s, t | s*, t*) for the Rockaways (s* = 5) on Day 33 (t* = 3) with high risk (RR = 8. 48), where t is a temporal length of detected cluster, and the raw all cells of which have zero powers of both tests is not shown. The mark \"*\" is the powers of accurate detection.\n",
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Table 7: Sensitivity and positive predictive value (PPV) of the flexible and cylindrical space-time scan statistics.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Detected outbreaks of Rash and Reepiratory in eastern Massachusetts during August 1\u201330, 2005, by the cylindrical scan statistic ((a) and (b)) and the flexible scan statistic ((a), (c) and (d)).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: NYC 176 ZIP codes area and assumed clusters (i) Cluster A, (ii) Cluster A5, (iii) The Rockaways, and (iv) Hudson River.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Profile of the extended power Q(r | s*) for flexible and cylindrical scan statistics applied to the cluster (a) Cluster A5, and (b) The Rockaways.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Syndromic surveillance in public health practice, New York City",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Heffernan",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Mostashari",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Karpati",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerging Infectious Diseases",
+            "volume": "10",
+            "issn": "",
+            "pages": "858-864",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Prospective time periodic geographical disease surveillance using a scan statistic",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Journal of the Royal Statistical Society, Series A",
+            "volume": "164",
+            "issn": "",
+            "pages": "61-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "A space-time permutation scan statistic for disease outbreak detection",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Heffernan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hartman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Assun\u00e7\u00e3o",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Mostashari",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Medicine",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Lawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Biggeri",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "B\u00f6hning",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lesaffre",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Viel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bertollini",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Disease Mapping and Risk Assessment for Public Health",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Lawson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Statistical Methods in Spatial Epidemiology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "SaTScan version 7.0: software for the spatial and space-time scan statistics",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Scan statistics for geographical disease surveillance: an overview",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Spatial & Syndromic Surveillance for Public Health",
+            "volume": "",
+            "issn": "",
+            "pages": "115-131",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A flexibly shaped spatial scan statistic for detecting clusters",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tango",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "International Journal of Health Geographics",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A simulated annealing strategy for the detection of arbitrarily shaped spatial clusters",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Duczmal",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Assun\u00e7\u00e3o",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Computational Statistics & Data Analysis",
+            "volume": "45",
+            "issn": "",
+            "pages": "269-286",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Upper level set scan statistic for detecting arbitrarily shaped hotspots",
+            "authors": [
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Patil",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Taillie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Environmental and Ecological Statistics",
+            "volume": "11",
+            "issn": "",
+            "pages": "183-197",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Fast detection of arbitrarily shaped disease clusters",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Assun\u00e7\u00e3o",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Costa",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tavares",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ferreira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Statistics in Medicine",
+            "volume": "25",
+            "issn": "",
+            "pages": "723-742",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A systems overview of the electronic surveillance system for the early notification of community-based epidemics (ESSENCE II)",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lombardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Burkom",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Elbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Magruder",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Loschen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sari",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sniegoski",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Wojcik",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pavlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Urban Health",
+            "volume": "80",
+            "issn": "",
+            "pages": "i32-i42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "An elliptic spatial scan statistic",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Pickle",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Duczmal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Statistics in Medicine",
+            "volume": "25",
+            "issn": "",
+            "pages": "3929-3943",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "FleXScan version 2.0: Software for the Flexible Spatial Scan Statistic",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yokoyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tango",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Japan",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Benchmark data and power calculations for evaluating disease outbreak detection methods",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hartman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Heffernan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Mostashari",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Morbidity and Mortality Weekly Report",
+            "volume": "53",
+            "issn": "",
+            "pages": "144-151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Modified randomization tests for nonparametric hypotheses",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dwass",
+                    "suffix": ""
+                }
+            ],
+            "year": 1957,
+            "venue": "The Annals of Mathematical Statistics",
+            "volume": "28",
+            "issn": "",
+            "pages": "181-187",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Using automated medical records for rapid identification of illness syndromes (syndromic surveillance): the example of lower respiratory infection",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lazarus",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kleinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Dashevsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "DeMaria",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "BMC Public Health",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A generalized linear mixed models approach for detecting incident clusters of disease in small areas, with an application to biological terrorism",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kleinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lazarus",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "American Journal of Epidemiology",
+            "volume": "159",
+            "issn": "",
+            "pages": "217-224",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "An extended power of cluster detection tests",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tango",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Statistics in Medicine",
+            "volume": "25",
+            "issn": "",
+            "pages": "841-852",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Distance-based methods for spatial and spatio-temporal surveillance",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Forsberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bonetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Jeffery",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ozonoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pagano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Spatial & Syndromic Surveillance for Public Health",
+            "volume": "",
+            "issn": "",
+            "pages": "115-131",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "A spatial scan statistic for survival data",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gregorio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biometrics",
+            "volume": "63",
+            "issn": "",
+            "pages": "109-118",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Evaluation of spatial scan statistics for irregularly shaped clusters",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Duczmal",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Journal of Computational and Graphical Statistics",
+            "volume": "15",
+            "issn": "",
+            "pages": "428-442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Use of automated ambulatory-care encounter records for detection of acute illness clusters, including potential bioterrorism events",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lazarus",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kleinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Dashevsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kludt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "DeMaria",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Emerg Infect Dis",
+            "volume": "8",
+            "issn": "",
+            "pages": "753-760",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Space-time clusters with flexible shapes",
+            "authors": [
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Iyengar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Morbidity and Mortality Weekly Report",
+            "volume": "54",
+            "issn": "",
+            "pages": "71-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Syndromic surveillance using minimum transfer of identifiable data: the example of the National Bioterrorism Syndromic Surveilance Demonstration Program",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bocchino",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Caldwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Harmon",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kleinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lazarus",
+                    "suffix": ""
+                },
+                {
+                    "first": "AF",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Nordin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Ritzwoller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Urban Health",
+            "volume": "80",
+            "issn": "",
+            "pages": "i25-i31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "A review and discussion of prospective statistical surveillance in public health",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sonesson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of the Royal Statistical Society, Series A",
+            "volume": "166",
+            "issn": "",
+            "pages": "5-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Lawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kleinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Spatial & Syndromic Surveillance for Public Health",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Temporal surveillance using scan statistics",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Naus",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wallenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Statistics in Medicine",
+            "volume": "25",
+            "issn": "",
+            "pages": "311-324",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A spatial scan statistic",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kulldorff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Communications in Statistics \u2013 Theory and Methods",
+            "volume": "26",
+            "issn": "",
+            "pages": "1481-1496",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Monitoring change in spatial patterns of disease: comparing univariate and multivariate cumulative sum approaches",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rogerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Yamada",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Statistics in Medicine",
+            "volume": "23",
+            "issn": "",
+            "pages": "2195-2214",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

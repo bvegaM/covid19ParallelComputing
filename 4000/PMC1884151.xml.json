@@ -1,0 +1,4494 @@
+{
+    "paper_id": "PMC1884151",
+    "metadata": {
+        "title": "Early efforts in modeling the incubation period of infectious diseases with an acute course of illness",
+        "authors": [
+            {
+                "first": "Hiroshi",
+                "middle": [],
+                "last": "Nishiura",
+                "suffix": "",
+                "email": "nishiura.hiroshi@uni-tuebingen.de",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The incubation period is defined as the time from exposure to onset of disease [1], and when limited to infectious diseases, corresponds to the time from infection with a microorganism to symptom development. According to a rigorous descriptive review [2], historical descriptions of the incubation period can be traced back to the mid-16th century when Girolamo Fracastoro (Fracastorius) (1478\u20131553), an Italian physician, documented for the first time the incubation period of rabies in 1546 [3]. The incubation period of infectious diseases ranges from the order of a few hours, which is common for toxic food poisoning, to a few decades as seen in the case of tuberculosis, AIDS and variant Creutzfeldt-Jakob disease (vCJD). Since symptom onset reflects pathogen growth and invasion, excretion of toxins and initiation of host-defense mechanisms, the length of the incubation period varies largely according to the replication rate of the pathogen, the mechanism of disease development, the route of infection and other underlying factors.",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 81,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 253,
+                    "end": 254,
+                    "mention": "2",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 495,
+                    "end": 496,
+                    "mention": "3",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "During the incubation period of acute infectious diseases, which is subsequently followed by a symptomatic period, it should be noted that the infected host can be infectious. Whereas the incubation and symptomatic periods are distinguished by symptom onset, other epidemiologic terms are distinguished by acquisition of infectiousness. That is, the time from infection to acquisition of infectiousness is referred to as the latent period, which is subsequently followed by the infectious period [4]. These two concepts are clearly separated by definition and are not directly related. The incubation period of infectious diseases offers various insights into clinical and public health practices, as well as being important for epidemiologic and ecological studies.",
+            "cite_spans": [
+                {
+                    "start": 497,
+                    "end": 498,
+                    "mention": "4",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "To enhance our understanding of the incubation period distributions of infectious diseases, it is useful to revisit previous efforts and reassess explicit models. In particular, it is of practical importance to reanalyze historical works to clarify the present day implications. This paper discusses relatively unknown historical efforts, paying particular attention to diseases with an acute course of illness. Previous classic works on models of incubation period are discussed, including the earliest method to estimate the incubation period using incomplete data, the earliest attempt to model the distribution, and estimations of the time of exposure during an outbreak with a common harmful influence and a very brief time of exposure (i.e., a point source outbreak).",
+            "cite_spans": [],
+            "section": "Background",
+            "ref_spans": []
+        },
+        {
+            "text": "Before entering into details of historical works on the incubation period, the various uses of the incubation period distribution are briefly discussed. Table 1 summarizes a number of common examples, presenting historical as well as recent major uses [1,5-27]; however, it is worth noting that this list does not cover all utilities in full.",
+            "cite_spans": [
+                {
+                    "start": 253,
+                    "end": 254,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 255,
+                    "end": 256,
+                    "mention": "5",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 257,
+                    "end": 259,
+                    "mention": "27",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "The usefulness of understanding the incubation period ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 159,
+                    "end": 160,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In clinical practice, the incubation period is useful not only for making rough guesses as to the causes and sources of infection of individual cases [5], but also for developing treatment strategies to extend the incubation period (e.g., antiretroviral therapy for HIV infection [1]) and for performing early projection of disease prognosis when the incubation period is clearly associated with clinical severity due to dose-response mechanisms (e.g., diseases caused by exotoxin) [6,7]. Moreover, during an outbreak of a newly emerged directly transmitted disease, the incubation period distribution permits determination of the length of quarantine required for a potentially exposed individual (i.e., by restricting movement of an exposed individual for a duration sufficiently longer than the incubation period) [10]. Further, if the time lag between acquiring infectiousness and symptom onset appears long (i.e., if the incubation period is relatively long compared to the latent period), it implies that isolation measures (e.g, restriction of movement until the infectious individual loses infectiousness) are likely to be ineffective, complicating disease control [1,11].",
+            "cite_spans": [
+                {
+                    "start": 151,
+                    "end": 152,
+                    "mention": "5",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 281,
+                    "end": 282,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 483,
+                    "end": 484,
+                    "mention": "6",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 485,
+                    "end": 486,
+                    "mention": "7",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 818,
+                    "end": 820,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1174,
+                    "end": 1175,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1176,
+                    "end": 1178,
+                    "mention": "11",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "The usefulness of understanding the incubation period ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Understanding the incubation period distribution also enables statistical estimation of the time of exposure during a point source outbreak [12] as well as a hypothesis-testing to determine whether the outbreak has ended [13]; the former is discussed below. The distribution is also useful in statistical approaches of epidemic curve reconstruction and short-term predictions of slowly progressing diseases; the backcalculation method uses the incubation period to estimate HIV prevalence and project the future incidence of AIDS [14,15]. During the last decade, this method has also been extended to prion diseases such as Bovine Spongiform Encephalopathy (BSE) [16,17], vCJD [18-22] and Kuru [23]. Although backcalculation is not discussed in this paper, several rigorous reviews have been published with regard to diseases with a long incubation period [15,17,22,28]. This approach has also recently diverged to quantification of the transmission potential of diseases with an acute course of illness [24] and infectiousness relative to disease-age [25]. Moreover, in cases such as the short and long incubation periods of Plasmodium vivax malaria in temperate zones, the incubation period also enhances ecological understanding of adaptation strategies; in temperate zones, clearly separate bimodal peaks with approximate lengths of 2 and 50 weeks are observed [26,27], helping malaria transmissions continue over the winter season when transmission is usually greatly reduced due to seasonal entomologic characteristics.",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "12",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 222,
+                    "end": 224,
+                    "mention": "13",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 531,
+                    "end": 533,
+                    "mention": "14",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 534,
+                    "end": 536,
+                    "mention": "15",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 664,
+                    "end": 666,
+                    "mention": "16",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 667,
+                    "end": 669,
+                    "mention": "17",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 678,
+                    "end": 680,
+                    "mention": "18",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "22",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 695,
+                    "end": 697,
+                    "mention": "23",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 857,
+                    "end": 859,
+                    "mention": "15",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 860,
+                    "end": 862,
+                    "mention": "17",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 863,
+                    "end": 865,
+                    "mention": "22",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 866,
+                    "end": 868,
+                    "mention": "28",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1005,
+                    "end": 1007,
+                    "mention": "24",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1053,
+                    "end": 1055,
+                    "mention": "25",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1366,
+                    "end": 1368,
+                    "mention": "26",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1369,
+                    "end": 1371,
+                    "mention": "27",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "The usefulness of understanding the incubation period ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Whereas the incubation period is conveniently extracted from specific data indicating the time of exposure, i.e., experimental inoculation data and case travel histories [2], most infection events are not directly observable for diseases transmitted by non-sexual direct contact. Thus, it is often difficult to determine the incubation period without explicit information of the time of exposure. The majority of epidemiologic data informs us that exposure (i.e., infection) occurred in a defined period, data of which is referred to as interval censored [29]. This is a common concern for acute infectious diseases transmitted by droplets and droplet nuclei and, most noteworthily, was discussed in detail during the outbreak of severe acute respiratory syndrome (SARS) [30,31]. Previous studies on the population dynamics of influenza tend to make assumptions with regard to the incubation period distribution without employing observed data [32,33], perhaps mainly due to difficulties in identifying the time of exposure. The incubation period distribution of influenza remained almost unknown until a recent study reanalyzed the data of influenza transmission on an aircraft with a short duration of flight [34,35]. Assuming Weibull distribution, this study estimated the mean (and standard deviation (SD)) incubation period as 1.48 (0.47) days [35]. Not only was the sample size of the estimate limited (i.e., 37 secondary cases), but since no other estimates are currently available, the present paper revisits a historical study on this topic.",
+            "cite_spans": [
+                {
+                    "start": 171,
+                    "end": 172,
+                    "mention": "2",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 556,
+                    "end": 558,
+                    "mention": "29",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 772,
+                    "end": 774,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 775,
+                    "end": 777,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 945,
+                    "end": 947,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 948,
+                    "end": 950,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1212,
+                    "end": 1214,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1215,
+                    "end": 1217,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1350,
+                    "end": 1352,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "The earliest study concerned with estimating the incubation period of influenza was published by Anderson Gray McKendrick (1876\u20131943) and J. Morison in the Indian Journal of Medical Sciences in 1919 [36]. Dr. McKendrick, a physician and epidemiologist, applied various mathematical methods to the field of medicine and is a known pioneer in the biomathematics of infectious disease epidemiology [37-39]. Whereas Dr. McKendrick, in collaboration with William Ogilvy Kermack (1898\u20131970) [40,41], is relatively well known as the first to suggest the deterministic epidemic model given by differential equations, his analysis of the incubation period of Spanish flu preceded this, and remains relatively unknown even among specialists (see Online Additional File 1 for the original). Except for this work, no other historical study on influenza has explicitly accounted for the unknown time of exposure or identified the time of exposure in a specific setting (as in the above mentioned study documenting transmission on an aircraft [34,35]).",
+            "cite_spans": [
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 396,
+                    "end": 398,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 399,
+                    "end": 401,
+                    "mention": "39",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 486,
+                    "end": 488,
+                    "mention": "40",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 489,
+                    "end": 491,
+                    "mention": "41",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1030,
+                    "end": 1032,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1033,
+                    "end": 1035,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "In Dr. McKendrick's study, an attempt was made to infer the incubation period of pandemic influenza using the daily incidence of cases on ships departing, with incubating individuals, from several ports in Australia. The incidence was recorded according to the date of voyage after departure. The original epidemiologic data was based on observations of 92 departing voyages, summarized by Dr. John Howard Lidgett Cumpston (1880\u20131954), Director of Quarantine of the Commonwealth of Australia [42] (the original material is available online [43]). In this dataset, onset of 64, 17, 5 and 2 cases was observed on the 1st, 2nd, 3rd and 4th day of voyage, i.e., after departure, on the documented ships (Figure 1). No influenza case developed symptoms on or after the 5th day of voyage and the observed cases were thought to have been exposed to influenza before departure. Since the data for each voyage mainly included only a few initial cases that developed influenza on board, it is assumed that potential secondary transmission on board was negligible, and potential asymptomatic transmission was also ignored (detailed information on the observed and excluded secondary transmissions are documented in the original [43] and Dr. McKendrick also addressed the issue of secondary transmission by limiting the number of cases per ship). Further technical details are given in the Additional File 2.",
+            "cite_spans": [
+                {
+                    "start": 493,
+                    "end": 495,
+                    "mention": "42",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 541,
+                    "end": 543,
+                    "mention": "43",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1218,
+                    "end": 1220,
+                    "mention": "43",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 707,
+                    "end": 708,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Using the data in Figure 1 (with a total of N cases), the number of cases, G(t), t days after departure was modeled as:",
+            "cite_spans": [],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 25,
+                    "end": 26,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "G(t)N=\u222b\u2212\u221e0f(t\u2212\u03c4)d\u03c4=1\u2212F(t).\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqabeGabaaabaWaaSaaaeaacqWGhbWrcqGGOaakcqWG0baDcqGGPaqkaeaacqWGobGtaaGaeyypa0Zaa8qmaeaacqWGMbGzcqGGOaakcqWG0baDcqGHsisliiGacqWFepaDcqGGPaqkcqWGKbazcqWFepaDaSqaaiabgkHiTiabg6HiLcqaaiabicdaWaqdcqGHRiI8aaGcbaGaeyypa0JaeGymaeJaeyOeI0IaemOrayKaeiikaGIaemiDaqNaeiykaKIaeiOla4caaaaa@4AEE@",
+            "cite_spans": [],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "where f(t) and F(t) are the probability density and cumulative distribution functions of an incubation period of length t (see Additional File 2). From this, Dr. McKendrick suggested that the mean incubation period was 32.71 hours, which is consistent with recent estimate [35]. However, this value was likely slightly underestimated, because the model implicitly assumed the possible time of exposure as being from time 0 to infinite before departure; it has been extensively discussed that data assuming long possible periods of exposure is likely to be uninformative. Moreover, in a recent work on SARS concerned with analysis of data with short periods of exposure [44], the equal probability of exposure for each possible date was likely to have overestimated the variance of the incubation period distribution [31]. Thus, to obtain a precise estimate of the incubation period, appropriate censoring methods with well-defined short periods of exposure are needed in addition to a large sample size [30,45]. However, despite these technical concerns, it is remarkable that Dr. McKendrick was able to estimate the incubation period of pandemic influenza considering the unknown time of exposure in the given data.",
+            "cite_spans": [
+                {
+                    "start": 274,
+                    "end": 276,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 670,
+                    "end": 672,
+                    "mention": "44",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 817,
+                    "end": 819,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1004,
+                    "end": 1006,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1007,
+                    "end": 1009,
+                    "mention": "45",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "The earliest model developed using incomplete data ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "After Dr. McKendrick's initial work and his use of implicit assumptions to determine the incubation period distribution, John R. Miner (1892-unknown), a biologist and epidemiologist at Johns Hopkins University, is believed to have documented the first explicit model of the incubation period distribution [46]. Dr. Miner collected epidemic records of several outbreaks of typhoid fever, claiming that the length of the incubation period clearly differs by source of infection (i.e., comparing water- and food-borne outbreaks, he found that the food-borne outbreaks had a much shorter incubation period, most likely reflecting dose-response phenomena). During his analysis, Dr. Miner paid close attention to variance in the incubation period, describing a distribution that always skewed to the right. In calculating \"moments\" of the incubation period in a water-borne outbreak at the Old Salem Chautauqua, 1916, he used the following equation to explain the epidemic curve:",
+            "cite_spans": [
+                {
+                    "start": 306,
+                    "end": 308,
+                    "mention": "46",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Classic right-skewed distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "y=12.396(1+x5.955)0.8573(1\u2212x40.040)5.7641\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG5bqEcqGH9aqpcqaIXaqmcqaIYaGmcqGGUaGlcqaIZaWmcqaI5aqocqaI2aGndaqadaqaaiabigdaXiabgUcaRmaalaaabaGaemiEaGhabaGaeGynauJaeiOla4IaeGyoaKJaeGynauJaeGynaudaaaGaayjkaiaawMcaamaaCaaaleqabaGaeGimaaJaeiOla4IaeGioaGJaeGynauJaeG4naCJaeG4mamdaaOWaaeWaaeaacqaIXaqmcqGHsisldaWcaaqaaiabdIha4bqaaiabisda0iabicdaWiabc6caUiabicdaWiabisda0iabicdaWaaaaiaawIcacaGLPaaadaahaaWcbeqaaiabiwda1iabc6caUiabiEda3iabiAda2iabisda0iabigdaXaaaaaa@54EE@",
+            "cite_spans": [],
+            "section": "Classic right-skewed distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "where y and x are the expected number of cases and time after exposure, respectively (Figure 2). The general form of eqn. (2) is referred to as Pearson's type I distribution, which is given by [47]:",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "47",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Classic right-skewed distribution ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 93,
+                    "end": 94,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "y=y0(1+xa1)m1(1\u2212xa2)m2\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG5bqEcqGH9aqpcqWG5bqEdaWgaaWcbaGaeGimaadabeaakmaabmaabaGaeGymaeJaey4kaSYaaSaaaeaacqWG4baEaeaacqWGHbqydaWgaaWcbaGaeGymaedabeaaaaaakiaawIcacaGLPaaadaahaaWcbeqaaiabd2gaTnaaBaaameaacqaIXaqmaeqaaaaakmaabmaabaGaeGymaeJaeyOeI0YaaSaaaeaacqWG4baEaeaacqWGHbqydaWgaaWcbaGaeGOmaidabeaaaaaakiaawIcacaGLPaaadaahaaWcbeqaaiabd2gaTnaaBaaameaacqaIYaGmaeqaaaaaaaa@45E9@",
+            "cite_spans": [],
+            "section": "Classic right-skewed distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "where m1/a1 = m2/a2. During the early 20th century, it was deemed useful to apply Karl Pearson's (1857\u20131936) \"system of frequency curves\" to observed data, because the parameters could be arithmetically obtained from moments determined by the descriptive statistics; a \"moment\" refers to the expected value of a positive integral power of a random variable (i.e., the nth moment of a distribution is the expected value of the nth power of the deviation from a fixed value). Among Pearson's curves, type I distribution is the most standard and relatively flexible, and can realize right-skewed distribution [47]. Although no other works concerned with models of the incubation period have been identified, Major Greenwood (1880\u20131949) applied Pearson's type III distribution to the distribution of the serial interval (i.e., the time from symptom onset in a primary case to symptom onset in a secondary case [48]) of measles within a number of households [49].",
+            "cite_spans": [
+                {
+                    "start": 607,
+                    "end": 609,
+                    "mention": "47",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 907,
+                    "end": 909,
+                    "mention": "48",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 954,
+                    "end": 956,
+                    "mention": "49",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Classic right-skewed distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "The epidemiologist Philip E. Sartwell (1908\u20131999), who previously acted as chairman of the Department of Epidemiology, Johns Hopkins School of Hygiene and Public Health, contributed most to the foundation of incubation period distribution modeling [50]. Dr. Sartwell initially found that the incubation period of acute infectious diseases tends to follow lognormal distribution [12], and applied the distribution to various diseases [51,52]. Observing that the distributions often skewed to the right, Dr. Sartwell suggested the use of two parameters (i.e., an estimated \"median\", which is also the geometric mean due to the characteristics of lognormal distribution, and a \"dispersion factor\" as a measure of variability) rather than the sample mean and standard deviation. Lognormal distribution has a probability density function (pdf) of:",
+            "cite_spans": [
+                {
+                    "start": 249,
+                    "end": 251,
+                    "mention": "50",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 379,
+                    "end": 381,
+                    "mention": "12",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 434,
+                    "end": 436,
+                    "mention": "51",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 437,
+                    "end": 439,
+                    "mention": "52",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "f(x;\u03bc,\u03c32)=1x\u03c32\u03c0exp\u2061(\u2212(ln\u2061(x)\u2212\u03bc)22\u03c32)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGMbGzcqGGOaakcqWG4baEcqGG7aWoiiGacqWF8oqBcqGGSaalcqWFdpWCdaahaaWcbeqaaiabikdaYaaakiabcMcaPiabg2da9maalaaabaGaeGymaedabaGaemiEaGNae83Wdm3aaOaaaeaacqaIYaGmcqWFapaCaSqabaaaaOGagiyzauMaeiiEaGNaeiiCaa3aaeWaaeaadaWcaaqaaiabgkHiTiabcIcaOiGbcYgaSjabc6gaUjabcIcaOiabdIha4jabcMcaPiabgkHiTiab=X7aTjabcMcaPmaaCaaaleqabaGaeGOmaidaaaGcbaGaeGOmaiJae83Wdm3aaWbaaSqabeaacqaIYaGmaaaaaaGccaGLOaGaayzkaaaaaa@55B7@",
+            "cite_spans": [],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "for x > 0, where \u03bc and \u03c3 are the mean and standard deviation of the variable's logarithm [53]. The coefficient of variation (CV), a dimensionless number, is a measure of dispersion of the distribution given by:",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 92,
+                    "mention": "53",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "CV=exp\u2061(\u03c32)\u22121.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGdbWqcqWGwbGvcqGH9aqpdaGcaaqaaiGbcwgaLjabcIha4jabcchaWjabcIcaOGGaciab=n8aZnaaCaaaleqabaGaeGOmaidaaOGaeiykaKIaeyOeI0IaeGymaedaleqaaOGaeiOla4caaa@3BB5@",
+            "cite_spans": [],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 3 shows the frequency distributions of the incubation periods of measles and poliomyelitis based on careful observations of the times of exposure and onset [54,55] (the maximum likelihood method was used to obtain Fig. 3 and will be discussed later). Both incubation periods were reasonably generalized using lognormal distributions, yielding maximum likelihood estimates of \u03bc and CV of 2.47 log(days) and 28.0% and 2.37 log(days) and 47.4%, respectively. The goodness-of-fit to lognormal distribution was then visually assessed by drawing lognormal quantile plots (Figs. 3B and 3D).",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "54",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 167,
+                    "end": 169,
+                    "mention": "55",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 7,
+                    "end": 8,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 226,
+                    "end": 227,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 579,
+                    "end": 581,
+                    "mention": "3B",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 586,
+                    "end": 588,
+                    "mention": "3D",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Even at present, it is frequently assumed that the incubation period of acute infectious diseases follows lognormal distribution [25,56,57]. Using the lognormal assumption for incubation period, Dr. Sartwell further developed a method to estimate the time of exposure during a point source outbreak [52]. Since the contribution of Dr. Sartwell has been revisited several times elsewhere [2,58] and is relatively well known among experts in this field, similar and directly relevant models proposed by Japanese epidemiologists are discussed in the following.",
+            "cite_spans": [
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "25",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "56",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 136,
+                    "end": 138,
+                    "mention": "57",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 300,
+                    "end": 302,
+                    "mention": "52",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 388,
+                    "end": 389,
+                    "mention": "2",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "58",
+                    "ref_id": "BIBREF59"
+                }
+            ],
+            "section": "Lognormal distribution proposed by Philip Sartwell ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Dr. Sartwell's suggestion on the tendency for the incubation period to follow lognormal distribution largely influenced early theoretical epidemiologic studies in Japan, especially those related to estimations of the time of exposure during a point source outbreak. The earliest Japanese work appeared immediately after Dr. Sartwell's first publication and was conducted by Takeshi Hirayama (1923\u20131995), an epidemiologist who, later in life, worked mainly on the epidemiology of various cancers [59,60]. The theoretical basis of Dr. Hirayama's method is illustrated in Figure 4, the logic of which is explained in the following.",
+            "cite_spans": [
+                {
+                    "start": 496,
+                    "end": 498,
+                    "mention": "59",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 499,
+                    "end": 501,
+                    "mention": "60",
+                    "ref_id": "BIBREF62"
+                }
+            ],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 576,
+                    "end": 577,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Since all cases in a point source outbreak share the same time of exposure, the epidemic curve, which is drawn according to the time of onset (i.e., incidence), is equivalent to the incubation period distribution (Figure 4). Suppose that the median point of the case frequency was observed x days after exposure and, further, that there are \u03b1 percentile points on both sides of the observed distribution (upper and lower percentiles \u03b1) with the distances from the median to both percentiles points being a and b days, respectively, the following relationship is given (because the logarithm follows normal distribution):",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 221,
+                    "end": 222,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "ln(x) - ln(x - a) = ln(x + b) - ln(x).",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "This is rearranged as:",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "xx\u2212a=x+bx\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaadaWcaaqaaiabdIha4bqaaiabdIha4jabgkHiTiabdggaHbaacqGH9aqpdaWcaaqaaiabdIha4jabgUcaRiabdkgaIbqaaiabdIha4baaaaa@381D@",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Consequently, the time of exposure can be inferred using the distance from the time of exposure to the median, x, by taking the distances to any equal percentiles on both sides:",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "x^=abb\u2212a\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacuWG4baEgaqcaiabg2da9maalaaabaGaemyyaeMaemOyaigabaGaemOyaiMaeyOeI0Iaemyyaegaaaaa@3568@",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "This estimator is theoretically the same as that suggested by Dr. Sartwell in his later work [52]. Although this model can theoretically assume any \u03b1 (for 0 <\u03b1 < 0.5), Dr. Hirayama implicitly suggested the use of \u03b1 = 0.16 to obtain a precise estimate of x and small SD, but this suggestion was made based on observational experience alone and analytical expression for the SD was unfortunately lacking. Since recall bias is unavoidable in retrospective epidemiologic studies of food poisoning requiring huge efforts of food traceback [61], this method appears to be very useful in determining the most plausible time of exposure and narrowing down the amount of information to be traced. A similar method has been applied to the epidemiology of cancer and other chronic diseases [62,63].",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "52",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 535,
+                    "end": 537,
+                    "mention": "61",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 780,
+                    "end": 782,
+                    "mention": "62",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 783,
+                    "end": 785,
+                    "mention": "63",
+                    "ref_id": "BIBREF65"
+                }
+            ],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Another lognormal assumption was made by a research group on Theoretical Epidemiology at Osaka City University Medical School, mainly and initially led by Kazuya Horiuchi and Hiroshi Sugiyama [64,65]. The methodology has been frequently applied to field data in Japan [66,67] and is relatively well known among Japanese public health workers [68-70]. Dr. Horiuchi examined the validity and precision of Dr. Hirayama's method using Monte Carlo simulations, claiming that the method could be improved further [71] and suggesting that the incubation period should be assumed to follow \"non-central\" lognormal distribution when an epidemic curve is used [64]. That is, although Dr. Hirayama used the distance from the time of exposure to the median (x in eqn. (6)), this is unknown information in field observations, and thus, Dr. Horiuchi and his colleagues suggested the use of x-C, where C is the time of exposure. This permitted the more convenient use of calendar time. For example, let X be a random variable following non-central lognormal distribution, ln(X-C) should follow a normal distribution, N(\u03bc, \u03c3 2), and consequently, the following t becomes a linear function of ln(X-C):",
+            "cite_spans": [
+                {
+                    "start": 193,
+                    "end": 195,
+                    "mention": "64",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 196,
+                    "end": 198,
+                    "mention": "65",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "66",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 272,
+                    "end": 274,
+                    "mention": "67",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 343,
+                    "end": 345,
+                    "mention": "68",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 346,
+                    "end": 348,
+                    "mention": "70",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 508,
+                    "end": 510,
+                    "mention": "71",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 651,
+                    "end": 653,
+                    "mention": "64",
+                    "ref_id": "BIBREF66"
+                }
+            ],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "t=ln\u2061(X\u2212C)\u2212\u03bc\u03c3\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWG0baDcqGH9aqpdaWcaaqaaiGbcYgaSjabc6gaUjabcIcaOiabdIfayjabgkHiTiabdoeadjabcMcaPiabgkHiTGGaciab=X7aTbqaaiab=n8aZbaaaaa@3B48@",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "When we assume that the random variable X is a function of t, eqn.(9) can be rearranged as:",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "X(t) = exp(\u03c3t + \u03bc) + C.",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Further, considering different values of t, e.g., t+h, yields:",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "X(t+h)=exp\u2061{\u03c3(t+h)+\u03bc}+C=exp\u2061(\u03c3h)X(t)+C(1\u2212exp\u2061(\u03c3h)).\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaafaqadeGabaaabaGaemiwaGLaeiikaGIaemiDaqNaey4kaSIaemiAaGMaeiykaKIaeyypa0JagiyzauMaeiiEaGNaeiiCaa3aaiWaaeaaiiGacqWFdpWCcqGGOaakcqWG0baDcqGHRaWkcqWGObaAcqGGPaqkcqGHRaWkcqWF8oqBaiaawUhacaGL9baacqGHRaWkcqWGdbWqaeaacqGH9aqpcyGGLbqzcqGG4baEcqGGWbaCcqGGOaakcqWFdpWCcqWGObaAcqGGPaqkcqWGybawcqGGOaakcqWG0baDcqGGPaqkcqGHRaWkcqWGdbWqcqGGOaakcqaIXaqmcqGHsislcyGGLbqzcqGG4baEcqGGWbaCcqGGOaakcqWFdpWCcqWGObaAcqGGPaqkcqGGPaqkcqGGUaGlaaaaaa@6429@",
+            "cite_spans": [],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Using eqns.(10) and (11), an estimate of C was obtained by graphically plotting these two functions on vertical and horizontal axes, respectively, and then finding the intersect. Estimation of the time of exposure using similar assumptions was extensively discussed in Japan during the 1950s and 60s. These discussions included the following: (i) the definition of the incubation period (e.g., which to use as the time of onset during a food-borne outbreak, the onset of diarrhea or fever? [72,73]), (ii) extension of the estimation method when the data is truncated [68], (iii) the influence of host- and pathogen-related factors and routes of infection on the incubation period [74], and (iv) outbreaks that include cases resulting from human-to-human secondary transmissions (e.g., shigellosis [75]).",
+            "cite_spans": [
+                {
+                    "start": 491,
+                    "end": 493,
+                    "mention": "72",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "73",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "68",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "74",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "75",
+                    "ref_id": "BIBREF78"
+                }
+            ],
+            "section": "Lognormal models proposed by Japanese epidemiologists ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the studies described above have offered useful and practical methods based on an understanding of the characteristics of lognormal distribution, the classic methods likely included sampling errors and did not achieve acceptable precision. Indeed, it has been pointed out that the estimates obtained using the methods of Drs. Sartwell and Hirayama largely depend on optional percentile points, \u03b1 [76], while that proposed by Dr. Horiuchi and his colleagues is also thought to be highly sensitive to an optional value, h [77]. Thus, estimates of the time of exposure should be addressed statistically by precise solution of the three-parameter lognormal distribution [78,79]. Accordingly, in line with this, the maximum likelihood method was proposed [77,80,81]. Although Dr. Hill was the first to document the application of the maximum likelihood method [80], it unfortunately remained relatively unknown, especially among Japanese epidemiologists, until Toshiro Tango, a statistician at the National Institute of Public Health, Japan, attempted to propagate the method and propose reasonable estimators during the 1990s [77,81]. Let \u03b3 be the time of exposure, the pdf of the three-parameter lognormal distribution is given by:",
+            "cite_spans": [
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "76",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 530,
+                    "end": 532,
+                    "mention": "77",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 676,
+                    "end": 678,
+                    "mention": "78",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 679,
+                    "end": 681,
+                    "mention": "79",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 760,
+                    "end": 762,
+                    "mention": "77",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 763,
+                    "end": 765,
+                    "mention": "80",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 766,
+                    "end": 768,
+                    "mention": "81",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 865,
+                    "end": 867,
+                    "mention": "80",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 1132,
+                    "end": 1134,
+                    "mention": "77",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 1135,
+                    "end": 1137,
+                    "mention": "81",
+                    "ref_id": "BIBREF85"
+                }
+            ],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "f(x;\u03b3,\u03bc,\u03c32)=1(x\u2212\u03b3)\u03c32\u03c0exp\u2061(\u2212(ln\u2061(x\u2212\u03b3)\u2212\u03bc)22\u03c32)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGMbGzcqGGOaakcqWG4baEcqGG7aWoiiGacqWFZoWzcqGGSaalcqWF8oqBcqGGSaalcqWFdpWCdaahaaWcbeqaaiabikdaYaaakiabcMcaPiabg2da9maalaaabaGaeGymaedabaGaeiikaGIaemiEaGNaeyOeI0Iae83SdCMaeiykaKIae83Wdm3aaOaaaeaacqaIYaGmcqWFapaCaSqabaaaaOGagiyzauMaeiiEaGNaeiiCaa3aaeWaaeaadaWcaaqaaiabgkHiTiabcIcaOiGbcYgaSjabc6gaUjabcIcaOiabdIha4jabgkHiTiab=n7aNjabcMcaPiabgkHiTiab=X7aTjabcMcaPmaaCaaaleqabaGaeGOmaidaaaGcbaGaeGOmaiJae83Wdm3aaWbaaSqabeaacqaIYaGmaaaaaaGccaGLOaGaayzkaaaaaa@5F09@",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "for x > \u03b3 . Other parameters are as in eqn.(4). The likelihood function is given by the pdf:",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "L(\u03b3,\u03bc,\u03c32)=\u220fi=1nf(xi;\u03b3,\u03bc,\u03c32)\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacqWGmbatcqGGOaakiiGacqWFZoWzcqGGSaalcqWF8oqBcqGGSaalcqWFdpWCdaahaaWcbeqaaiabikdaYaaakiabcMcaPiabg2da9maarahabaGaemOzayMaeiikaGIaemiEaG3aaSbaaSqaaiabdMgaPbqabaGccqGG7aWocqWFZoWzcqGGSaalcqWF8oqBcqGGSaalcqWFdpWCdaahaaWcbeqaaiabikdaYaaakiabcMcaPaWcbaGaemyAaKMaeyypa0JaeGymaedabaGaemOBa4ganiabg+Givdaaaa@4E7B@",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "where n is the total number of cases observed in an outbreak. Although maximum likelihood estimates of \u03b3, \u03bc and \u03c3 are obtained by minimizing the negative logarithm of eqn.(13), it is often the case that the iteration does not converge [82], and thus, Dr. Tango proposed his estimators [77,81]. Assuming that \u03b3 is known, maximum likelihood estimators of \u03bc and \u03c3 are given by:",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "82",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "77",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "81",
+                    "ref_id": "BIBREF85"
+                }
+            ],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03bc^(\u03b3)=1n\u22111nln\u2061(xi\u2212\u03b3),\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWF8oqBgaqcaiabcIcaOiab=n7aNjabcMcaPiabg2da9maalaaabaGaeGymaedabaGaemOBa4gaamaaqahabaGagiiBaWMaeiOBa4MaeiikaGIaemiEaG3aaSbaaSqaaiabdMgaPbqabaGccqGHsislcqWFZoWzcqGGPaqkaSqaaiabigdaXaqaaiabd6gaUbqdcqGHris5aOGaeiilaWcaaa@44CA@",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03c3^2(\u03b3)=1n\u22111n{ln\u2061(xi\u2212\u03b3)\u2212\u03bc^(\u03b3)}2.\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaaiiGacuWFdpWCgaqcamaaCaaaleqabaGaeGOmaidaaOGaeiikaGIae83SdCMaeiykaKIaeyypa0ZaaSaaaeaacqaIXaqmaeaacqWGUbGBaaWaaabCaeaadaGadaqaaiGbcYgaSjabc6gaUjabcIcaOiabdIha4naaBaaaleaacqWGPbqAaeqaaOGaeyOeI0Iae83SdCMaeiykaKIaeyOeI0Iaf8hVd0MbaKaacqGGOaakcqWFZoWzcqGGPaqkaiaawUhacaGL9baadaahaaWcbeqaaiabikdaYaaaaeaacqaIXaqmaeaacqWGUbGBa0GaeyyeIuoakiabc6caUaaa@4F4B@",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Using these, the maximum log likelihood is given as a function of \u03b3 :",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "ln\u2061L\u2217\u2217(\u03b3)\u2261ln\u2061sup\u2061\u03bc,\u03c32L(\u03b3,\u03bc,\u03c32)=\u2212n(\u03bc^(\u03b3)+ln\u2061\u03c3^(\u03b3))\u2212n2(1+log\u2061(2\u03c0))\n MathType@MTEF@5@5@+=feaafiart1ev1aaatCvAUfKttLearuWrP9MDH5MBPbIqV92AaeXatLxBI9gBaebbnrfifHhDYfgasaacH8akY=wiFfYdH8Gipec8Eeeu0xXdbba9frFj0=OqFfea0dXdd9vqai=hGuQ8kuc9pgc9s8qqaq=dirpe0xb9q8qiLsFr0=vr0=vr0dc8meaabaqaciaacaGaaeqabaqabeGadaaakeaacyGGSbaBcqGGUbGBcqWGmbatdaahaaWcbeqaaiabgEHiQiabgEHiQaaakiabcIcaOGGaciab=n7aNjabcMcaPiabggMi6kGbcYgaSjabc6gaUnaaxababaGagi4CamNaeiyDauNaeiiCaahaleaacqWF8oqBcqGGSaalcqWFdpWCdaahaaadbeqaaiabikdaYaaaaSqabaGccqWGmbatcqGGOaakcqWFZoWzcqGGSaalcqWF8oqBcqGGSaalcqWFdpWCdaahaaWcbeqaaiabikdaYaaakiabcMcaPiabg2da9iabgkHiTiabd6gaUjabcIcaOiqb=X7aTzaajaGaeiikaGIae83SdCMaeiykaKIaey4kaSIagiiBaWMaeiOBa4Maf83WdmNbaKaacqGGOaakcqWFZoWzcqGGPaqkcqGGPaqkcqGHsisldaWcaaqaaiabd6gaUbqaaiabikdaYaaacqGGOaakcqaIXaqmcqGHRaWkcyGGSbaBcqGGVbWBcqGGNbWzcqGGOaakcqaIYaGmcqWFapaCcqGGPaqkcqGGPaqkaaa@71A6@",
+            "cite_spans": [],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "which is the profile likelihood of \u03b3 ; the estimate of \u03b3 maximizes eqn.(16). A Bayesian method was also proposed by Dr. Hill, in addition to the maximum likelihood method [80].",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "80",
+                    "ref_id": "BIBREF84"
+                }
+            ],
+            "section": "More modern studies employing lognormal distribution ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Despite rigorous studies, it should be noted that we have limited explicit explanations for the biological validity of assuming lognormal distribution for the incubation period. The fundamental biological reason to assume lognormal distribution is related to an inoculation study of ectromelia virus (mouse pox) [83], which suggested exponential growth of pathogens within the host during the initial phase. Another similar study suggested that a fixed threshold likely exists when the host response is observed [84]. Based on these findings, pathogen growth in inoculation experiments was modeled using the birth-death process, supporting right skewed distribution of the incubation period and its long tail [85-87]. Also, given similar results from further birth-death process models [76,88] and another previous model [89], what we have learnt to date can be described as follows: if the growth rate of a microorganism is implicitly assumed to follow normal distribution, and if there is a fixed threshold of pathogen load at which symptoms are revealed due to the host response, exponential growth of microorganisms should result in an incubation period sufficiently approximated by lognormal distribution.",
+            "cite_spans": [
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "83",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 513,
+                    "end": 515,
+                    "mention": "84",
+                    "ref_id": "BIBREF88"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "85",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 713,
+                    "end": 715,
+                    "mention": "87",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 787,
+                    "end": 789,
+                    "mention": "76",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 790,
+                    "end": 792,
+                    "mention": "88",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 822,
+                    "end": 824,
+                    "mention": "89",
+                    "ref_id": "BIBREF93"
+                }
+            ],
+            "section": "The validity of a lognormal assumption ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Given the above reasonable explanations, a previous Japanese study examined 86 outbreak records for which the date of infection was known and the population exposed was homogeneous [90]. By assessing the goodness-of-fit, 61 out of the 86 examples (70.9%) were accepted as lognormal at a 5% level of significance or better, from which it was concluded that, in general, lognormal distribution represents the incubation period of acute infectious diseases [90,91]. Through such efforts, the validity of the lognormal assumption has been supported by the accumulated experience of Dr. Sartwell and the above mentioned Japanese epidemiologists. It may also be true that the lognormal distribution was preferred because of its statistical usefulness (as described in the above Japanese study). However, the host-defense mechanism, which is almost entirely responsible for symptom onset, was later shown to be far more complex than previously expected. For example, fever is induced by very complex reactions and by several factors including circulating cytokines such as interluekin-2 [92]. Thus, whereas lognormal distribution may be applied to the incubation periods of many acute infectious diseases, it is necessary to bear in mind that the assumption is supported only by previous experience.",
+            "cite_spans": [
+                {
+                    "start": 182,
+                    "end": 184,
+                    "mention": "90",
+                    "ref_id": "BIBREF95"
+                },
+                {
+                    "start": 455,
+                    "end": 457,
+                    "mention": "90",
+                    "ref_id": "BIBREF95"
+                },
+                {
+                    "start": 458,
+                    "end": 460,
+                    "mention": "91",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1081,
+                    "end": 1083,
+                    "mention": "92",
+                    "ref_id": "BIBREF97"
+                }
+            ],
+            "section": "The validity of a lognormal assumption ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Until recently, the validity of assuming lognormal distribution has not been explicitly compared with that of other distributions. As discussed above, Weibull distribution with a threshold (i.e., three parameter Weibull distribution) was assumed for the incubation period of influenza [35]. Such study indicates that a simple lognormal assumption does not always hold in practice. Other studies have assumed gamma distribution for the incubation periods of SARS and smallpox [24,30,93-95], and regarding the latter, lognormal distribution has also been assumed [25,96]. Figure 5 compares the quantile plots of lognormal and gamma distribution for the incubation period of smallpox, showing that both fit almost equally well with the observed data. For both distributions, the \u03c72 goodness-of-fit test revealed no significant deviation between the observed and predicted values (\u03c7212 = 11.6, p = 0.48 and \u03c7212 = 16.8, p = 0.16 for lognormal and gamma distributions, respectively). However, two-parameter Weibull distribution did not represent well the probability density functions of the incubation period (p < 0.001). These discussions imply that comparisons using different distributions are needed; it is important to at least compare the goodness-of-fit of different and arbitrarily chosen distributions for acute infectious diseases.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "24",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 482,
+                    "end": 484,
+                    "mention": "93",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 485,
+                    "end": 487,
+                    "mention": "95",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 562,
+                    "end": 564,
+                    "mention": "25",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 565,
+                    "end": 567,
+                    "mention": "96",
+                    "ref_id": "BIBREF101"
+                }
+            ],
+            "section": "A further critique of the lognormal assumption ::: Analysis",
+            "ref_spans": [
+                {
+                    "start": 577,
+                    "end": 578,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The validity of lognormal assumption is particularly lacking for slowly progressing diseases. One important reason for this is that the mechanisms of disease development for AIDS and prion diseases, for example, are far more complicated than those of acute infectious diseases. In the case of AIDS, where Weibull distribution is frequently assumed for the incubation period [15], symptom onset is induced by immunodeficiency resulting from HIV infection followed by various opportunistic infections. For BSE and vCJD, various distributions have been assumed for the backcalculation, permitting some uncertainty analyses [19,20,22,97]. Although the disease mechanisms of vCJD are yet to be clarified, considering within-host dynamics it is evident that the incubation period cannot be explained by the above simple explanation [98,99]. That is, for these diseases, the above mentioned explanation for the lognormal assumption is not justified, and thus, the choice of distribution for the incubation period needs to be carefully assessed using sensitivity and uncertainty analyses. Indeed, various right skewed distributions are often used in sensitivity analysis, revealing whether or not the final results depend on the arbitrarily chosen standard distribution for the incubation period [19,20,97].",
+            "cite_spans": [
+                {
+                    "start": 375,
+                    "end": 377,
+                    "mention": "15",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 621,
+                    "end": 623,
+                    "mention": "19",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 624,
+                    "end": 626,
+                    "mention": "20",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 627,
+                    "end": 629,
+                    "mention": "22",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 630,
+                    "end": 632,
+                    "mention": "97",
+                    "ref_id": "BIBREF102"
+                },
+                {
+                    "start": 827,
+                    "end": 829,
+                    "mention": "98",
+                    "ref_id": "BIBREF103"
+                },
+                {
+                    "start": 830,
+                    "end": 832,
+                    "mention": "99",
+                    "ref_id": "BIBREF104"
+                },
+                {
+                    "start": 1289,
+                    "end": 1291,
+                    "mention": "19",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1292,
+                    "end": 1294,
+                    "mention": "20",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1295,
+                    "end": 1297,
+                    "mention": "97",
+                    "ref_id": "BIBREF102"
+                }
+            ],
+            "section": "A further critique of the lognormal assumption ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Two conclusions can be drawn from the above discussions. First, the lognormal assumption does not always hold. Thus, as far as we continue to rely on observed frequencies and arbitrarily chosen specific distributions, it is essential that comparisons using different distributions are made; any assumptions should be explicitly evaluated by means of significance tests and visual assessments. Second, the biological validity of assuming specific distributions for the incubation period remains an open question [100,101], and thus, further information is needed. For example, within-host dynamics would help clarify disease onset mechanisms in the most explicit way [102]. Moreover, if information associated with within-host dynamics is not available, an accumulation of distributions obtained using different datasets would be of interest, as would examination of various characteristic factors (e.g., dose-response mechanisms [6,7,9], and variable susceptibility due to age, race and genetic factors (for example, see [45,94])).",
+            "cite_spans": [
+                {
+                    "start": 512,
+                    "end": 515,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 516,
+                    "end": 519,
+                    "mention": "101",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 667,
+                    "end": 670,
+                    "mention": "102",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 930,
+                    "end": 931,
+                    "mention": "6",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 932,
+                    "end": 933,
+                    "mention": "7",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 934,
+                    "end": 935,
+                    "mention": "9",
+                    "ref_id": "BIBREF94"
+                },
+                {
+                    "start": 1022,
+                    "end": 1024,
+                    "mention": "45",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "mention": "94",
+                    "ref_id": "BIBREF99"
+                }
+            ],
+            "section": "A further critique of the lognormal assumption ::: Analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "The present study revisited previous works concerned with models of the incubation period of acute infectious diseases. In particular, the following were highlighted: (i) the earliest modeling effort conducted using incomplete data of a pandemic influenza, (ii) the explicit distribution of the incubation period, (iii) the application of a lognormal assumption to estimations of the time of exposure during a point source outbreak, and (iv) the validity of assuming lognormal distribution for the incubation period. Although it was not highlighted in the present paper, Norman T. J. Bailey also formed a framework using a chain binomial model, which is useful for household transmission data [103,104]. This method estimates the incubation period as the sum of the mean latent period, which follows normal distribution, and a further fixed infectious period; however, the estimated period does not precisely imply the incubation period, but rather is closer to what is presently referred to as the serial interval [48,105]. That is, the incubation period that can be extracted from household transmission data remains to be clarified.",
+            "cite_spans": [
+                {
+                    "start": 694,
+                    "end": 697,
+                    "mention": "103",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 698,
+                    "end": 701,
+                    "mention": "104",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1016,
+                    "end": 1018,
+                    "mention": "48",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1019,
+                    "end": 1022,
+                    "mention": "105",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The lessons that can be learnt from the presented discussion are as follows: (I) although it is historically remarkable that the incubation period of pandemic influenza was assessed based on an explicit understanding of an unknown time of exposure, the assumed periods of exposure were too long and equal probability of exposure was assumed for each possible date. Well-defined short periods of exposure are needed to decipher the incubation period distribution using appropriate statistical methods. Taking this point into account will be critically important in estimating the incubation period of newly emerging diseases in the future. (II) The epidemiologic usefulness of the lognormal assumption was highlighted with respect to the basic characteristics of lognormal distribution, but this assumption is likely to remain unwarrantable until details of disease mechanisms are fully clarified; thus, this assumption may be merely an approximation of the right-skewed distribution. For example, considering the mechanisms of disease development, the lognormal assumption does not hold for HIV/AIDS and prion diseases. However, this limitation of the lognormal assumption does not imply that such approximation of the incubation period distribution is meaningless. Rather, it suggests that when parametric models are assumed, it is at least necessary to compare the goodness-of-fit for several distributions in order to overcome some of the uncertainty. Various datasets on the same disease would also help assess the uncertainty. Further, it would be informative if the determinants could be clarified even by simple stratifications (e.g., with respect to sex, age and genetic factors). Ideally, assumptions in the future should be supported by a detailed understanding of the underlying disease mechanisms provided by observations of within-host dynamics. Since the incubation period of infectious diseases is directly relevant to prevention and control, and because such knowledge can enhance our theoretical understanding of the spread of disease, further clarifications of the above points are deemed necessary.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "AIDS \u2013 Acquired Immunodeficiency Syndrome",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "CV \u2013 Coefficient of variation",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "HIV \u2013 Human Immunodeficiency Virus",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "pdf \u2013 Probability density function",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "SARS \u2013 Severe Acute Respiratory Syndrome",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "vCJD \u2013 variant Creutzfeldt-Jakob disease",
+            "cite_spans": [],
+            "section": "Abbreviations",
+            "ref_spans": []
+        },
+        {
+            "text": "The author(s) declare that they have no competing interests.",
+            "cite_spans": [],
+            "section": "Competing interests",
+            "ref_spans": []
+        },
+        {
+            "text": "HN carried out paper reviews, proposed the study, performed mathematical analyses and drafted the manuscript. The author has read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors' contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Common uses of the incubation period distribution of infectious diseases\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The relationship between the incubation period and observed onset of influenza after departure from Australia, 1918\u201319. Daily frequencies of influenza onset were observed after departure. Those who developed symptoms on board were assumed to have experienced exposure before departure. Since the time of exposure was difficult to identify explicitly, it was necessary to consider all possible times of exposure before departure. Asymptomatic infections and potential secondary transmissions on board were ignored. See supporting material for original descriptions and original data [36, 42, 43].",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: The incubation period distribution of typhoid fever in Old Salem Chautauqua, 1916, fitted to Pearson's Type I distribution. The incubation period started at an assumed time of exposure due to a flood that occurred 4 days before closing the water supply to Chautauqua. Since there were 4 possible days of exposure to contaminated water, the original study used the mid-point as a single time point of exposure. See [46] for the original descriptions.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: The incubation period distributions of measles (A and B) and poliomyelitis (C and D) fitted to lognormal distributions. A &C) Observed frequencies (bars) are compared with predicted frequencies (solid line) based on the maximum likelihood method assuming lognormal distribution. The ends of the box represent the 25th and 75th quantiles (i.e., quartiles), and the line across the middle of the box identifies the median sample value. The means diamond indicates the sample mean and 95% confidence interval. The whiskers extending from both ends show additional quantiles (5th, 10th, 90th and 95th) on the response axis (note: for poliomyelitis (C), some quantiles are overlapping, and therefore only the 90th quantile is displayed). B & D) Lognormal quantile plots of the incubation periods. The diagonal reference lines show the line of fit and the two dashed lines denote confidence limits of 95% equal precision bounds with a = 0.001 and b = 0.99. See [54,55] for original data.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: A method for estimating the time of exposure during a point source outbreak. The horizontal axis shows the time since exposure and the distribution the frequency of cases according to the time of onset. The vertical dashed line is the median incubation period observed x days after exposure. The remaining two vertical lines indicate the times when fractions \u03b1 and 1-\u03b1 of cases developed the disease. The intervals between the median and other two vertical lines represent a and b, respectively. The illustration was drawn by the author with reference to [59].",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Comparison of the quantile plots for the incubation period distributions of smallpox assuming (A) lognormal and (B) gamma distribution. The diagonal reference lines show the line of fit. The maximum likelihood estimates of the mean (\u03bc) and standard deviation (\u03c3) for lognormal distribution were 2.47 (95% CI: 29.1, 38.6) and 0.36 (0.31, 0.41), respectively. The shape (\u03b1) and scale (\u03b2) parameters for gamma distribution were estimated as 33.6 (95% CI: 29.1, 38.6) and 0.36 (0.31, 0.41), respectively. See [96] for detailed descriptions.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Incubation period of infectious diseases",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Encyclopedia of Biostatistics",
+            "volume": "",
+            "issn": "",
+            "pages": "2011-2016",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "SARS incubation and quarantine times: when is an exposed individual known to be disease free?",
+            "authors": [
+                {
+                    "first": "VT",
+                    "middle": [],
+                    "last": "Farewell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Herzberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Stat Med",
+            "volume": "24",
+            "issn": "",
+            "pages": "3431-3445",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/sim.2206"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Epidemics and rumors: A survey",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1967,
+            "venue": "J R Stat Soc Ser A",
+            "volume": "130",
+            "issn": "",
+            "pages": "505-528",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2982521"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "On modelling microbial infections",
+            "authors": [
+                {
+                    "first": "BJT",
+                    "middle": [],
+                    "last": "Morgan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "Biometrics",
+            "volume": "36",
+            "issn": "",
+            "pages": "317-321",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2529985"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Nowak",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virus Dynamics Mathematical Principles of Immunology and Virology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "A statistical method of estimating the periods of incubation and infection of an infectious diseases",
+            "authors": [
+                {
+                    "first": "NTJ",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1954,
+            "venue": "Nature",
+            "volume": "174",
+            "issn": "",
+            "pages": "139-140",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/174139a0"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "NTJ",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1975,
+            "venue": "The mathematical theory of infectious diseases and its applications",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Epidemiology of a primary pneumonic plague in Kantoshu, Manchuria, from 1910 to 1911: statistical analysis of individual records collected by the Japanese Empire",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Int J Epidemiol",
+            "volume": "35",
+            "issn": "",
+            "pages": "1059-1065",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/ije/dyl091"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Factors that make an infectious disease outbreak controllable",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "6146-6151",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0307506101"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "The distribution of incubation periods of infectious diseases",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Sartwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1950,
+            "venue": "Am J Hyg",
+            "volume": "51",
+            "issn": "",
+            "pages": "310-318",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "A hypothesis test for the end of a common source outbreak",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "You",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biometrics",
+            "volume": "62",
+            "issn": "",
+            "pages": "61-65",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1541-0420.2005.00421.x"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "A method for obtaining short-term projections and lower bounds on the size of the AIDS epidemic",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Gail",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "J Am Stat Assoc",
+            "volume": "83",
+            "issn": "",
+            "pages": "301-308",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2288844"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Gail",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "AIDS Epidemiology: A Quantitative Approach (Monographs in Epidemiology and Biostatistics)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Transmission dynamics and epidemiology of BSE in British cattle",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Watt",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Udy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "MaWhinney",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Dunstan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Southwood",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Wilesmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Hoinville",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Hillerton",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Austin",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Nature",
+            "volume": "382",
+            "issn": "",
+            "pages": "779-788",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/382779a0"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Extending backcalculation to analyse BSE data",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Stat Methods Med Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "177-190",
+            "other_ids": {
+                "DOI": [
+                    "10.1191/0962280203sm337ra"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Predicting the CJD epidemic in humans",
+            "authors": [
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Cousens",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Vynnycky",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zeidler",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Will",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "385",
+            "issn": "",
+            "pages": "197-198",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/385197a0"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Estimation of epidemic size and incubation time based on age characteristics of vCJD in the United Kingdom",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Valleron",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Boelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Will",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Cesbron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "294",
+            "issn": "",
+            "pages": "1726-1728",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1066838"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Incubation period of disease",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Armenian",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Lilienfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "Epidemiol Rev",
+            "volume": "5",
+            "issn": "",
+            "pages": "1-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "The predictability of the epidemic of variant Creutzfeldt-Jakob disease by back-calculation methods",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Huillard d'Aignaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Cousens",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Stat Methods Med Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "203-220",
+            "other_ids": {
+                "DOI": [
+                    "10.1191/0962280203sm328ra"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Predicted vCJD mortality in Great Britain",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "406",
+            "issn": "",
+            "pages": "583-584",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35020688"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Short-term projections for variant Creutzfeldt-Jakob disease onsets",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Stat Methods Med Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "191-201",
+            "other_ids": {
+                "DOI": [
+                    "10.1191/0962280203sm327ra"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The incubation period of kuru",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Huillard d'Aignaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Cousens",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maccario",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Costagliola",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Alpers",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Alperovitch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Epidemiology",
+            "volume": "13",
+            "issn": "",
+            "pages": "402-408",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/00001648-200207000-00007"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Transmission potential of smallpox: estimates based on detailed data from an outbreak",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Am J Epidemiol",
+            "volume": "158",
+            "issn": "",
+            "pages": "110-117",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwg103"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Infectiousness of smallpox relative to disease age: Estimates based on transmission network and incubation period",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Estimates of short and long incubation periods of Plasmodium vivax malaria in the Republic of Korea",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "WG",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "In",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                },
+                {
+                    "first": "GT",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Trans R Soc Trop Med Hyg",
+            "volume": "101",
+            "issn": "",
+            "pages": "338-343",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.trstmh.2006.11.002"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Dates of onset of relapses and the duration of infection in induced tertian malaria with short and long incubation periods",
+            "authors": [
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Tiburskaja",
+                    "suffix": ""
+                },
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Sergiev",
+                    "suffix": ""
+                },
+                {
+                    "first": "OS",
+                    "middle": [],
+                    "last": "Vrublevskaja",
+                    "suffix": ""
+                }
+            ],
+            "year": 1968,
+            "venue": "Bull World Health Organ",
+            "volume": "38",
+            "issn": "",
+            "pages": "447-457",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "AIDS, epidemics, and statistics",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Biometrics",
+            "volume": "52",
+            "issn": "",
+            "pages": "781-796",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2533042"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RJA",
+                    "middle": [],
+                    "last": "Little",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Rubin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Statistical analysis with missing data",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Fracastorii",
+                    "suffix": ""
+                }
+            ],
+            "year": 1930,
+            "venue": "De sympathia et antipathia rervm liber vnvs De contagione et contagiosis morbis et eorum curatione, Libri III Venetiis: apud heredes Lucaeantonij Iuntae Florentini; 1546 (in Latin Translation and notes by Wright WC: On Contagion, Contagious Diseases and Their Cure)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Epidemiological determinants of spread of causal agent of severe acute respiratory syndrome in Hong Kong",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Hedley",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Abu-Raddad",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "TQ",
+                    "middle": [],
+                    "last": "Thach",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chau",
+                    "suffix": ""
+                },
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Tse",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tsang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1761-1766",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(03)13410-1"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Epidemiological and genetic analysis of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Fisher",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Ghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Lancet Infect Dis",
+            "volume": "4",
+            "issn": "",
+            "pages": "672-683",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(04)01173-9"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "An influenza simulation model for immunization studies",
+            "authors": [
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Elveback",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Fox",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ackerman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Langworthy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Boyd",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gatewood",
+                    "suffix": ""
+                }
+            ],
+            "year": 1976,
+            "venue": "Am J Epidemiol",
+            "volume": "103",
+            "issn": "",
+            "pages": "152-165",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "A mathematical model for the global spread of influenza",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Rvachev",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Math Biosci",
+            "volume": "75",
+            "issn": "",
+            "pages": "3-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0025-5564(85)90064-1"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "An outbreak of influenza aboard a commercial airliner",
+            "authors": [
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Moser",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Bender",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Margolis",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Kendal",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Ritter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "Am J Epidemiol",
+            "volume": "110",
+            "issn": "",
+            "pages": "1-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meeyai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Iamsirithaworn",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04017"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "The determination of incubation periods from maritime statistics, with particular reference to the incubation period of influenza",
+            "authors": [
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "McKendrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Morison",
+                    "suffix": ""
+                }
+            ],
+            "year": 1919,
+            "venue": "Indian J Med Res",
+            "volume": "7",
+            "issn": "",
+            "pages": "364-371",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Applications of mathematics to medical problems",
+            "authors": [
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "McKendrick",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc Edinburgh Math Soc 1925\u20136, Breakthroughs in Statistics: Volume III",
+            "volume": "44",
+            "issn": "",
+            "pages": "1925-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Introduction to McKendrick (1926). Application of mathematics to medical problems",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dietz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Breakthroughs in Statistics: Volume III",
+            "volume": "",
+            "issn": "",
+            "pages": "17-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Anderson Gray McKendrick",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Statisticians of the Centuries",
+            "volume": "",
+            "issn": "",
+            "pages": "323-327",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Infectious Diseases of Humans: Dynamics and Control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "A contribution to the mathematical theory of epidemics",
+            "authors": [
+                {
+                    "first": "WO",
+                    "middle": [],
+                    "last": "Kermack",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "McKendrick",
+                    "suffix": ""
+                }
+            ],
+            "year": 1927,
+            "venue": "Proc R Soc Lond Ser A",
+            "volume": "115",
+            "issn": "",
+            "pages": "700-721",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Discussion: the Kermack-McKendrick epidemic threshold theorem",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Bull Math Biol",
+            "volume": "53",
+            "issn": "",
+            "pages": "3-32",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0092-8240(05)80039-4"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "JHL",
+                    "middle": [],
+                    "last": "Cumpston",
+                    "suffix": ""
+                }
+            ],
+            "year": 1919,
+            "venue": "Service Publication No 18 Influenza and maritime quarantine in Australia",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "FluWeb Historical Influenza Database",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Multiple contact dates and SARS incubation periods",
+            "authors": [
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Meltzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Emerg Infect Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": "207-209",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Refined estimate of the incubation period of severe acute respiratory syndrome and related influencing factors",
+            "authors": [
+                {
+                    "first": "QC",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "QF",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "QW",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "QW",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Am J Epidemiol",
+            "volume": "163",
+            "issn": "",
+            "pages": "211-216",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwj034"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "The incubation period of typhoid fever",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Miner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1922,
+            "venue": "J Infect Dis",
+            "volume": "31",
+            "issn": "",
+            "pages": "296-301",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Elderton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1953,
+            "venue": "Frequency Curves and Correlation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "The interval between successive cases of an infectious disease",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Fine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Am J Epidemiol",
+            "volume": "158",
+            "issn": "",
+            "pages": "1039-1047",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwg251"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "The infectiousness of measles",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Greenwood",
+                    "suffix": ""
+                }
+            ],
+            "year": 1949,
+            "venue": "Biometrika",
+            "volume": "36",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "GL",
+                    "middle": [],
+                    "last": "Mandell",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Bennett",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Dolin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Principles and Practice of Infectious Diseases",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "In Memoriam: Philip E. Sartwell (1908\u20131999)",
+            "authors": [
+                {
+                    "first": "Editors",
+                    "middle": [],
+                    "last": "The",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Am J Epidemiol",
+            "volume": "151",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "The incubation period of poliomyelitis",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Sartwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1952,
+            "venue": "Am J Public Health",
+            "volume": "42",
+            "issn": "",
+            "pages": "1403-1408",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "The incubation period and the dynamics of infectious diseases",
+            "authors": [
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Sartwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "Am J Epidemiol",
+            "volume": "83",
+            "issn": "",
+            "pages": "204-216",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "NL",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kotz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "Continuous univariate distributions",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Incubation period of measles",
+            "authors": [
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Goodall",
+                    "suffix": ""
+                }
+            ],
+            "year": 1931,
+            "venue": "Brit Med J",
+            "volume": "1",
+            "issn": "",
+            "pages": "73-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "The incubation period in epidemic poliomyelitis",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Casey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1942,
+            "venue": "J Am Med Assoc",
+            "volume": "120",
+            "issn": "",
+            "pages": "805-807",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "The statistical analysis of truncated data: application to the Sverdlovsk anthrax outbreak",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Blades",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hugh-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Biostatistics",
+            "volume": "2",
+            "issn": "",
+            "pages": "233-247",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/biostatistics/2.2.233"
+                ]
+            }
+        },
+        "BIBREF58": {
+            "title": "Modelling the incubation period of anthrax",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Brookmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Barry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Stat Med",
+            "volume": "24",
+            "issn": "",
+            "pages": "531-542",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/sim.2033"
+                ]
+            }
+        },
+        "BIBREF59": {
+            "title": "Invited commentary on \"The distribution of incubation periods of infectious disease\"",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Armenian",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Am J Epidemiol",
+            "volume": "141",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hirayama",
+                    "suffix": ""
+                }
+            ],
+            "year": 1958,
+            "venue": "Epidemiology (Ekigaku)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Incubation period and the initial symptoms of tetanus: A clinical assessment of the problem of the passage of tetanus toxin to the central nervous system",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tateno",
+                    "suffix": ""
+                }
+            ],
+            "year": 1963,
+            "venue": "Jpn J Exp Med",
+            "volume": "33",
+            "issn": "",
+            "pages": "149-158",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanamitsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Okada",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kohno",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Shigematsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hirayama",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "Epidemiology and its application (Ekigaku To Sono-ouyou)",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Strategies for rapid response to emerging foodborne microbial hazards",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Majkowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Emerg Infect Dis",
+            "volume": "3",
+            "issn": "",
+            "pages": "551-554",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "The distribution of incubation periods of neoplastic diseases",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Armenian",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Lilienfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Am J Epidemiol",
+            "volume": "99",
+            "issn": "",
+            "pages": "92-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Criteria for the use of Sartwell's incubation period model to study chronic diseases with uncertain etiology",
+            "authors": [
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Horner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Samsa",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J Clin Epidemiol",
+            "volume": "45",
+            "issn": "",
+            "pages": "1071-1080",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0895-4356(92)90147-F"
+                ]
+            }
+        },
+        "BIBREF66": {
+            "title": "Theoretical epidemiologic study on the estimation of the time of exposure (Part 1)",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Horiuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nakai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ueshima",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sugiyama",
+                    "suffix": ""
+                }
+            ],
+            "year": 1956,
+            "venue": "Jpn J Public Health (Nippon Koshu Eisei Zasshi)",
+            "volume": "3",
+            "issn": "",
+            "pages": "184-186",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Statistical study of the incubation period of acute communicable diseases",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Horiuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Oki",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sugiyama",
+                    "suffix": ""
+                }
+            ],
+            "year": 1959,
+            "venue": "Theoretical Epidemiology (Riron Ekigaku)",
+            "volume": "6",
+            "issn": "",
+            "pages": "5-17",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "A theoretical, epidemiological estimation of the time of exposure to the source of infection: Application of an estimation method to mass incidence caused by food poisoning",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yamamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Oki",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Ueshima",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ueki",
+                    "suffix": ""
+                }
+            ],
+            "year": 1958,
+            "venue": "J Osaka City Med Center (Osaka Shiritsu Daigaku Igaku Zasshi)",
+            "volume": "7",
+            "issn": "",
+            "pages": "1040-1043",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Some questions concerning the practical application to the graphical method of estimating the time of exposure to the source of infection",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yoshida",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Matsui",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                }
+            ],
+            "year": 1960,
+            "venue": "Jpn J Public Health (Nippon Koshu Eisei Zasshi)",
+            "volume": "7",
+            "issn": "",
+            "pages": "967-973",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Studies on the incubation period of acute infectious diseases from the view point of theoretical epidemiology",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Oki",
+                    "suffix": ""
+                }
+            ],
+            "year": 1960,
+            "venue": "J Osaka City Med Center (Osaka Shiritsu Daigaku Igaku Zasshi)",
+            "volume": "9",
+            "issn": "",
+            "pages": "2341-2368",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Exposure analysis -Estimating the time of exposure from case onset information",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kondo",
+                    "suffix": ""
+                }
+            ],
+            "year": 1972,
+            "venue": "J Clin Exp Med (Igaku No Ayumi)",
+            "volume": "82",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Incubation period as a clinical predictor of botulism: analysis of previous izushi-borne outbreaks in Hokkaido, Japan, from 1951 to 1965",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "135",
+            "issn": "",
+            "pages": "126-130",
+            "other_ids": {
+                "DOI": [
+                    "10.1017/S0950268806006169"
+                ]
+            }
+        },
+        "BIBREF73": {
+            "title": "Incubation period distribution of communicable disease",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sakamoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Epidemiology and epidemiological model (Ekigaku To Ekigaku Model)",
+            "volume": "",
+            "issn": "",
+            "pages": "290-298",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Theoretical epidemiologic study on the estimation of the time of exposure (Part 2)",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Horiuchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1956,
+            "venue": "Theoretical Epidemiology (Riron Ekigaku)",
+            "volume": "3",
+            "issn": "",
+            "pages": "35-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Speculation on the incubation period",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Horiuchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1957,
+            "venue": "Theoretical Epidemiology (Riron Ekigaku)",
+            "volume": "4",
+            "issn": "",
+            "pages": "9-16",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "An experimental study on applicable limits of the estimating-method for the exposed point of infection",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mizuno",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Hotta",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Morita",
+                    "suffix": ""
+                }
+            ],
+            "year": 1960,
+            "venue": "Jpn J Public Health (Nippon Koshu Eisei Zasshi)",
+            "volume": "7",
+            "issn": "",
+            "pages": "391-394",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Epidemiological studies on the incubation periods of infectious diseases. II. Influence of the biological factors upon the incubation periods",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kato",
+                    "suffix": ""
+                }
+            ],
+            "year": 1955,
+            "venue": "Sapporo Med J (Sapporo Igaku Zasshi)",
+            "volume": "7",
+            "issn": "",
+            "pages": "260-266",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "On the variability in the distribution of incubation periods in the case of mass occurrence of dysentery",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                }
+            ],
+            "year": 1960,
+            "venue": "Mie Med J",
+            "volume": "10",
+            "issn": "",
+            "pages": "87-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Interpretation of distributions of individual response times in microbial infections",
+            "authors": [
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Meynell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1963,
+            "venue": "Nature",
+            "volume": "198",
+            "issn": "",
+            "pages": "970-973",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/198970b0"
+                ]
+            }
+        },
+        "BIBREF80": {
+            "title": "Maximum likelihood estimation of date of infection in an outbreak of diarrhea due to contaminated foods assuming lognormal distribution for the incubation period",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tango",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nippon Koshu Eisei Zasshi",
+            "volume": "45",
+            "issn": "",
+            "pages": "129-141",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Maximum likelihood estimation in three-parameter lognormal distribution",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Giesbrecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Kempthorne",
+                    "suffix": ""
+                }
+            ],
+            "year": 1976,
+            "venue": "J R Stat Soc Ser B",
+            "volume": "38",
+            "issn": "",
+            "pages": "257-264",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Estimation in the three-parameter lognormal distribution",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Whitten",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "J Am Stat Assoc",
+            "volume": "75",
+            "issn": "",
+            "pages": "399-404",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2287466"
+                ]
+            }
+        },
+        "BIBREF83": {
+            "title": "The relationship between infecting dose and severity of disease in reported outbreaks of Salmonella infections",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Glynn",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Bradley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Epidemiol Infect",
+            "volume": "109",
+            "issn": "",
+            "pages": "371-388",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "The three-parameter lognormal distribution and Bayesian analysis of a point-source epidemic",
+            "authors": [
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                }
+            ],
+            "year": 1963,
+            "venue": "J Am Stat Assoc",
+            "volume": "58",
+            "issn": "",
+            "pages": "72-84",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2282955"
+                ]
+            }
+        },
+        "BIBREF85": {
+            "title": "Topics II: Food-borne outbreak caused by Esherichia coli O-157",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tango",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Introduction to Statistical Model (Tokei Model)",
+            "volume": "",
+            "issn": "",
+            "pages": "6-17",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "Three-parameter estimation",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Lognormal Distribution- Theory and Applications",
+            "volume": "",
+            "issn": "",
+            "pages": "113-137",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "The pathogenesis of the acute exanthems. An interpretation based upon experimental investigation with mouse-pox (infectious ectromelia of mice)",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Fenner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1948,
+            "venue": "Lancet",
+            "volume": "ii",
+            "issn": "",
+            "pages": "915-920",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(48)91599-2"
+                ]
+            }
+        },
+        "BIBREF88": {
+            "title": "The growth of micro-organisms in vivo with particular reference to the relation between dose and latent period",
+            "authors": [
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Meynell",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Meynell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1958,
+            "venue": "J Hyg (Lond)",
+            "volume": "56",
+            "issn": "",
+            "pages": "323-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "Some stochastic models relating time and dosage in response curves",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Gart",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "Biometrics",
+            "volume": "21",
+            "issn": "",
+            "pages": "583-599",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2528543"
+                ]
+            }
+        },
+        "BIBREF90": {
+            "title": "The distribution of response times in a birth-death process",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "Biometrika",
+            "volume": "52",
+            "issn": "",
+            "pages": "581-585",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "The basic birth-death model for microbial infection",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "J R Stat Soc Ser B",
+            "volume": "27",
+            "issn": "",
+            "pages": "338-360",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Birth-death and other models for microbial infection",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Armitage",
+                    "suffix": ""
+                },
+                {
+                    "first": "GG",
+                    "middle": [],
+                    "last": "Meynell",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 1965,
+            "venue": "Nature",
+            "volume": "207",
+            "issn": "",
+            "pages": "570-572",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/207570a0"
+                ]
+            }
+        },
+        "BIBREF93": {
+            "title": "A class of stochastic models of response after infection in the absence of defense mechanism",
+            "authors": [
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Puri",
+                    "suffix": ""
+                }
+            ],
+            "year": 1967,
+            "venue": "Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability (June 21-July 18, 1965 and December 27, 1965-January 7, 1966)",
+            "volume": "",
+            "issn": "",
+            "pages": "511-535",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Natural history of dengue virus (DENV)-1 and DENV-4 infections: reanalysis of classic studies",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Halstead",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Infect Dis",
+            "volume": "195",
+            "issn": "",
+            "pages": "1007-1013",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/511825"
+                ]
+            }
+        },
+        "BIBREF95": {
+            "title": "The lognormal distribution of the incubation time of exogenous diseases. Genetic interpretations and a computer simulation",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kondo",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Jinrui Idengaku Zasshi",
+            "volume": "21",
+            "issn": "",
+            "pages": "217-237",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "The lognormal as event-time distribution",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Lawrence",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Lognormal Distribution- Theory and Applications",
+            "volume": "",
+            "issn": "",
+            "pages": "211-228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "Circulating cytokines as mediators of fever",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Netea",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Kullberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Van der Meer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Clin Infect Dis",
+            "volume": "31",
+            "issn": "",
+            "pages": "S178-S184",
+            "other_ids": {
+                "DOI": [
+                    "10.1086/317513"
+                ]
+            }
+        },
+        "BIBREF98": {
+            "title": "The estimation of SARS incubation distribution from serial interval data using a convolution likelihood",
+            "authors": [
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Kuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Stat Med",
+            "volume": "24",
+            "issn": "",
+            "pages": "2525-2537",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/sim.2123"
+                ]
+            }
+        },
+        "BIBREF99": {
+            "title": "Alternative methods of estimating an incubation distribution: Examples from severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "IO",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Louie",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McGeer",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiology",
+            "volume": "18",
+            "issn": "",
+            "pages": "253-259",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/01.ede.0000254660.07942.fb"
+                ]
+            }
+        },
+        "BIBREF100": {
+            "title": "Smallpox transmission and control: spatial dynamics in Great Britain",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "12637-12642",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.0510873103"
+                ]
+            }
+        },
+        "BIBREF101": {
+            "title": "Interpreting the epidemiology of postexposure vaccination against smallpox",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eichner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Int J Hyg Environ Health",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "The epidemiology of BSE in cattle herds in Great Britain. II. Model construction and analysis of transmission dynamics",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Donnelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Woolhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Philos Trans R Soc Lond B Biol Sci",
+            "volume": "352",
+            "issn": "",
+            "pages": "803-808",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rstb.1997.0063"
+                ]
+            }
+        },
+        "BIBREF103": {
+            "title": "Prion infection dynamics",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Nowak",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Krakauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Klug",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Integr Biol",
+            "volume": "1",
+            "issn": "",
+            "pages": "3-15",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/(SICI)1520-6602(1998)1:1<3::AID-INBI2>3.0.CO;2-9"
+                ]
+            }
+        },
+        "BIBREF104": {
+            "title": "Quantifying the kinetic parameters of prion replication",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Masel",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Nowak",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Biophys Chem",
+            "volume": "77",
+            "issn": "",
+            "pages": "139-152",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0301-4622(99)00016-2"
+                ]
+            }
+        }
+    }
+}
