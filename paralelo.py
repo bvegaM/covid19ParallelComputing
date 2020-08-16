@@ -214,6 +214,8 @@ class SimilaridadCoseno:
         cosenoFrame=cosenoFrame.set_index(self.json.columns)
         return cosenoFrame
 
+
+
 if __name__=="__main__":
     listaT           = {}
     

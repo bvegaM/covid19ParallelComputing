@@ -136,7 +136,7 @@ class TermFrequency:
         return wordDocument
 
     def filterVocabulary(self,wordFrequency):
-        return [(i,wordFrequency[i]) for i in wordFrequency if wordFrequency[i]>10]
+        return [(i,wordFrequency[i]) for i in wordFrequency if wordFrequency[i]>=5]
 
     def obtainWordsDocument(self):
         for i in self.textDictionary:
@@ -165,6 +165,16 @@ class TermFrequency:
         dframe.columns=index
         dframe=dframe.drop(['words'],axis=0)
         return dframe
+'''        
+class SvdProcess():
+    def obtainSvdMatrix(self,tfidfMatrix,componentsN):
+        tfidfMatrixTranspose = tfidfMatrix.transpose()
+        values               = tfidfMatrixTranspose.values
+        dataFrameCudf        = cudf.DataFrame([values[i] for i in range(len(values))],dtype=float)
+        tsvdT_float          = TruncatedSVD(n_components = componentsN, algorithm = "jacobi", n_iter = 20, tol = 1e-9)
+        tsvdT_float.fit(dataFrameCudf)        
+        return tsvdT_float.transform(dataFrameCudf)
+'''
 
 class TfidfMatrix:
 
@@ -219,7 +229,7 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/Users/bvegam/Documents/proyecto/500/"
+    direction      = "/Users/bvegam/Downloads/covid/"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
     pool           = multiprocessing.Pool(processes=6)
@@ -228,7 +238,7 @@ if __name__=="__main__":
     pool.join()
     textList       = dict(textList)
     print('*'*50,"time - Read Files process = ",(time.time()-start_time),' seconds ','| final documents read: ',len(textList),' ','*'*50)
-    
+
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
     start_time         = time.time()
@@ -250,7 +260,7 @@ if __name__=="__main__":
     print('*'*50,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' ','*'*50)
 
     ## Termino Documento
-    start_time         = time.time()
+    start_time         = time.time()    
     termFrequency.obtainWordsDocument()
     pool               = multiprocessing.Pool(processes=6)
     termDocument       = pool.map(termFrequency.obtainTermDocument ,vocabulary)
@@ -351,6 +361,7 @@ if __name__=="__main__":
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
     print('*'*50,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*50)
+
     
 
 
