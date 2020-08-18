@@ -25,6 +25,10 @@ import time
 ### Library for paralell processing
 import multiprocessing
 
+#import cudf
+#from cuml import TruncatedSVD
+#from cuml.decomposition import TruncatedSVD
+
 class Preprocessing:
 
     def __init__(self,textValue):
