@@ -25,9 +25,9 @@ import time
 ### Library for paralell processing
 import multiprocessing
 
-#import cudf
-#from cuml import TruncatedSVD
-#from cuml.decomposition import TruncatedSVD
+import cudf
+from cuml import TruncatedSVD
+from cuml.decomposition import TruncatedSVD
 
 class Preprocessing:
 
@@ -169,8 +169,9 @@ class TermFrequency:
         dframe.columns=index
         dframe=dframe.drop(['words'],axis=0)
         return dframe
-'''        
+       
 class SvdProcess():
+
     def obtainSvdMatrix(self,tfidfMatrix,componentsN):
         tfidfMatrixTranspose = tfidfMatrix.transpose()
         values               = tfidfMatrixTranspose.values
@@ -178,7 +179,6 @@ class SvdProcess():
         tsvdT_float          = TruncatedSVD(n_components = componentsN, algorithm = "jacobi", n_iter = 20, tol = 1e-9)
         tsvdT_float.fit(dataFrameCudf)        
         return tsvdT_float.transform(dataFrameCudf)
-'''
 
 class TfidfMatrix:
 
@@ -285,6 +285,13 @@ if __name__=="__main__":
     tfidfMatrix        = tfidf.obtainTfidf(termDocumentMatrix,idf)
     print('*'*50,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*50)
 
+    ### SVD
+    svdProcess         = SvdProcess()
+    start_time         = time.time()
+    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,8)
+    svdJson.to_csv('tfJson.csv')
+    print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
+
     #########################################################################################################################################
     ##################################################### PROCESO PARA NOTICIAS #############################################################
     #########################################################################################################################################
@@ -343,6 +350,12 @@ if __name__=="__main__":
     tfidfMatrixWeb     = tfidf.obtainTfidf(termDocumentMatrixWeb,idfWeb)
     print('*'*50,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*50)
 
+    ### SVD - WEB
+    start_time         = time.time()
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrix,8)
+    svdWeb.to_csv('tfWeb.csv')
+    print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
+
     ## Borrar variables que consumen memoria
     del termDocumentMatrixWeb
     del termDocumentMatrix
@@ -354,13 +367,18 @@ if __name__=="__main__":
     del vocabulary
     del idf
     del idfWeb
-
+    del tfidfMatrix
+    del tfidfMatrixWeb
+    del svdWeb
+    del svdJson
 
     ## Similitud del coseno
     start_time         = time.time()
-    cosineSimilarity   = CosineSimilarity(tfidfMatrix,tfidfMatrixWeb)
+    svdJson            = pd.read_csv('tfJson.csv')
+    svdWeb             = pd.read_csv('tfWeb.csv')
+    cosineSimilarity   = CosineSimilarity(svdJson,svdWeb)
     pool               = multiprocessing.Pool(processes=6)
-    cosineSimMatrix    = pool.map(cosineSimilarity.obtainCosineSimilarity,tfidfMatrix.to_dict())
+    cosineSimMatrix    = pool.map(cosineSimilarity.obtainCosineSimilarity,svdJson.to_dict())
     pool.close() 
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
