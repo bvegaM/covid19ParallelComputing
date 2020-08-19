@@ -352,7 +352,7 @@ if __name__=="__main__":
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrix,3)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,2)
     svdWeb.to_csv('tfWeb.csv')
     print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
 
