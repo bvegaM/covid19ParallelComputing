@@ -21,9 +21,9 @@ import numpy as np
 import time
 
 import multiprocessing
-#import cudf
-#from cuml import TruncatedSVD
-#from cuml.decomposition import TruncatedSVD
+import cudf
+from cuml import TruncatedSVD
+from cuml.decomposition import TruncatedSVD
 
 class Preprocessing:
     

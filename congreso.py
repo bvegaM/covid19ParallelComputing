@@ -233,10 +233,10 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/Users/bvegam/Downloads/covid/"
+    direction      = "/home/usuario/Documentos/covid19ParallelComputing/4000/"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
-    pool           = multiprocessing.Pool(processes=6)
+    pool           = multiprocessing.Pool(processes=8)
     textList       = pool.map(readFile.readFiles,filesPath)
     pool.close() 
     pool.join()
@@ -246,7 +246,7 @@ if __name__=="__main__":
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
     start_time         = time.time()
-    pool               = multiprocessing.Pool(processes=6)
+    pool               = multiprocessing.Pool(processes=8)
     textProcessing     = pool.map(preprocessing.preprocessingFile,textList)
     pool.close() 
     pool.join()
@@ -266,7 +266,7 @@ if __name__=="__main__":
     ## Termino Documento
     start_time         = time.time()    
     termFrequency.obtainWordsDocument()
-    pool               = multiprocessing.Pool(processes=6)
+    pool               = multiprocessing.Pool(processes=8)
     termDocument       = pool.map(termFrequency.obtainTermDocument ,vocabulary)
     pool.close() 
     pool.join()
@@ -278,7 +278,7 @@ if __name__=="__main__":
     start_time         = time.time()
     tfidf              = TfidfMatrix(len(filesPath),termDocument)
     start_time         = time.time()
-    pool               = multiprocessing.Pool(processes=6)
+    pool               = multiprocessing.Pool(processes=8)
     idf                = pool.map(tfidf.obtainIdf,termDocument)
     pool.close() 
     pool.join()
@@ -321,7 +321,7 @@ if __name__=="__main__":
     ## Preprocesamiento de textos de pagina web
     preprocessing      = Preprocessing(textWebList)
     start_time            = time.time()
-    pool                  = multiprocessing.Pool(processes=6)
+    pool                  = multiprocessing.Pool(processes=8)
     textWebProcessing     = pool.map(preprocessing.preprocessingFile,textWebList)
     pool.close() 
     pool.join()
@@ -343,7 +343,7 @@ if __name__=="__main__":
     ## TF-IDF Documentos Web
     start_time         = time.time()
     tfidf              = TfidfMatrix(len(urlList),termDocumentWeb)
-    pool               = multiprocessing.Pool(processes=6)
+    pool               = multiprocessing.Pool(processes=8)
     idfWeb             = pool.map(tfidf.obtainIdf,termDocumentWeb)
     pool.close() 
     pool.join()
@@ -352,7 +352,7 @@ if __name__=="__main__":
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrix,8)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrix,3)
     svdWeb.to_csv('tfWeb.csv')
     print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
 
