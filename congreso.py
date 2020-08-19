@@ -308,6 +308,9 @@ if __name__=="__main__":
     urlList.append(("https://www.nature.com/articles/d41586-020-01284-x","real 3"))
     urlList.append(("https://www.nytimes.com/2020/05/01/health/coronavirus-remdesivir.html?searchResultPosition=10","real 4"))
     urlList.append(("https://theconversation.com/coronavirus-treatments-what-drugs-might-work-against-covid-19-135352","real 5"))
+    urlList.append(("https://futurism.com/pandemic-coronavirus-zombies","fake 1"))
+    urlList.append(("https://www.washingtonpost.com/science/2020/03/18/coronavirus-dogs-pets/","fake 2"))
+
 
     ## lectura de texto de paginas web
     start_time=time.time()
