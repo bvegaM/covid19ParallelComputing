@@ -382,6 +382,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
+    cosineSimMatrix.to_csv('CosineSimilarity.csv')
     print('*'*50,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*50)
 
     
