@@ -352,7 +352,7 @@ if __name__=="__main__":
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,2)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,8)
     svdWeb.to_csv('tfWeb.csv')
     print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
 
@@ -376,12 +376,15 @@ if __name__=="__main__":
     start_time         = time.time()
     svdJson            = pd.read_csv('tfJson.csv')
     svdWeb             = pd.read_csv('tfWeb.csv')
+    svdJson            = svdJson.transpose()
+    svdWeb             = svdWeb.transpose()
     cosineSimilarity   = CosineSimilarity(svdJson,svdWeb)
     pool               = multiprocessing.Pool(processes=6)
     cosineSimMatrix    = pool.map(cosineSimilarity.obtainCosineSimilarity,svdJson.to_dict())
     pool.close() 
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
+    cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
     print('*'*50,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*50)
 
