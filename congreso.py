@@ -241,7 +241,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textList       = dict(textList)
-    print('*'*50,"time - Read Files process = ",(time.time()-start_time),' seconds ','| final documents read: ',len(textList),' ','*'*50)
+    print('*'*10,"time - Read Files process = ",(time.time()-start_time),' seconds ','| final documents read: ',len(textList),' ','*'*10)
 
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
@@ -252,7 +252,7 @@ if __name__=="__main__":
     pool.join()
     textProcessing     = dict(textProcessing)
     textProcessing     = preprocessing.deleteDocumentsBlank(textProcessing)
-    print('*'*50,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','| final documents processed: ',len(textProcessing),' ','*'*50)
+    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','| final documents processed: ',len(textProcessing),' ','*'*10)
     ## borrando variables innecesarias
     del textList
 
@@ -261,7 +261,7 @@ if __name__=="__main__":
     termFrequency      = TermFrequency(textProcessing)
     frequency          = termFrequency.wordsFrequency(textProcessing)
     vocabulary         = termFrequency.filterVocabulary(frequency)
-    print('*'*50,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' ','*'*50)
+    print('*'*10,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' ','*'*10)
 
     ## Termino Documento
     start_time         = time.time()    
@@ -272,7 +272,7 @@ if __name__=="__main__":
     pool.join()
     termDocument       = termFrequency.joinDictionary(termDocument)
     termDocumentMatrix = termFrequency.buildTermDocumentMatrix(termDocument)
-    print('*'*50,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ## TF-IDF
     start_time         = time.time()
@@ -283,14 +283,14 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     tfidfMatrix        = tfidf.obtainTfidf(termDocumentMatrix,idf)
-    print('*'*50,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ### SVD
     svdProcess         = SvdProcess()
     start_time         = time.time()
-    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,8)
+    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,150)
     svdJson.to_csv('tfJson.csv')
-    print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*10)
 
     #########################################################################################################################################
     ##################################################### PROCESO PARA NOTICIAS #############################################################
@@ -309,8 +309,13 @@ if __name__=="__main__":
     urlList.append(("https://www.nytimes.com/2020/05/01/health/coronavirus-remdesivir.html?searchResultPosition=10","real 4"))
     urlList.append(("https://theconversation.com/coronavirus-treatments-what-drugs-might-work-against-covid-19-135352","real 5"))
     urlList.append(("https://futurism.com/pandemic-coronavirus-zombies","fake 1"))
-    urlList.append(("https://www.washingtonpost.com/science/2020/03/18/coronavirus-dogs-pets/","fake 2"))
-
+    urlList.append(("https://www.dimsumdaily.hk/covid-19-apocalypse-coronavirus-pandemic-to-stay-for-years-even-with-vaccine-highest-single-day-1281-cases-in-venezuela-record-103-new-cases-in-south-korea/","fake 2"))
+    urlList.append(("https://balkaninsight.com/2020/07/07/conspiratorial-corona-hoaxes-and-conspiracy-theories-in-the-balkans/","fake 3"))
+    urlList.append(("https://www.euronews.com/2020/05/15/what-is-the-truth-behind-the-5g-coronavirus-conspiracy-theory-culture-clash","fake 4"))
+    urlList.append(("https://www.forbes.com/sites/kenrapoza/2020/04/03/the-post-coronavirus-world-may-be-the-end-of-globalization/#329758d37e66","fake 5"))
+    
+    
+    
 
     ## lectura de texto de paginas web
     start_time=time.time()
@@ -319,7 +324,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textWebList           = dict(textWebList)
-    print('*'*50,"time - Read Web Page process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - Read Web Page process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ## Preprocesamiento de textos de pagina web
     preprocessing      = Preprocessing(textWebList)
@@ -329,7 +334,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textWebProcessing     = dict(textWebProcessing)
-    print('*'*50,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ## Termino Documento web
     start_time            = time.time()
@@ -341,7 +346,7 @@ if __name__=="__main__":
     pool.join()
     termDocumentWeb       = termFrequency.joinDictionary(termDocumentWeb)
     termDocumentMatrixWeb = termFrequency.buildTermDocumentMatrix(termDocumentWeb)
-    print('*'*50,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ## TF-IDF Documentos Web
     start_time         = time.time()
@@ -351,13 +356,13 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     tfidfMatrixWeb     = tfidf.obtainTfidf(termDocumentMatrixWeb,idfWeb)
-    print('*'*50,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,8)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,150)
     svdWeb.to_csv('tfWeb.csv')
-    print('*'*50,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*10)
 
     ## Borrar variables que consumen memoria
     del termDocumentMatrixWeb
@@ -382,14 +387,14 @@ if __name__=="__main__":
     svdJson            = svdJson.transpose()
     svdWeb             = svdWeb.transpose()
     cosineSimilarity   = CosineSimilarity(svdJson,svdWeb)
-    pool               = multiprocessing.Pool(processes=6)
+    pool               = multiprocessing.Pool(processes=8)
     cosineSimMatrix    = pool.map(cosineSimilarity.obtainCosineSimilarity,svdJson.to_dict())
     pool.close() 
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
     cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
-    print('*'*50,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*50)
+    print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*10)
 
     
 
