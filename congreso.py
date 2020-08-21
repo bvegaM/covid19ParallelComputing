@@ -21,6 +21,8 @@ import pandas as pd
 import math
 import numpy as np
 import time
+import sys
+import gc
 
 ### Library for paralell processing
 import multiprocessing
@@ -233,7 +235,7 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/home/usuario/Documentos/covid19ParallelComputing/4000/"
+    direction      = "/home/usuario/Descargas/covid/documentos/pdf_json"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
     pool           = multiprocessing.Pool(processes=8)
@@ -241,7 +243,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textList       = dict(textList)
-    print('*'*10,"time - Read Files process = ",(time.time()-start_time),' seconds ','| final documents read: ',len(textList),' ','*'*10)
+    print('*'*10,"time - Read Files process = ",(time.time()-start_time),' seconds ','| final documents read: ',len(textList),' | memory used: ',sys.getsizeof(textList),'bytes ','*'*10)
 
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
@@ -252,16 +254,21 @@ if __name__=="__main__":
     pool.join()
     textProcessing     = dict(textProcessing)
     textProcessing     = preprocessing.deleteDocumentsBlank(textProcessing)
-    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','| final documents processed: ',len(textProcessing),' ','*'*10)
-    ## borrando variables innecesarias
-    del textList
+    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','| final documents processed: ',len(textProcessing),' | memory used: ',sys.getsizeof(textProcessing),'bytes ','*'*10)
+    
 
     ## frecuenciaTermino
     start_time         = time.time()
     termFrequency      = TermFrequency(textProcessing)
     frequency          = termFrequency.wordsFrequency(textProcessing)
     vocabulary         = termFrequency.filterVocabulary(frequency)
-    print('*'*10,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' ','*'*10)
+    print('*'*10,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' | memory used: ',sys.getsizeof(vocabulary),'bytes ','*'*10)
+    
+    ## borrando variables innecesarias
+    del textList
+    del textProcessing
+    del frequency
+    gc.collect()
 
     ## Termino Documento
     start_time         = time.time()    
@@ -272,7 +279,7 @@ if __name__=="__main__":
     pool.join()
     termDocument       = termFrequency.joinDictionary(termDocument)
     termDocumentMatrix = termFrequency.buildTermDocumentMatrix(termDocument)
-    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## TF-IDF
     start_time         = time.time()
@@ -291,6 +298,13 @@ if __name__=="__main__":
     svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,150)
     svdJson.to_csv('tfJson.csv')
     print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*10)
+    
+    del termDocument
+    del termDocumentMatrix
+    del tfidfMatrix
+    del tfidf
+    del idf
+    gc.collect()
 
     #########################################################################################################################################
     ##################################################### PROCESO PARA NOTICIAS #############################################################
@@ -379,6 +393,7 @@ if __name__=="__main__":
     del tfidfMatrixWeb
     del svdWeb
     del svdJson
+    gc.collect()
 
     ## Similitud del coseno
     start_time         = time.time()
