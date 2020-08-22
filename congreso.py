@@ -121,8 +121,8 @@ class ReadFile:
 countDictionary={}
 class TermFrequency:
 
-    def __init__(self,textDictionary):
-        self.textDictionary=textDictionary
+    def __init__(self,textProcessing):
+        self.textProcessing=textProcessing
 
     def joinDictionary(self,text):
         joinDictionary={}
@@ -140,15 +140,32 @@ class TermFrequency:
                 else:
                     wordDocument[j] = wordDocument[j] + 1
         return wordDocument
+    
+    def wordsFrequencyT(self,textDictionary):
+        wordDocument = {}
+        aux=list(textDictionary.values())[0]
+        print(vocabulary)
+        for i in vocabulary:
+            if i[0] not in aux:
+                wordDocument[i[0]]=0
+            else:
+                wordDocument[i[0]] = 0
+                for j in aux:
+                    if i[0] == j:
+                        wordDocument[i[0]] = wordDocument[i[0]] + 1
+        return wordDocument
 
     def filterVocabulary(self,wordFrequency):
         return [(i,wordFrequency[i]) for i in wordFrequency if wordFrequency[i]>=5]
 
-    def obtainWordsDocument(self):
-        for i in self.textDictionary:
-            aux={}
-            aux[i]=self.textDictionary[i]
-            countDictionary[i]=self.wordsFrequency(aux)
+    def obtainWordsDocument(self,textDictionary):
+        aux={}
+        result=()
+        aux[textDictionary]=self.textProcessing[textDictionary]
+        termDoc = self.wordsFrequencyT(aux)
+        print(vocabulary)
+        result=(textDictionary,termDoc)
+        return result
     
     def obtainTermDocument(self,document):
         aux={}
@@ -171,6 +188,34 @@ class TermFrequency:
         dframe.columns=index
         dframe=dframe.drop(['words'],axis=0)
         return dframe
+
+class TermDocument:
+    def __init__(self,vocabulary,textProcessing):
+        self.textProcessing=textProcessing
+        self.vocabulary=vocabulary
+    
+    def wordsFrequencyT(self,textDictionary):
+        wordDocument = {}
+        aux=list(textDictionary.values())[0]
+        for i in self.vocabulary:
+            if i[0] not in aux:
+                wordDocument[i[0]]=0
+            else:
+                wordDocument[i[0]] = 0
+                for j in aux:
+                    if i[0] == j:
+                        wordDocument[i[0]] = wordDocument[i[0]] + 1
+        return wordDocument
+    
+    def obtainWordsDocument(self,textDictionary):
+        aux={}
+        result=()
+        aux[textDictionary]=self.textProcessing[textDictionary]
+        termDoc = self.wordsFrequencyT(aux)
+        result=(textDictionary,termDoc)
+        return result
+
+
 '''     
 class SvdProcess():
 
@@ -266,20 +311,19 @@ if __name__=="__main__":
     print('*'*10,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' | memory used: ',sys.getsizeof(vocabulary),'bytes ','*'*10)
     ## borrando variables innecesarias
     del textList
-    del textProcessing
     del frequency
     gc.collect()
-
+    
     ## Termino Documento
-    start_time         = time.time()    
-    termFrequency.obtainWordsDocument()
+    start_time         = time.time()
+    termDoc            = TermDocument(vocabulary,textProcessing)
     pool               = multiprocessing.Pool(processes=8)
-    termDocument       = pool.map(termFrequency.obtainTermDocument ,vocabulary)
+    termDocument       = pool.map(termDoc.obtainWordsDocument ,textProcessing)
     pool.close() 
     pool.join()
-    termDocument       = termFrequency.joinDictionary(termDocument)
+    termDocument       = dict(termDocument)
     termDocumentMatrix = termFrequency.buildTermDocumentMatrix(termDocument)
-    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' bytes ','*'*10)
     '''
     ## TF-IDF
     start_time         = time.time()
