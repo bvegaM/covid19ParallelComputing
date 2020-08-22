@@ -26,11 +26,11 @@ import gc
 
 ### Library for paralell processing
 import multiprocessing
-
+'''
 import cudf
 from cuml import TruncatedSVD
 from cuml.decomposition import TruncatedSVD
-
+'''
 class Preprocessing:
 
     def __init__(self,textValue):
@@ -118,11 +118,11 @@ class ReadFile:
         result=(title,finalText)
         return result
 
+countDictionary={}
 class TermFrequency:
 
     def __init__(self,textDictionary):
         self.textDictionary=textDictionary
-        self.countDictionary={}
 
     def joinDictionary(self,text):
         joinDictionary={}
@@ -148,16 +148,16 @@ class TermFrequency:
         for i in self.textDictionary:
             aux={}
             aux[i]=self.textDictionary[i]
-            self.countDictionary[i]=self.wordsFrequency(aux)
+            countDictionary[i]=self.wordsFrequency(aux)
     
     def obtainTermDocument(self,document):
         aux={}
         termDocumentDictionary={}
-        for i in self.countDictionary:
-            if document[0] not in self.countDictionary[i].keys(): 
+        for i in countDictionary:
+            if document[0] not in countDictionary[i].keys(): 
                 aux[i]=0
             else:
-                aux[i]=self.countDictionary[i][document[0]]
+                aux[i]=countDictionary[i][document[0]]
         termDocumentDictionary[document[0]]=aux
         return termDocumentDictionary
 
@@ -171,7 +171,7 @@ class TermFrequency:
         dframe.columns=index
         dframe=dframe.drop(['words'],axis=0)
         return dframe
-       
+'''     
 class SvdProcess():
 
     def obtainSvdMatrix(self,tfidfMatrix,componentsN):
@@ -181,6 +181,7 @@ class SvdProcess():
         tsvdT_float          = TruncatedSVD(n_components = componentsN, algorithm = "jacobi", n_iter = 20, tol = 1e-9)
         tsvdT_float.fit(dataFrameCudf)        
         return tsvdT_float.transform(dataFrameCudf)
+'''
 
 class TfidfMatrix:
 
@@ -235,10 +236,10 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/home/usuario/Descargas/covid/documentos/pdf_json"
+    direction      = "/Users/bvegam/Documents/proyecto/4000"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
-    pool           = multiprocessing.Pool(processes=32)
+    pool           = multiprocessing.Pool(processes=8)
     textList       = pool.map(readFile.readFiles,filesPath)
     pool.close() 
     pool.join()
@@ -248,7 +249,7 @@ if __name__=="__main__":
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
     start_time         = time.time()
-    pool               = multiprocessing.Pool(processes=32)
+    pool               = multiprocessing.Pool(processes=8)
     textProcessing     = pool.map(preprocessing.preprocessingFile,textList)
     pool.close() 
     pool.join()
@@ -263,7 +264,6 @@ if __name__=="__main__":
     frequency          = termFrequency.wordsFrequency(textProcessing)
     vocabulary         = termFrequency.filterVocabulary(frequency)
     print('*'*10,"time - vocabulary process = ",(time.time()-start_time),' seconds ','| terms in vocabulary: ',len(vocabulary),' | memory used: ',sys.getsizeof(vocabulary),'bytes ','*'*10)
-    
     ## borrando variables innecesarias
     del textList
     del textProcessing
@@ -273,14 +273,14 @@ if __name__=="__main__":
     ## Termino Documento
     start_time         = time.time()    
     termFrequency.obtainWordsDocument()
-    pool               = multiprocessing.Pool(processes=32)
+    pool               = multiprocessing.Pool(processes=8)
     termDocument       = pool.map(termFrequency.obtainTermDocument ,vocabulary)
     pool.close() 
     pool.join()
     termDocument       = termFrequency.joinDictionary(termDocument)
     termDocumentMatrix = termFrequency.buildTermDocumentMatrix(termDocument)
     print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
-
+    '''
     ## TF-IDF
     start_time         = time.time()
     tfidf              = TfidfMatrix(len(filesPath),termDocument)
@@ -410,6 +410,7 @@ if __name__=="__main__":
     cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
     print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*10)
+    '''
 
     
 
