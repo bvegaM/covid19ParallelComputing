@@ -281,7 +281,7 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/Users/bvegam/Documents/proyecto/4000"
+    direction      = "/Users/bvegam/Documents/proyecto/2"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
     pool           = multiprocessing.Pool(processes=8)
@@ -317,6 +317,7 @@ if __name__=="__main__":
     ## Termino Documento
     start_time         = time.time()
     termDoc            = TermDocument(vocabulary,textProcessing)
+    textProcessing     = list(textProcessing)
     pool               = multiprocessing.Pool(processes=8)
     termDocument       = pool.map(termDoc.obtainWordsDocument ,textProcessing)
     pool.close() 
