@@ -1,4 +1,3 @@
-
 ### Library for read files
 import fnmatch
 import os.path
@@ -410,14 +409,3 @@ if __name__=="__main__":
     cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
     print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*10)
-
-    
-
-
-
-
-
-
-    
-    
-
