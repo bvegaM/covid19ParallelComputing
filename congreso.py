@@ -289,14 +289,14 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     tfidfMatrix        = tfidf.obtainTfidf(termDocumentMatrix,idf)
-    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ### SVD
     svdProcess         = SvdProcess()
     start_time         = time.time()
     svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,150)
     svdJson.to_csv('tfJson.csv')
-    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
     
     del termDocument
     del termDocumentMatrix
@@ -337,7 +337,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textWebList           = dict(textWebList)
-    print('*'*10,"time - Read Web Page process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - Read Web Page process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## Preprocesamiento de textos de pagina web
     preprocessing      = Preprocessing(textWebList)
@@ -347,7 +347,7 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     textWebProcessing     = dict(textWebProcessing)
-    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## Termino Documento web
     start_time            = time.time()
@@ -359,7 +359,7 @@ if __name__=="__main__":
     pool.join()
     termDocumentWeb       = termFrequency.joinDictionary(termDocumentWeb)
     termDocumentMatrixWeb = termFrequency.buildTermDocumentMatrix(termDocumentWeb)
-    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## TF-IDF Documentos Web
     start_time         = time.time()
@@ -369,13 +369,13 @@ if __name__=="__main__":
     pool.close() 
     pool.join()
     tfidfMatrixWeb     = tfidf.obtainTfidf(termDocumentMatrixWeb,idfWeb)
-    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ### SVD - WEB
     start_time         = time.time()
     svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,150)
     svdWeb.to_csv('tfWeb.csv')
-    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## Borrar variables que consumen memoria
     del termDocumentMatrixWeb
@@ -408,4 +408,4 @@ if __name__=="__main__":
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
     cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
-    print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ','*'*10)
+    print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
