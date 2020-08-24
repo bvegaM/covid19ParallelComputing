@@ -6,6 +6,7 @@ import requests
 from urllib.request import urlopen, Request
 import urllib.request
 from bs4 import BeautifulSoup
+from os import remove
 
 ### Library for preprocessing
 import string
@@ -82,8 +83,9 @@ class ReadFile:
         listFiles     = ()
         read          = json.loads(open(filePath).read())
         finalText     = ""
-        if('abstract' not in read.keys() or read['abstract']==0):
+        if('abstract' not in read.keys() or len(read['abstract'])==0):
             finalText = ""
+            remove(filePath)
         else:
             text      = read['abstract']    
             for j in text:
