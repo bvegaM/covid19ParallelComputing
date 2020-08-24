@@ -374,16 +374,12 @@ if __name__=="__main__":
 
     ## Borrar variables que consumen memoria
     del termDocumentMatrixWeb
-    del termDocumentMatrix
     del urlList
     del filesPath
     del textWebList
-    del textProcessing
     del textWebProcessing
     del vocabulary
-    del idf
     del idfWeb
-    del tfidfMatrix
     del tfidfMatrixWeb
     del svdWeb
     del svdJson
