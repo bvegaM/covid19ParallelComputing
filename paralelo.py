@@ -238,9 +238,10 @@ if __name__=="__main__":
     
     ## lectura de archivos JSON
     readFile       = ReadFile()
-    direction      = "/Users/bvegam/Documents/proyecto/2"
+    direction      = "/home/usuario/Descargas/covid/documentos/pdf_json"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
+    filesPath      = filesPath[0:5000]
     pool           = multiprocessing.Pool(processes=8)
     textList       = pool.map(readFile.readFiles,filesPath)
     pool.close() 
