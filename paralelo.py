@@ -378,7 +378,6 @@ if __name__=="__main__":
     del urlList
     del filesPath
     del textWebList
-    del textProcessing
     del textWebProcessing
     del vocabulary
     del idf
