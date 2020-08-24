@@ -61,13 +61,6 @@ class Preprocessing:
     def filterWordsShort(self,text):
         return [i for i in text if len(i) > 2]
     
-    def deleteDocumentsBlank(self,textProcessing):
-        result={}
-        for i in textProcessing:
-            if(len(textProcessing[i])!=0):
-                result[i]=textProcessing[i]    
-        return result
-
 class ReadFile:
 
     def obtainPathFiles(self,path):
@@ -239,7 +232,8 @@ if __name__=="__main__":
     direction      = "/home/usuario/Descargas/covid/documentos/pdf_json"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
-    pool           = multiprocessing.Pool(processes=8)
+    filesPath      = filesPath[0:5000]
+    pool           = multiprocessing.Pool(processes=32)
     textList       = pool.map(readFile.readFiles,filesPath)
     pool.close() 
     pool.join()
@@ -249,12 +243,11 @@ if __name__=="__main__":
     ## preprocesamiento de archivos JSON
     preprocessing      = Preprocessing(textList)
     start_time         = time.time()
-    pool               = multiprocessing.Pool(processes=8)
+    pool               = multiprocessing.Pool(processes=32)
     textProcessing     = pool.map(preprocessing.preprocessingFile,textList)
     pool.close() 
     pool.join()
     textProcessing     = dict(textProcessing)
-    textProcessing     = preprocessing.deleteDocumentsBlank(textProcessing)
     print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ','| final documents processed: ',len(textProcessing),' | memory used: ',sys.getsizeof(textProcessing),'bytes ','*'*10)
     
 
@@ -274,7 +267,7 @@ if __name__=="__main__":
     ## Termino Documento
     start_time         = time.time()    
     termFrequency.obtainWordsDocument()
-    pool               = multiprocessing.Pool(processes=8)
+    pool               = multiprocessing.Pool(processes=32)
     termDocument       = pool.map(termFrequency.obtainTermDocument ,vocabulary)
     pool.close() 
     pool.join()
@@ -286,19 +279,19 @@ if __name__=="__main__":
     start_time         = time.time()
     tfidf              = TfidfMatrix(len(filesPath),termDocument)
     start_time         = time.time()
-    pool               = multiprocessing.Pool(processes=8)
+    pool               = multiprocessing.Pool(processes=32)
     idf                = pool.map(tfidf.obtainIdf,termDocument)
     pool.close() 
     pool.join()
     tfidfMatrix        = tfidf.obtainTfidf(termDocumentMatrix,idf)
-    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(tfidfMatrix),' ','*'*10)
 
     ### SVD
     svdProcess         = SvdProcess()
     start_time         = time.time()
-    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,150)
+    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,75)
     svdJson.to_csv('tfJson.csv')
-    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(svdJson),' ','*'*10)
     
     del termDocument
     del termDocumentMatrix
@@ -334,50 +327,50 @@ if __name__=="__main__":
 
     ## lectura de texto de paginas web
     start_time=time.time()
-    pool                  = multiprocessing.Pool(processes=8)
+    pool                  = multiprocessing.Pool(processes=32)
     textWebList           = pool.map(readFile.readWebPage,urlList)
     pool.close() 
     pool.join()
     textWebList           = dict(textWebList)
-    print('*'*10,"time - Read Web Page process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - Read Web Page process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(textWebList),' ','*'*10)
 
     ## Preprocesamiento de textos de pagina web
     preprocessing      = Preprocessing(textWebList)
     start_time            = time.time()
-    pool                  = multiprocessing.Pool(processes=8)
+    pool                  = multiprocessing.Pool(processes=32)
     textWebProcessing     = pool.map(preprocessing.preprocessingFile,textWebList)
     pool.close() 
     pool.join()
     textWebProcessing     = dict(textWebProcessing)
-    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - Preprocessing process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(textWebProcessing),' ','*'*10)
 
     ## Termino Documento web
     start_time            = time.time()
     termFrequency         = TermFrequency(textWebProcessing)
-    pool                  = multiprocessing.Pool(processes=8)
+    pool                  = multiprocessing.Pool(processes=32)
     termFrequency.obtainWordsDocument()
     termDocumentWeb       = pool.map(termFrequency.obtainTermDocument,vocabulary)
     pool.close() 
     pool.join()
     termDocumentWeb       = termFrequency.joinDictionary(termDocumentWeb)
     termDocumentMatrixWeb = termFrequency.buildTermDocumentMatrix(termDocumentWeb)
-    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrixWeb),' ','*'*10)
 
     ## TF-IDF Documentos Web
     start_time         = time.time()
     tfidf              = TfidfMatrix(len(urlList),termDocumentWeb)
-    pool               = multiprocessing.Pool(processes=8)
+    pool               = multiprocessing.Pool(processes=32)
     idfWeb             = pool.map(tfidf.obtainIdf,termDocumentWeb)
     pool.close() 
     pool.join()
     tfidfMatrixWeb     = tfidf.obtainTfidf(termDocumentMatrixWeb,idfWeb)
-    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(tfidfMatrixWeb),' ','*'*10)
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,150)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,75)
     svdWeb.to_csv('tfWeb.csv')
-    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(svdWeb),' ','*'*10)
 
     ## Borrar variables que consumen memoria
     del termDocumentMatrixWeb
@@ -403,11 +396,11 @@ if __name__=="__main__":
     svdJson            = svdJson.transpose()
     svdWeb             = svdWeb.transpose()
     cosineSimilarity   = CosineSimilarity(svdJson,svdWeb)
-    pool               = multiprocessing.Pool(processes=8)
+    pool               = multiprocessing.Pool(processes=32)
     cosineSimMatrix    = pool.map(cosineSimilarity.obtainCosineSimilarity,svdJson.to_dict())
     pool.close() 
     pool.join()
     cosineSimMatrix    = cosineSimilarity.buildCosineMatrix(cosineSimMatrix)
     cosineSimMatrix    = cosineSimMatrix.describe()
     cosineSimMatrix.to_csv('CosineSimilarity.csv')
-    print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
+    print('*'*10,"time - matrix cosine similarity process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(cosineSimMatrix),' ','*'*10)
