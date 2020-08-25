@@ -291,7 +291,7 @@ if __name__=="__main__":
     ### SVD
     svdProcess         = SvdProcess()
     start_time         = time.time()
-    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,150)
+    svdJson            = svdProcess.obtainSvdMatrix(tfidfMatrix,300)
     svdJson.to_csv('tfJson.csv')
     print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(svdJson),' ','*'*10)
     
@@ -370,7 +370,7 @@ if __name__=="__main__":
 
     ### SVD - WEB
     start_time         = time.time()
-    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,150)
+    svdWeb             = svdProcess.obtainSvdMatrix(tfidfMatrixWeb,300)
     svdWeb.to_csv('tfWeb.csv')
     print('*'*10,"time - matrix svd process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(svdWeb),' ','*'*10)
 
