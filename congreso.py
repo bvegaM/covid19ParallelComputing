@@ -28,6 +28,7 @@ import gc
 import multiprocessing
 
 import cudf
+import cupy as cp
 from cuml import TruncatedSVD
 from cuml.decomposition import TruncatedSVD
 
@@ -171,7 +172,7 @@ class SvdProcess():
     def obtainSvdMatrix(self,tfidfMatrix,componentsN):
         tfidfMatrixTranspose = tfidfMatrix.transpose()
         values               = tfidfMatrixTranspose.values
-        dataFrameCudf        = cudf.DataFrame([values[i] for i in range(len(values))],dtype=float)
+        dataFrameCudf        = cudf.DataFrame([values[i] for i in range(len(values))],dtype=cp.float32)
         tsvdT_float          = TruncatedSVD(n_components = componentsN, algorithm = "jacobi", n_iter = 20, tol = 1e-9)
         tsvdT_float.fit(dataFrameCudf)        
         return tsvdT_float.transform(dataFrameCudf)
