@@ -233,7 +233,7 @@ if __name__=="__main__":
     direction      = "/home/usuario/Descargas/covid/documentos/pdf_json"
     start_time     = time.time()
     filesPath      = readFile.obtainPathFiles(direction)
-    filesPath      = filesPath[0:6000]
+    filesPath      = filesPath[0:7000]
     pool           = multiprocessing.Pool(processes=32)
     textList       = pool.map(readFile.readFiles,filesPath)
     pool.close() 
