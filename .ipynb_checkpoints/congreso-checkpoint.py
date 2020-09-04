@@ -278,14 +278,15 @@ if __name__=="__main__":
     print('*'*10,"time - matrix term Document process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(termDocumentMatrix),' ','*'*10)
 
     ## TF-IDF
+    start_time         = time.time()
     tfidf              = TfidfMatrix(len(filesPath),termDocument)
     start_time         = time.time()
     pool               = multiprocessing.Pool(processes=32)
     idf                = pool.map(tfidf.obtainIdf,termDocument)
     pool.close() 
     pool.join()
-    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(tfidfMatrix),' ','*'*10)
     tfidfMatrix        = tfidf.obtainTfidf(termDocumentMatrix,idf)
+    print('*'*10,"time - matrix tf-idf process = ",(time.time()-start_time),' seconds ',' | memory used: ',sys.getsizeof(tfidfMatrix),' ','*'*10)
 
     ### SVD
     svdProcess         = SvdProcess()
